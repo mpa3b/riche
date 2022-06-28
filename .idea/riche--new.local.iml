@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/bitrix/components" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/bitrix/modules" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/bitrix/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/local/components" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/local/modules" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/oomphinc/composer-installers-extender" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/kint-php/kint" />
@@ -26,6 +28,10 @@
       <excludeFolder url="file://$MODULE_DIR$/bitrix/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/updates" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/catalog_export" />
+      <excludeFolder url="file://$MODULE_DIR$/local/modules/sprint.editor" />
+      <excludeFolder url="file://$MODULE_DIR$/local/modules/sprint.migration" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
