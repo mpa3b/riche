@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/./local/classes" isTestSource="false" packagePrefix="Local\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/bitrix/components" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bitrix/modules" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bitrix/services" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/oomphinc/composer-installers-extender" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/kint-php/kint" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/locate-binaries" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/image-mime-type-sniffer" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/webp-convert" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/exec-with-fallback" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/wikimedia/composer-merge-plugin" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/file-util" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/image-mime-type-guesser" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/hafsoft/php-minifier" />
+      <excludeFolder url="file://$MODULE_DIR$/upload" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/tmp" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/updates" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/catalog_export" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

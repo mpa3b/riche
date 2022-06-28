@@ -1,0 +1,7 @@
+bitrix/
+upload/
+
+local/assets
+local/vendor
+
+local/modules/sprint.*/
