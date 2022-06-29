@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62440b900ebc474691d299d487b29744",
+    "content-hash": "3eab82120b24836814252ee58c7dfbde",
     "packages": [
         {
             "name": "andreyryabin/sprint.editor",
@@ -515,6 +515,18 @@
             ]
         },
         {
+            "name": "npm-asset/slick-carousel",
+            "version": "1.8.1",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/slick-carousel/-/slick-carousel-1.8.1.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
             "name": "npm-asset/source-map",
             "version": "0.6.1",
             "dist": {
@@ -668,6 +680,18 @@
             ]
         },
         {
+            "name": "npm-asset/vue--devtools-api",
+            "version": "6.1.4",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@vue/devtools-api/-/devtools-api-6.1.4.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
             "name": "npm-asset/vue--reactivity",
             "version": "3.2.37",
             "dist": {
@@ -760,6 +784,72 @@
             "type": "npm-asset",
             "license": [
                 "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/vue-awesome",
+            "version": "4.5.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/vue-awesome/-/vue-awesome-4.5.0.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/vue-cookies",
+            "version": "1.8.1",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/vue-cookies/-/vue-cookies-1.8.1.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/vue-notification",
+            "version": "1.3.20",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/vue-notification/-/vue-notification-1.3.20.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/vue-router",
+            "version": "4.1.0-patch113369",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/vue-router/-/vue-router-4.1.0-c113369.tgz"
+            },
+            "require": {
+                "npm-asset/vue--devtools-api": ">=6.1.4,<7.0.0"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/vue-slick",
+            "version": "1.1.20",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/vue-slick/-/vue-slick-1.1.20.tgz"
+            },
+            "require": {
+                "npm-asset/slick-carousel": ">=1.8.1,<2.0.0"
+            },
+            "type": "npm-asset",
+            "license": [
+                "ISC"
             ]
         },
         {
