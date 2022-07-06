@@ -1,9 +1,16 @@
 <?php
 
 use Bitrix\Main\Page\Asset;
+use Local\Vue;
 
-Asset::getInstance()->addJs("//cdn.jsdelivr.net/npm/vue@2/dist/vue.js");
+Vue::includeComponent(['banner-component']);
 ?>
 <div id="banner">
-    {{ banners }}
+    <banner-component></banner-component>
 </div>
+<script>
+    new Vue({
+        el: '#banner',
+        name: 'root',
+    })
+</script>
