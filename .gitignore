@@ -5,3 +5,5 @@ local/assets
 local/vendor
 
 local/modules/sprint.*/
+
+composer.lock
