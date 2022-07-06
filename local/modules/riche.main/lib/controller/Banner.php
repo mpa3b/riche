@@ -21,7 +21,7 @@ class Banner extends Controller
 
     public function getAction()
     {
-        $request = $this->getRequest();
+        $request = json_decode(file_get_contents('php://input'), true);
 
         Loader::includeModule('iblock');
 
