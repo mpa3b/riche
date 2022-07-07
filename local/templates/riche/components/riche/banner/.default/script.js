@@ -1,23 +1,21 @@
-<template id="banner-component">
-    <ol>
-        <li v-for="banner in banners">
-            {{ banner.NAME }}
-            <img :src="imageUrl(banner)" width="100%">
-        </li>
-    </ol>
-</template>
-
-<script>
-Vue.component('banner-component', {
-    template: '#banner-component',
+const App = {
+    name: 'Banner',
+    template: `
+        <ol>
+            <li v-for="banner in banners">
+                {{ banner.NAME }}
+                <img :src="imageUrl(banner)" width="400px">
+            </li>
+        </ol>
+    `,
     data: function () {
         return {
             banners: [],
         }
     },
     methods: {
-        imageUrl: (banner)=>{
-            return 'upload/'+ banner.P_PICTURE_SUBDIR+'/'+banner.P_PICTURE_FILE_NAME;
+        imageUrl: (banner) => {
+            return 'upload/' + banner.P_PICTURE_SUBDIR + '/' + banner.P_PICTURE_FILE_NAME;
         }
     },
     mounted() {
@@ -41,6 +39,9 @@ Vue.component('banner-component', {
             console.error('There was an error!', error);
         });
     }
-});
+}
 
-</script>
+const app = Vue.createApp({
+    render: () => Vue.h(App)
+})
+app.mount("#banner");
