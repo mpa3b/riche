@@ -12,9 +12,7 @@
 
 <script type="text/javascript">
     App.template = "#<?=$arResult['TEMPLATE_ID']?>";
-    App.methods.addData('<?=$arResult['RESULT']?>');
     const app = Vue.createApp({
         render: () => Vue.h(App)
-    })
-    app.mount("#<?=$arResult['SECTION_ID']?>");
+    }).mount("#<?=$arResult['SECTION_ID']?>");
 </script>

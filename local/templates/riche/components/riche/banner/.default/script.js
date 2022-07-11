@@ -16,6 +16,7 @@ const App = {
         }
     },
     mounted() {
+        // this.addData(App.customData);
         fetch('/api/riche/main/banner/get/', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
