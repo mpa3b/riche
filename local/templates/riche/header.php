@@ -4,6 +4,7 @@ if (!defined('B_PROLOG_INCLUDED') or B_PROLOG_INCLUDED !== true) {
 }
 
 use Bitrix\Main\Page\Asset;
+use Bitrix\Main\Page\AssetLocation;
 
 if($USER->IsAdmin()) {
     Asset::getInstance()->addString('<script src="/local/assets/vue/dist/vue.global.js"></script>');
@@ -16,16 +17,30 @@ if($USER->IsAdmin()) {
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="<?= LANGUAGE_ID ?>">
 <head>
-    <?$APPLICATION->ShowHead();?>
     <title><?$APPLICATION->ShowTitle();?></title>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+    <meta http-equiv="Content-Type" content="text/html; charset=<?= strtolower(SITE_CHARSET); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
+    <script data-skip-moving="true">
+        var BX = {
+            message: ()=>{return false},
+            ready: ()=>{return false}
+        },
+        bxSession = {
+            Expand: ()=>{return false}
+        };
+    </script>
+
+    <?= Asset::getInstance()->getStrings();
+    $APPLICATION->ShowHeadScripts();
+    $APPLICATION-> ShowCSS (true, false); // Output css site styles
+    ?>
 </head>
 <body>
+
 <?
 $APPLICATION->IncludeComponent(
     "riche:menu",
@@ -40,8 +55,6 @@ $APPLICATION->IncludeComponent(
 
         ]
     ]
-);?>
-<div id="panel">
-    <?$APPLICATION->ShowPanel();?>
-</div>
+);
+?>
 
