@@ -397,10 +397,10 @@
         },
         {
             "name": "npm-asset/jquery-validation",
-            "version": "1.19.4",
+            "version": "1.19.5",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/jquery-validation/-/jquery-validation-1.19.4.tgz"
+                "url": "https://registry.npmjs.org/jquery-validation/-/jquery-validation-1.19.5.tgz"
             },
             "type": "npm-asset",
             "license": [

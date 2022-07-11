@@ -8,8 +8,7 @@
     </ul>
 </template>
 
-
-<script type="text/javascript">
+<script>
     Menu.template = "#<?=$arResult['TEMPLATE_ID']?>";
     Vue.createApp({
         render: () => Vue.h(Menu)

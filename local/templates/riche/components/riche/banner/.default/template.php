@@ -16,7 +16,7 @@
 </template>
 
 
-<script type="text/javascript">
+<script>
     App.template = "#<?=$arResult['TEMPLATE_ID']?>";
     const app = Vue.createApp({
         render: () => Vue.h(App)

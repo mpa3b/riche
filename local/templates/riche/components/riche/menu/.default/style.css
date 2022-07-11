@@ -1,11 +1,13 @@
-.menu-wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.menu-wrapper {
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
 }
-.menu-wrapper li{
-    list-style: none;
+
+.menu-wrapper li {
+    list-style : none;
 }
-.menu-wrapper li a{
-    padding: 1em 2em;
+
+.menu-wrapper li a {
+    padding : 1em 2em;
 }
