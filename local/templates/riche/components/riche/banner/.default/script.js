@@ -8,8 +8,11 @@ const App = {
         }
     },
     methods: {
+        addData: data =>{
+            this.banners = JSON.parse(data);
+        },
         imageUrl: (banner) => {
-            return 'upload/' + banner.P_PICTURE_SUBDIR + '/' + banner.P_PICTURE_FILE_NAME;
+            return banner.PREVIEW_PICTURE;
         }
     },
     mounted() {

@@ -10,7 +10,13 @@ $APPLICATION->IncludeComponent(
     "riche:banner",
     "",
     [
-        'BLOCK_ID' => 'header_banner'
+        'BLOCK_ID' => 'header_banner',
+        'FIELDS' => [
+            'ID',
+            'NAME',
+            'PREVIEW_TEXT',
+            'DETAIL_TEXT',
+        ]
     ]
 );?>
 <?

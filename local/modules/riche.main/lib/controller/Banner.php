@@ -19,14 +19,9 @@ class Banner extends Controller
         ];
     }
 
-    public function getAction()
-    {
-        $request = json_decode(file_get_contents('php://input'), true);
-
-        Loader::includeModule('iblock');
-
+    public function getBanners($select){
         $elements = ElementBannerTable::getList([
-            'select' => array_merge($request['select'], [
+            'select' => array_merge($select, [
                 'P_PICTURE_' => 'PREVIEW_PICTURE',
                 'D_PICTURE_' => 'DETAIL_PICTURE',
             ]),
@@ -53,6 +48,21 @@ class Banner extends Controller
             ]
         ])->fetchAll();
 
+        foreach ($elements as &$banner){
+            $banner['PREVIEW_PICTURE'] = 'upload/' . $banner['P_PICTURE_SUBDIR'] . '/' . $banner['P_PICTURE_FILE_NAME'];
+            $banner['DETAIL_PICTURE'] = 'upload/' . $banner['D_PICTURE_SUBDIR'] . '/' . $banner['D_PICTURE_FILE_NAME'];
+        }
+
+        return $elements;
+    }
+
+    public function getAction()
+    {
+        $request = json_decode(file_get_contents('php://input'), true);
+
+        Loader::includeModule('iblock');
+
+        $elements = $this->getBanners($request['select']);
 
         return ['response' => 'success', 'data' => $elements];
     }
