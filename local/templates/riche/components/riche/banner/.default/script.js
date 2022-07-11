@@ -8,15 +8,16 @@ const App = {
         }
     },
     methods: {
-        addData: data =>{
-            this.banners = JSON.parse(data);
-        },
-        imageUrl: (banner) => {
-            return banner.PREVIEW_PICTURE;
+        image: (banner) => {
+            return {
+                mobile: banner.PREVIEW_PICTURE,
+                desktop: banner.DETAIL_PICTURE
+            };
         }
     },
     mounted() {
-        // this.addData(App.customData);
+        this.banners = this.$attrs.data;
+
         fetch('/api/riche/main/banner/get/', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
