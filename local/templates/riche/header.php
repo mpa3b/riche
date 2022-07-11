@@ -26,6 +26,21 @@ if($USER->IsAdmin()) {
 
 </head>
 <body>
+<?
+$APPLICATION->IncludeComponent(
+    "riche:menu",
+    "",
+    [
+        'BLOCK_ID' => 'header_menu',
+        'MENU_ITEMS' => [
+            ['link'=>'/', 'name' => 'Главная'],
+            ['link'=>'/', 'name' => 'Волосы'],
+            ['link'=>'/', 'name' => 'Лицо'],
+            ['link'=>'/', 'name' => 'Тело'],
+
+        ]
+    ]
+);?>
 <div id="panel">
     <?$APPLICATION->ShowPanel();?>
 </div>
