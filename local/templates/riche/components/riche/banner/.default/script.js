@@ -1,13 +1,7 @@
+
 const App = {
     name: 'Banner',
-    template: `
-        <ol>
-            <li v-for="banner in banners">
-                {{ banner.NAME }}
-                <img :src="imageUrl(banner)" width="400px">
-            </li>
-        </ol>
-    `,
+    template: "",
     data: function () {
         return {
             banners: [],
@@ -41,7 +35,4 @@ const App = {
     }
 }
 
-const app = Vue.createApp({
-    render: () => Vue.h(App)
-})
-app.mount("#banner");
+
