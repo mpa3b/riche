@@ -2,7 +2,6 @@
 
 namespace Riche\Main\Controller;
 
-
 use Bitrix\Iblock\Elements\ElementBannerTable;
 use Bitrix\Main\Engine\Controller;
 use Bitrix\Main\FileTable;
@@ -19,41 +18,50 @@ class Banner extends Controller
         ];
     }
 
-    public function getBanners($select){
-        $elements = ElementBannerTable::getList([
-            'select' => array_merge($select, [
-                'P_PICTURE_' => 'PREVIEW_PICTURE',
-                'D_PICTURE_' => 'DETAIL_PICTURE',
-            ]),
-            'filter' => ['=ACTIVE' => 'Y'],
-            'runtime' => [
-                'PREVIEW_PICTURE' => [
-                    'data_type' => FileTable::class,
-                    'reference' => [
-                        '=this.ID' => 'ref.ID'
-                    ],
-                    'join_type' => 'LEFT'
-                ],
-                'DETAIL_PICTURE' => [
-                    'data_type' => FileTable::class,
-                    'reference' => [
-                        '=this.ID' => 'ref.ID'
-                    ],
-                    'join_type' => 'LEFT'
-                ]
-            ],
-            'cache' => [
-                "ttl" => 3600,
-                'cache_joins' => true
-            ]
-        ])->fetchAll();
+    public function getBanners($select)
+    {
 
-        foreach ($elements as &$banner){
+        Loader::includeModule('iblock');
+
+        $elements = ElementBannerTable::getList(
+            [
+                'select'  => array_merge(
+                    $select,
+                    [
+                        'P_PICTURE_' => 'PREVIEW_PICTURE',
+                        'D_PICTURE_' => 'DETAIL_PICTURE',
+                    ]
+                ),
+                'filter'  => ['=ACTIVE' => 'Y'],
+                'runtime' => [
+                    'PREVIEW_PICTURE' => [
+                        'data_type' => FileTable::class,
+                        'reference' => [
+                            '=this.ID' => 'ref.ID'
+                        ],
+                        'join_type' => 'LEFT'
+                    ],
+                    'DETAIL_PICTURE'  => [
+                        'data_type' => FileTable::class,
+                        'reference' => [
+                            '=this.ID' => 'ref.ID'
+                        ],
+                        'join_type' => 'LEFT'
+                    ]
+                ],
+                'cache'   => [
+                    "ttl"         => 3600,
+                    'cache_joins' => true
+                ]
+            ])->fetchAll();
+
+        foreach ($elements as &$banner) {
             $banner['PREVIEW_PICTURE'] = 'upload/' . $banner['P_PICTURE_SUBDIR'] . '/' . $banner['P_PICTURE_FILE_NAME'];
-            $banner['DETAIL_PICTURE'] = 'upload/' . $banner['D_PICTURE_SUBDIR'] . '/' . $banner['D_PICTURE_FILE_NAME'];
+            $banner['DETAIL_PICTURE']  = 'upload/' . $banner['D_PICTURE_SUBDIR'] . '/' . $banner['D_PICTURE_FILE_NAME'];
         }
 
         return $elements;
+
     }
 
     public function getAction()
@@ -66,4 +74,5 @@ class Banner extends Controller
 
         return ['response' => 'success', 'data' => $elements];
     }
+
 }

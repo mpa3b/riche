@@ -1,7 +1,7 @@
 const App = {
           name    : 'Banner',
           template: '',
-          data    : function () {
+          data    : () => {
               return {
                   banners: []
               };
