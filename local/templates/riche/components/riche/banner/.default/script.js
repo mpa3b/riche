@@ -14,7 +14,7 @@ const App = {
                   };
               }
           },
-          mounted : () => {
+          mounted() {
 
               this.banners = this.$attrs.data;
 
