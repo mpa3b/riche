@@ -8,7 +8,9 @@ global $USER, $APPLICATION;
 
 use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
-use Bitrix\Main\Page\AssetLocation;
+
+use Bitrix\Main\Config\Option;
+
 
 Loader::registerAutoLoadClasses(
     null,
@@ -23,7 +25,11 @@ use Riche\Template;
 
 $assets = Asset::getInstance();
 
-if ($USER->IsAdmin()) {
+$assets->addCss(Template::ASSETS . '/normalize-css/normalize.css');
+
+if (Option::get('main', 'update_devsrv') == 'Y') $debug = true;
+
+if ($debug) {
 
     $assets->addJs(Template::ASSETS . '/vue/dist/vue.global.js');
     $assets->addJs(Template::ASSETS . '/vuex/dist/vuex.global.js');
@@ -39,12 +45,14 @@ if ($USER->IsAdmin()) {
 <html lang="<?= LANGUAGE_ID ?>">
 <head>
 
-    <title><? $APPLICATION->ShowTitle(); ?></title>
+    <title><?
+        $APPLICATION->ShowTitle(); ?></title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
 
     <meta http-equiv="Content-Type" content="text/html; charset=<?= strtolower(SITE_CHARSET); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
 
     <script data-skip-moving="true">
         var BX        = {
@@ -64,7 +72,8 @@ if ($USER->IsAdmin()) {
 
     <?= $assets->getStrings(); ?>
 
-    <? $APPLICATION->ShowHeadScripts(); ?>
+    <?
+    $APPLICATION->ShowHeadScripts(); ?>
 
 </head>
 <body>
