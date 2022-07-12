@@ -8,9 +8,7 @@ global $USER, $APPLICATION;
 
 use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
-
 use Bitrix\Main\Config\Option;
-
 
 Loader::registerAutoLoadClasses(
     null,
@@ -45,8 +43,7 @@ if ($debug) {
 <html lang="<?= LANGUAGE_ID ?>">
 <head>
 
-    <title><?
-        $APPLICATION->ShowTitle(); ?></title>
+    <title><? $APPLICATION->ShowTitle(); ?></title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
 
@@ -72,8 +69,7 @@ if ($debug) {
 
     <?= $assets->getStrings(); ?>
 
-    <?
-    $APPLICATION->ShowHeadScripts(); ?>
+    <? $APPLICATION->ShowHeadScripts(); ?>
 
 </head>
 <body>

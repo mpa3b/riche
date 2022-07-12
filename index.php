@@ -1,24 +1,25 @@
 <?
-require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
-global $APPLICATION;
+
+require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
+
+global $APPLICATION, $USER;
+
 $APPLICATION->SetTitle('Главная');
-global $USER;
-$USER->Authorize(1);
+
 ?>
-<?
-$APPLICATION->IncludeComponent(
+
+<? $APPLICATION->IncludeComponent(
     "riche:banner",
     "",
     [
         'BLOCK_ID' => 'header_banner',
-        'FIELDS' => [
+        'FIELDS'   => [
             'ID',
             'NAME',
             'PREVIEW_TEXT',
             'DETAIL_TEXT',
         ]
     ]
-);?>
-<?
-require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
-?>
+); ?>
+
+<? require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>
