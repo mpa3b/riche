@@ -6,6 +6,8 @@ global $USER, $APPLICATION;
 
 ?>
 
+</div>
+
 <noindex>
     <? $APPLICATION->ShowCSS(true, false); // Output css site styles ?>
 </noindex>

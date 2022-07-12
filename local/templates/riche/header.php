@@ -38,6 +38,8 @@ if ($debug) {
 
 }
 
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/template.js');
+
 ?>
 <html lang="<?= LANGUAGE_ID ?>">
 <head>
@@ -73,6 +75,8 @@ if ($debug) {
 
 </head>
 <body>
+
+<div id="page">
 
 <?
 $APPLICATION->IncludeComponent(
