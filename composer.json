@@ -49,6 +49,7 @@
     "npm-asset/tiny-slider": "^2.9",
     "npm-asset/vanilla-lazyload": "^17.4",
     "npm-asset/vue": "^3.2",
+    "npm-asset/vue-lazyload": "^1.3",
     "npm-asset/vuex": "^4.0",
     "rosell-dk/webp-convert": "^2.7"
   },

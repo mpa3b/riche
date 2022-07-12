@@ -6,9 +6,10 @@ if (!defined('B_PROLOG_INCLUDED') or B_PROLOG_INCLUDED !== true) {
 
 global $USER, $APPLICATION;
 
+use Bitrix\Main\Config\Option;
 use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
-use Bitrix\Main\Config\Option;
+use Riche\Template;
 
 Loader::registerAutoLoadClasses(
     null,
@@ -18,8 +19,6 @@ Loader::registerAutoLoadClasses(
         'Riche\Images'       => SITE_TEMPLATE_PATH . '/classes/Images.php'
     ]
 );
-
-use Riche\Template;
 
 $assets = Asset::getInstance();
 
@@ -43,7 +42,8 @@ if ($debug) {
 <html lang="<?= LANGUAGE_ID ?>">
 <head>
 
-    <title><? $APPLICATION->ShowTitle(); ?></title>
+    <title><?
+        $APPLICATION->ShowTitle(); ?></title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
 
@@ -75,7 +75,6 @@ if ($debug) {
 <body>
 
 <?
-
 $APPLICATION->IncludeComponent(
     "riche:menu",
     "",

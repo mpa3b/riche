@@ -1,12 +1,12 @@
 const Menu = {
-    name :     'Menu',
-    template : '',
-    data :     function () {
+    name    : 'Menu',
+    template: '',
+    data    : function () {
         return {
-            menuItems : []
+            menuItems: []
         };
     },
-    methods :  {},
+    methods : {},
     mounted() {
         this.menuItems = this.$attrs.data;
     }
