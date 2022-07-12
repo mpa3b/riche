@@ -1,7 +1,7 @@
 const App = {
-    name :     'Banner',
-    template : '',
-    data :     function () {
+    name    : 'Banner',
+    template: '',
+    data    : function () {
         return {
             banners : []
         };
@@ -14,7 +14,7 @@ const App = {
             };
         }
     },
-    mounted() {
+    mounted : () => {
         this.banners = this.$attrs.data;
 
         fetch('/api/riche/main/banner/get/', {
@@ -37,4 +37,5 @@ const App = {
                 console.error('There was an error!', error);
             });
     }
-};
+}
+;

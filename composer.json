@@ -1,23 +1,23 @@
 {
-  "name"             : "riche/website--v3",
-  "description"      : "Сайт RICHE.SKIN, третья итерация",
-  "type"             : "project",
-  "license"          : "proprietary",
-  "config"           : {
-    "sort-packages"      : true,
+  "name": "riche/website--v3",
+  "description": "Сайт RICHE.SKIN, третья итерация",
+  "type": "project",
+  "license": "proprietary",
+  "config": {
+    "sort-packages": true,
     "optimize-autoloader": true,
-    "preferred-install"  : "dist",
-    "vendor-dir"         : "./local/vendor/",
-    "bin-dir"            : "./local/bin/",
+    "preferred-install": "dist",
+    "vendor-dir": "./local/vendor/",
+    "bin-dir": "./local/bin/",
     "allow-plugins": {
       "composer/installers": true,
       "wikimedia/composer-merge-plugin": true,
       "oomphinc/composer-installers-extender": true
     }
   },
-  "authors"          : [
+  "authors": [
     {
-      "name" : "Илья Петровский",
+      "name": "Илья Петровский",
       "email": "ilya.petrovsky@yandex.ru"
     },
     {
@@ -26,31 +26,25 @@
     }
   ],
   "minimum-stability": "stable",
-  "prefer-stable"    : true,
-  "autoload"         : {
+  "prefer-stable": true,
+  "autoload": {
     "psr-4": {
       "Local\\": "./local/classes/"
     }
   },
-  "repositories"     : [
+  "repositories": [
     {
       "type": "composer",
-      "url" : "https://asset-packagist.org"
+      "url": "https://asset-packagist.org"
     }
   ],
-  "require"          : {
+  "require": {
     "ext-fileinfo": "*",
     "ext-gd": "*",
     "andreyryabin/sprint.editor": "^3.0",
     "andreyryabin/sprint.migration": "^3.29",
     "hafsoft/php-minifier": "^0.9.1",
     "npm-asset/inputmask": "^5.0",
-    "npm-asset/jquery": "^3.6",
-    "npm-asset/jquery-autocomplete": "^1.2",
-    "npm-asset/jquery-colorbox": "^1.6",
-    "npm-asset/jquery-mousewheel": "^3.1",
-    "npm-asset/jquery-sticky": "^1.0",
-    "npm-asset/jquery-validation": "^1.19",
     "npm-asset/normalize-css": "^2.3",
     "npm-asset/tiny-slider": "^2.9",
     "npm-asset/vanilla-lazyload": "^17.4",
@@ -58,14 +52,14 @@
     "npm-asset/vuex": "^4.0",
     "rosell-dk/webp-convert": "^2.7"
   },
-  "require-dev"      : {
-    "composer/installers"                  : "^1.7",
-    "kint-php/kint"                        : "^3.0",
+  "require-dev": {
+    "composer/installers": "^1.7",
+    "kint-php/kint": "^3.0",
     "oomphinc/composer-installers-extender": "^2.0",
-    "wikimedia/composer-merge-plugin"      : "^2.0"
+    "wikimedia/composer-merge-plugin": "^2.0"
   },
-  "extra"            : {
-    "merge-plugin"   : {
+  "extra": {
+    "merge-plugin": {
       "require": [
         "bitrix/composer-bx.json"
       ]
@@ -81,7 +75,7 @@
       "npm-asset-library"
     ],
     "installer-paths": {
-      "./local/modules/{$name}/"   : [
+      "./local/modules/{$name}/": [
         "type:bitrix-d7-module",
         "type:bitrix-module"
       ],
@@ -89,7 +83,7 @@
         "type:bitrix-d7-component",
         "type:bitrix-component"
       ],
-      "./local/assets/{$name}"     : [
+      "./local/assets/{$name}": [
         "type:bower-asset",
         "type:npm-asset",
         "type:bower-asset-library",
