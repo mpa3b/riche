@@ -4,3 +4,12 @@ const Page = Vue.createApp(
         mount: '#vue-root'
     }
 );
+
+document.addEventListener(
+    'DOMContentLoaded',
+    () => {
+
+        Page.mount();
+
+    }
+);

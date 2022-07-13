@@ -5,6 +5,10 @@
       <sourceFolder url="file://$MODULE_DIR$/./local/classes" isTestSource="false" packagePrefix="Local\" />
       <sourceFolder url="file://$MODULE_DIR$/local/components" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/local/modules" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bitrix/components" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bitrix/modules" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bitrix/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bitrix/tools" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/oomphinc/composer-installers-extender" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/kint-php/kint" />

@@ -3,6 +3,9 @@ const MenuComponent = Page.component(
     {
         name    : 'MenuComponent',
         template: '#menu--default',
+        props: {
+            title: 'Меню'
+        },
         data    : () => {
 
             return {

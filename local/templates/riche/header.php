@@ -70,24 +70,24 @@ if ($currentDirectoryPath == '') {
 
     <script data-skip-moving="true">
         var BX        = {
-                message: () => {
+                message : () => {
                     return false;
                 },
-                ready  : () => {
+                ready :   () => {
                     return false;
                 }
             },
             bxSession = {
-                Expand: () => {
+                Expand : () => {
                     return false;
                 }
             };
     </script>
 
     <?= $assets->getStrings(); ?>
+    <?= $assets->getCss(); ?>
 
-    <?
-    $APPLICATION->ShowHeadScripts(); ?>
+    <? $APPLICATION->ShowHeadScripts(); ?>
 
 </head>
 <body>
@@ -96,15 +96,11 @@ if ($currentDirectoryPath == '') {
 
 <div id="page" class="<?= $pageHtmlClasses; ?>">
 
-    <?
-
-    $APPLICATION->IncludeComponent(
-        'vue:menu',
-        '.default'
-    );
-
-    ?>
-
 <?
+
+$APPLICATION->IncludeComponent(
+    'vue:menu',
+    '.default'
+);
 
 ?>
