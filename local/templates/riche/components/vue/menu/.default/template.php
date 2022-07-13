@@ -15,8 +15,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var array $templateData */
 /** @var \CBitrixComponent $component */
 
-$this->setFrameMode(false); // Композит БУС работать не будет, у нас нет BX.
-
 ?>
 
 <?
@@ -24,16 +22,17 @@ $this->setFrameMode(false); // Композит БУС работать не б�
 
     <div id="menu--default"></div>
 
-    <template component="Menu">
-        <nav>
+    <template id="menu--default--template">
+        <nav :title="title">
             <ul>
                 <li v-for="item in items">
-                    <i v-if="item.icon" :data-icon="icon"></i>
-                    <a :href="item.href" v-if="item.title">{{ item.name }}</a>
+                    <i v-if="item.icon !== null" :data-icon="icon"></i>
+                    <a :href="item.href" v-if="item.name !== null">{{ item.name }}</a>
                 </li>
             </ul>
         </nav>
     </template>
+
 
 <?
 

@@ -1,23 +1,23 @@
-let Menu = Page.component(
+Page.component(
     'Menu',
     {
-        name : 'Menu component',
-        mount: '#menu--default',
-        data : () => {
-            return {
-                items: [
-                    {
-                        href: '/',
-                        icon: 'root',
-                        name: 'Главная'
-                    },
-                    {
-                        href: '/shop/',
-                        icon: 'shop',
-                        name: 'Магазин'
-                    }
-                ]
-            }
+        name    : 'Menu component',
+        template: '#menu--default--template',
+        props   : {
+            title: 'Menu default component',
+            items: [
+                {
+                    href: '/',
+                    icon: 'root',
+                    name: 'Главная'
+                },
+                {
+                    href: '/shop/',
+                    icon: 'shop',
+                    name: 'Магазин'
+                }
+            ]
         }
     }
 );
+
