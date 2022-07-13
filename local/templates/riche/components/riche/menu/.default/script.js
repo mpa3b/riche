@@ -1,13 +1,15 @@
 const MenuComponent = {
     name    : 'MenuComponent',
-    template: '',
+    template: '#menu--template',
+    props: {
+        items: Array
+    },
     data    : function () {
         return {
             menuItems: []
         };
     },
-    methods : {},
-    mounted() {
-        this.menuItems = this.$attrs.data;
+    created(){
+        this.menuItems = this.items;
     }
 };

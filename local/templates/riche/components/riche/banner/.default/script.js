@@ -1,6 +1,9 @@
 const BannerComponent = {
     name    : 'BannerComponent',
     template: '#banner--template',
+    props: {
+        items: Array
+    },
     data    : () => {
         return {
             banners: []
@@ -13,6 +16,9 @@ const BannerComponent = {
                 desktop: banner.DETAIL_PICTURE
             };
         }
+    },
+    created(){
+        this.banners = this.items;
     },
     mounted() {
 

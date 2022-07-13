@@ -12,12 +12,3 @@
         </li>
     </ul>
 </template>
-
-<script type="module">
-    export default {
-        components: {
-            BannerComponent
-        }
-    };
-</script>
-

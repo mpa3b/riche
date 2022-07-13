@@ -7,7 +7,32 @@ global $APPLICATION, $USER;
 $APPLICATION->SetTitle('Главная');
 
 ?>
-<?$APPLICATION->IncludeComponent(
+<? $menuComponent = $APPLICATION->IncludeComponent(
+    "riche:menu",
+    "",
+    [
+        'BLOCK_ID'   => 'header_menu',
+        'MENU_ITEMS' => [
+            [
+                'link' => '/',
+                'name' => 'Главная'
+            ],
+            [
+                'link' => '/shop/hair',
+                'name' => 'Волосы'
+            ],
+            [
+                'link' => '/shop/face',
+                'name' => 'Лицо'],
+            [
+                'link' => '/shop/body',
+                'name' => 'Тело'
+            ]
+        ]
+    ]
+);
+?>
+<?$bannerComponent = $APPLICATION->IncludeComponent(
     "riche:banner",
     "",
     [
@@ -22,7 +47,8 @@ $APPLICATION->SetTitle('Главная');
 );
 ?>
 <section id="vue-app">
-    <banner-component></banner-component>
+    <menu-component v-bind:items='<?=$menuComponent['vue-props']?>'></menu-component>
+    <banner-component :items='<?=$bannerComponent['vue-props']?>'></banner-component>
 </section>
 
 

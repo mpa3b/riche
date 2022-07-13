@@ -28,6 +28,8 @@ class BannerComponent extends CBitrixComponent
         $this->arResult['TEMPLATE_ID'] = strtolower("RCH_" . $this->arParams['BLOCK_ID'] . "_template");
         $this->arResult['RESULT']      = json_encode($this->getBanners());
 
+
+        $this->arResult['vue-props'] = json_encode($this->getBanners());
         $this->includeComponentTemplate();
 
         return $this->arResult;
