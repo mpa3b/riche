@@ -6,5 +6,7 @@ local/vendor
 
 local/modules/sprint.*/
 
-composer.lock
 .idea
+
+*.css.map
+*.js.map

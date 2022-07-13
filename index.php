@@ -8,18 +8,6 @@ $APPLICATION->SetTitle('Главная');
 
 ?>
 
-<? $APPLICATION->IncludeComponent(
-    "riche:banner",
-    "",
-    [
-        'BLOCK_ID' => 'header_banner',
-        'FIELDS'   => [
-            'ID',
-            'NAME',
-            'PREVIEW_TEXT',
-            'DETAIL_TEXT',
-        ]
-    ]
-); ?>
+
 
 <? require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>

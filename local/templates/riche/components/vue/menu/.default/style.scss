@@ -1,0 +1,22 @@
+#menu--default {
+
+  nav {
+    display: block;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+
+    li {
+
+      a {
+        display: block;
+        padding: 0.5rem 1rem;
+      }
+
+    }
+
+  }
+
+}

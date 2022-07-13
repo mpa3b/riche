@@ -310,18 +310,15 @@
         },
         {
             "name": "npm-asset/babel--parser",
-            "version": "v7.18.7",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:babel/babel.git",
-                "reference": "58dc2617580ff1d6df59b157c14e3623cfa80edc"
-            },
+            "version": "7.18.8",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/babel/babel/zipball/58dc2617580ff1d6df59b157c14e3623cfa80edc",
-                "reference": "58dc2617580ff1d6df59b157c14e3623cfa80edc"
+                "type": "tar",
+                "url": "https://registry.npmjs.org/@babel/parser/-/parser-7.18.8.tgz"
             },
-            "type": "npm-asset"
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "npm-asset/csstype",

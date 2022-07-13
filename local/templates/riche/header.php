@@ -6,6 +6,7 @@ if (!defined('B_PROLOG_INCLUDED') or B_PROLOG_INCLUDED !== true) {
 
 global $USER, $APPLICATION;
 
+use Bitrix\Main\Application;
 use Bitrix\Main\Config\Option;
 use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
@@ -40,6 +41,18 @@ if ($debug) {
 
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/template.js');
 
+$currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
+
+if ($currentDirectoryPath == '') {
+
+    $pageHtmlClasses = 'page--front';
+
+} else {
+
+    $pageHtmlClasses = 'page--' . str_replace(DIRECTORY_SEPARATOR, '--', ltrim(strtolower($currentDirectoryPath), DIRECTORY_SEPARATOR));
+
+}
+
 ?>
 <html lang="<?= LANGUAGE_ID ?>">
 <head>
@@ -52,6 +65,8 @@ $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/template.js');
     <meta http-equiv="Content-Type" content="text/html; charset=<?= strtolower(SITE_CHARSET); ?>">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
+
+    <meta http-equiv="x-dns-prefetch-control" content="on">
 
     <script data-skip-moving="true">
         var BX        = {
@@ -71,36 +86,23 @@ $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/template.js');
 
     <?= $assets->getStrings(); ?>
 
-    <? $APPLICATION->ShowHeadScripts(); ?>
+    <?
+    $APPLICATION->ShowHeadScripts(); ?>
 
 </head>
 <body>
 
-<div id="page">
+<div id="page" class="<?= $pageHtmlClasses; ?>">
+
+    <?
+
+    $APPLICATION->IncludeComponent(
+        'vue:menu',
+        '.default'
+    );
+
+    ?>
 
 <?
-$APPLICATION->IncludeComponent(
-    "riche:menu",
-    "",
-    [
-        'BLOCK_ID'   => 'header_menu',
-        'MENU_ITEMS' => [
-            [
-                'link' => '/',
-                'name' => 'Главная'
-            ],
-            [
-                'link' => '/shop/hair',
-                'name' => 'Волосы'
-            ],
-            [
-                'link' => '/shop/face',
-                'name' => 'Лицо'],
-            [
-                'link' => '/shop/body',
-                'name' => 'Тело'
-            ]
-        ]
-    ]
-);
+
 ?>

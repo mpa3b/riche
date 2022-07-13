@@ -1,11 +1,1 @@
-const Page = {
-    name    : 'Page',
-    template: '#page',
-    data    : () => {
-
-    },
-    methods : {},
-    mounted : () => {
-
-    }
-};
+const Page = Vue.createApp('#page');
