@@ -1,23 +1,26 @@
-Page.component(
-    'Menu',
+const MenuComponent = Page.component(
+    'MenuComponent',
     {
-        name    : 'Menu component',
-        template: '#menu--default--template',
-        props   : {
-            title: 'Menu default component',
-            items: [
-                {
-                    href: '/',
-                    icon: 'root',
-                    name: 'Главная'
-                },
-                {
-                    href: '/shop/',
-                    icon: 'shop',
-                    name: 'Магазин'
-                }
-            ]
+        name    : 'MenuComponent',
+        template: '#menu--default',
+        data    : () => {
+
+            return {
+                title: 'Menu default component',
+                items: [
+                    {
+                        href: '/',
+                        icon: 'root',
+                        name: 'Главная'
+                    },
+                    {
+                        href: '/shop/',
+                        icon: 'shop',
+                        name: 'Магазин'
+                    }
+                ]
+            }
+
         }
     }
 );
-

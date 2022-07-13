@@ -20,9 +20,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 <?
 // HTML ID формируется из имени компонента и имени шаблона, нужно автоматизировать ?>
 
-    <div id="menu--default"></div>
-
-    <template id="menu--default--template">
+    <template id="menu--default">
         <nav :title="title">
             <ul>
                 <li v-for="item in items">
@@ -32,7 +30,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
             </ul>
         </nav>
     </template>
-
 
 <?
 
