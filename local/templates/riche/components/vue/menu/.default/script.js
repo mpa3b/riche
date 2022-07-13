@@ -3,17 +3,21 @@ let Menu = Page.component(
     {
         name : 'Menu component',
         mount: '#menu--default',
-        items: [
-            {
-                href: '/',
-                icon: 'root',
-                name: 'Главная'
-            },
-            {
-                href: '/shop/',
-                icon: 'shop',
-                name: 'Магазин'
+        data : () => {
+            return {
+                items: [
+                    {
+                        href: '/',
+                        icon: 'root',
+                        name: 'Главная'
+                    },
+                    {
+                        href: '/shop/',
+                        icon: 'shop',
+                        name: 'Магазин'
+                    }
+                ]
             }
-        ]
+        }
     }
 );
