@@ -30,5 +30,6 @@ class BannerComponent extends CBitrixComponent
 
         $this->includeComponentTemplate();
 
+        return $this->arResult;
     }
 }

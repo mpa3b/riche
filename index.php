@@ -7,8 +7,7 @@ global $APPLICATION, $USER;
 $APPLICATION->SetTitle('Главная');
 
 ?>
-
-<? $APPLICATION->IncludeComponent(
+<?$APPLICATION->IncludeComponent(
     "riche:banner",
     "",
     [
@@ -20,6 +19,12 @@ $APPLICATION->SetTitle('Главная');
             'DETAIL_TEXT',
         ]
     ]
-); ?>
+);
+?>
+<section id="vue-app">
+    <banner-component></banner-component>
+</section>
+
+
 
 <? require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>

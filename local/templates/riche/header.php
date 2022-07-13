@@ -22,6 +22,8 @@ Loader::registerAutoLoadClasses(
 
 $assets = Asset::getInstance();
 
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
+
 $assets->addCss(Template::ASSETS . '/normalize-css/normalize.css');
 
 if (Option::get('main', 'update_devsrv') == 'Y') $debug = true;
@@ -73,30 +75,3 @@ if ($debug) {
 
 </head>
 <body>
-
-<?
-$APPLICATION->IncludeComponent(
-    "riche:menu",
-    "",
-    [
-        'BLOCK_ID'   => 'header_menu',
-        'MENU_ITEMS' => [
-            [
-                'link' => '/',
-                'name' => 'Главная'
-            ],
-            [
-                'link' => '/shop/hair',
-                'name' => 'Волосы'
-            ],
-            [
-                'link' => '/shop/face',
-                'name' => 'Лицо'],
-            [
-                'link' => '/shop/body',
-                'name' => 'Тело'
-            ]
-        ]
-    ]
-);
-?>

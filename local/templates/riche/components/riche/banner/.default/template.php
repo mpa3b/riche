@@ -1,6 +1,4 @@
-<div id="<?= $arResult['SECTION_ID'] ?>"></div>
-
-<template id="<?= $arResult['TEMPLATE_ID'] ?>">
+<template id="banner--template">
     <ul>
         <li v-for="banner in banners" class="banner_item">
             <picture>
@@ -15,17 +13,11 @@
     </ul>
 </template>
 
-<script>
-
-    App.template = "#<?=$arResult['TEMPLATE_ID']?>";
-
-    const app = Vue.createApp(
-        {
-            render: () => Vue.h(App)
-        },
-        {
-            data: JSON.parse('<?=$arResult['RESULT']?>')
+<script type="module">
+    export default {
+        components: {
+            BannerComponent
         }
-    ).mount("#<?=$arResult['SECTION_ID']?>");
-
+    };
 </script>
+

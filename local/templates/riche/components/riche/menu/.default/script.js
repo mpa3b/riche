@@ -1,5 +1,5 @@
-const Menu = {
-    name    : 'Menu',
+const MenuComponent = {
+    name    : 'MenuComponent',
     template: '',
     data    : function () {
         return {
