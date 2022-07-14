@@ -24,6 +24,7 @@ Loader::registerAutoLoadClasses(
 $assets = Asset::getInstance();
 
 $assets->addCss(Template::ASSETS . '/normalize-css/normalize.css');
+$assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.js');
 
 if (Option::get('main', 'update_devsrv') == 'Y') $debug = true;
 
@@ -33,11 +34,11 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
 
 if ($currentDirectoryPath == '') {
 
-    $pageHtmlClasses = 'page--front';
+    $pageHtmlClasses = 'front';
 
 } else {
 
-    $pageHtmlClasses = 'page--' . str_replace(DIRECTORY_SEPARATOR, '--', ltrim(strtolower($currentDirectoryPath), DIRECTORY_SEPARATOR));
+    $pageHtmlClasses = str_replace(DIRECTORY_SEPARATOR, '--', ltrim(strtolower($currentDirectoryPath), DIRECTORY_SEPARATOR));
 
 }
 
@@ -75,18 +76,10 @@ if ($currentDirectoryPath == '') {
     <?= $assets->getStrings(); ?>
     <?= $assets->getCss(); ?>
 
-    <? $APPLICATION->ShowHeadScripts(); ?>
+    <?
+    $APPLICATION->ShowHeadScripts(); ?>
 
 </head>
 <body>
 
 <div id="page" class="<?= $pageHtmlClasses; ?>">
-
-<?
-
-$APPLICATION->IncludeComponent(
-    'vue:menu',
-    '.default'
-);
-
-?>
