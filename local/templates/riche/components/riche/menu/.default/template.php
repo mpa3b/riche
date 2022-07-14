@@ -21,10 +21,16 @@
  * @var CMain                    $APPLICATION
  */
 ?>
-<template id="menu--template">
+<script type="text/template" id="menu--template">
     <ul class="menu-wrapper">
-        <li v-for="menu in menuItems">
-            <a :href="menu.link">{{ menu.name }}</a>
-        </li>
+
+        <% // repeat items
+        _.each(items,function(item,key,list){
+        %>
+            <li class="<%= key %>">
+                <a href="<%- item.link %>"><%- item.name %></a>
+            </li>
+        <% }); %>
     </ul>
-</template>
+</script>
+<div id="menu--template-element"></div>

@@ -1,15 +1,9 @@
-const MenuComponent = {
-    name    : 'MenuComponent',
-    template: '#menu--template',
-    props: {
-        items: Array
-    },
-    data    : function () {
-        return {
-            menuItems: []
-        };
-    },
-    created(){
-        this.menuItems = this.items;
-    }
-};
+const template = document.getElementById('menu--template').innerHTML,
+      items = [
+          {
+              name: "Лицо",
+              link: "/face"
+          }
+      ];
+
+document.getElementById('menu--template-element').innerHTML = _.template(template,{items:items})();

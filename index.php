@@ -46,11 +46,5 @@ $APPLICATION->SetTitle('Главная');
     ]
 );
 ?>
-<section id="vue-app">
-    <menu-component v-bind:items='<?=$menuComponent['vue-props']?>'></menu-component>
-    <banner-component :items='<?=$bannerComponent['vue-props']?>'></banner-component>
-</section>
-
-
 
 <? require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>

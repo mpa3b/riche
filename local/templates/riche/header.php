@@ -29,15 +29,9 @@ $assets->addCss(Template::ASSETS . '/normalize-css/normalize.css');
 if (Option::get('main', 'update_devsrv') == 'Y') $debug = true;
 
 if ($debug) {
-
-    $assets->addJs(Template::ASSETS . '/vue/dist/vue.global.js');
-    $assets->addJs(Template::ASSETS . '/vuex/dist/vuex.global.js');
-
+    $assets->addJs(Template::ASSETS. '/underscore/underscore-umd.js');
 } else {
-
-    $assets->addJs(Template::ASSETS . '/vuex/dist/vuex.global.prod.js');
-    $assets->addJs(Template::ASSETS . '/vuex/dist/vuex.global.prod.js');
-
+    $assets->addJs(Template::ASSETS. '/underscore/underscore-umd.min.js');
 }
 
 ?>
