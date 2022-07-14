@@ -1,9 +1,7 @@
-const template = document.getElementById('menu--template').innerHTML,
-      items = [
+const items = [
           {
               name: "Лицо",
               link: "/face"
           }
-      ];
-
-document.getElementById('menu--template-element').innerHTML = _.template(template,{items:items})();
+];
+underscore('menu--template', items);

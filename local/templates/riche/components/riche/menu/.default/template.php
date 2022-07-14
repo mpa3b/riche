@@ -33,4 +33,3 @@
         <% }); %>
     </ul>
 </script>
-<div id="menu--template-element"></div>
