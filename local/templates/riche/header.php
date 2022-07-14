@@ -92,9 +92,7 @@ if ($currentDirectoryPath == '') {
 </head>
 <body>
 
-<div id="vue-root"></div>
-
-<div id="page" class="<?= $pageHtmlClasses; ?>">
+<div id="page--root" class="<?= $pageHtmlClasses; ?>"></div>
 
 <?
 
