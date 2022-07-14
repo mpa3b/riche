@@ -3,8 +3,6 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/./local/classes" isTestSource="false" packagePrefix="Local\" />
-      <sourceFolder url="file://$MODULE_DIR$/local/components" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/local/modules" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/bitrix/components" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/bitrix/modules" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/bitrix/services" isTestSource="false" />

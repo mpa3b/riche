@@ -27,18 +27,6 @@ $assets->addCss(Template::ASSETS . '/normalize-css/normalize.css');
 
 if (Option::get('main', 'update_devsrv') == 'Y') $debug = true;
 
-if ($debug) {
-
-    $assets->addJs(Template::ASSETS . '/vue/dist/vue.global.js');
-    $assets->addJs(Template::ASSETS . '/vuex/dist/vuex.global.js');
-
-} else {
-
-    $assets->addJs(Template::ASSETS . '/vuex/dist/vuex.global.prod.js');
-    $assets->addJs(Template::ASSETS . '/vuex/dist/vuex.global.prod.js');
-
-}
-
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/template.js');
 
 $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
@@ -91,8 +79,6 @@ if ($currentDirectoryPath == '') {
 
 </head>
 <body>
-
-<div id="vue-root"></div>
 
 <div id="page" class="<?= $pageHtmlClasses; ?>">
 
