@@ -10,7 +10,5 @@ $assets = Asset::getInstance();
 
 ?>
 
-</div>
-
 </body>
 </html>
