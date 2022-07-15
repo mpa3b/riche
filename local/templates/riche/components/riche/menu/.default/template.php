@@ -21,3 +21,10 @@
  * @var CMain                    $APPLICATION
  */
 ?>
+<ul id="main_menu">
+    <?foreach ($arResult['ITEMS'] as $arMenu): ?>
+        <li>
+            <a href="<?=$arMenu['1']?>"><?=$arMenu['0']?></a>
+        </li>
+    <?endforeach;?>
+</ul>

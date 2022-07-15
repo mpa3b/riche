@@ -9,24 +9,8 @@ $USER->Authorize(1);
     "riche:menu",
     "",
     [
-        'BLOCK_ID'   => 'header_menu',
-        'MENU_ITEMS' => [
-            [
-                'link' => '/',
-                'name' => 'Главная'
-            ],
-            [
-                'link' => '/shop/hair',
-                'name' => 'Волосы'
-            ],
-            [
-                'link' => '/shop/face',
-                'name' => 'Лицо'],
-            [
-                'link' => '/shop/body',
-                'name' => 'Тело'
-            ]
-        ]
+        'MENU_ITEMS' => 'main',
+        'CACHE_TIME' => 7200
     ]
 );
 ?>
