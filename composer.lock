@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a096c55e2b6b694391db0f503ff9e4d",
+    "content-hash": "d5f02ee613193b4309b13454253d2db4",
     "packages": [
         {
             "name": "andreyryabin/sprint.editor",
@@ -333,18 +333,6 @@
             ]
         },
         {
-            "name": "npm-asset/mustache",
-            "version": "4.2.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/mustache/-/mustache-4.2.0.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
             "name": "npm-asset/normalize-css",
             "version": "2.3.1",
             "dist": {
@@ -365,6 +353,18 @@
             "dist": {
                 "type": "tar",
                 "url": "https://registry.npmjs.org/tiny-slider/-/tiny-slider-2.9.4.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/underscore",
+            "version": "1.13.4",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/underscore/-/underscore-1.13.4.tgz"
             },
             "type": "npm-asset",
             "license": [
