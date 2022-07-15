@@ -23,21 +23,12 @@ Loader::registerAutoLoadClasses(
 $assets = Asset::getInstance();
 
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
-
+$assets->addJs('//code.jquery.com/jquery-3.6.0.min.js');
 $assets->addCss(Template::ASSETS . '/normalize-css/normalize.css');
 
 if (Option::get('main', 'update_devsrv') == 'Y') $debug = true;
-
 if ($debug) {
-
-
-    $assets->addJs(Template::ASSETS. '/underscore/underscore-umd.js');
-
 } else {
-
-
-    $assets->addJs(Template::ASSETS. '/underscore/underscore-umd.min.js');
-
 }
 
 ?>
@@ -52,7 +43,6 @@ if ($debug) {
     <meta http-equiv="Content-Type" content="text/html; charset=<?= strtolower(SITE_CHARSET); ?>">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script data-skip-moving="true">
         var BX        = {
                 message: () => {
@@ -71,7 +61,7 @@ if ($debug) {
 
     <?= $assets->getStrings(); ?>
 
-    <? $APPLICATION->ShowHeadScripts(); ?>
+    <?= $assets->getJs(); ?>
 
 </head>
 <body>

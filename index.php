@@ -1,13 +1,11 @@
-<?
-
-require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
+<? require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 
 global $APPLICATION, $USER;
 
 $APPLICATION->SetTitle('Главная');
-
+$USER->Authorize(1);
 ?>
-<? $menuComponent = $APPLICATION->IncludeComponent(
+<? $APPLICATION->IncludeComponent(
     "riche:menu",
     "",
     [
@@ -32,7 +30,7 @@ $APPLICATION->SetTitle('Главная');
     ]
 );
 ?>
-<?$bannerComponent = $APPLICATION->IncludeComponent(
+<? $APPLICATION->IncludeComponent(
     "riche:banner",
     "",
     [
