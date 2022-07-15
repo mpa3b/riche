@@ -42,6 +42,8 @@ if ($currentDirectoryPath == '') {
 
 }
 
+$assets->addJs(Template::ASSETS . '/underscore/underscore-min.js');
+
 ?>
 <html lang="<?= LANGUAGE_ID ?>">
 <head>
