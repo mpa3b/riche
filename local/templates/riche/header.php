@@ -82,4 +82,4 @@ if ($currentDirectoryPath == '') {
 </head>
 <body>
 
-<div id="page" class="<?= $pageHtmlClasses; ?>">
+<div id="page" class="page <?= $pageHtmlClasses; ?>">
