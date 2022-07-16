@@ -9,7 +9,6 @@ class MenuComponent extends CBitrixComponent
 
         $cache = Cache::createInstance();
         if ($cache->initCache($this->arParams['CACHE_TIME'], $this->arParams['MENU_ITEMS']."_menu")) {
-            //TODO: Переделать сборку меню в нормальный вид name=> link=>
             $this->arResult['ITEMS'] = $cache->getVars();
         }
         elseif ($cache->startDataCache()) {
@@ -17,9 +16,17 @@ class MenuComponent extends CBitrixComponent
             if(file_exists($_SERVER["DOCUMENT_ROOT"].'/'.$this->arParams['MENU_ITEMS'].'.menu_ext.php'))
                 require_once $_SERVER["DOCUMENT_ROOT"].'/'.$this->arParams['MENU_ITEMS'].'.menu_ext.php';
 
-            $cache->endDataCache($aMenuLinks);
+            foreach ($aMenuLinks as $menuItems) {
+                $resultMenu[] = [
+                    'name' => $menuItems[0],
+                    'link' => $menuItems[1],
+                    'property' => $menuItems[3]
+                ];
+            }
 
-            $this->arResult['ITEMS'] = $aMenuLinks;
+            $cache->endDataCache($resultMenu);
+
+            $this->arResult['ITEMS'] = $resultMenu;
         }
 
         $this->includeComponentTemplate();
