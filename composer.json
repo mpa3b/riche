@@ -47,7 +47,6 @@
     "npm-asset/inputmask": "^5.0",
     "npm-asset/normalize-css": "^2.3",
     "npm-asset/tiny-slider": "^2.9",
-    "npm-asset/underscore": "^1.13",
     "npm-asset/vanilla-lazyload": "^17.4",
     "rosell-dk/webp-convert": "^2.7"
   },
