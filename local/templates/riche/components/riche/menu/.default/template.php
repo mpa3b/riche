@@ -21,10 +21,12 @@
  * @var CMain                    $APPLICATION
  */
 ?>
-<ul id="main_menu">
-    <?foreach ($arResult['ITEMS'] as $arMenu): ?>
-        <li>
-            <a href="<?=$arMenu['link']?>"><?=$arMenu['name']?></a>
-        </li>
-    <?endforeach;?>
-</ul>
+<?php if (!empty($arResult['ITEMS'])) { ?>
+    <ul id="menu--default">
+        <?php foreach ($arResult['ITEMS'] as $arMenu): ?>
+            <li>
+                <a href="<?= $arMenu['link'] ?>"><?= $arMenu['name'] ?></a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+<?php } ?>

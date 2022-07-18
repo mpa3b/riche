@@ -2,14 +2,17 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/local/vendor/autoload.php";
 
+use Bitrix\Main\Config\Option;
 use Bitrix\Main\EventManager;
 use Bitrix\Main\Loader;
 use Local\Buffer;
 
+//region костыль для очистки буфера от лишних элементов
+
 Loader::registerAutoLoadClasses(
     null,
     [
-        'buffer'      => '/local/classes/Buffer.php'
+        'buffer' => '/local/classes/Buffer.php'
     ]
 );
 
@@ -24,3 +27,23 @@ $eventManager->addEventHandler(
         "clean"
     ]
 );
+
+//endregion
+
+//region глобальная константа DEBUG
+
+/***
+ *
+ * @const DEBUG константа, определяющая режим работы сайта: отладочный, обычный. Значение задаётся через опцию "версия для отладки" в настройках обновления Битрикс.
+ *
+ */
+
+if (Option::get('main', 'update_devsrv') == 'Y') {
+    $debug = true;
+} else {
+    $debug = false;
+}
+
+define('DEBUG', $debug);
+
+//endregion

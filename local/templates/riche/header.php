@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<?
-if (!defined('B_PROLOG_INCLUDED') or B_PROLOG_INCLUDED !== true) {
-    die();
-}
+<?php if (!defined('B_PROLOG_INCLUDED') or B_PROLOG_INCLUDED !== true) die();
 
 global $USER, $APPLICATION;
 
-use Bitrix\Main\Config\Option;
+use Bitrix\Main\Application;
 use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
+use Riche\PreloadLinks;
 use Riche\Template;
 
 Loader::registerAutoLoadClasses(
@@ -22,18 +20,31 @@ Loader::registerAutoLoadClasses(
 
 $assets = Asset::getInstance();
 
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
-$assets->addJs('//code.jquery.com/jquery-3.6.0.min.js');
 
-$assets->addCss(Template::ASSETS . '/normalize-css/normalize.css');
+if (DEBUG) {
 
-if (Option::get('main', 'update_devsrv') == 'Y') $debug = true;
-
-if ($debug) {
+    $assets->addCss(Template::ASSETS . '/normalize-css/normalize.css');
+    $assets->addJs(Template::ASSETS . '/jquery/dist/jquery.min.js');
 
 } else {
 
+    PreloadLinks::preconnectDomain('cdnjs.cloudflare.com');
+
+    PreloadLinks::addHeadPrefetchAsset('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+    PreloadLinks::addHeadPrefetchAsset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js');
+
+    PreloadLinks::addHeadPreloadAsset('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+    PreloadLinks::addHeadPreloadAsset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js');
+
+    $assets->addString('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />');
+    $assets->addString('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>');
+
 }
+
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
+$assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
+
+$currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
 if ($currentDirectoryPath == '') {
 
@@ -48,8 +59,7 @@ if ($currentDirectoryPath == '') {
 <html lang="<?= LANGUAGE_ID ?>">
 <head>
 
-    <title><?
-        $APPLICATION->ShowTitle(); ?></title>
+    <title><?php $APPLICATION->ShowTitle(); ?></title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
 
@@ -78,8 +88,7 @@ if ($currentDirectoryPath == '') {
     <?= $assets->getStrings(); ?>
     <?= $assets->getCss(); ?>
 
-    <?
-    $APPLICATION->ShowHeadScripts(); ?>
+    <?php $APPLICATION->ShowHeadScripts(); ?>
 
 </head>
 

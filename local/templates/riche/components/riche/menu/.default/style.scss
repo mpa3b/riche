@@ -1,3 +1,14 @@
-#main_menu li{
-    display: inline-block;
+#menu--default {
+  display: flex;
+  flex-direction: row;
+
+  li {
+    display: block;
+
+    a {
+
+    }
+
+  }
+
 }
