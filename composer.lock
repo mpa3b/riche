@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6bf89059599a34d94678c6c3eb1774c6",
+    "content-hash": "d5f02ee613193b4309b13454253d2db4",
     "packages": [
         {
             "name": "andreyryabin/sprint.editor",
@@ -353,6 +353,18 @@
             "dist": {
                 "type": "tar",
                 "url": "https://registry.npmjs.org/tiny-slider/-/tiny-slider-2.9.4.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/underscore",
+            "version": "1.13.4",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/underscore/-/underscore-1.13.4.tgz"
             },
             "type": "npm-asset",
             "license": [
@@ -1193,5 +1205,5 @@
         "ext-gd": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.1.0"
 }

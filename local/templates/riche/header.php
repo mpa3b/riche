@@ -23,14 +23,18 @@ Loader::registerAutoLoadClasses(
 
 $assets = Asset::getInstance();
 
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
+$assets->addJs('//code.jquery.com/jquery-3.6.0.min.js');
+
 $assets->addCss(Template::ASSETS . '/normalize-css/normalize.css');
-$assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.js');
 
 if (Option::get('main', 'update_devsrv') == 'Y') $debug = true;
 
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/template.js');
+if ($debug) {
 
-$currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
+} else {
+
+}
 
 if ($currentDirectoryPath == '') {
 
@@ -41,7 +45,6 @@ if ($currentDirectoryPath == '') {
     $pageHtmlClasses = str_replace(DIRECTORY_SEPARATOR, '--', ltrim(strtolower($currentDirectoryPath), DIRECTORY_SEPARATOR));
 
 }
-
 ?>
 <html lang="<?= LANGUAGE_ID ?>">
 <head>
@@ -80,6 +83,4 @@ if ($currentDirectoryPath == '') {
     $APPLICATION->ShowHeadScripts(); ?>
 
 </head>
-<body>
-
-<div id="page" class="<?= $pageHtmlClasses; ?>">
+<body id="page" class="<?= $pageHtmlClasses; ?>">
