@@ -6,7 +6,6 @@ if (!defined('B_PROLOG_INCLUDED') or B_PROLOG_INCLUDED !== true) {
 
 global $USER, $APPLICATION;
 
-use Bitrix\Main\Application;
 use Bitrix\Main\Config\Option;
 use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
@@ -62,15 +61,15 @@ if ($currentDirectoryPath == '') {
 
     <script data-skip-moving="true">
         var BX        = {
-                message : () => {
+                message: () => {
                     return false;
                 },
-                ready :   () => {
+                ready  : () => {
                     return false;
                 }
             },
             bxSession = {
-                Expand : () => {
+                Expand: () => {
                     return false;
                 }
             };
@@ -83,4 +82,5 @@ if ($currentDirectoryPath == '') {
     $APPLICATION->ShowHeadScripts(); ?>
 
 </head>
+
 <body id="page" class="<?= $pageHtmlClasses; ?>">
