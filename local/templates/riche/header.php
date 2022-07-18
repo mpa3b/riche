@@ -61,7 +61,7 @@ if ($debug) {
 
     <?= $assets->getStrings(); ?>
 
-    <?= $assets->getJs(); ?>
+    <? $APPLICATION->ShowHeadScripts(); ?>
 
 </head>
 <body>

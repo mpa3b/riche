@@ -3,7 +3,7 @@
 global $APPLICATION, $USER;
 
 $APPLICATION->SetTitle('Главная');
-$USER->Authorize(1);
+//$USER->Authorize(1);
 ?>
 <? $APPLICATION->IncludeComponent(
     "riche:menu",
