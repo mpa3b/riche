@@ -1,4 +1,5 @@
 ./styles/*.css
 ./styles/*.css.map
 
+./scripts/*.min.js
 ./scripts/*.js.map

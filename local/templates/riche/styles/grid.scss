@@ -1,0 +1,27 @@
+@import "../vars";
+
+.wrap {
+
+  .grid,
+  .column {
+
+    display: flex;
+    flex-direction: column;
+
+    > * {
+      display: block;
+      box-sizing: border-box;
+    }
+
+  }
+
+  @media all and (min-width: $breakpoint_mobile) {
+
+    .grid {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+  }
+
+}

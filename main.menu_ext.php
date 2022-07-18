@@ -68,7 +68,6 @@
 //
 //}
 
-
 $aMenuLinks[] = [
     'FAQ',
     '/help/',
