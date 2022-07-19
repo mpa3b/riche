@@ -22,11 +22,17 @@
  */
 ?>
 <?php if (!empty($arResult['ITEMS'])) { ?>
-    <ul id="menu--default">
-        <?php foreach ($arResult['ITEMS'] as $arMenu): ?>
-            <li>
+
+    <div id="menu--default">
+
+        <nav role="navigation">
+            <?php foreach ($arResult['ITEMS'] as $arMenu): ?>
+
                 <a href="<?= $arMenu['link'] ?>"><?= $arMenu['name'] ?></a>
-            </li>
-        <?php endforeach; ?>
-    </ul>
+
+            <?php endforeach; ?>
+        </nav>
+
+    </div>
+
 <?php } ?>

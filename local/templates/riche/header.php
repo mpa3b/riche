@@ -20,7 +20,6 @@ Loader::registerAutoLoadClasses(
 
 $assets = Asset::getInstance();
 
-
 if (DEBUG) {
 
     $assets->addCss(Template::ASSETS . '/normalize-css/normalize.css');
@@ -43,6 +42,8 @@ if (DEBUG) {
 
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
+
+$assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
 
 $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 

@@ -1,14 +1,12 @@
 #menu--default {
-  display: flex;
-  flex-direction: row;
 
-  li {
-    display: block;
+  nav {
+    display: flex;
+    flex-direction: row;
 
     a {
-
+      display: block;
     }
-
   }
 
 }

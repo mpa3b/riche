@@ -5,7 +5,7 @@
   --color--base: #151515;
   --color--error: red;
 
-  --font--base: '';
+  --font--base: 'Gordita', sans-serif;
 
   --border-radius: 0.5em;
   --button--border-radius: var(--border-radius);
@@ -14,12 +14,39 @@
 
 }
 
-body {
+html {
+  font-size: 12pt;
+}
 
+body {
+  font-weight: normal;
+  font-size: 1rem;
+  font-family: var(--font--base);
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
 
+h5 {
+  font-size: 1.4rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 2.2rem;
 }
 
 p {
@@ -40,12 +67,15 @@ picture {
   }
 }
 
+img {
+
+}
+
 label {
 
 }
 
 //region controls
-
 
 
 //endregion

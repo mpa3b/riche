@@ -12,7 +12,7 @@ $APPLICATION->SetTitle('Главная');
     "riche:menu",
     "",
     [
-        'MENU_ITEMS' => 'main',
+        'MENU_NAME' => 'main',
         'CACHE_TIME' => 7200
     ]
 );
@@ -22,7 +22,7 @@ $APPLICATION->SetTitle('Главная');
     "riche:menu",
     "",
     [
-        'MENU_ITEMS' => 'header',
+        'MENU_NAME' => 'header',
         'CACHE_TIME' => 7200
     ]
 );
