@@ -23,9 +23,9 @@
 ?>
 <?php if (!empty($arResult['ITEMS'])) { ?>
 
-    <div id="menu--default">
+    <div id="menu--header">
 
-        <nav role="navigation">
+        <nav class="menu" role="navigation">
             <?php foreach ($arResult['ITEMS'] as $arMenu): ?>
 
                 <a href="<?= $arMenu['link']; ?>"><?= $arMenu['name']; ?></a>

@@ -3,7 +3,8 @@
 .wrap {
 
   .grid,
-  .column {
+  .column,
+  .row {
 
     display: flex;
     flex-direction: column;
@@ -18,13 +19,31 @@
 
   @media all and (min-width: $breakpoint_mobile) {
 
+    width: 87%;
+    margin: auto;
+
+    .row,
     .grid {
       flex-direction: row;
       flex-wrap: wrap;
-      padding: 0.5rem 1rem;
       margin: 0 -1rem;
+
+      > * {
+        padding: 0.5rem 1rem;
+      }
+
     }
 
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  @media all and (min-width: $breakpoint_desktop) {
+    width: 72%;
   }
 
 }

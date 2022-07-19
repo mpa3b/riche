@@ -48,7 +48,10 @@ if (DEBUG) {
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
 
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
+
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
+$assets->addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
+$assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
 
 $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
 
@@ -72,8 +75,6 @@ if ($currentDirectoryPath == '') {
     <meta http-equiv="Content-Type" content="text/html; charset=<?= strtolower(SITE_CHARSET); ?>">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
-
-    <meta http-equiv="x-dns-prefetch-control" content="on">
 
     <?php //region  favicon ?>
 
@@ -117,3 +118,49 @@ if ($currentDirectoryPath == '') {
 </head>
 
 <body id="page" class="<?= $pageHtmlClasses; ?>">
+
+<div id="page--header">
+
+    <div class="wrap">
+
+        <div class="row">
+
+            <div id="page--header--logo">
+
+                <? if ($currentDirectoryPath == "") { ?>
+
+                    <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg">
+
+                <? } else { ?>
+
+                    <a href="/">
+                        <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg">
+                    </a>
+
+                <? } ?>
+
+            </div>
+
+            <div id="page--header--menu">
+
+                <?php $APPLICATION->IncludeComponent(
+                    "riche:menu",
+                    "menu--header",
+                    [
+                        'MENU_NAME'  => 'main',
+                        'CACHE_TIME' => 7200
+                    ]
+                ); ?>
+
+            </div>
+
+            <div id="page--header--buttons">
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

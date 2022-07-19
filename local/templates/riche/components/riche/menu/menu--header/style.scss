@@ -1,12 +1,14 @@
-#menu--default {
+#menu--footer {
 
-  nav {
+  nav.menu {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
 
     a {
       display: block;
     }
+
   }
 
 }
