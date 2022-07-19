@@ -62,13 +62,29 @@ if ($currentDirectoryPath == '') {
 
     <title><?php $APPLICATION->ShowTitle(); ?></title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
-
     <meta http-equiv="Content-Type" content="text/html; charset=<?= strtolower(SITE_CHARSET); ?>">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
 
     <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <?php //region  favicon ?>
+
+    <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_TEMPLATE_PATH; ?>/favicons/favicon.ico"/>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= SITE_TEMPLATE_PATH; ?>/favicons/apple-touch-icon.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= SITE_TEMPLATE_PATH; ?>/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= SITE_TEMPLATE_PATH; ?>/favicons/favicon-16x16.png">
+
+    <link rel="mask-icon" href="<?= SITE_TEMPLATE_PATH; ?>/favicons/safari-pinned-tab.svg" color="#00a300">
+
+    <link rel="manifest" href="<?= SITE_TEMPLATE_PATH; ?>/site.webmanifest">
+
+    <meta name="msapplication-TileColor" content="#00a300">
+    <meta name="theme-color" content="#ffffff">
+
+    <?php //endregion ?>
 
     <script data-skip-moving="true">
         var BX        = {
