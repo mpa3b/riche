@@ -28,7 +28,7 @@
         <nav role="navigation">
             <?php foreach ($arResult['ITEMS'] as $arMenu): ?>
 
-                <a href="<?= $arMenu['link'] ?>"><?= $arMenu['name'] ?></a>
+                <a href="<?= $arMenu['link']; ?>"><?= $arMenu['name']; ?></a>
 
             <?php endforeach; ?>
         </nav>
