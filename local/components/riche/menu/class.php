@@ -13,8 +13,12 @@ class MenuComponent extends CBitrixComponent
         }
         elseif ($cache->startDataCache()) {
 
-            if(file_exists($_SERVER["DOCUMENT_ROOT"].'/'.$this->arParams['MENU_ITEMS'].'.menu_ext.php'))
-                require_once $_SERVER["DOCUMENT_ROOT"].'/'.$this->arParams['MENU_ITEMS'].'.menu_ext.php';
+            if(file_exists($_SERVER["DOCUMENT_ROOT"].'/.'.$this->arParams['MENU_ITEMS'].'.menu.php'))
+                require_once $_SERVER["DOCUMENT_ROOT"].'/.'.$this->arParams['MENU_ITEMS'].'.menu.php';
+
+            if(file_exists($_SERVER["DOCUMENT_ROOT"].'/.'.$this->arParams['MENU_ITEMS'].'.menu_ext.php'))
+                require_once $_SERVER["DOCUMENT_ROOT"].'/.'.$this->arParams['MENU_ITEMS'].'.menu_ext.php';
+
 
             foreach ($aMenuLinks as $menuItems) {
                 $resultMenu[] = [
