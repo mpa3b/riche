@@ -107,7 +107,8 @@ class Template
 
     }
 
-    public function templateName($name) : string {
+    public function templateName($name): string
+    {
 
         return $name;
 
