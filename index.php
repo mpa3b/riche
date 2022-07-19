@@ -18,4 +18,14 @@ $APPLICATION->SetTitle('Главная');
 );
 ?>
 
+<? $APPLICATION->IncludeComponent(
+    "riche:menu",
+    "",
+    [
+        'MENU_ITEMS' => 'header',
+        'CACHE_TIME' => 7200
+    ]
+);
+?>
+
 <? require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>
