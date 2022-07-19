@@ -53,8 +53,8 @@ class Buffer
     {
 
         $content = str_replace(
-            "</script></script>",
-            "</script>",
+            "type=\"text/javascript\"",
+            "",
             $content
         );
 
