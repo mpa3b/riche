@@ -23,6 +23,8 @@ $assets = Asset::getInstance();
 if (DEBUG) {
 
     $assets->addCss(Template::ASSETS . '/normalize-css/normalize.css');
+
+    $assets->addJs(Template::ASSETS . '/vanilla-lazyload/dist/lazyload.min.js');
     $assets->addJs(Template::ASSETS . '/jquery/dist/jquery.min.js');
 
 } else {
@@ -30,15 +32,20 @@ if (DEBUG) {
     PreloadLinks::preconnectDomain('cdnjs.cloudflare.com');
 
     PreloadLinks::addHeadPrefetchAsset('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+    PreloadLinks::addHeadPrefetchAsset('https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.3.1/lazyload.min.js');
     PreloadLinks::addHeadPrefetchAsset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js');
 
     PreloadLinks::addHeadPreloadAsset('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+    PreloadLinks::addHeadPreloadAsset('https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.3.1/lazyload.min.js');
     PreloadLinks::addHeadPreloadAsset('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js');
 
     $assets->addString('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />');
     $assets->addString('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>');
+    $assets->addString('<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/17.3.1/lazyload.min.js" integrity="sha512-lVcnjCLGjJTaZU55wD7H3f8SJVi6VV5cQRcmGuYcyIY607N/rzZGEl90lNgsiEhKygATryG/i6e5u2moDFs5kQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>');
 
 }
+
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
 
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
