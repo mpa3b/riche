@@ -35,7 +35,10 @@ global $USER, $APPLICATION;
         <div class="row">
 
             <div id="page--footer--outro">
-                RICHE
+
+                <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" loading="eager">
+                <span>RICHE</span>
+
             </div>
 
         </div>

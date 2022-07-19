@@ -55,6 +55,8 @@ $assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
 
 $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
 
+PreloadLinks::addHeadPreloadAsset(SITE_TEMPLATE_PATH . '/images/logo.svg');
+
 $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
 if ($currentDirectoryPath == '') {
@@ -129,12 +131,12 @@ if ($currentDirectoryPath == '') {
 
                 <? if ($currentDirectoryPath == "") { ?>
 
-                    <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg">
+                    <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" loading="eager">
 
                 <? } else { ?>
 
                     <a href="/">
-                        <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg">
+                        <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" loading="eager">
                     </a>
 
                 <? } ?>
