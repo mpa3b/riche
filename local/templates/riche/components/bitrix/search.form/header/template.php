@@ -58,20 +58,6 @@ $frame = $this->createFrame();
 
     </form>
 
-    <div class="result">
-
-        <div class="result--content hidden"></div>
-
-    </div>
-
-    <div class="no-result hidden">
-
-        <div class="wrap">
-            <p>К сожалению мы не нашли ничего по вашему запросу. Попробуйте начать поиск заново.</p>
-        </div>
-
-    </div>
-
     <? $frame->end(); ?>
 
 </div>
