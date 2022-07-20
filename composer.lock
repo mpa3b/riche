@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ebd153ad26a4c203fa4a8c8cfdc9aed",
+    "content-hash": "0a1ee361b5754bc13d5fc15f114c2a8d",
     "packages": [
         {
             "name": "andreyryabin/sprint.editor",
@@ -338,6 +338,21 @@
             "dist": {
                 "type": "tar",
                 "url": "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/jquery-colorbox",
+            "version": "1.6.4",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/jquery-colorbox/-/jquery-colorbox-1.6.4.tgz"
+            },
+            "require": {
+                "npm-asset/jquery": ">=1.3.2"
             },
             "type": "npm-asset",
             "license": [

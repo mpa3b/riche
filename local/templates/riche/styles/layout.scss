@@ -4,6 +4,34 @@
 
   &--header {
 
+    .row {
+      align-items : center;
+    }
+
+    &--logo {
+
+      > img,
+      > a {
+        display : block;
+      }
+
+    }
+
+
+    &--buttons {
+      display         : flex;
+      flex-direction  : row;
+      flex-wrap       : nowrap;
+
+      justify-content : flex-end;
+      align-items     : center;
+      margin-left     : auto;
+
+      > * {
+        margin-left : 0.5rem;
+      }
+    }
+
   }
 
   &--main {

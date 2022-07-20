@@ -23,40 +23,48 @@ $frame = $this->createFrame();
 
     <? $frame->begin(); ?>
 
-    <form action="/search/">
+    <button class="transparent button">
+        <i class="icon search"></i>
+    </button>
 
-        <div class="input">
+    <div class="dropdown">
 
-            <div class="field">
+        <form action="/search/">
 
-                <? if ($arParams["USE_SUGGEST"] === "Y") { ?>
+            <div class="input">
 
-                    <? $APPLICATION->IncludeComponent(
-                        "bitrix:search.suggest.input",
-                        "",
-                        [
-                            "NAME"          => "q",
-                            "VALUE"         => "",
-                            "INPUT_SIZE"    => 15,
-                            "DROPDOWN_SIZE" => 10,
-                        ],
-                        $component, ["HIDE_ICONS" => "Y"]
-                    ); ?>
+                <div class="field">
 
-                <? } else { ?>
+                    <? if ($arParams["USE_SUGGEST"] === "Y") { ?>
 
-                    <input type="search"
-                           name="q"
-                           value="<?= $arResult["REQUEST"]["QUERY"]; ?>"
-                           placeholder="Поиск"/>
+                        <? $APPLICATION->IncludeComponent(
+                            "bitrix:search.suggest.input",
+                            "",
+                            [
+                                "NAME"          => "q",
+                                "VALUE"         => "",
+                                "INPUT_SIZE"    => 15,
+                                "DROPDOWN_SIZE" => 10,
+                            ],
+                            $component, ["HIDE_ICONS" => "Y"]
+                        ); ?>
 
-                <? } ?>
+                    <? } else { ?>
+
+                        <input type="search"
+                               name="q"
+                               value="<?= $arResult["REQUEST"]["QUERY"]; ?>"
+                               placeholder="Поиск"/>
+
+                    <? } ?>
+
+                </div>
 
             </div>
 
-        </div>
+        </form>
 
-    </form>
+    </div>
 
     <? $frame->end(); ?>
 

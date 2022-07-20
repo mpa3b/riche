@@ -1,0 +1,30 @@
+#news-list--header-line {
+
+  .items {
+    padding : 0.5rem;
+    margin  : 0;
+
+    > div {
+      text-align : center;
+
+      display    : none;
+
+      &:first-of-type {
+        display : block;
+      }
+
+    }
+
+  }
+
+  .slider {
+
+    .tns {
+      &-item {
+        display : block;
+      }
+    }
+
+  }
+
+}

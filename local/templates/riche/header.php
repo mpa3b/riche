@@ -52,6 +52,7 @@ $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
+$assets->addCss(SITE_TEMPLATE_PATH . '/icons/icons.css', true);
 
 $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
 
@@ -68,6 +69,38 @@ if ($currentDirectoryPath == '') {
     $pageHtmlClasses = str_replace(DIRECTORY_SEPARATOR, '--', ltrim(strtolower($currentDirectoryPath), DIRECTORY_SEPARATOR));
 
 }
+
+$request = Application::getInstance()->getContext()->getRequest();
+
+$isAJAX     = $request->isAjaxRequest();
+$cartUpdate = $request->getPost('cartUpdate');
+
+$arCartParams = [
+    "PATH_TO_CATALOG" => "/catalog/",
+    "PATH_TO_BASKET"  => "/cart/",
+    "PATH_TO_ORDER"   => "/cart/checkout/",
+
+    "SHOW_NUM_PRODUCTS" => "Y",
+    "SHOW_TOTAL_PRICE"  => "Y",
+    "SHOW_PRODUCTS"     => "Y",
+    "SHOW_SUMMARY"      => "Y",
+
+    "HIDE_ON_BASKET_PAGES" => "Y",
+
+    "COMPOSITE_FRAME_MODE" => "A",
+    "COMPOSITE_FRAME_TYPE" => "AUTO"
+];
+
+if ($isAJAX && $cartUpdate) {
+
+    $APPLICATION->IncludeComponent(
+        'bitrix:sale.basket.basket.line',
+        'header',
+        $arCartParams
+    );
+
+}
+
 ?>
 <html lang="<?= LANGUAGE_ID ?>">
 <head>
@@ -115,13 +148,26 @@ if ($currentDirectoryPath == '') {
 
 <?php $APPLICATION->ShowPanel(); ?>
 
+<?php $APPLICATION->IncludeComponent(
+    'bitrix:news.list',
+    'header-line',
+    [
+        'IBLOCK_TYPE' => 'CONTENT',
+        'IBLOCK_ID'   => 2,
+        'NEWS_COUNT'  => 5,
+        'SORT_BY1'    => 'ACTIVE_FROM ',
+        'SORT_ORDER1' => 'DESC ',
+        'CHECK_DATES' => 'Y'
+    ]
+); ?>
+
 <div id="page--header">
 
     <div class="wrap">
 
         <div class="row">
 
-            <div id="page--header--logo">
+            <div id="page--header--logo" class="quarter">
 
                 <?php if ($currentDirectoryPath == "") { ?>
 
@@ -137,23 +183,23 @@ if ($currentDirectoryPath == '') {
 
             </div>
 
-            <div id="page--header--menu">
+            <div id="page--header--menu" class="half">
 
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "header",
                     [
-                        "ALLOW_MULTI_SELECT" => "N",
-                        "CHILD_MENU_TYPE" => "local",
-                        "DELAY" => "N",
-                        "MAX_LEVEL" => 1,
-                        "MENU_CACHE_GET_VARS" => [""],
-                        "MENU_CACHE_TIME" => Template::CACHE_TIME,
-                        "MENU_CACHE_TYPE" => "A",
+                        "ALLOW_MULTI_SELECT"    => "N",
+                        "CHILD_MENU_TYPE"       => "local",
+                        "DELAY"                 => "N",
+                        "MAX_LEVEL"             => 1,
+                        "MENU_CACHE_GET_VARS"   => [""],
+                        "MENU_CACHE_TIME"       => Template::CACHE_TIME,
+                        "MENU_CACHE_TYPE"       => "A",
                         "MENU_CACHE_USE_GROUPS" => "N",
-                        "ROOT_MENU_TYPE" => "main",
-                        "USE_EXT" => "N",
-                        "CACHE_SELECTED_ITEMS" => "N",
+                        "ROOT_MENU_TYPE"        => "main",
+                        "USE_EXT"               => "N",
+                        "CACHE_SELECTED_ITEMS"  => "N",
 
                         "COMPOSITE_FRAME_MODE" => "A",
                         "COMPOSITE_FRAME_TYPE" => "AUTO"
@@ -162,7 +208,7 @@ if ($currentDirectoryPath == '') {
 
             </div>
 
-            <div id="page--header--buttons">
+            <div id="page--header--buttons" class="quarter">
 
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:search.form",
@@ -179,21 +225,7 @@ if ($currentDirectoryPath == '') {
                 <?php $APPLICATION->IncludeComponent(
                     'bitrix:sale.basket.basket.line',
                     'header',
-                    [
-                        "PATH_TO_CATALOG" => "/catalog/",
-                        "PATH_TO_BASKET"  => "/cart/",
-                        "PATH_TO_ORDER"   => "/cart/checkout/",
-
-                        "SHOW_NUM_PRODUCTS" => "Y",
-                        "SHOW_TOTAL_PRICE"  => "Y",
-                        "SHOW_PRODUCTS"     => "Y",
-                        "SHOW_SUMMARY"      => "Y",
-
-                        "HIDE_ON_BASKET_PAGES" => "Y",
-
-                        "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO"
-                    ]
+                    $arCartParams
                 ); ?>
 
             </div>
@@ -212,7 +244,7 @@ if ($currentDirectoryPath == '') {
 
             <div class="wrap">
 
-                <? if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y') { ?>
+                <? if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
 
                     <? $APPLICATION->IncludeComponent(
                         "bitrix:breadcrumb",

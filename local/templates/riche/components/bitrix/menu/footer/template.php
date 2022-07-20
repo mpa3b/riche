@@ -23,7 +23,7 @@ if (!empty($arResult)) { ?>
 
         <?php //@formatter:off ?>
 
-        <ul class="root">
+        <ul class="menu">
 
             <?php $previousLevel = 0; ?>
 
@@ -53,7 +53,7 @@ if (!empty($arResult)) { ?>
 
         <?php //@formatter:on ?>
 
-        <?php $frame->end(); ?>
+                <?php $frame->end(); ?>
 
     </nav>
 

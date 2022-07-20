@@ -2,54 +2,61 @@
 
 :root {
 
-  --color--base: #151515;
-  --color--error: red;
+  --color--base           : #151515;
+  --color--white          : #fff;
+  --color--key            : pink;
+  --color--error          : red;
 
-  --font--base: 'Gordita', sans-serif;
+  --font--base            : "Gordita", sans-serif;
 
-  --border-radius: 0.5em;
-  --button--border-radius: var(--border-radius);
+  --border-radius         : 0.5em;
+  --button--border-radius : 2rem;
 
-  --transition: 0.3s;
+  --transition            : 0.3s;
 
 }
 
 html {
-  font-size: 12pt;
+  font-size : 12pt;
 }
 
 body {
-  font-weight: normal;
-  font-size: 1rem;
-  font-family: var(--font--base);
+  font-weight : normal;
+  font-size   : 1rem;
+  font-family : var(--font--base);
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-weight : bold;
+  font-size   : 1.2rem;
 }
 
 h5 {
-  font-size: 1.4rem;
+  font-size : 1.4rem;
 }
 
 h4 {
-  font-size: 1.6rem;
+  font-size : 1.6rem;
 }
 
 h3 {
-  font-size: 1.8rem;
+  font-size : 1.8rem;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size : 2rem;
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-size : 2.2rem;
 }
 
 p {
+  margin : 0;
+
+  & + p {
+    margin-top : 0.25rem;
+  }
 
 }
 
@@ -75,7 +82,41 @@ label {
 
 }
 
+a {
+  color           : inherit;
+  text-decoration : underline;
+}
+
 //region controls
 
+a.button,
+input[type=button],
+input[type=reset],
+input[type=submit],
+input[type=search],
+button {
+  display          : block;
+  box-sizing       : border-box;
+  padding          : 0.5rem 0.75rem;
+  padding-top      : 0.45rem;
+
+  border-radius    : var(--button--border-radius);
+
+  text-decoration  : none;
+  line-height      : 1.1;
+
+
+  border           : none;
+  color            : var(--color--base);
+  background-color : var(--color--key);
+
+  &.transparent {
+    background : transparent none;
+  }
+}
 
 //endregion
+
+.nowrap {
+  white-space : nowrap;
+}

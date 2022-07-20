@@ -1,0 +1,21 @@
+#sale-basket-line--header {
+
+  a {
+
+  }
+
+  position : relative;
+
+  .dropdown {
+    display       : none;
+    position      : absolute;
+    right         : 0;
+    top           : 100%;
+    padding       : 1.25rem;
+    padding-top   : 1rem;
+    border-radius : 1.25rem;
+
+    box-shadow    : 2px 4px 8px lightgray;
+  }
+
+}

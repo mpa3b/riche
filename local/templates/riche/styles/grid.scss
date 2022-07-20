@@ -6,30 +6,55 @@
   .column,
   .row {
 
-    display: flex;
-    flex-direction: column;
+    display        : flex;
+    flex-direction : column;
 
     > * {
-      display: block;
-      box-sizing: border-box;
-      padding: 1rem 0;
+      display    : block;
+      box-sizing : border-box;
+      padding    : 1rem 0;
     }
 
   }
 
-  @media all and (min-width: $breakpoint_mobile) {
+  @media all and (min-width : $breakpoint_mobile) {
 
-    width: 87%;
-    margin: auto;
+    width  : 87%;
+    margin : auto;
 
     .row,
     .grid {
-      flex-direction: row;
-      flex-wrap: wrap;
-      margin: 0 -1rem;
+      flex-direction : row;
+      flex-wrap      : wrap;
+      margin         : 0 -1rem;
 
       > * {
-        padding: 0.5rem 1rem;
+        padding : 0.5rem 1rem;
+      }
+
+      $units         : (
+              "four-fifths": 80%,
+              "three-quarters": 75%,
+              "two-thirds": 66.6666%,
+              "three-fifths": 60%,
+              "half": 50%,
+              "two-fifths": 40%,
+              "third": 33.3333%,
+              "quarter": 25%,
+              "fifth": 20%,
+              "sixth": 16.6666%
+      );
+
+      @each $code, $width in $units {
+
+        > .#{$code} {
+          width : #{$width};
+        }
+
+        .offset-#{$code} {
+          margin-left : #{$width};
+        }
+
       }
 
     }
@@ -37,13 +62,36 @@
   }
 
   .row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    display        : flex;
+    flex-direction : row;
+    flex-wrap      : nowrap;
   }
 
-  @media all and (min-width: $breakpoint_desktop) {
-    width: 72%;
+  @media all and (min-width : $breakpoint_desktop) {
+    width : 72%;
+  }
+
+  [hidden],
+  .hidden {
+    display : none;
+  }
+
+  .hide {
+    display : none;
+
+    &--on {
+      @media all and (max-width : $breakpoint_mobile) {
+        &-mobile {
+          display : none !important;
+        }
+      }
+      @media all and (min-width : $breakpoint_mobile) {
+        &-desktop {
+          display : none !important;
+        }
+      }
+    }
+
   }
 
 }

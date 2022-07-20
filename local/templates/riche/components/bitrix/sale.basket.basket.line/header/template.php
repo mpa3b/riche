@@ -2,6 +2,7 @@
 
 if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) die();
 
+use Bitrix\Main\Application;
 use Riche\Images;
 use Riche\Template;
 
@@ -20,6 +21,14 @@ use Riche\Template;
 
 global $APPLICATION, $USER;
 
+$this->addExternalJs(Template::ASSETS . '/jquery-colorbox/jquery.colorbox.js');
+
+$context = Application::getInstance()->getContext();
+$request = $context->getRequest();
+
+$isAJAX     = $request->isAjaxRequest();
+$cartUpdate = $request->getPost('cartUpdate');
+
 $this->setFrameMode(true);
 
 $frame = $this->createFrame();
@@ -32,12 +41,12 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
         <a href="<?= $arParams['PATH_TO_BASKET']; ?>?back_url=<?= $APPLICATION->GetCurUri(); ?>"
            title="<?= Template::pluralUnits($arResult['NUM_PRODUCTS'], 'товар'); ?>"
-           class="cart--link">
+           class="button transparent">
 
-            <i class="icon cart only"></i>
+            <i class="icon cart"></i>
+
             <?php if ($arParams['SHOW_NUM_PRODUCTS'] == "Y") { ?>
-                <span class="cart--count"><?php if ($arResult['NUM_PRODUCTS'] >
-                                                    0) { ?><?= $arResult['NUM_PRODUCTS']; ?><?php } ?></span>
+                <span class="count"><?php if ($arResult['NUM_PRODUCTS'] > 0) echo $arResult['NUM_PRODUCTS']; ?></span>
             <?php } ?>
 
         </a>
@@ -46,14 +55,18 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
         <?php if ($arParams['SHOW_PRODUCTS']) { ?>
 
-            <div
-                class="sale-basket-basket-line--dropdown cart dropdown <?php if ($arResult['NUM_PRODUCTS'] == 0) { ?>is-empty<?php } ?>">
+            <div class="dropdown">
+
+                <?php if ($isAJAX && $cartUpdate) {
+                    $APPLICATION->RestartBuffer();
+                } else {
+                    $dropdownFrame = $this->createFrame();
+                    $dropdownFrame->begin();
+                } ?>
 
                 <?php foreach ($arResult['CATEGORIES'] as $code => $arCategory) { ?>
 
-                    <?php if (empty($arCategory)) {
-                        break;
-                    } ?>
+                    <?php if (empty($arCategory)) break; ?>
 
                     <div class="<?= strtolower($code); ?> items">
 
@@ -85,14 +98,10 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
                             ?>
 
-                            <div class="item <?php if ($arItem['CAN_BUY'] !== 'Y') { ?>disabled<?php } ?> <?php if ($arItem['RESERVED'] == 'Y') { ?>reserved<?php } ?>"
-                                 data-name="<?= $arItem['NAME']; ?>"
-                                 data-thumb="<?= $picture['src']; ?>"
-                                 data-quantity="<?= $arItem['QUANTITY']; ?>"
-                                 data-price="<?= $arItem['PRICE_FMT']; ?>"
-                                 data-total="<?= $arItem['SUM']; ?>"
-                                 data-id="<?= $arItem['ID']; ?>"
-                                 data-product-id="<?= $arItem['PRODUCT_ID']; ?>">
+                            <div
+                                class="item <?php if ($arItem['CAN_BUY'] !== 'Y') { ?>disabled<?php } ?> <?php if ($arItem['RESERVED'] == 'Y') { ?>reserved<?php } ?>"
+                                data-id="<?= $arItem['ID']; ?>"
+                                data-product-id="<?= $arItem['PRODUCT_ID']; ?>">
 
                                 <picture class="image">
 
@@ -158,19 +167,24 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
                 <div class="bottom">
 
-                    <p>Итого <span
-                            class="count--value count"><?= Template::pluralUnits($arResult['NUM_PRODUCTS'],
-                                                                                 'товар'); ?></span>
-                        на сумму: <span class="total--value value"><?= $arResult['TOTAL_PRICE']; ?></span></p>
+                    <p>Итого <?= Template::pluralUnits($arResult['NUM_PRODUCTS'], 'товар'); ?> на сумму: <span
+                            class="nowrap"><?= $arResult['TOTAL_PRICE']; ?></span></p>
 
                 </div>
 
-                <a href="<?= $arParams['PATH_TO_BASKET']; ?>?back_url=<?= $APPLICATION->GetCurUri(); ?>"
-                   class="dropdown--cart-link wide big primary button">Перейти корзину</a>
+                <a href="<?= $arParams['PATH_TO_BASKET']; ?>"
+                   class="button">Перейти корзину</a>
+
+                <?php if ($isAJAX && $cartUpdate) {
+                    die;
+                } else {
+                    $dropdownFrame->end();
+                } ?>
 
             </div>
 
         <?php } ?>
+
 
     </div>
 
