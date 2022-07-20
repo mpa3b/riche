@@ -157,7 +157,16 @@ if ($isAJAX && $cartUpdate) {
         'NEWS_COUNT'  => 5,
         'SORT_BY1'    => 'ACTIVE_FROM ',
         'SORT_ORDER1' => 'DESC ',
-        'CHECK_DATES' => 'Y'
+        'CHECK_DATES' => 'Y',
+        'SET_TITLE' => 'N',
+        'SET_BROWSER_TITLE' => 'N',
+        'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
+        'ADD_SECTIONS_CHAIN' => 'N',
+
+        'CACHE_TYPE' => 'A',
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
     ]
 ); ?>
 

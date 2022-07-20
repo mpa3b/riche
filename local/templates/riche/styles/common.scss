@@ -85,6 +85,10 @@ label {
 a {
   color           : inherit;
   text-decoration : underline;
+
+  &:focus {
+    outline: none;
+  }
 }
 
 //region controls
