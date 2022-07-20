@@ -1,12 +1,12 @@
-./bitrix/
-./upload/
+/bitrix/
+/upload/
 
-./local/assets
-./local/vendor
+/local/assets
+/local/vendor
 
-./local/modules/sprint.*/
+/local/modules/sprint.*/
 
-./.idea
+/.idea
 
 *.css.map
 *.js.map
