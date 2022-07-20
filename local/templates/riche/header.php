@@ -96,30 +96,24 @@ if ($currentDirectoryPath == '') {
 
     <?php //endregion ?>
 
-    <script data-skip-moving="true">
-        var BX        = {
-                message: () => {
-                    return false;
-                },
-                ready  : () => {
-                    return false;
-                }
-            },
-            bxSession = {
-                Expand: () => {
-                    return false;
-                }
-            };
-    </script>
+    <?php
 
-    <?= $assets->getStrings(); ?>
-    <?= $assets->getCss(); ?>
+    $APPLICATION->ShowMeta("robots", false, true);
+    $APPLICATION->ShowMeta("keywords", false, true);
 
-    <?php $APPLICATION->ShowHeadScripts(); ?>
+    $APPLICATION->ShowMeta("description", false, true);
+    $APPLICATION->ShowLink("canonical", null, true);
+
+    $APPLICATION->ShowHeadStrings();
+    $APPLICATION->ShowHeadScripts();
+
+    ?>
 
 </head>
 
 <body id="page" class="<?= $pageHtmlClasses; ?>">
+
+<?php $APPLICATION->ShowPanel(); ?>
 
 <div id="page--header">
 
@@ -129,28 +123,40 @@ if ($currentDirectoryPath == '') {
 
             <div id="page--header--logo">
 
-                <? if ($currentDirectoryPath == "") { ?>
+                <?php if ($currentDirectoryPath == "") { ?>
 
-                    <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" loading="eager">
+                    <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" loading="eager" alt="RICHE">
 
-                <? } else { ?>
+                <?php } else { ?>
 
                     <a href="/">
-                        <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" loading="eager">
+                        <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" loading="eager" alt="RICHE">
                     </a>
 
-                <? } ?>
+                <?php } ?>
 
             </div>
 
             <div id="page--header--menu">
 
                 <?php $APPLICATION->IncludeComponent(
-                    "riche:menu",
-                    "menu--header",
+                    "bitrix:menu",
+                    "header",
                     [
-                        'MENU_NAME'  => 'main',
-                        'CACHE_TIME' => 7200
+                        "ALLOW_MULTI_SELECT" => "N",
+                        "CHILD_MENU_TYPE" => "local",
+                        "DELAY" => "N",
+                        "MAX_LEVEL" => 1,
+                        "MENU_CACHE_GET_VARS" => [""],
+                        "MENU_CACHE_TIME" => Template::CACHE_TIME,
+                        "MENU_CACHE_TYPE" => "A",
+                        "MENU_CACHE_USE_GROUPS" => "N",
+                        "ROOT_MENU_TYPE" => "main",
+                        "USE_EXT" => "N",
+                        "CACHE_SELECTED_ITEMS" => "N",
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO"
                     ]
                 ); ?>
 
@@ -158,6 +164,37 @@ if ($currentDirectoryPath == '') {
 
             <div id="page--header--buttons">
 
+                <?php $APPLICATION->IncludeComponent(
+                    "bitrix:search.form",
+                    "header",
+                    [
+                        "USE_SUGGEST" => "N",
+                        "PAGE"        => "/search/",
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO",
+                    ]
+                ); ?>
+
+                <?php $APPLICATION->IncludeComponent(
+                    'bitrix:sale.basket.basket.line',
+                    'header',
+                    [
+                        "PATH_TO_CATALOG" => "/catalog/",
+                        "PATH_TO_BASKET"  => "/cart/",
+                        "PATH_TO_ORDER"   => "/cart/checkout/",
+
+                        "SHOW_NUM_PRODUCTS" => "Y",
+                        "SHOW_TOTAL_PRICE"  => "Y",
+                        "SHOW_PRODUCTS"     => "Y",
+                        "SHOW_SUMMARY"      => "Y",
+
+                        "HIDE_ON_BASKET_PAGES" => "Y",
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO"
+                    ]
+                ); ?>
 
             </div>
 
@@ -166,3 +203,54 @@ if ($currentDirectoryPath == '') {
     </div>
 
 </div>
+
+<div id="page--main">
+
+    <? if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y') { ?>
+
+        <header id="page--main--header">
+
+            <div class="wrap">
+
+                <? if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y') { ?>
+
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:breadcrumb",
+                        "",
+                        [
+                            "PATH"       => "",
+                            "SITE_ID"    => SITE_ID,
+                            "START_FROM" => 0,
+
+                            "COMPOSITE_FRAME_MODE" => "A",
+                            "COMPOSITE_FRAME_TYPE" => "AUTO",
+                        ],
+                        false,
+                        ["HIDE_ICONS" => "Y"]
+                    ); ?>
+
+                <? } ?>
+
+                <h1><? $APPLICATION->ShowTitle(); ?></h1>
+
+            </div>
+
+            <? $APPLICATION->IncludeComponent(
+                'bitrix:main.include',
+                '.wrap',
+                [
+                    "AREA_FILE_SHOW"      => "sect",
+                    "AREA_FILE_SUFFIX"    => "header",
+                    "AREA_FILE_RECURSIVE" => "N",
+
+                    "COMPOSITE_FRAME_MODE" => "A",
+                    "COMPOSITE_FRAME_TYPE" => "AUTO",
+                ],
+                false
+            ); ?>
+
+        </header>
+
+    <? } ?>
+
+    <div id="page--main--content">

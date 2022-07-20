@@ -44,6 +44,4 @@ if (Option::get('main', 'update_devsrv') == 'Y') {
     $debug = false;
 }
 
-define('DEBUG', $debug);
-
 //endregion
