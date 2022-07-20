@@ -4,7 +4,7 @@
 
   --color--base           : #151515;
   --color--white          : #fff;
-  --color--key            : pink;
+  --color--key            : #dcdcdc;
   --color--error          : red;
 
   --font--base            : "Gordita", sans-serif;
@@ -17,45 +17,52 @@
 }
 
 html {
-  font-size : 12pt;
+  font-size : 10pt;
 }
 
 body {
   font-weight : normal;
   font-size   : 1rem;
   font-family : var(--font--base);
+  line-height : 1.35;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight : bold;
-  font-size   : 1.2rem;
+  font-size   : 1.4rem;
+  line-height : 1.15;
+
+  &:first-child {
+    margin-top    : 0;
+    margin-bottom : 0.4em;
+  }
 }
 
 h5 {
-  font-size : 1.4rem;
-}
-
-h4 {
   font-size : 1.6rem;
 }
 
-h3 {
+h4 {
   font-size : 1.8rem;
 }
 
-h2 {
+h3 {
   font-size : 2rem;
 }
 
-h1 {
+h2 {
   font-size : 2.2rem;
+}
+
+h1 {
+  font-size : 2.4rem;
 }
 
 p {
   margin : 0;
 
   & + p {
-    margin-top : 0.25rem;
+    margin-top : 0.5em;
   }
 
 }
@@ -69,13 +76,17 @@ hr {
 }
 
 picture {
-  img {
+  display : block;
 
+  img {
+    display   : block;
+    max-width : 100%;
   }
 }
 
 img {
-
+  display   : block;
+  max-width : 100%;
 }
 
 label {
@@ -87,7 +98,11 @@ a {
   text-decoration : underline;
 
   &:focus {
-    outline: none;
+    outline : none;
+  }
+
+  &[href^="tel"] {
+    text-decoration : none;
   }
 }
 
@@ -101,8 +116,8 @@ input[type=search],
 button {
   display          : block;
   box-sizing       : border-box;
-  padding          : 0.5rem 0.75rem;
-  padding-top      : 0.45rem;
+  padding          : 0.5em 0.75em;
+  padding-top      : 0.45em;
 
   border-radius    : var(--button--border-radius);
 
@@ -117,6 +132,13 @@ button {
   &.transparent {
     background : transparent none;
   }
+
+  &.big {
+    font-size   : 1.6rem;
+    padding     : 0.65em 1.25em;
+    padding-top : 0.5em;
+  }
+
 }
 
 //endregion

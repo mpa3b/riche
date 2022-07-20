@@ -1,8 +1,8 @@
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 global $APPLICATION, $USER;
 
-$APPLICATION->SetPageProperty("keywords", "RICHE, здоровье");
-$APPLICATION->SetPageProperty("description", "RICHE это про красоту и здоровье");
+$APPLICATION->SetPageProperty("keywords", "RICHE, здоровье, красота, уход");
+$APPLICATION->SetPageProperty("description", "RICHE — это про красоту и здоровье");
 
 $APPLICATION->SetTitle("Про красоту и здоровье");
 
@@ -24,6 +24,10 @@ $APPLICATION->SetTitle("Про красоту и здоровье");
         'SET_BROWSER_TITLE'         => 'N',
         'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
         'ADD_SECTIONS_CHAIN'        => 'N',
+
+        'PROPERTY_CODE' => [
+            'HERO_IMAGE', 'BACKGROUND_IMAGE'
+        ],
 
         'CACHE_TYPE' => 'A',
 

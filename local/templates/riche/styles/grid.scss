@@ -1,6 +1,7 @@
 @import "../vars";
 
 .wrap {
+  margin  : 1rem 0;
 
   .grid,
   .column,
@@ -17,10 +18,13 @@
 
   }
 
+  padding : 0 0.5rem;
+
   @media all and (min-width : $breakpoint_mobile) {
 
-    width  : 87%;
-    margin : auto;
+    padding : 0;
+    width   : 87%;
+    margin  : 1rem auto;
 
     .row,
     .grid {
@@ -68,7 +72,7 @@
   }
 
   @media all and (min-width : $breakpoint_desktop) {
-    width : 72%;
+    width : 81%;
   }
 
   [hidden],

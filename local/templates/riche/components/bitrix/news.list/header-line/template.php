@@ -32,17 +32,13 @@ $frame = $this->createFrame();
 
         <?php $frame->begin(); ?>
 
-        <div class="wrap">
+        <div class="slider items">
 
-            <div class="slider items">
+            <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
+                <div><?php echo htmlspecialchars($arItem['PREVIEW_TEXT']); ?></div>
 
-                    <div><?php echo htmlspecialchars($arItem['PREVIEW_TEXT']); ?></div>
-
-                <?php } ?>
-
-            </div>
+            <?php } ?>
 
         </div>
 

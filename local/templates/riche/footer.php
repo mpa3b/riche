@@ -13,7 +13,7 @@ global $USER, $APPLICATION;
 
         <div class="row">
 
-            <div id="page--footer--contact">
+            <div id="page--footer--contact" class="quarter">
 
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:main.include",
@@ -35,7 +35,7 @@ global $USER, $APPLICATION;
 
             </div>
 
-            <div id="page--footer--menu">
+            <div id="page--footer--menu" class="half">
 
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:menu",
@@ -60,7 +60,7 @@ global $USER, $APPLICATION;
 
             </div>
 
-            <div id="page--footer--about">
+            <div id="page--footer--about" class="quarter">
 
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:main.include",
@@ -84,13 +84,9 @@ global $USER, $APPLICATION;
 
         </div>
 
-        <div class="row">
+        <div id="page--footer--outro" class="wrap">
 
-            <div id="page--footer--outro">
-
-                <span>RICHE</span>
-
-            </div>
+            <span>RICHE</span>
 
         </div>
 

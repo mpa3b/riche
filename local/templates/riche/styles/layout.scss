@@ -4,6 +4,10 @@
 
   &--header {
 
+    > .wrap {
+      margin-top : 0;
+    }
+
     .row {
       align-items : center;
     }
@@ -16,7 +20,6 @@
       }
 
     }
-
 
     &--buttons {
       display         : flex;
@@ -39,6 +42,19 @@
   }
 
   &--footer {
+
+    &--contact {
+
+      h2 {
+        font-size : 1rem;
+      }
+
+    }
+
+    &--outro {
+      text-align : center;
+      font-size  : 0.8rem;
+    }
 
   }
 

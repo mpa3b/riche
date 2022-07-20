@@ -1,9 +1,8 @@
 <?
-$sSectionName = 'Главная';
-$arDirProperties = array(
-	'title' => 'RICHE',
-	'description' => 'RICHE',
-	'keywords' => '',
-	'robots' => 'index, follow'
+$sSectionName = "RICHE — green adn sexy.";
+$arDirProperties = Array(
+   "description" => "RICHE — green adn sexy.",
+   "TITLE" => "RICHE",
+   "ROBOTS" => "index, follow"
 );
 ?>

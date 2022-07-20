@@ -12,14 +12,6 @@ class Images
     public const JPEG_QUALITY         = 75;
     public const JPEG_QUALITY_PRELOAD = self::JPEG_QUALITY / 2;
 
-    public const BREAKPOINTS = [
-        "small"   => 340,
-        "mobile"  => 780,
-        "desktop" => 980,
-        "wide"    => 1360,
-        "wider"   => 1560
-    ];
-
     public static function getMedia($breakpoint, $max = false): string
     {
 
@@ -45,6 +37,12 @@ class Images
         }
 
     }
+
+    public const BREAKPOINTS = [
+        "mobile"  => 375,
+        "desktop" => 980,
+        "wide"    => 1360,
+    ];
 
     /**
      * Простая функция арифметического подсчёта размеров изображения с указанием пропорции
@@ -76,14 +74,19 @@ class Images
 
         if (!empty($file['SRC'])) {
 
+            $file['src']               = $file['SRC'];
+            $file['webp_src']          = Images::conertToWebP($file['SRC'], $quality);
             $file['WEBP_SRC']          = Images::conertToWebP($file['SRC'], $quality);
             $file['WEBP_CONTENT_TYPE'] = Images::getMIME($file['WEBP_SRC']);
+            $file['webp_content_type'] = Images::getMIME($file['WEBP_SRC']);
 
             if (!$file['CONTENT_TYPE']) {
                 $file['CONTENT_TYPE'] = Images::getMIME($file['SRC']);
+                $file['content_type'] = Images::getMIME($file['SRC']);
             }
 
         } else {
+
             if (!empty($file['src'])) {
 
                 $file['webp_src']          = Images::conertToWebP($file['src'], $quality);
@@ -92,6 +95,7 @@ class Images
                 $file['content_type'] = Images::getMIME($file['src']);
 
             }
+
         }
 
     }

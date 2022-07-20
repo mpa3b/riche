@@ -247,7 +247,7 @@ if ($isAJAX && $cartUpdate) {
 
 <div id="page--main">
 
-    <? if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y') { ?>
+    <? if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' && $currentDirectoryPath !== '') { ?>
 
         <header id="page--main--header">
 
