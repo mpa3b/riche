@@ -1,6 +1,6 @@
 @import "../../../../vars";
 
-#news-list--front-banners {
+.banners--front--static {
 
   .items {
 
@@ -42,7 +42,7 @@
           box-sizing : border-box;
 
           .action {
-            margin-top : 1.5rem;
+            margin-top  : 1.5rem;
           }
 
         }

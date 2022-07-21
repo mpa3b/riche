@@ -2,7 +2,7 @@
 
 $(() => {
 
-    const element = $('#menu--header');
+    const element = $('.menu--header');
     const button = $('button.trigger', element);
     const menu = $('.wrapper', element);
     const markerClass = 'in-view';

@@ -1,4 +1,6 @@
-<?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+<?php use Riche\PreloadLinks;
+
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -14,10 +16,12 @@
 
 $this->setFrameMode(true);
 
+PreloadLinks::addHeadPreloadAsset('/local/templates/riche/icons/burger.svg');
+
 $frame = $this->createFrame();
 
 ?>
-<nav id="menu--header">
+<nav class="menu--header">
 
     <button class="transparent button hide--on-desktop trigger burger">
         <i class="icon burger"></i>

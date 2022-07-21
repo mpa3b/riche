@@ -2,16 +2,24 @@
 
 :root {
 
-  --color--base           : #151515;
-  --color--white          : #fff;
-  --color--key            : #dcdcdc;
-  --color--error          : red;
+  --color--base      : #151515;
+  --color--white     : #fff;
 
-  --font--base            : "Gordita", sans-serif;
+  --color--pink      : #ebb2d4;
+  --color--green     : #ebebc9;
+  --color--orange    : #ebe6b2;
+  --color--blue      : #b2b8eb;
 
-  --border-radius         : 0.5em;
+  --color--key       : var(--color--pink);
+  --color--error     : red;
 
-  --transition--time            : 0.3s;
+  --font--base       : "Gordita", sans-serif;
+
+  --border-radius    : 0.5em;
+
+  --transition--time : 0.3s;
+
+  --button--shadow   : 4px 4px 0 var(--color--blue);
 
 }
 
@@ -28,12 +36,12 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight : bold;
-  font-size   : 1.6rem;
+  font-size   : 1.4rem;
   line-height : 1.125;
 
   &:first-child {
     margin-top    : 0;
-    margin-bottom : 0.4em;
+    margin-bottom : 0.66em;
   }
 }
 
@@ -123,19 +131,37 @@ button {
   text-decoration  : none;
   line-height      : 1.1;
 
-
-  border           : none;
+  border           : 2px solid var(--color--key);
   color            : var(--color--base);
-  background-color : var(--color--key);
+  background-color : var(--color--white);
+  box-shadow       : var(--button--shadow);
+
+  font-weight      : bold;
+
+  &.primary {
+    background-color : var(--color--key);
+    color            : var(--color--white);
+
+    &.inverted {
+      background-color : var(--color--white);
+      color            : var(--color--key);
+    }
+  }
 
   &.transparent {
     background : transparent none;
+    border     : none;
+    box-shadow : none;
   }
 
   &.big {
     font-size   : 1.2rem;
     padding     : 0.66em 1.32em;
     padding-top : 0.6em;
+  }
+
+  &.inverted {
+    color : var(--color--white);
   }
 
 }

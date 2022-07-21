@@ -28,7 +28,7 @@ $frame = $this->createFrame();
 
 <?php if (!empty($arResult['ITEMS'])) { ?>
 
-    <div id="news-list--header-line">
+    <div class="header-line">
 
         <?php $frame->begin(); ?>
 

@@ -94,9 +94,5 @@ global $USER, $APPLICATION;
 
 </div>
 
-<noindex>
-    <?php $APPLICATION->ShowCSS(true, false); // Output css site styles ?>
-</noindex>
-
 </body>
 </html>

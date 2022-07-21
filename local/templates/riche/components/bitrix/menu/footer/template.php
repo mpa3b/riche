@@ -17,7 +17,7 @@ $frame = $this->createFrame();
 
 if (!empty($arResult)) { ?>
 
-    <nav id="menu--footer">
+    <nav class="menu--footer">
 
         <?php $frame->begin(); ?>
 

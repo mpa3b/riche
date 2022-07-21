@@ -21,7 +21,7 @@ $frame = $this->createFrame();
 
 ?>
 
-<div id="news-list--front-banners">
+<div class="banners--front--static">
 
     <?php $frame->begin(); ?>
 
@@ -45,7 +45,7 @@ $frame = $this->createFrame();
                                 </div>
                             <?php } ?>
 
-                            <button class="big action button">ЖГИ!</button>
+                            <button class="big action button primary inverted">ЖГИ!</button>
 
                         </div>
 
@@ -92,8 +92,8 @@ $frame = $this->createFrame();
                                             media="<?= Images::getMedia('mobile', true); ?>">
                                 <?php } ?>
 
-                                <source srcset="<?= $heroImage["SRC"]; ?>"
-                                        type="<?= $heroImage['content_type']; ?>"
+                                <source srcset="<?= $heroImageMobile["src"]; ?>"
+                                        type="<?= $heroImageMobile['content_type']; ?>"
                                         media="<?= Images::getMedia('mobile', true); ?>">
 
                                 <?php if ($heroImage['webp_src']) { ?>

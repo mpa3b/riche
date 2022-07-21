@@ -2,7 +2,7 @@ $(() => {
 
     tns(
         {
-            container: "#news-list--header-line .slider",
+            container: ".header-line .slider",
             items    : 1,
             mode     : "gallery",
             loop     : false,

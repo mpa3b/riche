@@ -72,7 +72,6 @@ if ($currentDirectoryPath == '') {
 
 $request = Application::getInstance()->getContext()->getRequest();
 
-$isAJAX     = $request->isAjaxRequest();
 $cartUpdate = $request->getPost('cartUpdate');
 
 $arCartParams = [
@@ -91,7 +90,7 @@ $arCartParams = [
     "COMPOSITE_FRAME_TYPE" => "AUTO"
 ];
 
-if ($isAJAX && $cartUpdate) {
+if (IS_AJAX && $cartUpdate) {
 
     $APPLICATION->IncludeComponent(
         'bitrix:sale.basket.basket.line',
@@ -139,8 +138,11 @@ if ($isAJAX && $cartUpdate) {
 
     $APPLICATION->ShowHeadStrings();
     $APPLICATION->ShowHeadScripts();
+    $APPLICATION->ShowCSS(true, false);
 
     ?>
+
+    </noindex>
 
 </head>
 
@@ -152,16 +154,16 @@ if ($isAJAX && $cartUpdate) {
     'bitrix:news.list',
     'header-line',
     [
-        'IBLOCK_TYPE' => 'CONTENT',
-        'IBLOCK_ID'   => 2,
-        'NEWS_COUNT'  => 5,
-        'SORT_BY1'    => 'ACTIVE_FROM ',
-        'SORT_ORDER1' => 'DESC ',
-        'CHECK_DATES' => 'Y',
-        'SET_TITLE' => 'N',
-        'SET_BROWSER_TITLE' => 'N',
+        'IBLOCK_TYPE'               => 'CONTENT',
+        'IBLOCK_ID'                 => 2,
+        'NEWS_COUNT'                => 5,
+        'SORT_BY1'                  => 'ACTIVE_FROM ',
+        'SORT_ORDER1'               => 'DESC ',
+        'CHECK_DATES'               => 'Y',
+        'SET_TITLE'                 => 'N',
+        'SET_BROWSER_TITLE'         => 'N',
         'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
-        'ADD_SECTIONS_CHAIN' => 'N',
+        'ADD_SECTIONS_CHAIN'        => 'N',
 
         'CACHE_TYPE' => 'A',
 

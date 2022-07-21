@@ -21,12 +21,9 @@ use Riche\Template;
 
 global $APPLICATION, $USER;
 
-$this->addExternalJs(Template::ASSETS . '/jquery-colorbox/jquery.colorbox.js');
-
 $context = Application::getInstance()->getContext();
 $request = $context->getRequest();
 
-$isAJAX     = $request->isAjaxRequest();
 $cartUpdate = $request->getPost('cartUpdate');
 
 $this->setFrameMode(true);
@@ -35,7 +32,7 @@ $frame = $this->createFrame();
 
 if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
-    <div id="sale-basket-line--header">
+    <div class="basket--header-line">
 
         <?php $frame->begin(); ?>
 
@@ -57,7 +54,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
             <div class="dropdown">
 
-                <?php if ($isAJAX && $cartUpdate) {
+                <?php if (IS_AJAX && $cartUpdate) {
                     $APPLICATION->RestartBuffer();
                 } else {
                     $dropdownFrame = $this->createFrame();
@@ -70,9 +67,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
                     <div class="<?= strtolower($code); ?> items">
 
-                        <?php foreach ($arCategory as $arItem) { ?>
-
-                            <?
+                        <?php foreach ($arCategory as $arItem) {
 
                             $picture_preload = CFile::ResizeImageGet(
                                 $arItem['PREVIEW_PICTURE'],
@@ -175,7 +170,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
                 <a href="<?= $arParams['PATH_TO_BASKET']; ?>"
                    class="button">Перейти корзину</a>
 
-                <?php if ($isAJAX && $cartUpdate) {
+                <?php if (IS_AJAX && $cartUpdate) {
                     die;
                 } else {
                     $dropdownFrame->end();
@@ -184,7 +179,6 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
             </div>
 
         <?php } ?>
-
 
     </div>
 

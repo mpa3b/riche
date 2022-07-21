@@ -19,7 +19,7 @@ $frame = $this->createFrame();
 
 ?>
 
-<div id="search-form--header">
+<div class="search-form">
 
     <? $frame->begin(); ?>
 
