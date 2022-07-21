@@ -19,13 +19,17 @@ $frame = $this->createFrame();
 ?>
 <nav id="menu--header">
 
-    <button class="transparent button hide--on-desktop">
+    <button class="transparent button hide--on-desktop trigger burger">
         <i class="icon burger"></i>
     </button>
 
     <?php $frame->begin(); ?>
 
-    <div class="dropdown hide--on-mobile">
+    <div class="wrapper">
+
+        <button class="transparent trigger button hide--on-desktop close">
+            <i class="icon close"></i>
+        </button>
 
         <ul class="menu root">
 

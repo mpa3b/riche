@@ -11,7 +11,7 @@ global $USER, $APPLICATION;
 
     <div class="wrap">
 
-        <div class="row">
+        <div class="grid">
 
             <div id="page--footer--contact" class="quarter">
 

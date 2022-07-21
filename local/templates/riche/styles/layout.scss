@@ -10,6 +10,7 @@
 
     .row {
       align-items : center;
+      position    : relative;
     }
 
     &--logo {
@@ -19,15 +20,32 @@
         display : block;
       }
 
+      @media all and (max-width : $breakpoint_mobile) {
+        position    : absolute;
+        left        : 50%;
+
+        width       : 4rem;
+        margin-left : -2rem;
+
+        img {
+          display : block;
+          margin  : auto;
+        }
+      }
+
     }
 
     &--buttons {
+
+      order           : 99;
+
       display         : flex;
       flex-direction  : row;
       flex-wrap       : nowrap;
 
       justify-content : flex-end;
       align-items     : center;
+
       margin-left     : auto;
 
       > * {
@@ -46,7 +64,7 @@
     &--contact {
 
       h2 {
-        font-size : 1rem;
+        font-size : 1.4rem;
       }
 
     }

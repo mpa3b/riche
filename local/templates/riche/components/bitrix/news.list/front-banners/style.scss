@@ -47,9 +47,18 @@
 
         }
 
-        @media all and (min-width : $breakpoint_mobile) {
-          .hero-image {
-            width : 50%;
+        .hero-image {
+          box-sizing : border-box;
+
+          margin-top : auto;
+          width      : 100%;
+          @media all and (min-width : $breakpoint_mobile) {
+            width       : auto;
+            margin-left : auto;
+          }
+
+          img {
+            width : 100%;
           }
         }
 

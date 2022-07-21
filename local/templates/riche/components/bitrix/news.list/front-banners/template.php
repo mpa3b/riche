@@ -119,7 +119,7 @@ $frame = $this->createFrame();
 
                         $backgroundImageMobile = CFile::ResizeImageGet(
                             $arItem['DISPLAY_PROPERTIES']['BACKGROUND_IMAGE']['VALUE'],
-                            Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.33),
+                            Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.66),
                             BX_RESIZE_IMAGE_EXACT,
                             false,
                             [],

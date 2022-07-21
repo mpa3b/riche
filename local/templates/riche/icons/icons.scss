@@ -1,21 +1,24 @@
 i.icon {
   position : relative;
 
+  $scale : 1.6em;
+
   &:after {
     display             : block;
     content             : "";
-    width               : 1.33em;
-    height              : 1.33em;
+    width               : $scale;
+    height              : $scale;
 
     background-position : center;
     background-repeat   : no-repeat;
-    background-size     : 1.33em;
+    background-size     : $scale;
   }
 
   $icons         : (
           "search",
           "cart",
           "burger",
+          "close",
   );
 
   @each $icon in $icons {

@@ -1,9 +1,15 @@
+@import "../../../../vars";
+
 #menu--footer {
 
   ul.menu {
     display        : flex;
-    flex-direction : row;
-    flex-wrap      : nowrap;
+
+    flex-direction : column;
+    @media all and (min-width : $breakpoint_mobile) {
+      flex-direction : row;
+      flex-wrap      : nowrap;
+    }
 
     margin         : 0;
     padding        : 0;
@@ -12,14 +18,20 @@
       display : block;
 
       a {
-        display     : block;
-        padding     : 0.5rem;
-        padding-top : 0.45rem;
+        display : block;
+        padding : 0.5rem 0;
+        @media all and (min-width : $breakpoint_mobile) {
+          padding     : 0.5rem;
+          padding-top : 0.45rem;
+        }
       }
 
       ul {
         display        : flex;
-        flex-direction : row;
+        flex-direction : column;
+        @media all and (min-width : $breakpoint_mobile) {
+          flex-direction : row;
+        }
       }
 
     }
