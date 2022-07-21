@@ -39,9 +39,9 @@ class Images
     }
 
     public const BREAKPOINTS = [
-        "mobile"  => 375,
-        "desktop" => 980,
-        "wide"    => 1360,
+        "mobile"  => 768,
+        "desktop" => 992,
+        "wide"    => 1200,
     ];
 
     /**

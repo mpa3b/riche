@@ -12,12 +12,18 @@ i.icon {
     background-size     : 1rem;
   }
 
-  &.search:after {
-    background-image : url(search.svg);
-  }
+  $icons         : (
+          "search",
+          "cart",
+          "bars",
+  );
 
-  &.cart:after {
-    background-image : url(cart.svg);
+  @each $icon in $icons {
+
+    &.#{$icon}:after {
+      background-image : url(#{$icon}.svg);
+    }
+
   }
 
 }

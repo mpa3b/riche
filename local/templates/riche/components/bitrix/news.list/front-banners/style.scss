@@ -31,10 +31,14 @@
           padding    : 2rem;
 
           @media all and (min-width : $breakpoint_mobile) {
+            width   : 50%;
             padding : 4rem;
           }
 
-          width      : 50%;
+          @media all and (min-width : $breakpoint_desktop) {
+            padding : 6rem;
+          }
+
           box-sizing : border-box;
 
           .action {
@@ -43,8 +47,10 @@
 
         }
 
-        .hero-image {
-          width : 50%;
+        @media all and (min-width : $breakpoint_mobile) {
+          .hero-image {
+            width : 50%;
+          }
         }
 
       }

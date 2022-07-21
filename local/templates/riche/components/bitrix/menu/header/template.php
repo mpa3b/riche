@@ -19,6 +19,10 @@ $frame = $this->createFrame()->begin();
 ?>
 <nav id="menu--header">
 
+    <button class="transparent button">
+        <i class="icon bars"></i>
+    </button>
+
     <ul class="menu root">
 
         <? foreach ($arResult as $arItem): ?>
