@@ -14,27 +14,33 @@
 
 $this->setFrameMode(true);
 
-$frame = $this->createFrame()->begin();
+$frame = $this->createFrame();
 
 ?>
 <nav id="menu--header">
 
-    <button class="transparent button">
-        <i class="icon bars"></i>
+    <button class="transparent button hide--on-desktop">
+        <i class="icon burger"></i>
     </button>
 
-    <ul class="menu root">
+    <?php $frame->begin(); ?>
 
-        <? foreach ($arResult as $arItem): ?>
-            <li>
-                <a href="<?= $arItem['LINK']; ?>">
-                    <?= $arItem['TEXT']; ?>
-                </a>
-            </li>
-        <? endforeach; ?>
+    <div class="dropdown hide--on-mobile">
 
-    </ul>
+        <ul class="menu root">
 
-    <? $frame->end(); ?>
+            <?php foreach ($arResult as $arItem): ?>
+                <li>
+                    <a href="<?= $arItem['LINK']; ?>">
+                        <?= $arItem['TEXT']; ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+
+        </ul>
+
+    </div>
+
+    <?php $frame->end(); ?>
 
 </nav>

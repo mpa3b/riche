@@ -17,7 +17,7 @@
 }
 
 html {
-  font-size : 10pt;
+  font-size : 12pt;
 }
 
 body {
@@ -116,8 +116,8 @@ input[type=search],
 button {
   display          : block;
   box-sizing       : border-box;
-  padding          : 0.5em 0.75em;
-  padding-top      : 0.45em;
+  padding          : 0.33em 0.6em;
+  padding-top      : 0.3em;
 
   border-radius    : var(--button--border-radius);
 
@@ -134,9 +134,9 @@ button {
   }
 
   &.big {
-    font-size   : 1.4rem;
-    padding     : 0.65em 1.25em;
-    padding-top : 0.5em;
+    font-size   : 1.2rem;
+    padding     : 0.66em 1.32em;
+    padding-top : 0.6em;
   }
 
 }
