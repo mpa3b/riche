@@ -87,13 +87,20 @@ $frame = $this->createFrame();
                             <span
                                 class="author--name"><?php echo $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?></span>
 
+                            <?php if (!empty($arItem['PROPERTIES']['RATING']['VALUE'])) { ?>
+                                <div class="rating">
+                                    <span class="stars" data-rating="<?php echo $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']; ?>">
+                                        <i class="icon star"></i>
+                                        <i class="icon star"></i>
+                                        <i class="icon star"></i>
+                                        <i class="icon star"></i>
+                                        <i class="icon star"></i>
+                                    </span>
+                                </div>
+                            <?php } ?>
+
                         </div>
 
-                        <?php if (!empty($arItem['PROPERTIES']['RATING']['VALUE'])) { ?>
-                            <div class="rating">
-                                <span class="value"><?php echo $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']; ?></span>
-                            </div>
-                        <?php } ?>
 
                         <div class="content">e
                             <?php echo $arItem['DETAIL_TEXT']; ?>
@@ -167,13 +174,6 @@ $frame = $this->createFrame();
                             </div>
 
                         <?php } ?>
-
-                        <div class="actions">
-
-                            <button class="button primary">Плевать</button>
-                            <button class="button">Срать</button>
-
-                        </div>
 
                     </div>
 

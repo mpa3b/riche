@@ -68,15 +68,5 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
     ]
 ); ?>
 
-<?php
-
-$cache = Cache::createInstance();
-
-$cache->initCache(Template::CACHE_TIME, 'ICONS');
-
-d($cache->getVars());
-
-?>
-
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>
 

@@ -5,7 +5,6 @@
     .item {
 
 
-
     }
 
   }
@@ -17,17 +16,25 @@
   .review {
 
     .author {
-      display : flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
+      display        : flex;
+      flex-direction : row;
+      flex-wrap      : nowrap;
+
+      align-items    : center;
+
+      &--image {
+        display       : block;
+        margin-right  : 0.5rem;
+        border-radius : 2rem;
+        height        : 2rem;
+        width         : 2rem;
+        overflow      : hidden;
+      }
 
       &--name {
 
       }
 
-      &--image {
-
-      }
 
     }
 
@@ -40,7 +47,6 @@
     }
 
     .images {
-
 
 
     }
