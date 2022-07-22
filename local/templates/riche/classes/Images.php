@@ -8,9 +8,11 @@ class Images
     /**
      * Глобальная константа качества сжатия JPEG от 0 до 100
      */
-
     public const JPEG_QUALITY         = 75;
     public const JPEG_QUALITY_PRELOAD = self::JPEG_QUALITY / 2;
+
+    public const PLACEHOLDER = SITE_TEMPLATE_PATH . "/images/spacer.gif";
+    public const PLACEHOLDER_INLINE = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
     public static function getMedia($breakpoint, $max = false): string
     {

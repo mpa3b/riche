@@ -2,18 +2,19 @@
 
 :root {
 
-  --color--base      : #151515;
-  --color--white     : #fff;
+  --color--base   : #151515;
+  --color--white  : #fff;
+  --color--gray   : #a9a9a9;
 
-  --color--pink      : #ebb2d4;
-  --color--green     : #ebebc9;
-  --color--orange    : #ebe6b2;
-  --color--blue      : #b2b8eb;
+  --color--pink   : #ebb2d4;
+  --color--green  : #ebebc9;
+  --color--orange : #ebe6b2;
+  --color--blue   : #b2b8eb;
 
-  --color--key       : var(--color--pink);
-  --color--error     : red;
+  --color--key    : var(--color--pink);
+  --color--error  : red;
 
-  --font--base       : "Gordita", sans-serif;
+  --font--base    : "Gordita", sans-serif;
 
   --border-radius    : 0.5em;
 

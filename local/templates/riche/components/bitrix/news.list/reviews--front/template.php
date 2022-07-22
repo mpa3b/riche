@@ -39,141 +39,106 @@ $frame = $this->createFrame();
 
                 <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                    <div class="review item">
+                    <div class="review">
 
-                        <div class="author">
+                        <div class="header">
 
-                            <?
+                            <div>
 
-                            $authorImage = CFile::ResizeImageGet(
-                                $arItem['DISPLAY_PROPERTIES']['AUTHOR_IMAGE']['VALUE'],
-                                Images::calculateImageSize(120, 1),
-                                BX_RESIZE_IMAGE_EXACT,
-                                false,
-                                [],
-                                false
-                            );
+                                <div class="author">
 
-                            Images::getWebP($authorImage);
+                                    <?php
 
-                            $authorImagePreload = CFile::ResizeImageGet(
-                                $arItem['DISPLAY_PROPERTIES']['AUTHOR_IMAGE']['VALUE'],
-                                Images::calculateImageSize(32, 1),
-                                BX_RESIZE_IMAGE_EXACT,
-                                false,
-                                [],
-                                false
-                            );
+                                    $authorImage = CFile::ResizeImageGet(
+                                        $arItem['DISPLAY_PROPERTIES']['AUTHOR_IMAGE']['VALUE'],
+                                        Images::calculateImageSize(120, 1),
+                                        BX_RESIZE_IMAGE_EXACT,
+                                        false,
+                                        [],
+                                        false
+                                    );
 
-                            ?>
+                                    Images::getWebP($authorImage);
 
-                            <picture class="author--image">
-                                <?php if ($authorImage['webp_src']) { ?>
-                                    <source srcset="<?php echo $authorImage['webp_src']; ?>"
-                                            type="<?php echo $authorImage['webp_content_type']; ?>"
-                                            media="<?php echo Images::getMedia('mobile', true); ?>">
+                                    $authorImagePreload = CFile::ResizeImageGet(
+                                        $arItem['DISPLAY_PROPERTIES']['AUTHOR_IMAGE']['VALUE'],
+                                        Images::calculateImageSize(32, 1),
+                                        BX_RESIZE_IMAGE_EXACT,
+                                        false,
+                                        [],
+                                        false
+                                    );
+
+                                    ?>
+
+                                    <picture class="author--image">
+
+                                        <?php if (!empty($arItem['DISPLAY_PROPERTIES']['AUTHOR_IMAGE']['VALUE'])) { ?>
+
+                                            <?php if ($authorImage['webp_src']) { ?>
+                                                <source srcset="<?php echo $authorImage['webp_src']; ?>"
+                                                        type="<?php echo $authorImage['webp_content_type']; ?>"
+                                                        media="<?php echo Images::getMedia('mobile', true); ?>">
+                                            <?php } ?>
+
+                                            <source srcset="<?php echo $authorImage["SRC"]; ?>"
+                                                    type="<?php echo $authorImage['content_type']; ?>"
+                                                    media="<?php echo Images::getMedia('mobile', true); ?>">
+
+                                            <img src="<?php echo $authorImagePreload['src']; ?>"
+                                                 alt="<?php echo $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>"
+                                                 loading="lazy">
+
+                                        <?php } else { ?>
+
+                                            <img src="<?php echo Images::PLACEHOLDER; ?>">
+
+                                        <? } ?>
+
+
+                                    </picture>
+
+                                    <span class="author--name">
+                                        <?php echo $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>
+                                    </span>
+
+                                </div>
+
+                                <?php if (!empty($arItem['PROPERTIES']['RATING']['VALUE'])) { ?>
+
+                                    <div class="rating">
+
+                                    <span class="stars"
+                                          data-rating="<?php echo $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']; ?>">
+
+                                        <? for($i = 1; $i <= $arParams['RATING_MAX']; $i++) { ?>
+                                            <i class="icon star<?php if($i > $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE'] ) echo ' empty'; ?>" data-i="<?php echo $i; ?>"></i>
+                                        <?php } ?>
+
+                                    </span>
+
+                                    </div>
+
                                 <?php } ?>
 
-                                <source srcset="<?php echo $authorImage["SRC"]; ?>"
-                                        type="<?php echo $authorImage['content_type']; ?>"
-                                        media="<?php echo Images::getMedia('mobile', true); ?>">
+                            </div>
 
-                                <img src="<?php echo $authorImagePreload['src']; ?>"
-                                     alt="<?php echo $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>"
-                                     loading="lazy">
+                            <?php if (!empty($arItem['PROPERTIES']['DATE']['VALUE'])) { ?>
 
-                            </picture>
+                                <?php //todo дополнить проверкой года: если не текущий, то выводить ?>
+                                <?php //todo обновить ?>
 
-                            <span
-                                class="author--name"><?php echo $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?></span>
-
-                            <?php if (!empty($arItem['PROPERTIES']['RATING']['VALUE'])) { ?>
-                                <div class="rating">
-                                    <span class="stars" data-rating="<?php echo $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']; ?>">
-                                        <i class="icon star"></i>
-                                        <i class="icon star"></i>
-                                        <i class="icon star"></i>
-                                        <i class="icon star"></i>
-                                        <i class="icon star"></i>
-                                    </span>
+                                <div class="date">
+                                    <?php echo CIBlockFormatProperties::DateFormat($arParams["ACTIVE_DATE_FORMAT"], MakeTimeStamp($arItem['DISPLAY_PROPERTIES']['DATE']['VALUE'], CSite::GetDateFormat())); ?>
                                 </div>
+
                             <?php } ?>
 
                         </div>
 
-
-                        <div class="content">e
+                        <div class="content">
                             <?php echo $arItem['DETAIL_TEXT']; ?>
                         </div>
-
-                        <?php if (!empty($arItem['PROPERTIES']['IMAGES']['VALUE'])) { ?>
-                            <div class="images">
-                                <?php foreach ($arItem['DISPLAY_PROPERTIES']['IMAGES']['VALUE'] as $arImage) { ?>
-
-                                    <?php
-
-                                    $reviewImageMobile = CFile::ResizeImageGet(
-                                        $arImage,
-                                        Images::calculateImageSize(240, 0.66),
-                                        BX_RESIZE_IMAGE_EXACT,
-                                        false,
-                                        [],
-                                        false
-                                    );
-
-                                    $reviewImage = CFile::ResizeImageGet(
-                                        $arImage,
-                                        Images::calculateImageSize(320, 1.33),
-                                        BX_RESIZE_IMAGE_EXACT,
-                                        false,
-                                        [],
-                                        false
-                                    );
-
-                                    $reviewImagePreload = CFile::ResizeImageGet(
-                                        $arImage,
-                                        Images::calculateImageSize(120, 0.66),
-                                        BX_RESIZE_IMAGE_EXACT,
-                                        false,
-                                        [],
-                                        false
-                                    );
-
-                                    Images::getWebP($reviewImageMobile);
-                                    Images::getWebP($reviewImage);
-
-                                    ?>
-
-                                    <picture>
-
-                                        <?php if ($reviewImageMobile['webp_src']) { ?>
-                                            <source srcset="<?php echo $reviewImageMobile['webp_src']; ?>"
-                                                    type="<?php echo $reviewImageMobile['webp_content_type']; ?>"
-                                                    media="<?php echo Images::getMedia('mobile', true); ?>">
-                                        <?php } ?>
-
-                                        <source srcset="<?php echo $reviewImageMobile["src"]; ?>"
-                                                type="<?php echo $reviewImageMobile['content_type']; ?>"
-                                                media="<?php echo Images::getMedia('mobile', true); ?>">
-
-                                        <?php if ($reviewImage['webp_src']) { ?>
-                                            <source srcset="<?php echo $reviewImage['webp_src']; ?>"
-                                                    type="<?php echo $reviewImage['webp_content_type']; ?>"
-                                                    media="<?php echo Images::getMedia('mobile'); ?>">
-                                        <?php } ?>
-
-                                        <source srcset="<?php echo $reviewImage["src"]; ?>"
-                                                type="<?php echo $reviewImage['content_type']; ?>"
-                                                media="<?php echo Images::getMedia('mobile'); ?>">
-
-                                        <img src="<?php echo $reviewImagePreload['src']; ?>" loading="lazy">
-
-                                    </picture>
-
-                                <?php } ?>
-                            </div>
-
-                        <?php } ?>
 
                     </div>
 
