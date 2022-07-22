@@ -52,10 +52,12 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
         'CHECK_DATES' => 'Y',
 
         'ACTIVE_DATE_FORMAT' => 'j F',
+
         'RATING_MAX'         => 5,
+        'TEXT_LIMIT'         => 300,
 
         'PROPERTY_CODE' => [
-            'AUTHOR_IMAGE', 'AUTHOR_TITLE', 'AUTHOR_NAME', 'AUTHOR_NAME', 'DATE', 'SKU', 'RATING'
+            'AUTHOR_IMAGE', 'AUTHOR_TITLE', 'AUTHOR_NAME', 'AUTHOR_NAME', 'DATE', 'SKU', 'RATING', 'SKU'
         ],
 
         'SET_TITLE'                 => 'N',

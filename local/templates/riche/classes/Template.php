@@ -114,4 +114,27 @@ class Template
 
     }
 
+    /**
+     * Обрезка строки под указанную длинну с учётом слов и подстановкой многоточния.
+     *
+     * @param string $string   входящая строка
+     * @param float  $length   длинна строки
+     * @param string $postfix  постфикс строки, по умолчанию -- многоточие
+     * @param string $encoding Кодировка строки
+     *
+     * @return string
+     */
+    public function mbCutString(string $string, int $length, string $postfix = '…', string $encoding = 'UTF-8'): string
+    {
+
+        if (mb_strlen($string, $encoding) <= $length) {
+            return $string;
+        }
+
+        $tmp = mb_substr($string, 0, $length, $encoding);
+
+        return mb_substr($tmp, 0, mb_strripos($tmp, ' ', 0, $encoding), $encoding) . $postfix;
+
+    }
+
 }

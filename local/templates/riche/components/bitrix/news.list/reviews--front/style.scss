@@ -12,30 +12,62 @@
 
   }
 
-  .tns-slider {
+  .tns {
+
+    &-outer {
+
+    }
+
+    &-ovh {
+      overflow : visible;
+    }
+
+    &-slider {
+
+    }
+
+    &-item {
+
+    }
+
+  }
+
+  .slider {
+
+    &:not(.tns-slider) {
+
+      .item {
+        display : none;
+      }
+
+    }
 
   }
 
   .review {
+    padding-right : 2rem;
+    box-sizing    : border-box;
 
     .header {
-
       display        : flex;
       flex-direction : row;
       flex-wrap      : nowrap;
+      align-items    : center;
 
       .date {
-        font-size : 0.8rem;
+        font-size   : 0.8rem;
+        white-space : nowrap;
+        margin-left : auto;
+        color       : var(--color--gray);
       }
 
-      .author {
-        display        : flex;
-        flex-direction : row;
-        flex-wrap      : nowrap;
+    }
 
-        align-items    : center;
+    .author {
 
-        &--image {
+      &--image {
+
+        picture {
           margin-right     : 0.5rem;
           overflow         : hidden;
           border-radius    : 2rem;
@@ -45,20 +77,11 @@
           background-color : var(--color--gray);
         }
 
-        > div {
-          display        : flex;
-          flex-direction : row;
-        }
+      }
 
-        &--name {
-          font-weight : bold;
-        }
-
-        &--title {
-          color     : var(--color--gray);
-          font-size : 0.8rem;
-        }
-
+      &--name {
+        font-weight   : 500;
+        margin-bottom : 0.3em;
       }
 
     }
@@ -71,6 +94,8 @@
         flex-wrap      : nowrap;
 
         .star {
+          display   : block;
+          font-size : 0.6rem;
 
           &.empty {
             opacity : 0.3;
@@ -82,38 +107,12 @@
 
     }
 
-    .content {
-      font-size : 1.2rem;
-      margin    : 1rem 0;
+    .title {
+
     }
 
-    .images {
-      display        : flex;
-      flex-direction : row;
-      flex-wrap      : wrap;
-
-      margin         : 1rem -0.5rem;
-
-      > a {
-        display       : block;
-        margin        : 0.5rem;
-        box-sizing    : border-box;
-        border-radius : 1rem;
-        overflow      : hidden;
-      }
-
-      picture {
-        display : block;
-        height  : 100%;
-
-        img {
-          display    : block;
-          height     : 100%;
-          object-fit : cover;
-        }
-
-      }
-
+    .content {
+      margin : 1rem 0;
     }
 
   }

@@ -6,7 +6,6 @@ global $USER, $APPLICATION;
 use Bitrix\Main\Application;
 use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
-use Riche\Icons;
 use Riche\PreloadLinks;
 use Riche\Template;
 
