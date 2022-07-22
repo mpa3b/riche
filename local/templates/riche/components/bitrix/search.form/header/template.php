@@ -11,7 +11,12 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var array $templateData */
+
 /** @var \CBitrixComponent $component */
+
+use Riche\PreloadLinks;
+
+PreloadLinks::preloadIcon('search');
 
 $this->setFrameMode(true);
 

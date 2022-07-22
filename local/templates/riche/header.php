@@ -6,6 +6,7 @@ global $USER, $APPLICATION;
 use Bitrix\Main\Application;
 use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
+use Riche\Icons;
 use Riche\PreloadLinks;
 use Riche\Template;
 
@@ -14,7 +15,7 @@ Loader::registerAutoLoadClasses(
     [
         'Riche\PreloadLinks' => SITE_TEMPLATE_PATH . '/classes/PreloadLinks.php',
         'Riche\Template'     => SITE_TEMPLATE_PATH . '/classes/Template.php',
-        'Riche\Images'       => SITE_TEMPLATE_PATH . '/classes/Images.php'
+        'Riche\Images'       => SITE_TEMPLATE_PATH . '/classes/Images.php',
     ]
 );
 
@@ -110,6 +111,18 @@ if (IS_AJAX && $cartUpdate) {
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
 
+    <?php
+
+    $APPLICATION->ShowHeadStrings();
+
+    $APPLICATION->ShowMeta("robots", false, true);
+    $APPLICATION->ShowMeta("keywords", false, true);
+
+    $APPLICATION->ShowMeta("description", false, true);
+    $APPLICATION->ShowLink("canonical", null, true);
+
+    ?>
+
     <?php //region  favicon ?>
 
     <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_TEMPLATE_PATH; ?>/favicons/favicon.ico"/>
@@ -130,13 +143,6 @@ if (IS_AJAX && $cartUpdate) {
 
     <?php
 
-    $APPLICATION->ShowMeta("robots", false, true);
-    $APPLICATION->ShowMeta("keywords", false, true);
-
-    $APPLICATION->ShowMeta("description", false, true);
-    $APPLICATION->ShowLink("canonical", null, true);
-
-    $APPLICATION->ShowHeadStrings();
     $APPLICATION->ShowHeadScripts();
     $APPLICATION->ShowCSS(true, false);
 

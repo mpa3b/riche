@@ -1,6 +1,8 @@
-<?php use Riche\PreloadLinks;
+<?php
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+
+use Riche\PreloadLinks;
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -16,7 +18,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 $this->setFrameMode(true);
 
-PreloadLinks::addHeadPreloadAsset('/local/templates/riche/icons/burger.svg');
+PreloadLinks::preloadIcon('burger');
 
 $frame = $this->createFrame();
 

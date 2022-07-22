@@ -4,6 +4,7 @@ if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) die();
 
 use Bitrix\Main\Application;
 use Riche\Images;
+use Riche\PreloadLinks;
 use Riche\Template;
 
 /** @var array $arParams */
@@ -20,6 +21,8 @@ use Riche\Template;
 /** @var \CBitrixComponent $component */
 
 global $APPLICATION, $USER;
+
+PreloadLinks::preloadIcon('cart');
 
 $context = Application::getInstance()->getContext();
 $request = $context->getRequest();

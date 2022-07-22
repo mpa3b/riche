@@ -174,7 +174,9 @@ class PreloadLinks
     public static function preloadIcon($name): void
     {
 
-        PreloadLinks::addHeadPreloadAsset(SITE_TEMPLATE_PATH . '/icons/' . $name . '.svg');
+        self::addHeadPreloadAsset(SITE_TEMPLATE_PATH . '/icons/' . $name . '.svg');
+
+        // todo: вынести в класс с проверкой файла на существования и кешированием списка
 
     }
 

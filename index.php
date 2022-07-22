@@ -4,6 +4,7 @@ require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 
 global $APPLICATION, $USER;
 
+use Bitrix\Main\Data\Cache;
 use Riche\Template;
 
 $APPLICATION->SetTitle("Про красоту и здоровье");
@@ -67,4 +68,15 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
     ]
 ); ?>
 
+<?php
+
+$cache = Cache::createInstance();
+
+$cache->initCache(Template::CACHE_TIME, 'ICONS');
+
+d($cache->getVars());
+
+?>
+
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>
+
