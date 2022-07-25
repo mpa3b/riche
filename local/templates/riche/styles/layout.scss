@@ -90,7 +90,11 @@
 
     &--menu {
       display        : flex;
-      flex-direction : row;
+      flex-direction : column;
+
+      @media all and (min-width : $breakpoint_mobile) {
+        flex-direction : row;
+      }
 
       h3 {
         font-size   : 0.8rem;
