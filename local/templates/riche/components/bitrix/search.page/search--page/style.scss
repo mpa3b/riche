@@ -1,0 +1,100 @@
+@import "../../../../styles/vars";
+
+.search--page {
+
+  .form {
+
+    input {
+      width      : 100%;
+      display    : block;
+      box-sizing : border-box;
+    }
+
+    form {
+      position : relative;
+    }
+
+    .controls {
+      position       : absolute;
+      height         : 100%;
+      right          : 0.5rem;
+      top            : 0;
+      display        : flex;
+      flex-direction : row;
+      flex-wrap      : nowrap;
+
+      button {
+        width : 1.6rem;
+      }
+
+    }
+
+    .hint {
+      color : var(--color--gray);
+    }
+
+  }
+
+  .result {
+
+    ul.items {
+      padding        : 0;
+      margin         : 0;
+
+      display        : flex;
+      flex-direction : column;
+
+      li {
+
+        display        : flex;
+        flex-direction : row;
+        align-items    : center;
+
+        width          : 100%;
+        margin         : 0.5rem 0;
+
+        font-family    : var(--font--walsheim);
+
+        > * {
+          margin-right : 0.8rem;
+        }
+
+        picture {
+          border-radius : 3px;
+          border        : 1px solid var(--color--outline);
+
+          img {
+            display : block;
+            width   : 4.2rem;
+            height  : 4.2rem;
+            padding : 0.5rem;
+          }
+
+        }
+
+        a {
+          text-decoration : none;
+          color           : inherit;
+        }
+
+        .price {
+          font-family : var(--font--walsheim);
+
+          .label {
+            color : var(--color--gray);
+          }
+
+          .value {
+            font-family : var(--font--walsheim);
+            font-weight : bold;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
