@@ -84,9 +84,20 @@ global $USER, $APPLICATION;
 
         </div>
 
-        <div id="page--footer--outro" class="wrap">
+    </div>
 
-            <span>RICHE</span>
+    <div class="wrap">
+
+        <div class="row">
+
+            <div class="half">
+                <span>© RICHE, 2015 – <?php echo Date('Y'); ?> гг.</span>
+            </div>
+
+            <div class="half text-align--right">
+                <span>КПП 213001001</span>
+                <span>ИНН 213016070</span>
+            </div>
 
         </div>
 

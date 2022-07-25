@@ -171,20 +171,4 @@ class PreloadLinks
 
     }
 
-    /**
-     * Просто берёт из папки SITE_TEMPLATE_PATH/icons/%name%.svg и закидывает как link preload
-     *
-     * @param $name
-     *
-     * @return void
-     */
-    public static function preloadIcon($name): void
-    {
-
-        self::addHeadPreloadAsset(SITE_TEMPLATE_PATH . '/icons/' . $name . '.svg');
-
-        // todo: вынести в класс возможно с проверкой файла на существования и кешированием списка
-
-    }
-
 }

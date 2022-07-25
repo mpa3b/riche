@@ -16,8 +16,6 @@
 
 use Riche\PreloadLinks;
 
-PreloadLinks::preloadIcon('search');
-
 $this->setFrameMode(true);
 
 $frame = $this->createFrame();

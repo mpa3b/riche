@@ -18,8 +18,6 @@ use Riche\PreloadLinks;
 
 $this->setFrameMode(true);
 
-PreloadLinks::preloadIcon('burger');
-
 $frame = $this->createFrame();
 
 ?>

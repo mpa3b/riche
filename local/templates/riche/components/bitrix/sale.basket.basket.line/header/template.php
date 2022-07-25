@@ -22,8 +22,6 @@ use Riche\Template;
 
 global $APPLICATION, $USER;
 
-PreloadLinks::preloadIcon('cart');
-
 $context = Application::getInstance()->getContext();
 $request = $context->getRequest();
 

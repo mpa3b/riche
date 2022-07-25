@@ -2,19 +2,19 @@
 
 :root {
 
-  --color--base   : #151515;
-  --color--white  : #fff;
-  --color--gray   : #c2c2c2;
+  --color--base      : #151515;
+  --color--white     : #fff;
+  --color--gray      : #c2c2c2;
 
-  --color--pink   : #ebb2d4;
-  --color--green  : #ebebc9;
-  --color--orange : #ebe6b2;
-  --color--blue   : #b2b8eb;
+  --color--pink      : #ebb2d4;
+  --color--green     : #ebebc9;
+  --color--orange    : #ebe6b2;
+  --color--blue      : #b2b8eb;
 
-  --color--key    : var(--color--pink);
-  --color--error  : red;
+  --color--key       : var(--color--pink);
+  --color--error     : red;
 
-  --font--base    : "Gordita", sans-serif;
+  --font--base       : "Gordita", sans-serif;
 
   --border-radius    : 0.5em;
 
@@ -167,12 +167,24 @@ button {
   }
 
   &:focus {
-    outline: none;
+    outline : none;
   }
 
 }
 
 //endregion
+
+.text-align {
+
+  &--right {
+    text-align : right;
+  }
+
+  &--center {
+    text-align : center;
+  }
+
+}
 
 .nowrap {
   white-space : nowrap;
