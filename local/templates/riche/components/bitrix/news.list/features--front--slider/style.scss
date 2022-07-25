@@ -1,11 +1,13 @@
+@import "../../../../vars";
+
 .features--front--slider {
 
   .item {
 
     .wrapper {
-      position : relative;
-      border-radius: 1.5rem;
-      overflow : hidden;
+      position      : relative;
+      border-radius : 1.5rem;
+      overflow      : hidden;
 
       picture {
 
@@ -25,7 +27,7 @@
         padding    : 2rem;
         box-sizing : border-box;
 
-        color: var(--color--white);
+        color      : var(--color--white);
 
         h3 {
           margin-top : 0;
@@ -36,6 +38,22 @@
 
         }
 
+      }
+
+    }
+
+  }
+
+  .tns {
+
+    &-slider {
+
+    }
+
+    @media all and (max-width : $breakpoint_mobile) {
+
+      &-ovh {
+        overflow : visible;
       }
 
     }
