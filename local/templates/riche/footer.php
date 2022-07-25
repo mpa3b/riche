@@ -1,8 +1,12 @@
-<?php use Riche\Template;
+<?php
 
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
+use Bitrix\Main\Application;
+use Riche\Template;
+
 global $USER, $APPLICATION;
+
 ?>
 
 </div>
@@ -13,7 +17,23 @@ global $USER, $APPLICATION;
 
         <div class="grid">
 
-            <div id="page--footer--contact" class="quarter">
+            <div id="page--footer--contact" class="half">
+
+                <?php if (Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory() == "") { ?>
+
+                    <img src="<?php echo SITE_TEMPLATE_PATH . '/images/logo--full.svg'; ?>"
+                         class="logo"
+                         loading="lazy">
+
+                <?php } else { ?>
+
+                    <a href="/">
+                        <img src="<?php echo SITE_TEMPLATE_PATH . '/images/logo--full.svg'; ?>"
+                             class="logo"
+                             loading="lazy">
+                    </a>
+
+                <?php } ?>
 
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:main.include",
@@ -58,16 +78,12 @@ global $USER, $APPLICATION;
                     ]
                 ); ?>
 
-            </div>
-
-            <div id="page--footer--about" class="quarter">
-
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:main.include",
                     ".default",
                     [
                         "AREA_FILE_SHOW"      => "sect",
-                        "AREA_FILE_SUFFIX"    => "about",
+                        "AREA_FILE_SUFFIX"    => "links",
                         "EDIT_TEMPLATE"       => "",
                         "AREA_FILE_RECURSIVE" => "Y",
 

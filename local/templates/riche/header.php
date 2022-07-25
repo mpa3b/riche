@@ -190,12 +190,18 @@ if (IS_AJAX && $cartUpdate) {
 
                 <?php if ($currentDirectoryPath == "") { ?>
 
-                    <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" loading="eager" alt="RICHE">
+                    <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+                         loading="eager"
+                         alt="RICHE"
+                         class="logo">
 
                 <?php } else { ?>
 
                     <a href="/">
-                        <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg" loading="eager" alt="RICHE">
+                        <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+                             loading="eager"
+                             alt="RICHE"
+                             class="logo">
                     </a>
 
                 <?php } ?>

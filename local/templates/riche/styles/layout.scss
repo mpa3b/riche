@@ -61,15 +61,64 @@
   }
 
   &--footer {
-    background-color : var(--color--gray);
-
-    padding-top      : 2rem;
-    padding-bottom   : 2rem;
+    padding-top    : 1rem;
+    padding-bottom : 1rem;
 
     &--contact {
 
-      h2 {
-        font-size : 1.2rem;
+      .logo {
+        margin-bottom : 1rem;
+      }
+
+    }
+
+    h2 {
+      font-size : 1rem;
+    }
+
+    .contact {
+
+      p > span {
+        color : var(--color--gray);
+      }
+
+      p > a {
+
+      }
+
+    }
+
+    &--menu {
+      display        : flex;
+      flex-direction : row;
+
+      h3 {
+        font-size   : 0.8rem;
+        color       : var(--color--gray);
+        font-weight : normal;
+      }
+
+      .links {
+
+        nav {
+          display        : flex;
+          flex-direction : row;
+
+          a {
+            display       : block;
+            border        : 1px solid var(--color--gray);
+            border-radius : 3rem;
+            margin-right  : 1rem;
+
+            i.icon {
+              margin  : 0.5rem;
+              display : block;
+            }
+
+          }
+
+        }
+
       }
 
     }

@@ -1,36 +1,43 @@
 @import "../../../../vars";
 
 .menu--footer {
+  font-size : 0.8rem;
 
   ul.menu {
     display        : flex;
-
     flex-direction : column;
+
     @media all and (min-width : $breakpoint_mobile) {
       flex-direction : row;
-      flex-wrap      : nowrap;
     }
 
     margin         : 0;
     padding        : 0;
 
     li {
-      display : block;
+      display       : block;
+      padding-right : 1rem;
 
+      span,
       a {
         display : block;
-        padding : 0.5rem 0;
-        @media all and (min-width : $breakpoint_mobile) {
-          padding     : 0.5rem;
-          padding-top : 0.45rem;
-        }
+        margin  : 0.5em 0;
+      }
+
+      span {
+        color      : var(--color--gray);
+        margin-top : 0;
       }
 
       ul {
+        padding        : 0;
+        margin         : 0;
+
         display        : flex;
         flex-direction : column;
-        @media all and (min-width : $breakpoint_mobile) {
-          flex-direction : row;
+
+        li {
+          font-size : 1rem;
         }
       }
 

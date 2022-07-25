@@ -34,13 +34,16 @@ if (!empty($arResult)) { ?>
             <?php if ($arItem["IS_PARENT"]): ?>
 
             <li>
-                <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
+
+                <span><?= $arItem["TEXT"] ?></span>
+
                 <ul>
 
                     <?php else: ?>
 
                         <li>
                             <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
+
                         </li>
 
                     <?php endif; ?>
