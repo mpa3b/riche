@@ -11,9 +11,7 @@ $(() => {
             mouseDrag: true,
 
             controls: false,
-
-            gutter: 15,
-
+            
             nav: false,
 
             autoplay            : false,

@@ -41,7 +41,7 @@ $frame = $this->createFrame();
 
                     $imageMobile = CFile::ResizeImageGet(
                         $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(375, 1),
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 1),
                         BX_RESIZE_IMAGE_EXACT,
                         false,
                         [],
@@ -50,7 +50,7 @@ $frame = $this->createFrame();
 
                     $image = CFile::ResizeImageGet(
                         $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(480, 1.33),
+                        Images::calculateImageSize(360, 1.33),
                         BX_RESIZE_IMAGE_EXACT,
                         false,
                         [],
