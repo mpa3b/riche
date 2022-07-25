@@ -17,7 +17,7 @@ global $USER, $APPLICATION;
 
         <div class="grid">
 
-            <div id="page--footer--contact" class="half">
+            <div id="page--footer--contact" class="two-fifths">
 
                 <?php if (Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory() == "") { ?>
 
@@ -55,7 +55,7 @@ global $USER, $APPLICATION;
 
             </div>
 
-            <div id="page--footer--menu" class="half">
+            <div id="page--footer--menu" class="three-fifths">
 
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:menu",

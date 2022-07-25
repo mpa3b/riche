@@ -29,9 +29,9 @@
 
         .caption {
           padding    : 2rem;
+          flex-basis: 65%;
 
           @media all and (min-width : $breakpoint_mobile) {
-            width   : 50%;
             padding : 4rem;
           }
 

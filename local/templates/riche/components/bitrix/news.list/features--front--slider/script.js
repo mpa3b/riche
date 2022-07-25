@@ -7,10 +7,12 @@ $(() => {
             slideBy  : 1,
 
             mode     : "carousel",
-            loop     : false,
+            loop     : true,
             mouseDrag: true,
 
             controls: false,
+
+            gutter: 15,
 
             nav: false,
 

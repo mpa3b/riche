@@ -4,6 +4,8 @@
 
     .wrapper {
       position : relative;
+      border-radius: 1.5rem;
+      overflow : hidden;
 
       picture {
 
@@ -23,9 +25,15 @@
         padding    : 2rem;
         box-sizing : border-box;
 
+        color: var(--color--white);
+
         h3 {
           margin-top : 0;
-          font-size  : 1rem;
+          font-size  : 1.2rem;
+        }
+
+        p {
+
         }
 
       }

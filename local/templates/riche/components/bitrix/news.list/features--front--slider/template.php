@@ -48,8 +48,6 @@ $frame = $this->createFrame();
                         false
                     );
 
-                    Images::getWebP($imageMobile);
-
                     $image = CFile::ResizeImageGet(
                         $arItem['DETAIL_PICTURE'],
                         Images::calculateImageSize(480, 0.75),
@@ -58,6 +56,8 @@ $frame = $this->createFrame();
                         [],
                         false
                     );
+
+                    Images::getWebP($imageMobile);
 
                     Images::getWebP($image);
 
@@ -78,38 +78,38 @@ $frame = $this->createFrame();
 
                             <picture>
 
-                            <?php if (!empty($arItem['DETAIL_PICTURE'])) { ?>
+                                <?php if (!empty($arItem['DETAIL_PICTURE'])) { ?>
 
-                                <?php if ($imageMobile['webp_src']) { ?>
-                                    <source srcset="<?php echo $imageMobile['webp_src']; ?>"
-                                            type="<?php echo $imageMobile['webp_content_type']; ?>"
+                                    <?php if ($imageMobile['webp_src']) { ?>
+                                        <source srcset="<?php echo $imageMobile['webp_src']; ?>"
+                                                type="<?php echo $imageMobile['webp_content_type']; ?>"
+                                                media="<?php echo Images::getMedia('mobile', true); ?>">
+                                    <?php } ?>
+
+                                    <source srcset="<?php echo $imageMobile["src"]; ?>"
+                                            type="<?php echo $imageMobile['content_type']; ?>"
                                             media="<?php echo Images::getMedia('mobile', true); ?>">
-                                <?php } ?>
 
-                                <source srcset="<?php echo $imageMobile["src"]; ?>"
-                                        type="<?php echo $imageMobile['content_type']; ?>"
-                                        media="<?php echo Images::getMedia('mobile', true); ?>">
+                                    <?php if ($image['webp_src']) { ?>
+                                        <source srcset="<?php echo $image['webp_src']; ?>"
+                                                type="<?php echo $image['webp_content_type']; ?>"
+                                                media="<?php echo Images::getMedia('mobile'); ?>">
+                                    <?php } ?>
 
-                                <?php if ($image['webp_src']) { ?>
-                                    <source srcset="<?php echo $image['webp_src']; ?>"
-                                            type="<?php echo $image['webp_content_type']; ?>"
+                                    <source srcset="<?php echo $image["src"]; ?>"
+                                            type="<?php echo $image['content_type']; ?>"
                                             media="<?php echo Images::getMedia('mobile'); ?>">
-                                <?php } ?>
 
-                                <source srcset="<?php echo $image["src"]; ?>"
-                                        type="<?php echo $image['content_type']; ?>"
-                                        media="<?php echo Images::getMedia('mobile'); ?>">
+                                    <img src="<?php echo $imagePreload['src']; ?>"
+                                         loading="lazy">
 
-                                <img src="<?php echo $imagePreload['src']; ?>"
-                                     loading="lazy">
+                                <?php } else { ?>
 
-                            <?php } else { ?>
+                                    <img src="<?php echo Images::PLACEHOLDER; ?>">
 
-                                <img src="<?php echo Images::PLACEHOLDER; ?>">
+                                <? } ?>
 
-                            <? } ?>
-
-                        </picture>
+                            </picture>
 
                             <div class="caption">
 
@@ -131,7 +131,5 @@ $frame = $this->createFrame();
         <?php $frame->end(); ?>
 
     </div>
-
-    <?php d($arResult); ?>
 
 <?php } ?>
