@@ -4,10 +4,11 @@
         die();
     }
     
-    use AkBars\Template;
+    use Riche\Template;
     use Bitrix\Catalog\MeasureTable;
     use Bitrix\Catalog\PriceTable;
     use Bitrix\Catalog\ProductTable;
+
     use Bitrix\Iblock\Elements\ElementCatalogTable;
     use Bitrix\Iblock\Elements\ElementOffersTable;
     use Bitrix\Iblock\ElementTable;
