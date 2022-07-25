@@ -41,7 +41,7 @@ $frame = $this->createFrame();
 
                     $imageMobile = CFile::ResizeImageGet(
                         $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(375, 0.75),
+                        Images::calculateImageSize(375, 1),
                         BX_RESIZE_IMAGE_EXACT,
                         false,
                         [],
@@ -50,7 +50,7 @@ $frame = $this->createFrame();
 
                     $image = CFile::ResizeImageGet(
                         $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(480, 0.75),
+                        Images::calculateImageSize(480, 1.33),
                         BX_RESIZE_IMAGE_EXACT,
                         false,
                         [],
@@ -114,7 +114,15 @@ $frame = $this->createFrame();
                             <div class="caption">
 
                                 <h3><?php echo $arItem['NAME']; ?></h3>
-                                <p><?php echo $arItem['PREVIEW_TEXT']; ?></p>
+
+                                <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+                                    <p><?php echo $arItem['PREVIEW_TEXT']; ?></p>
+                                <?php } ?>
+
+                                <?php if (!empty($arItem['DETAIL_PAGE_URL'])) { ?>
+                                    <a href="<?php echo $arItem['DETAIL_PAGE_URL']; ?>"
+                                       class="button primary">Подробнее</a>
+                                <?php } ?>
 
                             </div>
 
