@@ -18,8 +18,6 @@ use Riche\PreloadLinks;
 
 PreloadLinks::preloadIcon('search');
 
-$this->addExternalJs(\Riche\Template::ASSETS . '/jquery-colorbox/jquery.colorbox-min.js');
-
 $this->setFrameMode(true);
 
 $frame = $this->createFrame();
@@ -34,48 +32,44 @@ $frame = $this->createFrame();
         <i class="icon search"></i>
     </button>
 
-    <div hidden>
+    <div class="header-search--form hidden">
 
-        <div class="header-search--popup popup">
+        <form action="/search/">
 
-            <form action="/search/">
+            <div class="input">
 
-                <div class="input">
+                <div class="field">
 
-                    <div class="field">
+                    <? if ($arParams["USE_SUGGEST"] === "Y") { ?>
 
-                        <? if ($arParams["USE_SUGGEST"] === "Y") { ?>
+                        <? $APPLICATION->IncludeComponent(
+                            "bitrix:search.suggest.input",
+                            "",
+                            [
+                                "NAME"          => "q",
+                                "VALUE"         => "",
+                                "INPUT_SIZE"    => 15,
+                                "DROPDOWN_SIZE" => 10,
+                            ],
+                            $component, ["HIDE_ICONS" => "Y"]
+                        ); ?>
 
-                            <? $APPLICATION->IncludeComponent(
-                                "bitrix:search.suggest.input",
-                                "",
-                                [
-                                    "NAME"          => "q",
-                                    "VALUE"         => "",
-                                    "INPUT_SIZE"    => 15,
-                                    "DROPDOWN_SIZE" => 10,
-                                ],
-                                $component, ["HIDE_ICONS" => "Y"]
-                            ); ?>
+                    <? } else { ?>
 
-                        <? } else { ?>
+                        <input type="search"
+                               name="q"
+                               value="<?= $arResult["REQUEST"]["QUERY"]; ?>"
+                               placeholder="Поиск"/>
 
-                            <input type="search"
-                                   name="q"
-                                   value="<?= $arResult["REQUEST"]["QUERY"]; ?>"
-                                   placeholder="Поиск"/>
-
-                        <? } ?>
-
-                    </div>
+                    <? } ?>
 
                 </div>
 
-            </form>
+            </div>
 
-        </div>
+        </form>
 
-    </div>
+</div>
 
     <? $frame->end(); ?>
 

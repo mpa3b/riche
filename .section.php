@@ -1,7 +1,7 @@
 <?
-$sSectionName = "RICHE — green adn sexy.";
+$sSectionName = "RICHE — green and sexy.";
 $arDirProperties = Array(
-   "description" => "RICHE — green adn sexy.",
+   "description" => "RICHE — green and sexy.",
    "TITLE" => "RICHE",
    "ROBOTS" => "index, follow"
 );
