@@ -135,7 +135,6 @@ button {
   border           : 2px solid var(--color--key);
   color            : var(--color--base);
   background-color : var(--color--white);
-  box-shadow       : var(--button--shadow);
 
   font-weight      : bold;
 
@@ -163,6 +162,10 @@ button {
 
   &.inverted {
     color : var(--color--white);
+  }
+
+  &:focus {
+    outline: none;
   }
 
 }
