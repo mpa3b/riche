@@ -84,7 +84,7 @@ $frame = $this->createFrame();
                                                     media="<?php echo Images::getMedia('mobile', true); ?>">
                                         <?php } ?>
 
-                                        <source srcset="<?php echo $authorImage["SRC"]; ?>"
+                                        <source srcset="<?php echo $authorImage["src"]; ?>"
                                                 type="<?php echo $authorImage['content_type']; ?>"
                                                 media="<?php echo Images::getMedia('mobile', true); ?>">
 

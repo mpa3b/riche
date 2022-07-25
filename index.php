@@ -42,6 +42,36 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
 
 <?php $APPLICATION->IncludeComponent(
     'bitrix:news.list',
+    'features--front--slider',
+    [
+        'IBLOCK_TYPE'               => 'CONTENT',
+        'IBLOCK_ID'                 => 4,
+        'NEWS_COUNT'                => 6,
+        'SORT_BY1'                  => 'ACTIVE_FROM',
+        'SORT_ORDER1'               => 'DESC ',
+        'CHECK_DATES'               => 'Y',
+        'SET_TITLE'                 => 'N',
+        'SET_BROWSER_TITLE'         => 'N',
+        'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
+        'ADD_SECTIONS_CHAIN'        => 'N',
+
+        'FIELD_CODE' => [
+            'DETAIL_PICTURE',
+            'PREVIEW_PICTURE'
+        ],
+
+        'DISPLAY_PICTURE' => 'Y',
+
+        'CACHE_TYPE' => 'A',
+        'CACHE_TIME' => Template::CACHE_TIME,
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
+    ]
+); ?>
+
+<?php $APPLICATION->IncludeComponent(
+    'bitrix:news.list',
     'reviews--front',
     [
         'IBLOCK_TYPE' => 'CONTENT',
@@ -53,8 +83,8 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
 
         'ACTIVE_DATE_FORMAT' => 'j F',
 
-        'RATING_MAX'         => 5,
-        'TEXT_LIMIT'         => 300,
+        'RATING_MAX' => 5,
+        'TEXT_LIMIT' => 300,
 
         'PROPERTY_CODE' => [
             'AUTHOR_IMAGE', 'AUTHOR_TITLE', 'AUTHOR_NAME', 'AUTHOR_NAME', 'DATE', 'SKU', 'RATING', 'SKU'
