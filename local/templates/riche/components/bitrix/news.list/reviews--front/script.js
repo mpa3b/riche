@@ -7,7 +7,7 @@ $(() => {
             slideBy  : 1,
 
             mode     : "carousel",
-            loop     : true,
+            loop     : false,
             mouseDrag: true,
 
             controls: false,
