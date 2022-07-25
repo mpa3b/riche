@@ -84,15 +84,15 @@
   }
 
   @media all and (min-width : $breakpoint_desktop) {
-    width : 81%;
+    width : 82%;
   }
 
   @media all and (min-width : $breakpoint_desktop_wide) {
-    width : 72%;
+    width : 78%;
   }
 
   @media all and (min-width : $breakpoint_desktop_wide * 1.33) {
-    width : 68%;
+    width : 72%;
   }
 
 }

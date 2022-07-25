@@ -1,5 +1,6 @@
 .reviews--front {
-  margin : 2rem 0;
+  margin   : 2rem 0;
+  overflow : hidden;
 
   .items {
     display        : flex;
@@ -94,9 +95,9 @@
         flex-direction : row;
         flex-wrap      : nowrap;
 
-        .star {
-          display   : block;
-          font-size : 0.6rem;
+        font-size      : 0.5rem;
+
+        i.icon {
 
           &.empty {
             opacity : 0.3;

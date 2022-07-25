@@ -116,7 +116,7 @@ $frame = $this->createFrame();
                                           data-rating="<?php echo $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']; ?>">
 
                                         <? for ($i = 1; $i <= $arParams['RATING_MAX']; $i++) { ?>
-                                            <i class="icon star<?php if ($i > $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']) echo ' empty'; ?>"
+                                            <i class="icon star-filled <?php if ($i > $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']) echo 'empty'; ?>"
                                                data-i="<?php echo $i; ?>"></i>
                                         <?php } ?>
 
