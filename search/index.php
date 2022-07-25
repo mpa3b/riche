@@ -12,6 +12,7 @@ $APPLICATION->SetTitle("Поиск");
 
 <?php $APPLICATION->IncludeComponent(
     'bitrix:search.page',
+    'page',
     [
         "TAGS_SORT"          => "NAME",
         "TAGS_PAGE_ELEMENTS" => 150,
@@ -23,7 +24,7 @@ $APPLICATION->SetTitle("Поиск");
         "SHOW_CHAIN"      => "Y",
         "COLOR_TYPE"      => "Y",
 
-        "USE_SUGGEST"          => "Y",
+        "USE_SUGGEST"          => "N",
         "SHOW_RATING"          => "Y",
         "PATH_TO_USER_PROFILE" => "",
 

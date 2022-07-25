@@ -1,29 +1,29 @@
 <? use AkBars\Images;
-    
-    if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) {
-        die();
-    }
-    
-    /** @var array $arParams */
-    /** @var array $arResult */
-    /** @global CMain $APPLICATION */
-    /** @global CUser $USER */
-    /** @global CDatabase $DB */
-    /** @var CBitrixComponentTemplate $this */
-    /** @var string $templateName */
-    /** @var string $templateFile */
-    /** @var string $templateFolder */
-    /** @var string $componentPath */
-    /** @var CBitrixComponent $component */
-    
-    $this->setFrameMode(true);
-    
-    $frame = $this->createFrame();
+
+if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) {
+    die();
+}
+
+/** @var array $arParams */
+/** @var array $arResult */
+/** @global CMain $APPLICATION */
+/** @global CUser $USER */
+/** @global CDatabase $DB */
+/** @var CBitrixComponentTemplate $this */
+/** @var string $templateName */
+/** @var string $templateFile */
+/** @var string $templateFolder */
+/** @var string $componentPath */
+/** @var CBitrixComponent $component */
+
+$this->setFrameMode(true);
+
+$frame = $this->createFrame();
 
 ?>
 
-<div class="search-page--header">
-    
+<div class="search-page">
+
     <? $frame->begin(); ?>
 
     <div class="wrap">
@@ -31,22 +31,22 @@
         <div class="form">
 
             <form>
-                
+
                 <? if ($arParams["USE_SUGGEST"] === "Y") { ?>
-                    
+
                     <?
-                    
+
                     if (mb_strlen($arResult["REQUEST"]["~QUERY"]) and is_object($arResult["NAV_RESULT"])) {
-                        
+
                         $arResult["FILTER_MD5"] = $arResult["NAV_RESULT"]->GetFilterMD5();
                         $obSearchSuggest        =
                             new CSearchSuggest($arResult["FILTER_MD5"], $arResult["REQUEST"]["~QUERY"]);
                         $obSearchSuggest->SetResultCount($arResult["NAV_RESULT"]->NavRecordCount);
-                        
+
                     }
-                    
+
                     ?>
-                    
+
                     <? $APPLICATION->IncludeComponent(
                         "bitrix:search.suggest.input",
                         "",
@@ -60,38 +60,28 @@
                         $component,
                         ["HIDE_ICONS" => "Y"]
                     ); ?>
-                
+
                 <? } else { ?>
 
                     <input type="search"
                            name="q"
                            value="<?= $arResult["REQUEST"]["QUERY"]; ?>"
                            placeholder="Поиск"/>
-                
+
                 <? } ?>
 
                 <input type="hidden" name="how" value="<?= $arResult["REQUEST"]["HOW"] == "d" ? "d" : "r" ?>"/>
 
-                <div class="controls">
-
-                    <button class="transparent delete button" type="reset">
-                        <i class="icon delete"></i>
-                    </button>
-
-                    <button class="transparent search button" type="submit">
-                        <i class="icon search"></i>
-                    </button>
-
-                </div>
+                <button class="transparent search button" type="submit">
+                    <i class="icon search"></i>
+                </button>
 
             </form>
-
-            <p class="hint">Нажмите Enter чтобы начать поиск.</p>
 
         </div>
 
         <div class="result">
-            
+
             <? if ($arResult["ERROR_CODE"] != 0) { ?>
 
                 <div class="search-error">
@@ -100,24 +90,24 @@
                     <p><? ShowError($arResult["ERROR_TEXT"]); ?></p>
 
                 </div>
-            
+
             <? } else {
                 if (count($arResult["SEARCH"]) > 0) { ?>
-                    
+
                     <? if ($arParams["DISPLAY_TOP_PAGER"] != "N") {
                         echo $arResult["NAV_STRING"];
                     } ?>
 
                     <ul class="items">
-                        
+
                         <? foreach ($arResult["SEARCH"] as $arItem) { ?>
 
                             <li>
-                                
+
                                 <? if (!empty($arItem['PREVIEW_PICTURE'])) { ?>
-                                    
+
                                     <?
-                                    
+
                                     $image_preload = CFile::resizeImageGet(
                                         $arItem['PREVIEW_PICTURE'],
                                         Images::calculateImageSize(32, 1),
@@ -127,7 +117,7 @@
                                         false,
                                         Images::JPEG_QUALITY_PRELOAD
                                     );
-                                    
+
                                     $image_mobile = CFile::resizeImageGet(
                                         $arItem['PREVIEW_PICTURE'],
                                         Images::calculateImageSize(70, 1),
@@ -137,7 +127,7 @@
                                         false,
                                         Images::JPEG_QUALITY
                                     );
-                                    
+
                                     $image = CFile::resizeImageGet(
                                         $arItem['PREVIEW_PICTURE'],
                                         Images::calculateImageSize(90, 1),
@@ -147,7 +137,7 @@
                                         false,
                                         Images::JPEG_QUALITY
                                     );
-                                    
+
                                     ?>
 
                                     <picture>
@@ -162,11 +152,11 @@
                                              loading="lazy">
 
                                     </picture>
-                                
+
                                 <? } ?>
 
                                 <a href="<?= $arItem["URL"]; ?>"><?= $arItem["TITLE_FORMATED"]; ?></a>
-                                
+
                                 <? /*
 
                                         <p><?= $arItem["BODY_FORMATED"]; ?></p>
@@ -203,7 +193,7 @@
                                         <? } ?>
 
                                         */ ?>
-                                
+
                                 <? if (!empty($arItem['PRICE'])) { ?>
 
                                     <div class="price">
@@ -220,21 +210,21 @@
                                         </div>
 
                                     </div>
-                                
+
                                 <? } ?>
 
                             </li>
-                        
+
                         <? } ?>
 
                     </ul>
-                    
+
                     <? if ($arParams["DISPLAY_BOTTOM_PAGER"] != "N") {
                         echo $arResult["NAV_STRING"];
                     } ?>
 
                     <menu>
-                        
+
                         <? if ($arResult["REQUEST"]["HOW"] == "d") { ?>
 
                             <a href="<?= $arResult["URL"]; ?>&amp;how=r<?= $arResult["REQUEST"]["FROM"] ?
@@ -244,7 +234,7 @@
                                 '' ?>"><?= GetMessage("SEARCH_SORT_BY_RANK") ?></a>
 
                             <strong><?= GetMessage("SEARCH_SORTED_BY_DATE") ?></strong>
-                        
+
                         <? } else { ?>
 
                             <strong><?= GetMessage("SEARCH_SORTED_BY_RANK") ?></strong>
@@ -254,22 +244,22 @@
                                 '' ?><?= $arResult["REQUEST"]["TO"] ?
                                 '&amp;to=' . $arResult["REQUEST"]["TO"] :
                                 '' ?>"><?= GetMessage("SEARCH_SORT_BY_DATE") ?></a>
-                        
+
                         <? } ?>
 
                     </menu>
-                
+
                 <? } else { ?>
-                    
+
                     <? ShowNote(GetMessage("SEARCH_NOTHING_TO_FOUND")); ?>
-                
+
                 <? }
             } ?>
 
         </div>
 
     </div>
-    
+
     <? $frame->end(); ?>
 
 </div>

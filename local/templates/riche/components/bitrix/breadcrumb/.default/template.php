@@ -8,7 +8,7 @@ if (!empty($arResult)) {
 
     $itemSize = count($arResult);
 
-    $strReturn = '<ul class="breadcrumbs">';
+    $strReturn = '<nav class="breadcrumbs"><ul>';
 
     for ($index = 0; $index < $itemSize; $index++) {
 
@@ -25,13 +25,17 @@ if (!empty($arResult)) {
                           $arResult[$index]["LINK"] . '" title="' . $title . '" itemprop="url">' . $title .
                           '</a></li>';
 
+            $strReturn .= '<i class="icon arrow-right"></i>';
+
         } else {
+
             $strReturn .= '<li>' . $title . '</li>';
+
         }
 
     }
 
-    $strReturn .= '</ul>';
+    $strReturn .= '</ul></nav>';
 
     return $strReturn;
 
