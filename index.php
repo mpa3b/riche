@@ -28,6 +28,10 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
         'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
         'ADD_SECTIONS_CHAIN'        => 'N',
 
+        'FIELD_CODE' => [
+            'DETAIL_PICTURE',
+            'PREVIEW_PICTURE'
+        ],
         'PROPERTY_CODE' => [
             'HERO_IMAGE', 'BACKGROUND_IMAGE',
             'BUTTON_TEXT', 'BUTTON_LINK',

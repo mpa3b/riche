@@ -65,7 +65,7 @@ $frame = $this->createFrame();
                     Images::getWebP($backgroundImagePreload);
 
                     $heroImageMobile = CFile::ResizeImageGet(
-                        $arItem['DETAIL_PICTURE']['VALUE'],
+                        $arItem['DETAIL_PICTURE'],
                         Images::calculateImageSize(Images::BREAKPOINTS['mobile']),
                         BX_RESIZE_IMAGE_PROPORTIONAL,
                         false,
@@ -74,7 +74,7 @@ $frame = $this->createFrame();
                     );
 
                     $heroImage = CFile::ResizeImageGet(
-                        $arItem['DETAIL_PICTURE']['VALUE'],
+                        $arItem['DETAIL_PICTURE'],
                         Images::calculateImageSize(Images::BREAKPOINTS['desktop']),
                         BX_RESIZE_IMAGE_PROPORTIONAL,
                         false,
@@ -83,7 +83,7 @@ $frame = $this->createFrame();
                     );
 
                     $heroImagePreload = CFile::ResizeImageGet(
-                        $arItem['DETAIL_PICTURE']['VALUE'],
+                        $arItem['DETAIL_PICTURE'],
                         Images::calculateImageSize(Images::BREAKPOINTS['mobile'] / 2),
                         BX_RESIZE_IMAGE_PROPORTIONAL,
                         false,
@@ -108,7 +108,7 @@ $frame = $this->createFrame();
 
                     $backgroundImage = CFile::ResizeImageGet(
                         $arItem['DISPLAY_PROPERTIES']['BACKGROUND_IMAGE']['VALUE'],
-                        Images::calculateImageSize(Images::BREAKPOINTS['desktop'] / 2, 2),
+                        Images::calculateImageSize(Images::BREAKPOINTS['desktop'] / 2, 1.5),
                         BX_RESIZE_IMAGE_EXACT,
                         false,
                         [],
@@ -129,7 +129,7 @@ $frame = $this->createFrame();
                     Images::getWebP($backgroundImagePreload);
 
                     $heroImageMobile = CFile::ResizeImageGet(
-                        $arItem['DETAIL_PICTURE']['VALUE'],
+                        $arItem['DETAIL_PICTURE'],
                         Images::calculateImageSize(Images::BREAKPOINTS['mobile']),
                         BX_RESIZE_IMAGE_PROPORTIONAL,
                         false,
@@ -138,7 +138,7 @@ $frame = $this->createFrame();
                     );
 
                     $heroImage = CFile::ResizeImageGet(
-                        $arItem['DETAIL_PICTURE']['VALUE'],
+                        $arItem['DETAIL_PICTURE'],
                         Images::calculateImageSize(Images::BREAKPOINTS['desktop'] / 2),
                         BX_RESIZE_IMAGE_PROPORTIONAL,
                         false,
@@ -147,7 +147,7 @@ $frame = $this->createFrame();
                     );
 
                     $heroImagePreload = CFile::ResizeImageGet(
-                        $arItem['DETAIL_PICTURE']['VALUE'],
+                        $arItem['DETAIL_PICTURE'],
                         Images::calculateImageSize(Images::BREAKPOINTS['mobile'] / 2),
                         BX_RESIZE_IMAGE_PROPORTIONAL,
                         false,
@@ -175,13 +175,13 @@ $frame = $this->createFrame();
                                 </div>
                             <?php } ?>
 
-                            <?php if($arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']) { ?>
-                                <button class="big action button primary inverted"><?php echo $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?></button>
+                            <?php if ($arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']) { ?>
+                                <button class="big action button primary"><?php echo $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?></button>
                             <?php } ?>
 
                         </div>
 
-                        <?php if (!empty($arItem['PROPERTIES']['HERO_IMAGE']['VALUE'])) { ?>
+                        <?php if (!empty($arItem['DETAIL_PICTURE'])) { ?>
 
                             <picture class="hero-image">
 
