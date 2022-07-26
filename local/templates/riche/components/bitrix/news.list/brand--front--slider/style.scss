@@ -50,4 +50,17 @@
 
   }
 
+  .tns {
+
+    &-inner {
+      margin         : 0 -0.5rem;
+    }
+
+    &-item {
+      box-sizing : border-box;
+      padding    : 0 0.5rem;
+    }
+
+  }
+
 }

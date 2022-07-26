@@ -7,18 +7,16 @@ $(() => {
             slideBy  : 1,
 
             mode     : "carousel",
-            loop     : true,
+            loop     : false,
             mouseDrag: true,
 
             controls: false,
-            
+
             nav: false,
 
             autoplay            : false,
             autoplayButtonOutput: false,
             autoplayTimeout     : 5000,
-
-            speed: 2000,
 
             responsive: {
                 578: {

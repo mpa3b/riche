@@ -18,8 +18,6 @@ $(() => {
             autoplayButtonOutput: false,
             autoplayTimeout     : 5000,
 
-            speed: 2000,
-
             responsive: {
                 578: {
                     items: 2
