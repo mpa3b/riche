@@ -104,12 +104,12 @@ if (IS_AJAX && $cartUpdate) {
 }
 
 ?>
-<html lang="<?= LANGUAGE_ID ?>">
+<html lang="<?php echo LANGUAGE_ID ?>">
 <head>
 
     <title><?php $APPLICATION->ShowTitle(); ?></title>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=<?= strtolower(SITE_CHARSET); ?>">
+    <meta http-equiv="Content-Type" content="text/html; charset=<?php echo strtolower(SITE_CHARSET); ?>">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
 
@@ -127,16 +127,16 @@ if (IS_AJAX && $cartUpdate) {
 
     <?php //region  favicon ?>
 
-    <link rel="shortcut icon" type="image/x-icon" href="<?= SITE_TEMPLATE_PATH; ?>/favicons/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/favicon.ico"/>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="<?= SITE_TEMPLATE_PATH; ?>/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/apple-touch-icon.png">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="<?= SITE_TEMPLATE_PATH; ?>/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= SITE_TEMPLATE_PATH; ?>/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/favicon-16x16.png">
 
-    <link rel="mask-icon" href="<?= SITE_TEMPLATE_PATH; ?>/favicons/safari-pinned-tab.svg" color="#00a300">
+    <link rel="mask-icon" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/safari-pinned-tab.svg" color="#00a300">
 
-    <link rel="manifest" href="<?= SITE_TEMPLATE_PATH; ?>/site.webmanifest">
+    <link rel="manifest" href="<?php echo SITE_TEMPLATE_PATH; ?>/site.webmanifest">
 
     <meta name="msapplication-TileColor" content="#00a300">
     <meta name="theme-color" content="#ffffff">
@@ -154,31 +154,35 @@ if (IS_AJAX && $cartUpdate) {
 
 </head>
 
-<body id="page" class="<?= $pageHtmlClasses; ?>">
+<body id="page" class="<?php echo $pageHtmlClasses; ?>">
 
 <?php $APPLICATION->ShowPanel(); ?>
 
-<?php $APPLICATION->IncludeComponent(
-    'bitrix:news.list',
-    'header-line',
-    [
-        'IBLOCK_TYPE'               => 'CONTENT',
-        'IBLOCK_ID'                 => 2,
-        'NEWS_COUNT'                => 5,
-        'SORT_BY1'                  => 'ACTIVE_FROM ',
-        'SORT_ORDER1'               => 'DESC ',
-        'CHECK_DATES'               => 'Y',
-        'SET_TITLE'                 => 'N',
-        'SET_BROWSER_TITLE'         => 'N',
-        'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
-        'ADD_SECTIONS_CHAIN'        => 'N',
+<? if ($APPLICATION->GetDirProperty('HIDE_HEADER_STRING') !== 'Y') { ?>
 
-        'CACHE_TYPE' => 'A',
+    <?php $APPLICATION->IncludeComponent(
+        'bitrix:news.list',
+        'header-line',
+        [
+            'IBLOCK_TYPE'               => 'CONTENT',
+            'IBLOCK_ID'                 => 15,
+            'NEWS_COUNT'                => 5,
+            'SORT_BY1'                  => 'ACTIVE_FROM ',
+            'SORT_ORDER1'               => 'DESC ',
+            'CHECK_DATES'               => 'Y',
+            'SET_TITLE'                 => 'N',
+            'SET_BROWSER_TITLE'         => 'N',
+            'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
+            'ADD_SECTIONS_CHAIN'        => 'N',
 
-        "COMPOSITE_FRAME_MODE" => "A",
-        "COMPOSITE_FRAME_TYPE" => "AUTO"
-    ]
-); ?>
+            'CACHE_TYPE' => 'A',
+
+            "COMPOSITE_FRAME_MODE" => "A",
+            "COMPOSITE_FRAME_TYPE" => "AUTO"
+        ]
+    ); ?>
+
+<?php } ?>
 
 <div id="page--header">
 
@@ -190,7 +194,7 @@ if (IS_AJAX && $cartUpdate) {
 
                 <?php if ($currentDirectoryPath == "") { ?>
 
-                    <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+                    <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
                          loading="eager"
                          alt="RICHE"
                          class="logo">
@@ -198,7 +202,7 @@ if (IS_AJAX && $cartUpdate) {
                 <?php } else { ?>
 
                     <a href="/">
-                        <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+                        <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
                              loading="eager"
                              alt="RICHE"
                              class="logo">

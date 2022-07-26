@@ -18,7 +18,7 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
     'banners--front--static',
     [
         'IBLOCK_TYPE'               => 'CONTENT',
-        'IBLOCK_ID'                 => 1,
+        'IBLOCK_ID'                 => 17,
         'NEWS_COUNT'                => 3,
         'SORT_BY1'                  => 'ACTIVE_FROM',
         'SORT_ORDER1'               => 'DESC ',
@@ -40,12 +40,13 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
         "COMPOSITE_FRAME_TYPE" => "AUTO"
     ]
 ); ?>
+
 <?php $APPLICATION->IncludeComponent(
     'bitrix:news.list',
     'brand--front--slider',
     [
         'IBLOCK_TYPE'               => 'CONTENT',
-        'IBLOCK_ID'                 => 6,
+        'IBLOCK_ID'                 => 21,
         'NEWS_COUNT'                => 6,
         'SORT_BY1'                  => 'ACTIVE_FROM',
         'SORT_ORDER1'               => 'DESC ',
@@ -69,12 +70,13 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
         "COMPOSITE_FRAME_TYPE" => "AUTO"
     ]
 ); ?>
+
 <?php $APPLICATION->IncludeComponent(
     'bitrix:news.list',
     'features--front--slider',
     [
         'IBLOCK_TYPE'               => 'CONTENT',
-        'IBLOCK_ID'                 => 4,
+        'IBLOCK_ID'                 => 16,
         'NEWS_COUNT'                => 6,
         'SORT_BY1'                  => 'ACTIVE_FROM',
         'SORT_ORDER1'               => 'DESC ',
@@ -104,7 +106,7 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
     'reviews--front',
     [
         'IBLOCK_TYPE' => 'CONTENT',
-        'IBLOCK_ID'   => 3,
+        'IBLOCK_ID'   => 14,
         'NEWS_COUNT'  => 9,
         'SORT_BY1'    => 'ACTIVE_FROM',
         'SORT_ORDER1' => 'DESC ',
