@@ -39,7 +39,35 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
         "COMPOSITE_FRAME_TYPE" => "AUTO"
     ]
 ); ?>
+<?php $APPLICATION->IncludeComponent(
+    'bitrix:news.list',
+    'brand--front--slider',
+    [
+        'IBLOCK_TYPE'               => 'CONTENT',
+        'IBLOCK_ID'                 => 6,
+        'NEWS_COUNT'                => 6,
+        'SORT_BY1'                  => 'ACTIVE_FROM',
+        'SORT_ORDER1'               => 'DESC ',
+        'CHECK_DATES'               => 'Y',
+        'SET_TITLE'                 => 'N',
+        'SET_BROWSER_TITLE'         => 'N',
+        'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
+        'ADD_SECTIONS_CHAIN'        => 'N',
 
+        'FIELD_CODE' => [
+            'DETAIL_PICTURE',
+            'PREVIEW_PICTURE'
+        ],
+
+        'DISPLAY_PICTURE' => 'Y',
+
+        'CACHE_TYPE' => 'A',
+        'CACHE_TIME' => Template::CACHE_TIME,
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
+    ]
+); ?>
 <?php $APPLICATION->IncludeComponent(
     'bitrix:news.list',
     'features--front--slider',
