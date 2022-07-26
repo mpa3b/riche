@@ -151,6 +151,10 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
 
         'ACTIVE_DATE_FORMAT' => 'j F',
 
+        'FIELD_CODE' => [
+            'PREVIEW_PICTURE', 'DETAIL_PICTURE'
+        ],
+
         'PROPERTY_CODE' => [
             'VIDEO', 'SKU'
         ],

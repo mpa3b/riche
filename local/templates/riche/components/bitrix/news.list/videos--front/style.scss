@@ -20,4 +20,48 @@
 
   }
 
+  .items {
+    margin : 0 -0.5rem;
+
+    .item {
+      margin     : 0 0.5rem;
+      box-sizing : border-box;
+
+      .wrapper {
+        position      : relative;
+
+        border-radius : 1.5rem;
+        overflow      : hidden;
+
+        i.icon {
+          position    : absolute;
+          width       : 2rem;
+          height      : 2rem;
+          top         : 50%;
+          margin-top  : -1rem;
+          left        : 50%;
+          margin-left : -1rem;
+        }
+
+        picture {
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+#cboxContent {
+
+  video {
+    width      : 100%;
+    height     : 100%;
+
+    object-fit : cover;
+  }
+
 }

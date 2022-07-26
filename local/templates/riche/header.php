@@ -78,7 +78,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 $cartUpdate = $request->getPost('cartUpdate');
 
 $arCartParams = [
-    "PATH_TO_CATALOG" => "/catalog/",
+    "PATH_TO_CATALOG" => "/shop/",
     "PATH_TO_BASKET"  => "/cart/",
     "PATH_TO_ORDER"   => "/cart/checkout/",
 

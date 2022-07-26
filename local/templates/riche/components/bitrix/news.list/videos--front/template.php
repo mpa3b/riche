@@ -21,6 +21,8 @@ use Riche\Template;
 $this->addExternalJs(Template::ASSETS . '/tiny-slider/dist/min/tiny-slider.js');
 $this->addExternalCss(Template::ASSETS . '/tiny-slider/dist/tiny-slider.css');
 
+$this->addExternalJs(Template::ASSETS . '/jquery-colorbox/jquery.colorbox-min.js');
+
 $this->setFrameMode(true);
 
 $frame = $this->createFrame();
@@ -39,9 +41,87 @@ $frame = $this->createFrame();
 
                 <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
+                    <?php
+
+                    $image = CFile::ResizeImageGet(
+                        $arItem['DETAIL_PICTURE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.66),
+                        BX_RESIZE_IMAGE_EXACT,
+                        false,
+                        [],
+                        false
+                    );
+
+
+                    $imageMobile = CFile::ResizeImageGet(
+                        $arItem['DETAIL_PICTURE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.66),
+                        BX_RESIZE_IMAGE_EXACT,
+                        false,
+                        [],
+                        false
+                    );
+
+                    Images::getWebP($image);
+                    Images::getWebP($imageMobile);
+
+                    $imagePreload = CFile::ResizeImageGet(
+                        $arItem['DETAIL_PICTURE'],
+                        Images::calculateImageSize(120, 0.66),
+                        BX_RESIZE_IMAGE_EXACT,
+                        false,
+                        [],
+                        false
+                    );
+
+                    ?>
+
                     <div class="item">
 
+                        <div class="wrapper">
 
+                            <a href="#video-<?php echo $arItem['ID']; ?>" class="modal--video" rel="videos--front">
+
+                                <i class="icon video"></i>
+
+                                <picture>
+
+                                    <?php if (!empty($arItem['DETAIL_PICTURE'])) { ?>
+
+                                        <?php if ($imageMobile['webp_src']) { ?>
+                                            <source srcset="<?php echo $imageMobile['webp_src']; ?>"
+                                                    type="<?php echo $imageMobile['webp_content_type']; ?>"
+                                                    media="<?php echo Images::getMedia('mobile', true); ?>">
+                                        <?php } ?>
+
+                                        <source srcset="<?php echo $image["src"]; ?>"
+                                                type="<?php echo $image['content_type']; ?>"
+                                                media="<?php echo Images::getMedia('mobile', true); ?>">
+
+                                        <?php if ($image['webp_src']) { ?>
+                                            <source srcset="<?php echo $image['webp_src']; ?>"
+                                                    type="<?php echo $image['webp_content_type']; ?>"
+                                                    media="<?php echo Images::getMedia('mobile'); ?>">
+                                        <?php } ?>
+
+                                        <source srcset="<?php echo $image["src"]; ?>"
+                                                type="<?php echo $image['content_type']; ?>"
+                                                media="<?php echo Images::getMedia('mobile'); ?>">
+
+                                        <img src="<?php echo $imagePreload['src']; ?>"
+                                             loading="lazy">
+
+                                    <?php } else { ?>
+
+                                        <img src="<?php echo Images::PLACEHOLDER; ?>">
+
+                                    <? } ?>
+
+                                </picture>
+
+                            </a>
+
+                        </div>
 
                     </div>
 
@@ -51,8 +131,20 @@ $frame = $this->createFrame();
 
         </div>
 
+        <div hidden>
+
+            <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
+                <video id="video-<?php echo $arItem['ID']; ?>" preload="none">
+                    <source src="<?php echo $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                </video>
+            <?php } ?>
+
+        </div>
+
         <?php $frame->end(); ?>
 
     </div>
+
+    <?php d($arResult); ?>
 
 <?php } ?>
