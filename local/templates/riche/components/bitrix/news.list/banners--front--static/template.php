@@ -31,6 +31,136 @@ $frame = $this->createFrame();
 
             <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
+                <?php if ($i == 0) {
+
+                    $backgroundImageMobile = CFile::ResizeImageGet(
+                        $arItem['DISPLAY_PROPERTIES']['BACKGROUND_IMAGE']['VALUE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.66),
+                        BX_RESIZE_IMAGE_EXACT,
+                        false,
+                        [],
+                        false
+                    );
+
+                    $backgroundImage = CFile::ResizeImageGet(
+                        $arItem['DISPLAY_PROPERTIES']['BACKGROUND_IMAGE']['VALUE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['desktop'], 2),
+                        BX_RESIZE_IMAGE_EXACT,
+                        false,
+                        [],
+                        false
+                    );
+
+                    $backgroundImagePreload = CFile::ResizeImageGet(
+                        $arItem['DISPLAY_PROPERTIES']['BACKGROUND_IMAGE']['VALUE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'] / 2, 1),
+                        BX_RESIZE_IMAGE_EXACT,
+                        false,
+                        [],
+                        false
+                    );
+
+                    Images::getWebP($backgroundImageMobile);
+                    Images::getWebP($backgroundImage);
+                    Images::getWebP($backgroundImagePreload);
+
+                    $heroImageMobile = CFile::ResizeImageGet(
+                        $arItem['DETAIL_PICTURE']['VALUE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile']),
+                        BX_RESIZE_IMAGE_PROPORTIONAL,
+                        false,
+                        [],
+                        false
+                    );
+
+                    $heroImage = CFile::ResizeImageGet(
+                        $arItem['DETAIL_PICTURE']['VALUE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['desktop']),
+                        BX_RESIZE_IMAGE_PROPORTIONAL,
+                        false,
+                        [],
+                        false
+                    );
+
+                    $heroImagePreload = CFile::ResizeImageGet(
+                        $arItem['DETAIL_PICTURE']['VALUE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'] / 2),
+                        BX_RESIZE_IMAGE_PROPORTIONAL,
+                        false,
+                        [],
+                        false
+                    );
+
+                    Images::getWebP($heroImageMobile);
+                    Images::getWebP($heroImage);
+                    Images::getWebP($heroImagePreload);
+
+                } else {
+
+                    $backgroundImageMobile = CFile::ResizeImageGet(
+                        $arItem['DISPLAY_PROPERTIES']['BACKGROUND_IMAGE']['VALUE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.66),
+                        BX_RESIZE_IMAGE_EXACT,
+                        false,
+                        [],
+                        false
+                    );
+
+                    $backgroundImage = CFile::ResizeImageGet(
+                        $arItem['DISPLAY_PROPERTIES']['BACKGROUND_IMAGE']['VALUE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['desktop'] / 2, 2),
+                        BX_RESIZE_IMAGE_EXACT,
+                        false,
+                        [],
+                        false
+                    );
+
+                    $backgroundImagePreload = CFile::ResizeImageGet(
+                        $arItem['DISPLAY_PROPERTIES']['BACKGROUND_IMAGE']['VALUE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'] / 2, 1),
+                        BX_RESIZE_IMAGE_EXACT,
+                        false,
+                        [],
+                        false
+                    );
+
+                    Images::getWebP($backgroundImageMobile);
+                    Images::getWebP($backgroundImage);
+                    Images::getWebP($backgroundImagePreload);
+
+                    $heroImageMobile = CFile::ResizeImageGet(
+                        $arItem['DETAIL_PICTURE']['VALUE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile']),
+                        BX_RESIZE_IMAGE_PROPORTIONAL,
+                        false,
+                        [],
+                        false
+                    );
+
+                    $heroImage = CFile::ResizeImageGet(
+                        $arItem['DETAIL_PICTURE']['VALUE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['desktop'] / 2),
+                        BX_RESIZE_IMAGE_PROPORTIONAL,
+                        false,
+                        [],
+                        false
+                    );
+
+                    $heroImagePreload = CFile::ResizeImageGet(
+                        $arItem['DETAIL_PICTURE']['VALUE'],
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'] / 2),
+                        BX_RESIZE_IMAGE_PROPORTIONAL,
+                        false,
+                        [],
+                        false
+                    );
+
+                    Images::getWebP($heroImageMobile);
+                    Images::getWebP($heroImage);
+                    Images::getWebP($heroImagePreload);
+
+                } ?>
+
                 <div class="item">
 
                     <div class="wrapper">
@@ -39,50 +169,19 @@ $frame = $this->createFrame();
 
                             <h3><?php echo $arItem['NAME']; ?></h3>
 
-                            <?php if (!empty($arItem['DETAIL_TEXT'])) { ?>
+                            <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
                                 <div class="details">
-                                    <?php echo $arItem['DETAIL_TEXT']; ?>
+                                    <?php echo $arItem['PREVIEW_TEXT']; ?>
                                 </div>
                             <?php } ?>
 
-                            <button class="big action button primary inverted">ЖГИ!</button>
+                            <?php if($arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']) { ?>
+                                <button class="big action button primary inverted"><?php echo $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?></button>
+                            <?php } ?>
 
                         </div>
 
-                        <?php if (!empty($arItem['PROPERTIES']['HERO_IMAGE']['VALUE'])) {
-
-                            $heroImageMobile = CFile::ResizeImageGet(
-                                $arItem['DISPLAY_PROPERTIES']['HERO_IMAGE']['VALUE'],
-                                Images::calculateImageSize(Images::BREAKPOINTS['mobile']),
-                                BX_RESIZE_IMAGE_PROPORTIONAL,
-                                false,
-                                [],
-                                false
-                            );
-
-                            $heroImage = CFile::ResizeImageGet(
-                                $arItem['DISPLAY_PROPERTIES']['HERO_IMAGE']['VALUE'],
-                                Images::calculateImageSize(Images::BREAKPOINTS['desktop']),
-                                BX_RESIZE_IMAGE_PROPORTIONAL,
-                                false,
-                                [],
-                                false
-                            );
-
-                            $heroImagePreload = CFile::ResizeImageGet(
-                                $arItem['DISPLAY_PROPERTIES']['HERO_IMAGE']['VALUE'],
-                                Images::calculateImageSize(Images::BREAKPOINTS['mobile'] / 2),
-                                BX_RESIZE_IMAGE_PROPORTIONAL,
-                                false,
-                                [],
-                                false
-                            );
-
-                            Images::getWebP($heroImageMobile);
-                            Images::getWebP($heroImage);
-                            Images::getWebP($heroImagePreload);
-
-                            ?>
+                        <?php if (!empty($arItem['PROPERTIES']['HERO_IMAGE']['VALUE'])) { ?>
 
                             <picture class="hero-image">
 
@@ -115,40 +214,7 @@ $frame = $this->createFrame();
 
                     </div>
 
-                    <?php if (!empty($arItem['PROPERTIES']['BACKGROUND_IMAGE']['VALUE'])) {
-
-                        $backgroundImageMobile = CFile::ResizeImageGet(
-                            $arItem['DISPLAY_PROPERTIES']['BACKGROUND_IMAGE']['VALUE'],
-                            Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.66),
-                            BX_RESIZE_IMAGE_EXACT,
-                            false,
-                            [],
-                            false
-                        );
-
-                        $backgroundImage = CFile::ResizeImageGet(
-                            $arItem['DISPLAY_PROPERTIES']['BACKGROUND_IMAGE']['VALUE'],
-                            Images::calculateImageSize(Images::BREAKPOINTS['desktop'], 2),
-                            BX_RESIZE_IMAGE_EXACT,
-                            false,
-                            [],
-                            false
-                        );
-
-                        $backgroundImagePreload = CFile::ResizeImageGet(
-                            $arItem['DISPLAY_PROPERTIES']['BACKGROUND_IMAGE']['VALUE'],
-                            Images::calculateImageSize(Images::BREAKPOINTS['mobile'] / 2, 1),
-                            BX_RESIZE_IMAGE_EXACT,
-                            false,
-                            [],
-                            false
-                        );
-
-                        Images::getWebP($backgroundImageMobile);
-                        Images::getWebP($backgroundImage);
-                        Images::getWebP($backgroundImagePreload);
-
-                        ?>
+                    <?php if (!empty($arItem['PROPERTIES']['BACKGROUND_IMAGE']['VALUE'])) { ?>
 
                         <picture class="background-image">
 
@@ -187,5 +253,7 @@ $frame = $this->createFrame();
     </div>
 
     <?php $frame->end(); ?>
+
+    <?php d($arResult); ?>
 
 </div>

@@ -17,7 +17,7 @@ class Version20220725174153 extends Version
     {
         $helper = $this->getHelperManager();
         $helper->Iblock()->saveIblockType(array (
-  'ID' => 'content',
+  'ID' => 'CONTENT',
   'SECTIONS' => 'Y',
   'EDIT_FILE_BEFORE' => '',
   'EDIT_FILE_AFTER' => '',
@@ -33,14 +33,14 @@ class Version20220725174153 extends Version
     ),
     'en' => 
     array (
-      'NAME' => 'Content',
+      'NAME' => 'CONTENT',
       'SECTION_NAME' => '',
       'ELEMENT_NAME' => '',
     ),
   ),
 ));
         $iblockId = $helper->Iblock()->saveIblock(array (
-  'IBLOCK_TYPE_ID' => 'content',
+  'IBLOCK_TYPE_ID' => 'CONTENT',
   'LID' => 
   array (
     0 => 's1',

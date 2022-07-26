@@ -29,7 +29,8 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
         'ADD_SECTIONS_CHAIN'        => 'N',
 
         'PROPERTY_CODE' => [
-            'HERO_IMAGE', 'BACKGROUND_IMAGE'
+            'HERO_IMAGE', 'BACKGROUND_IMAGE',
+            'BUTTON_TEXT', 'BUTTON_LINK',
         ],
 
         'CACHE_TYPE' => 'A',

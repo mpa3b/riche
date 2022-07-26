@@ -5,7 +5,7 @@
   .items {
 
     .item {
-      position : relative;
+      position      : relative;
 
       .wrapper {
         position       : absolute;
@@ -29,20 +29,23 @@
 
         .caption {
           padding    : 2rem;
-          flex-basis: 65%;
+          flex-basis : 50%;
 
           @media all and (min-width : $breakpoint_mobile) {
-            padding : 4rem;
+            padding : 3rem;
           }
-
           @media all and (min-width : $breakpoint_desktop) {
-            padding : 6rem;
+            padding : 4rem;
           }
 
           box-sizing : border-box;
 
+          .details {
+            font-size : 1.2rem;
+          }
+
           .action {
-            margin-top  : 1.5rem;
+            margin-top : 1.5rem;
           }
 
         }
@@ -51,10 +54,10 @@
           box-sizing : border-box;
 
           margin-top : auto;
+
           width      : 100%;
           @media all and (min-width : $breakpoint_mobile) {
             width       : auto;
-            margin-left : auto;
           }
 
           img {
@@ -73,10 +76,30 @@
 
       }
 
+      border-radius : 1.5rem;
+      overflow      : hidden;
+
     }
 
-    border-radius : 1.5rem;
-    overflow      : hidden;
+    @media all and (min-width : $breakpoint_mobile) {
+
+      display        : flex;
+      flex-direction : row;
+      flex-wrap      : wrap;
+
+      .item {
+
+        &:first-of-type {
+          flex-basis : 100%;
+        }
+
+        &:not(:first-of-type) {
+          flex-basis : 50%;
+        }
+
+      }
+
+    }
 
   }
 

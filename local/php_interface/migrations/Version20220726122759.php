@@ -3,7 +3,7 @@
 namespace Sprint\Migration;
 
 
-class Version20220725113805 extends Version
+class Version20220726122759 extends Version
 {
     protected $description = "";
 
@@ -45,10 +45,10 @@ class Version20220725113805 extends Version
   array (
     0 => 's1',
   ),
-  'CODE' => 'TOP_LINE',
-  'API_CODE' => 'TOPLINE',
+  'CODE' => 'BANNERS',
+  'API_CODE' => 'BANNERS',
   'REST_ON' => 'N',
-  'NAME' => 'Строка вверху сайта',
+  'NAME' => 'Баннеры',
   'ACTIVE' => 'Y',
   'SORT' => '500',
   'LIST_PAGE_URL' => '',
@@ -74,7 +74,7 @@ class Version20220725113805 extends Version
   'RIGHTS_MODE' => 'S',
   'SECTION_PROPERTY' => 'N',
   'PROPERTY_INDEX' => 'N',
-  'VERSION' => '2',
+  'VERSION' => '1',
   'LAST_CONV_ELEMENT' => '0',
   'SOCNET_GROUP_ID' => NULL,
   'EDIT_FILE_BEFORE' => '',
@@ -142,7 +142,7 @@ class Version20220725113805 extends Version
     'IS_REQUIRED' => 'N',
     'DEFAULT_VALUE' => 
     array (
-      'FROM_DETAIL' => 'N',
+      'FROM_DETAIL' => 'Y',
       'SCALE' => 'N',
       'WIDTH' => '',
       'HEIGHT' => '',
@@ -339,33 +339,124 @@ class Version20220725113805 extends Version
   'administrators' => 'X',
   'everyone' => 'R',
 ));
-    $helper->UserOptions()->saveSectionGrid($iblockId, array (
-  'views' => 
+        $helper->Iblock()->saveProperty($iblockId, array (
+  'NAME' => 'Текст кнопки',
+  'ACTIVE' => 'Y',
+  'SORT' => '500',
+  'CODE' => 'BUTTON_TEXT',
+  'DEFAULT_VALUE' => '',
+  'PROPERTY_TYPE' => 'S',
+  'ROW_COUNT' => '1',
+  'COL_COUNT' => '30',
+  'LIST_TYPE' => 'L',
+  'MULTIPLE' => 'N',
+  'XML_ID' => NULL,
+  'FILE_TYPE' => '',
+  'MULTIPLE_CNT' => '5',
+  'LINK_IBLOCK_ID' => '0',
+  'WITH_DESCRIPTION' => 'N',
+  'SEARCHABLE' => 'N',
+  'FILTRABLE' => 'N',
+  'IS_REQUIRED' => 'N',
+  'VERSION' => '1',
+  'USER_TYPE' => NULL,
+  'USER_TYPE_SETTINGS' => NULL,
+  'HINT' => '',
+  'FEATURES' => 
   array (
-    'default' => 
+    0 => 
     array (
-      'columns' => 
-      array (
-        0 => '',
-      ),
-      'columns_sizes' => 
-      array (
-        'expand' => 1,
-        'columns' => 
-        array (
-        ),
-      ),
-      'sticked_columns' => 
-      array (
-      ),
+      'MODULE_ID' => 'iblock',
+      'FEATURE_ID' => 'DETAIL_PAGE_SHOW',
+      'IS_ENABLED' => 'N',
+    ),
+    1 => 
+    array (
+      'MODULE_ID' => 'iblock',
+      'FEATURE_ID' => 'LIST_PAGE_SHOW',
+      'IS_ENABLED' => 'Y',
     ),
   ),
-  'filters' => 
-  array (
-  ),
-  'current_view' => 'default',
 ));
-
+            $helper->Iblock()->saveProperty($iblockId, array (
+  'NAME' => 'Ссылка кнопки',
+  'ACTIVE' => 'Y',
+  'SORT' => '500',
+  'CODE' => 'BUTTON_LINK',
+  'DEFAULT_VALUE' => '',
+  'PROPERTY_TYPE' => 'S',
+  'ROW_COUNT' => '1',
+  'COL_COUNT' => '30',
+  'LIST_TYPE' => 'L',
+  'MULTIPLE' => 'N',
+  'XML_ID' => NULL,
+  'FILE_TYPE' => '',
+  'MULTIPLE_CNT' => '5',
+  'LINK_IBLOCK_ID' => '0',
+  'WITH_DESCRIPTION' => 'N',
+  'SEARCHABLE' => 'N',
+  'FILTRABLE' => 'N',
+  'IS_REQUIRED' => 'N',
+  'VERSION' => '1',
+  'USER_TYPE' => NULL,
+  'USER_TYPE_SETTINGS' => NULL,
+  'HINT' => '',
+  'FEATURES' => 
+  array (
+    0 => 
+    array (
+      'MODULE_ID' => 'iblock',
+      'FEATURE_ID' => 'DETAIL_PAGE_SHOW',
+      'IS_ENABLED' => 'N',
+    ),
+    1 => 
+    array (
+      'MODULE_ID' => 'iblock',
+      'FEATURE_ID' => 'LIST_PAGE_SHOW',
+      'IS_ENABLED' => 'Y',
+    ),
+  ),
+));
+            $helper->Iblock()->saveProperty($iblockId, array (
+  'NAME' => 'Фон слайда',
+  'ACTIVE' => 'Y',
+  'SORT' => '500',
+  'CODE' => 'BACKGROUND_IMAGE',
+  'DEFAULT_VALUE' => '',
+  'PROPERTY_TYPE' => 'F',
+  'ROW_COUNT' => '1',
+  'COL_COUNT' => '30',
+  'LIST_TYPE' => 'L',
+  'MULTIPLE' => 'N',
+  'XML_ID' => NULL,
+  'FILE_TYPE' => 'png',
+  'MULTIPLE_CNT' => '5',
+  'LINK_IBLOCK_ID' => '0',
+  'WITH_DESCRIPTION' => 'N',
+  'SEARCHABLE' => 'N',
+  'FILTRABLE' => 'N',
+  'IS_REQUIRED' => 'N',
+  'VERSION' => '1',
+  'USER_TYPE' => NULL,
+  'USER_TYPE_SETTINGS' => NULL,
+  'HINT' => '',
+  'FEATURES' => 
+  array (
+    0 => 
+    array (
+      'MODULE_ID' => 'iblock',
+      'FEATURE_ID' => 'DETAIL_PAGE_SHOW',
+      'IS_ENABLED' => 'N',
+    ),
+    1 => 
+    array (
+      'MODULE_ID' => 'iblock',
+      'FEATURE_ID' => 'LIST_PAGE_SHOW',
+      'IS_ENABLED' => 'Y',
+    ),
+  ),
+));
+    
     }
 
     public function down()
