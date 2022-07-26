@@ -138,5 +138,35 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
     ]
 ); ?>
 
+<?php $APPLICATION->IncludeComponent(
+    'bitrix:news.list',
+    'videos--front',
+    [
+        'IBLOCK_TYPE' => 'CONTENT',
+        'IBLOCK_ID'   => 22,
+        'NEWS_COUNT'  => 5,
+        'SORT_BY1'    => 'ACTIVE_FROM',
+        'SORT_ORDER1' => 'DESC ',
+        'CHECK_DATES' => 'Y',
+
+        'ACTIVE_DATE_FORMAT' => 'j F',
+
+        'PROPERTY_CODE' => [
+            'VIDEO', 'SKU'
+        ],
+
+        'SET_TITLE'                 => 'N',
+        'SET_BROWSER_TITLE'         => 'N',
+        'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
+        'ADD_SECTIONS_CHAIN'        => 'N',
+
+        'CACHE_TYPE' => 'A',
+        'CACHE_TIME' => Template::CACHE_TIME,
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
+    ]
+); ?>
+
 <?php require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>
 
