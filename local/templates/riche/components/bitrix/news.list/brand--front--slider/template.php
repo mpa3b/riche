@@ -35,104 +35,128 @@ $frame = $this->createFrame();
 
         <div class="wrap">
 
-            <h3 class="title"><?=$arResult['DESCRIPTION']?></h3>
+            <div class="grid">
 
-            <div class="slider items">
+                <div class="quarter">
 
-                <?php foreach ($arResult['ITEMS'] as $i => $arItem) {
+                    <? $APPLICATION->IncludeComponent(
+                        'bitrix:main.include',
+                        '',
+                        [
+                            "AREA_FILE_SHOW"      => "sect",
+                            "AREA_FILE_SUFFIX"    => "brand",
+                            "AREA_FILE_RECURSIVE" => "N",
 
-                    $imageMobile = CFile::ResizeImageGet(
-                        $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 1),
-                        BX_RESIZE_IMAGE_EXACT,
-                        false,
-                        [],
+                            "COMPOSITE_FRAME_MODE" => "A",
+                            "COMPOSITE_FRAME_TYPE" => "AUTO",
+                        ],
                         false
-                    );
+                    ); ?>
 
-                    $image = CFile::ResizeImageGet(
-                        $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(360, 1.33),
-                        BX_RESIZE_IMAGE_EXACT,
-                        false,
-                        [],
-                        false
-                    );
+                </div>
 
-                    Images::getWebP($imageMobile);
+                <div class="three-quarters">
 
-                    Images::getWebP($image);
+                    <div class="slider items">
 
-                    $imagePreload = CFile::ResizeImageGet(
-                        $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(120, 0.75),
-                        BX_RESIZE_IMAGE_EXACT,
-                        false,
-                        [],
-                        false
-                    );
+                        <?php foreach ($arResult['ITEMS'] as $i => $arItem) {
 
-                    ?>
+                            $imageMobile = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE'],
+                                Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 1),
+                                BX_RESIZE_IMAGE_EXACT,
+                                false,
+                                [],
+                                false
+                            );
 
-                    <div class="item">
+                            $image = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE'],
+                                Images::calculateImageSize(360, 1.33),
+                                BX_RESIZE_IMAGE_EXACT,
+                                false,
+                                [],
+                                false
+                            );
 
-                        <div class="wrapper">
+                            Images::getWebP($imageMobile);
 
-                            <picture>
+                            Images::getWebP($image);
 
-                                <?php if (!empty($arItem['DETAIL_PICTURE'])) { ?>
+                            $imagePreload = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE'],
+                                Images::calculateImageSize(120, 0.75),
+                                BX_RESIZE_IMAGE_EXACT,
+                                false,
+                                [],
+                                false
+                            );
 
-                                    <?php if ($imageMobile['webp_src']) { ?>
-                                        <source srcset="<?php echo $imageMobile['webp_src']; ?>"
-                                                type="<?php echo $imageMobile['webp_content_type']; ?>"
-                                                media="<?php echo Images::getMedia('mobile', true); ?>">
-                                    <?php } ?>
+                            ?>
 
-                                    <source srcset="<?php echo $imageMobile["src"]; ?>"
-                                            type="<?php echo $imageMobile['content_type']; ?>"
-                                            media="<?php echo Images::getMedia('mobile', true); ?>">
+                            <div class="item">
 
-                                    <?php if ($image['webp_src']) { ?>
-                                        <source srcset="<?php echo $image['webp_src']; ?>"
-                                                type="<?php echo $image['webp_content_type']; ?>"
-                                                media="<?php echo Images::getMedia('mobile'); ?>">
-                                    <?php } ?>
+                                <div class="wrapper">
 
-                                    <source srcset="<?php echo $image["src"]; ?>"
-                                            type="<?php echo $image['content_type']; ?>"
-                                            media="<?php echo Images::getMedia('mobile'); ?>">
+                                    <picture>
 
-                                    <img src="<?php echo $imagePreload['src']; ?>"
-                                         loading="lazy">
+                                        <?php if (!empty($arItem['DETAIL_PICTURE'])) { ?>
 
-                                <?php } else { ?>
+                                            <?php if ($imageMobile['webp_src']) { ?>
+                                                <source srcset="<?php echo $imageMobile['webp_src']; ?>"
+                                                        type="<?php echo $imageMobile['webp_content_type']; ?>"
+                                                        media="<?php echo Images::getMedia('mobile', true); ?>">
+                                            <?php } ?>
 
-                                    <img src="<?php echo Images::PLACEHOLDER; ?>">
+                                            <source srcset="<?php echo $imageMobile["src"]; ?>"
+                                                    type="<?php echo $imageMobile['content_type']; ?>"
+                                                    media="<?php echo Images::getMedia('mobile', true); ?>">
 
-                                <? } ?>
+                                            <?php if ($image['webp_src']) { ?>
+                                                <source srcset="<?php echo $image['webp_src']; ?>"
+                                                        type="<?php echo $image['webp_content_type']; ?>"
+                                                        media="<?php echo Images::getMedia('mobile'); ?>">
+                                            <?php } ?>
 
-                            </picture>
+                                            <source srcset="<?php echo $image["src"]; ?>"
+                                                    type="<?php echo $image['content_type']; ?>"
+                                                    media="<?php echo Images::getMedia('mobile'); ?>">
 
-                            <div class="caption">
+                                            <img src="<?php echo $imagePreload['src']; ?>"
+                                                 loading="lazy">
 
-                                <h3><?php echo $arItem['NAME']; ?></h3>
+                                        <?php } else { ?>
 
-                                <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-                                    <p><?php echo $arItem['PREVIEW_TEXT']; ?></p>
-                                <?php } ?>
+                                            <img src="<?php echo Images::PLACEHOLDER; ?>">
 
-                                <?php if (!empty($arItem['DETAIL_PAGE_URL'])) { ?>
-                                    <a href="<?php echo $arItem['DETAIL_PAGE_URL']; ?>"
-                                       class="button primary">Подробнее</a>
-                                <?php } ?>
+                                        <? } ?>
+
+                                    </picture>
+
+                                    <div class="caption">
+
+                                        <h3><?php echo $arItem['NAME']; ?></h3>
+
+                                        <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+                                            <p><?php echo $arItem['PREVIEW_TEXT']; ?></p>
+                                        <?php } ?>
+
+                                        <?php if (!empty($arItem['DETAIL_PAGE_URL'])) { ?>
+                                            <a href="<?php echo $arItem['DETAIL_PAGE_URL']; ?>"
+                                               class="button primary">Подробнее</a>
+                                        <?php } ?>
+
+                                    </div>
+
+                                </div>
 
                             </div>
 
-                        </div>
+                        <?php } ?>
 
                     </div>
 
-                <?php } ?>
+                </div>
 
             </div>
 

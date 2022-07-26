@@ -176,7 +176,8 @@ $frame = $this->createFrame();
                             <?php } ?>
 
                             <?php if ($arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']) { ?>
-                                <button class="big action button primary"><?php echo $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?></button>
+                                <button
+                                    class="big action button primary"><?php echo $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?></button>
                             <?php } ?>
 
                         </div>
@@ -253,7 +254,5 @@ $frame = $this->createFrame();
     </div>
 
     <?php $frame->end(); ?>
-
-    <?php d($arResult); ?>
 
 </div>

@@ -5,7 +5,8 @@
   &--header {
 
     > .wrap {
-      margin-top : 0;
+      margin-top    : 0;
+      margin-bottom : 0;
     }
 
     .row {
@@ -61,8 +62,6 @@
   }
 
   &--footer {
-    padding-top    : 1rem;
-    padding-bottom : 1rem;
 
     &--contact {
 
@@ -128,7 +127,8 @@
     }
 
     &--outro {
-      font-size : 0.7rem;
+      font-size     : 0.7rem;
+      margin-bottom : 0;
     }
 
   }

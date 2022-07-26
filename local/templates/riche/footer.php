@@ -13,7 +13,7 @@ global $USER, $APPLICATION;
 
 <div id="page--footer">
 
-    <div class="wrap">
+    <div id="page--footer--top" class="wrap">
 
         <div class="grid">
 
@@ -102,7 +102,7 @@ global $USER, $APPLICATION;
 
     </div>
 
-    <div class="wrap">
+    <div id="page--footer--outro" class="wrap">
 
         <div class="row">
 
