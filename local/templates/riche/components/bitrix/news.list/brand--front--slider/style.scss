@@ -2,6 +2,10 @@
 
 .brand--front--slider {
 
+  .include-area {
+    padding-right : 2rem;
+  }
+
   .item {
 
     .wrapper {
@@ -29,7 +33,7 @@
         padding    : 2rem;
         box-sizing : border-box;
 
-        color      : var(--color--base);
+        color      : var(--color--white);
 
         h3 {
           margin-top : 0;
@@ -40,28 +44,6 @@
 
         }
 
-      }
-
-    }
-
-  }
-
-  .tns {
-
-    &-slider {
-      margin     : 0 -0.5rem;
-      box-sizing : border-box;
-    }
-
-    &-item {
-      padding    : 0 0.5rem;
-      box-sizing : border-box;
-    }
-
-    @media all and (max-width : $breakpoint_mobile) {
-
-      &-ovh {
-        overflow : visible;
       }
 
     }
