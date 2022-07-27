@@ -158,6 +158,4 @@ $frame = $this->createFrame();
 
     </div>
 
-    <?php d($arResult); ?>
-
 <?php } ?>
