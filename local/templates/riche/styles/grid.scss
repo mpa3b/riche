@@ -1,8 +1,21 @@
 @import "../vars";
 
+:root {
+  --offset       : 0.85rem;
+  @media all and (min-width : $breakpoint_mobile) {
+    --offset : 1rem;
+  }
+  @media all and (min-width : $breakpoint_desktop) {
+    --offset : 1.2rem;
+  }
+
+  --offset--half : calc(var(--offset) / 2);
+  --offset--2x   : calc(var(--offset) * 2);
+}
+
 .wrap {
-  margin  : 2rem 0;
-  padding : 0 1rem;
+  margin  : var(--offset) 0;
+  padding : 0 var(--offset);
 
   .grid,
   .column,
@@ -14,16 +27,16 @@
     > * {
       display    : block;
       box-sizing : border-box;
-      padding    : 1rem 0;
+      padding    : var(--offset) 0;
     }
 
   }
 
   .row {
-    margin : 0 -1rem;
+    margin : 0 calc(var(--offset) * -1);
 
     > * {
-      padding : 0.5rem;
+      padding : calc(var(--offset) * 0.5);
     }
   }
 
@@ -31,7 +44,7 @@
 
     padding : 0;
     width   : 87%;
-    margin  : 4rem auto;
+    margin  : calc(var(--offset) * 4) auto;
 
     .row,
     .grid {
@@ -39,10 +52,10 @@
       flex-wrap      : wrap;
       box-sizing     : border-box;
 
-      margin         : 0 -0.5rem;
+      margin         : 0 calc(var(--offset) * -0.5);
 
       > * {
-        padding : 0.5rem;
+        padding : calc(var(--offset) * 0.5);
       }
 
       $units         : (
@@ -79,7 +92,7 @@
     flex-direction : row;
     flex-wrap      : nowrap;
 
-    margin         : 0 -0.5rem;
+    margin         : 0 calc(var(--offset) * -0.5);
     box-sizing     : border-box;
   }
 
@@ -93,6 +106,10 @@
 
   @media all and (min-width : $breakpoint_desktop_wide * 1.33) {
     width : 72%;
+  }
+
+  > * {
+    padding : calc(var(--offset) * -0.5);
   }
 
 }
@@ -115,6 +132,21 @@
       &-desktop {
         display : none !important;
       }
+    }
+  }
+
+}
+
+.on {
+
+  @media all and (max-width : $breakpoint_mobile) {
+    &-desktop--only {
+      display : none !important;
+    }
+  }
+  @media all and (min-width : $breakpoint_mobile) {
+    &-mobile--only {
+      display : none !important;
     }
   }
 

@@ -83,6 +83,11 @@
 
       .work-time {
         color : var(--color--gray);
+
+        span {
+          white-space : nowrap;
+        }
+
       }
 
     }

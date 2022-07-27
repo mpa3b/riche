@@ -1,37 +1,14 @@
+@import "../../../../vars";
+@import "../../../../snippets";
+
 .reviews--front {
-  margin   : 2rem 0;
+  margin   : var(--offset--2x) 0;
   overflow : hidden;
 
   .items {
     display        : flex;
     flex-direction : row;
     flex-wrap      : nowrap;
-
-    > * {
-
-
-    }
-
-  }
-
-  .tns {
-
-    &-outer {
-
-    }
-
-    &-ovh {
-      overflow : visible;
-    }
-
-    &-slider {
-
-    }
-
-    &-item {
-
-    }
-
   }
 
   .slider {
@@ -47,8 +24,7 @@
   }
 
   .review {
-    padding-right : 2rem;
-    box-sizing    : border-box;
+    box-sizing : border-box;
 
     .header {
       display        : flex;
@@ -70,9 +46,9 @@
       &--image {
 
         picture {
-          margin-right     : 0.5rem;
+          margin-right     : var(--offset--half);
           overflow         : hidden;
-          border-radius    : 2rem;
+          border-radius    : var(--border-radius--2x);
           height           : 2rem;
           width            : 2rem;
 
@@ -100,25 +76,42 @@
         i.icon {
 
           &.empty {
-            opacity : 0.3;
+            opacity : var(--opacity);
           }
 
-          filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg);
-          &:after {
-            filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg);
-          }
         }
 
       }
 
     }
 
-    .title {
-
+    .content {
+      margin : var(--offset) 0;
     }
 
-    .content {
-      margin : 1rem 0;
+  }
+
+  .tns {
+
+    &-item {
+      box-sizing : border-box;
+      padding    : 0 var(--offset--half);
+    }
+
+    &-ovh {
+      margin   : 0 calc(var(--offset--half) * -1);
+      overflow : visible;
+    }
+
+  }
+
+  @include tiny-slider--tns;
+  @include tiny-slider--tns--ovh-visible;
+
+  .tns {
+
+    &-ovh {
+      overflow : visible;
     }
 
   }

@@ -14,7 +14,7 @@
 
     .wrapper {
       position      : relative;
-      border-radius : 1.5rem;
+      border-radius : var(--border-radius--2x);
       overflow      : hidden;
 
       box-sizing    : border-box;
@@ -54,25 +54,8 @@
 
   }
 
-  .tns {
+  @import "../../../../snippets";
 
-    &-inner {
-      margin : 0 -0.5rem;
-    }
-
-    &-item {
-      box-sizing : border-box;
-      padding    : 0 0.5rem;
-    }
-
-    @media all and (max-width : $breakpoint_desktop) {
-
-      &-ovh {
-        overflow : visible;
-      }
-
-    }
-
-  }
+  @include tiny-slider--tns;
 
 }

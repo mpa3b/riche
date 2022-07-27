@@ -1,4 +1,5 @@
 @import "../../../../vars";
+@import "../../../../snippets";
 
 .features--front--slider {
 
@@ -6,7 +7,7 @@
 
     .wrapper {
       position      : relative;
-      border-radius : 1.5rem;
+      border-radius : var(--border-radius--2x);
       overflow      : hidden;
 
       box-sizing    : border-box;
@@ -26,7 +27,7 @@
         top        : 0;
         width      : 100%;
         height     : 100%;
-        padding    : 2rem;
+        padding    : var(--offset--2x);
         box-sizing : border-box;
 
         color      : var(--color--white);
@@ -46,24 +47,13 @@
 
   }
 
+  @include tiny-slider--tns;
+  @include tiny-slider--tns--ovh-visible;
+
   .tns {
 
-    &-slider {
-      margin     : 0 -0.5rem;
-      box-sizing : border-box;
-    }
-
-    &-item {
-      padding    : 0 0.5rem;
-      box-sizing : border-box;
-    }
-
-    @media all and (max-width : $breakpoint_desktop) {
-
-      &-ovh {
-        overflow : visible;
-      }
-
+    &-ovh {
+      overflow : visible;
     }
 
   }

@@ -2,25 +2,28 @@
 
 :root {
 
-  --color--base      : #151515;
-  --color--white     : #fff;
-  --color--gray      : #d7d7d7;
+  --color--base       : #151515;
+  --color--white      : #fff;
+  --color--gray       : #d7d7d7;
 
-  --color--pink      : #ebb2d4;
-  --color--green     : #ebebc9;
-  --color--orange    : #ebe6b2;
-  --color--blue      : #b2b8eb;
+  --color--pink       : #ebb2d4;
+  --color--green      : #ebebc9;
+  --color--orange     : #ebe6b2;
+  --color--blue       : #b2b8eb;
 
-  --color--key       : var(--color--pink);
-  --color--error     : red;
+  --color--key        : var(--color--pink);
 
-  --font--base       : "Gordita", sans-serif;
+  --color--error      : red;
+  --color--success    : green;
 
-  --border-radius    : 0.5em;
+  --font--base        : "Gordita", sans-serif;
 
-  --transition--time : 0.3s;
+  --border-radius     : 1rem;
+  --border-radius--2x : calc(var(--border-radius) * 2);
 
-  --button--shadow   : 4px 4px 0 var(--color--blue);
+  --transition--time  : 0.3s;
+
+  --opacity: 0.3;
 
 }
 

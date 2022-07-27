@@ -1,0 +1,32 @@
+// @mixins
+
+@import "vars";
+
+@mixin tiny-slider--tns {
+
+  .tns {
+
+    &-item {
+      box-sizing : border-box;
+      padding    : 0 var(--offset--half);
+    }
+
+    &-ovh {
+      margin : 0 calc(var(--offset--half) * -1);
+    }
+
+  }
+
+}
+
+@mixin tiny-slider--tns--ovh-visible {
+
+  .tns {
+
+    &-ovh {
+      overflow : visible;
+    }
+
+  }
+
+}

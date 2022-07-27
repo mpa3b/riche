@@ -37,9 +37,7 @@ $frame = $this->createFrame();
 
             <?php foreach ($arResult as $arItem): ?>
                 <li>
-                    <a href="<?= $arItem['LINK']; ?>">
-                        <?= $arItem['TEXT']; ?>
-                    </a>
+                    <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
                 </li>
             <?php endforeach; ?>
 
@@ -47,19 +45,23 @@ $frame = $this->createFrame();
 
         <?php $frame->end(); ?>
 
-        <? $APPLICATION->IncludeComponent(
-            'bitrix:main.include',
-            '',
-            [
-                "AREA_FILE_SHOW"      => "sect",
-                "AREA_FILE_SUFFIX"    => "contact",
-                "AREA_FILE_RECURSIVE" => "N",
+        <div class="on-mobile--only">
 
-                "COMPOSITE_FRAME_MODE" => "A",
-                "COMPOSITE_FRAME_TYPE" => "AUTO",
-            ],
-            false
-        ); ?>
+            <? $APPLICATION->IncludeComponent(
+                'bitrix:main.include',
+                '',
+                [
+                    "AREA_FILE_SHOW"      => "sect",
+                    "AREA_FILE_SUFFIX"    => "contact",
+                    "AREA_FILE_RECURSIVE" => "N",
+
+                    "COMPOSITE_FRAME_MODE" => "A",
+                    "COMPOSITE_FRAME_TYPE" => "AUTO",
+                ],
+                false
+            ); ?>
+
+        </div>
 
     </div>
 
