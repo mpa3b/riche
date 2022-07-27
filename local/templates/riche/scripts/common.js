@@ -5,9 +5,10 @@ $(document).on(
     'button.progress',
     (event) => {
 
-        let throbber = 'throbber',
-            button   = $(event.currentTarget),
-            icon     = $('.icon', button);
+        const throbber = 'throbber';
+
+        let button = $(event.currentTarget),
+            icon   = $('.icon', button);
 
         $(document).on(
             {
@@ -45,40 +46,24 @@ $(() => {
                 maxWidth      : '88%',
                 maxHeight     : '72%',
                 fixed         : true,
-                scrolling     : false
+                scrolling     : false,
+                opacity       : 0.77
             }
         );
 
-        BX.ready(
-            () => {
 
-                if (BX.Browser.isMobile()) {
+        if (BX && BX.Browser.isMobile()) {
 
-                    $.extend(
-                        $.colorbox.settings,
-                        {
-                            current       : '{current} / {total}',
-                            close         : 'Закрыть',
-                            previous      : 'Обратно',
-                            next          : 'Дальше',
-                            xhrError      : 'Ошибка загрузки содержимого',
-                            imgError      : 'Ошибка загрузки изображения',
-                            slideshowStart: 'Hачать слайд-шоу',
-                            slideshowStop : 'Остановить',
-                            bottom        : 0,
-                            maxWidth      : '100%',
-                            maxHeight     : '90%',
-                            fixed         : true,
-                            scrolling     : false
-                        }
-                    );
-
+            $.extend(
+                $.colorbox.settings,
+                {
+                    maxWidth : '100%',
+                    maxHeight: '90%'
                 }
+            );
 
-            }
-        );
+        }
 
     }
 
 });
-

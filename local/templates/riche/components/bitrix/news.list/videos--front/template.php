@@ -80,7 +80,9 @@ $frame = $this->createFrame();
 
                         <div class="wrapper">
 
-                            <a href="#video-<?php echo $arItem['ID']; ?>" class="modal--video" rel="videos--front">
+                            <a href="#video-<?php echo $arItem['ID']; ?>"
+                               class="modal--video"
+                               rel="videos--front">
 
                                 <i class="icon video"></i>
 
@@ -119,6 +121,27 @@ $frame = $this->createFrame();
 
                                 </picture>
 
+                                <div hidden>
+
+                                    <div id="video-<?php echo $arItem['ID']; ?>" class="video">
+
+                                        <video preload="auto">
+                                            <source
+                                                src="<?php echo $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                                        </video>
+
+                                        <button class="transparent button play">
+                                            <i class="icon play"></i>
+                                        </button>
+                                        <button class="transparent button pause">
+                                            <i class="icon pause"></i>
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+
                             </a>
 
                         </div>
@@ -128,16 +151,6 @@ $frame = $this->createFrame();
                 <?php } ?>
 
             </div>
-
-        </div>
-
-        <div hidden>
-
-            <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
-                <video id="video-<?php echo $arItem['ID']; ?>" preload="none">
-                    <source src="<?php echo $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-                </video>
-            <?php } ?>
 
         </div>
 

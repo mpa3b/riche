@@ -22,25 +22,34 @@ $(() => {
 
     const element = $('.videos--front');
     const video = $('.item', element);
-
     const popupTrigger = $('.modal--video', video);
 
-    popupTrigger.on('click', (event) => {
+    popupTrigger.on(
+        'click',
+        (event) => {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        let href = $(event.currentTarget).attr('href');
+            let target = $(event.currentTarget);
 
-        $.colorbox({
-                       inline: true, href: href, className: 'no-borders', onOpen: () => {
+            $.colorbox(
+                {
+                    inline   : true,
+                    href     : target.attr('href'),
+                    className: 'no-borders',
+                    rel: 'videos--front',
+                    onOpen   : () => {
 
 
-            }, onClosed      : () => {
+                    },
+                    onClosed : () => {
 
 
-            }
-                   });
+                    }
+                }
+            );
 
-    });
+        }
+    );
 
 });

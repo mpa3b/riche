@@ -70,7 +70,7 @@
   }
 
   &Overlay {
-    background-color : rgba(59, 50, 99, 0.7);
+    background-color : var(--color--base);
     filter           : alpha(opacity=70);
   }
 
@@ -231,7 +231,7 @@
     bottom              : 0;
     left                : 0;
 
-    background-image    : url(../icons/toggle-left.svg);
+    background-image    : url(../icons/left.svg);
     background-position : center;
     background-repeat   : no-repeat;
 
@@ -246,7 +246,7 @@
     bottom              : 0;
     left                : 2rem;
 
-    background-image    : url(../icons/toggle-right.svg);
+    background-image    : url(../icons/right.svg);
     background-position : center;
     background-repeat   : no-repeat;
 
