@@ -28,7 +28,7 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
         'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
         'ADD_SECTIONS_CHAIN'        => 'N',
 
-        'FIELD_CODE' => [
+        'FIELD_CODE'    => [
             'DETAIL_PICTURE',
             'PREVIEW_PICTURE'
         ],

@@ -9,6 +9,8 @@ global $USER, $APPLICATION;
 
 ?>
 
+    </div>
+
 </div>
 
 <div id="page--footer">

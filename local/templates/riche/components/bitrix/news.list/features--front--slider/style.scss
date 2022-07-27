@@ -58,7 +58,7 @@
       box-sizing : border-box;
     }
 
-    @media all and (max-width : $breakpoint_mobile) {
+    @media all and (max-width : $breakpoint_desktop) {
 
       &-ovh {
         overflow : visible;

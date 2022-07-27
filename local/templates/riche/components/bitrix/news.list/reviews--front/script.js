@@ -3,7 +3,7 @@ $(() => {
     tns(
         {
             container: ".reviews--front .slider",
-            items    : 2,
+            items    : 1,
             slideBy  : 1,
 
             mode     : "carousel",
@@ -22,10 +22,10 @@ $(() => {
 
             responsive: {
                 578: {
-                    items: 3
+                    items: 2
                 },
                 992: {
-                    items: 4
+                    items: 3
                 }
             }
         }

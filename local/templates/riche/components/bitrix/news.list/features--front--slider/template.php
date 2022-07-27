@@ -50,7 +50,7 @@ $frame = $this->createFrame();
 
                     $image = CFile::ResizeImageGet(
                         $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(360, 1.33),
+                        Images::calculateImageSize(360, 1),
                         BX_RESIZE_IMAGE_EXACT,
                         false,
                         [],

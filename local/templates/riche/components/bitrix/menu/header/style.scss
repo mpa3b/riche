@@ -14,6 +14,8 @@
   }
 
   .wrapper {
+    display        : flex;
+    flex-direction : column;
 
     @media all and (max-width : $breakpoint_mobile) {
       position         : fixed;
@@ -33,7 +35,7 @@
 
     }
 
-    transition : left ease-in-out var(--transition--time);
+    transition     : left ease-in-out var(--transition--time);
 
   }
 
@@ -64,6 +66,31 @@
       }
 
     }
+  }
+
+  .contact {
+    margin-top : auto;
+
+    h2 {
+      font-size : 1.4rem;
+    }
+
+    > div {
+      margin-top : 1rem;
+    }
+
+    .work-time {
+      color : var(--color--gray);
+
+      span {
+        white-space : nowrap;
+      }
+    }
+
+    .phone-numbers {
+
+    }
+
   }
 
 }

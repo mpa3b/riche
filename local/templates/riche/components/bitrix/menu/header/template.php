@@ -2,8 +2,6 @@
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-use Riche\PreloadLinks;
-
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -27,12 +25,12 @@ $frame = $this->createFrame();
         <i class="icon burger"></i>
     </button>
 
-    <?php $frame->begin(); ?>
-
     <div class="wrapper">
 
+        <?php $frame->begin(); ?>
+
         <button class="transparent trigger button hide--on-desktop close">
-            <i class="icon close"></i>
+            <i class="icon close-simple"></i>
         </button>
 
         <ul class="menu root">
@@ -47,8 +45,23 @@ $frame = $this->createFrame();
 
         </ul>
 
+        <?php $frame->end(); ?>
+
+        <? $APPLICATION->IncludeComponent(
+            'bitrix:main.include',
+            '',
+            [
+                "AREA_FILE_SHOW"      => "sect",
+                "AREA_FILE_SUFFIX"    => "contact",
+                "AREA_FILE_RECURSIVE" => "N",
+
+                "COMPOSITE_FRAME_MODE" => "A",
+                "COMPOSITE_FRAME_TYPE" => "AUTO",
+            ],
+            false
+        ); ?>
+
     </div>
 
-    <?php $frame->end(); ?>
 
 </nav>

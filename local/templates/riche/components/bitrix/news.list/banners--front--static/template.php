@@ -29,9 +29,9 @@ $frame = $this->createFrame();
 
         <div class="items">
 
-            <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
+            <?php foreach ($arResult['ITEMS'] as $i => $arItem) {
 
-                <?php if ($i == 0) {
+                if ($i == 0) {
 
                     $backgroundImageMobile = CFile::ResizeImageGet(
                         $arItem['DISPLAY_PROPERTIES']['BACKGROUND_IMAGE']['VALUE'],

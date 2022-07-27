@@ -9,7 +9,7 @@
   .items {
 
     .item {
-      position : relative;
+      position      : relative;
 
       .wrapper {
         position       : absolute;
@@ -82,9 +82,12 @@
 
       }
 
+      overflow      : hidden;
+      margin-bottom : 1rem;
+
     }
 
-    @media all and (min-width : $breakpoint_mobile) {
+    @media all and (min-width : $breakpoint_desktop) {
 
       display        : flex;
       flex-direction : row;

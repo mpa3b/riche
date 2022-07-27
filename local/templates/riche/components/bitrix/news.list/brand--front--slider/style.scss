@@ -2,8 +2,12 @@
 
 .brand--front--slider {
 
-  .include-area {
-    padding-right : 2rem;
+  @media all and (min-width : $breakpoint_mobile) {
+
+    .include-area {
+      padding-right : 2rem;
+    }
+
   }
 
   .item {
@@ -53,12 +57,20 @@
   .tns {
 
     &-inner {
-      margin         : 0 -0.5rem;
+      margin : 0 -0.5rem;
     }
 
     &-item {
       box-sizing : border-box;
       padding    : 0 0.5rem;
+    }
+
+    @media all and (max-width : $breakpoint_desktop) {
+
+      &-ovh {
+        overflow : visible;
+      }
+
     }
 
   }

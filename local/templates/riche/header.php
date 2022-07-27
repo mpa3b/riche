@@ -158,7 +158,7 @@ if (IS_AJAX && $cartUpdate) {
 
 <?php $APPLICATION->ShowPanel(); ?>
 
-<? if ($APPLICATION->GetDirProperty('HIDE_HEADER_STRING') !== 'Y') { ?>
+<?php if ($APPLICATION->GetDirProperty('HIDE_HEADER_STRING') !== 'Y') { ?>
 
     <?php $APPLICATION->IncludeComponent(
         'bitrix:news.list',
@@ -267,15 +267,15 @@ if (IS_AJAX && $cartUpdate) {
 
 <div id="page--main">
 
-    <? if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' && $currentDirectoryPath !== '') { ?>
+    <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' && $currentDirectoryPath !== '') { ?>
 
         <header id="page--main--header">
 
             <div class="wrap">
 
-                <? if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
+                <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
 
-                    <? $APPLICATION->IncludeComponent(
+                    <?php $APPLICATION->IncludeComponent(
                         "bitrix:breadcrumb",
                         "",
                         [
@@ -290,28 +290,28 @@ if (IS_AJAX && $cartUpdate) {
                         ["HIDE_ICONS" => "Y"]
                     ); ?>
 
-                <? } ?>
+                <?php } ?>
 
-                <h1><? $APPLICATION->ShowTitle(); ?></h1>
+                <h1><?php $APPLICATION->ShowTitle(); ?></h1>
+
+                <?php $APPLICATION->IncludeComponent(
+                    'bitrix:main.include',
+                    '',
+                    [
+                        "AREA_FILE_SHOW"      => "sect",
+                        "AREA_FILE_SUFFIX"    => "header",
+                        "AREA_FILE_RECURSIVE" => "N",
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO",
+                    ],
+                    false
+                ); ?>
 
             </div>
 
-            <? $APPLICATION->IncludeComponent(
-                'bitrix:main.include',
-                '.wrap',
-                [
-                    "AREA_FILE_SHOW"      => "sect",
-                    "AREA_FILE_SUFFIX"    => "header",
-                    "AREA_FILE_RECURSIVE" => "N",
-
-                    "COMPOSITE_FRAME_MODE" => "A",
-                    "COMPOSITE_FRAME_TYPE" => "AUTO",
-                ],
-                false
-            ); ?>
-
         </header>
 
-    <? } ?>
+    <?php } ?>
 
     <div id="page--main--content">

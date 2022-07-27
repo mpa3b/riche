@@ -45,7 +45,7 @@ $frame = $this->createFrame();
 
                     $image = CFile::ResizeImageGet(
                         $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.66),
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.77),
                         BX_RESIZE_IMAGE_EXACT,
                         false,
                         [],
@@ -55,7 +55,7 @@ $frame = $this->createFrame();
 
                     $imageMobile = CFile::ResizeImageGet(
                         $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.66),
+                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.77),
                         BX_RESIZE_IMAGE_EXACT,
                         false,
                         [],
@@ -67,7 +67,7 @@ $frame = $this->createFrame();
 
                     $imagePreload = CFile::ResizeImageGet(
                         $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(120, 0.66),
+                        Images::calculateImageSize(120, 0.77),
                         BX_RESIZE_IMAGE_EXACT,
                         false,
                         [],

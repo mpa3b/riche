@@ -77,12 +77,12 @@
 
     .contact {
 
-      p > span {
-        color : var(--color--gray);
+      > div {
+        margin-top : 1rem;
       }
 
-      p > a {
-
+      .work-time {
+        color : var(--color--gray);
       }
 
     }

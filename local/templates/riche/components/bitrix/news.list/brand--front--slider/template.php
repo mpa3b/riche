@@ -85,7 +85,7 @@ $frame = $this->createFrame();
 
                             $imagePreload = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE'],
-                                Images::calculateImageSize(120, 0.75),
+                                Images::calculateImageSize(120, 0.77),
                                 BX_RESIZE_IMAGE_EXACT,
                                 false,
                                 [],
