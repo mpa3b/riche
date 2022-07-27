@@ -1,7 +1,8 @@
 @import "../../../../vars";
-@import "../../../../snippets";
+@import "../../../../mixins";
 
 .features--front--slider {
+  overflow : hidden;
 
   .item {
 

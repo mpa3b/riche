@@ -1,5 +1,5 @@
 @import "../../../../vars";
-@import "../../../../snippets";
+@import "../../../../mixins";
 
 .videos--front {
 
@@ -83,6 +83,29 @@
 
   }
 
+  .tns {
+
+    &-item {
+      box-sizing : border-box;
+      padding    : 0 var(--offset--half);
+    }
+
+    &-ovh {
+      margin   : 0 calc(var(--offset--half) * -1);
+      overflow : visible;
+    }
+
+  }
+
   @include tiny-slider--tns;
+  @include tiny-slider--tns--ovh-visible;
+
+  .tns {
+
+    &-ovh {
+      overflow : visible;
+    }
+
+  }
 
 }

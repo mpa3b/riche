@@ -1,4 +1,5 @@
 @import "../../../../vars";
+@import "../../../../mixins";
 
 .brand--front--slider {
 
@@ -53,8 +54,6 @@
     }
 
   }
-
-  @import "../../../../snippets";
 
   @include tiny-slider--tns;
 

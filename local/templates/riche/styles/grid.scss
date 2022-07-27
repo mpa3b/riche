@@ -14,8 +14,9 @@
 }
 
 .wrap {
-  margin  : var(--offset) 0;
-  padding : 0 var(--offset);
+  margin   : var(--offset--2x) 0;
+
+  padding  : 0 var(--offset);
 
   .grid,
   .column,

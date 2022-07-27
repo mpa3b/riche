@@ -2,29 +2,35 @@
 
 :root {
 
-  --color--base       : #151515;
-  --color--white      : #fff;
-  --color--gray       : #d7d7d7;
+  --color--base        : #151515;
+  --color--white       : #fff;
+  --color--gray        : #c7c7c7;
 
-  --color--pink       : #ebb2d4;
-  --color--green      : #ebebc9;
-  --color--orange     : #ebe6b2;
-  --color--blue       : #b2b8eb;
+  --color--pink        : #ebb2d4;
+  --color--green       : #ebebc9;
+  --color--orange      : #ebe6b2;
+  --color--blue        : #b2b8eb;
 
-  --color--key        : var(--color--pink);
+  --color--key         : var(--color--pink);
 
-  --color--error      : red;
-  --color--success    : green;
+  --color--error       : red;
+  --color--success     : green;
 
-  --font--base        : "Gordita", sans-serif;
+  --font--base         : "Gordita", sans-serif;
 
-  --border-radius     : 1rem;
-  --border-radius--2x : calc(var(--border-radius) * 2);
+  --border-radius      : 1rem;
+  --border-radius--2x  : calc(var(--border-radius) * 2);
 
-  --transition--time  : 0.3s;
+  --transition--time   : 0.3s;
 
-  --opacity: 0.3;
+  --opacity            : 0.3;
 
+  --border--thin       : 1px solid var(--color--gray);
+  --border--normal     : 2px solid var(--color--gray);
+  --border--wide       : 4px solid var(--color--gray);
+
+  --box-shadow         : 2px 2px 4px var(--color--gray);
+  --box-shadow--blurry : 6px 6px 18px var(--color--gray);
 }
 
 html {
