@@ -1,0 +1,2297 @@
+[
+    {
+        "name": "message-1",
+        "className": "message-1",
+        "unicode": "e900"
+    },
+    {
+        "name": "message-2",
+        "className": "message-2",
+        "unicode": "e901"
+    },
+    {
+        "name": "message-3",
+        "className": "message-3",
+        "unicode": "e902"
+    },
+    {
+        "name": "message-4",
+        "className": "message-4",
+        "unicode": "e903"
+    },
+    {
+        "name": "message-5",
+        "className": "message-5",
+        "unicode": "e904"
+    },
+    {
+        "name": "message-6",
+        "className": "message-6",
+        "unicode": "e905"
+    },
+    {
+        "name": "message-7",
+        "className": "message-7",
+        "unicode": "e906"
+    },
+    {
+        "name": "message-8",
+        "className": "message-8",
+        "unicode": "e907"
+    },
+    {
+        "name": "message-9",
+        "className": "message-9",
+        "unicode": "e908"
+    },
+    {
+        "name": "message-10",
+        "className": "message-10",
+        "unicode": "e909"
+    },
+    {
+        "name": "message-11",
+        "className": "message-11",
+        "unicode": "e90a"
+    },
+    {
+        "name": "message-12",
+        "className": "message-12",
+        "unicode": "e90b"
+    },
+    {
+        "name": "message-13",
+        "className": "message-13",
+        "unicode": "e90c"
+    },
+    {
+        "name": "message-14",
+        "className": "message-14",
+        "unicode": "e90d"
+    },
+    {
+        "name": "message-15",
+        "className": "message-15",
+        "unicode": "e90e"
+    },
+    {
+        "name": "message-16",
+        "className": "message-16",
+        "unicode": "e90f"
+    },
+    {
+        "name": "message-17",
+        "className": "message-17",
+        "unicode": "e910"
+    },
+    {
+        "name": "message-18",
+        "className": "message-18",
+        "unicode": "e911"
+    },
+    {
+        "name": "message-21",
+        "className": "message-21",
+        "unicode": "e912"
+    },
+    {
+        "name": "message-22",
+        "className": "message-22",
+        "unicode": "e913"
+    },
+    {
+        "name": "message-23",
+        "className": "message-23",
+        "unicode": "e914"
+    },
+    {
+        "name": "message-24",
+        "className": "message-24",
+        "unicode": "e915"
+    },
+    {
+        "name": "message-25",
+        "className": "message-25",
+        "unicode": "e916"
+    },
+    {
+        "name": "message-26",
+        "className": "message-26",
+        "unicode": "e917"
+    },
+    {
+        "name": "message-27",
+        "className": "message-27",
+        "unicode": "e918"
+    },
+    {
+        "name": "message-28",
+        "className": "message-28",
+        "unicode": "e919"
+    },
+    {
+        "name": "message-29",
+        "className": "message-29",
+        "unicode": "e91a"
+    },
+    {
+        "name": "message-30",
+        "className": "message-30",
+        "unicode": "e91b"
+    },
+    {
+        "name": "message-31",
+        "className": "message-31",
+        "unicode": "e91c"
+    },
+    {
+        "name": "message-32",
+        "className": "message-32",
+        "unicode": "e91d"
+    },
+    {
+        "name": "message-33",
+        "className": "message-33",
+        "unicode": "e91e"
+    },
+    {
+        "name": "message-34",
+        "className": "message-34",
+        "unicode": "e91f"
+    },
+    {
+        "name": "message-35",
+        "className": "message-35",
+        "unicode": "e920"
+    },
+    {
+        "name": "message-36",
+        "className": "message-36",
+        "unicode": "e921"
+    },
+    {
+        "name": "message-37",
+        "className": "message-37",
+        "unicode": "e922"
+    },
+    {
+        "name": "message-38",
+        "className": "message-38",
+        "unicode": "e923"
+    },
+    {
+        "name": "sms-1",
+        "className": "sms-1",
+        "unicode": "e924"
+    },
+    {
+        "name": "sms-2",
+        "className": "sms-2",
+        "unicode": "e925"
+    },
+    {
+        "name": "swap-1",
+        "className": "swap-1",
+        "unicode": "e926"
+    },
+    {
+        "name": "swap-2",
+        "className": "swap-2",
+        "unicode": "e927"
+    },
+    {
+        "name": "download",
+        "className": "download",
+        "unicode": "e928"
+    },
+    {
+        "name": "upload",
+        "className": "upload",
+        "unicode": "e929"
+    },
+    {
+        "name": "down-square-1",
+        "className": "down-square-1",
+        "unicode": "e92a"
+    },
+    {
+        "name": "up-square-1",
+        "className": "up-square-1",
+        "unicode": "e92b"
+    },
+    {
+        "name": "left-square-1",
+        "className": "left-square-1",
+        "unicode": "e92c"
+    },
+    {
+        "name": "right-square-1",
+        "className": "right-square-1",
+        "unicode": "e92d"
+    },
+    {
+        "name": "down-square-2",
+        "className": "down-square-2",
+        "unicode": "e92e"
+    },
+    {
+        "name": "up-square-2",
+        "className": "up-square-2",
+        "unicode": "e92f"
+    },
+    {
+        "name": "left-square-2",
+        "className": "left-square-2",
+        "unicode": "e930"
+    },
+    {
+        "name": "right-square-2",
+        "className": "right-square-2",
+        "unicode": "e931"
+    },
+    {
+        "name": "down-circle-1",
+        "className": "down-circle-1",
+        "unicode": "e932"
+    },
+    {
+        "name": "up-circle-1",
+        "className": "up-circle-1",
+        "unicode": "e933"
+    },
+    {
+        "name": "left-circle-1",
+        "className": "left-circle-1",
+        "unicode": "e934"
+    },
+    {
+        "name": "right-circle-1",
+        "className": "right-circle-1",
+        "unicode": "e935"
+    },
+    {
+        "name": "down-circle-2",
+        "className": "down-circle-2",
+        "unicode": "e936"
+    },
+    {
+        "name": "up-circle-2",
+        "className": "up-circle-2",
+        "unicode": "e937"
+    },
+    {
+        "name": "left-circle-2",
+        "className": "left-circle-2",
+        "unicode": "e938"
+    },
+    {
+        "name": "right-circle-2",
+        "className": "right-circle-2",
+        "unicode": "e939"
+    },
+    {
+        "name": "down-1",
+        "className": "down-1",
+        "unicode": "e93a"
+    },
+    {
+        "name": "up-1",
+        "className": "up-1",
+        "unicode": "e93b"
+    },
+    {
+        "name": "left-1",
+        "className": "left-1",
+        "unicode": "e93c"
+    },
+    {
+        "name": "right-1",
+        "className": "right-1",
+        "unicode": "e93d"
+    },
+    {
+        "name": "down-2",
+        "className": "down-2",
+        "unicode": "e93e"
+    },
+    {
+        "name": "up-2",
+        "className": "up-2",
+        "unicode": "e93f"
+    },
+    {
+        "name": "left-2",
+        "className": "left-2",
+        "unicode": "e940"
+    },
+    {
+        "name": "right-2",
+        "className": "right-2",
+        "unicode": "e941"
+    },
+    {
+        "name": "down-3",
+        "className": "down-3",
+        "unicode": "e942"
+    },
+    {
+        "name": "up-3",
+        "className": "up-3",
+        "unicode": "e943"
+    },
+    {
+        "name": "left-3",
+        "className": "left-3",
+        "unicode": "e944"
+    },
+    {
+        "name": "right-3",
+        "className": "right-3",
+        "unicode": "e945"
+    },
+    {
+        "name": "login",
+        "className": "login",
+        "unicode": "e946"
+    },
+    {
+        "name": "logout",
+        "className": "logout",
+        "unicode": "e947"
+    },
+    {
+        "name": "rotate-right",
+        "className": "rotate-right",
+        "unicode": "e948"
+    },
+    {
+        "name": "rotate-left",
+        "className": "rotate-left",
+        "unicode": "e949"
+    },
+    {
+        "name": "refresh-1",
+        "className": "refresh-1",
+        "unicode": "e94a"
+    },
+    {
+        "name": "refresh-2",
+        "className": "refresh-2",
+        "unicode": "e94b"
+    },
+    {
+        "name": "undo",
+        "className": "undo",
+        "unicode": "e94c"
+    },
+    {
+        "name": "redo",
+        "className": "redo",
+        "unicode": "e94d"
+    },
+    {
+        "name": "arrow-swap-horizontal",
+        "className": "arrow-swap-horizontal",
+        "unicode": "e94e"
+    },
+    {
+        "name": "arrow-swap-vertical",
+        "className": "arrow-swap-vertical",
+        "unicode": "e94f"
+    },
+    {
+        "name": "foreign",
+        "className": "foreign",
+        "unicode": "e950"
+    },
+    {
+        "name": "profile-circle",
+        "className": "profile-circle",
+        "unicode": "e951"
+    },
+    {
+        "name": "profile-square",
+        "className": "profile-square",
+        "unicode": "e952"
+    },
+    {
+        "name": "profile-octagon",
+        "className": "profile-octagon",
+        "unicode": "e953"
+    },
+    {
+        "name": "user-tag",
+        "className": "user-tag",
+        "unicode": "e954"
+    },
+    {
+        "name": "profile-1",
+        "className": "profile-1",
+        "unicode": "e955"
+    },
+    {
+        "name": "profile-add-1",
+        "className": "profile-add-1",
+        "unicode": "e956"
+    },
+    {
+        "name": "profile-remove-1",
+        "className": "profile-remove-1",
+        "unicode": "e957"
+    },
+    {
+        "name": "profile-delete-1",
+        "className": "profile-delete-1",
+        "unicode": "e958"
+    },
+    {
+        "name": "profile-add-2",
+        "className": "profile-add-2",
+        "unicode": "e959"
+    },
+    {
+        "name": "profile-remove-2",
+        "className": "profile-remove-2",
+        "unicode": "e95a"
+    },
+    {
+        "name": "profile-delete-2",
+        "className": "profile-delete-2",
+        "unicode": "e95b"
+    },
+    {
+        "name": "profile-accepted-2",
+        "className": "profile-accepted-2",
+        "unicode": "e95c"
+    },
+    {
+        "name": "group-1",
+        "className": "group-1",
+        "unicode": "e95d"
+    },
+    {
+        "name": "group-2",
+        "className": "group-2",
+        "unicode": "e95e"
+    },
+    {
+        "name": "group-3",
+        "className": "group-3",
+        "unicode": "e95f"
+    },
+    {
+        "name": "document-align-left-1",
+        "className": "document-align-left-1",
+        "unicode": "e960"
+    },
+    {
+        "name": "document-justify-center-1",
+        "className": "document-justify-center-1",
+        "unicode": "e961"
+    },
+    {
+        "name": "document--align-right-1",
+        "className": "document--align-right-1",
+        "unicode": "e962"
+    },
+    {
+        "name": "document-align-center-1",
+        "className": "document-align-center-1",
+        "unicode": "e963"
+    },
+    {
+        "name": "document-align-right-2",
+        "className": "document-align-right-2",
+        "unicode": "e964"
+    },
+    {
+        "name": "document--align-left-2",
+        "className": "document--align-left-2",
+        "unicode": "e965"
+    },
+    {
+        "name": "document-align-right-3",
+        "className": "document-align-right-3",
+        "unicode": "e966"
+    },
+    {
+        "name": "document--align-left-3",
+        "className": "document--align-left-3",
+        "unicode": "e967"
+    },
+    {
+        "name": "document--justify-left-1",
+        "className": "document--justify-left-1",
+        "unicode": "e968"
+    },
+    {
+        "name": "document-justify--right-1",
+        "className": "document-justify--right-1",
+        "unicode": "e969"
+    },
+    {
+        "name": "document--align-center-2",
+        "className": "document--align-center-2",
+        "unicode": "e96a"
+    },
+    {
+        "name": "document-align-left-4",
+        "className": "document-align-left-4",
+        "unicode": "e96b"
+    },
+    {
+        "name": "document-align-right-4",
+        "className": "document-align-right-4",
+        "unicode": "e96c"
+    },
+    {
+        "name": "document-justify-center-2",
+        "className": "document-justify-center-2",
+        "unicode": "e96d"
+    },
+    {
+        "name": "document-align-left-5",
+        "className": "document-align-left-5",
+        "unicode": "e96e"
+    },
+    {
+        "name": "document-align-left-6",
+        "className": "document-align-left-6",
+        "unicode": "e96f"
+    },
+    {
+        "name": "document-align-left-7",
+        "className": "document-align-left-7",
+        "unicode": "e970"
+    },
+    {
+        "name": "document-align-center-3",
+        "className": "document-align-center-3",
+        "unicode": "e971"
+    },
+    {
+        "name": "document-align-right-5",
+        "className": "document-align-right-5",
+        "unicode": "e972"
+    },
+    {
+        "name": "document-align-right-6",
+        "className": "document-align-right-6",
+        "unicode": "e973"
+    },
+    {
+        "name": "document-justify-left-2",
+        "className": "document-justify-left-2",
+        "unicode": "e974"
+    },
+    {
+        "name": "document-justify-right-2",
+        "className": "document-justify-right-2",
+        "unicode": "e975"
+    },
+    {
+        "name": "document-align-right-7",
+        "className": "document-align-right-7",
+        "unicode": "e976"
+    },
+    {
+        "name": "document-align-left-8",
+        "className": "document-align-left-8",
+        "unicode": "e977"
+    },
+    {
+        "name": "document-align-left-9",
+        "className": "document-align-left-9",
+        "unicode": "e978"
+    },
+    {
+        "name": "document-align-center-4",
+        "className": "document-align-center-4",
+        "unicode": "e979"
+    },
+    {
+        "name": "document-align-right-8",
+        "className": "document-align-right-8",
+        "unicode": "e97a"
+    },
+    {
+        "name": "document-align-left-10",
+        "className": "document-align-left-10",
+        "unicode": "e97b"
+    },
+    {
+        "name": "document-align-left-11",
+        "className": "document-align-left-11",
+        "unicode": "e97c"
+    },
+    {
+        "name": "document-align-center-5",
+        "className": "document-align-center-5",
+        "unicode": "e97d"
+    },
+    {
+        "name": "document-align-right-9",
+        "className": "document-align-right-9",
+        "unicode": "e97e"
+    },
+    {
+        "name": "document-align-left-12",
+        "className": "document-align-left-12",
+        "unicode": "e97f"
+    },
+    {
+        "name": "document-align-right-10",
+        "className": "document-align-right-10",
+        "unicode": "e980"
+    },
+    {
+        "name": "document-align-center-6",
+        "className": "document-align-center-6",
+        "unicode": "e981"
+    },
+    {
+        "name": "document-align-right-11",
+        "className": "document-align-right-11",
+        "unicode": "e982"
+    },
+    {
+        "name": "document-align-left-13",
+        "className": "document-align-left-13",
+        "unicode": "e983"
+    },
+    {
+        "name": "document-align-right-12",
+        "className": "document-align-right-12",
+        "unicode": "e984"
+    },
+    {
+        "name": "document-align-center-7",
+        "className": "document-align-center-7",
+        "unicode": "e985"
+    },
+    {
+        "name": "document-align-right-13",
+        "className": "document-align-right-13",
+        "unicode": "e986"
+    },
+    {
+        "name": "document-align-left-14",
+        "className": "document-align-left-14",
+        "unicode": "e987"
+    },
+    {
+        "name": "document-align-left-15",
+        "className": "document-align-left-15",
+        "unicode": "e988"
+    },
+    {
+        "name": "document-minus-1",
+        "className": "document-minus-1",
+        "unicode": "e989"
+    },
+    {
+        "name": "document--add-1",
+        "className": "document--add-1",
+        "unicode": "e98a"
+    },
+    {
+        "name": "document-fail-1",
+        "className": "document-fail-1",
+        "unicode": "e98b"
+    },
+    {
+        "name": "document-download-1",
+        "className": "document-download-1",
+        "unicode": "e98c"
+    },
+    {
+        "name": "document--upload-1",
+        "className": "document--upload-1",
+        "unicode": "e98d"
+    },
+    {
+        "name": "document-align-left-16",
+        "className": "document-align-left-16",
+        "unicode": "e98e"
+    },
+    {
+        "name": "document-align-left-17",
+        "className": "document-align-left-17",
+        "unicode": "e98f"
+    },
+    {
+        "name": "document-minus-2",
+        "className": "document-minus-2",
+        "unicode": "e990"
+    },
+    {
+        "name": "document-add-2",
+        "className": "document-add-2",
+        "unicode": "e991"
+    },
+    {
+        "name": "document-fail-2",
+        "className": "document-fail-2",
+        "unicode": "e992"
+    },
+    {
+        "name": "document-download-2",
+        "className": "document-download-2",
+        "unicode": "e993"
+    },
+    {
+        "name": "document-upload-2",
+        "className": "document-upload-2",
+        "unicode": "e994"
+    },
+    {
+        "name": "document-align-right-14",
+        "className": "document-align-right-14",
+        "unicode": "e995"
+    },
+    {
+        "name": "document-align-right-15",
+        "className": "document-align-right-15",
+        "unicode": "e996"
+    },
+    {
+        "name": "document--minus-3",
+        "className": "document--minus-3",
+        "unicode": "e997"
+    },
+    {
+        "name": "document-add-3",
+        "className": "document-add-3",
+        "unicode": "e998"
+    },
+    {
+        "name": "document-fail-3",
+        "className": "document-fail-3",
+        "unicode": "e999"
+    },
+    {
+        "name": "document-download-3",
+        "className": "document-download-3",
+        "unicode": "e99a"
+    },
+    {
+        "name": "document-upload-3",
+        "className": "document-upload-3",
+        "unicode": "e99b"
+    },
+    {
+        "name": "document-align-right-16",
+        "className": "document-align-right-16",
+        "unicode": "e99c"
+    },
+    {
+        "name": "document-align-right-17",
+        "className": "document-align-right-17",
+        "unicode": "e99d"
+    },
+    {
+        "name": "document-minus-4",
+        "className": "document-minus-4",
+        "unicode": "e99e"
+    },
+    {
+        "name": "document-add-4",
+        "className": "document-add-4",
+        "unicode": "e99f"
+    },
+    {
+        "name": "document-fail-4",
+        "className": "document-fail-4",
+        "unicode": "e9a0"
+    },
+    {
+        "name": "document-download-4",
+        "className": "document-download-4",
+        "unicode": "e9a1"
+    },
+    {
+        "name": "document-upload-4",
+        "className": "document-upload-4",
+        "unicode": "e9a2"
+    },
+    {
+        "name": "folder-1",
+        "className": "folder-1",
+        "unicode": "e9a3"
+    },
+    {
+        "name": "folder-cross-1",
+        "className": "folder-cross-1",
+        "unicode": "e9a4"
+    },
+    {
+        "name": "folder-add-1",
+        "className": "folder-add-1",
+        "unicode": "e9a5"
+    },
+    {
+        "name": "folder-minus-1",
+        "className": "folder-minus-1",
+        "unicode": "e9a6"
+    },
+    {
+        "name": "folder-2",
+        "className": "folder-2",
+        "unicode": "e9a7"
+    },
+    {
+        "name": "folder-cross-2",
+        "className": "folder-cross-2",
+        "unicode": "e9a8"
+    },
+    {
+        "name": "folder-add-2",
+        "className": "folder-add-2",
+        "unicode": "e9a9"
+    },
+    {
+        "name": "folder-minus-2",
+        "className": "folder-minus-2",
+        "unicode": "e9aa"
+    },
+    {
+        "name": "edit-square",
+        "className": "edit-square",
+        "unicode": "e9ab"
+    },
+    {
+        "name": "edit-1",
+        "className": "edit-1",
+        "unicode": "e9ac"
+    },
+    {
+        "name": "edit-2",
+        "className": "edit-2",
+        "unicode": "e9ad"
+    },
+    {
+        "name": "crop-1",
+        "className": "crop-1",
+        "unicode": "e9ae"
+    },
+    {
+        "name": "crop-2",
+        "className": "crop-2",
+        "unicode": "e9af"
+    },
+    {
+        "name": "crop-3",
+        "className": "crop-3",
+        "unicode": "e9b0"
+    },
+    {
+        "name": "pen",
+        "className": "pen",
+        "unicode": "e9b1"
+    },
+    {
+        "name": "color-picker",
+        "className": "color-picker",
+        "unicode": "e9b2"
+    },
+    {
+        "name": "palette",
+        "className": "palette",
+        "unicode": "e9b3"
+    },
+    {
+        "name": "video-1",
+        "className": "video-1",
+        "unicode": "e9b4"
+    },
+    {
+        "name": "video-2",
+        "className": "video-2",
+        "unicode": "e9b5"
+    },
+    {
+        "name": "video-slash",
+        "className": "video-slash",
+        "unicode": "e9b6"
+    },
+    {
+        "name": "image",
+        "className": "image",
+        "unicode": "e9b7"
+    },
+    {
+        "name": "radio",
+        "className": "radio",
+        "unicode": "e9b8"
+    },
+    {
+        "name": "play",
+        "className": "play",
+        "unicode": "e9b9"
+    },
+    {
+        "name": "play-circle",
+        "className": "play-circle",
+        "unicode": "e9ba"
+    },
+    {
+        "name": "play-square",
+        "className": "play-square",
+        "unicode": "e9bb"
+    },
+    {
+        "name": "forward",
+        "className": "forward",
+        "unicode": "e9bc"
+    },
+    {
+        "name": "backward",
+        "className": "backward",
+        "unicode": "e9bd"
+    },
+    {
+        "name": "previous",
+        "className": "previous",
+        "unicode": "e9be"
+    },
+    {
+        "name": "next",
+        "className": "next",
+        "unicode": "e9bf"
+    },
+    {
+        "name": "record",
+        "className": "record",
+        "unicode": "e9c0"
+    },
+    {
+        "name": "stop",
+        "className": "stop",
+        "unicode": "e9c1"
+    },
+    {
+        "name": "stop-circle",
+        "className": "stop-circle",
+        "unicode": "e9c2"
+    },
+    {
+        "name": "play-octagon-1",
+        "className": "play-octagon-1",
+        "unicode": "e9c3"
+    },
+    {
+        "name": "camera-slash-2",
+        "className": "camera-slash-2",
+        "unicode": "e9c4"
+    },
+    {
+        "name": "pause-octagon",
+        "className": "pause-octagon",
+        "unicode": "e9c5"
+    },
+    {
+        "name": "pause-circle",
+        "className": "pause-circle",
+        "unicode": "e9c6"
+    },
+    {
+        "name": "pause",
+        "className": "pause",
+        "unicode": "e9c7"
+    },
+    {
+        "name": "pause-octagon-1",
+        "className": "pause-octagon-1",
+        "unicode": "e9c8"
+    },
+    {
+        "name": "headphone-1",
+        "className": "headphone-1",
+        "unicode": "e9c9"
+    },
+    {
+        "name": "headphone-2",
+        "className": "headphone-2",
+        "unicode": "e9ca"
+    },
+    {
+        "name": "camera-1",
+        "className": "camera-1",
+        "unicode": "e9cb"
+    },
+    {
+        "name": "camera-2",
+        "className": "camera-2",
+        "unicode": "e9cc"
+    },
+    {
+        "name": "camera-slash-1",
+        "className": "camera-slash-1",
+        "unicode": "e9cd"
+    },
+    {
+        "name": "musicnote",
+        "className": "musicnote",
+        "unicode": "e9ce"
+    },
+    {
+        "name": "repeate-1",
+        "className": "repeate-1",
+        "unicode": "e9cf"
+    },
+    {
+        "name": "music",
+        "className": "music",
+        "unicode": "e9d0"
+    },
+    {
+        "name": "music-filter",
+        "className": "music-filter",
+        "unicode": "e9d1"
+    },
+    {
+        "name": "voice-circle",
+        "className": "voice-circle",
+        "unicode": "e9d2"
+    },
+    {
+        "name": "voice-square",
+        "className": "voice-square",
+        "unicode": "e9d3"
+    },
+    {
+        "name": "backward-5-seconds",
+        "className": "backward-5-seconds",
+        "unicode": "e9d4"
+    },
+    {
+        "name": "forward-5-seconds",
+        "className": "forward-5-seconds",
+        "unicode": "e9d5"
+    },
+    {
+        "name": "backward-10-seconds",
+        "className": "backward-10-seconds",
+        "unicode": "e9d6"
+    },
+    {
+        "name": "forward-10-seconds",
+        "className": "forward-10-seconds",
+        "unicode": "e9d7"
+    },
+    {
+        "name": "repeate-one-1",
+        "className": "repeate-one-1",
+        "unicode": "e9d8"
+    },
+    {
+        "name": "repeate-one-2",
+        "className": "repeate-one-2",
+        "unicode": "e9d9"
+    },
+    {
+        "name": "repeate-one-3",
+        "className": "repeate-one-3",
+        "unicode": "e9da"
+    },
+    {
+        "name": "repeate-3",
+        "className": "repeate-3",
+        "unicode": "e9db"
+    },
+    {
+        "name": "shuffle-1",
+        "className": "shuffle-1",
+        "unicode": "e9dc"
+    },
+    {
+        "name": "shuffle-2",
+        "className": "shuffle-2",
+        "unicode": "e9dd"
+    },
+    {
+        "name": "voice",
+        "className": "voice",
+        "unicode": "e9de"
+    },
+    {
+        "name": "voice-shape-1",
+        "className": "voice-shape-1",
+        "unicode": "e9df"
+    },
+    {
+        "name": "voice-shape-2",
+        "className": "voice-shape-2",
+        "unicode": "e9e0"
+    },
+    {
+        "name": "microphone-1",
+        "className": "microphone-1",
+        "unicode": "e9e1"
+    },
+    {
+        "name": "microphone-2",
+        "className": "microphone-2",
+        "unicode": "e9e2"
+    },
+    {
+        "name": "microphone-off",
+        "className": "microphone-off",
+        "unicode": "e9e3"
+    },
+    {
+        "name": "microphone-3",
+        "className": "microphone-3",
+        "unicode": "e9e4"
+    },
+    {
+        "name": "microphone-4",
+        "className": "microphone-4",
+        "unicode": "e9e5"
+    },
+    {
+        "name": "volume-mute",
+        "className": "volume-mute",
+        "unicode": "e9e6"
+    },
+    {
+        "name": "volume-high",
+        "className": "volume-high",
+        "unicode": "e9e7"
+    },
+    {
+        "name": "volume-low-1",
+        "className": "volume-low-1",
+        "unicode": "e9e8"
+    },
+    {
+        "name": "volume-low",
+        "className": "volume-low",
+        "unicode": "e9e9"
+    },
+    {
+        "name": "volume-up",
+        "className": "volume-up",
+        "unicode": "e9ea"
+    },
+    {
+        "name": "volume-cross",
+        "className": "volume-cross",
+        "unicode": "e9eb"
+    },
+    {
+        "name": "volume-slash",
+        "className": "volume-slash",
+        "unicode": "e9ec"
+    },
+    {
+        "name": "volume-off",
+        "className": "volume-off",
+        "unicode": "e9ed"
+    },
+    {
+        "name": "speaker-1",
+        "className": "speaker-1",
+        "unicode": "e9ee"
+    },
+    {
+        "name": "speaker-2",
+        "className": "speaker-2",
+        "unicode": "e9ef"
+    },
+    {
+        "name": "ticket-1",
+        "className": "ticket-1",
+        "unicode": "e9f0"
+    },
+    {
+        "name": "ticket-2",
+        "className": "ticket-2",
+        "unicode": "e9f1"
+    },
+    {
+        "name": "ticket-star-1",
+        "className": "ticket-star-1",
+        "unicode": "e9f2"
+    },
+    {
+        "name": "ticket-expired",
+        "className": "ticket-expired",
+        "unicode": "e9f3"
+    },
+    {
+        "name": "ticket-star-2",
+        "className": "ticket-star-2",
+        "unicode": "e9f4"
+    },
+    {
+        "name": "ticket-discount",
+        "className": "ticket-discount",
+        "unicode": "e9f5"
+    },
+    {
+        "name": "wallet",
+        "className": "wallet",
+        "unicode": "e9f6"
+    },
+    {
+        "name": "card-1",
+        "className": "card-1",
+        "unicode": "e9f7"
+    },
+    {
+        "name": "card-2",
+        "className": "card-2",
+        "unicode": "e9f8"
+    },
+    {
+        "name": "dollar-circle",
+        "className": "dollar-circle",
+        "unicode": "e9f9"
+    },
+    {
+        "name": "dollar-square",
+        "className": "dollar-square",
+        "unicode": "e9fa"
+    },
+    {
+        "name": "discount-circle",
+        "className": "discount-circle",
+        "unicode": "e9fb"
+    },
+    {
+        "name": "discount-square",
+        "className": "discount-square",
+        "unicode": "e9fc"
+    },
+    {
+        "name": "discount-shape-1",
+        "className": "discount-shape-1",
+        "unicode": "e9fd"
+    },
+    {
+        "name": "discount-shape-2",
+        "className": "discount-shape-2",
+        "unicode": "e9fe"
+    },
+    {
+        "name": "discount-shape-3",
+        "className": "discount-shape-3",
+        "unicode": "e9ff"
+    },
+    {
+        "name": "password-1",
+        "className": "password-1",
+        "unicode": "ea00"
+    },
+    {
+        "name": "password-2",
+        "className": "password-2",
+        "unicode": "ea01"
+    },
+    {
+        "name": "password-3",
+        "className": "password-3",
+        "unicode": "ea02"
+    },
+    {
+        "name": "password-4",
+        "className": "password-4",
+        "unicode": "ea03"
+    },
+    {
+        "name": "password-5",
+        "className": "password-5",
+        "unicode": "ea04"
+    },
+    {
+        "name": "password-6",
+        "className": "password-6",
+        "unicode": "ea05"
+    },
+    {
+        "name": "lock-1",
+        "className": "lock-1",
+        "unicode": "ea06"
+    },
+    {
+        "name": "unlock-1",
+        "className": "unlock-1",
+        "unicode": "ea07"
+    },
+    {
+        "name": "lock-2",
+        "className": "lock-2",
+        "unicode": "ea08"
+    },
+    {
+        "name": "unlock-2",
+        "className": "unlock-2",
+        "unicode": "ea09"
+    },
+    {
+        "name": "lock-3",
+        "className": "lock-3",
+        "unicode": "ea0a"
+    },
+    {
+        "name": "unlock-3",
+        "className": "unlock-3",
+        "unicode": "ea0b"
+    },
+    {
+        "name": "shield-1",
+        "className": "shield-1",
+        "unicode": "ea0c"
+    },
+    {
+        "name": "shield-plus",
+        "className": "shield-plus",
+        "unicode": "ea0d"
+    },
+    {
+        "name": "shield-star",
+        "className": "shield-star",
+        "unicode": "ea0e"
+    },
+    {
+        "name": "shield-cross",
+        "className": "shield-cross",
+        "unicode": "ea0f"
+    },
+    {
+        "name": "shield-tick",
+        "className": "shield-tick",
+        "unicode": "ea10"
+    },
+    {
+        "name": "security-safe",
+        "className": "security-safe",
+        "unicode": "ea11"
+    },
+    {
+        "name": "scan-1",
+        "className": "scan-1",
+        "unicode": "ea12"
+    },
+    {
+        "name": "scan-2",
+        "className": "scan-2",
+        "unicode": "ea13"
+    },
+    {
+        "name": "scan-3",
+        "className": "scan-3",
+        "unicode": "ea14"
+    },
+    {
+        "name": "scan-4",
+        "className": "scan-4",
+        "unicode": "ea15"
+    },
+    {
+        "name": "scan-5",
+        "className": "scan-5",
+        "unicode": "ea16"
+    },
+    {
+        "name": "scan-6",
+        "className": "scan-6",
+        "unicode": "ea17"
+    },
+    {
+        "name": "scan-7",
+        "className": "scan-7",
+        "unicode": "ea18"
+    },
+    {
+        "name": "scan-8",
+        "className": "scan-8",
+        "unicode": "ea19"
+    },
+    {
+        "name": "scan-10",
+        "className": "scan-10",
+        "unicode": "ea1a"
+    },
+    {
+        "name": "scan-11",
+        "className": "scan-11",
+        "unicode": "ea1b"
+    },
+    {
+        "name": "scan-12",
+        "className": "scan-12",
+        "unicode": "ea1c"
+    },
+    {
+        "name": "scan-13",
+        "className": "scan-13",
+        "unicode": "ea1d"
+    },
+    {
+        "name": "show",
+        "className": "show",
+        "unicode": "ea1e"
+    },
+    {
+        "name": "hide",
+        "className": "hide",
+        "unicode": "ea1f"
+    },
+    {
+        "name": "location",
+        "className": "location",
+        "unicode": "ea20"
+    },
+    {
+        "name": "location-cross",
+        "className": "location-cross",
+        "unicode": "ea21"
+    },
+    {
+        "name": "location-tick",
+        "className": "location-tick",
+        "unicode": "ea22"
+    },
+    {
+        "name": "location-minus",
+        "className": "location-minus",
+        "unicode": "ea23"
+    },
+    {
+        "name": "location-add",
+        "className": "location-add",
+        "unicode": "ea24"
+    },
+    {
+        "name": "website",
+        "className": "website",
+        "unicode": "ea25"
+    },
+    {
+        "name": "map",
+        "className": "map",
+        "unicode": "ea26"
+    },
+    {
+        "name": "watch-1",
+        "className": "watch-1",
+        "unicode": "ea27"
+    },
+    {
+        "name": "watch-2",
+        "className": "watch-2",
+        "unicode": "ea28"
+    },
+    {
+        "name": "calender-1",
+        "className": "calender-1",
+        "unicode": "ea29"
+    },
+    {
+        "name": "calender-2",
+        "className": "calender-2",
+        "unicode": "ea2a"
+    },
+    {
+        "name": "time-circle-1",
+        "className": "time-circle-1",
+        "unicode": "ea2b"
+    },
+    {
+        "name": "time-circle-2",
+        "className": "time-circle-2",
+        "unicode": "ea2c"
+    },
+    {
+        "name": "time-circle-3",
+        "className": "time-circle-3",
+        "unicode": "ea2d"
+    },
+    {
+        "name": "time-circle-4",
+        "className": "time-circle-4",
+        "unicode": "ea2e"
+    },
+    {
+        "name": "time-circle-5",
+        "className": "time-circle-5",
+        "unicode": "ea2f"
+    },
+    {
+        "name": "time-circle-6",
+        "className": "time-circle-6",
+        "unicode": "ea30"
+    },
+    {
+        "name": "call",
+        "className": "call",
+        "unicode": "ea31"
+    },
+    {
+        "name": "calling-1",
+        "className": "calling-1",
+        "unicode": "ea32"
+    },
+    {
+        "name": "calling-2",
+        "className": "calling-2",
+        "unicode": "ea33"
+    },
+    {
+        "name": "call-missed",
+        "className": "call-missed",
+        "unicode": "ea34"
+    },
+    {
+        "name": "call-silent",
+        "className": "call-silent",
+        "unicode": "ea35"
+    },
+    {
+        "name": "chart",
+        "className": "chart",
+        "unicode": "ea36"
+    },
+    {
+        "name": "send-1",
+        "className": "send-1",
+        "unicode": "ea37"
+    },
+    {
+        "name": "send-2",
+        "className": "send-2",
+        "unicode": "ea38"
+    },
+    {
+        "name": "send-3",
+        "className": "send-3",
+        "unicode": "ea39"
+    },
+    {
+        "name": "send-4",
+        "className": "send-4",
+        "unicode": "ea3a"
+    },
+    {
+        "name": "send-5",
+        "className": "send-5",
+        "unicode": "ea3b"
+    },
+    {
+        "name": "setting",
+        "className": "setting",
+        "unicode": "ea3c"
+    },
+    {
+        "name": "home-1",
+        "className": "home-1",
+        "unicode": "ea3d"
+    },
+    {
+        "name": "home-2",
+        "className": "home-2",
+        "unicode": "ea3e"
+    },
+    {
+        "name": "home-3",
+        "className": "home-3",
+        "unicode": "ea3f"
+    },
+    {
+        "name": "home-4",
+        "className": "home-4",
+        "unicode": "ea40"
+    },
+    {
+        "name": "notification-1",
+        "className": "notification-1",
+        "unicode": "ea41"
+    },
+    {
+        "name": "notification-2",
+        "className": "notification-2",
+        "unicode": "ea42"
+    },
+    {
+        "name": "notification-3",
+        "className": "notification-3",
+        "unicode": "ea43"
+    },
+    {
+        "name": "notification-4",
+        "className": "notification-4",
+        "unicode": "ea44"
+    },
+    {
+        "name": "search-1",
+        "className": "search-1",
+        "unicode": "ea45"
+    },
+    {
+        "name": "zoom-in",
+        "className": "zoom-in",
+        "unicode": "ea46"
+    },
+    {
+        "name": "zoom-out",
+        "className": "zoom-out",
+        "unicode": "ea47"
+    },
+    {
+        "name": "search-2",
+        "className": "search-2",
+        "unicode": "ea48"
+    },
+    {
+        "name": "bookmark-1",
+        "className": "bookmark-1",
+        "unicode": "ea49"
+    },
+    {
+        "name": "bookmark-2",
+        "className": "bookmark-2",
+        "unicode": "ea4a"
+    },
+    {
+        "name": "bookmark-3",
+        "className": "bookmark-3",
+        "unicode": "ea4b"
+    },
+    {
+        "name": "tag",
+        "className": "tag",
+        "unicode": "ea4c"
+    },
+    {
+        "name": "verified",
+        "className": "verified",
+        "unicode": "ea4d"
+    },
+    {
+        "name": "display-1",
+        "className": "display-1",
+        "unicode": "ea4e"
+    },
+    {
+        "name": "display-2",
+        "className": "display-2",
+        "unicode": "ea4f"
+    },
+    {
+        "name": "display-3",
+        "className": "display-3",
+        "unicode": "ea50"
+    },
+    {
+        "name": "display-4",
+        "className": "display-4",
+        "unicode": "ea51"
+    },
+    {
+        "name": "delete-1",
+        "className": "delete-1",
+        "unicode": "ea52"
+    },
+    {
+        "name": "delete-2",
+        "className": "delete-2",
+        "unicode": "ea53"
+    },
+    {
+        "name": "discovery-1",
+        "className": "discovery-1",
+        "unicode": "ea54"
+    },
+    {
+        "name": "discovery-2",
+        "className": "discovery-2",
+        "unicode": "ea55"
+    },
+    {
+        "name": "graph",
+        "className": "graph",
+        "unicode": "ea56"
+    },
+    {
+        "name": "battery-fully",
+        "className": "battery-fully",
+        "unicode": "ea57"
+    },
+    {
+        "name": "battery-normal",
+        "className": "battery-normal",
+        "unicode": "ea58"
+    },
+    {
+        "name": "battery-low",
+        "className": "battery-low",
+        "unicode": "ea59"
+    },
+    {
+        "name": "battery-charging",
+        "className": "battery-charging",
+        "unicode": "ea5a"
+    },
+    {
+        "name": "tick-square",
+        "className": "tick-square",
+        "unicode": "ea5b"
+    },
+    {
+        "name": "tick-circle",
+        "className": "tick-circle",
+        "unicode": "ea5c"
+    },
+    {
+        "name": "danger-triangle",
+        "className": "danger-triangle",
+        "unicode": "ea5d"
+    },
+    {
+        "name": "danger-circle",
+        "className": "danger-circle",
+        "unicode": "ea5e"
+    },
+    {
+        "name": "warning",
+        "className": "warning",
+        "unicode": "ea5f"
+    },
+    {
+        "name": "information-square",
+        "className": "information-square",
+        "unicode": "ea60"
+    },
+    {
+        "name": "information-circle",
+        "className": "information-circle",
+        "unicode": "ea61"
+    },
+    {
+        "name": "tv",
+        "className": "tv",
+        "unicode": "ea62"
+    },
+    {
+        "name": "instagram",
+        "className": "instagram",
+        "unicode": "ea63"
+    },
+    {
+        "name": "close-square",
+        "className": "close-square",
+        "unicode": "ea64"
+    },
+    {
+        "name": "add-square",
+        "className": "add-square",
+        "unicode": "ea65"
+    },
+    {
+        "name": "minus-square",
+        "className": "minus-square",
+        "unicode": "ea66"
+    },
+    {
+        "name": "close-circle",
+        "className": "close-circle",
+        "unicode": "ea67"
+    },
+    {
+        "name": "add-circle",
+        "className": "add-circle",
+        "unicode": "ea68"
+    },
+    {
+        "name": "minus-circle",
+        "className": "minus-circle",
+        "unicode": "ea69"
+    },
+    {
+        "name": "more-circle",
+        "className": "more-circle",
+        "unicode": "ea6a"
+    },
+    {
+        "name": "more-square",
+        "className": "more-square",
+        "unicode": "ea6b"
+    },
+    {
+        "name": "faq-circle",
+        "className": "faq-circle",
+        "unicode": "ea6c"
+    },
+    {
+        "name": "activity-1",
+        "className": "activity-1",
+        "unicode": "ea6d"
+    },
+    {
+        "name": "activity-2",
+        "className": "activity-2",
+        "unicode": "ea6e"
+    },
+    {
+        "name": "activity-3",
+        "className": "activity-3",
+        "unicode": "ea6f"
+    },
+    {
+        "name": "activity-4",
+        "className": "activity-4",
+        "unicode": "ea70"
+    },
+    {
+        "name": "filter-1",
+        "className": "filter-1",
+        "unicode": "ea71"
+    },
+    {
+        "name": "filter-2",
+        "className": "filter-2",
+        "unicode": "ea72"
+    },
+    {
+        "name": "filter-3",
+        "className": "filter-3",
+        "unicode": "ea73"
+    },
+    {
+        "name": "filter-4",
+        "className": "filter-4",
+        "unicode": "ea74"
+    },
+    {
+        "name": "filter-5",
+        "className": "filter-5",
+        "unicode": "ea75"
+    },
+    {
+        "name": "gift-1",
+        "className": "gift-1",
+        "unicode": "ea76"
+    },
+    {
+        "name": "gift-2",
+        "className": "gift-2",
+        "unicode": "ea77"
+    },
+    {
+        "name": "link",
+        "className": "link",
+        "unicode": "ea78"
+    },
+    {
+        "name": "attachment",
+        "className": "attachment",
+        "unicode": "ea79"
+    },
+    {
+        "name": "keyboard",
+        "className": "keyboard",
+        "unicode": "ea7a"
+    },
+    {
+        "name": "mouse",
+        "className": "mouse",
+        "unicode": "ea7b"
+    },
+    {
+        "name": "wifi",
+        "className": "wifi",
+        "unicode": "ea7c"
+    },
+    {
+        "name": "flash-disk-1",
+        "className": "flash-disk-1",
+        "unicode": "ea7d"
+    },
+    {
+        "name": "flash-disk-2",
+        "className": "flash-disk-2",
+        "unicode": "ea7e"
+    },
+    {
+        "name": "numerical-star",
+        "className": "numerical-star",
+        "unicode": "ea7f"
+    },
+    {
+        "name": "hashtag",
+        "className": "hashtag",
+        "unicode": "ea80"
+    },
+    {
+        "name": "situation-1",
+        "className": "situation-1",
+        "unicode": "ea81"
+    },
+    {
+        "name": "situation-2",
+        "className": "situation-2",
+        "unicode": "ea82"
+    },
+    {
+        "name": "pin",
+        "className": "pin",
+        "unicode": "ea83"
+    },
+    {
+        "name": "close",
+        "className": "close",
+        "unicode": "ea84"
+    },
+    {
+        "name": "tick",
+        "className": "tick",
+        "unicode": "ea85"
+    },
+    {
+        "name": "minus",
+        "className": "minus",
+        "unicode": "ea86"
+    },
+    {
+        "name": "add",
+        "className": "add",
+        "unicode": "ea87"
+    },
+    {
+        "name": "cup",
+        "className": "cup",
+        "unicode": "ea88"
+    },
+    {
+        "name": "cup-of-tea",
+        "className": "cup-of-tea",
+        "unicode": "ea89"
+    },
+    {
+        "name": "report",
+        "className": "report",
+        "unicode": "ea8a"
+    },
+    {
+        "name": "sticker",
+        "className": "sticker",
+        "unicode": "ea8b"
+    },
+    {
+        "name": "off",
+        "className": "off",
+        "unicode": "ea8c"
+    },
+    {
+        "name": "education",
+        "className": "education",
+        "unicode": "ea8d"
+    },
+    {
+        "name": "award-1",
+        "className": "award-1",
+        "unicode": "ea8e"
+    },
+    {
+        "name": "award-2",
+        "className": "award-2",
+        "unicode": "ea8f"
+    },
+    {
+        "name": "award-3",
+        "className": "award-3",
+        "unicode": "ea90"
+    },
+    {
+        "name": "award-4",
+        "className": "award-4",
+        "unicode": "ea91"
+    },
+    {
+        "name": "sun-1",
+        "className": "sun-1",
+        "unicode": "ea92"
+    },
+    {
+        "name": "sun-2",
+        "className": "sun-2",
+        "unicode": "ea93"
+    },
+    {
+        "name": "moon",
+        "className": "moon",
+        "unicode": "ea94"
+    },
+    {
+        "name": "drop",
+        "className": "drop",
+        "unicode": "ea95"
+    },
+    {
+        "name": "virus",
+        "className": "virus",
+        "unicode": "ea96"
+    },
+    {
+        "name": "category",
+        "className": "category",
+        "unicode": "ea97"
+    },
+    {
+        "name": "add-category",
+        "className": "add-category",
+        "unicode": "ea98"
+    },
+    {
+        "name": "ps5-1",
+        "className": "ps5-1",
+        "unicode": "ea99"
+    },
+    {
+        "name": "ps5-2",
+        "className": "ps5-2",
+        "unicode": "ea9a"
+    },
+    {
+        "name": "award-5",
+        "className": "award-5",
+        "unicode": "ea9b"
+    },
+    {
+        "name": "award-6",
+        "className": "award-6",
+        "unicode": "ea9c"
+    },
+    {
+        "name": "bag-1",
+        "className": "bag-1",
+        "unicode": "ea9d"
+    },
+    {
+        "name": "bag-2",
+        "className": "bag-2",
+        "unicode": "ea9e"
+    },
+    {
+        "name": "bag-3",
+        "className": "bag-3",
+        "unicode": "ea9f"
+    },
+    {
+        "name": "bag-4",
+        "className": "bag-4",
+        "unicode": "eaa0"
+    },
+    {
+        "name": "work",
+        "className": "work",
+        "unicode": "eaa1"
+    },
+    {
+        "name": "bag-5",
+        "className": "bag-5",
+        "unicode": "eaa2"
+    },
+    {
+        "name": "bag-6",
+        "className": "bag-6",
+        "unicode": "eaa3"
+    },
+    {
+        "name": "bag-7",
+        "className": "bag-7",
+        "unicode": "eaa4"
+    },
+    {
+        "name": "bag-8",
+        "className": "bag-8",
+        "unicode": "eaa5"
+    },
+    {
+        "name": "buy-1",
+        "className": "buy-1",
+        "unicode": "eaa6"
+    },
+    {
+        "name": "buy-2",
+        "className": "buy-2",
+        "unicode": "eaa7"
+    },
+    {
+        "name": "buy-3",
+        "className": "buy-3",
+        "unicode": "eaa8"
+    },
+    {
+        "name": "menu-hamburger-1",
+        "className": "menu-hamburger-1",
+        "unicode": "eaa9"
+    },
+    {
+        "name": "menu-fries",
+        "className": "menu-fries",
+        "unicode": "eaaa"
+    },
+    {
+        "name": "menu-hamburger",
+        "className": "menu-hamburger",
+        "unicode": "eaab"
+    },
+    {
+        "name": "menu-veggie-burger",
+        "className": "menu-veggie-burger",
+        "unicode": "eaac"
+    },
+    {
+        "name": "menu-hotdog",
+        "className": "menu-hotdog",
+        "unicode": "eaad"
+    },
+    {
+        "name": "menu-strawberry",
+        "className": "menu-strawberry",
+        "unicode": "eaae"
+    },
+    {
+        "name": "menu-cheesesburger",
+        "className": "menu-cheesesburger",
+        "unicode": "eaaf"
+    },
+    {
+        "name": "menu",
+        "className": "menu",
+        "unicode": "eab0"
+    },
+    {
+        "name": "menu-meatballs",
+        "className": "menu-meatballs",
+        "unicode": "eab1"
+    },
+    {
+        "name": "menu-kebab",
+        "className": "menu-kebab",
+        "unicode": "eab2"
+    },
+    {
+        "name": "menu-candy-box",
+        "className": "menu-candy-box",
+        "unicode": "eab3"
+    },
+    {
+        "name": "like",
+        "className": "like",
+        "unicode": "eab4"
+    },
+    {
+        "name": "dislike",
+        "className": "dislike",
+        "unicode": "eab5"
+    },
+    {
+        "name": "star-1",
+        "className": "star-1",
+        "unicode": "eab6"
+    },
+    {
+        "name": "star-2",
+        "className": "star-2",
+        "unicode": "eab7"
+    },
+    {
+        "name": "heart-1",
+        "className": "heart-1",
+        "unicode": "eab8"
+    },
+    {
+        "name": "heart-2",
+        "className": "heart-2",
+        "unicode": "eab9"
+    },
+    {
+        "name": "heart-3",
+        "className": "heart-3",
+        "unicode": "eaba"
+    },
+    {
+        "name": "like-1",
+        "className": "like-1",
+        "unicode": "eabb"
+    },
+    {
+        "name": "like-2",
+        "className": "like-2",
+        "unicode": "eabc"
+    },
+    {
+        "name": "like-3",
+        "className": "like-3",
+        "unicode": "eabd"
+    },
+    {
+        "name": "happy-2",
+        "className": "happy-2",
+        "unicode": "eabe"
+    },
+    {
+        "name": "happy-1",
+        "className": "happy-1",
+        "unicode": "eabf"
+    },
+    {
+        "name": "sad",
+        "className": "sad",
+        "unicode": "eac0"
+    },
+    {
+        "name": "poker",
+        "className": "poker",
+        "unicode": "eac1"
+    },
+    {
+        "name": "italic",
+        "className": "italic",
+        "unicode": "eac2"
+    },
+    {
+        "name": "bold",
+        "className": "bold",
+        "unicode": "eac3"
+    },
+    {
+        "name": "text",
+        "className": "text",
+        "unicode": "eac4"
+    },
+    {
+        "name": "text-align-left",
+        "className": "text-align-left",
+        "unicode": "eac5"
+    },
+    {
+        "name": "text-align-right",
+        "className": "text-align-right",
+        "unicode": "eac6"
+    },
+    {
+        "name": "text-align-center",
+        "className": "text-align-center",
+        "unicode": "eac7"
+    },
+    {
+        "name": "text-align-justify-center",
+        "className": "text-align-justify-center",
+        "unicode": "eac8"
+    },
+    {
+        "name": "text-align-justify-right",
+        "className": "text-align-justify-right",
+        "unicode": "eac9"
+    },
+    {
+        "name": "text-align-justify-left",
+        "className": "text-align-justify-left",
+        "unicode": "eaca"
+    }
+]

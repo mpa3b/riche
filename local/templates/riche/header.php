@@ -39,7 +39,7 @@ $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
 
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
 
-$assets->addCss(SITE_TEMPLATE_PATH . '/icons/icons.css', true);
+$assets->addCss(SITE_TEMPLATE_PATH . '/fonts/hicon/font.css', true);
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/colorbox.css', true);
 
 PreloadLinks::addHeadPreloadAsset(SITE_TEMPLATE_PATH . '/images/logo.svg');

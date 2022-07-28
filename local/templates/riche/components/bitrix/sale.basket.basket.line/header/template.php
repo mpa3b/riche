@@ -41,7 +41,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
            title="<?= Template::pluralUnits($arResult['NUM_PRODUCTS'], 'товар'); ?>"
            class="button transparent">
 
-            <i class="icon cart"></i>
+            <i class="icon bag-3"></i>
 
             <?php if ($arParams['SHOW_NUM_PRODUCTS'] == "Y") { ?>
                 <span class="count"><?php if ($arResult['NUM_PRODUCTS'] > 0) echo $arResult['NUM_PRODUCTS']; ?></span>
