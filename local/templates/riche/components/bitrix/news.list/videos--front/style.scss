@@ -4,10 +4,8 @@
 .videos--front {
 
   .items {
-    margin : 0 calc(var(--offset--half) * -0.5);
 
     .item {
-      margin     : 0 var(--offset--half);
       box-sizing : border-box;
 
       .wrapper {
@@ -31,6 +29,9 @@
     }
 
   }
+
+  @include tiny-slider--tns;
+  @include tiny-slider--tns--ovh-visible;
 
 }
 
@@ -78,31 +79,6 @@
 
       }
 
-    }
-
-  }
-
-  .tns {
-
-    &-item {
-      box-sizing : border-box;
-      padding    : 0 var(--offset--half);
-    }
-
-    &-ovh {
-      margin   : 0 calc(var(--offset--half) * -1);
-      overflow : visible;
-    }
-
-  }
-
-  @include tiny-slider--tns;
-  @include tiny-slider--tns--ovh-visible;
-
-  .tns {
-
-    &-ovh {
-      overflow : visible;
     }
 
   }
