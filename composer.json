@@ -47,6 +47,8 @@
     "npm-asset/inputmask": "^5.0",
     "npm-asset/jquery": "^3.6",
     "npm-asset/jquery-colorbox": "^1.6",
+    "npm-asset/jquery-sticky": "^1.0",
+    "npm-asset/jquery.cookie": "^1.4",
     "npm-asset/normalize-css": "^2.3",
     "npm-asset/tiny-slider": "^2.9",
     "npm-asset/vanilla-lazyload": "^17.4",
