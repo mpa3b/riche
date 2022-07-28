@@ -43,13 +43,12 @@
     button {
       position    : absolute;
       left        : 50%;
-      top         : 50%;
+      bottom      : 1rem;
       padding     : 0;
 
       width       : 3rem;
       height      : 3rem;
 
-      margin-top  : -1.5rem;
       margin-left : -1.5rem;
 
       i {
@@ -63,7 +62,7 @@
       object-fit : cover;
       display    : block;
 
-      &.playing ~ {
+      &.playing {
 
         & ~ button.play {
           display : none;

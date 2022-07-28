@@ -41,28 +41,47 @@ $(() => {
 
             event.preventDefault();
 
+            const playing = 'playing';
+
             let target = $(event.currentTarget);
 
             $.colorbox(
                 {
-                    inline   : true,
-                    href     : target.attr('href'),
-                    className: 'no-borders',
-                    rel      : 'videos--front',
-                    onOpen   : () => {
+                    inline    : true,
+                    href      : target.attr('href'),
+                    className : 'no-borders',
+                    onComplete: () => {
 
+                        let popup       = $('.popup-video', '#colorbox'),
+                            video       = $('video', popup),
+                            playButton  = $('button.play', popup),
+                            pauseButton = $('button.pause', popup);
 
-                    },
-                    onClosed : () => {
+                        playButton.on(
+                            'click',
+                            () => {
 
+                                video.trigger('play').addClass(playing);
+
+                            }
+                        );
+
+                        pauseButton.on(
+                            'click',
+                            () => {
+
+                                video.trigger('pause').removeClass(playing);
+
+                            }
+                        );
 
                     }
                 }
             );
 
+
         }
     );
-
 
 
 });

@@ -115,7 +115,7 @@ $frame = $this->createFrame();
 
                                     <?php } else { ?>
 
-                                        <img src="<?php echo Images::PLACEHOLDER; ?>">
+                                        <img src="<?php echo Images::PLACEHOLDER; ?>" loading="lazy">
 
                                     <? } ?>
 
@@ -123,7 +123,7 @@ $frame = $this->createFrame();
 
                                 <div hidden>
 
-                                    <div id="video-<?php echo $arItem['ID']; ?>" class="video">
+                                    <div id="video-<?php echo $arItem['ID']; ?>" class="video popup-video">
 
                                         <video preload="auto">
                                             <source
@@ -133,6 +133,7 @@ $frame = $this->createFrame();
                                         <button class="transparent button play">
                                             <i class="icon play"></i>
                                         </button>
+
                                         <button class="transparent button pause">
                                             <i class="icon pause"></i>
                                         </button>
