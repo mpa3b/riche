@@ -75,6 +75,13 @@ $(() => {
                             }
                         );
 
+                    },
+                    onClosed  : () => {
+
+                        let video = $('video');
+
+                        video.trigger('pause').removeClass(playing);
+
                     }
                 }
             );
