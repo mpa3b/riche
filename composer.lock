@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "64dcb4e37df5c68bfc5ed370cbce68ec",
+    "content-hash": "42786700c165a5f836c037f58e1dadf7",
     "packages": [
         {
             "name": "andreyryabin/sprint.editor",
@@ -375,11 +375,11 @@
             ]
         },
         {
-            "name": "npm-asset/jquery.cookie",
-            "version": "1.4.1",
+            "name": "npm-asset/js-cookie",
+            "version": "3.0.1",
             "dist": {
                 "type": "tar",
-                "url": "https://registry.npmjs.org/jquery.cookie/-/jquery.cookie-1.4.1.tgz"
+                "url": "https://registry.npmjs.org/js-cookie/-/js-cookie-3.0.1.tgz"
             },
             "type": "npm-asset",
             "license": [
