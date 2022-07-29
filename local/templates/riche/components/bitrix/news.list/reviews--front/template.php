@@ -139,7 +139,6 @@ $frame = $this->createFrame();
                         <?php } ?>
 
                         <div class="content">
-
                             <?php
 
                             $text   = strip_tags($arItem['DETAIL_TEXT']);
@@ -148,7 +147,6 @@ $frame = $this->createFrame();
                             echo Template::mbCutString($text, $length);
 
                             ?>
-
                         </div>
 
                         <?php if (!empty($arItem['PROPERTIES']['SKU']['VALUE'])) { ?>
