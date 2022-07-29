@@ -118,6 +118,8 @@ $frame = $this->createFrame();
                                             <?php } ?>
                                         </span>
 
+                                        <span class="value"><?php echo $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']; ?></span>
+
                                     </div>
 
                                 <?php } ?>
