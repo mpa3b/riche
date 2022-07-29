@@ -41,7 +41,7 @@ $(() => {
 
             event.preventDefault();
 
-            const playing = 'playing';
+            //const playing = 'playing';
 
             let target = $(event.currentTarget);
 
@@ -50,6 +50,7 @@ $(() => {
                     inline    : true,
                     href      : target.attr('href'),
                     className : 'no-borders',
+                    /*
                     onComplete: () => {
 
                         let popup       = $('.popup-video', '#colorbox'),
@@ -83,12 +84,11 @@ $(() => {
                         video.trigger('pause').removeClass(playing);
 
                     }
+                    */
                 }
             );
 
-
         }
     );
-
 
 });

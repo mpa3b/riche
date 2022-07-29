@@ -125,10 +125,12 @@ $frame = $this->createFrame();
 
                                     <div id="video-<?php echo $arItem['ID']; ?>" class="video popup-video">
 
-                                        <video preload="auto">
+                                        <video preload="auto" controls>
                                             <source
                                                 src="<?php echo $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
                                         </video>
+
+                                        <?php /*
 
                                         <button class="transparent button play">
                                             <i class="icon play"></i>
@@ -137,6 +139,8 @@ $frame = $this->createFrame();
                                         <button class="transparent button pause">
                                             <i class="icon pause"></i>
                                         </button>
+
+                                        */ ?>
 
                                     </div>
 
