@@ -35,9 +35,9 @@ $frame = $this->createFrame();
 
         <div class="wrap">
 
-            <div class="grid">
+            <div class="row">
 
-                <div class="third">
+                <div class="caption third">
 
                     <? $APPLICATION->IncludeComponent(
                         'bitrix:main.include',
@@ -55,7 +55,7 @@ $frame = $this->createFrame();
 
                 </div>
 
-                <div class="two-thirds">
+                <div class="details two-thirds">
 
                     <div class="slider items">
 

@@ -11,6 +11,37 @@
 
   }
 
+  .row {
+
+    .caption.third {
+      position : relative;
+
+      &:after {
+        display          : block;
+        background-color : var(--color--white);
+
+        content          : "";
+
+        position         : absolute;
+        right            : 0;
+        top              : 0;
+        width            : 300%;
+        height           : 200%;
+
+        margin-top       : -50%;
+        margin-bottom    : -50%;
+
+        z-index          : 900;
+      }
+    }
+
+    .brand {
+      position : relative;
+      z-index  : 1000;
+    }
+
+  }
+
   .item {
 
     .wrapper {
@@ -19,6 +50,7 @@
       overflow      : hidden;
 
       box-sizing    : border-box;
+      box-shadow    : var(--box-shadow--blurry);
 
       picture {
 
@@ -56,5 +88,6 @@
   }
 
   @include tiny-slider--tns;
+  @include tiny-slider--tns--ovh-visible;
 
 }

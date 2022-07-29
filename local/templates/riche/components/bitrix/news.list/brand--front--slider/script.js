@@ -6,8 +6,10 @@ $(() => {
             items    : 1,
             slideBy  : 1,
 
-            mode     : "carousel",
-            loop     : false,
+            //mode: "gallery",
+            mode: "carousel",
+
+            loop     : true,
             mouseDrag: true,
 
             controls: false,
