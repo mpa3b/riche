@@ -52,13 +52,13 @@ body {
   font-weight : normal;
   font-size   : 1rem;
   font-family : var(--font--base);
-  line-height : 1.33;
+  line-height : 1.4;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight : bold;
   font-size   : 1.2rem;
-  line-height : 1.1;
+  line-height : 1.2;
 
   &:first-child {
     margin-top    : 0;
