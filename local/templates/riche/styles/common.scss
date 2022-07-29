@@ -32,7 +32,6 @@
   --transition--time--short : calc(--transition--time) / 2;
   --transition--time--long  : calc(--transition--time) * 2;
 
-
   --transition--ease        : var(--transition--time) ease;
 
   --opacity                 : 0.3;
@@ -147,8 +146,8 @@ input[type=search],
 button {
   display          : inline-block;
   box-sizing       : border-box;
-  padding          : 0.6em 1.2em;
-  padding-top      : 0.5em;
+  padding          : 0.65em 1.4em;
+  padding-top      : 0.6em;
 
   border-radius    : 2em;
 
