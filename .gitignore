@@ -4,7 +4,9 @@
 /local/assets
 /local/vendor
 
-/local/modules/sprint.*/
+/local/modules/sprint.*
+
+/node_modules
 
 /.idea
 
