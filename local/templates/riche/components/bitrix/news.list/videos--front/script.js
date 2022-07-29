@@ -1,6 +1,6 @@
 $(() => {
 
-    tns(
+    let videosSlider = tns(
         {
             container: ".videos--front .slider",
             items    : 2,

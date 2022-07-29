@@ -1,6 +1,6 @@
 $(() => {
 
-    tns(
+    let headerLineSlider = tns(
         {
             container: ".header-line .slider",
             items    : 1,

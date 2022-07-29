@@ -1,6 +1,6 @@
 $(() => {
 
-    tns(
+    let featureSlider = tns(
         {
             container: ".features--front--slider .slider",
             items    : 1,
