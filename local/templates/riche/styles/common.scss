@@ -2,26 +2,32 @@
 
 :root {
 
-  --color--base        : #151515;
+  --color--black       : #151515;
   --color--white       : #fff;
   --color--gray        : #c7c7c7;
 
   --color--pink        : #ebb2d4;
+  --color--red         : #ebb2b2;
   --color--green       : #ebebc9;
   --color--orange      : #ebe6b2;
   --color--blue        : #b2b8eb;
+  --color--violet      : #ccb2eb;
 
-  --color--key         : var(--color--pink);
+  --color--base        : var(--color--black);
+  --color--accent      : var(--color--pink);
+  --color--secondary   : var(--color--green);
 
-  --color--error       : red;
-  --color--success     : green;
+  --color--error       : var(--color--red);
+  --color--success     : var(--color--green);
 
   --font--base         : "Gordita", sans-serif;
 
   --border-radius      : 1rem;
   --border-radius--2x  : calc(var(--border-radius) * 2);
 
+  --transition         : all var(--transition--time) ease;
   --transition--time   : 0.3s;
+  --transition--ease   : var(--transition--time) ease;
 
   --opacity            : 0.3;
 
@@ -78,8 +84,8 @@ h1 {
 p {
   margin : 0;
 
-  & + p {
-    margin-top : 0.5em;
+  &:not(:last-of-type) {
+    margin-bottom : 0.5em;
   }
 
 }
@@ -143,19 +149,19 @@ button {
   text-decoration  : none;
   line-height      : 1.1;
 
-  border           : 2px solid var(--color--key);
+  border           : 2px solid var(--color--accent);
   color            : var(--color--base);
   background-color : var(--color--white);
 
   font-weight      : bold;
 
   &.primary {
-    background-color : var(--color--key);
+    background-color : var(--color--accent);
     color            : var(--color--white);
 
     &.inverted {
       background-color : var(--color--white);
-      color            : var(--color--key);
+      color            : var(--color--accent);
     }
   }
 
