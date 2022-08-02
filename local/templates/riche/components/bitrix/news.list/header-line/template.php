@@ -35,9 +35,7 @@ $frame = $this->createFrame();
         <div class="slider items">
 
             <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
-
                 <div><?php echo htmlspecialchars($arItem['PREVIEW_TEXT']); ?></div>
-
             <?php } ?>
 
         </div>
