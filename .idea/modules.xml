@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/riche--new.local.iml" filepath="$PROJECT_DIR$/.idea/riche--new.local.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/riche.local.iml" filepath="$PROJECT_DIR$/.idea/riche.local.iml" />
     </modules>
   </component>
 </project>
