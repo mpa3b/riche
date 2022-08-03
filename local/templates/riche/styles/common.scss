@@ -49,7 +49,7 @@
   --button--color                    : var(--color--base);
   --button--backgound-color          : var(--color--base);
 
-  --button--color-primary            : var(--color--base--inverse);
+  --button--color--primary           : var(--color--base--inverse);
   --button--backgound-color--primary : var(--color--accent);
 
 }
@@ -146,13 +146,22 @@ a {
 
 //region controls
 
+input {
+  display         : inline-block;
+  box-sizing      : border-box;
+  padding         : 0.65em 1.4em;
+  padding-top     : 0.6em;
+
+  border-radius   : 2em;
+
+  text-decoration : none;
+  line-height     : 1.1;
+}
+
 a.button,
-input[type=text],
-input[type=text],
 input[type=button],
 input[type=reset],
 input[type=submit],
-input[type=search],
 button {
   display          : inline-block;
   box-sizing       : border-box;
@@ -161,18 +170,24 @@ button {
 
   border-radius    : 2em;
 
+  white-space      : nowrap;
   text-decoration  : none;
   line-height      : 1.1;
 
-  border           : 2px solid var(--color--accent);
-  color            : var(--color--base);
-  background-color : var(--color--white);
+  border           : var(--border--normal);
+  border-color     : var(--button--backgound-color);
+
+  color            : var(--button--color);
+  background-color : var(--button--backgound-color);
 
   font-weight      : bold;
 
   &.primary {
-    background-color : var(--color--accent);
-    color            : var(--color--white);
+
+    background-color : var(--button--backgound-color--primary);
+    color            : var(--button--color--primary);
+
+    border-color     : var(--button--backgound-color--primary);
 
     &.inverted {
       background-color : var(--color--white);
@@ -193,7 +208,7 @@ button {
   }
 
   &.inverted {
-    color : var(--color--white);
+    color : var(--color--base--inverse);
   }
 
   &:focus {
@@ -221,3 +236,13 @@ button {
 .nowrap {
   white-space : nowrap;
 }
+
+//region icons
+
+i.iconly {
+  &:before {
+    font-size : 1em;
+  }
+}
+
+//endregion

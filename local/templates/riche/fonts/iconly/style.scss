@@ -1,6 +1,6 @@
 /**
 *
-*	Name:			iconly font icon
+*	Name:			Iconly font icon
 *	Version:	    1.0
 *	Created on:		Dec 29, 2020
 *	License:		GNU General Public License
@@ -8,56 +8,57 @@
 *
 **/
 
-@import url("bulk-style.css");
+// @import url("bulk-style.css");
+
+// @font-face {
+//   font-family : "Iconly";
+//   font-style  : normal;
+//   font-weight : 200;
+//   src         : url("iconly-light.eot");
+//   src         : url("iconly-light.eot?#iefix") format("embedded-opentype"), /* IE6-8 */
+//   url("iconly-light.woff") format("woff"), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+//   url("iconly-light.ttf") format("truetype"),
+//   url("iconly-light.svg#iconly-light") format("svg");;
+// }
 
 @font-face {
-  font-family : iconly;
-  font-style  : normal;
-  font-weight : 200;
-  src         : url("../fonts/iconly-light.eot");
-  src         : url("../fonts/iconly-light.eot?#iefix") format("embedded-opentype"), /* IE6-8 */
-  url("../fonts/iconly-light.woff") format("woff"), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url("../fonts/iconly-light.ttf") format("truetype"),
-  url("../fonts/iconly-light.svg#iconly-light") format("svg");;
-}
-
-
-@font-face {
-  font-family : iconly;
+  font-family : "Iconly";
   font-style  : normal;
   font-weight : normal;
-  src         : url("../fonts/iconly-broken.eot");
-  src         : url("../fonts/iconly-broken.eot?#iefix") format("embedded-opentype"), /* IE6-8 */
-  url("../fonts/iconly-broken.woff") format("woff"), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url("../fonts/iconly-broken.ttf") format("truetype"),
-  url("../fonts/iconly-broken.svg#iconly-broken") format("svg");;
+  src         : url("iconly-broken.eot");
+  src         : url("iconly-broken.eot?#iefix") format("embedded-opentype"), /* IE6-8 */
+  url("iconly-broken.woff") format("woff"), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+  url("iconly-broken.ttf") format("truetype"),
+  url("iconly-broken.svg#iconly-broken") format("svg");;
 }
 
-@font-face {
-  font-family : iconly;
-  font-style  : normal;
-  font-weight : 700;
-  src         : url("../fonts/iconly-bold.eot");
-  src         : url("../fonts/iconly-bold.eot?#iefix") format("embedded-opentype"), /* IE6-8 */
-  url("../fonts/iconly-bold.woff") format("woff"), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url("../fonts/iconly-bold.ttf") format("truetype"),
-  url("../fonts/iconly-bold.svg#iconly-bold") format("svg");;
-}
+// @font-face {
+//   font-family : "Iconly";
+//   font-style  : normal;
+//   font-weight : 700;
+//   src         : url("iconly-bold.eot");
+//   src         : url("iconly-bold.eot?#iefix") format("embedded-opentype"), /* IE6-8 */
+//   url("iconly-bold.woff") format("woff"), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+//   url("iconly-bold.ttf") format("truetype"),
+//   url("iconly-bold.svg#iconly-bold") format("svg");;
+// }
 
-@font-face {
-  font-family : iconly;
-  font-style  : normal;
-  font-weight : 900;
-  src         : url("../fonts/iconly-bulk.eot");
-  src         : url("../fonts/iconly-bulk.eot?#iefix") format("embedded-opentype"), /* IE6-8 */
-  url("../fonts/iconly-bulk.woff") format("woff"), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
-  url("../fonts/iconly-bulk.ttf") format("truetype"),
-  url("../fonts/iconly-bulk.svg#iconly-bulk") format("svg");;
-}
+// @font-face {
+//   font-family : "Iconly";
+//   font-style  : normal;
+//   font-weight : 900;
+//   src         : url("iconly-bulk.eot");
+//   src         : url("iconly-bulk.eot?#iefix") format("embedded-opentype"), /* IE6-8 */
+//   url("iconly-bulk.woff") format("woff"), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+//   url("iconly-bulk.ttf") format("truetype"),
+//   url("iconly-bulk.svg#iconly-bulk") format("svg");;
+// }
 
-[class^="iconly-"], [class*="iconly-"] {
+i.iconly:before,
+[class^="iconly"],
+[class*="iconly"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family             : "iconly" !important;
+  font-family             : "Iconly" !important;
   speak                   : never;
   font-style              : normal;
   font-variant            : normal;
@@ -69,421 +70,421 @@
   -moz-osx-font-smoothing : grayscale;
 }
 
-.icli {
-  font-weight : 200;
-}
-
-.icbr {
-  font-weight : normal;
-}
-
-.icbo {
-  font-weight : 700;
-}
-
-.icbu {
-  font-weight : 900;
-}
+// .icli {
+//   font-weight : 200;
+// }
+//
+// .icbr {
+//   font-weight : normal;
+// }
+//
+// .icbo {
+//   font-weight : 700;
+// }
+//
+// .icbu {
+//   font-weight : 900;
+// }
 
 .iconly {
 
-  &-activity:before {
+  &.activity:before {
     content : "\e900";
   }
 
-  &-add-user:before {
+  &.add-user:before {
     content : "\e901";
   }
 
-  &-arrow-down:before {
+  &.arrow-down:before {
     content : "\e902";
   }
 
-  &-arrow-down-2:before {
+  &.arrow-down-2:before {
     content : "\e903";
   }
 
-  &-arrow-down-3:before {
+  &.arrow-down-3:before {
     content : "\e904";
   }
 
-  &-arrow-down-circle:before {
+  &.arrow-down-circle:before {
     content : "\e905";
   }
 
-  &-arrow-down-square:before {
+  &.arrow-down-square:before {
     content : "\e906";
   }
 
-  &-arrow-left:before {
+  &.arrow-left:before {
     content : "\e907";
   }
 
-  &-arrow-left-2:before {
+  &.arrow-left-2:before {
     content : "\e908";
   }
 
-  &-arrow-left-3:before {
+  &.arrow-left-3:before {
     content : "\e909";
   }
 
-  &-arrow-left-circle:before {
+  &.arrow-left-circle:before {
     content : "\e90a";
   }
 
-  &-arrow-left-square:before {
+  &.arrow-left-square:before {
     content : "\e90b";
   }
 
-  &-arrow-right:before {
+  &.arrow-right:before {
     content : "\e90c";
   }
 
-  &-arrow-right-2:before {
+  &.arrow-right-2:before {
     content : "\e90d";
   }
 
-  &-arrow-right-3:before {
+  &.arrow-right-3:before {
     content : "\e90e";
   }
 
-  &-arrow-right-circle:before {
+  &.arrow-right-circle:before {
     content : "\e90f";
   }
 
-  &-arrow-right-square:before {
+  &.arrow-right-square:before {
     content : "\e910";
   }
 
-  &-arrow-up:before {
+  &.arrow-up:before {
     content : "\e911";
   }
 
-  &-arrow-up-2:before {
+  &.arrow-up-2:before {
     content : "\e912";
   }
 
-  &-arrow-up-3:before {
+  &.arrow-up-3:before {
     content : "\e913";
   }
 
-  &-arrow-up-circle:before {
+  &.arrow-up-circle:before {
     content : "\e914";
   }
 
-  &-arrow-up-square:before {
+  &.arrow-up-square:before {
     content : "\e915";
   }
 
-  &-bag:before {
+  &.bag:before {
     content : "\e916";
   }
 
-  &-bag-2:before {
+  &.bag-2:before {
     content : "\e917";
   }
 
-  &-bookmark:before {
+  &.bookmark:before {
     content : "\e918";
   }
 
-  &-buy:before {
+  &.buy:before {
     content : "\e919";
   }
 
-  &-calendar:before {
+  &.calendar:before {
     content : "\e91a";
   }
 
-  &-call:before {
+  &.call:before {
     content : "\e91b";
   }
 
-  &-call-missed:before {
+  &.call-missed:before {
     content : "\e91c";
   }
 
-  &-call-silent:before {
+  &.call-silent:before {
     content : "\e91d";
   }
 
-  &-calling:before {
+  &.calling:before {
     content : "\e91e";
   }
 
-  &-camera:before {
+  &.camera:before {
     content : "\e91f";
   }
 
-  &-category:before {
+  &.category:before {
     content : "\e920";
   }
 
-  &-chart:before {
+  &.chart:before {
     content : "\e921";
   }
 
-  &-chat:before {
+  &.chat:before {
     content : "\e922";
   }
 
-  &-close-square:before {
+  &.close-square:before {
     content : "\e923";
   }
 
-  &-danger:before {
+  &.danger:before {
     content : "\e924";
   }
 
-  &-delete:before {
+  &.delete:before {
     content : "\e925";
   }
 
-  &-discount:before {
+  &.discount:before {
     content : "\e926";
   }
 
-  &-discovery:before {
+  &.discovery:before {
     content : "\e927";
   }
 
-  &-document:before {
+  &.document:before {
     content : "\e928";
   }
 
-  &-download:before {
+  &.download:before {
     content : "\e929";
   }
 
-  &-edit:before {
+  &.edit:before {
     content : "\e92a";
   }
 
-  &-edit-square:before {
+  &.edit-square:before {
     content : "\e92b";
   }
 
-  &-filter:before {
+  &.filter:before {
     content : "\e92c";
   }
 
-  &-filter-2:before {
+  &.filter-2:before {
     content : "\e92d";
   }
 
-  &-folder:before {
+  &.folder:before {
     content : "\e92e";
   }
 
-  &-game:before {
+  &.game:before {
     content : "\e92f";
   }
 
-  &-graph:before {
+  &.graph:before {
     content : "\e930";
   }
 
-  &-heart:before {
+  &.heart:before {
     content : "\e931";
   }
 
-  &-hide:before {
+  &.hide:before {
     content : "\e932";
   }
 
-  &-home:before {
+  &.home:before {
     content : "\e933";
   }
 
-  &-image:before {
+  &.image:before {
     content : "\e934";
   }
 
-  &-image-2:before {
+  &.image-2:before {
     content : "\e935";
   }
 
-  &-info-circle:before {
+  &.info-circle:before {
     content : "\e936";
   }
 
-  &-info-square:before {
+  &.info-square:before {
     content : "\e937";
   }
 
-  &-location:before {
+  &.location:before {
     content : "\e938";
   }
 
-  &-lock:before {
+  &.lock:before {
     content : "\e939";
   }
 
-  &-login:before {
+  &.login:before {
     content : "\e93a";
   }
 
-  &-logout:before {
+  &.logout:before {
     content : "\e93b";
   }
 
-  &-message:before {
+  &.message:before {
     content : "\e93c";
   }
 
-  &-more-circle:before {
+  &.more-circle:before {
     content : "\e93d";
   }
 
-  &-more-square:before {
+  &.more-square:before {
     content : "\e93e";
   }
 
-  &-notification:before {
+  &.notification:before {
     content : "\e93f";
   }
 
-  &-paper:before {
+  &.paper:before {
     content : "\e940";
   }
 
-  &-paper-download:before {
+  &.paper-download:before {
     content : "\e941";
   }
 
-  &-paper-fail:before {
+  &.paper-fail:before {
     content : "\e942";
   }
 
-  &-paper-negative:before {
+  &.paper-negative:before {
     content : "\e943";
   }
 
-  &-paper-plus:before {
+  &.paper-plus:before {
     content : "\e944";
   }
 
-  &-paper-upload:before {
+  &.paper-upload:before {
     content : "\e945";
   }
 
-  &-password:before {
+  &.password:before {
     content : "\e946";
   }
 
-  &-play:before {
+  &.play:before {
     content : "\e947";
   }
 
-  &-plus:before {
+  &.plus:before {
     content : "\e948";
   }
 
-  &-profile:before {
+  &.profile:before {
     content : "\e949";
   }
 
-  &-scan:before {
+  &.scan:before {
     content : "\e94a";
   }
 
-  &-search:before {
+  &.search:before {
     content : "\e94b";
   }
 
-  &-send:before {
+  &.send:before {
     content : "\e94c";
   }
 
-  &-setting:before {
+  &.setting:before {
     content : "\e94d";
   }
 
-  &-shield-done:before {
+  &.shield-done:before {
     content : "\e94e";
   }
 
-  &-shield-fail:before {
+  &.shield-fail:before {
     content : "\e94f";
   }
 
-  &-show:before {
+  &.show:before {
     content : "\e950";
   }
 
-  &-star:before {
+  &.star:before {
     content : "\e951";
   }
 
-  &-swap:before {
+  &.swap:before {
     content : "\e952";
   }
 
-  &-tick-square:before {
+  &.tick-square:before {
     content : "\e953";
   }
 
-  &-ticket:before {
+  &.ticket:before {
     content : "\e954";
   }
 
-  &-ticket-star:before {
+  &.ticket-star:before {
     content : "\e955";
   }
 
-  &-time-circle:before {
+  &.time-circle:before {
     content : "\e956";
   }
 
-  &-time-square:before {
+  &.time-square:before {
     content : "\e957";
   }
 
-  &-unlock:before {
+  &.unlock:before {
     content : "\e958";
   }
 
-  &-upload:before {
+  &.upload:before {
     content : "\e959";
   }
 
-  &-user2:before {
+  &.user2:before {
     content : "\e95a";
   }
 
-  &-user3:before {
+  &.user3:before {
     content : "\e95b";
   }
 
-  &-video:before {
+  &.video:before {
     content : "\e95c";
   }
 
-  &-voice:before {
+  &.voice:before {
     content : "\e95d";
   }
 
-  &-voice-2:before {
+  &.voice-2:before {
     content : "\e95e";
   }
 
-  &-volume-down:before {
+  &.volume-down:before {
     content : "\e95f";
   }
 
-  &-volume-off:before {
+  &.volume-off:before {
     content : "\e960";
   }
 
-  &-volume-up:before {
+  &.volume-up:before {
     content : "\e961";
   }
 
-  &-wallet:before {
+  &.wallet:before {
     content : "\e962";
   }
 
-  &-work:before {
+  &.work:before {
     content : "\e963";
   }
 

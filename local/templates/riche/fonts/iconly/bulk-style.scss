@@ -1,10 +1,9 @@
-[class^="iconlyBulk-"],
-[class*=" iconlyBulk-"] {
+[class^="iconly-bulk-"],
+[class*=" iconly-bulk-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family             : "iconly" !important;
+  font-family             : "Iconly" !important;
   speak                   : never;
   font-style              : normal;
-  font-weight             : normal;
   font-variant            : normal;
   text-transform          : none;
   line-height             : 1;
@@ -14,1378 +13,1265 @@
   -moz-osx-font-smoothing : grayscale;
 }
 
-.iconlyBulk {
+.iconly-bulk {
 
-  &-arrow-down .path1:before {
+  &.arrow-down .path1:before {
     content : "\e900";
 
     opacity : 0.4;
   }
 
-  &-arrow-down .path2:before {
+  &.arrow-down .path2:before {
     content     : "\e901";
     margin-left : -1em;
-
   }
 
-  &-user2 .path1:before {
+  &.user2 .path1:before {
     content : "\e902";
-
   }
 
-  &-user2 .path2:before {
+  &.user2 .path2:before {
     content     : "\e903";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-user2 .path3:before {
+  &.user2 .path3:before {
     content     : "\e904";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-user2 .path4:before {
+  &.user2 .path4:before {
     content     : "\e905";
     margin-left : -1em;
-
   }
 
-  &-user3 .path1:before {
+  &.user3 .path1:before {
     content : "\e906";
-
   }
 
-  &-user3 .path2:before {
+  &.user3 .path2:before {
     content     : "\e907";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-user3 .path3:before {
+  &.user3 .path3:before {
     content     : "\e908";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-user3 .path4:before {
+  &.user3 .path4:before {
     content     : "\e909";
     margin-left : -1em;
-
   }
 
-  &-user3 .path5:before {
+  &.user3 .path5:before {
     content     : "\e90a";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-user3 .path6:before {
+  &.user3 .path6:before {
     content     : "\e90b";
     margin-left : -1em;
-
   }
 
-  &-activity .path1:before {
+  &.activity .path1:before {
     content : "\e90c";
-
   }
 
-  &-activity .path2:before {
+  &.activity .path2:before {
     content     : "\e90d";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-add-user .path1:before {
+  &.add-user .path1:before {
     content : "\e90e";
-
   }
 
-  &-add-user .path2:before {
+  &.add-user .path2:before {
     content     : "\e90f";
     margin-left : -1em;
-
   }
 
-  &-add-user .path3:before {
+  &.add-user .path3:before {
     content     : "\e910";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-arrow-down-2 .path1:before {
+  &.arrow-down-2 .path1:before {
     content : "\e911";
-
   }
 
-  &-arrow-down-2 .path2:before {
+  &.arrow-down-2 .path2:before {
     content     : "\e912";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-arrow-down-3 .path1:before {
+  &.arrow-down-3 .path1:before {
     content : "\e913";
 
     opacity : 0.4;
   }
 
-  &-arrow-down-3 .path2:before {
+  &.arrow-down-3 .path2:before {
     content     : "\e914";
     margin-left : -1em;
-
   }
 
-  &-arrow-down-circle .path1:before {
+  &.arrow-down-circle .path1:before {
     content : "\e915";
 
     opacity : 0.4;
   }
 
-  &-arrow-down-circle .path2:before {
+  &.arrow-down-circle .path2:before {
     content     : "\e916";
     margin-left : -1em;
-
   }
 
-  &-arrow-down-square .path1:before {
+  &.arrow-down-square .path1:before {
     content : "\e917";
 
     opacity : 0.4;
   }
 
-  &-arrow-down-square .path2:before {
+  &.arrow-down-square .path2:before {
     content     : "\e918";
     margin-left : -1em;
-
   }
 
-  &-arrow-left-2 .path1:before {
+  &.arrow-left-2 .path1:before {
     content : "\e919";
-
   }
 
-  &-arrow-left-2 .path2:before {
+  &.arrow-left-2 .path2:before {
     content     : "\e91a";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-arrow-left-3 .path1:before {
+  &.arrow-left-3 .path1:before {
     content : "\e91b";
 
     opacity : 0.4;
   }
 
-  &-arrow-left-3 .path2:before {
+  &.arrow-left-3 .path2:before {
     content     : "\e91c";
     margin-left : -1em;
-
   }
 
-  &-arrow-left-circle .path1:before {
+  &.arrow-left-circle .path1:before {
     content : "\e91d";
 
     opacity : 0.4;
   }
 
-  &-arrow-left-circle .path2:before {
+  &.arrow-left-circle .path2:before {
     content     : "\e91e";
     margin-left : -1em;
-
   }
 
-  &-arrow-left-square .path1:before {
+  &.arrow-left-square .path1:before {
     content : "\e91f";
 
     opacity : 0.4;
   }
 
-  &-arrow-left-square .path2:before {
+  &.arrow-left-square .path2:before {
     content     : "\e920";
     margin-left : -1em;
-
   }
 
-  &-arrow-left .path1:before {
+  &.arrow-left .path1:before {
     content : "\e921";
 
     opacity : 0.4;
   }
 
-  &-arrow-left .path2:before {
+  &.arrow-left .path2:before {
     content     : "\e922";
     margin-left : -1em;
-
   }
 
-  &-arrow-right-2 .path1:before {
+  &.arrow-right-2 .path1:before {
     content : "\e923";
-
   }
 
-  &-arrow-right-2 .path2:before {
+  &.arrow-right-2 .path2:before {
     content     : "\e924";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-arrow-right-3 .path1:before {
+  &.arrow-right-3 .path1:before {
     content : "\e925";
 
     opacity : 0.4;
   }
 
-  &-arrow-right-3 .path2:before {
+  &.arrow-right-3 .path2:before {
     content     : "\e926";
     margin-left : -1em;
-
   }
 
-  &-arrow-right-circle .path1:before {
+  &.arrow-right-circle .path1:before {
     content : "\e927";
 
     opacity : 0.4;
   }
 
-  &-arrow-right-circle .path2:before {
+  &.arrow-right-circle .path2:before {
     content     : "\e928";
     margin-left : -1em;
-
   }
 
-  &-arrow-right-square .path1:before {
+  &.arrow-right-square .path1:before {
     content : "\e929";
 
     opacity : 0.4;
   }
 
-  &-arrow-right-square .path2:before {
+  &.arrow-right-square .path2:before {
     content     : "\e92a";
     margin-left : -1em;
-
   }
 
-  &-arrow-right .path1:before {
+  &.arrow-right .path1:before {
     content : "\e92b";
 
     opacity : 0.4;
   }
 
-  &-arrow-right .path2:before {
+  &.arrow-right .path2:before {
     content     : "\e92c";
     margin-left : -1em;
-
   }
 
-  &-arrow-up-2 .path1:before {
+  &.arrow-up-2 .path1:before {
     content : "\e92d";
-
   }
 
-  &-arrow-up-2 .path2:before {
+  &.arrow-up-2 .path2:before {
     content     : "\e92e";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-arrow-up-3 .path1:before {
+  &.arrow-up-3 .path1:before {
     content : "\e92f";
 
     opacity : 0.4;
   }
 
-  &-arrow-up-3 .path2:before {
+  &.arrow-up-3 .path2:before {
     content     : "\e930";
     margin-left : -1em;
-
   }
 
-  &-arrow-up-circle .path1:before {
+  &.arrow-up-circle .path1:before {
     content : "\e931";
 
     opacity : 0.4;
   }
 
-  &-arrow-up-circle .path2:before {
+  &.arrow-up-circle .path2:before {
     content     : "\e932";
     margin-left : -1em;
-
   }
 
-  &-arrow-up-square .path1:before {
+  &.arrow-up-square .path1:before {
     content : "\e933";
 
     opacity : 0.4;
   }
 
-  &-arrow-up-square .path2:before {
+  &.arrow-up-square .path2:before {
     content     : "\e934";
     margin-left : -1em;
-
   }
 
-  &-arrow-up .path1:before {
+  &.arrow-up .path1:before {
     content : "\e935";
 
     opacity : 0.4;
   }
 
-  &-arrow-up .path2:before {
+  &.arrow-up .path2:before {
     content     : "\e936";
     margin-left : -1em;
-
   }
 
-  &-bag-2 .path1:before {
+  &.bag-2 .path1:before {
     content : "\e937";
 
     opacity : 0.4;
   }
 
-  &-bag-2 .path2:before {
+  &.bag-2 .path2:before {
     content     : "\e938";
     margin-left : -1em;
-
   }
 
-  &-bag .path1:before {
+  &.bag .path1:before {
     content : "\e939";
-
   }
 
-  &-bag .path2:before {
+  &.bag .path2:before {
     content     : "\e93a";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-bookmark .path1:before {
+  &.bookmark .path1:before {
     content : "\e93b";
 
     opacity : 0.4;
   }
 
-  &-bookmark .path2:before {
+  &.bookmark .path2:before {
     content     : "\e93c";
     margin-left : -1em;
-
   }
 
-  &-buy .path1:before {
+  &.buy .path1:before {
     content : "\e93d";
 
     opacity : 0.4;
   }
 
-  &-buy .path2:before {
+  &.buy .path2:before {
     content     : "\e93e";
     margin-left : -1em;
-
   }
 
-  &-calendar .path1:before {
+  &.calendar .path1:before {
     content : "\e93f";
-
   }
 
-  &-calendar .path2:before {
+  &.calendar .path2:before {
     content     : "\e940";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-calendar .path3:before {
+  &.calendar .path3:before {
     content     : "\e941";
     margin-left : -1em;
-
   }
 
-  &-calendar .path4:before {
+  &.calendar .path4:before {
     content     : "\e942";
     margin-left : -1em;
-
   }
 
-  &-call-missed .path1:before {
+  &.call-missed .path1:before {
     content : "\e943";
-
   }
 
-  &-call-missed .path2:before {
+  &.call-missed .path2:before {
     content     : "\e944";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-call-silent .path1:before {
+  &.call-silent .path1:before {
     content : "\e945";
-
   }
 
-  &-call-silent .path2:before {
+  &.call-silent .path2:before {
     content     : "\e946";
     margin-left : -1em;
-
   }
 
-  &-call-silent .path3:before {
+  &.call-silent .path3:before {
     content     : "\e947";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-call:before {
+  &.call:before {
     content : "\e948";
   }
 
-  &-calling .path1:before {
+  &.calling .path1:before {
     content : "\e949";
 
     opacity : 0.4;
   }
 
-  &-calling .path2:before {
+  &.calling .path2:before {
     content     : "\e94a";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-calling .path3:before {
+  &.calling .path3:before {
     content     : "\e94b";
     margin-left : -1em;
-
   }
 
-  &-camera .path1:before {
+  &.camera .path1:before {
     content : "\e94c";
-
   }
 
-  &-camera .path2:before {
+  &.camera .path2:before {
     content     : "\e94d";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-category .path1:before {
+  &.category .path1:before {
     content : "\e94e";
 
     opacity : 0.4;
   }
 
-  &-category .path2:before {
+  &.category .path2:before {
     content     : "\e94f";
     margin-left : -1em;
-
   }
 
-  &-chart .path1:before {
+  &.chart .path1:before {
     content : "\e950";
 
     opacity : 0.4;
   }
 
-  &-chart .path2:before {
+  &.chart .path2:before {
     content     : "\e951";
     margin-left : -1em;
-
   }
 
-  &-chart .path3:before {
+  &.chart .path3:before {
     content     : "\e952";
     margin-left : -1em;
-
   }
 
-  &-chart .path4:before {
+  &.chart .path4:before {
     content     : "\e953";
     margin-left : -1em;
-
   }
 
-  &-chat .path1:before {
+  &.chat .path1:before {
     content : "\e954";
 
     opacity : 0.4;
   }
 
-  &-chat .path2:before {
+  &.chat .path2:before {
     content     : "\e955";
     margin-left : -1em;
-
   }
 
-  &-close-square .path1:before {
+  &.close-square .path1:before {
     content : "\e956";
 
     opacity : 0.4;
   }
 
-  &-close-square .path2:before {
+  &.close-square .path2:before {
     content     : "\e957";
     margin-left : -1em;
-
   }
 
-  &-danger .path1:before {
+  &.danger .path1:before {
     content : "\e958";
 
     opacity : 0.4;
   }
 
-  &-danger .path2:before {
+  &.danger .path2:before {
     content     : "\e959";
     margin-left : -1em;
-
   }
 
-  &-delete .path1:before {
+  &.delete .path1:before {
     content : "\e95a";
 
     opacity : 0.4;
   }
 
-  &-delete .path2:before {
+  &.delete .path2:before {
     content     : "\e95b";
     margin-left : -1em;
-
   }
 
-  &-discount .path1:before {
+  &.discount .path1:before {
     content : "\e95c";
 
     opacity : 0.4;
   }
 
-  &-discount .path2:before {
+  &.discount .path2:before {
     content     : "\e95d";
     margin-left : -1em;
-
   }
 
-  &-discovery .path1:before {
+  &.discovery .path1:before {
     content : "\e95e";
 
     opacity : 0.4;
   }
 
-  &-discovery .path2:before {
+  &.discovery .path2:before {
     content     : "\e95f";
     margin-left : -1em;
-
   }
 
-  &-document .path1:before {
+  &.document .path1:before {
     content : "\e960";
 
     opacity : 0.4;
   }
 
-  &-document .path2:before {
+  &.document .path2:before {
     content     : "\e961";
     margin-left : -1em;
-
   }
 
-  &-download .path1:before {
+  &.download .path1:before {
     content : "\e962";
 
     opacity : 0.4;
   }
 
-  &-download .path2:before {
+  &.download .path2:before {
     content     : "\e963";
     margin-left : -1em;
-
   }
 
-  &-edit-square .path1:before {
+  &.edit-square .path1:before {
     content : "\e964";
 
     opacity : 0.4;
   }
 
-  &-edit-square .path2:before {
+  &.edit-square .path2:before {
     content     : "\e965";
     margin-left : -1em;
-
   }
 
-  &-edit .path1:before {
+  &.edit .path1:before {
     content : "\e966";
 
     opacity : 0.4;
   }
 
-  &-edit .path2:before {
+  &.edit .path2:before {
     content     : "\e967";
     margin-left : -1em;
-
   }
 
-  &-edit .path3:before {
+  &.edit .path3:before {
     content     : "\e968";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-filter-2 .path1:before {
+  &.filter-2 .path1:before {
     content : "\e969";
-
   }
 
-  &-filter-2 .path2:before {
+  &.filter-2 .path2:before {
     content     : "\e96a";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-filter .path1:before {
+  &.filter .path1:before {
     content : "\e96b";
 
     opacity : 0.4;
   }
 
-  &-filter .path2:before {
+  &.filter .path2:before {
     content     : "\e96c";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-filter .path3:before {
+  &.filter .path3:before {
     content     : "\e96d";
     margin-left : -1em;
-
   }
 
-  &-filter .path4:before {
+  &.filter .path4:before {
     content     : "\e96e";
     margin-left : -1em;
-
   }
 
-  &-folder .path1:before {
+  &.folder .path1:before {
     content : "\e96f";
 
     opacity : 0.4;
   }
 
-  &-folder .path2:before {
+  &.folder .path2:before {
     content     : "\e970";
     margin-left : -1em;
-
   }
 
-  &-game .path1:before {
+  &.game .path1:before {
     content : "\e971";
 
     opacity : 0.4;
   }
 
-  &-game .path2:before {
+  &.game .path2:before {
     content     : "\e972";
     margin-left : -1em;
-
   }
 
-  &-graph .path1:before {
+  &.graph .path1:before {
     content : "\e973";
-
   }
 
-  &-graph .path2:before {
+  &.graph .path2:before {
     content     : "\e974";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-heart .path1:before {
+  &.heart .path1:before {
     content : "\e975";
 
     opacity : 0.4;
   }
 
-  &-heart .path2:before {
+  &.heart .path2:before {
     content     : "\e976";
     margin-left : -1em;
-
   }
 
-  &-heart .path3:before {
+  &.heart .path3:before {
     content     : "\e977";
     margin-left : -1em;
-
   }
 
-  &-hide .path1:before {
+  &.hide .path1:before {
     content : "\e978";
 
     opacity : 0.4;
   }
 
-  &-hide .path2:before {
+  &.hide .path2:before {
     content     : "\e979";
     margin-left : -1em;
-
   }
 
-  &-home:before {
+  &.home:before {
     content : "\e97a";
   }
 
-  &-image-2 .path1:before {
+  &.image-2 .path1:before {
     content : "\e97b";
-
   }
 
-  &-image-2 .path2:before {
+  &.image-2 .path2:before {
     content     : "\e97c";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-image-2 .path3:before {
+  &.image-2 .path3:before {
     content     : "\e97d";
     margin-left : -1em;
-
   }
 
-  &-image .path1:before {
+  &.image .path1:before {
     content : "\e97e";
 
     opacity : 0.4;
   }
 
-  &-image .path2:before {
+  &.image .path2:before {
     content     : "\e97f";
     margin-left : -1em;
-
   }
 
-  &-info-circle .path1:before {
+  &.info-circle .path1:before {
     content : "\e980";
 
     opacity : 0.4;
   }
 
-  &-info-circle .path2:before {
+  &.info-circle .path2:before {
     content     : "\e981";
     margin-left : -1em;
-
   }
 
-  &-info-square .path1:before {
+  &.info-square .path1:before {
     content : "\e982";
 
     opacity : 0.4;
   }
 
-  &-info-square .path2:before {
+  &.info-square .path2:before {
     content     : "\e983";
     margin-left : -1em;
-
   }
 
-  &-location .path1:before {
+  &.location .path1:before {
     content : "\e984";
-
   }
 
-  &-location .path2:before {
+  &.location .path2:before {
     content     : "\e985";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-lock .path1:before {
+  &.lock .path1:before {
     content : "\e986";
-
   }
 
-  &-lock .path2:before {
+  &.lock .path2:before {
     content     : "\e987";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-login .path1:before {
+  &.login .path1:before {
     content : "\e988";
 
     opacity : 0.4;
   }
 
-  &-login .path2:before {
+  &.login .path2:before {
     content     : "\e989";
     margin-left : -1em;
-
   }
 
-  &-logout .path1:before {
+  &.logout .path1:before {
     content : "\e98a";
 
     opacity : 0.4;
   }
 
-  &-logout .path2:before {
+  &.logout .path2:before {
     content     : "\e98b";
     margin-left : -1em;
-
   }
 
-  &-message .path1:before {
+  &.message .path1:before {
     content : "\e98c";
 
     opacity : 0.4;
   }
 
-  &-message .path2:before {
+  &.message .path2:before {
     content     : "\e98d";
     margin-left : -1em;
-
   }
 
-  &-more-circle .path1:before {
+  &.more-circle .path1:before {
     content : "\e98e";
 
     opacity : 0.4;
   }
 
-  &-more-circle .path2:before {
+  &.more-circle .path2:before {
     content     : "\e98f";
     margin-left : -1em;
-
   }
 
-  &-more-square .path1:before {
+  &.more-square .path1:before {
     content : "\e990";
 
     opacity : 0.4;
   }
 
-  &-more-square .path2:before {
+  &.more-square .path2:before {
     content     : "\e991";
     margin-left : -1em;
-
   }
 
-  &-notification .path1:before {
+  &.notification .path1:before {
     content : "\e992";
-
   }
 
-  &-notification .path2:before {
+  &.notification .path2:before {
     content     : "\e993";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-paper-download .path1:before {
+  &.paper-download .path1:before {
     content : "\e994";
 
     opacity : 0.4;
   }
 
-  &-paper-download .path2:before {
+  &.paper-download .path2:before {
     content     : "\e995";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-paper-download .path3:before {
+  &.paper-download .path3:before {
     content     : "\e996";
     margin-left : -1em;
-
   }
 
-  &-paper-fail .path1:before {
+  &.paper-fail .path1:before {
     content : "\e997";
 
     opacity : 0.4;
   }
 
-  &-paper-fail .path2:before {
+  &.paper-fail .path2:before {
     content     : "\e998";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-paper-fail .path3:before {
+  &.paper-fail .path3:before {
     content     : "\e999";
     margin-left : -1em;
-
   }
 
-  &-paper-negative .path1:before {
+  &.paper-negative .path1:before {
     content : "\e99a";
 
     opacity : 0.4;
   }
 
-  &-paper-negative .path2:before {
+  &.paper-negative .path2:before {
     content     : "\e99b";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-paper-negative .path3:before {
+  &.paper-negative .path3:before {
     content     : "\e99c";
     margin-left : -1em;
-
   }
 
-  &-paper-plus .path1:before {
+  &.paper-plus .path1:before {
     content : "\e99d";
 
     opacity : 0.4;
   }
 
-  &-paper-plus .path2:before {
+  &.paper-plus .path2:before {
     content     : "\e99e";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-paper-plus .path3:before {
+  &.paper-plus .path3:before {
     content     : "\e99f";
     margin-left : -1em;
-
   }
 
-  &-paper-upload .path1:before {
+  &.paper-upload .path1:before {
     content : "\e9a0";
 
     opacity : 0.4;
   }
 
-  &-paper-upload .path2:before {
+  &.paper-upload .path2:before {
     content     : "\e9a1";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-paper-upload .path3:before {
+  &.paper-upload .path3:before {
     content     : "\e9a2";
     margin-left : -1em;
-
   }
 
-  &-paper .path1:before {
+  &.paper .path1:before {
     content : "\e9a3";
 
     opacity : 0.4;
   }
 
-  &-paper .path2:before {
+  &.paper .path2:before {
     content     : "\e9a4";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-paper .path3:before {
+  &.paper .path3:before {
     content     : "\e9a5";
     margin-left : -1em;
-
   }
 
-  &-password .path1:before {
+  &.password .path1:before {
     content : "\e9a6";
 
     opacity : 0.4;
   }
 
-  &-password .path2:before {
+  &.password .path2:before {
     content     : "\e9a7";
     margin-left : -1em;
-
   }
 
-  &-play .path1:before {
+  &.play .path1:before {
     content : "\e9a8";
 
     opacity : 0.4;
   }
 
-  &-play .path2:before {
+  &.play .path2:before {
     content     : "\e9a9";
     margin-left : -1em;
-
   }
 
-  &-plus .path1:before {
+  &.plus .path1:before {
     content : "\e9aa";
 
     opacity : 0.4;
   }
 
-  &-plus .path2:before {
+  &.plus .path2:before {
     content     : "\e9ab";
     margin-left : -1em;
-
   }
 
-  &-profile .path1:before {
+  &.profile .path1:before {
     content : "\e9ac";
-
   }
 
-  &-profile .path2:before {
+  &.profile .path2:before {
     content     : "\e9ad";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-scan .path1:before {
+  &.scan .path1:before {
     content : "\e9ae";
 
     opacity : 0.4;
   }
 
-  &-scan .path2:before {
+  &.scan .path2:before {
     content     : "\e9af";
     margin-left : -1em;
-
   }
 
-  &-search .path1:before {
+  &.search .path1:before {
     content : "\e9b0";
-
   }
 
-  &-search .path2:before {
+  &.search .path2:before {
     content     : "\e9b1";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-send .path1:before {
+  &.send .path1:before {
     content : "\e9b2";
-
   }
 
-  &-send .path2:before {
+  &.send .path2:before {
     content     : "\e9b3";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-setting .path1:before {
+  &.setting .path1:before {
     content : "\e9b4";
-
   }
 
-  &-setting .path2:before {
+  &.setting .path2:before {
     content     : "\e9b5";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-shield-done .path1:before {
+  &.shield-done .path1:before {
     content : "\e9b6";
 
     opacity : 0.4;
   }
 
-  &-shield-done .path2:before {
+  &.shield-done .path2:before {
     content     : "\e9b7";
     margin-left : -1em;
-
   }
 
-  &-shield-fail .path1:before {
+  &.shield-fail .path1:before {
     content : "\e9b8";
 
     opacity : 0.4;
   }
 
-  &-shield-fail .path2:before {
+  &.shield-fail .path2:before {
     content     : "\e9b9";
     margin-left : -1em;
-
   }
 
-  &-show .path1:before {
+  &.show .path1:before {
     content : "\e9ba";
 
     opacity : 0.4;
   }
 
-  &-show .path2:before {
+  &.show .path2:before {
     content     : "\e9bb";
     margin-left : -1em;
-
   }
 
-  &-star .path1:before {
+  &.star .path1:before {
     content : "\e9bc";
 
     opacity : 0.4;
   }
 
-  &-star .path2:before {
+  &.star .path2:before {
     content     : "\e9bd";
     margin-left : -1em;
-
   }
 
-  &-swap .path1:before {
+  &.swap .path1:before {
     content : "\e9be";
 
     opacity : 0.4;
   }
 
-  &-swap .path2:before {
+  &.swap .path2:before {
     content     : "\e9bf";
     margin-left : -1em;
-
   }
 
-  &-swap .path3:before {
+  &.swap .path3:before {
     content     : "\e9c0";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-swap .path4:before {
+  &.swap .path4:before {
     content     : "\e9c1";
     margin-left : -1em;
-
   }
 
-  &-tick-square .path1:before {
+  &.tick-square .path1:before {
     content : "\e9c2";
 
     opacity : 0.4;
   }
 
-  &-tick-square .path2:before {
+  &.tick-square .path2:before {
     content     : "\e9c3";
     margin-left : -1em;
-
   }
 
-  &-ticket-star .path1:before {
+  &.ticket-star .path1:before {
     content : "\e9c4";
 
     opacity : 0.4;
   }
 
-  &-ticket-star .path2:before {
+  &.ticket-star .path2:before {
     content     : "\e9c5";
     margin-left : -1em;
-
   }
 
-  &-ticket .path1:before {
+  &.ticket .path1:before {
     content : "\e9c6";
 
     opacity : 0.4;
   }
 
-  &-ticket .path2:before {
+  &.ticket .path2:before {
     content     : "\e9c7";
     margin-left : -1em;
-
   }
 
-  &-time-circle .path1:before {
+  &.time-circle .path1:before {
     content : "\e9c8";
 
     opacity : 0.4;
   }
 
-  &-time-circle .path2:before {
+  &.time-circle .path2:before {
     content     : "\e9c9";
     margin-left : -1em;
-
   }
 
-  &-time-square .path1:before {
+  &.time-square .path1:before {
     content : "\e9ca";
 
     opacity : 0.4;
   }
 
-  &-time-square .path2:before {
+  &.time-square .path2:before {
     content     : "\e9cb";
     margin-left : -1em;
-
   }
 
-  &-unlock .path1:before {
+  &.unlock .path1:before {
     content : "\e9cc";
 
     opacity : 0.4;
   }
 
-  &-unlock .path2:before {
+  &.unlock .path2:before {
     content     : "\e9cd";
     margin-left : -1em;
-
   }
 
-  &-upload .path1:before {
+  &.upload .path1:before {
     content : "\e9ce";
 
     opacity : 0.4;
   }
 
-  &-upload .path2:before {
+  &.upload .path2:before {
     content     : "\e9cf";
     margin-left : -1em;
-
   }
 
-  &-video .path1:before {
+  &.video .path1:before {
     content : "\e9d0";
 
     opacity : 0.4;
   }
 
-  &-video .path2:before {
+  &.video .path2:before {
     content     : "\e9d1";
     margin-left : -1em;
-
   }
 
-  &-voice-2 .path1:before {
+  &.voice-2 .path1:before {
     content : "\e9d2";
-
   }
 
-  &-voice-2 .path2:before {
+  &.voice-2 .path2:before {
     content     : "\e9d3";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-voice .path1:before {
+  &.voice .path1:before {
     content : "\e9d4";
 
     opacity : 0.4;
   }
 
-  &-voice .path2:before {
+  &.voice .path2:before {
     content     : "\e9d5";
     margin-left : -1em;
-
   }
 
-  &-volume-down .path1:before {
+  &.volume-down .path1:before {
     content : "\e9d6";
-
   }
 
-  &-volume-down .path2:before {
+  &.volume-down .path2:before {
     content     : "\e9d7";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-volume-off .path1:before {
+  &.volume-off .path1:before {
     content : "\e9d8";
 
     opacity : 0.4;
   }
 
-  &-volume-off .path2:before {
+  &.volume-off .path2:before {
     content     : "\e9d9";
     margin-left : -1em;
-
   }
 
-  &-volume-up .path1:before {
+  &.volume-up .path1:before {
     content : "\e9da";
-
   }
 
-  &-volume-up .path2:before {
+  &.volume-up .path2:before {
     content     : "\e9db";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-volume-up .path3:before {
+  &.volume-up .path3:before {
     content     : "\e9dc";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-wallet .path1:before {
+  &.wallet .path1:before {
     content : "\e9dd";
-
   }
 
-  &-wallet .path2:before {
+  &.wallet .path2:before {
     content     : "\e9de";
     margin-left : -1em;
 
     opacity     : 0.4;
   }
 
-  &-wallet .path3:before {
+  &.wallet .path3:before {
     content     : "\e9df";
     margin-left : -1em;
-
   }
 
-  &-work .path1:before {
+  &.work .path1:before {
     content : "\e9e0";
 
     opacity : 0.4;
   }
 
-  &-work .path2:before {
+  &.work .path2:before {
     content     : "\e9e1";
     margin-left : -1em;
-
   }
 
-  &-work .path3:before {
+  &.work .path3:before {
     content     : "\e9e2";
     margin-left : -1em;
-
   }
 
 }

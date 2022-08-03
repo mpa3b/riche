@@ -14,8 +14,6 @@
 
 /** @var \CBitrixComponent $component */
 
-use Riche\PreloadLinks;
-
 $this->setFrameMode(true);
 
 $frame = $this->createFrame();
@@ -27,7 +25,7 @@ $frame = $this->createFrame();
     <? $frame->begin(); ?>
 
     <button class="transparent button trigger">
-        <i class="icon search-1"></i>
+        <i class="iconly search"></i>
     </button>
 
     <div class="header-search--form hidden">

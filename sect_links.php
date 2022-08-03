@@ -2,9 +2,9 @@
 
 <nav>
     <a href="http://tg.com/riche">
-        <i class="icon telegram"></i>
+        <img src="<?php echo SITE_TEMPLATE_PATH; ?>/icons/telegram.svg" alt="Telegram" loading="lazy">
     </a>
     <a href="http://vk.com/riche">
-        <i class="icon vk"></i>
+        <img src="<?php echo SITE_TEMPLATE_PATH; ?>/icons/vk.svg" alt="VK" loading="lazy">
     </a>
 </nav>

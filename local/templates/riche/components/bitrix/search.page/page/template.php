@@ -73,7 +73,7 @@ $frame = $this->createFrame();
                 <input type="hidden" name="how" value="<?= $arResult["REQUEST"]["HOW"] == "d" ? "d" : "r" ?>"/>
 
                 <button class="transparent search button" type="submit">
-                    <i class="icon search"></i>
+                    <i class="iconly search"></i>
                 </button>
 
             </div>

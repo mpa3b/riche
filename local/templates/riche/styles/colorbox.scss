@@ -223,7 +223,6 @@
     position : absolute;
     bottom   : 4px;
     right    : 30px;
-    color    : var(--color--purple);
   }
 
   &Previous {
@@ -231,14 +230,11 @@
     bottom              : 0;
     left                : 0;
 
-    background-image    : url(../icons/left.svg);
     background-position : center;
     background-repeat   : no-repeat;
 
     width               : 2rem;
     height              : 2rem;
-
-    text-indent         : -9999px;
   }
 
   &Next {
@@ -246,14 +242,11 @@
     bottom              : 0;
     left                : 2rem;
 
-    background-image    : url(../icons/right.svg);
     background-position : center;
     background-repeat   : no-repeat;
 
     width               : 2rem;
     height              : 2rem;
-
-    text-indent         : -9999px;
   }
 
   &Close {
@@ -261,7 +254,6 @@
     top                 : 0.25rem;
     right               : 0.25rem;
 
-    background-image    : url(../icons/close-simple.svg);
     background-position : center;
     background-repeat   : no-repeat;
 
@@ -269,8 +261,6 @@
 
     width               : 2rem;
     height              : 2rem;
-
-    text-indent         : -9999px;
   }
 
 }

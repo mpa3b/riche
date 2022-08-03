@@ -22,7 +22,7 @@ $frame = $this->createFrame();
 <nav class="menu--header">
 
     <button class="transparent button hide--on-desktop trigger burger">
-        <i class="icon burger"></i>
+        <i class="iconly burger"></i>
     </button>
 
     <div class="wrapper">
@@ -30,7 +30,7 @@ $frame = $this->createFrame();
         <?php $frame->begin(); ?>
 
         <button class="transparent trigger button hide--on-desktop close">
-            <i class="icon close-simple"></i>
+            <i class="iconly close-simple"></i>
         </button>
 
         <ul class="menu root">

@@ -1,5 +1,7 @@
 // region lazyload
 
+'use strict';
+
 window.addEventListener(
     "load",
     () => {

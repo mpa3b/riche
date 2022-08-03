@@ -8,16 +8,16 @@ $(document).on(
         const throbber = 'throbber';
 
         let button = $(event.currentTarget),
-            icon   = $('.icon', button);
+            icon   = $('.iconly', button);
 
         $(document).on(
             {
-                ajaxStart   : () => {
+                ajaxStart :    () => {
 
                     icon.addClass(throbber);
 
                 },
-                ajaxComplete: () => {
+                ajaxComplete : () => {
 
                     icon.removeClass(throbber);
 
@@ -35,30 +35,29 @@ $(() => {
         $.extend(
             $.colorbox.settings,
             {
-                current       : '{current} / {total}',
-                close         : 'Закрыть',
-                previous      : 'Обратно',
-                next          : 'Дальше',
-                xhrError      : 'Ошибка загрузки содержимого',
-                imgError      : 'Ошибка загрузки изображения',
-                slideshowStart: 'Hачать слайд-шоу',
-                slideshowStop : 'Остановить',
-                maxWidth      : '88%',
-                maxHeight     : '72%',
-                fixed         : true,
-                scrolling     : false,
-                opacity       : 0.77
+                current :        '{current} / {total}',
+                close :          '<i class="iconly close-square">',
+                previous :       '<i class="iconly left">',
+                next :           '<i class="iconly right">',
+                xhrError :       'Ошибка загрузки содержимого',
+                imgError :       'Ошибка загрузки изображения',
+                slideshowStart : '<i class="iconly play">',
+                slideshowStop :  '<i class="iconly pause">',
+                maxWidth :       '88%',
+                maxHeight :      '72%',
+                fixed :          true,
+                scrolling :      false,
+                opacity :        0.77
             }
         );
-
 
         if (BX && BX.Browser.isMobile()) {
 
             $.extend(
                 $.colorbox.settings,
                 {
-                    maxWidth : '100%',
-                    maxHeight: '90%'
+                    maxWidth :  '100%',
+                    maxHeight : '90%'
                 }
             );
 

@@ -14,7 +14,8 @@
         border-radius : var(--border-radius--2x);
         overflow      : hidden;
 
-        i.icon {
+        i {
+          font-size   : 1.4rem;
           position    : absolute;
           width       : 2rem;
           height      : 2rem;
