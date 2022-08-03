@@ -114,13 +114,19 @@
 
           a {
             display       : block;
-            border        : 1px solid var(--color--gray);
-            border-radius : 3rem;
-            margin-right  : 1rem;
 
-            i.icon {
-              margin  : 0.5rem;
-              display : block;
+            border        : var(--border--thin);
+            border-radius : var(--border-radius--2x);
+
+            margin-right   : var(--offset--half);
+            padding       : var(--offset--half);
+
+            img {
+              display         : block;
+              width           : 1rem;
+              height          : 1rem;
+              object-fit      : contain;
+              object-position : center;
             }
 
           }
