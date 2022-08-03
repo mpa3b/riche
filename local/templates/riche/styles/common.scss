@@ -2,46 +2,56 @@
 
 :root {
 
-  --color--black            : #151515;
-  --color--white            : #fff;
-  --color--gray             : #c7c7c7;
+  --color--black                     : #151515;
+  --color--white                     : #fff;
+  --color--gray                      : #c7c7c7;
 
-  --color--pink             : #ebb2d4;
-  --color--red              : #ebb2b2;
-  --color--green            : #ebebc9;
-  --color--yellow           : #ebe6b2;
-  --color--blue             : #b2b8eb;
-  --color--violet           : #ccb2eb;
+  --color--pink                      : #ebb2d4;
+  --color--red                       : #ebb2b2;
+  --color--green                     : #caebc9;
+  --color--yellow                    : #ebe6b2;
+  --color--blue                      : #b2b8eb;
+  --color--violet                    : #ccb2eb;
 
-  --color--base             : var(--color--black);
-  --color--accent           : var(--color--pink);
-  --color--secondary        : var(--color--violet);
+  --color--base                      : var(--color--black);
+  --color--base--inverse             : var(--color--white);
 
-  --color--error            : var(--color--red);
-  --color--success          : var(--color--green);
+  --color--accent                    : var(--color--pink);
+  --color--secondary                 : var(--color--violet);
 
-  --font--base              : "Gordita", sans-serif;
+  --color--error                     : var(--color--red);
+  --color--success                   : var(--color--green);
 
-  --border-radius           : 1rem;
-  --border-radius--2x       : calc(var(--border-radius) * 2);
-  --border-radius--4x       : calc(var(--border-radius) * 4);
+  --font--base                       : "Gordita", sans-serif;
 
-  --transition              : all var(--transition--time) ease;
+  --border-radius                    : 1rem;
+  --border-radius--2x                : calc(var(--border-radius) * 2);
+  --border-radius--4x                : calc(var(--border-radius) * 4);
 
-  --transition--time        : 0.3s;
-  --transition--time--short : calc(--transition--time) / 2;
-  --transition--time--long  : calc(--transition--time) * 2;
+  --transition--time--short          : calc(--transition--time) / 2;
+  --transition--time--long           : calc(--transition--time) * 2;
 
-  --transition--ease        : var(--transition--time) ease;
+  --transition--ease                 : var(--transition--time) ease;
 
-  --opacity                 : 0.3;
+  --transition--time                 : 0.3s;
+  --transition--effect               : ease;
+  --transition                       : all var(--transition--time) var(--transition--effect);
 
-  --border--thin            : 1px solid var(--color--gray);
-  --border--normal          : 2px solid var(--color--gray);
-  --border--wide            : 4px solid var(--color--gray);
+  --opacity                          : 0.3;
 
-  --box-shadow              : 2px 2px 4px var(--color--gray);
-  --box-shadow--blurry      : 6px 6px 18px var(--color--gray);
+  --border--thin                     : 1px solid var(--color--gray);
+  --border--normal                   : 2px solid var(--color--gray);
+  --border--wide                     : 4px solid var(--color--gray);
+
+  --box-shadow                       : 2px 2px 4px var(--color--gray);
+  --box-shadow--blurry               : 6px 6px 18px var(--color--gray);
+
+  --button--color                    : var(--color--base);
+  --button--backgound-color          : var(--color--base);
+
+  --button--color-primary            : var(--color--base--inverse);
+  --button--backgound-color--primary : var(--color--accent);
+
 }
 
 html {

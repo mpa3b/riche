@@ -14,6 +14,9 @@
   .row {
 
     .caption.third {
+
+      /*
+
       position : relative;
 
       &:after {
@@ -34,6 +37,8 @@
         z-index          : 900;
       }
 
+       */
+
     }
 
     .brand {
@@ -45,45 +50,46 @@
 
   .item {
 
-      .wrapper {
-        position      : relative;
-        border-radius : var(--border-radius--2x);
-        overflow      : hidden;
+    .wrapper {
+      position      : relative;
+      border-radius : var(--border-radius--2x);
+      overflow      : hidden;
 
-        box-sizing    : border-box;
+      box-sizing    : border-box;
 
-        picture {
+      picture {
 
-          img {
-            width  : 100%;
-            height : auto;
-          }
-
+        img {
+          width  : 100%;
+          height : auto;
         }
 
-        .caption {
-          width      : 100%;
-          height     : 100%;
-          box-sizing : border-box;
+      }
 
-          color      : var(--color--white);
+      .caption {
+        position   : absolute;
+        top        : 0;
 
-          h3 {
-            margin-top : 0;
-            font-size  : 1.2rem;
-          }
+        padding: var(--offset--2x);
 
-          p {
+        width      : 100%;
+        height     : 100%;
+        box-sizing : border-box;
 
-          }
+        color      : var(--color--white);
 
+        h3 {
+          margin-top : 0;
+          font-size  : 1.2rem;
         }
 
       }
 
     }
 
+  }
+
   @include tiny-slider--tns;
-  @include tiny-slider--tns--ovh-visible;
+  //  @include tiny-slider--tns--ovh-visible;
 
 }
