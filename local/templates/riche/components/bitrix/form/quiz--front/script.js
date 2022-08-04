@@ -1,6 +1,6 @@
 $(() => {
 
-    let element            = $(".feedback--popup--new"),
+    let element            = $(".quiz--front--new"),
         form               = $("form", element),
         formSubmitButton   = $("button.submit", form),
         fields             = $(".field", form),

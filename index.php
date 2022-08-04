@@ -1,19 +1,20 @@
-<?php
+<?
 
-require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
+    require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 
-global $APPLICATION, $USER;
+    global $APPLICATION, $USER;
 
-use Riche\Template;
+    use Bitrix\Main\Application;
+    use Riche\Template;
 
-$APPLICATION->SetTitle("Про красоту и здоровье");
+    $APPLICATION->SetTitle("Про красоту и здоровье");
 
-$APPLICATION->SetPageProperty("keywords", "RICHE, здоровье, красота, уход");
-$APPLICATION->SetPageProperty("description", "RICHE — это про красоту и здоровье");
+    $APPLICATION->SetPageProperty("keywords", "RICHE, здоровье, красота, уход");
+    $APPLICATION->SetPageProperty("description", "RICHE — это про красоту и здоровье");
 
 ?>
 
-<?php $APPLICATION->IncludeComponent(
+<? $APPLICATION->IncludeComponent(
     'bitrix:news.list',
     'banners--front--static',
     [
@@ -45,7 +46,7 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
     ]
 ); ?>
 
-<?php $APPLICATION->IncludeComponent(
+<? $APPLICATION->IncludeComponent(
     'bitrix:news.list',
     'brand--front--slider',
     [
@@ -105,7 +106,7 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
     ]
 ); ?>
 
-<?php $APPLICATION->IncludeComponent(
+<? $APPLICATION->IncludeComponent(
     'bitrix:news.list',
     'reviews--front',
     [
@@ -138,7 +139,7 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
     ]
 ); ?>
 
-<?php $APPLICATION->IncludeComponent(
+<? $APPLICATION->IncludeComponent(
     'bitrix:news.list',
     'videos--front',
     [
@@ -172,5 +173,74 @@ $APPLICATION->SetPageProperty("description", "RICHE — это про красо
     ]
 ); ?>
 
-<?php require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>
+<div class="wrap">
 
+    <div class="row">
+
+        <div class="half">
+
+            <? $request = Application::getInstance()->getContext()->getRequest(); ?>
+
+            <? $APPLICATION->IncludeComponent(
+                'bitrix:form',
+                'quiz--front',
+                [
+                    "AJAX_MODE"   => "N",
+                    "SEF_MODE"    => "Y",
+                    "WEB_FORM_ID" => 1,
+
+                    "RESULT_ID" => $request->get("RESULT_ID"),
+
+                    "START_PAGE" => "new",
+
+                    "SHOW_LIST_PAGE"    => "Y",
+                    "SHOW_EDIT_PAGE"    => "Y",
+                    "SHOW_VIEW_PAGE"    => "Y",
+                    "SUCCESS_URL"       => "",
+                    "SHOW_ANSWER_VALUE" => "N",
+                    "SHOW_ADDITIONAL"   => "N",
+                    "SHOW_STATUS"       => "N",
+
+                    "EDIT_ADDITIONAL" => "N",
+                    "EDIT_STATUS"     => "N",
+
+                    "NOT_SHOW_FILTER" => [],
+                    "NOT_SHOW_TABLE"  => [],
+
+                    "CHAIN_ITEM_TEXT" => "",
+                    "CHAIN_ITEM_LINK" => "",
+
+                    "IGNORE_CUSTOM_TEMPLATE" => "N",
+
+                    "USE_EXTENDED_ERRORS" => "N",
+
+                    "CACHE_TYPE"          => "A",
+                    "CACHE_TIME"          => Template::CACHE_TIME,
+                    "AJAX_OPTION_JUMP"    => "N",
+                    "AJAX_OPTION_STYLE"   => "Y",
+                    "AJAX_OPTION_HISTORY" => "N",
+
+                    "SEF_FOLDER"        => "/",
+                    "SEF_URL_TEMPLATES" => [
+                        "new"  => "#WEB_FORM_ID#/",
+                        "list" => "#WEB_FORM_ID#/list/",
+                        "edit" => "#WEB_FORM_ID#/edit/#RESULT_ID#/",
+                        "view" => "#WEB_FORM_ID#/view/#RESULT_ID#/"
+                    ],
+
+                    "VARIABLE_ALIASES" => [
+                        "new"  => [],
+                        "list" => [],
+                        "edit" => [],
+                        "view" => [],
+                    ]
+                ]
+            ); ?>
+
+        </div>
+
+    </div>
+
+</div>
+
+<? require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>

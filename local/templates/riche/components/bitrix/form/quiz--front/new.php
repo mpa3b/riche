@@ -24,25 +24,16 @@
 
     $frame = $this->createFrame();
 
+    $this->addExternalJs(Template::ASSETS . '/tiny-slider/dist/min/tiny-slider.js');
+    $this->addExternalCss(Template::ASSETS . '/tiny-slider/dist/tiny-slider.css');
+
     $this->addExternalJs(Template::ASSETS . '/inputmask/dist/jquery.inputmask.js');
     $this->addExternalJs(Template::ASSETS . '/jquery-colorbox/jquery.colorbox.js');
 
 ?>
 
-<div class="hidden">
+<div class="quiz--front--new">
 
-    <div class="quiz--front">
-
-        <? $frame->begin(); ?>
-
-        <div class="quiz--front--new">
-
-            <? $APPLICATION->IncludeComponent("bitrix:form.result.new", "", $arParams, $component); ?>
-
-        </div>
-
-        <? $frame->end(); ?>
-
-    </div>
+    <? $APPLICATION->IncludeComponent("bitrix:form.result.new", "", $arParams, $component); ?>
 
 </div>

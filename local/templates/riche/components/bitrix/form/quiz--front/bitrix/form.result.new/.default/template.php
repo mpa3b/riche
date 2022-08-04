@@ -17,9 +17,15 @@
     /** @var array $templateData */
     /** @var \CBitrixComponent $component */
 
+    $this->setFrameMode(true);
+
+    $frame = $this->createFrame();
+
 ?>
 
 <div class="quiz--front--new--default">
+
+    <? $frame->begin(); ?>
 
     <h2><?= $arResult['arForm']['NAME'] ?></h2>
 
@@ -243,31 +249,15 @@
 
     <div class="actions row">
 
-        <div class="half">
+        <button class="wide primary big button rounded submit"><?= $arResult["arForm"]["BUTTON"]; ?></button>
 
-            <button class="wide primary big button rounded submit"><?= $arResult["arForm"]["BUTTON"]; ?></button>
-
-            <input type="hidden" name="web_form_submit" value="Y">
-            <input type="hidden" name="web_form_apply" value="Y">
-
-        </div>
-
-        <div class="half description">
-
-            <p>Отправляя заявку, вы
-                <? if (!empty($arParams['POLICY_URL'])) { ?>
-                    <a href="<?= $arParams['POLICY_URL']; ?>">
-                        соглашаетесь с политикой обработки
-                    </a>
-                <? } else { ?>
-                    соглашаетесь с политикой обработки
-                <? } ?>
-               данных.</p>
-
-        </div>
+        <input type="hidden" name="web_form_submit" value="Y">
+        <input type="hidden" name="web_form_apply" value="Y">
 
     </div>
 
     <?= $arResult["FORM_FOOTER"]; ?>
+
+    <? $frame->end(); ?>
 
 </div>
