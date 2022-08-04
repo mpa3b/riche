@@ -1,0 +1,88 @@
+@import "../../../../vars";
+
+.quiz--front {
+
+  &--new {
+
+    .fields {
+      display        : flex;
+      flex-direction : row;
+      flex-wrap      : wrap;
+
+      margin         : 0.8rem -1rem;
+
+      .field {
+        @media all and (min-width : $breakpoint_mobile) {
+          flex-basis : 33.3333%;
+        }
+        flex-grow  : 1;
+        display    : block;
+        box-sizing : border-box;
+        padding    : 1rem;
+
+        input,
+        textarea {
+          display : block;
+          width   : 100%;
+        }
+
+        &.question {
+          flex-basis : 100%;
+        }
+
+      }
+
+    }
+
+    .actions {
+      align-items : center;
+
+      input[type="submit"] {
+        flex-grow : 0.4;
+      }
+
+      .description {
+        color       : var(--color--gray);
+        font-size   : 1.4rem;
+        line-height : 1.2;
+        margin-top  : 0.8rem;
+        text-align  : center;
+        font-weight : normal;
+
+        @media all and (min-width : $breakpoint_mobile) {
+          margin-left : 0.8rem;
+          margin-top  : 0;
+          text-align  : left;
+        }
+
+        a {
+          color : var(--color--gray);
+        }
+
+      }
+    }
+
+  }
+
+  &--success {
+
+    h2 {
+      font-size  : 2.4rem;
+
+      margin-top : 0;
+      @media all and (min-width : $breakpoint_mobile) {
+        font-size : 3.2rem;
+      }
+    }
+
+    h3 {
+      font-size : 1.6rem;
+    }
+
+    .actions {
+      margin-top : 1.6rem;
+    }
+
+  }
+
+}
