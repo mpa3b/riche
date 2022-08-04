@@ -20,20 +20,24 @@
 
     use Riche\Template;
 
-    $this->setFrameMode(true);
-
-    $frame = $this->createFrame();
-
     $this->addExternalJs(Template::ASSETS . '/tiny-slider/dist/min/tiny-slider.js');
     $this->addExternalCss(Template::ASSETS . '/tiny-slider/dist/tiny-slider.css');
 
     $this->addExternalJs(Template::ASSETS . '/inputmask/dist/jquery.inputmask.js');
     $this->addExternalJs(Template::ASSETS . '/jquery-colorbox/jquery.colorbox.js');
 
+    $this->setFrameMode(true);
+
+    $frame = $this->createFrame();
+
 ?>
 
 <div class="quiz--front--new">
 
+    <? $frame->begin(); ?>
+
     <? $APPLICATION->IncludeComponent("bitrix:form.result.new", "", $arParams, $component); ?>
+
+    <? $frame->end(); ?>
 
 </div>

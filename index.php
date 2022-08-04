@@ -185,7 +185,6 @@
                 'bitrix:form',
                 'quiz--front',
                 [
-                    "AJAX_MODE"   => "N",
                     "SEF_MODE"    => "Y",
                     "WEB_FORM_ID" => 1,
 
@@ -214,13 +213,15 @@
 
                     "USE_EXTENDED_ERRORS" => "N",
 
-                    "CACHE_TYPE"          => "A",
-                    "CACHE_TIME"          => Template::CACHE_TIME,
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => Template::CACHE_TIME,
+
+                    "AJAX_MODE"           => "Н",
                     "AJAX_OPTION_JUMP"    => "N",
                     "AJAX_OPTION_STYLE"   => "Y",
                     "AJAX_OPTION_HISTORY" => "N",
 
-                    "SEF_FOLDER"        => "/",
+                    "SEF_FOLDER"        => "",
                     "SEF_URL_TEMPLATES" => [
                         "new"  => "#WEB_FORM_ID#/",
                         "list" => "#WEB_FORM_ID#/list/",
@@ -236,6 +237,12 @@
                     ]
                 ]
             ); ?>
+
+        </div>
+
+        <div class="half">
+
+            Есчо опросник
 
         </div>
 

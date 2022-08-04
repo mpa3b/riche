@@ -3,6 +3,14 @@
 #page {
 
   &--header {
+    margin-bottom    : var(--offset);
+
+    position         : sticky;
+    top              : 0;
+    z-index          : 5000;
+    background-color : var(--color--white);
+
+    box-shadow: var(--box-shadow);
 
     > .wrap {
       margin-top    : 0;
@@ -118,7 +126,7 @@
             border        : var(--border--thin);
             border-radius : var(--border-radius--2x);
 
-            margin-right   : var(--offset--half);
+            margin-right  : var(--offset--half);
             padding       : var(--offset--half);
 
             img {

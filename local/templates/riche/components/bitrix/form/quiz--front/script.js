@@ -1,12 +1,32 @@
 $(() => {
 
-    let element            = $(".quiz--front--new"),
-        form               = $("form", element),
-        formSubmitButton   = $("button.submit", form),
-        fields             = $(".field", form),
-        formRequiredFields = $(".field.required", form),
-        formRequiredInputs = $(":input", formRequiredFields),
-        errorClass         = "invalid";
+    let element            = $('.quiz--front--new'),
+        form               = $('form', element),
+        formSubmitButton   = $('button.submit', form),
+        fields             = $('.field', form),
+        formRequiredFields = $('.field.required', form),
+        formRequiredInputs = $(':input', formRequiredFields),
+        errorClass         = 'invalid';
+
+    let quizSlider = tns(
+        {
+            container : '.quiz--front--new .slider',
+            items :     1,
+            slideBy :   1,
+
+            mode :      'gallery',
+            loop :      false,
+            mouseDrag : true,
+
+            nav : false,
+
+            controls : true,
+
+            prevButton : '.quiz--front--new button.prev',
+            nextButton : '.quiz--front--new button.next'
+        }
+    );
+
 
     $.each(
         fields,
@@ -14,13 +34,13 @@ $(() => {
 
             let field = $(element);
 
-            if (field.hasClass("phone")) {
+            if (field.hasClass('phone')) {
 
-                $("input", field).inputmask(
+                $('input', field).inputmask(
                     {
-                        mask :            "+7 999 999-9999",
+                        mask :            '+7 999 999-9999',
                         greedy :          false,
-                        placeholder :     "",
+                        placeholder :     '',
                         showMaskOnFocus : false,
                         showMaskOnHover : false,
                         oncomplete :      (event) => {
@@ -37,23 +57,23 @@ $(() => {
                     }
                 );
 
-            } else if (field.hasClass("phone")) {
+            } else if (field.hasClass('phone')) {
 
-                $("input", field).inputmask(
+                $('input', field).inputmask(
                     {
-                        mask :            "*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]",
+                        mask :            '*{1,20}[.*{1,20}][.*{1,20}][.*{1,20}]@*{1,20}[.*{2,6}][.*{1,2}]',
                         greedy :          false,
-                        placeholder :     "",
+                        placeholder :     '',
                         showMaskOnFocus : false,
                         showMaskOnHover : false,
                         onBeforePaste :   (pastedValue, opts) => {
                             pastedValue = pastedValue.toLowerCase();
-                            return pastedValue.replace("mailto:", "");
+                            return pastedValue.replace('mailto:', '');
                         },
                         definitions :     {
-                            "*" : {
-                                validator : "[0-9A-Za-z!#$%&'*+/=?^_`{|}~\-]",
-                                casing :    "lower"
+                            '*' : {
+                                validator : '[0-9A-Za-z!#$%&\'*+/=?^_`{|}~\-]',
+                                casing :    'lower'
                             }
                         },
                         oncomplete :      (event) => {
@@ -77,16 +97,16 @@ $(() => {
     let validateForm = (fields) => {
 
         let valid      = true,
-            errorClass = "invalid";
+            errorClass = 'invalid';
 
         $.each(
             fields,
             (index, element) => {
 
-                let input = $(":input", element),
+                let input = $(':input', element),
                     field = $(element);
 
-                if (input.val() === "") {
+                if (input.val() === '') {
                     valid = false;
                     field.addClass(errorClass);
                 } else {
@@ -101,7 +121,7 @@ $(() => {
     };
 
     formRequiredInputs.on(
-        "input",
+        'input',
         () => {
 
             validateForm(formRequiredFields);
@@ -110,7 +130,7 @@ $(() => {
     );
 
     form.on(
-        "submit",
+        'submit',
         (event) => {
 
             event.preventDefault();
@@ -120,7 +140,7 @@ $(() => {
             if (valid) {
 
                 $.ajax(
-                    "/ajax/form.php",
+                    '/ajax/form.php',
                     {
                         data :    form.serialize(),
                         success : (response) => {
