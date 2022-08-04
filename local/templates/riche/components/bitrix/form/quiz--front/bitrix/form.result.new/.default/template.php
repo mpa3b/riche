@@ -23,13 +23,13 @@
 
     <h2><?= $arResult['arForm']['NAME'] ?></h2>
 
-    <? if (!empty($arResult["FORM_DESCRIPTION"])) : ?>
+    <? if (!empty($arResult["FORM_DESCRIPTION"])) { ?>
 
         <div class="details">
             <?= $arResult["FORM_DESCRIPTION"] ?>
         </div>
 
-    <? endif; ?>
+    <? } ?>
 
     <?= $arResult["FORM_HEADER"]; ?>
 
@@ -43,13 +43,13 @@
 
     <? } ?>
 
-    <? if (!empty($arResult["FORM_NOTE"])) : ?>
+    <? if (!empty($arResult["FORM_NOTE"])) { ?>
 
         <div class="note">
             <?= $arResult["FORM_NOTE"] ?>
         </div>
 
-    <? endif; ?>
+    <? } ?>
 
     <div class="fields">
 
