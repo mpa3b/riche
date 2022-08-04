@@ -27,7 +27,7 @@ $frame = $this->createFrame();
 
     <div class="wrapper">
 
-        <?php $frame->begin(); ?>
+        <? $frame->begin(); ?>
 
         <button class="transparent trigger button hide--on-desktop close">
             <i class="iconly close-simple"></i>
@@ -35,15 +35,15 @@ $frame = $this->createFrame();
 
         <ul class="menu root">
 
-            <?php foreach ($arResult as $arItem): ?>
+            <? foreach ($arResult as $arItem): ?>
                 <li>
                     <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
                 </li>
-            <?php endforeach; ?>
+            <? endforeach; ?>
 
         </ul>
 
-        <?php $frame->end(); ?>
+        <? $frame->end(); ?>
 
         <div class="on-mobile--only">
 

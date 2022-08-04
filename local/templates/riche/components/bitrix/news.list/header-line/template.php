@@ -26,22 +26,22 @@ $frame = $this->createFrame();
 
 ?>
 
-<?php if (!empty($arResult['ITEMS'])) { ?>
+<? if (!empty($arResult['ITEMS'])) { ?>
 
     <div class="header-line">
 
-        <?php $frame->begin(); ?>
+        <? $frame->begin(); ?>
 
         <div class="slider items">
 
-            <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
-                <div><?php echo htmlspecialchars($arItem['PREVIEW_TEXT']); ?></div>
-            <?php } ?>
+            <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
+                <div><?= htmlspecialchars($arItem['PREVIEW_TEXT']); ?></div>
+            <? } ?>
 
         </div>
 
-        <?php $frame->end(); ?>
+        <? $frame->end(); ?>
 
     </div>
 
-<?php } ?>
+<? } ?>

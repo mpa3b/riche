@@ -1,4 +1,4 @@
-<?php if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) die();
+<? if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) die();
 
 /** @global CMain $APPLICATION */
 /** @global CUser $USER */
@@ -19,19 +19,19 @@ if (!empty($arResult)) { ?>
 
     <nav class="menu--footer">
 
-        <?php $frame->begin(); ?>
+        <? $frame->begin(); ?>
 
-        <?php //@formatter:off ?>
+        <? //@formatter:off ?>
 
         <ul class="menu">
 
-            <?php $previousLevel = 0; ?>
+            <? $previousLevel = 0; ?>
 
-            <?php foreach ($arResult as $arItem) { ?>
+            <? foreach ($arResult as $arItem) { ?>
 
-            <?php if ($previousLevel and $arItem["DEPTH_LEVEL"] < $previousLevel) echo str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
+            <? if ($previousLevel and $arItem["DEPTH_LEVEL"] < $previousLevel) echo str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
 
-            <?php if ($arItem["IS_PARENT"]): ?>
+            <? if ($arItem["IS_PARENT"]): ?>
 
             <li>
 
@@ -39,25 +39,25 @@ if (!empty($arResult)) { ?>
 
                 <ul>
 
-                    <?php else: ?>
+                    <? else: ?>
 
                         <li>
                             <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
 
                         </li>
 
-                    <?php endif; ?>
+                    <? endif; ?>
 
-                    <?php $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
+                    <? $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
 
-            <?php } ?>
+            <? } ?>
 
         </ul>
 
-        <?php //@formatter:on ?>
+        <? //@formatter:on ?>
 
-                <?php $frame->end(); ?>
+                <? $frame->end(); ?>
 
     </nav>
 
-<?php } ?>
+<? } ?>

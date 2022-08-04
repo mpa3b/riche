@@ -35,7 +35,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
     <div class="basket--header-line">
 
-        <?php $frame->begin(); ?>
+        <? $frame->begin(); ?>
 
         <a href="<?= $arParams['PATH_TO_BASKET']; ?>?back_url=<?= $APPLICATION->GetCurUri(); ?>"
            title="<?= Template::pluralUnits($arResult['NUM_PRODUCTS'], 'товар'); ?>"
@@ -43,32 +43,32 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
             <i class="iconly bag"></i>
 
-            <?php if ($arParams['SHOW_NUM_PRODUCTS'] == "Y") { ?>
-                <span class="count"><?php if ($arResult['NUM_PRODUCTS'] > 0) echo $arResult['NUM_PRODUCTS']; ?></span>
-            <?php } ?>
+            <? if ($arParams['SHOW_NUM_PRODUCTS'] == "Y") { ?>
+                <span class="count"><? if ($arResult['NUM_PRODUCTS'] > 0) echo $arResult['NUM_PRODUCTS']; ?></span>
+            <? } ?>
 
         </a>
 
-        <?php $frame->end(); ?>
+        <? $frame->end(); ?>
 
-        <?php if ($arParams['SHOW_PRODUCTS']) { ?>
+        <? if ($arParams['SHOW_PRODUCTS']) { ?>
 
             <div class="dropdown">
 
-                <?php if (IS_AJAX && $cartUpdate) {
+                <? if (IS_AJAX && $cartUpdate) {
                     $APPLICATION->RestartBuffer();
                 } else {
                     $dropdownFrame = $this->createFrame();
                     $dropdownFrame->begin();
                 } ?>
 
-                <?php foreach ($arResult['CATEGORIES'] as $code => $arCategory) { ?>
+                <? foreach ($arResult['CATEGORIES'] as $code => $arCategory) { ?>
 
-                    <?php if (empty($arCategory)) break; ?>
+                    <? if (empty($arCategory)) break; ?>
 
                     <div class="<?= strtolower($code); ?> items">
 
-                        <?php foreach ($arCategory as $arItem) {
+                        <? foreach ($arCategory as $arItem) {
 
                             $picture_preload = CFile::ResizeImageGet(
                                 $arItem['PREVIEW_PICTURE'],
@@ -95,7 +95,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
                             ?>
 
                             <div
-                                class="item <?php if ($arItem['CAN_BUY'] !== 'Y') { ?>disabled<?php } ?> <?php if ($arItem['RESERVED'] == 'Y') { ?>reserved<?php } ?>"
+                                class="item <? if ($arItem['CAN_BUY'] !== 'Y') { ?>disabled<? } ?> <? if ($arItem['RESERVED'] == 'Y') { ?>reserved<? } ?>"
                                 data-id="<?= $arItem['ID']; ?>"
                                 data-product-id="<?= $arItem['PRODUCT_ID']; ?>">
 
@@ -104,10 +104,10 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
                                     <source srcset="<?= $picture['src']; ?>"
                                             type="<?= $picture['content_type']; ?>">
 
-                                    <?php if ($picture['webp_src']) { ?>
+                                    <? if ($picture['webp_src']) { ?>
                                         <source srcset="<?= $picture['webp_src']; ?>"
                                                 type="<?= $picture['webp_content_type']; ?>">
-                                    <?php } ?>
+                                    <? } ?>
 
                                     <img src="<?= $picture_preload['src']; ?>"
                                          alt="<?= htmlspecialchars($arItem['NAME']); ?>"
@@ -155,11 +155,11 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
                             </div>
 
-                        <?php } ?>
+                        <? } ?>
 
                     </div>
 
-                <?php } ?>
+                <? } ?>
 
                 <div class="bottom">
 
@@ -171,7 +171,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
                 <a href="<?= $arParams['PATH_TO_BASKET']; ?>"
                    class="button">Перейти корзину</a>
 
-                <?php if (IS_AJAX && $cartUpdate) {
+                <? if (IS_AJAX && $cartUpdate) {
                     die;
                 } else {
                     $dropdownFrame->end();
@@ -179,8 +179,8 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
             </div>
 
-        <?php } ?>
+        <? } ?>
 
     </div>
 
-<?php } ?>
+<? } ?>

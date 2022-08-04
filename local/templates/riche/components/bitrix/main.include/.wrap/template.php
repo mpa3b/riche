@@ -22,14 +22,12 @@ if ($arResult["FILE"] <> '') { ?>
 
     <div class="wrap <?= $arParams['AREA_FILE_SUFFIX']; ?>" data-area-name="<?= $arParams['AREA_FILE_SUFFIX']; ?>">
 
-        <?php $frame->begin(); ?>
+        <? $frame->begin(); ?>
 
-        <?php include($arResult["FILE"]); ?>
+        <? include($arResult["FILE"]); ?>
 
-        <?php $frame->end(); ?>
+        <? $frame->end(); ?>
 
     </div>
 
 <? }
-
-

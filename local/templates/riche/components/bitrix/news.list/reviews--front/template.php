@@ -27,17 +27,17 @@ $frame = $this->createFrame();
 
 ?>
 
-<?php if (!empty($arResult['ITEMS'])) { ?>
+<? if (!empty($arResult['ITEMS'])) { ?>
 
     <div class="reviews--front">
 
-        <?php $frame->begin(); ?>
+        <? $frame->begin(); ?>
 
         <div class="wrap">
 
             <div class="slider items">
 
-                <?php foreach ($arResult['ITEMS'] as $i => $arItem) {
+                <? foreach ($arResult['ITEMS'] as $i => $arItem) {
 
                     $authorImage = CFile::ResizeImageGet(
                         $arItem['DISPLAY_PROPERTIES']['AUTHOR_IMAGE']['VALUE'],
@@ -76,25 +76,25 @@ $frame = $this->createFrame();
 
                                 <picture>
 
-                                    <?php if (!empty($arItem['DISPLAY_PROPERTIES']['AUTHOR_IMAGE']['VALUE'])) { ?>
+                                    <? if (!empty($arItem['DISPLAY_PROPERTIES']['AUTHOR_IMAGE']['VALUE'])) { ?>
 
-                                        <?php if ($authorImage['webp_src']) { ?>
-                                            <source srcset="<?php echo $authorImage['webp_src']; ?>"
-                                                    type="<?php echo $authorImage['webp_content_type']; ?>"
-                                                    media="<?php echo Images::getMedia('mobile', true); ?>">
-                                        <?php } ?>
+                                        <? if ($authorImage['webp_src']) { ?>
+                                            <source srcset="<?= $authorImage['webp_src']; ?>"
+                                                    type="<?= $authorImage['webp_content_type']; ?>"
+                                                    media="<?= Images::getMedia('mobile', true); ?>">
+                                        <? } ?>
 
-                                        <source srcset="<?php echo $authorImage["src"]; ?>"
-                                                type="<?php echo $authorImage['content_type']; ?>"
-                                                media="<?php echo Images::getMedia('mobile', true); ?>">
+                                        <source srcset="<?= $authorImage["src"]; ?>"
+                                                type="<?= $authorImage['content_type']; ?>"
+                                                media="<?= Images::getMedia('mobile', true); ?>">
 
-                                        <img src="<?php echo $authorImagePreload['src']; ?>"
-                                             alt="<?php echo $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>"
+                                        <img src="<?= $authorImagePreload['src']; ?>"
+                                             alt="<?= $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>"
                                              loading="lazy">
 
-                                    <?php } else { ?>
+                                    <? } else { ?>
 
-                                        <img src="<?php echo Images::PLACEHOLDER; ?>">
+                                        <img src="<?= Images::PLACEHOLDER; ?>">
 
                                     <? } ?>
 
@@ -105,40 +105,40 @@ $frame = $this->createFrame();
                             <div>
 
                                 <div class="author--name">
-                                    <?php echo $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>
+                                    <?= $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>
                                 </div>
 
-                                <?php if (!empty($arItem['PROPERTIES']['RATING']['VALUE'])) { ?>
+                                <? if (!empty($arItem['PROPERTIES']['RATING']['VALUE'])) { ?>
 
                                     <div class="rating">
 
                                         <span class="stars">
                                             <? for ($i = 1; $i <= $arParams['RATING_MAX']; $i++) { ?>
-                                                <i class="iconly star <?php if ($i > $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']) echo ' empty'; ?>"></i>
-                                            <?php } ?>
+                                                <i class="iconly star <? if ($i > $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']) echo ' empty'; ?>"></i>
+                                            <? } ?>
                                         </span>
 
-                                        <span class="value"><?php echo $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']; ?></span>
+                                        <span class="value"><?= $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']; ?></span>
 
                                     </div>
 
-                                <?php } ?>
+                                <? } ?>
 
                             </div>
 
-                            <?php if (!empty($arItem['PROPERTIES']['DATE']['VALUE'])) { ?>
+                            <? if (!empty($arItem['PROPERTIES']['DATE']['VALUE'])) { ?>
 
                                 <div class="date">
-                                    <?php echo $date; ?>
+                                    <?= $date; ?>
                                 </div>
 
-                            <?php } ?>
+                            <? } ?>
 
                         </div>
 
-                        <?php if (!empty($arItem['PROPERTIES']['SKU']['VALUE'])) { ?>
-                            <h3><?php echo $sku['NAME']; ?></h3>
-                        <?php } ?>
+                        <? if (!empty($arItem['PROPERTIES']['SKU']['VALUE'])) { ?>
+                            <h3><?= $sku['NAME']; ?></h3>
+                        <? } ?>
 
                         <div class="content">
                             <?php
@@ -151,23 +151,23 @@ $frame = $this->createFrame();
                             ?>
                         </div>
 
-                        <?php if (!empty($arItem['PROPERTIES']['SKU']['VALUE'])) { ?>
+                        <? if (!empty($arItem['PROPERTIES']['SKU']['VALUE'])) { ?>
                             <div class="link">
-                                <a href="<?php echo $sku['URL']; ?>"
+                                <a href="<?= $sku['URL']; ?>"
                                    class="button primary">К товару</a>
                             </div>
-                        <?php } ?>
+                        <? } ?>
 
                     </div>
 
-                <?php } ?>
+                <? } ?>
 
             </div>
 
         </div>
 
-        <?php $frame->end(); ?>
+        <? $frame->end(); ?>
 
     </div>
 
-<?php } ?>
+<? } ?>

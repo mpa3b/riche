@@ -1,4 +1,4 @@
-<?php if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) die();
+<? if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) die();
 
 use Riche\Images;
 
@@ -23,13 +23,13 @@ $frame = $this->createFrame();
 
 <div class="banners--front--static">
 
-    <?php $frame->begin(); ?>
+    <? $frame->begin(); ?>
 
     <div class="wrap">
 
         <div class="items">
 
-            <?php foreach ($arResult['ITEMS'] as $i => $arItem) {
+            <? foreach ($arResult['ITEMS'] as $i => $arItem) {
 
                 if ($i == 0) {
 
@@ -167,40 +167,40 @@ $frame = $this->createFrame();
 
                         <div class="caption">
 
-                            <h3><?php echo $arItem['NAME']; ?></h3>
+                            <h3><?= $arItem['NAME']; ?></h3>
 
-                            <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+                            <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
                                 <div class="details">
-                                    <?php echo $arItem['PREVIEW_TEXT']; ?>
+                                    <?= $arItem['PREVIEW_TEXT']; ?>
                                 </div>
-                            <?php } ?>
+                            <? } ?>
 
-                            <?php if ($arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']) { ?>
+                            <? if ($arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']) { ?>
                                 <button
-                                    class="big action button primary"><?php echo $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?></button>
-                            <?php } ?>
+                                    class="big action button primary"><?= $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?></button>
+                            <? } ?>
 
                         </div>
 
-                        <?php if (!empty($arItem['DETAIL_PICTURE'])) { ?>
+                        <? if (!empty($arItem['DETAIL_PICTURE'])) { ?>
 
                             <picture class="hero-image">
 
-                                <?php if ($heroImageMobile['webp_src']) { ?>
+                                <? if ($heroImageMobile['webp_src']) { ?>
                                     <source srcset="<?= $heroImageMobile['webp_src']; ?>"
                                             type="<?= $heroImageMobile['webp_content_type']; ?>"
                                             media="<?= Images::getMedia('mobile', true); ?>">
-                                <?php } ?>
+                                <? } ?>
 
                                 <source srcset="<?= $heroImageMobile["src"]; ?>"
                                         type="<?= $heroImageMobile['content_type']; ?>"
                                         media="<?= Images::getMedia('mobile', true); ?>">
 
-                                <?php if ($heroImage['webp_src']) { ?>
+                                <? if ($heroImage['webp_src']) { ?>
                                     <source srcset="<?= $heroImage['webp_src']; ?>"
                                             type="<?= $heroImage['webp_content_type']; ?>"
                                             media="<?= Images::getMedia('mobile'); ?>">
-                                <?php } ?>
+                                <? } ?>
 
                                 <source srcset="<?= $heroImage["src"]; ?>"
                                         type="<?= $heroImage['content_type']; ?>"
@@ -211,29 +211,29 @@ $frame = $this->createFrame();
 
                             </picture>
 
-                        <?php } ?>
+                        <? } ?>
 
                     </div>
 
-                    <?php if (!empty($arItem['PROPERTIES']['BACKGROUND_IMAGE']['VALUE'])) { ?>
+                    <? if (!empty($arItem['PROPERTIES']['BACKGROUND_IMAGE']['VALUE'])) { ?>
 
                         <picture class="background-image">
 
-                            <?php if ($backgroundImageMobile['webp_src']) { ?>
+                            <? if ($backgroundImageMobile['webp_src']) { ?>
                                 <source srcset="<?= $backgroundImageMobile['webp_src']; ?>"
                                         type="<?= $backgroundImageMobile['webp_content_type']; ?>"
                                         media="<?= Images::getMedia('mobile', true); ?>">
-                            <?php } ?>
+                            <? } ?>
 
                             <source srcset="<?= $backgroundImage["src"]; ?>"
                                     type="<?= $backgroundImage['content_type']; ?>"
                                     media="<?= Images::getMedia('mobile', true); ?>">
 
-                            <?php if ($backgroundImage['webp_src']) { ?>
+                            <? if ($backgroundImage['webp_src']) { ?>
                                 <source srcset="<?= $backgroundImage['webp_src']; ?>"
                                         type="<?= $backgroundImage['webp_content_type']; ?>"
                                         media="<?= Images::getMedia('mobile'); ?>">
-                            <?php } ?>
+                            <? } ?>
 
                             <source srcset="<?= $backgroundImage["src"]; ?>"
                                     type="<?= $backgroundImage['content_type']; ?>"
@@ -243,16 +243,16 @@ $frame = $this->createFrame();
 
                         </picture>
 
-                    <?php } ?>
+                    <? } ?>
 
                 </div>
 
-            <?php } ?>
+            <? } ?>
 
         </div>
 
     </div>
 
-    <?php $frame->end(); ?>
+    <? $frame->end(); ?>
 
 </div>

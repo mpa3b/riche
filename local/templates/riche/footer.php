@@ -59,21 +59,21 @@ global $USER, $APPLICATION;
 
             <div id="page--footer--contact" class="two-fifths">
 
-                <?php if (Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory() == "") { ?>
+                <? if (Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory() == "") { ?>
 
-                    <img src="<?php echo SITE_TEMPLATE_PATH . '/images/logo--full.svg'; ?>"
+                    <img src="<?= SITE_TEMPLATE_PATH . '/images/logo--full.svg'; ?>"
                          class="logo"
                          loading="lazy">
 
-                <?php } else { ?>
+                <? } else { ?>
 
                     <a href="/">
-                        <img src="<?php echo SITE_TEMPLATE_PATH . '/images/logo--full.svg'; ?>"
+                        <img src="<?= SITE_TEMPLATE_PATH . '/images/logo--full.svg'; ?>"
                              class="logo"
                              loading="lazy">
                     </a>
 
-                <?php } ?>
+                <? } ?>
 
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:main.include",
@@ -147,7 +147,7 @@ global $USER, $APPLICATION;
         <div class="row">
 
             <div class="half">
-                <span>© RICHE, 2015 – <?php echo Date('Y'); ?> гг.</span>
+                <span>© RICHE, 2015 – <?= Date('Y'); ?> гг.</span>
             </div>
 
             <div class="half text-align--right">

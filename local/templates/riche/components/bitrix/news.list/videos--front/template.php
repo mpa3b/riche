@@ -29,17 +29,17 @@ $frame = $this->createFrame();
 
 ?>
 
-<?php if (!empty($arResult['ITEMS'])) { ?>
+<? if (!empty($arResult['ITEMS'])) { ?>
 
     <div class="videos--front">
 
-        <?php $frame->begin(); ?>
+        <? $frame->begin(); ?>
 
         <div class="wrap">
 
             <div class="slider items">
 
-                <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
+                <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
                     <?php
 
@@ -80,7 +80,7 @@ $frame = $this->createFrame();
 
                         <div class="wrapper">
 
-                            <a href="#video-<?php echo $arItem['ID']; ?>"
+                            <a href="#video-<?= $arItem['ID']; ?>"
                                class="modal--video"
                                rel="videos--front">
 
@@ -88,34 +88,34 @@ $frame = $this->createFrame();
 
                                 <picture>
 
-                                    <?php if (!empty($arItem['DETAIL_PICTURE'])) { ?>
+                                    <? if (!empty($arItem['DETAIL_PICTURE'])) { ?>
 
-                                        <?php if ($imageMobile['webp_src']) { ?>
-                                            <source srcset="<?php echo $imageMobile['webp_src']; ?>"
-                                                    type="<?php echo $imageMobile['webp_content_type']; ?>"
-                                                    media="<?php echo Images::getMedia('mobile', true); ?>">
-                                        <?php } ?>
+                                        <? if ($imageMobile['webp_src']) { ?>
+                                            <source srcset="<?= $imageMobile['webp_src']; ?>"
+                                                    type="<?= $imageMobile['webp_content_type']; ?>"
+                                                    media="<?= Images::getMedia('mobile', true); ?>">
+                                        <? } ?>
 
-                                        <source srcset="<?php echo $image["src"]; ?>"
-                                                type="<?php echo $image['content_type']; ?>"
-                                                media="<?php echo Images::getMedia('mobile', true); ?>">
+                                        <source srcset="<?= $image["src"]; ?>"
+                                                type="<?= $image['content_type']; ?>"
+                                                media="<?= Images::getMedia('mobile', true); ?>">
 
-                                        <?php if ($image['webp_src']) { ?>
-                                            <source srcset="<?php echo $image['webp_src']; ?>"
-                                                    type="<?php echo $image['webp_content_type']; ?>"
-                                                    media="<?php echo Images::getMedia('mobile'); ?>">
-                                        <?php } ?>
+                                        <? if ($image['webp_src']) { ?>
+                                            <source srcset="<?= $image['webp_src']; ?>"
+                                                    type="<?= $image['webp_content_type']; ?>"
+                                                    media="<?= Images::getMedia('mobile'); ?>">
+                                        <? } ?>
 
-                                        <source srcset="<?php echo $image["src"]; ?>"
-                                                type="<?php echo $image['content_type']; ?>"
-                                                media="<?php echo Images::getMedia('mobile'); ?>">
+                                        <source srcset="<?= $image["src"]; ?>"
+                                                type="<?= $image['content_type']; ?>"
+                                                media="<?= Images::getMedia('mobile'); ?>">
 
-                                        <img src="<?php echo $imagePreload['src']; ?>"
+                                        <img src="<?= $imagePreload['src']; ?>"
                                              loading="lazy">
 
-                                    <?php } else { ?>
+                                    <? } else { ?>
 
-                                        <img src="<?php echo Images::PLACEHOLDER; ?>" loading="lazy">
+                                        <img src="<?= Images::PLACEHOLDER; ?>" loading="lazy">
 
                                     <? } ?>
 
@@ -123,14 +123,14 @@ $frame = $this->createFrame();
 
                                 <div hidden>
 
-                                    <div id="video-<?php echo $arItem['ID']; ?>" class="video popup-video">
+                                    <div id="video-<?= $arItem['ID']; ?>" class="video popup-video">
 
                                         <video preload="auto" controls>
                                             <source
-                                                src="<?php echo $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                                                src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
                                         </video>
 
-                                        <?php /*
+                                        <? /*
 
                                         <button class="transparent button play">
                                             <i class="iconly play"></i>
@@ -153,14 +153,14 @@ $frame = $this->createFrame();
 
                     </div>
 
-                <?php } ?>
+                <? } ?>
 
             </div>
 
         </div>
 
-        <?php $frame->end(); ?>
+        <? $frame->end(); ?>
 
     </div>
 
-<?php } ?>
+<? } ?>
