@@ -5,43 +5,50 @@ $(() => {
         fields             = $('.field', form),
         formRequiredFields = $('.field.required', form),
         formRequiredInputs = $(':input', formRequiredFields),
-        errorClass         = 'invalid';
+        errorClass         = 'invalid',
+        slider             = $('.slider', element);
 
-    let quizSlider = tns(
-        {
-            container : '.quiz--front--new--default .slider',
-            items :     1,
-            slideBy :   1,
+    slider.each(
+        (index, element) => {
 
-            mode :      'gallery',
-            loop :      false,
-            mouseDrag : true,
+            tns(
+                {
+                    container : element,
+                    items :     1,
+                    slideBy :   1,
 
-            nav : false,
-//            nav : true,
-//            navPosition: 'bottom',
+                    mode :      'gallery',
+                    loop :      false,
+                    mouseDrag : true,
 
-            controls : false
+                    nav : false,
+                    //            nav : true,
+                    //            navPosition: 'bottom',
 
-//            prevButton : '.quiz--front--new button.prev',
-//            nextButton : '.quiz--front--new button.next'
+                    controls : false
+
+                    //            prevButton : '.quiz--front--new button.prev',
+                    //            nextButton : '.quiz--front--new button.next'
+                }
+            );
+
         }
     );
 
     form.on(
         'change',
-        () => {
+        (event) => {
 
-            quizSlider.goTo('next');
+
 
         }
     );
 
     $('button.next', form).on(
         'click',
-        () => {
+        (event) => {
 
-            quizSlider.goTo('next');
+
 
         }
     );
