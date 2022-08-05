@@ -18,11 +18,31 @@ $(() => {
             mouseDrag : true,
 
             nav : false,
+//            nav : true,
+//            navPosition: 'bottom',
 
-            controls : true,
+            controls : false
 
-            prevButton : '.quiz--front--new button.prev',
-            nextButton : '.quiz--front--new button.next'
+//            prevButton : '.quiz--front--new button.prev',
+//            nextButton : '.quiz--front--new button.next'
+        }
+    );
+
+    form.on(
+        'change',
+        () => {
+
+            quizSlider.goTo('next');
+
+        }
+    );
+
+    $('button.next', form).on(
+        'click',
+        () => {
+
+            quizSlider.goTo('next');
+
         }
     );
 
@@ -92,32 +112,6 @@ $(() => {
         }
     );
 
-    let validateForm = (fields) => {
-
-        let valid      = true,
-            errorClass = 'invalid';
-
-        $.each(
-            fields,
-            (index, element) => {
-
-                let input = $(':input', element),
-                    field = $(element);
-
-                if (input.val() === '') {
-                    valid = false;
-                    field.addClass(errorClass);
-                } else {
-                    field.removeClass(errorClass);
-                }
-
-            }
-        );
-
-        return valid;
-
-    };
-
     formRequiredInputs.on(
         'input',
         () => {
@@ -153,5 +147,31 @@ $(() => {
 
         }
     );
+
+    const validateForm = (fields) => {
+
+        let valid      = true,
+            errorClass = 'invalid';
+
+        $.each(
+            fields,
+            (index, element) => {
+
+                let input = $(':input', element),
+                    field = $(element);
+
+                if (input.val() === '') {
+                    valid = false;
+                    field.addClass(errorClass);
+                } else {
+                    field.removeClass(errorClass);
+                }
+
+            }
+        );
+
+        return valid;
+
+    };
 
 });

@@ -42,6 +42,14 @@
 
     }
 
+    .details {
+
+      button.next {
+        margin-top : var(--offset);
+      }
+
+    }
+
     .field {
       @media all and (min-width : $breakpoint_mobile) {
         flex-basis : 33.3333%;
@@ -63,6 +71,8 @@
     }
 
     .actions {
+      margin-top  : var(--offset);
+
       align-items : center;
 
       input[type="submit"] {

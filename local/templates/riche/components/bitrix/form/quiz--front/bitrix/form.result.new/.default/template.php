@@ -27,7 +27,8 @@
 
 ?>
 
-<div class="quiz--front--new--default">
+<div class="quiz--front--new--default <?= strtolower($arResult['WEB_FORM_NAME']); ?>"
+     data-webform-sid="<?= $arResult['WEB_FORM_NAME']; ?>">
 
     <div class="wrapper">
 
@@ -43,14 +44,20 @@
 
         <? } ?>
 
-        <h2><?= $arResult['arForm']['NAME'] ?></h2>
+        <h2><?= $arResult['arForm']['NAME']; ?></h2>
 
         <div class="slider">
 
             <? if (!empty($arResult["FORM_DESCRIPTION"])) { ?>
 
                 <div class="details">
-                    <?= $arResult["FORM_DESCRIPTION"] ?>
+
+                    <div>
+                        <?= $arResult["FORM_DESCRIPTION"]; ?>
+                    </div>
+
+                    <button class="wide big primary button next">Пройти опрос</button>
+
                 </div>
 
             <? } ?>
@@ -58,7 +65,7 @@
             <? if (!empty($arResult["FORM_NOTE"])) { ?>
 
                 <div class="note">
-                    <?= $arResult["FORM_NOTE"] ?>
+                    <?= $arResult["FORM_NOTE"]; ?>
                 </div>
 
             <? } ?>
@@ -85,7 +92,7 @@
                                     <input type="tel"
                                            id="<?= $sid; ?>"
                                            name="form_text_<?= $arField['ID']; ?>"
-                                           placeholder="<?= $arField['MESSAGE'] ?>"
+                                           placeholder="<?= $arField['MESSAGE']; ?>"
                                            <? if ($arQuestion['REQUIRED'] == 'Y') { ?>required<? } ?>
                                            value="<?= $arQuestion['VALUE']; ?>">
 
@@ -98,7 +105,7 @@
                                     <input type="text"
                                            id="<?= $sid; ?>"
                                            name="form_text_<?= $arField['ID']; ?>"
-                                           placeholder="<?= $arField['MESSAGE'] ?>"
+                                           placeholder="<?= $arField['MESSAGE']; ?>"
                                            <? if ($arQuestion['REQUIRED'] == 'Y') { ?>required<? } ?>
                                            value="<?= $arQuestion['VALUE']; ?>">
 
@@ -115,7 +122,7 @@
                                 <input type="text"
                                        id="<?= $sid; ?>"
                                        name="form_email_<?= $arField['ID']; ?>"
-                                       placeholder="<?= $arField['MESSAGE'] ?>"
+                                       placeholder="<?= $arField['MESSAGE']; ?>"
                                        <? if ($arQuestion['REQUIRED'] == 'Y') { ?>required<? } ?>
                                        value="<?= $arQuestion['VALUE']; ?>">
 
@@ -130,7 +137,7 @@
                                 <input type="url"
                                        id="<?= $sid; ?>"
                                        name="form_url_<?= $arField['ID']; ?>"
-                                       placeholder="<?= $arField['MESSAGE'] ?>"
+                                       placeholder="<?= $arField['MESSAGE']; ?>"
                                        <? if ($arQuestion['REQUIRED'] == 'Y') { ?>required<? } ?>
                                        value="<?= $arQuestion['VALUE']; ?>">
 
@@ -145,7 +152,7 @@
                                 <input type="date"
                                        id="<?= $sid; ?>"
                                        name="form_date_<?= $arField['ID']; ?>"
-                                       placeholder="<?= $arField['MESSAGE'] ?>"
+                                       placeholder="<?= $arField['MESSAGE']; ?>"
                                        <? if ($arQuestion['REQUIRED'] == 'Y') { ?>required<? } ?>
                                        value="<?= $arQuestion['VALUE']; ?>">
 
@@ -159,7 +166,7 @@
 
                                 <textarea name="form_textarea_<?= $arField['ID']; ?>"
                                           id="<?= $sid; ?>"
-                                          placeholder="<?= $arField['MESSAGE'] ?>"
+                                          placeholder="<?= $arField['MESSAGE']; ?>"
                                           <? if ($arQuestion['REQUIRED'] == 'Y') { ?>required<? } ?>></textarea>
 
                                 <? break;
@@ -186,7 +193,7 @@
                                            name="form_radio_<?= $sid; ?>"
                                            <? if ($arQuestion['REQUIRED'] == 'Y') { ?>required<? } ?>
                                            value="<?= $arField['ID']; ?>">
-                                    <label for="radio-<?= $arField['ID']; ?>"><?= $arField['MESSAGE'] ?></label>
+                                    <label for="radio-<?= $arField['ID']; ?>"><?= $arField['MESSAGE']; ?></label>
                                 </div>
 
                                 <? break;
@@ -203,7 +210,7 @@
                                            name="checkbox_<?= $sid; ?>[]"
                                            <? if ($arQuestion['REQUIRED'] == 'Y') { ?>required<? } ?>
                                            value="<?= $arField['ID']; ?>">
-                                    <label for="checkbox-<?= $arField['ID']; ?>"><?= $arField['MESSAGE'] ?></label>
+                                    <label for="checkbox-<?= $arField['ID']; ?>"><?= $arField['MESSAGE']; ?></label>
                                 </div>
 
                                 <? break;
@@ -218,7 +225,7 @@
                                     <select id="<?= $sid; ?>" name="form_multiselect_<?= $sid; ?>[]"
                                     <? if ($arField['FIELD_TYPE'] == 'multiselect') { ?> multiple <? } ?>>
                                 <? } ?>
-                                <option value="<?= $arField['ID']; ?>"><?= $arField['MESSAGE'] ?></option>
+                                <option value="<?= $arField['ID']; ?>"><?= $arField['MESSAGE']; ?></option>
                                 <? if ($i + 1 == count($arQuestion['STRUCTURE'])) { ?>
                                     </select>
                                 <? } ?>
@@ -269,6 +276,8 @@
 
         </div>
 
+        <? /*
+
         <div class="slider--controls">
 
             <button class="prev transparent button">
@@ -280,6 +289,10 @@
             </button>
 
         </div>
+
+        */ ?>
+
+        <?= $arResult["FORM_FOOTER"]; ?>
 
         <? if (!empty($arResult['FORM_IMAGE'])) { ?>
 
@@ -318,37 +331,34 @@
 
             ?>
 
+            <picture class="wrapper--background">
+
+                <? if ($formImageMobile['webp_src']) { ?>
+                    <source srcset="<?= $formImageMobile['webp_src']; ?>"
+                            type="<?= $formImageMobile['webp_content_type']; ?>"
+                            media="<?= Images::getMedia('mobile', true); ?>">
+                <? } ?>
+
+                <source srcset="<?= $formImage["src"]; ?>"
+                        type="<?= $formImage['content_type']; ?>"
+                        media="<?= Images::getMedia('mobile', true); ?>">
+
+                <? if ($formImage['webp_src']) { ?>
+                    <source srcset="<?= $formImage['webp_src']; ?>"
+                            type="<?= $formImage['webp_content_type']; ?>"
+                            media="<?= Images::getMedia('mobile'); ?>">
+                <? } ?>
+
+                <source srcset="<?= $formImage["src"]; ?>"
+                        type="<?= $formImage['content_type']; ?>"
+                        media="<?= Images::getMedia('mobile'); ?>">
+
+                <img src="<?= $formImagePreload['src']; ?>"
+                     loading="lazy">
+
+            </picture>
 
         <? } ?>
-
-        <?= $arResult["FORM_FOOTER"]; ?>
-
-        <picture class="wrapper--background">
-
-            <? if ($formImageMobile['webp_src']) { ?>
-                <source srcset="<?= $formImageMobile['webp_src']; ?>"
-                        type="<?= $formImageMobile['webp_content_type']; ?>"
-                        media="<?= Images::getMedia('mobile', true); ?>">
-            <? } ?>
-
-            <source srcset="<?= $formImage["src"]; ?>"
-                    type="<?= $formImage['content_type']; ?>"
-                    media="<?= Images::getMedia('mobile', true); ?>">
-
-            <? if ($formImage['webp_src']) { ?>
-                <source srcset="<?= $formImage['webp_src']; ?>"
-                        type="<?= $formImage['webp_content_type']; ?>"
-                        media="<?= Images::getMedia('mobile'); ?>">
-            <? } ?>
-
-            <source srcset="<?= $formImage["src"]; ?>"
-                    type="<?= $formImage['content_type']; ?>"
-                    media="<?= Images::getMedia('mobile'); ?>">
-
-            <img src="<?= $formImagePreload['src']; ?>"
-                 loading="lazy">
-
-        </picture>
 
     </div>
 
