@@ -6,6 +6,10 @@
 
   .tns {
 
+    &-slider {
+      display : flex;
+    }
+
     &-item {
       box-sizing : border-box;
       padding    : 0 var(--offset--half);

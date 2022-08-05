@@ -59,6 +59,7 @@ i.iconly:before,
 [class*="iconly"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family             : "Iconly" !important;
+  color                   : inherit;
   speak                   : never;
   font-style              : normal;
   font-variant            : normal;

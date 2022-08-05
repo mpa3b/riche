@@ -1,4 +1,5 @@
 @import "../../../../vars";
+@import "../../../../mixins";
 
 .quiz--front {
 
@@ -7,7 +8,10 @@
     .wrapper {
       border-radius : var(--border-radius--2x);
       padding       : var(--offset--2x);
+      overflow      : hidden;
       position      : relative;
+
+      color         : var(--color--base--inverse);
 
       &--background {
         position : absolute;
@@ -18,6 +22,22 @@
         height   : 100%;
 
         z-index  : -10;
+
+        img {
+          display         : block;
+          width           : 100%;
+          height          : 100%;
+          object-position : center;
+          object-fit      : cover;
+        }
+      }
+
+      .slider {
+
+        &--controls {
+          padding-top : var(--offset);
+        }
+
       }
 
     }
@@ -26,12 +46,11 @@
       @media all and (min-width : $breakpoint_mobile) {
         flex-basis : 33.3333%;
       }
+
       flex-grow  : 1;
       display    : block;
       box-sizing : border-box;
-      padding    : 1rem;
 
-      input,
       textarea {
         display : block;
         width   : 100%;
@@ -69,6 +88,15 @@
         }
 
       }
+    }
+
+  }
+
+  form {
+
+    .radio-input {
+      display        : flex;
+      flex-direction : row;
     }
 
   }

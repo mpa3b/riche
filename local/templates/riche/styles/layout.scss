@@ -10,7 +10,7 @@
     z-index          : 5000;
     background-color : var(--color--white);
 
-    box-shadow: var(--box-shadow);
+    box-shadow       : var(--box-shadow);
 
     > .wrap {
       margin-top    : 0;
@@ -121,18 +121,13 @@
           flex-direction : row;
 
           a {
-            display       : block;
-
-            border        : var(--border--thin);
-            border-radius : var(--border-radius--2x);
-
-            margin-right  : var(--offset--half);
-            padding       : var(--offset--half);
+            display      : block;
+            margin-right : var(--offset);
 
             img {
               display         : block;
-              width           : 1rem;
-              height          : 1rem;
+              width           : 1.5rem;
+              height          : 1.5rem;
               object-fit      : contain;
               object-position : center;
             }

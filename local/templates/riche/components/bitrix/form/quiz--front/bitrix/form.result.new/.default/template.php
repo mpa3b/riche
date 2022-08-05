@@ -1,10 +1,16 @@
 <?
 
-    use Riche\Images;
-
     if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED != true) {
         die();
     }
+
+    use Riche\Images;
+    use Riche\Template;
+
+    $this->addExternalJs(Template::ASSETS . '/tiny-slider/dist/min/tiny-slider.js');
+    $this->addExternalCss(Template::ASSETS . '/tiny-slider/dist/tiny-slider.css');
+
+    $this->addExternalJs(Template::ASSETS . '/inputmask/dist/jquery.inputmask.js');
 
     /** @var array $arParams */
     /** @var array $arResult */
@@ -61,7 +67,8 @@
 
                 <? $sid = strtolower($sid); ?>
 
-                <div class="field <?= $sid;  if ($arQuestion['REQUIRED'] == 'Y') { ?> required<? } ?>">
+                <div class="field <?= $sid;
+                    if ($arQuestion['REQUIRED'] == 'Y') { ?> required<? } ?>">
 
                     <? foreach ($arQuestion['STRUCTURE'] as $i => $arField) { ?>
 
@@ -72,7 +79,7 @@
                                 <? if (strpos(strtolower($sid), 'phone')) { ?>
 
                                     <? if (!empty($arQuestion['CAPTION'])) { ?>
-                                        <label for="<?= $sid; ?>"><?= $arQuestion['CAPTION']; ?></label>
+                                        <h3 for="<?= $sid; ?>"><?= $arQuestion['CAPTION']; ?></h3>
                                     <? } ?>
 
                                     <input type="tel"
@@ -102,7 +109,7 @@
                             case 'email': ?>
 
                                 <? if (!empty($arQuestion['CAPTION'])) { ?>
-                                    <label for="<?= $sid; ?>"><?= $arQuestion['CAPTION']; ?></label>
+                                    <h3 for="<?= $sid; ?>"><?= $arQuestion['CAPTION']; ?></h3>
                                 <? } ?>
 
                                 <input type="text"
@@ -117,7 +124,7 @@
                             case 'url': ?>
 
                                 <? if (!empty($arQuestion['CAPTION'])) { ?>
-                                    <label for="<?= $sid; ?>"><?= $arQuestion['CAPTION']; ?></label>
+                                    <h3 for="<?= $sid; ?>"><?= $arQuestion['CAPTION']; ?></h3>
                                 <? } ?>
 
                                 <input type="url"
@@ -132,7 +139,7 @@
                             case 'date': ?>
 
                                 <? if (!empty($arQuestion['CAPTION'])) { ?>
-                                    <label for="<?= $sid; ?>"><?= $arQuestion['CAPTION']; ?></label>
+                                    <h3 for="<?= $sid; ?>"><?= $arQuestion['CAPTION']; ?></h3>
                                 <? } ?>
 
                                 <input type="date"
@@ -147,7 +154,7 @@
                             case 'textarea': ?>
 
                                 <? if (!empty($arQuestion['CAPTION'])) { ?>
-                                    <label for="<?= $sid; ?>"><?= $arQuestion['CAPTION']; ?></label>
+                                    <h3 for="<?= $sid; ?>"><?= $arQuestion['CAPTION']; ?></h3>
                                 <? } ?>
 
                                 <textarea name="form_textarea_<?= $arField['ID']; ?>"
@@ -170,7 +177,7 @@
                             case 'radio': ?>
 
                                 <? if ($i == 0 && !empty($arQuestion['CAPTION'])) { ?>
-                                    <label><?= $arQuestion['CAPTION']; ?></label>
+                                    <h3><?= $arQuestion['CAPTION']; ?></h3>
                                 <? } ?>
 
                                 <div class="radio-input option">
@@ -187,7 +194,7 @@
                             case 'checkbox': ?>
 
                                 <? if ($i == 0 && !empty($arQuestion['CAPTION'])) { ?>
-                                    <label><?= $arQuestion['CAPTION']; ?></label>
+                                    <h3><?= $arQuestion['CAPTION']; ?></h3>
                                 <? } ?>
 
                                 <div class="checkbox-input option">
@@ -238,7 +245,8 @@
                                name="captcha_sid"
                                value="<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>"/>
 
-                        <img src="/bitrix/tools/captcha.php?captcha_sid=<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>"/>
+                        <img
+                            src="/bitrix/tools/captcha.php?captcha_sid=<?= htmlspecialcharsbx($arResult["CAPTCHACode"]); ?>"/>
 
                         <?= GetMessage("FORM_CAPTCHA_FIELD_TITLE") ?>
 
@@ -263,9 +271,13 @@
 
         <div class="slider--controls">
 
-            <button class="prev iconly left"></button>
+            <button class="prev transparent button">
+                <i class="iconly arrow-left-2"></i>
+            </button>
 
-            <button class="next iconly right"></button>
+            <button class="next transparent button">
+                <i class="iconly arrow-right-2"></i>
+            </button>
 
         </div>
 
@@ -306,40 +318,38 @@
 
             ?>
 
-            <picture class="wrapper--background">
-
-                <? if ($formImageMobile['webp_src']) { ?>
-                    <source srcset="<?= $formImageMobile['webp_src']; ?>"
-                            type="<?= $formImageMobile['webp_content_type']; ?>"
-                            media="<?= Images::getMedia('mobile', true); ?>">
-                <? } ?>
-
-                <source srcset="<?= $formImage["src"]; ?>"
-                        type="<?= $formImage['content_type']; ?>"
-                        media="<?= Images::getMedia('mobile', true); ?>">
-
-                <? if ($formImage['webp_src']) { ?>
-                    <source srcset="<?= $formImage['webp_src']; ?>"
-                            type="<?= $formImage['webp_content_type']; ?>"
-                            media="<?= Images::getMedia('mobile'); ?>">
-                <? } ?>
-
-                <source srcset="<?= $formImage["src"]; ?>"
-                        type="<?= $formImage['content_type']; ?>"
-                        media="<?= Images::getMedia('mobile'); ?>">
-
-                <img src="<?= $formImagePreload['src']; ?>"
-                     alt="<?= $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>"
-                     loading="lazy">
-
-            </picture>
 
         <? } ?>
 
         <?= $arResult["FORM_FOOTER"]; ?>
 
-    </div>
+        <picture class="wrapper--background">
 
-    <? d($arResult); ?>
+            <? if ($formImageMobile['webp_src']) { ?>
+                <source srcset="<?= $formImageMobile['webp_src']; ?>"
+                        type="<?= $formImageMobile['webp_content_type']; ?>"
+                        media="<?= Images::getMedia('mobile', true); ?>">
+            <? } ?>
+
+            <source srcset="<?= $formImage["src"]; ?>"
+                    type="<?= $formImage['content_type']; ?>"
+                    media="<?= Images::getMedia('mobile', true); ?>">
+
+            <? if ($formImage['webp_src']) { ?>
+                <source srcset="<?= $formImage['webp_src']; ?>"
+                        type="<?= $formImage['webp_content_type']; ?>"
+                        media="<?= Images::getMedia('mobile'); ?>">
+            <? } ?>
+
+            <source srcset="<?= $formImage["src"]; ?>"
+                    type="<?= $formImage['content_type']; ?>"
+                    media="<?= Images::getMedia('mobile'); ?>">
+
+            <img src="<?= $formImagePreload['src']; ?>"
+                 loading="lazy">
+
+        </picture>
+
+    </div>
 
 </div>
