@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42786700c165a5f836c037f58e1dadf7",
+    "content-hash": "d378d781c59f8b4b5790ff20693a0a3b",
     "packages": [
         {
             "name": "andreyryabin/sprint.editor",
@@ -1244,7 +1244,8 @@
     "prefer-lowest": false,
     "platform": {
         "ext-fileinfo": "*",
-        "ext-gd": "*"
+        "ext-gd": "*",
+        "ext-curl": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"

@@ -5,4 +5,3 @@ $arDirProperties = Array(
    "TITLE" => "RICHE",
    "ROBOTS" => "index, follow"
 );
-?>

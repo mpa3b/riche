@@ -2,7 +2,10 @@
 
     require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 
-    global $APPLICATION, $USER;
+    /**
+     * @global $APPLICATION \CMain
+     * @global $USER \CUser
+     */
 
     use Bitrix\Main\Application;
     use Riche\Template;

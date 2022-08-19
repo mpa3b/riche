@@ -27,7 +27,7 @@
 
 ?>
 
-<div class="quiz--front--new--default <?= strtolower($arResult['WEB_FORM_NAME']); ?>"
+<div class="quiz--front--new--default"
      data-webform-sid="<?= $arResult['WEB_FORM_NAME']; ?>">
 
     <div class="wrapper">
