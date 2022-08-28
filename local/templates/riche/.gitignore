@@ -1,5 +1,11 @@
-./styles/*.css
-./styles/*.css.map
+*.css
+*.css.map
 
-./scripts/*.min.js
-./scripts/*.js.map
+/styles/*.css
+/styles/*.css.map
+
+/scripts/*.min.js
+/scripts/*.js.map
+
+/components/*.css
+/components/*.css.map
