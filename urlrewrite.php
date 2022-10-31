@@ -1,12 +1,5 @@
 <?php
 $arUrlRewrite=array (
-  7 => 
-  array (
-    'CONDITION' => '#^/api/([a-zA-Z0-9]+)/([a-zA-Z0-9\\.]+)/([a-zA-Z0-9\\.]+)/([a-zA-Z0-9]+)/?.*#',
-    'RULE' => 'action=$1:$2.api.$3.$4',
-    'PATH' => '/bitrix/services/main/ajax.php',
-    'SORT' => 100,
-  ),
   2 => 
   array (
     'CONDITION' => '#^/online/([\\.\\-0-9a-zA-Z]+)(/?)([^/]*)#',

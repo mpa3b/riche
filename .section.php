@@ -1,7 +1,9 @@
 <?
-$sSectionName = "RICHE — green and sexy";
-$arDirProperties = Array(
-   "description" => "Косметика RICHE",
-   "TITLE" => "RICHE",
-   "ROBOTS" => "index, follow"
+$sSectionName = 'Главная';
+$arDirProperties = array(
+	'title' => 'RICHE COSMETICS',
+	'description' => 'RICHE COSMETICS',
+	'keywords' => 'RICHE COSMETICS, косметика, уход',
+	'robots' => 'index, follow'
 );
+?>

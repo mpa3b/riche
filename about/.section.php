@@ -1,6 +1,0 @@
-<?
-$sSectionName    = "О бренде";
-$arDirProperties = [
-
-];
-?>

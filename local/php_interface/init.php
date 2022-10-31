@@ -23,6 +23,6 @@
 
     // region LOCAL ASSETS
 
-    defin('LOCAL_ASSETS', '/local/assets');
+    define('LOCAL_ASSETS', '/local/assets');
 
     // endregion

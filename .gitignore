@@ -1,14 +1,32 @@
 /bitrix/
 /upload/
 
-/local/assets
-/local/vendor
+/local/assets/
+/local/vendor/
+/local/bin/
 
 /local/modules/sprint.*
-
-/node_modules
 
 /.idea
 
 *.css.map
 *.js.map
+
+!/bitrix/php_interface/
+/bitrix/php_interface/dbconn.php
+
+yandex_*.html
+google*.html
+sitemap*.xml
+composer.phar
+restore.php
+
+*.log
+*.sql
+*.txt
+*.xml
+*.dt
+*.swp
+*.swo
+*.DS_Store
+*.gitignore
