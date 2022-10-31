@@ -23,14 +23,14 @@ global $USER, $APPLICATION;
 
                 <? if (Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory() == "") { ?>
 
-                    <img src="<?= SITE_TEMPLATE_PATH . '/images/logo--full.svg'; ?>"
+                    <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo--full.svg'"
                          class="logo"
                          loading="lazy">
 
                 <? } else { ?>
 
                     <a href="/">
-                        <img src="<?= SITE_TEMPLATE_PATH . '/images/logo--full.svg'; ?>"
+                        <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo--full.svg"
                              class="logo"
                              loading="lazy">
                     </a>
@@ -122,6 +122,8 @@ global $USER, $APPLICATION;
     </div>
 
 </div>
+
+<?php $APPLICATION->ShowBodyScripts(); ?>
 
 </body>
 </html>

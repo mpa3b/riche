@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <?php
+
     if (!defined('B_PROLOG_INCLUDED') or B_PROLOG_INCLUDED !== true) {
         die();
     }
 
-    global $USER, $APPLICATION;
+    /* @global $APPLICATION \CMain */
+
+    /* @global $USER \CUser */
 
     use Bitrix\Main\Application;
     use Bitrix\Main\Loader;
     use Bitrix\Main\Page\Asset;
+    use Riche\Head;
     use Riche\PreloadLinks;
     use Riche\Template;
 
     Loader::registerAutoLoadClasses(
         null,
         [
-            'Riche\PreloadLinks' => SITE_TEMPLATE_PATH . '/classes/PreloadLinks.php',
-            'Riche\Template'     => SITE_TEMPLATE_PATH . '/classes/Template.php',
-            'Riche\Images'       => SITE_TEMPLATE_PATH . '/classes/Images.php',
+            'Riche\Breakpoint' => SITE_TEMPLATE_PATH . '/classes/Breakpoint.php',
+            'Riche\Head'       => SITE_TEMPLATE_PATH . '/classes/Head.php',
+            'Riche\Thumb'      => SITE_TEMPLATE_PATH . '/classes/Thumb.php',
         ]
     );
 
     $assets = Asset::getInstance();
 
-    $assets->addCss(Template::ASSETS . '/normalize-css/normalize.css');
+    $assets->addCss(LOCAL_ASSET . '/normalize-css/normalize.css');
 
-    $assets->addJs(Template::ASSETS . '/js-cookie/dist/js.cookie.min.js');
-    $assets->addJs(Template::ASSETS . '/vanilla-lazyload/dist/lazyload.min.js');
+    $assets->addJs(LOCAL_ASSET . '/js-cookie/dist/js.cookie.min.js');
+    $assets->addJs(LOCAL_ASSET . '/vanilla-lazyload/dist/lazyload.min.js');
 
-    $assets->addJs(Template::ASSETS . '/jquery/dist/jquery.min.js');
-    $assets->addJs(Template::ASSETS . '/jquery-sticky/jquery.sticky.js');
+    $assets->addJs(LOCAL_ASSET . '/jquery/dist/jquery.min.js');
+    $assets->addJs(LOCAL_ASSET . '/jquery-sticky/jquery.sticky.js');
 
     $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
-
     $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
 
     $assets->addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
 
     $assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
+
     $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
     $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/iconly/style.css', true);
 
     $assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
 
-    $assets->addCss(SITE_TEMPLATE_PATH . '/styles/colorbox.css', true);
-
-    PreloadLinks::addHeadPreloadAsset(SITE_TEMPLATE_PATH . '/images/logo.svg');
+    Head::addHeadPreloadAsset(SITE_TEMPLATE_PATH . '/images/logo.svg');
 
     $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
@@ -62,44 +64,13 @@
 
     $request = Application::getInstance()->getContext()->getRequest();
 
-    $cartUpdate = $request->getPost('cartUpdate');
-
-    $arCartParams = [
-        "PATH_TO_CATALOG" => "/shop/",
-        "PATH_TO_BASKET"  => "/cart/",
-        "PATH_TO_ORDER"   => "/cart/checkout/",
-
-        "SHOW_NUM_PRODUCTS" => "Y",
-        "SHOW_TOTAL_PRICE"  => "Y",
-        "SHOW_PRODUCTS"     => "Y",
-        "SHOW_SUMMARY"      => "Y",
-
-        "HIDE_ON_BASKET_PAGES" => "Y",
-
-        "COMPOSITE_FRAME_MODE" => "A",
-        "COMPOSITE_FRAME_TYPE" => "AUTO"
-    ];
-
-    if (IS_AJAX && $cartUpdate) {
-
-        $APPLICATION->IncludeComponent(
-            'bitrix:sale.basket.basket.line',
-            'header',
-            $arCartParams
-        );
-
-    }
-
 ?>
-<html lang="<?php
-    echo LANGUAGE_ID ?>">
+<html lang="<?php echo LANGUAGE_ID ?>">
 <head>
 
-    <title><?php
-            $APPLICATION->ShowTitle(); ?></title>
+    <title><?php $APPLICATION->ShowTitle(); ?></title>
 
-    <meta http-equiv="Content-Type" content="text/html; charset=<?php
-        echo strtolower(SITE_CHARSET); ?>">
+    <meta http-equiv="Content-Type" content="text/html; charset=<?php echo strtolower(SITE_CHARSET); ?>">
     <meta name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, viewport-fit=cover">
 
@@ -115,36 +86,28 @@
 
     ?>
 
-    <?php
-        //region  favicon ?>
+    <?php //region  favicon ?>
 
-    <link rel="shortcut icon" type="image/x-icon" href="<?php
-        echo SITE_TEMPLATE_PATH; ?>/favicons/favicon.ico"/>
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/favicon.ico"/>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php
-        echo SITE_TEMPLATE_PATH; ?>/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/apple-touch-icon.png">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php
-        echo SITE_TEMPLATE_PATH; ?>/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php
-        echo SITE_TEMPLATE_PATH; ?>/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/favicon-16x16.png">
 
-    <link rel="mask-icon" href="<?php
-        echo SITE_TEMPLATE_PATH; ?>/favicons/safari-pinned-tab.svg" color="#00a300">
+    <link rel="mask-icon" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/safari-pinned-tab.svg" color="#00a300">
 
-    <link rel="manifest" href="<?php
-        echo SITE_TEMPLATE_PATH; ?>/site.webmanifest">
+    <link rel="manifest" href="<?php echo SITE_TEMPLATE_PATH; ?>/site.webmanifest">
 
     <meta name="msapplication-TileColor" content="#00a300">
     <meta name="theme-color" content="#ffffff">
 
-    <?php
-        //endregion ?>
+    <?php //endregion ?>
 
     <?php
 
-        $APPLICATION->ShowHeadScripts();
         $APPLICATION->ShowCSS(true, false);
+        $APPLICATION->ShowHeadScripts();
 
     ?>
 
@@ -152,40 +115,9 @@
 
 </head>
 
-<body id="page" class="<?php
-    echo $pageHtmlClasses; ?>">
+<body id="page" class="<?php echo $pageHtmlClasses; ?>">
 
-<?php
-    $APPLICATION->ShowPanel(); ?>
-
-<?php
-    if ($APPLICATION->GetDirProperty('HIDE_HEADER_STRING') !== 'Y') { ?>
-
-        <?php
-        $APPLICATION->IncludeComponent(
-            'bitrix:news.list',
-            'header-line',
-            [
-                'IBLOCK_TYPE'               => 'CONTENT',
-                'IBLOCK_ID'                 => 15,
-                'NEWS_COUNT'                => 5,
-                'SORT_BY1'                  => 'ACTIVE_FROM ',
-                'SORT_ORDER1'               => 'DESC ',
-                'CHECK_DATES'               => 'Y',
-                'SET_TITLE'                 => 'N',
-                'SET_BROWSER_TITLE'         => 'N',
-                'INCLUDE_IBLOCK_INTO_CHAIN' => 'N',
-                'ADD_SECTIONS_CHAIN'        => 'N',
-
-                'CACHE_TYPE' => 'A',
-
-                "COMPOSITE_FRAME_MODE" => "A",
-                "COMPOSITE_FRAME_TYPE" => "AUTO"
-            ]
-        ); ?>
-
-    <?php
-    } ?>
+<?php $APPLICATION->ShowPanel(); ?>
 
 <div id="page--header">
 
@@ -195,28 +127,23 @@
 
             <div id="page--header--logo" class="quarter">
 
-                <?php
-                    if ($currentDirectoryPath == "") { ?>
+                <?php if ($currentDirectoryPath == "") { ?>
 
-                        <img src="<?php
-                            echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+                        <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
                              loading="eager"
                              alt="RICHE"
                              class="logo">
 
-                    <?php
-                    } else { ?>
+                <?php } else { ?>
 
                         <a href="/">
-                            <img src="<?php
-                                echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+                            <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
                                  loading="eager"
                                  alt="RICHE"
                                  class="logo">
                         </a>
 
-                    <?php
-                    } ?>
+                <?php } ?>
 
             </div>
 
@@ -248,8 +175,7 @@
 
             <div id="page--header--buttons" class="quarter">
 
-                <?php
-                    $APPLICATION->IncludeComponent(
+                <?php $APPLICATION->IncludeComponent(
                         "bitrix:search.form",
                         "header",
                         [
@@ -259,13 +185,6 @@
                             "COMPOSITE_FRAME_MODE" => "A",
                             "COMPOSITE_FRAME_TYPE" => "AUTO",
                         ]
-                    ); ?>
-
-                <?php
-                    $APPLICATION->IncludeComponent(
-                        'bitrix:sale.basket.basket.line',
-                        'header',
-                        $arCartParams
                     ); ?>
 
             </div>
@@ -278,18 +197,15 @@
 
 <div id="page--main">
 
-    <?php
-        if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' && $currentDirectoryPath !== '') { ?>
+    <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' && $currentDirectoryPath !== '') { ?>
 
             <header id="page--main--header">
 
                 <div class="wrap">
 
-                    <?php
-                        if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
+                    <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
 
-                            <?php
-                            $APPLICATION->IncludeComponent(
+                            <?php $APPLICATION->IncludeComponent(
                                 "bitrix:breadcrumb",
                                 "",
                                 [
@@ -304,14 +220,11 @@
                                 ["HIDE_ICONS" => "Y"]
                             ); ?>
 
-                        <?php
-                        } ?>
+                    <?php } ?>
 
-                    <h1><?php
-                            $APPLICATION->ShowTitle(); ?></h1>
+                    <h1><?php $APPLICATION->ShowTitle(); ?></h1>
 
-                    <?php
-                        $APPLICATION->IncludeComponent(
+                    <?php $APPLICATION->IncludeComponent(
                             'bitrix:main.include',
                             '',
                             [
@@ -329,7 +242,6 @@
 
             </header>
 
-        <?php
-        } ?>
+        <?php } ?>
 
     <div id="page--main--content">
