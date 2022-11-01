@@ -295,10 +295,10 @@
                 ];
 
                 $cart['items'][$id]['images'] = [
-                    'preload' => $this->getBasketItemImage($id, '32x32'),
-                    'mobile'  => $this->getBasketItemImage($id, '48x48'),
-                    'tablet'  => $this->getBasketItemImage($id, '64x64'),
-                    'desktop' => $this->getBasketItemImage($id, '96x96'),
+                    'preload' => $this->getBasketItemImage($id, '32x32', BX_RESIZE_IMAGE_EXACT),
+                    'mobile'  => $this->getBasketItemImage($id, '48x48', BX_RESIZE_IMAGE_EXACT),
+                    'tablet'  => $this->getBasketItemImage($id, '64x64', BX_RESIZE_IMAGE_EXACT),
+                    'desktop' => $this->getBasketItemImage($id, '96x96', BX_RESIZE_IMAGE_EXACT),
                 ];
 
             }
@@ -307,21 +307,27 @@
 
         }
 
-        private function getSizes(string $size) {
+        private function getSizes(string $size)
+        {
 
-            $sizes = explode($size, 'x');
+            $dimensions = explode($size, 'x');
+
+            $sizes = [
+                'width'  => $dimensions[0],
+                'height' => $dimensions[1],
+            ];
 
             return $sizes;
 
         }
 
-        private function getBasketItemImage(int $id, array $sizes, mixed $mode)
+        private function getBasketItemImage(int $id, string $size, mixed $mode)
         {
 
             if (!$id) {
                 return false;
             }
-            if (!$sizes) {
+            if (!$size) {
 
                 $sizes = [
                     'width'  => 64,
@@ -329,11 +335,29 @@
                 ];
 
             }
+            else {
+
+                $sizes = self::getSizes($size);
+
+            }
             if (!$mode) {
 
                 $mode = BX_RESIZE_IMAGE_EXACT;
 
             }
+
+            $imageId = 0;
+
+            $image = \CFile::ResizeImageGet(
+                $imageId,
+                $sizes,
+                $mode,
+                false,
+                [],
+                ''
+            );
+
+            return $image;
 
         }
 
