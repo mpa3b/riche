@@ -42,7 +42,6 @@
     "ext-curl": "*",
     "ext-fileinfo": "*",
     "ext-gd": "*",
-    "andreyryabin/sprint.editor": "^3.24",
     "bitrix-expert/tools": "^1.5",
     "denx-b/bitrix-vue-component": "^1.1",
     "hafsoft/php-minifier": "^0.9.1",
@@ -60,6 +59,7 @@
     "webarchitect609/bitrix-cache": "^1.11",
     "webarchitect609/bitrix-user-type": "^0.7.3",
     "wikimedia/composer-merge-plugin": "^2.0",
+    "andreyryabin/sprint.editor": "^3.24",
     "worksolutions/bitrix-reduce-migrations": "^1.1"
   },
   "require-dev": {
