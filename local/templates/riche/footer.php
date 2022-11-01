@@ -68,7 +68,7 @@ global $USER, $APPLICATION;
                         "DELAY"                 => "N",
                         "MAX_LEVEL"             => 2,
                         "MENU_CACHE_GET_VARS"   => [""],
-                        "MENU_CACHE_TIME"       => Template::CACHE_TIME,
+                        "MENU_CACHE_TIME"       => CACHE_TTL,
                         "MENU_CACHE_TYPE"       => "A",
                         "MENU_CACHE_USE_GROUPS" => "N",
                         "ROOT_MENU_TYPE"        => "footer",

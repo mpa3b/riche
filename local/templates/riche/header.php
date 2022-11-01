@@ -26,13 +26,13 @@
 
     $assets = Asset::getInstance();
 
-    $assets->addCss(LOCAL_ASSET . '/normalize-css/normalize.css');
+    $assets->addCss(LOCAL_ASSETS . '/normalize-css/normalize.css');
 
-    $assets->addJs(LOCAL_ASSET . '/js-cookie/dist/js.cookie.min.js');
-    $assets->addJs(LOCAL_ASSET . '/vanilla-lazyload/dist/lazyload.min.js');
+    $assets->addJs(LOCAL_ASSETS . '/js-cookie/dist/js.cookie.min.js');
+    $assets->addJs(LOCAL_ASSETS . '/vanilla-lazyload/dist/lazyload.min.js');
 
-    $assets->addJs(LOCAL_ASSET . '/jquery/dist/jquery.min.js');
-    $assets->addJs(LOCAL_ASSET . '/jquery-sticky/jquery.sticky.js');
+    $assets->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.min.js');
+    $assets->addJs(LOCAL_ASSETS . '/jquery-sticky/jquery.sticky.js');
 
     $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
     $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
@@ -158,7 +158,7 @@
                             "DELAY"                 => "N",
                             "MAX_LEVEL"             => 1,
                             "MENU_CACHE_GET_VARS"   => [""],
-                            "MENU_CACHE_TIME"       => Template::CACHE_TIME,
+                            "MENU_CACHE_TIME"       => CACHE_TTL,
                             "MENU_CACHE_TYPE"       => "A",
                             "MENU_CACHE_USE_GROUPS" => "N",
                             "ROOT_MENU_TYPE"        => "main",
