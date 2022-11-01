@@ -7,8 +7,6 @@
 /local/vendor/
 /local/bin/
 
-/local/modules/sprint.*
-
 *.css.map
 *.js.map
 
