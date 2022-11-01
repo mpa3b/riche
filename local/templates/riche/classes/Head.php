@@ -56,14 +56,10 @@ class Head
      *
      * @param $url
      */
-    public static function addHeadPreloadAsset(string $url, string $type): void
+    public static function addHeadPreloadAsset(string $url): void
     {
 
-        if(!$type) {
-
-            $type = self::getAssetType($url);
-
-        }
+        $type = self::getAssetType($url);
 
         Asset::getInstance()->addString('<link rel="preload" href="' . $url . '" as="' . $type . '" >');
 
@@ -74,14 +70,10 @@ class Head
      *
      * @param $url
      */
-    public static function addHeadPrefetchAsset(string $url, string $type): void
+    public static function addHeadPrefetchAsset(string $url): void
     {
 
-        if(!$type) {
-
-            $type = self::getAssetType($url);
-
-        }
+        $type = self::getAssetType($url);
 
         Asset::getInstance()->addString('<link rel="prefetch" href="' . $url . '" as="' . $type . '">');
 
