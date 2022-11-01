@@ -2,9 +2,6 @@
 
 namespace Sprint\Editor;
 
-use CIBlockProperty;
-use CModule;
-
 class Task0003 extends Upgrade
 {
     public function __construct()
@@ -14,7 +11,7 @@ class Task0003 extends Upgrade
 
         $this->setDescription(GetMessage('SPRINT_EDITOR_LONG_TEXT_DESC'));
 
-        CModule::IncludeModule('iblock');
+        \CModule::IncludeModule('iblock');
     }
 
     public function execute()
@@ -63,7 +60,7 @@ class Task0003 extends Upgrade
     {
         global $DB;
 
-        $dbres = CIBlockProperty::GetList(
+        $dbres = \CIBlockProperty::GetList(
             ['SORT' => 'ASC'], [
                 'PROPERTY_TYPE' => 'S',
                 'USER_TYPE'     => $propertyType,

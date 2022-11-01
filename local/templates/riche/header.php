@@ -110,8 +110,6 @@
 
     ?>
 
-    </noindex>
-
 </head>
 
 <body id="page" class="<?php echo $pageHtmlClasses; ?>">
@@ -124,71 +122,71 @@
 
         <div class="row">
 
-            <div id="page--header--logo" class="quarter">
+                <div id="page--header--logo" class="quarter">
 
-                <?php if ($currentDirectoryPath == "") { ?>
+                    <?php if ($currentDirectoryPath == "") { ?>
 
-                        <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
-                             loading="eager"
-                             alt="RICHE"
-                             class="logo">
-
-                <?php } else { ?>
-
-                        <a href="/">
                             <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
                                  loading="eager"
                                  alt="RICHE"
                                  class="logo">
-                        </a>
 
-                <?php } ?>
+                    <?php } else { ?>
+
+                            <a href="/">
+                                <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+                                     loading="eager"
+                                     alt="RICHE"
+                                     class="logo">
+                            </a>
+
+                    <?php } ?>
+
+                </div>
+
+                <div id="page--header--menu" class="half">
+
+                    <?php
+                        $APPLICATION->IncludeComponent(
+                            "bitrix:menu",
+                            "header",
+                            [
+                                "ALLOW_MULTI_SELECT"    => "N",
+                                "CHILD_MENU_TYPE"       => "local",
+                                "DELAY"                 => "N",
+                                "MAX_LEVEL"             => 1,
+                                "MENU_CACHE_GET_VARS"   => [""],
+                                "MENU_CACHE_TIME"       => CACHE_TTL,
+                                "MENU_CACHE_TYPE"       => "A",
+                                "MENU_CACHE_USE_GROUPS" => "N",
+                                "ROOT_MENU_TYPE"        => "main",
+                                "USE_EXT"               => "N",
+                                "CACHE_SELECTED_ITEMS"  => "N",
+
+                                "COMPOSITE_FRAME_MODE" => "A",
+                                "COMPOSITE_FRAME_TYPE" => "AUTO"
+                            ]
+                        ); ?>
+
+                </div>
+
+                <div id="page--header--buttons" class="quarter">
+
+                    <?php $APPLICATION->IncludeComponent(
+                            "bitrix:search.form",
+                            "header",
+                            [
+                                "USE_SUGGEST" => "N",
+                                "PAGE"        => "/search/",
+
+                                "COMPOSITE_FRAME_MODE" => "A",
+                                "COMPOSITE_FRAME_TYPE" => "AUTO",
+                            ]
+                        ); ?>
+
+                </div>
 
             </div>
-
-            <div id="page--header--menu" class="half">
-
-                <?php
-                    $APPLICATION->IncludeComponent(
-                        "bitrix:menu",
-                        "header",
-                        [
-                            "ALLOW_MULTI_SELECT"    => "N",
-                            "CHILD_MENU_TYPE"       => "local",
-                            "DELAY"                 => "N",
-                            "MAX_LEVEL"             => 1,
-                            "MENU_CACHE_GET_VARS"   => [""],
-                            "MENU_CACHE_TIME"       => CACHE_TTL,
-                            "MENU_CACHE_TYPE"       => "A",
-                            "MENU_CACHE_USE_GROUPS" => "N",
-                            "ROOT_MENU_TYPE"        => "main",
-                            "USE_EXT"               => "N",
-                            "CACHE_SELECTED_ITEMS"  => "N",
-
-                            "COMPOSITE_FRAME_MODE" => "A",
-                            "COMPOSITE_FRAME_TYPE" => "AUTO"
-                        ]
-                    ); ?>
-
-            </div>
-
-            <div id="page--header--buttons" class="quarter">
-
-                <?php $APPLICATION->IncludeComponent(
-                        "bitrix:search.form",
-                        "header",
-                        [
-                            "USE_SUGGEST" => "N",
-                            "PAGE"        => "/search/",
-
-                            "COMPOSITE_FRAME_MODE" => "A",
-                            "COMPOSITE_FRAME_TYPE" => "AUTO",
-                        ]
-                    ); ?>
-
-            </div>
-
-        </div>
 
     </div>
 
@@ -198,49 +196,45 @@
 
     <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' && $currentDirectoryPath !== '') { ?>
 
-            <header id="page--main--header">
+        <header id="page--main--header" class="wrap">
 
-                <div class="wrap">
-
-                    <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
-
-                            <?php $APPLICATION->IncludeComponent(
-                                "bitrix:breadcrumb",
-                                "",
-                                [
-                                    "PATH"       => "",
-                                    "SITE_ID"    => SITE_ID,
-                                    "START_FROM" => 0,
-
-                                    "COMPOSITE_FRAME_MODE" => "A",
-                                    "COMPOSITE_FRAME_TYPE" => "AUTO",
-                                ],
-                                false,
-                                ["HIDE_ICONS" => "Y"]
-                            ); ?>
-
-                    <?php } ?>
-
-                    <h1><?php $APPLICATION->ShowTitle(); ?></h1>
+            <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
 
                     <?php $APPLICATION->IncludeComponent(
-                            'bitrix:main.include',
-                            '',
-                            [
-                                "AREA_FILE_SHOW"      => "sect",
-                                "AREA_FILE_SUFFIX"    => "header",
-                                "AREA_FILE_RECURSIVE" => "N",
+                        "bitrix:breadcrumb",
+                        "",
+                        [
+                            "PATH"       => "",
+                            "SITE_ID"    => SITE_ID,
+                            "START_FROM" => 0,
 
-                                "COMPOSITE_FRAME_MODE" => "A",
-                                "COMPOSITE_FRAME_TYPE" => "AUTO",
-                            ],
-                            false
-                        ); ?>
+                            "COMPOSITE_FRAME_MODE" => "A",
+                            "COMPOSITE_FRAME_TYPE" => "AUTO",
+                        ],
+                        false,
+                        ["HIDE_ICONS" => "Y"]
+                    ); ?>
 
-                </div>
+            <?php } ?>
 
-            </header>
+            <h1><?php $APPLICATION->ShowTitle(); ?></h1>
 
-        <?php } ?>
+            <?php $APPLICATION->IncludeComponent(
+                    'bitrix:main.include',
+                    '',
+                    [
+                        "AREA_FILE_SHOW"      => "sect",
+                        "AREA_FILE_SUFFIX"    => "header",
+                        "AREA_FILE_RECURSIVE" => "N",
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO",
+                    ],
+                    false
+                ); ?>
+
+        </header>
+
+    <?php } ?>
 
     <div id="page--main--content">

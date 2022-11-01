@@ -1,7 +1,7 @@
 <?php
 /** @var CUpdater $updater */
 
-if ($updater && $updater instanceof CUpdater) {
+if ($updater && $updater instanceof \CUpdater) {
     //тут нельзя использовать классы модуля, так как их может не быть в обновлении
 
     if (!function_exists('sprint_editor_rmdir')) {

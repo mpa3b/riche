@@ -96,6 +96,19 @@
       <excludeFolder url="file://$MODULE_DIR$/bitrix" />
       <excludeFolder url="file://$MODULE_DIR$/bin" />
       <excludeFolder url="file://$MODULE_DIR$/migrations" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/denx-b/bitrix-vue-component" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/webarchitect609/bitrix-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/webarchitect609/bitrix-orm-tools" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/webarchitect609/bitrix-user-type" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/bitrix-expert/tools" />
+      <excludeFolder url="file://$MODULE_DIR$/local/vendor/anahkiasen/html-object" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
