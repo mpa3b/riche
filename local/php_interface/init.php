@@ -13,20 +13,13 @@
 
     // endregion
 
-    // region LOCAL ASSETS
+    // region CONST
 
     const LOCAL_ASSETS = '/local/assets';
 
     const CACHE_TTL = 60 * 60 * 24 * 3;
     const CART_URL  = '/cart/';
     const ORDER_URL = '/order/';
-
-    // endregion
-
-    // region IS_AJAX
-
-    if (Application::getInstance()->getContext()->getRequest()->isAjaxRequest()) {
-        define('IS_AJAX', true);
-    }
+    const SHOP_URL  = '/shop/';
 
     // endregion

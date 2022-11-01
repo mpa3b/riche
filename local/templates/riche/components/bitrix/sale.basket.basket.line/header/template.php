@@ -55,7 +55,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
             <div class="dropdown">
 
-                <? if (IS_AJAX && $cartUpdate) {
+                <? if ($request->isAjaxRequest() && $cartUpdate) {
                     $APPLICATION->RestartBuffer();
                 } else {
                     $dropdownFrame = $this->createFrame();
@@ -171,7 +171,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
                 <a href="<?= $arParams['PATH_TO_BASKET']; ?>"
                    class="button">Перейти корзину</a>
 
-                <? if (IS_AJAX && $cartUpdate) {
+                <? if ($request->isAjaxRequest() && $cartUpdate) {
                     die;
                 } else {
                     $dropdownFrame->end();
