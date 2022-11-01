@@ -15,8 +15,6 @@ class Thumb
         self::$JPEG_QUALITY = Option::get('main', 'image_resize_quality');
         self::$JPEG_QUALITY_PRELOAD = self::$JPEG_QUALITY / 2;
 
-        self::$thumbCache = Cache::createInstance();
-
     }
 
     /**
@@ -30,65 +28,10 @@ class Thumb
      */
     const PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
 
-    /**
-     * Превращение файла в строку для встраивания в тело документа при помощи кодирования base64 с указанием типа.
-     * И кешируем.
-     *
-     * @param mixed $path
-     *
-     * @return string
-     *
-     * @todo проверить
-     * @todo обеспечить кеширование с разбиением по страницам, т.е. имя кеша берётся на основе текущего пути.
-     *
-     */
-
-    static Cache $thumbCache;
-
-    const thumbsCacheName = 'thumbs';
-    const thumbsCacheTtl  = 36000;
-
-    public static function getUri(string $path): string
-    {
-
-        if (self::$thumbCache->initCache(self::thumbsCacheTtl, self::thumbsCacheName)) {
-
-            $thumbs = self::$thumbCache->getVars();
-
-            $paths = array_keys((array)$thumbs);
-
-            if (in_array($path, $paths)) {
-
-                $uri = $thumbs[$path];
-
-            }
-            else {
-
-                $uri = self::makeUri($path);
-
-                $thumbs[$path] = $uri;
-
-                self::$thumbCache->endDataCache($thumbs);
-
-            }
-
-        }
-        elseif (self::$thumbCache->startDataCache()) {
-
-            $thumbs[$path] = self::makeUri($path);
-
-            self::$thumbCache->endDataCache($thumbs);
-
-        }
-
-        return $uri;
-
-    }
-
     private static function makeUri(string $path): string
     {
 
-        $file = self::_root() . $path;
+        $file = Loader::getDocumentRoot() . $path;
 
         $type = mime_content_type($file);
         $base64 = base64_encode(file_get_contents($file));
@@ -96,17 +39,6 @@ class Thumb
 
         return $uri;
 
-    }
-
-    /**
-     * Обертка над глобальной переменной
-     *
-     * @return string $_SERVER['DOCUMENT_ROOT']
-     */
-    private static function _root()
-    {
-
-        return Loader::getDocumentRoot() . DIRECTORY_SEPARATOR;
     }
 
     /**
