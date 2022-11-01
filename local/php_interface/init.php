@@ -2,6 +2,7 @@
 
     require_once $_SERVER['DOCUMENT_ROOT'] . "/local/vendor/autoload.php";
 
+    use Bitrix\Main\Application;
     use Bitrix\Main\Config\Option;
 
     // region глобальная константа DEBUG
@@ -17,7 +18,15 @@
     const LOCAL_ASSETS = '/local/assets';
 
     const CACHE_TTL = 60 * 60 * 24 * 3;
-    const CART_URL = '/cart/';
+    const CART_URL  = '/cart/';
     const ORDER_URL = '/order/';
+
+    // endregion
+
+    // region IS_AJAX
+
+    if (Application::getInstance()->getContext()->getRequest()->isAjaxRequest()) {
+        define('IS_AJAX', true);
+    }
 
     // endregion

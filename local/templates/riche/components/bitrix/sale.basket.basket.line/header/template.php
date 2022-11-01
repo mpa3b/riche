@@ -3,7 +3,7 @@
 if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) die();
 
 use Bitrix\Main\Application;
-use Riche\Images;
+use Riche\Thumb;
 use Riche\PreloadLinks;
 use Riche\Template;
 
@@ -72,25 +72,25 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
                             $picture_preload = CFile::ResizeImageGet(
                                 $arItem['PREVIEW_PICTURE'],
-                                Images::calculateImageSize(32, 1),
+                                Thumb::calculateImageSize(32, 1),
                                 BX_RESIZE_IMAGE_PROPORTIONAL,
                                 false,
                                 [],
                                 false,
-                                Images::JPEG_QUALITY_PRELOAD,
+                                Thumb::$JPEG_QUALITY_PRELOAD,
                             );
 
                             $picture = CFile::ResizeImageGet(
                                 $arItem['PREVIEW_PICTURE'],
-                                Images::calculateImageSize(64, 1),
+                                Thumb::calculateImageSize(64, 1),
                                 BX_RESIZE_IMAGE_PROPORTIONAL,
                                 false,
                                 [],
                                 false,
-                                Images::JPEG_QUALITY,
+                                Thumb::$JPEG_QUALITY,
                             );
 
-                            Images::getWebP($picture);
+                            Thumb::getWebP($picture);
 
                             ?>
 
