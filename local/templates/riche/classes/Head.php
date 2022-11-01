@@ -11,25 +11,6 @@ class Head
 {
 
     /**
-     * Экземпляр класса Asset
-     *
-     * @var
-     */
-    private static $assetInstance;
-
-    /**
-     * Инициализация
-     *
-     * @return void
-     */
-    public static function __init(): void
-    {
-
-        self::$assetInstance = Asset::getInstance();
-
-    }
-
-    /**
      * Перечень MIME-типов содержимого
      */
     private const MIME_TYPES
@@ -184,9 +165,7 @@ class Head
     public static function addHeadPreloadAsset(string $url): void
     {
 
-        $type = self::getAssetType($url);
-
-        self::$assetInstance->addString('<link rel="preload" href="' . $url . '" as="' . $type . '" >');
+        Asset::getInstance()->addString('<link rel="preload" href="' . $url . '" as="' . self::getAssetType($url) . '" >');
 
     }
 
@@ -198,9 +177,7 @@ class Head
     public static function addHeadPrefetchAsset(string $url): void
     {
 
-        $type = self::getAssetType($url);
-
-        self::$assetInstance->addString('<link rel="prefetch" href="' . $url . '" as="' . $type . '">');
+        Asset::getInstance()->addString('<link rel="prefetch" href="' . $url . '" as="' . self::getAssetType($url) . '">');
 
     }
 
@@ -216,7 +193,7 @@ class Head
 
         $domain = parse_url($url, PHP_URL_SCHEME) . '//' . parse_url($url, PHP_URL_HOST);
 
-        self::$assetInstance->addString('<link rel="preconnect" href="' . $domain . '">');
+        Asset::getInstance()->addString('<link rel="preconnect" href="' . $domain . '">');
 
     }
 
@@ -230,7 +207,7 @@ class Head
     public static function addPrerenderLink($url): void
     {
 
-        self::$assetInstance->addString('<link rel="prerender" href="' . $url . '">');
+        Asset::getInstance()->addString('<link rel="prerender" href="' . $url . '">');
 
     }
 

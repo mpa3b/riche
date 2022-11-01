@@ -12,9 +12,8 @@
     use Bitrix\Main\Application;
     use Bitrix\Main\Loader;
     use Bitrix\Main\Page\Asset;
+
     use Riche\Head;
-    use Riche\PreloadLinks;
-    use Riche\Template;
 
     Loader::registerAutoLoadClasses(
         null,

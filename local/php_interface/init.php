@@ -7,22 +7,13 @@
     // region глобальная константа DEBUG
 
     if (Option::get('main', 'update_devsrv') == 'Y') {
-        $debug = true;
+        define('DEBUG', true);
     }
-    else {
-        $debug = false;
-    }
-
-    /**
-     * @const IS_DEBUG  Константа, определяющая режим работы сайта: отладочный, обычный.
-     *               Значение задаётся через опцию "версия для отладки" в настройках обновления Битрикс.
-     */
-    define('IS_DEBUG', $debug);
 
     // endregion
 
     // region LOCAL ASSETS
 
-    define('LOCAL_ASSETS', '/local/assets');
+    const LOCAL_ASSETS = '/local/assets';
 
     // endregion
