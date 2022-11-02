@@ -168,8 +168,8 @@
 
                     <div class="bottom">
 
-                        <p>Итого <?= Units::plural($arResult['NUM_PRODUCTS'], 'товар'); ?> на сумму: <span
-                                class="nowrap"><?= $arResult['TOTAL_PRICE']; ?></span></p>
+                        <p>Итого <span class="nowrap"><?= Units::plural($arResult['NUM_PRODUCTS'], 'товар'); ?></span>
+                           на сумму: <span class="nowrap"><?= $arResult['TOTAL_PRICE']; ?></span></p>
 
                     </div>
 

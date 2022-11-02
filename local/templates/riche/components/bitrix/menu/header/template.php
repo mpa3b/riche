@@ -9,7 +9,7 @@
     /** @global CMain $APPLICATION */
     /** @global CUser $USER */
     /** @global CDatabase $DB */
-    /** @var CBitrixComponentTemeplate $this */
+    /** @var \CBitrixComponentTemeplate $this */
     /** @var string $templateName */
     /** @var string $templateFile */
     /** @var string $templateFolder */
