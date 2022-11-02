@@ -3,8 +3,8 @@ return array(
     'run' => array(
         'name' => 'WorkSolutions. Reduce Migrations',
         'report' => array(
-            'completed' => 'Òåñòîâ',
-            'assertions' => 'Ïğîâåğîê'
+            'completed' => 'Ğ¢ĞµÑÑ‚Ğ¾Ğ²',
+            'assertions' => 'ĞŸÑ€Ğ¾Ğ²ĞµÑ€Ğ¾Ğº'
         )
     ),
     'cases' => array(

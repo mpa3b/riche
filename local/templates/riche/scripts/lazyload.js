@@ -18,6 +18,15 @@ window.addEventListener(
                 }
             );
 
+        $(document).on(
+            'ajaxComplete',
+            () => {
+
+                lazyImage.update();
+
+            }
+        );
+
     }
 );
 

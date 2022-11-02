@@ -1,15 +1,19 @@
 <?php
 
-if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
+    if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+        die();
+    }
 
-use Bitrix\Main\Application;
-use Riche\Template;
+    use Bitrix\Main\Application;
+    use Riche\Template;
 
-global $USER, $APPLICATION;
+    global $USER, $APPLICATION;
+
+    $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
 ?>
 
-    </div>
+</div>
 
 </div>
 
@@ -21,7 +25,7 @@ global $USER, $APPLICATION;
 
             <div id="page--footer--contact" class="two-fifths">
 
-                <? if (Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory() == "") { ?>
+                <?php if ($currentDirectoryPath == "/") { ?>
 
                     <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo--full.svg"
                          class="logo"

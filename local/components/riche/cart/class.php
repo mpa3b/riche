@@ -34,7 +34,7 @@
 
         /**
          * Объект корзины
-         * @var \Bitrix\Sale\BasketBase
+         * @var \Bitrix\Sale\Basket
          */
         private Basket $cart;
         /**
@@ -61,7 +61,9 @@
             $this->catalogProvider = CatalogProvider::getDefaultProviderName();
 
             $fUser      = Fuser::getId();
-            $this->cart = Basket::loadItemsForFUser($fUser, $this->getSiteId());
+            $siteId = $this->getSiteId();
+
+            $this->cart = Basket::loadItemsForFUser($fUser, $siteId);
 
             $this->includeComponentTemplate(); // сюда будет уходить скорее всего только статическая заглушка
 
@@ -181,7 +183,7 @@
         public function deleteAction(int $id) : void
         {
 
-            if ($item = $this->cart->getExistsItem(self::catalog, $id)) {
+            if ($item = $this->cart->getItemById(self::catalog, $id)) {
 
                 $item->delete();
 
@@ -359,6 +361,9 @@
 
             return $image;
 
+
         }
 
     }
+
+    //\Bitrix\Main\Engine\Response\ResizedImage::createByImageId($imageId, 100, 100);

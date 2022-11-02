@@ -1,3 +1,59 @@
-$breakpoint_mobile       : 578px;
-$breakpoint_desktop      : 992px;
-$breakpoint_desktop_wide : 1200px;
+//region  breakpoints
+
+$breakpointSmall      : 340px;
+$breakpointMobile     : 560px;
+$breakpointTablet     : 780px;
+$breakpointDesktop    : 980px;
+$breakpointWide       : 1360px;
+
+// endregion
+
+// region breakpoint mixins
+
+@mixin Small {
+  @media (max-width : $breakpointSmall) {
+    @content;
+  }
+}
+
+@mixin Mobiles {
+  @media (max-width : $breakpointMobile) {
+    @content;
+  }
+}
+
+@mixin Tablets {
+  @media (min-width : $breakpointMobile) and (max-width : $breakpointDesktop) {
+    @content;
+  }
+}
+
+@mixin Desktop {
+  @media (min-width : $breakpointDesktop) {
+    @content;
+  }
+}
+
+@mixin Wide {
+  @media (min-width : $breakpointWide) {
+    @content;
+  }
+}
+
+// endregion
+
+// region colors
+
+$colors               : (
+        "gray" : #bdbdbd,
+        "pink" : #ff94d4,
+        "red" : #ff8282,
+        "yellow": #f9ff93,
+        "green" : #98ffb1,
+        "blue" : #9ac2ff,
+        "violet" : #cfa8ff
+);
+
+$opacity              : 0.5;
+
+// endregion

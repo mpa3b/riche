@@ -4,8 +4,6 @@ if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) die();
 
 use Bitrix\Main\Application;
 use Riche\Thumb;
-use Riche\PreloadLinks;
-use Riche\Template;
 
 /** @var array $arParams */
 /** @var array $arResult */

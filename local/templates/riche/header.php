@@ -12,7 +12,6 @@
     use Bitrix\Main\Application;
     use Bitrix\Main\Loader;
     use Bitrix\Main\Page\Asset;
-
     use Riche\Head;
 
     Loader::registerAutoLoadClasses(
@@ -40,6 +39,7 @@
     $assets->addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
 
     $assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
+    $assets->addCss(SITE_TEMPLATE_PATH . '/styles/components.css');
 
     $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
     $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/iconly/style.css', true);
@@ -50,7 +50,7 @@
 
     $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
-    if ($currentDirectoryPath == '') {
+    if ($currentDirectoryPath == '/') {
 
         $pageHtmlClasses = 'front';
 
@@ -122,71 +122,84 @@
 
         <div class="row">
 
-                <div id="page--header--logo" class="quarter">
+            <div id="page--header--logo" class="quarter">
 
-                    <?php if ($currentDirectoryPath == "") { ?>
+                <?php if ($currentDirectoryPath == "/") { ?>
 
-                            <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
-                                 loading="eager"
-                                 alt="RICHE"
-                                 class="logo">
+                    <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+                         loading="eager"
+                         alt="RICHE"
+                         class="logo">
 
-                    <?php } else { ?>
+                <?php } else { ?>
 
-                            <a href="/">
-                                <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
-                                     loading="eager"
-                                     alt="RICHE"
-                                     class="logo">
-                            </a>
+                    <a href="/">
+                        <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+                             loading="eager"
+                             alt="RICHE"
+                             class="logo">
+                    </a>
 
-                    <?php } ?>
-
-                </div>
-
-                <div id="page--header--menu" class="half">
-
-                    <?php
-                        $APPLICATION->IncludeComponent(
-                            "bitrix:menu",
-                            "header",
-                            [
-                                "ALLOW_MULTI_SELECT"    => "N",
-                                "CHILD_MENU_TYPE"       => "local",
-                                "DELAY"                 => "N",
-                                "MAX_LEVEL"             => 1,
-                                "MENU_CACHE_GET_VARS"   => [""],
-                                "MENU_CACHE_TIME"       => CACHE_TTL,
-                                "MENU_CACHE_TYPE"       => "A",
-                                "MENU_CACHE_USE_GROUPS" => "N",
-                                "ROOT_MENU_TYPE"        => "main",
-                                "USE_EXT"               => "N",
-                                "CACHE_SELECTED_ITEMS"  => "N",
-
-                                "COMPOSITE_FRAME_MODE" => "A",
-                                "COMPOSITE_FRAME_TYPE" => "AUTO"
-                            ]
-                        ); ?>
-
-                </div>
-
-                <div id="page--header--buttons" class="quarter">
-
-                    <?php $APPLICATION->IncludeComponent(
-                            "bitrix:search.form",
-                            "header",
-                            [
-                                "USE_SUGGEST" => "N",
-                                "PAGE"        => "/search/",
-
-                                "COMPOSITE_FRAME_MODE" => "A",
-                                "COMPOSITE_FRAME_TYPE" => "AUTO",
-                            ]
-                        ); ?>
-
-                </div>
+                <?php } ?>
 
             </div>
+
+            <div id="page--header--menu" class="half">
+
+                <?php
+                    $APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "header",
+                        [
+                            "ALLOW_MULTI_SELECT"    => "N",
+                            "CHILD_MENU_TYPE"       => "local",
+                            "DELAY"                 => "N",
+                            "MAX_LEVEL"             => 1,
+                            "MENU_CACHE_GET_VARS"   => [""],
+                            "MENU_CACHE_TIME"       => CACHE_TTL,
+                            "MENU_CACHE_TYPE"       => "A",
+                            "MENU_CACHE_USE_GROUPS" => "N",
+                            "ROOT_MENU_TYPE"        => "main",
+                            "USE_EXT"               => "N",
+                            "CACHE_SELECTED_ITEMS"  => "N",
+
+                            "COMPOSITE_FRAME_MODE" => "A",
+                            "COMPOSITE_FRAME_TYPE" => "AUTO"
+                        ]
+                    ); ?>
+
+            </div>
+
+            <div id="page--header--buttons" class="quarter">
+
+                <?php $APPLICATION->IncludeComponent(
+                    "bitrix:search.form",
+                    "header",
+                    [
+                        "USE_SUGGEST" => "N",
+                        "PAGE"        => "/search/",
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO",
+                    ]
+                ); ?>
+
+                <?php $APPLICATION->IncludeComponent(
+                    "riche:cart",
+                    ".default",
+                    [
+                        "ORDER_URL" => ORDER_URL,
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO",
+                    ]
+                ); ?>
+
+
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -196,9 +209,11 @@
 
     <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' && $currentDirectoryPath !== '') { ?>
 
-        <header id="page--main--header" class="wrap">
+        <header id="page--main--header">
 
-            <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
+            <div class="wrap">
+
+                <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
 
                     <?php $APPLICATION->IncludeComponent(
                         "bitrix:breadcrumb",
@@ -215,11 +230,11 @@
                         ["HIDE_ICONS" => "Y"]
                     ); ?>
 
-            <?php } ?>
+                <?php } ?>
 
-            <h1><?php $APPLICATION->ShowTitle(); ?></h1>
+                <h1><?php $APPLICATION->ShowTitle(); ?></h1>
 
-            <?php $APPLICATION->IncludeComponent(
+                <?php $APPLICATION->IncludeComponent(
                     'bitrix:main.include',
                     '',
                     [
@@ -232,6 +247,8 @@
                     ],
                     false
                 ); ?>
+
+            </div>
 
         </header>
 

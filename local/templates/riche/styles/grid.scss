@@ -2,10 +2,10 @@
 
 :root {
   --offset       : 0.85rem;
-  @media all and (min-width : $breakpoint_mobile) {
+  @media all and (min-width : $breakpointMobile) {
     --offset : 1rem;
   }
-  @media all and (min-width : $breakpoint_desktop) {
+  @media all and (min-width : $breakpointDesktop) {
     --offset : 1.2rem;
   }
 
@@ -44,7 +44,7 @@
     }
   }
 
-  @media all and (min-width : $breakpoint_mobile) {
+  @media all and (min-width : $breakpointMobile) {
 
     padding : 0;
     width   : 87%;
@@ -100,15 +100,15 @@
     box-sizing     : border-box;
   }
 
-  @media all and (min-width : $breakpoint_desktop) {
+  @media all and (min-width : $breakpointDesktop) {
     width : 82%;
   }
 
-  @media all and (min-width : $breakpoint_desktop_wide) {
+  @media all and (min-width : $breakpointWide) {
     width : 72%;
   }
 
-  @media all and (min-width : $breakpoint_desktop_wide * 1.33) {
+  @media all and (min-width : $breakpointWide * 1.2) {
     width : 68%;
   }
 
@@ -127,12 +127,12 @@
   display : none;
 
   &--on {
-    @media all and (max-width : $breakpoint_mobile) {
+    @media all and (max-width : $breakpointMobile) {
       &-mobile {
         display : none !important;
       }
     }
-    @media all and (min-width : $breakpoint_mobile) {
+    @media all and (min-width : $breakpointMobile) {
       &-desktop {
         display : none !important;
       }
@@ -143,12 +143,12 @@
 
 .on {
 
-  @media all and (max-width : $breakpoint_mobile) {
+  @media all and (max-width : $breakpointMobile) {
     &-desktop--only {
       display : none !important;
     }
   }
-  @media all and (min-width : $breakpoint_mobile) {
+  @media all and (min-width : $breakpointMobile) {
     &-mobile--only {
       display : none !important;
     }

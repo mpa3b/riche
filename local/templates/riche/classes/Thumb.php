@@ -3,7 +3,6 @@
     namespace Riche;
 
     use Bitrix\Main\Config\Option;
-    use Bitrix\Main\Data\Cache;
     use Bitrix\Main\Loader;
 
     class Thumb
@@ -70,8 +69,20 @@
 
         }
 
-        public static function getWebP(&$file, $quality = 75)
+        public static function getWebP(&$file, $quality = false)
         {
+
+            if(!$quality) {
+
+                $quality = self::$JPEG_QUALITY;
+
+            }
+
+            if (is_int($file)) {
+
+                $file = \CFile::GetFileArray($file);
+
+            }
 
             if (!empty($file['SRC'])) {
 
@@ -83,12 +94,16 @@
                 }
 
             }
-            else if (!empty($file['src'])) {
+            else {
+
+                if (!empty($file['src'])) {
 
                     $file['webp_src']          = self::convertToWebP($file['src'], $quality);
                     $file['webp_content_type'] = mime_content_type($file['webp_src']);
 
                     $file['content_type'] = mime_content_type($file['src']);
+
+                }
 
             }
 

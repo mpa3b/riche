@@ -77,6 +77,7 @@ class Head
 
         Asset::getInstance()->addString('<link rel="prefetch" href="' . $url . '" as="' . $type . '">');
 
+
     }
 
     /**

@@ -66,3 +66,19 @@ $(() => {
     }
 
 });
+
+// region
+
+const bxAjaxRequest = (component, action) => {
+
+    const query = {
+        c     : component, // component class : component name
+        action: action,        // action name
+        mode  : 'class'
+    };
+
+    const url = '/bitrix/services/main/ajax.php?' + $.param(query, true);
+
+};
+
+// endregion

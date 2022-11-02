@@ -1,0 +1,92 @@
+.cart--default {
+
+  .indicator {
+
+    .value {
+      background-color : var(--color--green);
+      color            : var(--color--white);
+
+      &:empty {
+        display : none;
+      }
+    }
+
+  }
+
+  .dropdown {
+    box-shadow       : var(--box-shadow--blurry);
+
+    padding          : var(--padding--2x);
+    background-color : var(--color--white);
+    border-radius    : var(--border-radius);
+
+    h2 {
+      font-size : 1rem;
+    }
+
+    right : -5px;
+
+    &:before {
+      position  : absolute;
+      content   : "";
+      display   : block;
+      width     : 10px;
+      height    : 10px;
+      transform : rotate(45deg);
+      top       : -5px;
+      right     : var(--border-radius);
+      background-color: inherit;
+    }
+
+
+  }
+
+  .items {
+
+    .item {
+
+      h3.name {
+
+      }
+
+      picture {
+
+      }
+
+      .prices {
+
+        .price:empty {
+          display : none;
+        }
+
+        .old:not(:empty) + .discount {
+
+        }
+
+      }
+
+      .quantity {
+
+      }
+
+      .total {
+
+      }
+
+      .actions {
+
+        .delete {
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .actions {
+
+  }
+
+}

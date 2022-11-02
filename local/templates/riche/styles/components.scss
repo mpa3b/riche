@@ -1,0 +1,24 @@
+.dropdown--container {
+  position : relative;
+
+  .dropdown {
+    position : absolute;
+  }
+
+}
+
+.buttons {
+  display        : flex;
+  flex-direction : row;
+
+  button,
+  > * {
+    margin-right : 0.5rem;
+
+    &:last-child {
+      margin-right : 0;
+    }
+
+  }
+
+}
