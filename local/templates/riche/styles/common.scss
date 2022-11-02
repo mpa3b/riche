@@ -69,6 +69,9 @@ body {
   font-size   : 1rem;
   font-family : var(--font--base);
   line-height : 1.4;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -247,8 +250,9 @@ button {
 
 @include Mobile {
 
+  .on-desktop-only,
   .hide-on-mobiles {
-    display : none;
+    display : none !important;
   }
 
 }
@@ -257,7 +261,7 @@ button {
 
   .on-mobiles-only,
   .hide-on-desktop {
-    display: none;
+    display: none !important;
   }
 
 }
