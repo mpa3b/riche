@@ -1,5 +1,3 @@
-'use strict';
-
 $(document).on(
     'click',
     'button.progress',
@@ -8,7 +6,7 @@ $(document).on(
         const throbber = 'throbber';
 
         let button = $(event.currentTarget),
-            icon   = $('.isax', button);
+            icon   = $('.icon', button);
 
         $(document).on(
             {
@@ -75,10 +73,12 @@ const bxAjaxRequest = (component, action) => {
               c :      component, // component class : component name
               action : action,        // action name
               mode :   'class'
-          },
-          url   = '/bitrix/services/main/ajax.php?' + $.param(query, true);
+          };
 
-    return url;
+    const url = '/bitrix/services/main/ajax.php',
+          params = $.param(query, true);
+
+    return url + '?' + params;
 
 };
 
