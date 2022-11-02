@@ -40,8 +40,8 @@
 
         <div class="dropdown">
 
-            <h2 class="title">Твой заказ</h2>
 
+            <h2 class="title">Твой заказ</h2>
 
             <ul class="items">
 
@@ -83,14 +83,22 @@
                 <span class="discount price"></span>
             </div>
 
-            <div class="quantity"></div>
+            <div class="quantity">
+                <button class="transparent" data-id="" data-action="minus">
+                    <i class="iconly minus"></i>
+                </button>
+                <span class="value"></span>
+                <button class="transparent" data-id="" data-action="plus">
+                    <i class="iconly plus"></i>
+                </button>
+            </div>
 
             <div class="total">
                 <div class="price"></div>
             </div>
 
             <div class="actions">
-                <button class="delete">Удалить</button>
+                <button class="delete" data-id="" data-action="delete">Удалить</button>
             </div>
 
         </li>

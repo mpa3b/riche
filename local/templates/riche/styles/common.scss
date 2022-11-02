@@ -54,7 +54,7 @@
   --opacity            : #{$opacity};
 
   --box-shadow         : 0px 1px 2px var(--color--gray);
-  --box-shadow--blurry : 0px 6px 18px var(--color--gray);
+  --box-shadow--blurry : 0px 8px 24px var(--color--gray);
 
 }
 
@@ -201,11 +201,11 @@ button {
   }
 
   &.primary {
-    background-color : var(--color--blue);
+    background-color : var(--color--green);
     color            : var(--color--white);
 
     &:hover {
-      background-color : var(--color--blue--light);
+      background-color : var(--color--green--light);
     }
   }
 
