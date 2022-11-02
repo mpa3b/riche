@@ -24,14 +24,14 @@
 
 <div class="menu--header dropdown--container">
 
-    <button class="transparent button hide--on-desktop trigger burger">
-        <i class="icon burger"></i>
+    <button class="transparent button on-mobiles-only trigger">
+        <i class="icon-menu"></i>
     </button>
 
     <div class="dropdown wrapper">
 
         <button class="transparent close">
-            <i class="icon close-simple"></i>
+            <i class="icon-cross"></i>
         </button>
 
         <nav>

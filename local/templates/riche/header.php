@@ -20,6 +20,7 @@
             'Riche\Breakpoint' => SITE_TEMPLATE_PATH . '/classes/Breakpoint.php',
             'Riche\Head'       => SITE_TEMPLATE_PATH . '/classes/Head.php',
             'Riche\Thumb'      => SITE_TEMPLATE_PATH . '/classes/Thumb.php',
+            'Riche\Units'      => SITE_TEMPLATE_PATH . '/classes/Units.php'
         ]
     );
 
@@ -32,6 +33,8 @@
 
     $assets->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.min.js');
     $assets->addJs(LOCAL_ASSETS . '/jquery-sticky/jquery.sticky.js');
+
+    $assets->addCSS(LOCAL_ASSETS . '/dripicons/css/dripicons.css');
 
     $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
     $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
@@ -186,8 +189,8 @@
                 ); ?>
 
                 <?php $APPLICATION->IncludeComponent(
-                    "local:cart",
-                    ".default",
+                    "bitrix:sale.basket.basket.line",
+                    "header",
                     [
                         "ORDER_URL" => ORDER_URL,
 
@@ -195,7 +198,6 @@
                         "COMPOSITE_FRAME_TYPE" => "AUTO",
                     ]
                 ); ?>
-
 
 
             </div>
