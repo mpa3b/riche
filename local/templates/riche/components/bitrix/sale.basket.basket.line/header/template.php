@@ -39,7 +39,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
            title="<?= Template::pluralUnits($arResult['NUM_PRODUCTS'], 'товар'); ?>"
            class="button transparent">
 
-            <i class="iconly bag"></i>
+            <i class="isax bag"></i>
 
             <? if ($arParams['SHOW_NUM_PRODUCTS'] == "Y") { ?>
                 <span class="count"><? if ($arResult['NUM_PRODUCTS'] > 0) echo $arResult['NUM_PRODUCTS']; ?></span>
@@ -146,7 +146,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
                                             title="Удалить"
                                             data-action="delete"
                                             data-id="<?= $arItem['PRODUCT_ID']; ?>">
-                                        <i class="iconly trashcan"></i>
+                                        <i class="isax trashcan"></i>
                                     </button>
 
                                 </div>

@@ -25,7 +25,7 @@ if (!empty($arResult)) {
                           $arResult[$index]["LINK"] . '" title="' . $title . '" itemprop="url">' . $title .
                           '</a></li>';
 
-            $strReturn .= '<i class="iconly right-2"></i>';
+            $strReturn .= '<i class="isax right-2"></i>';
 
         } else {
 

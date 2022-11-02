@@ -34,35 +34,31 @@
         <div class="indicator">
             <span class="value"></span>
             <button class="transparent">
-                <i class="iconly bag"></i>
+                <i class="isax bag"></i>
             </button>
         </div>
 
         <div class="dropdown">
 
-
             <h2 class="title">Твой заказ</h2>
 
-            <ul class="items">
+            <ul class="items"></ul>
 
-
-            </ul>
-
-            <div class="actions buttons">
+            <menu class="actions buttons">
 
                 <button class="close" type="button">
-                    <i class="iconly close"></i>
+                    <i class="isax close"></i>
                     Закрыть
                 </button>
 
                 <form action="<?= $arParams['ORDER_URL']; ?>">
                     <button class="submit primary" type="submit">
-                        <i class="iconly check"></i>
+                        <i class="isax check"></i>
                         Оформить
                     </button>
                 </form>
 
-            </div>
+            </menu>
 
         </div>
 
@@ -85,11 +81,11 @@
 
             <div class="quantity">
                 <button class="transparent" data-id="" data-action="minus">
-                    <i class="iconly minus"></i>
+                    <i class="isax minus"></i>
                 </button>
                 <span class="value"></span>
                 <button class="transparent" data-id="" data-action="plus">
-                    <i class="iconly plus"></i>
+                    <i class="isax plus"></i>
                 </button>
             </div>
 
@@ -98,7 +94,10 @@
             </div>
 
             <div class="actions">
-                <button class="delete" data-id="" data-action="delete">Удалить</button>
+                <button class="delete" data-id="" data-action="delete">
+                    <i class="isax delete"></i>
+                    Удалить
+                </button>
             </div>
 
         </li>

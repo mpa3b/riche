@@ -8,7 +8,7 @@ $(document).on(
         const throbber = 'throbber';
 
         let button = $(event.currentTarget),
-            icon   = $('.iconly', button);
+            icon   = $('.isax', button);
 
         $(document).on(
             {
@@ -36,13 +36,13 @@ $(() => {
             $.colorbox.settings,
             {
                 current :        '{current} / {total}',
-                close :          '<i class="iconly close-square">',
-                previous :       '<i class="iconly left">',
-                next :           '<i class="iconly right">',
+                close :          '<i class="isax close-square">',
+                previous :       '<i class="isax left">',
+                next :           '<i class="isax right">',
                 xhrError :       'Ошибка загрузки содержимого',
                 imgError :       'Ошибка загрузки изображения',
-                slideshowStart : '<i class="iconly play">',
-                slideshowStop :  '<i class="iconly pause">',
+                slideshowStart : '<i class="isax play">',
+                slideshowStop :  '<i class="isax pause">',
                 maxWidth :       '88%',
                 maxHeight :      '72%',
                 fixed :          true,

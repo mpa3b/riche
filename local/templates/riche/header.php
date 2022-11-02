@@ -42,7 +42,6 @@
     $assets->addCss(SITE_TEMPLATE_PATH . '/styles/components.css');
 
     $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
-    $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/iconly/style.css', true);
 
     $assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
 
@@ -207,7 +206,7 @@
 
 <div id="page--main">
 
-    <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' && $currentDirectoryPath !== '') { ?>
+    <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' and $currentDirectoryPath !== '/') { ?>
 
         <header id="page--main--header">
 

@@ -1,69 +1,71 @@
 <?php
 
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+    if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+        die();
+    }
 
-/** @var array $arParams */
-/** @var array $arResult */
-/** @global CMain $APPLICATION */
-/** @global CUser $USER */
-/** @global CDatabase $DB */
-/** @var CBitrixComponentTemeplate $this */
-/** @var string $templateName */
-/** @var string $templateFile */
-/** @var string $templateFolder */
-/** @var string $componentPath */
-/** @var CBitrixComponent $component */
+    /** @var array $arParams */
+    /** @var array $arResult */
+    /** @global CMain $APPLICATION */
+    /** @global CUser $USER */
+    /** @global CDatabase $DB */
+    /** @var CBitrixComponentTemeplate $this */
+    /** @var string $templateName */
+    /** @var string $templateFile */
+    /** @var string $templateFolder */
+    /** @var string $componentPath */
+    /** @var CBitrixComponent $component */
 
-$this->setFrameMode(true);
+    $this->setFrameMode(true);
 
-$frame = $this->createFrame();
+    $frame = $this->createFrame();
 
 ?>
-<nav class="menu--header">
+
+<div class="menu--header dropdown--container">
 
     <button class="transparent button hide--on-desktop trigger burger">
-        <i class="iconly burger"></i>
+        <i class="isax burger"></i>
     </button>
 
-    <div class="wrapper">
+    <div class="dropdown wrapper">
 
-        <? $frame->begin(); ?>
-
-        <button class="transparent trigger button hide--on-desktop close">
-            <i class="iconly close-simple"></i>
+        <button class="transparent close">
+            <i class="isax close-simple"></i>
         </button>
 
-        <ul class="menu root">
+        <nav>
 
-            <? foreach ($arResult as $arItem): ?>
-                <li>
-                    <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
-                </li>
-            <? endforeach; ?>
+            <ul class="menu root">
 
-        </ul>
+                <?php $frame->begin(); ?>
 
-        <? $frame->end(); ?>
+                <?php foreach ($arResult as $arItem): ?>
+                    <li>
+                        <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
+                    </li>
+                <?php endforeach; ?>
 
-        <div class="on-mobile--only">
+                <?php $frame->end(); ?>
 
-            <? $APPLICATION->IncludeComponent(
-                'bitrix:main.include',
-                '',
-                [
-                    "AREA_FILE_SHOW"      => "sect",
-                    "AREA_FILE_SUFFIX"    => "contact",
-                    "AREA_FILE_RECURSIVE" => "N",
+            </ul>
 
-                    "COMPOSITE_FRAME_MODE" => "A",
-                    "COMPOSITE_FRAME_TYPE" => "AUTO",
-                ],
-                false
-            ); ?>
+        </nav>
 
-        </div>
+        <?php $APPLICATION->IncludeComponent(
+            'bitrix:main.include',
+            '',
+            [
+                "AREA_FILE_SHOW"      => "sect",
+                "AREA_FILE_SUFFIX"    => "contact",
+                "AREA_FILE_RECURSIVE" => "N",
+
+                "COMPOSITE_FRAME_MODE" => "A",
+                "COMPOSITE_FRAME_TYPE" => "AUTO",
+            ],
+            false
+        ); ?>
 
     </div>
 
-
-</nav>
+</div>
