@@ -4,14 +4,12 @@
     /** @global \CUser $USER */
     /** @global \CDatabase $DB */
 
-    namespace Riche;
+    namespace Local;
 
     if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
         die();
     }
 
-    use Bitrix\Catalog\Product\Basket as CatalogProvider;
-    use Bitrix\Currency\CurrencyManager;
     use Bitrix\Main\Engine\ActionFilter;
     use Bitrix\Main\Engine\Contract\Controllerable;
     use Bitrix\Main\Loader;
@@ -62,21 +60,7 @@
         public function executeComponent() : void
         {
 
-            Loader::includeModule('sale');
-
-            $this->currency        = CurrencyManager::getBaseCurrency();
-            $this->catalogProvider = CatalogProvider::getDefaultProviderName();
-
-            $fUser  = Fuser::getId();
-            $siteId = $this->getSiteId();
-
-            $this->cart = Basket::loadItemsForFUser($fUser, $siteId);
-
-            $this->startResultCache();
-
-            $this->arResult['CART'] = $this->returnCart();
-
-            $this->endResultCache();
+            $this->initCart();
 
             $this->includeComponentTemplate(); // сюда будет уходить скорее всего только статическая заглушка
 
@@ -189,7 +173,7 @@
         public function deleteAction(int $id) : void
         {
 
-            if ($item = $this->cart->getItemById(self::catalog, $id)) {
+            if ($item = $this->cart->getItemById($id)) {
 
                 $item->delete();
 
@@ -214,7 +198,7 @@
         public function updateAction(int $id, int $quantity)
         {
 
-            if ($item = $this->cart->getExistsItem(self::catalog, $id)) {
+            if ($item = $this->cart->getItemById($id)) {
 
                 $item->setField('QUANTITY', $quantity);
 
@@ -237,7 +221,7 @@
         public function postponeAction(int $id)
         {
 
-            if ($item = $this->cart->getExistsItem(self::catalog, $id)) {
+            if ($item = $this->cart->getItemById($id)) {
 
                 $item->setField('DELAY', true);
 
@@ -264,6 +248,17 @@
             }
 
             $this->returnCart();
+
+        }
+
+        private function initCart() : void
+        {
+
+            if (Loader::includeModule('sale')) {
+
+                $this->cart = Basket::loadItemsForFUser(Fuser::getId(), $this->getSiteId());
+
+            }
 
         }
 

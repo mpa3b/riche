@@ -3,6 +3,10 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/./local/classes" isTestSource="false" packagePrefix="Local\" />
+      <sourceFolder url="file://$MODULE_DIR$/bitrix/components" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bitrix/modules" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bitrix/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/bitrix/tools" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/local/php_interface/migrations" />
       <excludeFolder url="file://$MODULE_DIR$/local/php_interface/migrations.archive" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/cache" />
@@ -75,7 +79,6 @@
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/bitrix.sitecorporate/install" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/bitrix.siteinfoportal/install" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/nsandrey.emptyinstall/install" />
-      <excludeFolder url="file://$MODULE_DIR$/bitrix" />
       <excludeFolder url="file://$MODULE_DIR$/bin" />
       <excludeFolder url="file://$MODULE_DIR$/migrations" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/denx-b/bitrix-vue-component" />
@@ -105,6 +108,28 @@
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/hafsoft/php-minifier" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/oomphinc/composer-installers-extender" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/kint-php/kint-helpers" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/activities" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/images" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/css" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/js" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/html_pages" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/legal" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/catalog_export" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/admin" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/fonts" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/blocks" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/gadgets" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/otp" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/panel" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/php_interface" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/sounds" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/template" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/templates" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/themes" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/wizards" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea" />
+      <excludePattern pattern="install" />
+      <excludePattern pattern="admin" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

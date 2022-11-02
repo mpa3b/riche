@@ -186,7 +186,7 @@
                 ); ?>
 
                 <?php $APPLICATION->IncludeComponent(
-                    "riche:cart",
+                    "local:cart",
                     ".default",
                     [
                         "ORDER_URL" => ORDER_URL,

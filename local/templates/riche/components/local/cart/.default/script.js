@@ -1,7 +1,13 @@
 $(() => {
 
     const element   = $('.cart--default'),
-          component = 'riche:cart';
+          component = element.data('component');
+
+    let items = $.bxAjax(component);
+
+    $('ul.items', element).render(items);
+
+    console.debug(items);
 
     $(document).on(
         'click',

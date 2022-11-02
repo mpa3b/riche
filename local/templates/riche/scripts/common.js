@@ -26,50 +26,23 @@ $(document).on(
     }
 );
 
-$(() => {
-
-    if (typeof $.colorbox == 'function') {
-
-        $.extend(
-            $.colorbox.settings,
-            {
-                current :        '{current} / {total}',
-                close :          '<i class="icon close-square">',
-                previous :       '<i class="icon left">',
-                next :           '<i class="icon right">',
-                xhrError :       'Ошибка загрузки содержимого',
-                imgError :       'Ошибка загрузки изображения',
-                slideshowStart : '<i class="icon play">',
-                slideshowStop :  '<i class="icon pause">',
-                maxWidth :       '88%',
-                maxHeight :      '72%',
-                fixed :          true,
-                scrolling :      false,
-                opacity :        0.77
-            }
-        );
-
-        if (BX && BX.Browser.isMobile()) {
-
-            $.extend(
-                $.colorbox.settings,
-                {
-                    maxWidth :  '100%',
-                    maxHeight : '90%'
-                }
-            );
-
-        }
-
-    }
-
-});
-
 // region bxAjax
 
 $.extend(
     {
         bxAjax : (component, data, method = 'GET') => {
+
+            if (!data) {
+                data = {};
+            }
+
+            if (!data.sessid) {
+                data.sessid = sessid;
+            }
+
+            if (!data.action) {
+                data.action = 'get';
+            }
 
             const url   = '/bitrix/services/main/ajax.php',
                   query = {
@@ -81,23 +54,17 @@ $.extend(
             const params = $.param(query, true);
 
             delete data.action;
-
-            data.sessid = sessid;
-
-            console.debug(data);
-            console.debug(query);
-            console.debug(params);
+            delete data.sessid;
 
             let request = $.ajax(
-                url + '?' + params,
-                {
-                    method : method,
-                    cache :  false,
-                    data :   data
-                }
-            );
-
-            let result;
+                    url + '?' + params,
+                    {
+                        method : method,
+                        cache :  false,
+                        data :   data
+                    }
+                ),
+                result;
 
             request.done(
                 (response) => {
@@ -107,9 +74,68 @@ $.extend(
                 }
             );
 
-            console.debug(result);
+            result = {
+                1 : {
+                    id :             1,
+                    name :           'Test 1',
+                    picture :        {
+                        mobile :  '/upload/images/1-mobile.png',
+                        desktop : '/upload/images/1-desktop.png'
+                    },
+                    base_price :     1000,
+                    discount_price : 800,
+                    quantity :       2,
+                    total :          1600
+                },
+                2 : {
+                    id :             2,
+                    name :           'Test 2',
+                    picture :        {
+                        mobile :  '/upload/images/2-mobile.png',
+                        desktop : '/upload/images/2-desktop.png'
+                    },
+                    base_price :     1200,
+                    discount_price : 900,
+                    quantity :       3,
+                    total :          2700
+                },
+                3 : {
+                    id :             3,
+                    name :           'Test 3',
+                    picture :        {
+                        mobile :  '/upload/images/3-mobile.png',
+                        desktop : '/upload/images/3-desktop.png'
+                    },
+                    base_price :     700,
+                    discount_price : 500,
+                    quantity :       1,
+                    total :          500
+                }
+            };
 
             return result;
+
+        }
+    }
+);
+
+// endregion
+
+// region templating
+
+$.extend(
+    {
+        render : (container, data) => {
+
+            let template = $('template', container).innerHTML();
+
+            data.each(
+                (index, element) => {
+
+
+
+                }
+            );
 
         }
     }
