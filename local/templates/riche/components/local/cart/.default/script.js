@@ -1,13 +1,13 @@
 $(() => {
 
-    const element   = $('.cart--default'),
-          component = element.data('component');
+    const element   = $('.cart--default');
 
-    let items = $.bxAjax(component);
-
-    $('ul.items', element).render(items);
+    let items = $.bxAjax(element.data('component')),
+        container = $('ul.items', element);
 
     console.debug(items);
+
+    container.renderTemplate(items);
 
     $(document).on(
         'click',

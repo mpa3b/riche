@@ -40,55 +40,7 @@
 
             <h2 class="title">Твой заказ</h2>
 
-            <ul class="items">
-
-                <template data-name="cart--item">
-
-                    <li class="item">
-
-                        <h3 data-name="cart--item--name"></h3>
-
-                        <picture data-name="cart--item--picture">
-                            <img>
-                        </picture>
-
-                        <div class="prices">
-                            <del class="old price">
-                                <span class="value"></span>
-                            </del>
-                            <span class="discount price">
-                        <span class="value"></span>
-                    </span>
-                        </div>
-
-                        <div class="quantity">
-                            <button class="transparent" data-id="" data-action="minus">
-                                <i class="icon minus"></i>
-                            </button>
-                            <span class="value"></span>
-                            <button class="transparent" data-id="" data-action="plus">
-                                <i class="icon plus"></i>
-                            </button>
-                        </div>
-
-                        <div class="total">
-                            <div class="price">
-                                <span class="value"></span>
-                            </div>
-                        </div>
-
-                        <div class="actions">
-                            <button class="delete" data-id="" data-action="delete">
-                                <i class="icon delete"></i>
-                                Удалить
-                            </button>
-                        </div>
-
-                    </li>
-
-                </template>
-
-            </ul>
+            <ul class="items" data-template-name="cart-item"></ul>
 
             <div class="actions buttons">
 
@@ -104,6 +56,51 @@
             <?php $frame->end(); ?>
 
         </div>
+
+        <template data-template-name="cart--item">
+
+            <li class="item">
+
+                <h3 data-name="cart--item--name"></h3>
+
+                <picture data-name="cart--item--picture">
+                    <img>
+                </picture>
+
+                <div class="prices">
+                    <del class="old price">
+                        <span class="value"></span>
+                    </del>
+                    <span class="discount price"></span>
+                    <span class="value"></span>
+                </div>
+
+                <div class="quantity">
+                    <button class="transparent" data-id="" data-action="minus">
+                        <i class="icon minus"></i>
+                    </button>
+                    <span class="value"></span>
+                    <button class="transparent" data-id="" data-action="plus">
+                        <i class="icon plus"></i>
+                    </button>
+                </div>
+
+                <div class="total">
+                    <div class="price">
+                        <span class="value"></span>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button class="delete" data-id="" data-action="delete">
+                        <i class="icon delete"></i>
+                        Удалить
+                    </button>
+                </div>
+
+            </li>
+
+        </template>
 
     </div>
 

@@ -1,3 +1,5 @@
+import {forEach} from 'local/assets/tiny-slider/src/helpers/forEach';
+
 $(document).on(
     'click',
     'button.progress',
@@ -123,19 +125,33 @@ $.extend(
 
 // region templating
 
-$.extend(
+$.fn.extend(
     {
-        render : (container, data) => {
+        renderTemplate : function (data) {
 
-            let template = $('template', container).innerHTML();
+            console.debug(data);
 
-            data.each(
-                (index, element) => {
+            const container = $(this);
+            const template = container.data('template-name');
+            const element = $('template[data-template-name="' + template + '"]', container).clone();
 
-
-
-                }
-            );
+//            forEach(
+//                data,
+//                (_, item) => {
+//
+//                    forEach(
+//                        item,
+//                        (name, value) => {
+//
+//                            $('[data-name=' + name + ']', item).text(value);
+//
+//                        }
+//                    );
+//
+//                    container.append(element);
+//
+//                }
+//            );
 
         }
     }
