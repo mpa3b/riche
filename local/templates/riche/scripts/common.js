@@ -34,13 +34,13 @@ $(() => {
             $.colorbox.settings,
             {
                 current :        '{current} / {total}',
-                close :          '<i class="isax close-square">',
-                previous :       '<i class="isax left">',
-                next :           '<i class="isax right">',
+                close :          '<i class="icon close-square">',
+                previous :       '<i class="icon left">',
+                next :           '<i class="icon right">',
                 xhrError :       'Ошибка загрузки содержимого',
                 imgError :       'Ошибка загрузки изображения',
-                slideshowStart : '<i class="isax play">',
-                slideshowStop :  '<i class="isax pause">',
+                slideshowStart : '<i class="icon play">',
+                slideshowStop :  '<i class="icon pause">',
                 maxWidth :       '88%',
                 maxHeight :      '72%',
                 fixed :          true,
@@ -65,21 +65,54 @@ $(() => {
 
 });
 
-// region
+// region bxAjax
 
-const bxAjaxRequest = (component, action) => {
+$.extend(
+    {
+        bxAjax : (component, data, method = 'GET') => {
 
-    const query = {
-              c :      component, // component class : component name
-              action : action,        // action name
-              mode :   'class'
-          };
+            const url   = '/bitrix/services/main/ajax.php',
+                  query = {
+                      c :      component,
+                      action : data.action,
+                      mode :   'class'
+                  };
 
-    const url = '/bitrix/services/main/ajax.php',
-          params = $.param(query, true);
+            const params = $.param(query, true);
 
-    return url + '?' + params;
+            delete data.action;
 
-};
+            data.sessid = sessid;
+
+            console.debug(data);
+            console.debug(query);
+            console.debug(params);
+
+            let request = $.ajax(
+                url + '?' + params,
+                {
+                    method : method,
+                    cache :  false,
+                    data :   data
+                }
+            );
+
+            let result;
+
+            request.done(
+                (response) => {
+
+                    result = response;
+
+                }
+            );
+
+            console.debug(result);
+
+            return result;
+
+        }
+    }
+);
 
 // endregion

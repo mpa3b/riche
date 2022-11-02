@@ -109,6 +109,8 @@
 
     ?>
 
+    <script>const sessid = '<?php echo bitrix_sessid(); ?>';</script>
+
 </head>
 
 <body id="page" class="<?php echo $pageHtmlClasses; ?>">

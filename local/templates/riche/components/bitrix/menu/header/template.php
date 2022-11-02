@@ -25,13 +25,13 @@
 <div class="menu--header dropdown--container">
 
     <button class="transparent button hide--on-desktop trigger burger">
-        <i class="isax burger"></i>
+        <i class="icon burger"></i>
     </button>
 
     <div class="dropdown wrapper">
 
         <button class="transparent close">
-            <i class="isax close-simple"></i>
+            <i class="icon close-simple"></i>
         </button>
 
         <nav>

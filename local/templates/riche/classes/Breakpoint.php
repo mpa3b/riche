@@ -1,77 +1,59 @@
 <?php
 
-namespace Riche;
+    namespace Riche;
 
-class Breakpoint
-{
-
-    const breakpoints
-        = [
-            'small'   => 340,
-            'mobile'  => 580,
-            'tablet'  => 780,
-            'desktop' => 980,
-            'wide'    => 1360
-        ];
-
-    public const
-        small = self::breakpoints['small'],
-        mobile = self::breakpoints['mobile'],
-        tablet = self::breakpoints['tablet'],
-        desktop = self::breakpoints['desktop'],
-        wide = self::breakpoints['wide'];
-
-    const unit = 'px';
-
-    public static function getMedia(string $media, bool $max = false): string
+    class Breakpoint
     {
 
-        if ($max) {
+        const breakpoints
+                      = [
+                'mobile'  => 580,
+                'desktop' => 980,
+                'wide'    => 1360
+            ];
 
-            return '(max-width: ' . self::breakpoints[$media] . self::unit . ')';
+        public const
+              mobile  = self::breakpoints['mobile'],
+              desktop = self::breakpoints['desktop'],
+              wide    = self::breakpoints['wide'];
 
-        }
-        else {
+        const unit    = 'px';
 
-            return '(min-width: ' . self::breakpoints[$media] . self::unit . ')';
+        public static function getMedia(string $media, bool $max = false) : string
+        {
+
+            if ($max) {
+
+                return '(max-width: ' . self::breakpoints[$media] . self::unit . ')';
+
+            }
+            else {
+
+                return '(min-width: ' . self::breakpoints[$media] . self::unit . ')';
+
+            }
 
         }
 
-    }
+        public static function getTablet()
+        {
 
-    public static function getSmall()
-    {
+            self::getMedia('mobile', true);
 
-        self::getMedia('small', true);
+        }
 
-    }
+        public static function getDesktop()
+        {
 
-    public static function getMobile()
-    {
+            self::getMedia('desktop');
 
-        self::getMedia('mobile', true);
+        }
 
-    }
+        public static function getWide()
+        {
 
-    public static function getTablet()
-    {
+            self::getMedia('desktop');
 
-        self::getMedia('mobile', true);
-
-    }
-
-    public static function getDesktop()
-    {
-
-        self::getMedia('desktop');
+        }
 
     }
-
-    public static function getWide()
-    {
-
-        self::getMedia('desktop');
-
-    }
-
-}

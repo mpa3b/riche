@@ -26,6 +26,13 @@
     class Cart extends \CBitrixComponent implements Controllerable
     {
 
+        public function onPrepareComponentParams($params)
+        {
+
+            return $params;
+
+        }
+
         /**
          * Константа модуля каталога
          * @todo как бы это получать, а не задавать?
@@ -60,10 +67,16 @@
             $this->currency        = CurrencyManager::getBaseCurrency();
             $this->catalogProvider = CatalogProvider::getDefaultProviderName();
 
-            $fUser      = Fuser::getId();
+            $fUser  = Fuser::getId();
             $siteId = $this->getSiteId();
 
             $this->cart = Basket::loadItemsForFUser($fUser, $siteId);
+
+            $this->startResultCache();
+
+            $this->arResult['CART'] = $this->returnCart();
+
+            $this->endResultCache();
 
             $this->includeComponentTemplate(); // сюда будет уходить скорее всего только статическая заглушка
 
@@ -80,42 +93,35 @@
             // Сбрасываем фильтры по-умолчанию (ActionFilter\Authentication и ActionFilter\HttpMethod)
             // Предустановленные фильтры находятся в папке /bitrix/modules/main/lib/engine/actionfilter/
 
+            $filters = [
+                new ActionFilter\Cors(),
+                new ActionFilter\Csrf(),
+                new ActionFilter\HttpMethod(
+                    [
+                        ActionFilter\HttpMethod::METHOD_GET,
+                        ActionFilter\HttpMethod::METHOD_POST
+                    ]
+                )
+            ];
+
             return [
                 'get'      => [
-                    'prefilters' => [
-                        new ActionFilter\Cors(),
-                        new ActionFilter\Csrf()
-                    ]
+                    'prefilters' => $filters
                 ],
                 'add'      => [
-                    'prefilters' => [
-                        new ActionFilter\Cors(),
-                        new ActionFilter\Csrf()
-                    ]
+                    'prefilters' => $filters
                 ],
                 'delete'   => [
-                    'prefilters' => [
-                        new ActionFilter\Cors(),
-                        new ActionFilter\Csrf()
-                    ]
+                    'prefilters' => $filters
                 ],
                 'update'   => [
-                    'prefilters' => [
-                        new ActionFilter\Cors(),
-                        new ActionFilter\Csrf()
-                    ]
+                    'prefilters' => $filters
                 ],
                 'postpone' => [
-                    'prefilters' => [
-                        new ActionFilter\Cors(),
-                        new ActionFilter\Csrf()
-                    ]
+                    'prefilters' => $filters
                 ],
                 'coupon'   => [
-                    'prefilters' => [
-                        new ActionFilter\Cors(),
-                        new ActionFilter\Csrf()
-                    ]
+                    'prefilters' => $filters
                 ]
             ];
 
@@ -360,7 +366,6 @@
             );
 
             return $image;
-
 
         }
 
