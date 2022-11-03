@@ -44,42 +44,43 @@
 
             <ul class="items">
 
-                <template v-for="item in items">
+                <template>
 
                     <li class="item">
 
-                        <h3>{{ item.name }}</h3>
+                        <h3></h3>
 
-                        <p v-if="item.description">{{ item.anounce }}</p>
+                        <p></p>
 
                         <picture>
-                            <source v-for="(media, src) in item.picture" srcset="{{ image.src }}"
-                                    media="{{ image.media }}">
-                            <img src="{{ item.picture.preload.src }}">
+                            <img>
                         </picture>
 
-                        <div class="prices" v-for="price in item.prices">
-                            <del class="price" v-if="price.discount > 0">{{ price.base_price }}</del>
-                            <span class="price" v-if="price.discount > 0">{{ price.price }}</span>
-                            <span class="discount price" v-if="price.discount < 0">{{ price.price }}</span>
+                        <div class="prices">
+                            <del class="price"></del>
+                            <span class="price"></span>
+                            <span class="discount price"></span>
                         </div>
 
                         <div class="quantity">
-                            <button class="transparent" data-action="minus" data-id="{{ item.id }}">
+                            <button class="transparent"
+                                    data-id=""
+                                    data-quantity="">
                                 <i class="icon minus"></i>
                             </button>
-                            <span class="value">{{ item.quantity }}</span>
-                            <button class="transparent" data-action="plus" data-id="{{ item.id }}">
+                            <span class="value"></span>
+                            <button class="transparent"
+                                    data-id=""
+                                    data-quantity="">
                                 <i class="icon plus"></i>
                             </button>
                         </div>
 
-                        <div class="total">
-                            <div class="price">{{ item.total }}</div>
-                        </div>
+                        <div class="total"></div>
 
                         <div class="actions">
-                            <button class="delete" data-action="delete" data-id="{{ item.id }}">
+                            <button class="delete"
+                                    data-id="">
                                 <i class="icon delete"></i>
                                 Удалить
                             </button>
@@ -93,13 +94,9 @@
 
             <div class="total">
 
-                <template>
-
-                    <div class="price">{{ cart.price }}</div>
-                    <div class="delivery">{{ cart.delivery_price }}</div>
-                    <div class="total">{{ cart.total }}</div>
-
-                </template>
+                <div class="price"></div>
+                <div class="delivery"></div>
+                <div class="total"></div>
 
             </div>
 
