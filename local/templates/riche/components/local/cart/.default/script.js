@@ -18,8 +18,6 @@ $(() => {
 
             let data = $(event.target).data();
 
-            $.bxAjax(component, data);
-
         }
     );
 
