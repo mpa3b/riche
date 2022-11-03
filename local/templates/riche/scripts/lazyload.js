@@ -3,18 +3,18 @@
 'use strict';
 
 window.addEventListener(
-    "load",
+    'load',
     () => {
 
         let lazyImage       = new LazyLoad(
                 {
-                    elements_selector: "img.lazy"
+                    elements_selector : 'img.lazy'
                 }
             ),
             lazyImageNative = new LazyLoad(
                 {
-                    elements_selector: "img[loading=lazy]",
-                    use_native       : true
+                    elements_selector : 'img[loading=lazy]',
+                    use_native :        true
                 }
             );
 
