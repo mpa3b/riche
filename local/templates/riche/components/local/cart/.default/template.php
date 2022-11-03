@@ -19,8 +19,6 @@
 
     $this->setFrameMode(true);
 
-    $this->addExternalJs(LOCAL_ASSETS . '/vue/dist/vue.global.js');
-
     $frame = $this->createFrame();
 
 ?>
