@@ -17,9 +17,9 @@
 
     const LOCAL_ASSETS = '/local/assets';
 
-    const CACHE_TTL = 60 * 60 * 24 * 3;
-    const CART_URL  = '/cart/';
-    const ORDER_URL = '/order/';
-    const SHOP_URL  = '/shop/';
+    const CACHE_TTL    = 60 * 60 * 24 * 3;
+    const ORDER_URL    = '/order/';
+    const CHECKOUT_URL = '/order/checkout/';
+    const SHOP_URL     = '/shop/';
 
     // endregion

@@ -48,45 +48,6 @@ $.extend(
                 }
             );
 
-            result = {
-                1 : {
-                    id :             1,
-                    name :           'Test 1',
-                    picture :        {
-                        mobile :  '/upload/images/1-mobile.png',
-                        desktop : '/upload/images/1-desktop.png'
-                    },
-                    base_price :     1000,
-                    discount_price : 800,
-                    quantity :       2,
-                    total :          1600
-                },
-                2 : {
-                    id :             2,
-                    name :           'Test 2',
-                    picture :        {
-                        mobile :  '/upload/images/2-mobile.png',
-                        desktop : '/upload/images/2-desktop.png'
-                    },
-                    base_price :     1200,
-                    discount_price : 900,
-                    quantity :       3,
-                    total :          2700
-                },
-                3 : {
-                    id :             3,
-                    name :           'Test 3',
-                    picture :        {
-                        mobile :  '/upload/images/3-mobile.png',
-                        desktop : '/upload/images/3-desktop.png'
-                    },
-                    base_price :     700,
-                    discount_price : 500,
-                    quantity :       1,
-                    total :          500
-                }
-            };
-
             return result;
 
         }

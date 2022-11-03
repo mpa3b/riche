@@ -11,8 +11,8 @@
     'run' => array(
         'name' => 'WorkSolutions. Reduce Migrations',
         'report' => array(
-            'completed' => '������',
-            'assertions' => '��������'
+            'completed' => 'пїЅпїЅпїЅпїЅпїЅпїЅ',
+            'assertions' => 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ'
         )
     ),
     'cases' => array(

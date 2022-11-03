@@ -188,6 +188,7 @@
                     ]
                 ); ?>
 
+                <? /*
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:sale.basket.basket.line",
                     "header",
@@ -198,7 +199,18 @@
                         "COMPOSITE_FRAME_TYPE" => "AUTO",
                     ]
                 ); ?>
+                */ ?>
 
+                <?php $APPLICATION->IncludeComponent(
+                    'local:cart',
+                    '.default',
+                    [
+                        "CHECKOUT_URL" => CHECKOUT_URL,
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO",
+                    ]
+                ); ?>
 
             </div>
 

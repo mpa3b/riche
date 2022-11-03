@@ -36,17 +36,78 @@
             </button>
         </div>
 
-        <div class="dropdown">
+        <div class="dropdown cart">
 
             <?php $frame->begin(); ?>
 
             <h2 class="title">Твой заказ</h2>
 
-            <ul class="items" data-template-name="cart-item"></ul>
+            <ul class="items">
+
+                <template v-for="item in items">
+
+                    <li class="item">
+
+                        <h3>{{ item.name }}</h3>
+
+                        <p v-if="item.description">{{ item.anounce }}</p>
+
+                        <picture>
+                            <source v-for="(media, src) in item.picture" srcset="{{ image.src }}"
+                                    media="{{ image.media }}">
+                            <img src="{{ item.picture.preload.src }}">
+                        </picture>
+
+                        <div class="prices" v-for="price in item.prices">
+                            <del class="price" v-if="price.discount > 0">{{ price.base_price }}</del>
+                            <span class="price" v-if="price.discount > 0">{{ price.price }}</span>
+                            <span class="discount price" v-if="price.discount < 0">{{ price.price }}</span>
+                        </div>
+
+                        <div class="quantity">
+                            <button class="transparent" data-action="minus" data-id="{{ item.id }}">
+                                <i class="icon minus"></i>
+                            </button>
+                            <span class="value">{{ item.quantity }}</span>
+                            <button class="transparent" data-action="plus" data-id="{{ item.id }}">
+                                <i class="icon plus"></i>
+                            </button>
+                        </div>
+
+                        <div class="total">
+                            <div class="price">{{ item.total }}</div>
+                        </div>
+
+                        <div class="actions">
+                            <button class="delete" data-action="delete" data-id="{{ item.id }}">
+                                <i class="icon delete"></i>
+                                Удалить
+                            </button>
+                        </div>
+
+                    </li>
+
+                </template>
+
+            </ul>
+
+            <div class="total">
+
+                <template>
+
+                    <div class="price">{{ cart.price }}</div>
+                    <div class="delivery">{{ cart.delivery_price }}</div>
+                    <div class="total">{{ cart.total }}</div>
+
+                </template>
+
+            </div>
 
             <div class="actions buttons">
 
-                <form action="<?= $arParams['ORDER_URL']; ?>">
+                <button class="close">Закрыть</button>
+
+                <form action="<?= $arParams['CHECKOUT_URL']; ?>">
                     <button class="submit primary wide button" type="submit" disabled>
                         <i class="icon check"></i>
                         Оформить
@@ -58,51 +119,6 @@
             <?php $frame->end(); ?>
 
         </div>
-
-        <template data-template-name="cart--item">
-
-            <li class="item">
-
-                <h3 data-name="cart--item--name"></h3>
-
-                <picture data-name="cart--item--picture">
-                    <img>
-                </picture>
-
-                <div class="prices">
-                    <del class="old price">
-                        <span class="value"></span>
-                    </del>
-                    <span class="discount price"></span>
-                    <span class="value"></span>
-                </div>
-
-                <div class="quantity">
-                    <button class="transparent" data-id="" data-action="minus">
-                        <i class="icon minus"></i>
-                    </button>
-                    <span class="value"></span>
-                    <button class="transparent" data-id="" data-action="plus">
-                        <i class="icon plus"></i>
-                    </button>
-                </div>
-
-                <div class="total">
-                    <div class="price">
-                        <span class="value"></span>
-                    </div>
-                </div>
-
-                <div class="actions">
-                    <button class="delete" data-id="" data-action="delete">
-                        <i class="icon delete"></i>
-                        Удалить
-                    </button>
-                </div>
-
-            </li>
-
-        </template>
 
     </div>
 
