@@ -114,7 +114,7 @@ $frame = $this->createFrame();
 
                                         <span class="stars">
                                             <? for ($i = 1; $i <= $arParams['RATING_MAX']; $i++) { ?>
-                                                <i class="h-star <? if ($i > $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']) echo ' empty'; ?>"></i>
+                                                <i class="icon-star <? if ($i > $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']) echo ' empty'; ?>"></i>
                                             <? } ?>
                                         </span>
 

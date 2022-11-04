@@ -41,7 +41,7 @@
                title="<?= Units::plural($arResult['NUM_PRODUCTS'], 'товар'); ?>"
                class="button transparent">
 
-                <i class=  "h-cart"></i>
+                <i class=  "icon-cart"></i>
 
                 <? if ($arParams['SHOW_NUM_PRODUCTS'] == "Y") { ?>
                     <span class="count"><? if ($arResult['NUM_PRODUCTS'] > 0) {
@@ -153,7 +153,7 @@
                                                 title="Удалить"
                                                 data-action="delete"
                                                 data-id="<?= $arItem['PRODUCT_ID']; ?>">
-                                            <i class=  "h-trashcan"></i>
+                                            <i class=  "icon-trashcan"></i>
                                         </button>
 
                                     </div>
@@ -175,7 +175,7 @@
 
                     <form action="<?= $arParams['PATH_TO_BASKET']; ?>">
                         <button class="primary button" type="submit">
-                            <i class=  "h-checkmark"></i>
+                            <i class=  "icon-checkmark"></i>
                             Оформить заказ
                         </button>
                     </form>

@@ -35,6 +35,7 @@ $assets->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.min.js');
 
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/bxajax.js');
 
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
 
@@ -42,6 +43,7 @@ $assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/components.css');
 
 $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
+$assets->addCss(SITE_TEMPLATE_PATH . '/fonts/hicon/style.css');
 
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
 

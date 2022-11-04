@@ -57,7 +57,7 @@
 
                 <form action="<?= $arParams['CHECKOUT_URL']; ?>">
                     <button class="submit primary wide button" type="submit" disabled>
-                        <i class="h-check"></i>
+                        <i class="icon-check"></i>
                         Оформить
                     </button>
                 </form>
@@ -90,13 +90,13 @@
                     <button class="transparent"
                             data-id=""
                             data-quantity="">
-                        <i class="h-minus"></i>
+                        <i class="icon-minus"></i>
                     </button>
                     <span class="value"></span>
                     <button class="transparent"
                             data-id=""
                             data-quantity="">
-                        <i class="h-plus"></i>
+                        <i class="icon-plus"></i>
                     </button>
                 </div>
 
@@ -105,7 +105,7 @@
                 <div class="actions">
                     <button class="delete"
                             data-id="">
-                        <i class="h-delete"></i>
+                        <i class="icon-delete"></i>
                         Удалить
                     </button>
                 </div>
