@@ -78,14 +78,14 @@ $request = Application::getInstance()->getContext()->getRequest();
     $APPLICATION->ShowHeadStrings();
 
     $APPLICATION->ShowMeta("robots", false, true);
-    $APPLICATION->ShowMeta("keywords", false, true);
+    $APPLICATION->ShowMeta("keywords", false, true); // устаревший тег
 
     $APPLICATION->ShowMeta("description", false, true);
     $APPLICATION->ShowLink("canonical", null, true);
 
     ?>
 
-    <?php //region  favicon ?>
+    <?php //region favicon ?>
 
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/favicon.ico"/>
 
