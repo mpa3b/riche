@@ -25,7 +25,7 @@ $frame = $this->createFrame();
     <? $frame->begin(); ?>
 
     <button class="transparent button trigger">
-        <i class="icon-search"></i>
+        <i class=  "h-search"></i>
     </button>
 
     <div class="header-search--form hidden">

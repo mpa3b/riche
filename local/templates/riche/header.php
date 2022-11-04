@@ -32,9 +32,6 @@ $assets->addJs(LOCAL_ASSETS . '/js-cookie/dist/js.cookie.min.js');
 $assets->addJs(LOCAL_ASSETS . '/vanilla-lazyload/dist/lazyload.min.js');
 
 $assets->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.min.js');
-$assets->addJs(LOCAL_ASSETS . '/jquery-sticky/jquery.sticky.js');
-
-$assets->addCSS(LOCAL_ASSETS . '/dripicons/css/dripicons.css');
 
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');

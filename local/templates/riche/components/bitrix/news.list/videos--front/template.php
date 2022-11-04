@@ -84,7 +84,7 @@ $frame = $this->createFrame();
                                class="modal--video"
                                rel="videos--front">
 
-                                <i class="icon video"></i>
+                                <i class="h-video"></i>
 
                                 <picture>
 
@@ -133,11 +133,11 @@ $frame = $this->createFrame();
                                         <? /*
 
                                         <button class="transparent button play">
-                                            <i class="icon play"></i>
+                                            <i class="h-play"></i>
                                         </button>
 
                                         <button class="transparent button pause">
-                                            <i class="icon pause"></i>
+                                            <i class="h-pause"></i>
                                         </button>
 
                                         */ ?>

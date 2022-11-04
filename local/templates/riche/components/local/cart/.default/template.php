@@ -31,7 +31,7 @@
         <div class="indicator">
             <span class="value"></span>
             <button class="transparent">
-                <i class="icon bag"></i>
+                <i load-icon="menu"></i>
             </button>
         </div>
 
@@ -57,7 +57,7 @@
 
                 <form action="<?= $arParams['CHECKOUT_URL']; ?>">
                     <button class="submit primary wide button" type="submit" disabled>
-                        <i class="icon check"></i>
+                        <i class="h-check"></i>
                         Оформить
                     </button>
                 </form>
@@ -77,9 +77,6 @@
                 <p></p>
 
                 <picture>
-                    <source>
-                    <source>
-                    <source>
                     <img>
                 </picture>
 
@@ -93,13 +90,13 @@
                     <button class="transparent"
                             data-id=""
                             data-quantity="">
-                        <i class="icon minus"></i>
+                        <i class="h-minus"></i>
                     </button>
                     <span class="value"></span>
                     <button class="transparent"
                             data-id=""
                             data-quantity="">
-                        <i class="icon plus"></i>
+                        <i class="h-plus"></i>
                     </button>
                 </div>
 
@@ -108,7 +105,7 @@
                 <div class="actions">
                     <button class="delete"
                             data-id="">
-                        <i class="icon delete"></i>
+                        <i class="h-delete"></i>
                         Удалить
                     </button>
                 </div>

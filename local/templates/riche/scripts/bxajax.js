@@ -4,47 +4,42 @@
 
 $.extend(
     {
-        bxajax: (component, action, data, method = false) => {
+        bxajax: (component, action, data, method = 'GET') => {
 
-            this.data = data;
+            const entrypoint = '/bitrix/services/main/ajax.php',
+                  parameters = {
+                      c     : data.component,
+                      action: data.action,
+                      mode  : 'class'
+                  };
 
-            this.entrypoint = '/bitrix/services/main/ajax.php';
+            const url = entrypoint + '?' + $.param(parameters, true);
 
-            this.parameters = {
-                c     : this.data.component,
-                action: this.data.action,
-                mode  : 'class'
-            };
+            method = method.toUpperCase();
 
-            this.url = this.entrypoint + '?' + $.param(this.parameters, true);
-
-            if (!method) {
-                this.method = 'GET';
-            } else {
-                this.method = method.toUpperCase();
-            }
-
-            delete this.data.action;
-            delete this.data.method;
+            delete data.action;
+            delete data.method;
 
             if (sessid) {
-                this.data.sessid = this.sessid;
+                data.sessid = sessid;
             }
 
+            let result;
+
             $.ajax(
-                this.url,
+                url,
                 {
-                    data   : this.data,
-                    method : this.method,
+                    data   : data,
+                    method : method,
                     success: (response) => {
 
-                        this.result = response;
+                        result = response;
 
                     }
                 }
             );
 
-            return this.result;
+            return result;
 
         }
     }

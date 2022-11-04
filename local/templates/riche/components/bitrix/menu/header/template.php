@@ -25,13 +25,13 @@
 <div class="menu--header dropdown--container">
 
     <button class="transparent button on-mobiles-only trigger">
-        <i class="icon-menu"></i>
+        <i class=  "h-menu"></i>
     </button>
 
     <div class="dropdown wrapper">
 
         <button class="transparent close">
-            <i class="icon-cross"></i>
+            <i class=  "h-cross"></i>
         </button>
 
         <nav>

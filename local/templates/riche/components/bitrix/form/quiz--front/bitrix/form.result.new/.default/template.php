@@ -281,11 +281,11 @@
         <div class="slider--controls">
 
             <button class="prev transparent button">
-                <i class="icon arrow-left-2"></i>
+                <i class="h-arrow-left-2"></i>
             </button>
 
             <button class="next transparent button">
-                <i class="icon arrow-right-2"></i>
+                <i class="h-arrow-right-2"></i>
             </button>
 
         </div>
