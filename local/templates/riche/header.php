@@ -1,69 +1,68 @@
 <!DOCTYPE html>
 <?php
 
-    if (!defined('B_PROLOG_INCLUDED') or B_PROLOG_INCLUDED !== true) {
-        die();
-    }
+if (!defined('B_PROLOG_INCLUDED') or B_PROLOG_INCLUDED !== true) {
+    die();
+}
 
-    /* @global $APPLICATION \CMain */
+/* @global $APPLICATION \CMain */
 
-    /* @global $USER \CUser */
+/* @global $USER \CUser */
 
-    use Bitrix\Main\Application;
-    use Bitrix\Main\Loader;
-    use Bitrix\Main\Page\Asset;
-    use Riche\Head;
+use Bitrix\Main\Application;
+use Bitrix\Main\Loader;
+use Bitrix\Main\Page\Asset;
+use Riche\Head;
 
-    Loader::registerAutoLoadClasses(
-        null,
-        [
-            'Riche\Breakpoint' => SITE_TEMPLATE_PATH . '/classes/Breakpoint.php',
-            'Riche\Head'       => SITE_TEMPLATE_PATH . '/classes/Head.php',
-            'Riche\Thumb'      => SITE_TEMPLATE_PATH . '/classes/Thumb.php',
-            'Riche\Units'      => SITE_TEMPLATE_PATH . '/classes/Units.php'
-        ]
-    );
+Loader::registerAutoLoadClasses(
+    null,
+    [
+        'Riche\Breakpoint' => SITE_TEMPLATE_PATH . '/classes/Breakpoint.php',
+        'Riche\Head' => SITE_TEMPLATE_PATH . '/classes/Head.php',
+        'Riche\Thumb' => SITE_TEMPLATE_PATH . '/classes/Thumb.php',
+        'Riche\Units' => SITE_TEMPLATE_PATH . '/classes/Units.php'
+    ]
+);
 
-    $assets = Asset::getInstance();
+$assets = Asset::getInstance();
 
-    $assets->addCss(LOCAL_ASSETS . '/normalize-css/normalize.css');
+$assets->addCss(LOCAL_ASSETS . '/normalize-css/normalize.css');
 
-    $assets->addJs(LOCAL_ASSETS . '/js-cookie/dist/js.cookie.min.js');
-    $assets->addJs(LOCAL_ASSETS . '/vanilla-lazyload/dist/lazyload.min.js');
+$assets->addJs(LOCAL_ASSETS . '/js-cookie/dist/js.cookie.min.js');
+$assets->addJs(LOCAL_ASSETS . '/vanilla-lazyload/dist/lazyload.min.js');
 
-    $assets->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.min.js');
-    $assets->addJs(LOCAL_ASSETS . '/jquery-sticky/jquery.sticky.js');
+$assets->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.min.js');
+$assets->addJs(LOCAL_ASSETS . '/jquery-sticky/jquery.sticky.js');
 
-    $assets->addCSS(LOCAL_ASSETS . '/dripicons/css/dripicons.css');
+$assets->addCSS(LOCAL_ASSETS . '/dripicons/css/dripicons.css');
 
-    $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
-    $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
 
-    $assets->addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
+$assets->addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
 
-    $assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
-    $assets->addCss(SITE_TEMPLATE_PATH . '/styles/components.css');
+$assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
+$assets->addCss(SITE_TEMPLATE_PATH . '/styles/components.css');
 
-    $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
+$assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
 
-    $assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
+$assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
 
-    Head::addHeadPreloadAsset(SITE_TEMPLATE_PATH . '/images/logo.svg');
+Head::addHeadPreloadAsset(SITE_TEMPLATE_PATH . '/images/logo.svg');
 
-    $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
+$currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
-    if ($currentDirectoryPath == '/') {
+if ($currentDirectoryPath == '/') {
 
-        $pageHtmlClasses = 'front';
+    $pageHtmlClasses = 'front';
 
-    }
-    else {
+} else {
 
-        $pageHtmlClasses = str_replace(DIRECTORY_SEPARATOR, '--', ltrim(strtolower($currentDirectoryPath), DIRECTORY_SEPARATOR));
+    $pageHtmlClasses = str_replace(DIRECTORY_SEPARATOR, '--', ltrim(strtolower($currentDirectoryPath), DIRECTORY_SEPARATOR));
 
-    }
+}
 
-    $request = Application::getInstance()->getContext()->getRequest();
+$request = Application::getInstance()->getContext()->getRequest();
 
 ?>
 <html lang="<?php echo LANGUAGE_ID ?>">
@@ -77,13 +76,13 @@
 
     <?php
 
-        $APPLICATION->ShowHeadStrings();
+    $APPLICATION->ShowHeadStrings();
 
-        $APPLICATION->ShowMeta("robots", false, true);
-        $APPLICATION->ShowMeta("keywords", false, true);
+    $APPLICATION->ShowMeta("robots", false, true);
+    $APPLICATION->ShowMeta("keywords", false, true);
 
-        $APPLICATION->ShowMeta("description", false, true);
-        $APPLICATION->ShowLink("canonical", null, true);
+    $APPLICATION->ShowMeta("description", false, true);
+    $APPLICATION->ShowLink("canonical", null, true);
 
     ?>
 
@@ -107,8 +106,8 @@
 
     <?php
 
-        $APPLICATION->ShowCSS(true, false);
-        $APPLICATION->ShowHeadScripts();
+    $APPLICATION->ShowCSS(true, false);
+    $APPLICATION->ShowHeadScripts();
 
     ?>
 
@@ -151,26 +150,26 @@
             <div id="page--header--menu" class="half">
 
                 <?php
-                    $APPLICATION->IncludeComponent(
-                        "bitrix:menu",
-                        "header",
-                        [
-                            "ALLOW_MULTI_SELECT"    => "N",
-                            "CHILD_MENU_TYPE"       => "local",
-                            "DELAY"                 => "N",
-                            "MAX_LEVEL"             => 1,
-                            "MENU_CACHE_GET_VARS"   => [""],
-                            "MENU_CACHE_TIME"       => CACHE_TTL,
-                            "MENU_CACHE_TYPE"       => "A",
-                            "MENU_CACHE_USE_GROUPS" => "N",
-                            "ROOT_MENU_TYPE"        => "main",
-                            "USE_EXT"               => "N",
-                            "CACHE_SELECTED_ITEMS"  => "N",
+                $APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "header",
+                    [
+                        "ALLOW_MULTI_SELECT" => "N",
+                        "CHILD_MENU_TYPE" => "local",
+                        "DELAY" => "N",
+                        "MAX_LEVEL" => 1,
+                        "MENU_CACHE_GET_VARS" => [""],
+                        "MENU_CACHE_TIME" => CACHE_TTL,
+                        "MENU_CACHE_TYPE" => "A",
+                        "MENU_CACHE_USE_GROUPS" => "N",
+                        "ROOT_MENU_TYPE" => "main",
+                        "USE_EXT" => "N",
+                        "CACHE_SELECTED_ITEMS" => "N",
 
-                            "COMPOSITE_FRAME_MODE" => "A",
-                            "COMPOSITE_FRAME_TYPE" => "AUTO"
-                        ]
-                    ); ?>
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO"
+                    ]
+                ); ?>
 
             </div>
 
@@ -181,31 +180,25 @@
                     "header",
                     [
                         "USE_SUGGEST" => "N",
-                        "PAGE"        => "/search/",
+                        "PAGE" => "/search/",
 
                         "COMPOSITE_FRAME_MODE" => "A",
                         "COMPOSITE_FRAME_TYPE" => "AUTO",
                     ]
                 ); ?>
 
-                <? /*
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:sale.basket.basket.line",
                     "header",
                     [
-                        "ORDER_URL" => ORDER_URL,
+                        "PATH_TO_BASKET" => ORDER_URL,
+                        "PATH_TO_ORDER" => ORDER_URL,
 
-                        "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO",
-                    ]
-                ); ?>
-                */ ?>
+                        "SHOW_PRODUCTS" => "N",
+                        "SHOW_NUM_PRODUCTS" => "Y",
+                        "SHOW_AUTHOR" => "N",
 
-                <?php $APPLICATION->IncludeComponent(
-                    'local:cart',
-                    '.default',
-                    [
-                        "CHECKOUT_URL" => CHECKOUT_URL,
+                        "HIDE_ON_BASKET_PAGES" => "Y",
 
                         "COMPOSITE_FRAME_MODE" => "A",
                         "COMPOSITE_FRAME_TYPE" => "AUTO",
@@ -234,8 +227,8 @@
                         "bitrix:breadcrumb",
                         "",
                         [
-                            "PATH"       => "",
-                            "SITE_ID"    => SITE_ID,
+                            "PATH" => "",
+                            "SITE_ID" => SITE_ID,
                             "START_FROM" => 0,
 
                             "COMPOSITE_FRAME_MODE" => "A",
@@ -253,8 +246,8 @@
                     'bitrix:main.include',
                     '',
                     [
-                        "AREA_FILE_SHOW"      => "sect",
-                        "AREA_FILE_SUFFIX"    => "header",
+                        "AREA_FILE_SHOW" => "sect",
+                        "AREA_FILE_SUFFIX" => "header",
                         "AREA_FILE_RECURSIVE" => "N",
 
                         "COMPOSITE_FRAME_MODE" => "A",

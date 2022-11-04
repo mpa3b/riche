@@ -2,19 +2,8 @@ $(() => {
 
     const element = $('.cart--default');
 
-    let data = {
-            action : 'update'
-        },
-        cart;
+    let data = $.bxajax(element.data('component'));
 
-    $.bxAjax(
-        data,
-        (response) => {
-
-            console.debug(response);
-            cart = response;
-
-        }
-    );
+    console.debug(data);
 
 });
