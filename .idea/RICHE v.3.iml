@@ -77,7 +77,6 @@
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/nsandrey.emptyinstall/install" />
       <excludeFolder url="file://$MODULE_DIR$/bin" />
       <excludeFolder url="file://$MODULE_DIR$/migrations" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/denx-b/bitrix-vue-component" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/bitrix-expert/tools" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/file-util" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/exec-with-fallback" />

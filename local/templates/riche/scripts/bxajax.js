@@ -4,89 +4,49 @@
 
 $.extend(
     {
-        bxAjax : (component, data, method = 'GET') => {
+        bxAjax: (component, data) => {
 
-            if (!data) {
-                data = {};
+            const entrypoint = '/bitrix/services/main/ajax.php';
+
+            let parameters = {
+                c     : data.component,
+                action: data.action,
+                mode  : 'class'
+            };
+
+            const url = entrypoint + '?' + $.param(parameters, true);
+
+            let method;
+
+            if (!this.data.method) {
+                method = 'GET';
+            } else {
+                method = data.method.toUpperCase();
             }
-
-            if (!data.sessid) {
-                data.sessid = sessid;
-            }
-
-            if (!data.action) {
-                data.action = 'get';
-            }
-
-            const url   = '/bitrix/services/main/ajax.php',
-                  query = {
-                      c :      component,
-                      action : data.action,
-                      mode :   'class'
-                  };
-
-            const params = $.param(query, true);
 
             delete data.action;
-            delete data.sessid;
+            delete data.method;
 
-            let request = $.ajax(
-                    url + '?' + params,
-                    {
-                        method : method,
-                        cache :  false,
-                        data :   data
+            if (sessid) {
+                data.sessid = this.sessid;
+            }
+
+            let result;
+
+            $.ajax(
+                url,
+                {
+                    data   : data,
+                    method : method,
+                    success: (response) => {
+
+                        result = response;
+
                     }
-                ),
-                result;
-
-            request.done(
-                (response) => {
-
-                    result = response;
-
                 }
             );
 
             return result;
-
-        }
-    }
-);
-
-// endregion
-
-// region templating
-
-// @todo по-моему тут проще отказаться от самописного рендера в пользу vue, underscore или moustache
-
-$.fn.extend(
-    {
-        renderTemplate : function (data) {
-
-            console.debug(data);
-
-            const container = $(this);
-            const template = container.data('template-name');
-            const element = $('template[data-template-name="' + template + '"]', container).clone();
-
-//            forEach(
-//                data,
-//                (_, item) => {
-//
-//                    forEach(
-//                        item,
-//                        (name, value) => {
-//
-//                            $('[data-name=' + name + ']', item).text(value);
-//
-//                        }
-//                    );
-//
-//                    container.append(element);
-//
-//                }
-//            );
 
         }
     }

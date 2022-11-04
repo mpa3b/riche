@@ -25,7 +25,8 @@
 
 <noindex>
 
-    <div class="cart--default dropdown--container" data-component="local:cart">
+    <div class="cart--default dropdown--container"
+         data-component="local:cart">
 
         <div class="indicator">
             <span class="value"></span>
@@ -40,55 +41,7 @@
 
             <h2 class="title">Твой заказ</h2>
 
-            <ul class="items">
-
-                <template>
-
-                    <li class="item">
-
-                        <h3></h3>
-
-                        <p></p>
-
-                        <picture>
-                            <img>
-                        </picture>
-
-                        <div class="prices">
-                            <del class="price"></del>
-                            <span class="price"></span>
-                            <span class="discount price"></span>
-                        </div>
-
-                        <div class="quantity">
-                            <button class="transparent"
-                                    data-id=""
-                                    data-quantity="">
-                                <i class="icon minus"></i>
-                            </button>
-                            <span class="value"></span>
-                            <button class="transparent"
-                                    data-id=""
-                                    data-quantity="">
-                                <i class="icon plus"></i>
-                            </button>
-                        </div>
-
-                        <div class="total"></div>
-
-                        <div class="actions">
-                            <button class="delete"
-                                    data-id="">
-                                <i class="icon delete"></i>
-                                Удалить
-                            </button>
-                        </div>
-
-                    </li>
-
-                </template>
-
-            </ul>
+            <ul class="items list"></ul>
 
             <div class="total">
 
@@ -114,6 +67,55 @@
             <?php $frame->end(); ?>
 
         </div>
+
+        <template data-template-name="cart-item">
+
+            <li class="item">
+
+                <h3></h3>
+
+                <p></p>
+
+                <picture>
+                    <source>
+                    <source>
+                    <source>
+                    <img>
+                </picture>
+
+                <div class="prices">
+                    <del class="price"></del>
+                    <span class="price"></span>
+                    <span class="discount price"></span>
+                </div>
+
+                <div class="quantity">
+                    <button class="transparent"
+                            data-id=""
+                            data-quantity="">
+                        <i class="icon minus"></i>
+                    </button>
+                    <span class="value"></span>
+                    <button class="transparent"
+                            data-id=""
+                            data-quantity="">
+                        <i class="icon plus"></i>
+                    </button>
+                </div>
+
+                <div class="total"></div>
+
+                <div class="actions">
+                    <button class="delete"
+                            data-id="">
+                        <i class="icon delete"></i>
+                        Удалить
+                    </button>
+                </div>
+
+            </li>
+
+        </template>
 
     </div>
 

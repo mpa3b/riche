@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "23c86cb53085b3b000573001d8500f33",
+    "content-hash": "c9b66109e2288b97fa3e1eb32afd1b48",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -105,59 +105,6 @@
                 }
             ],
             "time": "2022-09-06T11:08:23+00:00"
-        },
-        {
-            "name": "andreyryabin/sprint.migration",
-            "version": "4.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/andreyryabin/sprint.migration.git",
-                "reference": "5cabbd434ee893bb3eb5cba811625ef2e85fbfe4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/andreyryabin/sprint.migration/zipball/5cabbd434ee893bb3eb5cba811625ef2e85fbfe4",
-                "reference": "5cabbd434ee893bb3eb5cba811625ef2e85fbfe4",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "~1",
-                "ext-iconv": "*",
-                "ext-json": "*",
-                "php": ">=7.0"
-            },
-            "type": "bitrix-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Andrey Ryabin",
-                    "email": "andreyryabin@yandex.ru",
-                    "role": "Author"
-                }
-            ],
-            "description": "bitrix migration module",
-            "homepage": "http://marketplace.1c-bitrix.ru/solutions/sprint.migration/",
-            "keywords": [
-                "andrey",
-                "bitrix",
-                "migration",
-                "ryabin",
-                "sprint"
-            ],
-            "support": {
-                "issues": "https://github.com/andreyryabin/sprint.migration/issues",
-                "source": "https://github.com/andreyryabin/sprint.migration/tree/4.1.2"
-            },
-            "funding": [
-                {
-                    "url": "https://yoomoney.ru/to/410012104240288",
-                    "type": "custom"
-                }
-            ],
-            "time": "2022-09-06T11:09:38+00:00"
         },
         {
             "name": "bitrix-expert/tools",
@@ -358,41 +305,6 @@
                 }
             ],
             "time": "2021-09-13T08:19:44+00:00"
-        },
-        {
-            "name": "denx-b/bitrix-vue-component",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/denx-b/bitrix-vue-component.git",
-                "reference": "e2b4aabbb29c9a027490fbc87ef16bd7622dc097"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/denx-b/bitrix-vue-component/zipball/e2b4aabbb29c9a027490fbc87ef16bd7622dc097",
-                "reference": "e2b4aabbb29c9a027490fbc87ef16bd7622dc097",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=7.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Dbogdanoff\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "Connecting vue components in the bitrix",
-            "support": {
-                "issues": "https://github.com/denx-b/bitrix-vue-component/issues",
-                "source": "https://github.com/denx-b/bitrix-vue-component/tree/1.1.0"
-            },
-            "time": "2022-03-19T17:22:30+00:00"
         },
         {
             "name": "hafsoft/php-minifier",
