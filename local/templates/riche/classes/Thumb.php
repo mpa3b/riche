@@ -15,6 +15,7 @@
 
             self::$JPEG_QUALITY         = Option::get('main', 'image_resize_quality');
             self::$JPEG_QUALITY_PRELOAD = self::$JPEG_QUALITY / 2;
+
             self::$root                 = Loader::getDocumentRoot();
 
         }
