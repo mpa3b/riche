@@ -19,6 +19,8 @@
 
     $this->setFrameMode(true);
 
+    $this->addExternalJs(LOCAL_ASSETS . '/jsrender/jsrender.js');
+
     $frame = $this->createFrame();
 
 ?>
@@ -68,43 +70,48 @@
 
         </div>
 
-        <template data-template-name="cart-item">
+        <script type="text/x-jsrender">
 
-            <li class="item">
+            <li>
 
-                <h3></h3>
+                <h3>{{:name}}</h3>
 
-                <p></p>
+                {{ if announce }}
+                <p>{{:announce}}</p>
+                {{ /if }}
 
                 <picture>
-                    <img>
+                    {{ for picture as (media, source)}}
+                    <source srcset="{{:source}}" media="{{:media}}">
+                    {{ /for }}
+                    <img src="{{:picture.preload.src}}">
                 </picture>
 
                 <div class="prices">
-                    <del class="price"></del>
-                    <span class="price"></span>
-                    <span class="discount price"></span>
+                    <del class="price">{{:price}}</del>
+                    <span class="price">{{:price}}</span>
+                    <span class="discount price">{{:price}}</span>
                 </div>
 
                 <div class="quantity">
                     <button class="transparent"
-                            data-id=""
-                            data-quantity="">
+                            data-id="{{:id}}"
+                            data-quantity="{{:quantity}}">
                         <i class="icon-minus"></i>
                     </button>
-                    <span class="value"></span>
+                    <span class="value">{{:quantity}}</span>
                     <button class="transparent"
-                            data-id=""
-                            data-quantity="">
+                            data-id="{{:id}}"
+                            data-quantity="{{:quantity}}">
                         <i class="icon-plus"></i>
                     </button>
                 </div>
 
-                <div class="total"></div>
+                <div class="total">{{:total}}</div>
 
                 <div class="actions">
                     <button class="delete"
-                            data-id="">
+                            data-id="{{:id}}">
                         <i class="icon-delete"></i>
                         Удалить
                     </button>
@@ -112,7 +119,7 @@
 
             </li>
 
-        </template>
+        </script>
 
     </div>
 

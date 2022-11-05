@@ -4,6 +4,16 @@
 
 $.extend(
     {
+        /**
+         * Запрос к Bitrix AJAX API компонентов.
+         *
+         * @param component
+         * @param action
+         * @param data
+         * @param method
+         *
+         * @returns result
+         */
         bxajax: (component, action, data, method = 'GET') => {
 
             const entrypoint = '/bitrix/services/main/ajax.php',

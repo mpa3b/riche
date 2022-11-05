@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bdf1e114b9ae11c87aa55fd2ff386f8",
+    "content-hash": "6d27988abc802ca9ef79da3655adc003",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -154,6 +154,186 @@
                 "wiki": "https://github.com/bitrix-expert/tools/wiki"
             },
             "time": "2017-03-27T11:07:34+00:00"
+        },
+        {
+            "name": "bower-asset/inputmask",
+            "version": "5.0.7",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:RobinHerbots/Inputmask.git",
+                "reference": "e76b7c9dd9049e2d0f8f439b5f393fd5a5f1c84f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/e76b7c9dd9049e2d0f8f439b5f393fd5a5f1c84f",
+                "reference": "e76b7c9dd9049e2d0f8f439b5f393fd5a5f1c84f"
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset",
+            "license": [
+                "http://opensource.org/licenses/mit-license.php"
+            ]
+        },
+        {
+            "name": "bower-asset/jquery",
+            "version": "3.6.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:jquery/jquery-dist.git",
+                "reference": "3711efedf0ca2e998cd0417324f717f2e0b828ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/3711efedf0ca2e998cd0417324f717f2e0b828ec",
+                "reference": "3711efedf0ca2e998cd0417324f717f2e0b828ec"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/jquery-colorbox",
+            "version": "1.6.4",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:jackmoore/colorbox.git",
+                "reference": "bac78120c6ca9e63370cc317ab6f400129cd6608"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jackmoore/colorbox/zipball/bac78120c6ca9e63370cc317ab6f400129cd6608",
+                "reference": "bac78120c6ca9e63370cc317ab6f400129cd6608"
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.3.2"
+            },
+            "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/jquery-sticky",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:garand/sticky.git",
+                "reference": "5cfc20c2729f46d789b053781db9f74229a373d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/garand/sticky/zipball/5cfc20c2729f46d789b053781db9f74229a373d1",
+                "reference": "5cfc20c2729f46d789b053781db9f74229a373d1"
+            },
+            "require": {
+                "bower-asset/jquery": "*"
+            },
+            "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/js-cookie",
+            "version": "v3.0.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:js-cookie/js-cookie.git",
+                "reference": "0ba77141dd215782cc7770347a457906908c66ff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/js-cookie/js-cookie/zipball/0ba77141dd215782cc7770347a457906908c66ff",
+                "reference": "0ba77141dd215782cc7770347a457906908c66ff"
+            },
+            "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/jsrender",
+            "version": "v1.0.11",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:BorisMoore/jsrender.git",
+                "reference": "3c4b7b1a45e1ef5e9facc2272e95398cbfb5aa09"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BorisMoore/jsrender/zipball/3c4b7b1a45e1ef5e9facc2272e95398cbfb5aa09",
+                "reference": "3c4b7b1a45e1ef5e9facc2272e95398cbfb5aa09"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/normalize-css",
+            "version": "8.0.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:necolas/normalize.css.git",
+                "reference": "fc091cce1534909334c1911709a39c22d406977b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/necolas/normalize.css/zipball/fc091cce1534909334c1911709a39c22d406977b",
+                "reference": "fc091cce1534909334c1911709a39c22d406977b"
+            },
+            "type": "bower-asset"
+        },
+        {
+            "name": "bower-asset/slick-carousel",
+            "version": "v1.8.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:kenwheeler/slick.git",
+                "reference": "0f40c9d6a02a5c08b5f4dd80fdada3a854a59bee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kenwheeler/slick/zipball/0f40c9d6a02a5c08b5f4dd80fdada3a854a59bee",
+                "reference": "0f40c9d6a02a5c08b5f4dd80fdada3a854a59bee"
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/tiny-slider",
+            "version": "v2.9.4",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ganlanyuan/tiny-slider.git",
+                "reference": "0fcb2e643489802da28eb1a84b15fec6c7ed54b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ganlanyuan/tiny-slider/zipball/0fcb2e643489802da28eb1a84b15fec6c7ed54b6",
+                "reference": "0fcb2e643489802da28eb1a84b15fec6c7ed54b6"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/vanilla-lazyload",
+            "version": "17.8.3",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:verlok/lazyload.git",
+                "reference": "088826f926dfae7dfa8849456c21571d76b28c4f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verlok/lazyload/zipball/088826f926dfae7dfa8849456c21571d76b28c4f",
+                "reference": "088826f926dfae7dfa8849456c21571d76b28c4f"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
         },
         {
             "name": "composer/installers",
@@ -349,135 +529,6 @@
                 "source": "https://github.com/hafsoft/php-minifier/tree/v0.9.1"
             },
             "time": "2014-01-10T11:04:17+00:00"
-        },
-        {
-            "name": "npm-asset/inputmask",
-            "version": "5.0.7",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/inputmask/-/inputmask-5.0.7.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/insert-css",
-            "version": "0.0.0",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/insert-css/-/insert-css-0.0.0.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/jquery",
-            "version": "3.6.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/jquery/-/jquery-3.6.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/jquery-colorbox",
-            "version": "1.6.4",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/jquery-colorbox/-/jquery-colorbox-1.6.4.tgz"
-            },
-            "require": {
-                "npm-asset/jquery": ">=1.3.2"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/jquery-sticky",
-            "version": "1.0.4",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/jquery-sticky/-/jquery-sticky-1.0.4.tgz"
-            },
-            "require": {
-                "npm-asset/jquery": "*"
-            },
-            "type": "npm-asset",
-            "license": [
-                "(MIT OR GPL-3.0)"
-            ]
-        },
-        {
-            "name": "npm-asset/js-cookie",
-            "version": "3.0.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/js-cookie/-/js-cookie-3.0.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/normalize-css",
-            "version": "2.3.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/normalize-css/-/normalize-css-2.3.1.tgz"
-            },
-            "require": {
-                "npm-asset/insert-css": "0.0.0"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/slick-carousel",
-            "version": "1.8.1",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/slick-carousel/-/slick-carousel-1.8.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/tiny-slider",
-            "version": "2.9.4",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/tiny-slider/-/tiny-slider-2.9.4.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/vanilla-lazyload",
-            "version": "17.8.2",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/vanilla-lazyload/-/vanilla-lazyload-17.8.2.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
         },
         {
             "name": "oomphinc/composer-installers-extender",

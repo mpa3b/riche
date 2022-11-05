@@ -10,4 +10,18 @@ namespace Local;
 class MenuSimpleComponent extends \CBitrixComponent
 {
 
+    public function onPrepareComponentParams($params)
+    {
+
+        return $params;
+
+    }
+
+    public function executeComponent(): void
+    {
+
+        $this->includeComponentTemplate();
+
+    }
+
 }

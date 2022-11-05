@@ -35,40 +35,44 @@
     content: "\e901";
   }
 
-  &-discount-dollar:before {
-    content: "\e902";
-  }
+  &-discount {
 
-  &-discount-empty:before {
-    content: "\e903";
-  }
+    &-dollar:before {
+      content: "\e902";
+    }
 
-  &-discount-euro:before {
-    content: "\e904";
-  }
+    &-empty:before {
+      content: "\e903";
+    }
 
-  &-discount-percentage:before {
-    content: "\e905";
-  }
+    &-euro:before {
+      content: "\e904";
+    }
 
-  &-discount-pound:before {
-    content: "\e906";
-  }
+    &-percentage:before {
+      content: "\e905";
+    }
 
-  &-discount-yuan:before {
-    content: "\e907";
+    &-pound:before {
+      content: "\e906";
+    }
+
+    &-yuan:before {
+      content: "\e907";
+    }
+
   }
 
   &-leaf:before {
     content: "\e908";
   }
 
-  &-link-2:before {
-    content: "\e909";
-  }
-
   &-link:before {
     content: "\e90a";
+  }
+
+  &-link-2:before {
+    content: "\e909";
   }
 
   &-login:before {
@@ -91,35 +95,39 @@
     content: "\e90f";
   }
 
-  &-user-add:before {
-    content: "\e910";
+  &-user {
+
+    &-add:before {
+      content: "\e910";
+    }
+
+    &-checked:before {
+      content: "\e911";
+    }
+
+    &-in:before {
+      content: "\e912";
+    }
+
+    &-out:before {
+      content: "\e913";
+    }
+
+    &-remove:before {
+      content: "\e914";
+    }
+
+    &-x:before {
+      content: "\e915";
+    }
+
+    &:before {
+      content: "\e916";
+    }
+
   }
 
-  &-user-checked:before {
-    content: "\e911";
-  }
-
-  &-user-in:before {
-    content: "\e912";
-  }
-
-  &-user-out:before {
-    content: "\e913";
-  }
-
-  &-user-remove:before {
-    content: "\e914";
-  }
-
-  &-user-x:before {
-    content: "\e915";
-  }
-
-  &-user:before {
-    content: "\e916";
-  }
-
-  &-users:before {
+  &users:before {
     content: "\e917";
   }
 
