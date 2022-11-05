@@ -1,9 +1,9 @@
 $(() => {
 
-    const element = $('.header-search');
-    const button = $('button.trigger', element);
+    const element = $('.search-form--header');
 
-    const searchForm = $('.header-search--form', element);
+    const button = $('button.trigger', element),
+          searchForm = $('.search-form--header--form', element);
 
     button.on(
         'click',

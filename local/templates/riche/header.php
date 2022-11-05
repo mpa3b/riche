@@ -128,7 +128,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
                 <?php if ($currentDirectoryPath == "/") { ?>
 
-                    <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+                    <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo--full.svg"
                          loading="eager"
                          alt="RICHE"
                          class="logo">
@@ -136,10 +136,12 @@ $request = Application::getInstance()->getContext()->getRequest();
                 <?php } else { ?>
 
                     <a href="/">
-                        <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+
+                        <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo--full.svg"
                              loading="eager"
                              alt="RICHE"
                              class="logo">
+
                     </a>
 
                 <?php } ?>
@@ -174,6 +176,8 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             <div id="page--header--buttons" class="quarter">
 
+                <? /*
+
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:search.form",
                     "header",
@@ -185,6 +189,8 @@ $request = Application::getInstance()->getContext()->getRequest();
                         "COMPOSITE_FRAME_TYPE" => "AUTO",
                     ]
                 ); ?>
+
+                */ ?>
 
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:sale.basket.basket.line",

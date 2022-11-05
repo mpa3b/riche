@@ -20,53 +20,45 @@ $frame = $this->createFrame();
 
 ?>
 
-<div class="header-search">
-
-    <? $frame->begin(); ?>
+<div class="search-form--header">
 
     <button class="transparent button trigger">
-        <i class="icon-search"></i>
+        <i class="icon-lens"></i>
     </button>
 
-    <div class="header-search--form hidden">
+    <div class="search-form--header--form hidden">
 
-        <form action="/search/">
+        <? $frame->begin(); ?>
 
-            <div class="input">
+        <form action="/search/" method="post">
 
-                <div class="field">
+            <? if ($arParams["USE_SUGGEST"] === "Y") { ?>
 
-                    <? if ($arParams["USE_SUGGEST"] === "Y") { ?>
+                <? $APPLICATION->IncludeComponent(
+                    "bitrix:search.suggest.input",
+                    "",
+                    [
+                        "NAME" => "q",
+                        "VALUE" => "",
+                        "INPUT_SIZE" => 15,
+                        "DROPDOWN_SIZE" => 10,
+                    ],
+                    $component, ["HIDE_ICONS" => "Y"]
+                ); ?>
 
-                        <? $APPLICATION->IncludeComponent(
-                            "bitrix:search.suggest.input",
-                            "",
-                            [
-                                "NAME"          => "q",
-                                "VALUE"         => "",
-                                "INPUT_SIZE"    => 15,
-                                "DROPDOWN_SIZE" => 10,
-                            ],
-                            $component, ["HIDE_ICONS" => "Y"]
-                        ); ?>
+            <? } else { ?>
 
-                    <? } else { ?>
+                <input type="search"
+                       name="q"
+                       value="<?= $arResult["REQUEST"]["QUERY"]; ?>"
+                       placeholder="Поиск"/>
 
-                        <input type="search"
-                               name="q"
-                               value="<?= $arResult["REQUEST"]["QUERY"]; ?>"
-                               placeholder="Поиск"/>
-
-                    <? } ?>
-
-                </div>
-
-            </div>
+            <? } ?>
 
         </form>
 
-</div>
+        <? $frame->end(); ?>
 
-    <? $frame->end(); ?>
+    </div>
 
 </div>
