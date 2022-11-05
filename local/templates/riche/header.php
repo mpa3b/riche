@@ -150,11 +150,11 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             <div id="page--header--menu" class="half">
 
-                <?php
-                $APPLICATION->IncludeComponent(
+                <?php $APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "header",
                     [
+                        "ROOT_MENU_TYPE" => "main",
                         "ALLOW_MULTI_SELECT" => "N",
                         "CHILD_MENU_TYPE" => "local",
                         "DELAY" => "N",
@@ -163,7 +163,6 @@ $request = Application::getInstance()->getContext()->getRequest();
                         "MENU_CACHE_TIME" => CACHE_TTL,
                         "MENU_CACHE_TYPE" => "A",
                         "MENU_CACHE_USE_GROUPS" => "N",
-                        "ROOT_MENU_TYPE" => "main",
                         "USE_EXT" => "N",
                         "CACHE_SELECTED_ITEMS" => "N",
 
@@ -207,6 +206,35 @@ $request = Application::getInstance()->getContext()->getRequest();
 
                         "COMPOSITE_FRAME_MODE" => "A",
                         "COMPOSITE_FRAME_TYPE" => "AUTO",
+                    ]
+                ); ?>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="whole unit">
+
+                <?php $APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "main",
+                    [
+                        "ROOT_MENU_TYPE" => "main",
+                        "ALLOW_MULTI_SELECT" => "N",
+                        "CHILD_MENU_TYPE" => "local",
+                        "DELAY" => "N",
+                        "MAX_LEVEL" => 1,
+                        "MENU_CACHE_GET_VARS" => [""],
+                        "MENU_CACHE_TIME" => CACHE_TTL,
+                        "MENU_CACHE_TYPE" => "A",
+                        "MENU_CACHE_USE_GROUPS" => "N",
+                        "USE_EXT" => "N",
+                        "CACHE_SELECTED_ITEMS" => "N",
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO"
                     ]
                 ); ?>
 
