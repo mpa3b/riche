@@ -2,18 +2,12 @@
 /** @var $APPLICATION CMain */
 
 /** @var $localization \WS\ReduceMigrations\Localization */
+$localization;
+$module = \WS\ReduceMigrations\Module::getInstance();
 
-    use Bitrix\Main\Application;
-    use WS\ReduceMigrations\Module;
-    use WS\ReduceMigrations\Scenario\ScriptScenario;
-    use WS\ReduceMigrations\TimeFormatter;
-
-    $localization;
-$module = Module::getInstance();
-
-$request = Application::getInstance()->getContext()->getRequest();
+$request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
 $apply = false;
-$timeFormatter = new TimeFormatter($localization->getDataByPath('timeLang'));
+$timeFormatter = new \WS\ReduceMigrations\TimeFormatter($localization->getDataByPath('timeLang'));
 if ($request->get('rollback')) {
     $module->rollbackLastBatch();
     $apply = true;
@@ -36,7 +30,7 @@ foreach ($notAppliedScenarios->groupByPriority() as $priority => $scenarioList) 
     }
 }
 
-$lastSetupLog = Module::getInstance()->getLastSetupLog();
+$lastSetupLog = \WS\ReduceMigrations\Module::getInstance()->getLastSetupLog();
 if ($lastSetupLog) {
     $appliedFixes = array();
     $errorFixes = array();
@@ -62,7 +56,7 @@ if ($lastSetupLog) {
 $APPLICATION->SetTitle($localization->getDataByPath('title'));
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_after.php");
 // 1C-Bitrix override variable!!
-$module = Module::getInstance();
+$module = \WS\ReduceMigrations\Module::getInstance();
 
 !$scenarios && !$lastSetupLog && CAdminMessage::ShowMessage(
     array(
@@ -118,7 +112,7 @@ if ($scenarios) {
         <?
         $form->EndCustomField('list' . $priority);
     endforeach;
-    if (isset($scenarios[ScriptScenario::PRIORITY_OPTIONAL])) {
+    if (isset($scenarios[\WS\ReduceMigrations\Scenario\ScriptScenario::PRIORITY_OPTIONAL])) {
         $form->AddCheckBoxField('skipOptional', $localization->message('skipOptional'), false, 'Y', false);
     }
     $form->AddViewField('time', $localization->message('approximatelyTime'), $timeFormatter->format($notAppliedScenarios->getApproximateTime()));

@@ -3,8 +3,6 @@
 namespace WS\ReduceMigrations\Tests\Cases;
 
 use Bitrix\Main\Type\DateTime;
-use CAgent;
-use WS\ReduceMigrations\Builder\AgentBuilder;
 use WS\ReduceMigrations\Builder\Entity\Agent;
 use WS\ReduceMigrations\Tests\AbstractCase;
 
@@ -19,24 +17,24 @@ class AgentBuilderCase extends AbstractCase {
     }
 
     public function close() {
-        $agent = CAgent::GetList(null, array(
+        $agent = \CAgent::GetList(null, array(
             'NAME' => 'abs(0);'
         ))->Fetch();
-        CAgent::Delete($agent['ID']);
+        \CAgent::Delete($agent['ID']);
     }
 
 
     public function testAdd() {
         $date = new DateTime();
         $date->add('+1 day');
-        $builder = new AgentBuilder();
+        $builder = new \WS\ReduceMigrations\Builder\AgentBuilder();
         $obAgent = $builder->addAgent('abs(0);', function (Agent $agent) use ($date) {
             $agent
                 ->sort(23)
                 ->active(true)
                 ->nextExec($date);
         });
-        $agent = CAgent::GetList(null, array(
+        $agent = \CAgent::GetList(null, array(
             'ID' => $obAgent->getId()
         ))->Fetch();
 
@@ -49,7 +47,7 @@ class AgentBuilderCase extends AbstractCase {
 
 
     public function testUpdate() {
-        $builder = new AgentBuilder();
+        $builder = new \WS\ReduceMigrations\Builder\AgentBuilder();
         $obAgent = $builder
             ->updateAgent('abs(0);', function (Agent $agent) {
                 $agent
@@ -57,7 +55,7 @@ class AgentBuilderCase extends AbstractCase {
                     ->isPeriod(true);
             });
 
-        $agent = CAgent::GetList(null, array(
+        $agent = \CAgent::GetList(null, array(
             'ID' => $obAgent->getId()
         ))->Fetch();
 

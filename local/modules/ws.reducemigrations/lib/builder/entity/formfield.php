@@ -1,12 +1,11 @@
 <?php
 
 namespace WS\ReduceMigrations\Builder\Entity;
-use CFormAnswer;
 use WS\ReduceMigrations\Builder\BuilderException;
 
 /**
  * Class FormField
- *
+ * 
  * @method FormField sort(int $value)
  * @method FormField formId(int $value)
  * @method FormField sid(string $value)
@@ -171,7 +170,7 @@ class FormField extends Base {
     }
 
     private function findAnswer($message) {
-        $data = CFormAnswer::GetList($this->getId(), $by = null, $order = null, array(
+        $data = \CFormAnswer::GetList($this->getId(), $by = null, $order = null, array(
             'MESSAGE' => $message
         ), $isFiltered = false)->Fetch();
 

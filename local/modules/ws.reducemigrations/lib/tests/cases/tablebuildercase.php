@@ -3,7 +3,6 @@
 namespace WS\ReduceMigrations\Tests\Cases;
 
 use Bitrix\Main\Application;
-use Bitrix\Main\DB\SqlQueryException;
 use WS\ReduceMigrations\Builder\Entity\Table;
 use WS\ReduceMigrations\Builder\TableBuilder;
 use WS\ReduceMigrations\Tests\AbstractCase;
@@ -76,7 +75,7 @@ class TableBuilderCase extends AbstractCase {
         try {
             $this->getTableInfo('test_reducemigrations_table');
             $this->assertTrue(false);//table wasn't deleted
-        } catch (SqlQueryException $e) {
+        } catch (\Bitrix\Main\DB\SqlQueryException $e) {
             //everything ok
         }
     }

@@ -2,7 +2,6 @@
 
 namespace WS\ReduceMigrations\Console\Command;
 
-use Exception;
 use WS\ReduceMigrations\Console\Console;
 use WS\ReduceMigrations\Scenario\ScriptScenario;
 
@@ -77,7 +76,7 @@ class CreateScenarioCommand extends BaseCommand {
     public function execute($callback = false) {
         try {
             $fileName = $this->module->createScenario($this->prepareName($this->getName()), $this->getPriority(), (int)$this->time);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $this->console->printLine('An error occurred saving file', Console::OUTPUT_ERROR);
             $this->console->printLine($e->getMessage());
             return;

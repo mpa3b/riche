@@ -3,8 +3,6 @@
 namespace WS\ReduceMigrations\Builder\Entity;
 
 
-use Exception;
-
 abstract class Base {
     /** @var array */
     protected $params;
@@ -42,7 +40,7 @@ abstract class Base {
     public function __call($name, $arguments) {
         $map = $this->getMap();
         if (!isset($map[$name])) {
-            throw new Exception("Call to undefined method {$name}");
+            throw new \Exception("Call to undefined method {$name}");
         }
         $this->setAttribute($map[$name], $arguments[0]);
         return $this;

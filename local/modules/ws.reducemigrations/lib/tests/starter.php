@@ -6,12 +6,8 @@
 namespace WS\ReduceMigrations\Tests;
 
 
-use Exception;
-use ReflectionMethod;
-use ReflectionObject;
 use WS\ReduceMigrations\Module;
 use WS\ReduceMigrations\Tests\Cases\AgentBuilderCase;
-use WS\ReduceMigrations\Tests\Cases\ErrorException;
 use WS\ReduceMigrations\Tests\Cases\EventsBuilderCase;
 use WS\ReduceMigrations\Tests\Cases\FormBuilderCase;
 use WS\ReduceMigrations\Tests\Cases\HighLoadBlockBuilderCase;
@@ -100,8 +96,8 @@ class Starter {
             $result->setMessage('Case class is not correct');
             return $result->toArray();
         }
-        $refClass = new ReflectionObject($testCase);
-        $testMethods  = array_filter($refClass->getMethods(), function (ReflectionMethod $method) {
+        $refClass = new \ReflectionObject($testCase);
+        $testMethods  = array_filter($refClass->getMethods(), function (\ReflectionMethod $method) {
             return strpos(strtolower($method->getName()), 'test') === 0;
         });
         try {
@@ -114,11 +110,11 @@ class Starter {
                 $testCase->tearDown();
                 $count++;
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $result->setSuccess(false)
                 ->setTrace($e->getTraceAsString());
             $message = $method->getShortName(). ', '. $e->getMessage();
-            if ($e instanceof ErrorException) {
+            if ($e instanceof \WS\ReduceMigrations\Tests\Cases\ErrorException) {
                 $e->getDump() && $message .= "\ndump: \n" . var_export($e->getDump(), true);
             }
             $result->setMessage($message);

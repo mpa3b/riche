@@ -1,13 +1,12 @@
 <?php
 
 use WS\ReduceMigrations\Entities\AppliedChangesLogModel;
-    use WS\ReduceMigrations\Module;
 
-    /** @var $localization \WS\ReduceMigrations\Localization */
+/** @var $localization \WS\ReduceMigrations\Localization */
 $localization;
 
 /** @var \WS\ReduceMigrations\Module $module */
-$module = Module::getInstance();
+$module = \WS\ReduceMigrations\Module::getInstance();
 
 /** @var CMain $APPLICATION */
 $APPLICATION->SetTitle($localization->getDataByPath('title'));
@@ -108,3 +107,4 @@ if ($_REQUEST["mode"] == "list")  {
 } else {
     require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/epilog_admin.php");
 }
+

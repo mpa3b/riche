@@ -3,7 +3,6 @@
 namespace WS\ReduceMigrations\Builder\Entity;
 
 use Bitrix\Main\Type\DateTime;
-use CIBlockPropertyEnum;
 use WS\ReduceMigrations\Builder\BuilderException;
 
 /**
@@ -12,7 +11,7 @@ use WS\ReduceMigrations\Builder\BuilderException;
  * @method Property name(string $value) - NAME
  * @method Property xmlId(string $value) - XML_ID
  * @method Property listType(string $value) - LIST_TYPE
- * @method Property dateUpdate(DateTime $value) - TIMESTAMP_X
+ * @method Property dateUpdate(\Bitrix\Main\Type\DateTime $value) - TIMESTAMP_X
  * @method Property rowCount(integer $value) - ROW_COUNT
  * @method Property colCount(integer $value) - COL_COUNT
  * @method Property multipleCnt(integer $value) - MULTIPLE_CNT
@@ -336,7 +335,7 @@ class Property extends Base {
         if (!$this->getId()) {
             throw new BuilderException('Save Property before update enum');
         }
-        $res = CIBlockPropertyEnum::GetList(null, array(
+        $res = \CIBlockPropertyEnum::GetList(null, array(
             'PROPERTY_ID' => $this->id,
             'VALUE' => $name,
         ))->Fetch();

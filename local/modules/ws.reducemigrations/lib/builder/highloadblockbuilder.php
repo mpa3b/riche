@@ -3,17 +3,14 @@
 namespace WS\ReduceMigrations\Builder;
 
 use Bitrix\Highloadblock\HighloadBlockTable;
-use CModule;
-use CUserFieldEnum;
-use CUserTypeEntity;
 use WS\ReduceMigrations\Builder\Entity\HighLoadBlock;
 use WS\ReduceMigrations\Builder\Entity\UserField;
 
 class HighLoadBlockBuilder {
 
     public function __construct() {
-        CModule::IncludeModule('iblock');
-        CModule::IncludeModule('highloadblock');
+        \CModule::IncludeModule('iblock');
+        \CModule::IncludeModule('highloadblock');
     }
 
 
@@ -113,7 +110,7 @@ class HighLoadBlockBuilder {
     private function commitFields($highLoadBlock) {
         global $APPLICATION;
 
-        $gw = new CUserTypeEntity();
+        $gw = new \CUserTypeEntity();
         foreach ($highLoadBlock->getFields() as $field) {
             $res = true;
             if ($field->getId() > 0) {
@@ -140,7 +137,7 @@ class HighLoadBlockBuilder {
      */
     private function commitEnum($field) {
         global $APPLICATION;
-        $obEnum = new CUserFieldEnum;
+        $obEnum = new \CUserFieldEnum;
         $values = array();
         foreach ($field->getEnumVariants() as $key => $variant) {
             $key = 'n' . $key;

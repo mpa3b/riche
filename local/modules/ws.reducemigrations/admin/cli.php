@@ -1,11 +1,8 @@
 <?php
 
 use WS\ReduceMigrations\Console\Console;
-    use WS\ReduceMigrations\Console\ConsoleException;
-    use WS\ReduceMigrations\Console\RuntimeCounter;
-    use WS\ReduceMigrations\Module;
 
-    $DOCUMENT_ROOT = $_SERVER["DOCUMENT_ROOT"];
+$DOCUMENT_ROOT = $_SERVER["DOCUMENT_ROOT"];
 
 define("NO_KEEP_STATISTIC", true);
 define("NOT_CHECK_PERMISSIONS",true);
@@ -18,7 +15,7 @@ require_once(__DIR__."/../include.php");
 require_once(__DIR__."/../prolog.php");
 
 
-$module = Module::getInstance();
+$module = \WS\ReduceMigrations\Module::getInstance();
 $console = new Console($argv);
 
 $fCompanyLabel = function () use ($console) {
@@ -27,7 +24,7 @@ $fCompanyLabel = function () use ($console) {
 };
 
 $getShowProgress = function () use ($console) {
-    $counter = new RuntimeCounter();
+    $counter = new \WS\ReduceMigrations\Console\RuntimeCounter();
     return function ($data, $type) use ($console, $counter) {
         if ($type == 'setCount') {
             $counter->migrationCount = $data;
@@ -64,7 +61,7 @@ try {
     $command = $console->getCommand();
     $command->execute($getShowProgress());
     $fCompanyLabel();
-} catch (ConsoleException $e) {
+} catch (\WS\ReduceMigrations\Console\ConsoleException $e) {
     $console->printLine($e->getMessage());
     $fCompanyLabel();
 }

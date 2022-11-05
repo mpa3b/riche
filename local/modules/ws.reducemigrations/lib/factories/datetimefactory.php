@@ -3,8 +3,6 @@
 namespace WS\ReduceMigrations\factories;
 
 use Bitrix\Main\Type\DateTime;
-use DateTimeZone;
-use Exception;
 
 class DateTimeFactory {
 
@@ -32,9 +30,9 @@ class DateTimeFactory {
         try {
             $obj = new \DateTime();
             return $obj->getTimezone();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             date_default_timezone_set(self::DEFAULT_TIME_ZONE);
-            return new DateTimeZone(self::DEFAULT_TIME_ZONE);
+            return new \DateTimeZone(self::DEFAULT_TIME_ZONE);
         }
     }
 }

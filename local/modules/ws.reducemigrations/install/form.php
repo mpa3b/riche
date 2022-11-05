@@ -1,11 +1,8 @@
 <?php
 global $APPLICATION, $errors;
-
-    use WS\ReduceMigrations\Module;
-
-    $localization = Module::getInstance()->getLocalization('setup');
-$options          = Module::getInstance()->getOptions();
-$module           = Module::getInstance();
+$localization = \WS\ReduceMigrations\Module::getInstance()->getLocalization('setup');
+$options = \WS\ReduceMigrations\Module::getInstance()->getOptions();
+$module = \WS\ReduceMigrations\Module::getInstance();
 
 $errors && CAdminMessage::ShowMessage(
     array(

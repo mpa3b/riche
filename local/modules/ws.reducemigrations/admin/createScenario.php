@@ -2,14 +2,9 @@
 
 /** @var $APPLICATION CMain */
 /** @var $localization \WS\ReduceMigrations\Localization */
-
-    use Bitrix\Main\Application;
-    use WS\ReduceMigrations\Module;
-    use WS\ReduceMigrations\Scenario\ScriptScenario;
-
-    $localization;
-$module = Module::getInstance();
-$request = Application::getInstance()->getContext()->getRequest();
+$localization;
+$module = \WS\ReduceMigrations\Module::getInstance();
+$request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
 $fileName = '';
 $hasError = false;
 if ($_POST['save'] != "" && $_POST['name']) {
@@ -50,7 +45,7 @@ $form->BeginNextFormTab();
 $form->AddEditField('name', $localization->message('field.name'), true, array('size' => 80));
 
 $priorities = array();
-foreach (ScriptScenario::getPriorities() as $priority) {
+foreach (\WS\ReduceMigrations\Scenario\ScriptScenario::getPriorities() as $priority) {
     $priorities[$priority] = $localization->message('priority.' . $priority);
 }
 

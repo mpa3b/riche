@@ -42,6 +42,7 @@
     "ext-curl": "*",
     "ext-fileinfo": "*",
     "ext-gd": "*",
+    "composer/installers": "^1.7",
     "andreyryabin/sprint.editor": "^3.24",
     "bitrix-expert/tools": "^1.5",
     "hafsoft/php-minifier": "^0.9.1",
@@ -62,10 +63,8 @@
     "worksolutions/bitrix-reduce-migrations": "^1.1"
   },
   "require-dev": {
-    "composer/installers": "^1.7",
     "kint-php/kint": "^4.0",
     "kint-php/kint-helpers": "^4.0"
-
   },
   "extra": {
     "merge-plugin": {

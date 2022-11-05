@@ -10,7 +10,7 @@ use Bitrix\Main\Type\DateTime;
  * @method Agent interval(int $value)
  * @method Agent module(string $value)
  * @method Agent callback(string $value)
- * @method Agent nextExec(DateTime $value)
+ * @method Agent nextExec(\Bitrix\Main\Type\DateTime $value)
  * @package WS\ReduceMigrations\Builder\Entity
  */
 class Agent extends Base {

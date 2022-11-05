@@ -151,7 +151,7 @@ class Console implements MessageOutputInterface {
             case 'progress':
                 return $this->progressOutput;
                 break;
-            default:
+            default:;
         }
         return $this->defaultOutput;
     }

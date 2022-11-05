@@ -2,7 +2,6 @@
 
 namespace WS\ReduceMigrations\Console\Command;
 
-use Exception;
 use WS\ReduceMigrations\Console\Console;
 use WS\ReduceMigrations\Console\ConsoleException;
 use WS\ReduceMigrations\Console\Pear\ConsoleTable;
@@ -58,7 +57,7 @@ class RollbackCommand extends BaseCommand {
 
         try {
             $this->rollback($callback);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             throw new ConsoleException($e->getMessage());
         }
 

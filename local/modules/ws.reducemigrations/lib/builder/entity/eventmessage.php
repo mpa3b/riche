@@ -13,7 +13,7 @@ use Bitrix\Main\Type\DateTime;
  * @method EventMessage body(string $value)
  * @method EventMessage bodyType(string $value)
  * @method EventMessage bcc(string $value)
- * @method EventMessage dateUpdate(DateTime $value)
+ * @method EventMessage dateUpdate(\Bitrix\Main\Type\DateTime $value)
  * @package WS\ReduceMigrations\Builder\Entity
  */
 class EventMessage extends Base {

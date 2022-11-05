@@ -2,7 +2,6 @@
 
 namespace WS\ReduceMigrations\Builder;
 
-use CAgent;
 use WS\ReduceMigrations\Builder\Entity\Agent;
 
 class AgentBuilder {
@@ -47,7 +46,7 @@ class AgentBuilder {
     private function commit($agent) {
         global $DB, $APPLICATION;
         $DB->StartTransaction();
-        $gw = new CAgent();
+        $gw = new \CAgent();
         try {
             if ($agent->getId() > 0) {
                 if ($agent->isDirty()) {
@@ -87,7 +86,7 @@ class AgentBuilder {
      * @throws BuilderException
      */
     private function findAgent($callback) {
-        $agent = CAgent::GetList(null, array(
+        $agent = \CAgent::GetList(null, array(
             'NAME' => $callback,
         ))->Fetch();
         if (empty($agent)) {

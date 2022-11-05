@@ -2,7 +2,6 @@
 
 namespace WS\ReduceMigrations\Console\Command;
 
-use Exception;
 use WS\ReduceMigrations\Console\Console;
 use WS\ReduceMigrations\Console\ConsoleException;
 use WS\ReduceMigrations\Timer;
@@ -64,7 +63,7 @@ class ApplyCommand extends BaseCommand{
                 $count = (int)$this->module
                     ->applyMigrations($this->skipOptional, $callback);
             }
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             throw new ConsoleException($e->getMessage());
         }
 

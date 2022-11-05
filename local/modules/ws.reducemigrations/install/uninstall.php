@@ -1,10 +1,7 @@
 <?php
 global $APPLICATION, $errors;
-
-    use WS\ReduceMigrations\Module;
-
-    $localization = Module::getInstance()->getLocalization('uninstall');
-$options = Module::getInstance()->getOptions();
+$localization = \WS\ReduceMigrations\Module::getInstance()->getLocalization('uninstall');
+$options = \WS\ReduceMigrations\Module::getInstance()->getOptions();
 $form = new CAdminForm('ew', array(
     array(
         'DIV' => 't1',

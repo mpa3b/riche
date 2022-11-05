@@ -5,15 +5,11 @@ namespace WS\ReduceMigrations;
 use Bitrix\Main\Application;
 use Bitrix\Main\IO\File;
 use Bitrix\Main\IO\Path;
-use CUser;
-use CUtil;
-use Exception;
 use ReflectionClass;
 use WS\ReduceMigrations\Collection\MigrationCollection;
 use WS\ReduceMigrations\Entities\SetupLogModel;
 use WS\ReduceMigrations\Exceptions\MultipleEqualHashException;
 use WS\ReduceMigrations\Exceptions\NothingToApplyException;
-use WS\ReduceMigrations\Scenario\ScriptScenario;
 
 /**
  * Class Module
@@ -86,7 +82,7 @@ class Module {
         if (!isset($this->localizations[$path])) {
             $realPath = $this->localizePath . '/' . str_replace('.', '/', $path) . '.php';
             if (!file_exists($realPath)) {
-                throw new Exception('localization by path not found');
+                throw new \Exception('localization by path not found');
             }
             $this->localizations[$path] = new Localization(include $realPath);
         }
@@ -144,7 +140,7 @@ class Module {
     public function getCurrentUser() {
         global $USER;
 
-        return $USER ?: new CUser();
+        return $USER ?: new \CUser();
     }
 
     /**
@@ -166,7 +162,7 @@ class Module {
     public function createScenario($name, $priority, $time) {
         $templateContent = file_get_contents( $this->getModuleDir() . '/data/scenarioTemplate.tpl');
         $arReplace = array(
-            '#class_name#' => $className = 'ws_m_' . time(). '_' . CUtil::translit($name, LANGUAGE_ID),
+            '#class_name#' => $className = 'ws_m_' . time(). '_' . \CUtil::translit($name, LANGUAGE_ID),
             '#name#' => addslashes($name),
             '#priority#' => $this->getPriorityConstant($priority),
             '#time#' => (int)$time,
@@ -185,7 +181,7 @@ class Module {
      * @throws \Exception
      */
     private function getPriorityConstant($priority) {
-        $obj = new ReflectionClass(ScriptScenario::className());
+        $obj = new ReflectionClass(\WS\ReduceMigrations\Scenario\ScriptScenario::className());
 
         $priorityList = array();
         foreach ($obj->getConstants() as $cName => $cValue) {
@@ -197,7 +193,7 @@ class Module {
         $constantName = array_search($priority, $priorityList, true);
 
         if (!$constantName) {
-            throw new Exception('Priority not found');
+            throw new \Exception('Priority not found');
         }
         return 'self::' . $constantName;
     }
@@ -213,7 +209,7 @@ class Module {
         $file = new File($this->getScenariosDir() . DIRECTORY_SEPARATOR . $fileName);
         $success = $file->putContents($content);
         if (!$success) {
-            throw new Exception("Couldn't save file");
+            throw new \Exception("Couldn't save file");
         }
 
         return $file->getPath();

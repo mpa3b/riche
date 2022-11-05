@@ -1,10 +1,8 @@
 <?php
 
-    use Bitrix\Main\Diag\Debug;
-    use WS\ReduceMigrations\Entities\AppliedChangesLogModel;
-    use WS\ReduceMigrations\Module;
+use WS\ReduceMigrations\Entities\AppliedChangesLogModel;
 
-    $fDiff = function ($array1, $array2) use (& $fDiff) {
+$fDiff = function ($array1, $array2) use (& $fDiff) {
     foreach($array1 as $key => $value) {
         if(is_array($value)) {
             if(!isset($array2[$key])) {
@@ -26,7 +24,7 @@
 
 /** @var $localization \WS\ReduceMigrations\Localization */
 $localization;
-$module = Module::getInstance();
+$module = \WS\ReduceMigrations\Module::getInstance();
 
 $serviceLabels = array(
     'group',
@@ -92,7 +90,7 @@ $fRow = function ($label, $value) use ($serviceLabels, $localization) {
     ?>
     <tr>
         <td width="30%" valign="top"><b><?=$label?>:</b></td>
-        <td width="60%"><?=is_array($value) ? Debug::dump($value) : $value?></td>
+        <td width="60%"><?=is_array($value) ? \Bitrix\Main\Diag\Debug::dump($value) : $value?></td>
     </tr>
     <?php
 };

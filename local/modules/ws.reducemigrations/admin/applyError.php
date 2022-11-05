@@ -1,12 +1,9 @@
 <?php
 
 /** @var $localization \WS\ReduceMigrations\Localization */
-
-    use WS\ReduceMigrations\Entities\AppliedChangesLogModel;
-
-    $localization;
+$localization;
 $id = (int) $_GET['id'];
-$model = AppliedChangesLogModel::findOne(array('filter' => array('=id' => $id)));
+$model = \WS\ReduceMigrations\Entities\AppliedChangesLogModel::findOne(array('filter' => array('=id' => $id)));
 if (!$model) {
     require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_js.php");
     ShowError($localization->message('error.modelNotExists', array(

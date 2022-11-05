@@ -2,9 +2,6 @@
 
 namespace WS\ReduceMigrations\Tests\Cases;
 
-use CIBlock;
-use CIBlockProperty;
-use CIBlockType;
 use WS\ReduceMigrations\Builder\Entity\Iblock;
 use WS\ReduceMigrations\Builder\Entity\IblockType;
 use WS\ReduceMigrations\Builder\IblockBuilder;
@@ -21,13 +18,13 @@ class IblockBuilderCase extends AbstractCase {
     }
 
     public function close() {
-        $iblock = CIBlock::GetList(null, array(
+        $iblock = \CIBlock::GetList(null, array(
             '=NAME' => 'testAddBlock'
         ))->Fetch();
         if ($iblock) {
-            CIBlock::Delete($iblock['ID']);
+            \CIBlock::Delete($iblock['ID']);
         }
-        CIBlockType::Delete('testAddType');
+        \CIBlockType::Delete('testAddType');
     }
 
     public function testAlgorithm() {
@@ -73,13 +70,13 @@ class IblockBuilderCase extends AbstractCase {
         });
 
 
-        $arType = CIBlockType::GetList(null, array(
+        $arType = \CIBlockType::GetList(null, array(
                 'IBLOCK_TYPE_ID' => 'testAddType')
         )->Fetch();
 
         $this->assertNotEmpty($arType, "iblockType wasn't created");
 
-        $arIblock = CIBlock::GetList(null, array(
+        $arIblock = \CIBlock::GetList(null, array(
             'ID' => $iblock->getId()
         ))->Fetch();
 
@@ -89,7 +86,7 @@ class IblockBuilderCase extends AbstractCase {
         $this->assertEquals($arIblock['SORT'], $iblock->getAttribute('SORT'));
         $this->assertEquals($arIblock['LID'], $iblock->getAttribute('SITE_ID'));
 
-        $properties = CIBlockProperty::GetList(null, array(
+        $properties = \CIBlockProperty::GetList(null, array(
             'IBLOCK_ID' => $iblock->getId()
         ));
         $props = array(
@@ -124,7 +121,7 @@ class IblockBuilderCase extends AbstractCase {
             $type->sort(20);
         });
 
-        $arType = CIBlockType::GetList(null, array(
+        $arType = \CIBlockType::GetList(null, array(
             '=ID' => 'testAddType'
         ))->Fetch();
 
@@ -147,7 +144,7 @@ class IblockBuilderCase extends AbstractCase {
                 ->typeNumber();
         });
 
-        $arIblock = CIBlock::GetList(null, array(
+        $arIblock = \CIBlock::GetList(null, array(
             'ID' => $iblockId
         ))->Fetch();
 
@@ -155,7 +152,7 @@ class IblockBuilderCase extends AbstractCase {
         $this->assertEquals($arIblock['CODE'], $iblock->getAttribute('CODE'));
         $this->assertEquals($arIblock['VERSION'], $iblock->getAttribute('VERSION'));
 
-        $properties = CIBlockProperty::GetList(null, array(
+        $properties = \CIBlockProperty::GetList(null, array(
             'IBLOCK_ID' => $iblockId
         ));
         $props = array(

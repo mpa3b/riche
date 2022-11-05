@@ -1,8 +1,6 @@
 <?php
 namespace WS\ReduceMigrations;
 
-use COption;
-
 /**
  * @property string $catalogPath
  * @property array $otherVersions
@@ -27,11 +25,11 @@ final class ModuleOptions {
     }
 
     private function setToDb($name, $value) {
-        COption::SetOptionString($this->moduleName, $name, serialize($value));
+        \COption::SetOptionString($this->moduleName, $name, serialize($value));
     }
 
     private function getFromDb($name) {
-        $value = COption::GetOptionString($this->moduleName, $name);
+        $value = \COption::GetOptionString($this->moduleName, $name);
         return unserialize($value);
     }
 

@@ -3,8 +3,6 @@
 namespace WS\ReduceMigrations\Tests\Cases;
 
 use Bitrix\Highloadblock\HighloadBlockTable;
-use CUserFieldEnum;
-use CUserTypeEntity;
 use WS\ReduceMigrations\Builder\Entity\HighLoadBlock;
 use WS\ReduceMigrations\Builder\Entity\UserField;
 use WS\ReduceMigrations\Builder\HighLoadBlockBuilder;
@@ -91,7 +89,7 @@ class HighLoadBlockBuilderCase extends AbstractCase {
         $this->assertEquals($arIblock['TABLE_NAME'], $block->getAttribute('TABLE_NAME'));
         $this->assertEquals($arIblock['NAME'], $block->getAttribute('NAME'));
 
-        $fields = CUserTypeEntity::GetList(null, array(
+        $fields = \CUserTypeEntity::GetList(null, array(
             'ENTITY_ID' => "HLBLOCK_" . $block->getId(),
         ));
 
@@ -123,14 +121,14 @@ class HighLoadBlockBuilderCase extends AbstractCase {
 
         $this->assertEquals($arIblock['NAME'], $block->getAttribute('NAME'));
 
-        $res = CUserFieldEnum::GetList(null, array(
+        $res = \CUserFieldEnum::GetList(null, array(
             'USER_FIELD_ID' => $block->getId(),
             'VALUE' => 'Тест2',
         ))->Fetch();
 
         $this->assertEmpty($res);
 
-        $res = CUserFieldEnum::GetList(null, array(
+        $res = \CUserFieldEnum::GetList(null, array(
             'USER_FIELD_ID' => $prop->getId(),
             'VALUE' => 'Тест1',
         ))->Fetch();

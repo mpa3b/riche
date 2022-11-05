@@ -2,10 +2,6 @@
 
 namespace WS\ReduceMigrations\Tests\Cases;
 
-use CForm;
-use CFormField;
-use CFormStatus;
-use CModule;
 use WS\ReduceMigrations\Builder\Entity\Form;
 use WS\ReduceMigrations\Builder\Entity\FormField;
 use WS\ReduceMigrations\Builder\FormBuilder;
@@ -22,17 +18,17 @@ class FormBuilderCase extends AbstractCase {
     }
 
     public function init() {
-        CModule::IncludeModule('form');
+        \CModule::IncludeModule('form');
     }
 
     public function close() {
-        $form = CForm::GetList($by, $order, array(
+        $form = \CForm::GetList($by, $order, array(
             'SID' => 'TestForm',
         ), $isFiltered)->Fetch();
         if (!$form) {
             return;
         }
-        CForm::Delete($form['ID'], 'N');
+        \CForm::Delete($form['ID'], 'N');
     }
 
     public function testAdd() {
@@ -76,7 +72,7 @@ class FormBuilderCase extends AbstractCase {
         });
 
 
-        $form = CForm::GetList($by, $order, array(
+        $form = \CForm::GetList($by, $order, array(
             'ID' => $newForm->getId(),
         ), $isFiltered)->Fetch();
 
@@ -86,7 +82,7 @@ class FormBuilderCase extends AbstractCase {
         $this->assertNotEmpty($form['NAME'], 'TestForm');
         $this->assertNotEmpty($form['USE_CAPTCHA'], 'Y');
 
-        $res = CFormField::GetList($newForm->getId(), 'ALL', $by, $order, array(), $isFiltered);
+        $res = \CFormField::GetList($newForm->getId(), 'ALL', $by, $order, array(), $isFiltered);
 
         $this->assertEquals($res->SelectedRowsCount(), 2);
         while ($item = $res->fetch()) {
@@ -105,7 +101,7 @@ class FormBuilderCase extends AbstractCase {
             }
         }
 
-        $res = CFormStatus::GetList($newForm->getId(), $by, $order, array(), $isFiltered)->Fetch();
+        $res = \CFormStatus::GetList($newForm->getId(), $by, $order, array(), $isFiltered)->Fetch();
         $this->assertEquals($res['TITLE'], 'status');
         $this->assertEquals($res['DEFAULT_VALUE'], 'Y');
     }
@@ -132,14 +128,14 @@ class FormBuilderCase extends AbstractCase {
                 ->arGroupCanDelete(array(2, 3));
         });
 
-        $form = CForm::GetList($by, $order, array(
+        $form = \CForm::GetList($by, $order, array(
             'ID' => $updatedForm->getId(),
         ), $isFiltered)->Fetch();
 
         $this->assertNotEmpty($form);
         $this->assertNotEmpty($form['NAME'], 'MyTestForm');
 
-        $res = CFormField::GetList($updatedForm->getId(), 'ALL', $by, $order, array(), $isFiltered);
+        $res = \CFormField::GetList($updatedForm->getId(), 'ALL', $by, $order, array(), $isFiltered);
 
         $this->assertEquals($res->SelectedRowsCount(), 2);
         while ($item = $res->fetch()) {
@@ -153,7 +149,7 @@ class FormBuilderCase extends AbstractCase {
             }
         }
 
-        $res = CFormStatus::GetList($updatedForm->getId(), $by, $order, array(), $isFiltered)->Fetch();
+        $res = \CFormStatus::GetList($updatedForm->getId(), $by, $order, array(), $isFiltered)->Fetch();
         $this->assertEquals($res['DESCRIPTION'], 'test22');
     }
 

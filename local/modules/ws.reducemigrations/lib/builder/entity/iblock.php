@@ -2,7 +2,6 @@
 
 namespace WS\ReduceMigrations\Builder\Entity;
 use Bitrix\Main\Type\DateTime;
-use CIBlockProperty;
 use WS\ReduceMigrations\Builder\BuilderException;
 
 /**
@@ -14,7 +13,7 @@ use WS\ReduceMigrations\Builder\BuilderException;
  * @method Iblock sort(integer $value) - set SORT
  * @method Iblock siteId($value) - set SITE_ID array or string
  * @method Iblock groupId(array $value) - set GROUP_ID, e.g [2 => 'R']
- * @method Iblock dateUpdate(DateTime $value) - set TIMESTAMP_X
+ * @method Iblock dateUpdate(\Bitrix\Main\Type\DateTime $value) - set TIMESTAMP_X
  * @method Iblock listPageUrl(string $value) - set LIST_PAGE_URL
  * @method Iblock sectionPageUrl(string $value) - set SECTION_PAGE_URL
  * @method Iblock detailPageUrl(string $value) - set DETAIL_PAGE_URL
@@ -207,7 +206,7 @@ class Iblock  extends Base {
      * @throws BuilderException
      */
     private function findProperty($name) {
-        $property = CIBlockProperty::GetList(null, array(
+        $property = \CIBlockProperty::GetList(null, array(
             'IBLOCK_ID' => $this->getId(),
             'NAME' => $name
         ))->Fetch();

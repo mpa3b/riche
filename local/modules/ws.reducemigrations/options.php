@@ -1,12 +1,9 @@
 <?php
-
-    use WS\ReduceMigrations\Module;
-
-    include __DIR__ . '/prolog.php';
+include __DIR__.'/prolog.php';
 
 /** @var CMain $APPLICATION */
 $APPLICATION;
-$module = Module::getInstance();
+$module = \WS\ReduceMigrations\Module::getInstance();
 $localization = $module->getLocalization('setup');
 $options = $module->getOptions();
 

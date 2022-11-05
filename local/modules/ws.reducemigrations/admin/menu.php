@@ -1,13 +1,10 @@
 <?php
 global $USER;
-
-    use WS\ReduceMigrations\Module;
-
-    if (!$USER->isAdmin()) {
+if (!$USER->isAdmin()) {
     return array();
 }
 CModule::IncludeModule('ws.reducemigrations');
-$loc = Module::getInstance()->getLocalization('menu');
+$loc = \WS\ReduceMigrations\Module::getInstance()->getLocalization('menu');
 $inputUri = '/bitrix/admin/ws_reducemigrations.php?lang=' . LANGUAGE_ID . '&q=';
 return array(
     array(

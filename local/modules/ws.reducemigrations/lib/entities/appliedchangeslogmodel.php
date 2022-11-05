@@ -9,8 +9,6 @@ use Bitrix\Main\Type\DateTime;
 use WS\ReduceMigrations\factories\DateTimeFactory;
 use WS\ReduceMigrations\Module;
 use WS\ReduceMigrations\Scenario\ScriptScenario;
-use function WS\ReduceMigrations\arrayToJson;
-use function WS\ReduceMigrations\jsonToArray;
 
 class AppliedChangesLogModel extends BaseEntity {
     const STATUS_SKIPPED = 2;
@@ -133,7 +131,7 @@ class AppliedChangesLogModel extends BaseEntity {
                 }
             }
             if (in_array($name, array('description', 'updateData'))) {
-                $value = jsonToArray($value);
+                $value = \WS\ReduceMigrations\jsonToArray($value);
             }
             $result[$name] = $value;
         }
@@ -147,7 +145,7 @@ class AppliedChangesLogModel extends BaseEntity {
                 $value = DateTimeFactory::createBitrix($value);
             }
             if (in_array($name, array('description', 'updateData'))) {
-                $value = arrayToJson($value);
+                $value = \WS\ReduceMigrations\arrayToJson($value);
             }
             $result[$name] = $value;
         }

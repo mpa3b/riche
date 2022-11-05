@@ -3,12 +3,6 @@
 namespace WS\ReduceMigrations\Builder;
 
 use Bitrix\Main\Application;
-use CIBlock;
-use CIBlockProperty;
-use CIBlockPropertyEnum;
-use CIBlockType;
-use CModule;
-use Exception;
 use WS\ReduceMigrations\Builder\Entity\Iblock;
 use WS\ReduceMigrations\Builder\Entity\IblockType;
 use WS\ReduceMigrations\Builder\Entity\Property;
@@ -16,7 +10,7 @@ use WS\ReduceMigrations\Builder\Entity\Property;
 class IblockBuilder {
 
     public function __construct() {
-        CModule::IncludeModule('iblock');
+        \CModule::IncludeModule('iblock');
     }
 
     /**
@@ -29,7 +23,7 @@ class IblockBuilder {
     public function createIblockType($type, $callback) {
         $iblockType = new IblockType($type);
         $callback($iblockType);
-        $gateway = new CIBlockType();
+        $gateway = new \CIBlockType();
         $res = $gateway->Add($iblockType->getData());
         if (!$res) {
             throw new BuilderException($gateway->LAST_ERROR);
@@ -49,7 +43,7 @@ class IblockBuilder {
         $iblockType->markClean();
         $callback($iblockType);
         if ($iblockType->isDirty()) {
-            $gateway = new CIBlockType();
+            $gateway = new \CIBlockType();
             $res = $gateway->Update($type, $iblockType->getData());
             if (!$res) {
                 throw new BuilderException($gateway->LAST_ERROR);
@@ -65,7 +59,7 @@ class IblockBuilder {
      * @throws BuilderException
      */
     public function removeIblockType($type) {
-        $isSuccess = CIBlockType::Delete($type);
+        $isSuccess = \CIBlockType::Delete($type);
         if (!$isSuccess) {
             throw new BuilderException("Error occurred removing iblockType `$type`");
         }
@@ -95,7 +89,7 @@ class IblockBuilder {
      * @throws BuilderException
      */
     public function updateIblock($id, $callback) {
-        $iblockData = CIBlock::GetList(array(), array('ID' => $id, 'CHECK_PERMISSIONS' => 'N'))->Fetch();
+        $iblockData = \CIBlock::GetList(array(), array('ID' => $id, 'CHECK_PERMISSIONS' => 'N'))->Fetch();
         if (!$iblockData) {
             throw new BuilderException("Iblock `{$id}` not found");
         }
@@ -131,7 +125,7 @@ class IblockBuilder {
         try {
             $connection->startTransaction();
             $data = $iblock->getData();
-            $cIblock = new CIBlock();
+            $cIblock = new \CIBlock();
             $isSuccess = true;
             if ($iblock->getId() > 0) {
                 $iblock->isDirty() && $isSuccess = $cIblock->Update($iblock->getId(), $data);
@@ -149,7 +143,7 @@ class IblockBuilder {
 
             $this->commitProperties($iblock);
             $connection->commitTransaction();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $connection->rollbackTransaction();
             throw new BuilderException($e->getMessage());
         }
@@ -165,9 +159,9 @@ class IblockBuilder {
     private function commitProperties($iblock) {
 
         foreach ($iblock->getDeleteProperties() as $property) {
-            CIBlockProperty::Delete($property->getId());
+            \CIBlockProperty::Delete($property->getId());
         }
-        $propertyGateway = new CIBlockProperty();
+        $propertyGateway = new \CIBlockProperty();
         foreach ($iblock->getUpdateProperties() as $property) {
             if ($property->isDirty()) {
                 $isSuccess = $propertyGateway->Update($property->getId(), $property->getData());
@@ -195,7 +189,7 @@ class IblockBuilder {
      * @throws BuilderException
      */
     private function commitEnum($property) {
-        $obEnum = new CIBlockPropertyEnum;
+        $obEnum = new \CIBlockPropertyEnum;
         foreach ($property->getEnumVariants() as $key => $variant) {
             if ($variant->needToDelete() == 'Y' && $variant->getId() > 0) {
                 $obEnum->Delete($variant->getId());
@@ -242,7 +236,7 @@ class IblockBuilder {
         if (!$filter) {
             throw new BuilderException('Type of pointer is not found');
         }
-        $arIblock = CIBlock::GetList(array(), $filter, false)->Fetch();
+        $arIblock = \CIBlock::GetList(array(), $filter, false)->Fetch();
         if (!$arIblock) {
             throw new BuilderException("Iblock `{$pointer->getValue()}` doesn't exists");
         }
@@ -258,7 +252,7 @@ class IblockBuilder {
      * @throws BuilderException
      */
     public function removeIblock($iblockType, $name) {
-        $dbRes = CIBlock::GetList(null, array(
+        $dbRes = \CIBlock::GetList(null, array(
             'NAME' => $name,
             'TYPE' => $iblockType,
             'CHECK_PERMISSIONS' => 'N',
@@ -294,7 +288,7 @@ class IblockBuilder {
      */
     public function removeIblockById($id) {
 
-        $result = CIBlock::Delete($id);
+        $result = \CIBlock::Delete($id);
         if (!$result) {
             throw new BuilderException("Error occurred removing iblock with id={$id}");
         }

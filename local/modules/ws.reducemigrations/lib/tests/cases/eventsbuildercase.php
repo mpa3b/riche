@@ -3,7 +3,6 @@
 namespace WS\ReduceMigrations\Tests\Cases;
 
 use Bitrix\Main\Mail\Internal\EventMessageTable;
-use CEventType;
 use WS\ReduceMigrations\Builder\Entity\EventMessage;
 use WS\ReduceMigrations\Builder\Entity\EventType;
 use WS\ReduceMigrations\Builder\EventsBuilder;
@@ -20,11 +19,11 @@ class EventsBuilderCase extends AbstractCase {
     }
 
     public function close() {
-        $eventType = CEventType::GetList(array(
+        $eventType = \CEventType::GetList(array(
             'TYPE_ID' => 'WS_MIGRATION_TEST_EVENT',
             'LID' => 'en'
         ))->Fetch();
-        $gw = new CEventType;
+        $gw = new \CEventType;
         $gw->Delete($eventType['ID']);
     }
 
@@ -51,7 +50,7 @@ class EventsBuilderCase extends AbstractCase {
             ;
         });
 
-        $eventType = CEventType::GetList(array(
+        $eventType = \CEventType::GetList(array(
             'TYPE_ID' => 'WS_MIGRATION_TEST_EVENT',
             'LID' => 'ru'
         ))->Fetch();
@@ -95,7 +94,7 @@ class EventsBuilderCase extends AbstractCase {
             }
         });
 
-        $eventType = CEventType::GetList(array(
+        $eventType = \CEventType::GetList(array(
             'TYPE_ID' => 'WS_MIGRATION_TEST_EVENT',
             'LID' => 'en'
         ))->Fetch();

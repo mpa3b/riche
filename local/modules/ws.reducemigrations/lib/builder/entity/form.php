@@ -2,8 +2,6 @@
 
 namespace WS\ReduceMigrations\Builder\Entity;
 
-use CFormField;
-use CFormStatus;
 use WS\ReduceMigrations\Builder\BuilderException;
 
 /**
@@ -123,7 +121,7 @@ class Form extends Base {
      * @throws BuilderException
      */
     private function findStatus($title) {
-        $status = CFormStatus::GetList($this->getId(), $by, $order, array(
+        $status = \CFormStatus::GetList($this->getId(), $by, $order, array(
             'TITLE' => $title,
         ), $isFiltered)->Fetch();
 
@@ -164,7 +162,7 @@ class Form extends Base {
      * @throws BuilderException
      */
     private function findField($sid) {
-        $field = CFormField::GetList($this->getId(), 'ALL', $by, $order, array(
+        $field = \CFormField::GetList($this->getId(), 'ALL', $by, $order, array(
             'SID' => $sid,
         ), $isFiltered)->Fetch();
         if (empty($field)) {

@@ -4,7 +4,6 @@ namespace WS\ReduceMigrations;
 
 use Bitrix\Main\IO\Directory;
 use Bitrix\Main\IO\File;
-use Exception;
 use WS\ReduceMigrations\Collection\MigrationCollection;
 use WS\ReduceMigrations\Entities\AppliedChangesLogModel;
 use WS\ReduceMigrations\Entities\AppliedChangesLogTable;
@@ -218,7 +217,7 @@ class MigrationApplier {
         }
         try {
             $scenario->commit();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             throw new ApplyScenarioException($e->getMessage());
         }
     }

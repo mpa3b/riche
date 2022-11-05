@@ -2,19 +2,13 @@
 
 namespace WS\ReduceMigrations\Builder;
 
-use CForm;
-use CFormAnswer;
-use CFormField;
-use CFormStatus;
-use CModule;
-use Exception;
 use WS\ReduceMigrations\Builder\Entity\Form;
 use WS\ReduceMigrations\Builder\Entity\FormField;
 
 class FormBuilder {
 
     public function __construct() {
-        CModule::IncludeModule('form');
+        \CModule::IncludeModule('form');
     }
 
     /**
@@ -58,7 +52,7 @@ class FormBuilder {
         if (!$formData['ID']) {
             return false;
         }
-        return CForm::Delete($formData['ID']);
+        return \CForm::Delete($formData['ID']);
     }
 
     /**
@@ -72,7 +66,7 @@ class FormBuilder {
             $this->commitForm($form);
             $this->commitFields($form);
             $this->commitStatuses($form);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $DB->Rollback();
             throw new BuilderException($e->getMessage());
         }
@@ -88,7 +82,7 @@ class FormBuilder {
         if (!$form->isDirty()) {
            return ;
         }
-        $formId = CForm::Set($form->getData(), $form->getId(), 'N');
+        $formId = \CForm::Set($form->getData(), $form->getId(), 'N');
         if (!$formId) {
             throw new BuilderException("Form wasn't saved. " . $strError);
         }
@@ -101,7 +95,7 @@ class FormBuilder {
      */
     private function commitFields($form) {
         global $strError;
-        $gw = new CFormField();
+        $gw = new \CFormField();
         foreach ($form->getFields() as $field) {
             if ($field->isDirty()) {
                 $field->setAttribute('FORM_ID', $form->getId());
@@ -123,7 +117,7 @@ class FormBuilder {
      */
     private function commitAnswers($field) {
         global $strError;
-        $gw = new CFormAnswer();
+        $gw = new \CFormAnswer();
         foreach ($field->getAnswers() as $answer) {
             if ($answer->needDelete()) {
                 if (!$gw->Delete($answer->getId())) {
@@ -144,7 +138,7 @@ class FormBuilder {
      */
     private function commitStatuses($form) {
         global $strError;
-        $gw = new CFormStatus();
+        $gw = new \CFormStatus();
         foreach ($form->getStatuses() as $status) {
             if (!$form->isDirty()) {
                 continue;
@@ -165,7 +159,7 @@ class FormBuilder {
      * @throws BuilderException
      */
     private function findForm($sid) {
-        $data = CForm::GetList($by = 'ID', $order = 'ASC', array(
+        $data = \CForm::GetList($by = 'ID', $order = 'ASC', array(
             'SID' => $sid
         ), $isFiltered = false)->Fetch();
 

@@ -2,14 +2,10 @@
 
 namespace WS\ReduceMigrations;
 
-use ArrayAccess;
-use Exception;
-use Serializable;
-
 /**
  * @author <sokolovsky@worksolutions.ru>
  */
-class Options implements Serializable, ArrayAccess {
+class Options implements \Serializable, \ArrayAccess {
 
     private $data = array();
 
@@ -50,7 +46,7 @@ class Options implements Serializable, ArrayAccess {
                 if (!is_null($default)) {
                     return $default;
                 }
-                throw new Exception("Value by path `$path` not exist");
+                throw new \Exception("Value by path `$path` not exist");
             }
             $data = $data[$pathItem];
         }
@@ -68,7 +64,7 @@ class Options implements Serializable, ArrayAccess {
     public function getAsObject($path, $default = null) {
         $res = $this->get($path, $default);
         if (!is_array($res)) {
-            throw new Exception("Return value as object not available");
+            throw new \Exception("Return value as object not available");
         }
 
         return new static($this->get($path));
@@ -105,7 +101,7 @@ class Options implements Serializable, ArrayAccess {
                 $key ? $data[$key] = $value : $data[] = $value;
             } else {
                 if (!$key) {
-                    throw new Exception('Need last iterated by path. Available: ' . $path);
+                    throw new \Exception('Need last iterated by path. Available: ' . $path);
                 }
                 if (!isset($data[$key])) {
                     $data[$key] = array();
@@ -145,7 +141,7 @@ class Options implements Serializable, ArrayAccess {
         try {
             $this->get($offset);
             return true;
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             return false;
         }
     }

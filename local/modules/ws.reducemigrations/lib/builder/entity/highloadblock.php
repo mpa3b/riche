@@ -1,7 +1,6 @@
 <?php
 
 namespace WS\ReduceMigrations\Builder\Entity;
-use CUserTypeEntity;
 use WS\ReduceMigrations\Builder\BuilderException;
 
 /**
@@ -79,7 +78,7 @@ class HighLoadBlock extends Base {
         if (!$this->getId()) {
             throw new BuilderException('Set higloadBlock for continue');
         }
-        $field = CUserTypeEntity::GetList(null, array(
+        $field = \CUserTypeEntity::GetList(null, array(
             'FIELD_NAME' => $code,
             'ENTITY_ID' => "HLBLOCK_" . $this->getId(),
         ))->Fetch();

@@ -1,8 +1,5 @@
 <?php
-
-    use WS\ReduceMigrations\Module;
-
-    require_once($_SERVER["DOCUMENT_ROOT"] . "/bitrix/modules/main/include/prolog_admin_before.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admin_before.php");
 require_once(__DIR__."/../include.php");
 require_once(__DIR__."/../prolog.php");
 
@@ -17,7 +14,7 @@ $action = $request['q'];
 $fAction = function ($file) use ($action) {
     global
         $USER, $DB, $APPLICATION, $adminPage, $adminMenu, $adminChain;
-    $localization = Module::getInstance()->getLocalization('admin')->fork($action);
+    $localization = \WS\ReduceMigrations\Module::getInstance()->getLocalization('admin')->fork($action);
     include $file;
 };
 

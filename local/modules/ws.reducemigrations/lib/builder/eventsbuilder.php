@@ -2,9 +2,6 @@
 
 namespace WS\ReduceMigrations\Builder;
 
-use CEventMessage;
-use CEventType;
-use Exception;
 use WS\ReduceMigrations\Builder\Entity\EventMessage;
 use WS\ReduceMigrations\Builder\Entity\EventType;
 
@@ -51,7 +48,7 @@ class EventsBuilder {
         $DB->StartTransaction();
         try {
             $this->commitEventType($eventType);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             $DB->Rollback();
             throw new BuilderException($e->getMessage());
         }
@@ -65,7 +62,7 @@ class EventsBuilder {
      * @throws BuilderException
      */
     private function findEventType($type, $lid) {
-        $data = CEventType::GetList(array(
+        $data = \CEventType::GetList(array(
             'TYPE_ID' => $type,
             'LID' => $lid
         ))->Fetch();
@@ -83,7 +80,7 @@ class EventsBuilder {
     private function commitEventType($eventType) {
         global $APPLICATION;
 
-        $gw = new CEventType();
+        $gw = new \CEventType();
         if ($eventType->getId() > 0) {
             if ($eventType->isDirty()) {
                 $result = $gw->Update(array('ID' => $eventType->getId()), $eventType->getData());
@@ -111,7 +108,7 @@ class EventsBuilder {
     private function commitEventMessages($eventName, $eventMessages) {
         global $APPLICATION;
 
-        $gw = new CEventMessage();
+        $gw = new \CEventMessage();
         foreach ($eventMessages as $message) {
             if ($message->getId() > 0) {
                 if ($message->isRemoved() && !$gw->Delete($message->getId())) {

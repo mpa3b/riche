@@ -6,9 +6,7 @@
 namespace WS\ReduceMigrations\Tests\Cases;
 
 
-use Exception;
-
-class ErrorException extends Exception
+class ErrorException extends \Exception
 {
 
     private $_dumpedValue;

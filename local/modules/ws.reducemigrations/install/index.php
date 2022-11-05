@@ -1,12 +1,8 @@
 <?php
 use Bitrix\Main\Application;
 use Bitrix\Main\IO\Path;
-    use Bitrix\Main\Loader;
-    use WS\ReduceMigrations\Localization;
-    use WS\ReduceMigrations\Module;
-    use WS\ReduceMigrations\Tests\Starter;
 
-    include __DIR__ . '/../include.php';
+include __DIR__ . '/../include.php';
 
 class ws_reducemigrations extends CModule{
     const MODULE_ID = 'ws.reducemigrations';
@@ -26,7 +22,7 @@ class ws_reducemigrations extends CModule{
         $this->MODULE_VERSION = $arModuleVersion['VERSION'];
         $this->MODULE_VERSION_DATE = $arModuleVersion['VERSION_DATE'];
 
-        $localization = Module::getInstance()->getLocalization('info');
+        $localization = \WS\ReduceMigrations\Module::getInstance()->getLocalization('info');
         $needToConvert = $this->needToConvertCharset();
         $this->MODULE_NAME = $this->message($localization->getDataByPath('name'), $needToConvert);
         $this->MODULE_DESCRIPTION = $this->message($localization->getDataByPath('description'), $needToConvert);
@@ -81,8 +77,8 @@ class ws_reducemigrations extends CModule{
         if ($this->needToConvertCharset()) {
             $this->convertLangFilesToUtf();
         }
-        $loc = Module::getInstance()->getLocalization('setup');
-        $options = Module::getInstance()->getOptions();
+        $loc = \WS\ReduceMigrations\Module::getInstance()->getLocalization('setup');
+        $options = \WS\ReduceMigrations\Module::getInstance()->getOptions();
         global $errors;
         $data = array_merge((array)$data, $extendData);
         $errors = array();
@@ -96,11 +92,11 @@ class ws_reducemigrations extends CModule{
                 $this->InstallFiles();
                 $this->InstallDB();
                 RegisterModule(self::MODULE_ID);
-                Loader::includeModule(self::MODULE_ID);
-                Loader::includeModule('iblock');
+                \Bitrix\Main\Loader::includeModule(self::MODULE_ID);
+                \Bitrix\Main\Loader::includeModule('iblock');
 
                 $this->createCli();
-                RegisterModuleDependences('main', 'OnCheckListGet', self::MODULE_ID, Starter::className(), 'items');
+                RegisterModuleDependences('main', 'OnCheckListGet', self::MODULE_ID, \WS\ReduceMigrations\Tests\Starter::className(), 'items');
             }
         }
         if (!$data || $errors) {
@@ -114,7 +110,7 @@ class ws_reducemigrations extends CModule{
      * @return mixed|string
      */
     public function isUtfLangFiles() {
-        $localization = new Localization(include static::getModuleDir() . '/lang/ru/info.php');
+        $localization = new \WS\ReduceMigrations\Localization(include static::getModuleDir() . '/lang/ru/info.php');
         return mb_detect_encoding($localization->getDataByPath('encoding'), 'UTF-8, Windows-1251') === 'UTF-8';
     }
 

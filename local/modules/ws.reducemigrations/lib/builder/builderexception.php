@@ -2,8 +2,6 @@
 
 namespace WS\ReduceMigrations\Builder;
 
-use Exception;
-
-class BuilderException extends Exception {
+class BuilderException extends \Exception {
 
 }

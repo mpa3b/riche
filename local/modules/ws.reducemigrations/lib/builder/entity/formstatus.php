@@ -15,7 +15,7 @@ use Bitrix\Main\Type\DateTime;
  * @method FormStatus arGroupCanMove(array $value)
  * @method FormStatus arGroupCanEdit(array $value)
  * @method FormStatus arGroupCanDelete(array $value)
- * @method FormStatus dateUpdate(DateTime $value)
+ * @method FormStatus dateUpdate(\Bitrix\Main\Type\DateTime $value)
  * @package WS\ReduceMigrations\Builder\Entity
  */
 class FormStatus extends Base {

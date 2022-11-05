@@ -5,7 +5,6 @@ namespace WS\ReduceMigrations\Console\Command;
 use WS\ReduceMigrations\Console\ConsoleException;
 use WS\ReduceMigrations\Console\Pear\ConsoleTable;
 use WS\ReduceMigrations\Entities\AppliedChangesLogModel;
-use WS\ReduceMigrations\Module;
 
 class History extends BaseCommand {
 
@@ -16,7 +15,7 @@ class History extends BaseCommand {
     }
 
     public function execute($callback = false) {
-        $lastSetupLog = Module::getInstance()->getLastSetupLog();
+        $lastSetupLog = \WS\ReduceMigrations\Module::getInstance()->getLastSetupLog();
 
         if (!$lastSetupLog) {
             throw new ConsoleException('Nothing to show');

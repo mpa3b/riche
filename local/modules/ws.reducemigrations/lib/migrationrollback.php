@@ -2,7 +2,6 @@
 
 namespace WS\ReduceMigrations;
 
-use Exception;
 use WS\ReduceMigrations\Console\RuntimeFixCounter;
 use WS\ReduceMigrations\Entities\AppliedChangesLogModel;
 use WS\ReduceMigrations\Entities\SetupLogModel;
@@ -168,7 +167,7 @@ class MigrationRollback {
                 $object = new $class($data, $this->output);
                 $object->rollback();
 
-            } catch (Exception $e) {
+            } catch (\Exception $e) {
                 $error = "Exception:" . $e->getMessage();
             }
             $callbackData = array(

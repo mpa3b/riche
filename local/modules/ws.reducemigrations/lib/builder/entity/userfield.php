@@ -1,12 +1,11 @@
 <?php
 
 namespace WS\ReduceMigrations\Builder\Entity;
-use CUserFieldEnum;
 use WS\ReduceMigrations\Builder\BuilderException;
 
 /**
  * Class UserField
- *
+ * 
  * @method  UserField code(string $value)
  * @method UserField entityId
  * @method UserField type(string $value)
@@ -16,7 +15,7 @@ use WS\ReduceMigrations\Builder\BuilderException;
  * @method UserField filterLabel(array $value) - ['ru' => 'name', 'en' => 'name']
  * @method UserField settings(array $value)
  * @method UserField sort(int $value)
- *
+ *                         
  * @package WS\ReduceMigrations\Builder\Entity
  */
 class UserField extends Base {
@@ -194,7 +193,7 @@ class UserField extends Base {
         if (!$this->getId()) {
             throw new BuilderException('Save Field before update enum');
         }
-        $res = CUserFieldEnum::GetList(null, array(
+        $res = \CUserFieldEnum::GetList(null, array(
             'USER_FIELD_ID' => $this->getId(),
             'VALUE' => $name,
         ))->Fetch();
