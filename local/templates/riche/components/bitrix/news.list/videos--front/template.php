@@ -2,8 +2,8 @@
 
 if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) die();
 
-use Riche\Images;
-use Riche\Template;
+use Riche\Breakpoint;
+use Riche\Thumb;
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -18,10 +18,10 @@ use Riche\Template;
 /** @var array $templateData */
 /** @var \CBitrixComponent $component */
 
-$this->addExternalJs(Template::ASSETS . '/tiny-slider/dist/min/tiny-slider.js');
-$this->addExternalCss(Template::ASSETS . '/tiny-slider/dist/tiny-slider.css');
+$this->addExternalJs(LOCAL_ASSETS . '/tiny-slider/dist/min/tiny-slider.js');
+$this->addExternalCss(LOCAL_ASSETS . '/tiny-slider/dist/tiny-slider.css');
 
-$this->addExternalJs(Template::ASSETS . '/jquery-colorbox/jquery.colorbox-min.js');
+$this->addExternalJs(LOCAL_ASSETS . '/jquery-colorbox/jquery.colorbox-min.js');
 
 $this->setFrameMode(true);
 
@@ -45,7 +45,7 @@ $frame = $this->createFrame();
 
                     $image = CFile::ResizeImageGet(
                         $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.77),
+                        Thumb::calculateImageSize(Breakpoint::mobile, 0.77),
                         BX_RESIZE_IMAGE_EXACT,
                         false,
                         [],
@@ -55,19 +55,19 @@ $frame = $this->createFrame();
 
                     $imageMobile = CFile::ResizeImageGet(
                         $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(Images::BREAKPOINTS['mobile'], 0.77),
+                        Thumb::calculateImageSize(Breakpoint::mobile, 0.77),
                         BX_RESIZE_IMAGE_EXACT,
                         false,
                         [],
                         false
                     );
 
-                    Images::getWebP($image);
-                    Images::getWebP($imageMobile);
+                    Thumb::getWebP($image);
+                    Thumb::getWebP($imageMobile);
 
                     $imagePreload = CFile::ResizeImageGet(
                         $arItem['DETAIL_PICTURE'],
-                        Images::calculateImageSize(120, 0.77),
+                        Thumb::calculateImageSize(120, 0.77),
                         BX_RESIZE_IMAGE_EXACT,
                         false,
                         [],
