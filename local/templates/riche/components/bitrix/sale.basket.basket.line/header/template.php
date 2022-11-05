@@ -35,11 +35,11 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
     <div class="basket-line--header">
 
-        <? $frame->begin(); ?>
-
         <a href="<?= $arParams['PATH_TO_BASKET']; ?>?back_url=<?= $APPLICATION->GetCurUri(); ?>"
            title="<?= Units::plural($arResult['NUM_PRODUCTS'], 'товар'); ?>"
            class="button transparent">
+
+            <? $frame->begin(); ?>
 
             <i class="icon-shopping-cart"></i>
 
@@ -49,11 +49,12 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
                     } ?></span>
             <? } ?>
 
+            <? $frame->end(); ?>
+
         </a>
 
-        <? $frame->end(); ?>
 
-        <? if ($arParams['SHOW_PRODUCTS']) { ?>
+        <? if ($arParams['SHOW_PRODUCTS'] !== 'N') { ?>
 
             <div class="dropdown">
 

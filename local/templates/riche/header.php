@@ -213,34 +213,26 @@ $request = Application::getInstance()->getContext()->getRequest();
 
         </div>
 
-        <div class="row">
+        <?php $APPLICATION->IncludeComponent(
+            "bitrix:menu",
+            "main",
+            [
+                "ROOT_MENU_TYPE" => "main",
+                "ALLOW_MULTI_SELECT" => "N",
+                "CHILD_MENU_TYPE" => "local",
+                "DELAY" => "N",
+                "MAX_LEVEL" => 1,
+                "MENU_CACHE_GET_VARS" => [""],
+                "MENU_CACHE_TIME" => CACHE_TTL,
+                "MENU_CACHE_TYPE" => "A",
+                "MENU_CACHE_USE_GROUPS" => "N",
+                "USE_EXT" => "N",
+                "CACHE_SELECTED_ITEMS" => "N",
 
-            <div class="whole unit">
-
-                <?php $APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "main",
-                    [
-                        "ROOT_MENU_TYPE" => "main",
-                        "ALLOW_MULTI_SELECT" => "N",
-                        "CHILD_MENU_TYPE" => "local",
-                        "DELAY" => "N",
-                        "MAX_LEVEL" => 1,
-                        "MENU_CACHE_GET_VARS" => [""],
-                        "MENU_CACHE_TIME" => CACHE_TTL,
-                        "MENU_CACHE_TYPE" => "A",
-                        "MENU_CACHE_USE_GROUPS" => "N",
-                        "USE_EXT" => "N",
-                        "CACHE_SELECTED_ITEMS" => "N",
-
-                        "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO"
-                    ]
-                ); ?>
-
-            </div>
-
-        </div>
+                "COMPOSITE_FRAME_MODE" => "A",
+                "COMPOSITE_FRAME_TYPE" => "AUTO"
+            ]
+        ); ?>
 
     </div>
 

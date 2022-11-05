@@ -8,7 +8,7 @@ if (!empty($arResult)) {
 
     $itemSize = count($arResult);
 
-    $strReturn = '<nav class="breadcrumbs"><ul>';
+    $strReturn = '<nav class="breadcrumb"><ul>';
 
     for ($index = 0; $index < $itemSize; $index++) {
 

@@ -18,26 +18,30 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 
 $this->setFrameMode(true);
 
-$frame = $this->createFrame();
-
 ?>
 
-<div class="menu--main">
+<? if (!empty($arResult)) { ?>
 
-    <?php $frame->begin(); ?>
+    <?php $frame = $this->createFrame(); ?>
 
-    <nav>
+    <div class="row menu--main">
 
-        <ul class="menu root">
-            <?php foreach ($arResult as $arItem): ?>
-                <li>
-                    <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+        <?php $frame->begin(); ?>
 
-    </nav>
+        <nav class="whole unit">
 
-    <?php $frame->end(); ?>
+            <ul class="menu root">
+                <?php foreach ($arResult as $arItem): ?>
+                    <li>
+                        <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
 
-</div>
+        </nav>
+
+        <?php $frame->end(); ?>
+
+    </div>
+
+<?php } ?>
