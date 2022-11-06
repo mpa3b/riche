@@ -70,58 +70,6 @@ $frame = $this->createFrame();
 
         </div>
 
-        <script type="text/x-jsrender">
-
-            <li>
-
-                <h3>{{:name}}</h3>
-
-                {{ if announce }}
-                <p>{{:announce}}</p>
-                {{ /if }}
-
-                <picture>
-                    {{ for picture as (media, source)}}
-                    <source srcset="{{:source}}" media="{{:media}}">
-                    {{ /for }}
-                    <img src="{{:picture.preload.src}}">
-                </picture>
-
-                <div class="prices">
-                    <del class="price">{{:price}}</del>
-                    <span class="price">{{:price}}</span>
-                    <span class="discount price">{{:price}}</span>
-                </div>
-
-                <div class="quantity">
-                    <button class="transparent"
-                            data-id="{{:id}}"
-                            data-quantity="{{:quantity}}">
-                        <i class="icon-minus"></i>
-                    </button>
-                    <span class="value">{{:quantity}}</span>
-                    <button class="transparent"
-                            data-id="{{:id}}"
-                            data-quantity="{{:quantity}}">
-                        <i class="icon-plus"></i>
-                    </button>
-                </div>
-
-                <div class="total">{{:total}}</div>
-
-                <div class="actions">
-                    <button class="delete"
-                            data-id="{{:id}}">
-                        <i class="icon-delete"></i>
-                        Удалить
-                    </button>
-                </div>
-
-            </li>
-
-
-        </script>
-
     </div>
 
 </noindex>
