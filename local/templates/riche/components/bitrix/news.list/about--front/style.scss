@@ -1,7 +1,7 @@
 @import "../../../../base";
 @import "../../../../mixins";
 
-.banners--front {
+.about--front {
 
   .items {
     padding: 0;
@@ -13,7 +13,6 @@
     box-shadow: var(--box-shadow--blurry);
 
     .item {
-      position: relative;
 
       &:before {
         display: block;
