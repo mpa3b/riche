@@ -31,6 +31,16 @@
         height: 100%;
 
         filter: var(--blur);
+
+        @include Tablet {
+          aspect-ratio: 3/1;
+        }
+        @include Desktop {
+          aspect-ratio: 4/1;
+        }
+        @include Wide {
+          aspect-ratio: 6/1;
+        }
       }
 
       .details {

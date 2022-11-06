@@ -6,6 +6,7 @@ class Breakpoint
 {
 
     const breakpoints = [
+        'preload' => 100,
         'small' => 340,
         'mobile' => 580,
         'desktop' => 980,
@@ -13,6 +14,7 @@ class Breakpoint
     ];
 
     public const
+        preload = self::breakpoints['preload'],
         small = self::breakpoints['small'],
         mobile = self::breakpoints['mobile'],
         desktop = self::breakpoints['desktop'],
@@ -32,6 +34,13 @@ class Breakpoint
             return '(min-width: ' . self::breakpoints[$media] . self::unit . ')';
 
         }
+
+    }
+
+    public static function getPreload()
+    {
+
+        return self::getMedia('preload', true);
 
     }
 

@@ -68,11 +68,14 @@ $frame = $this->createFrame();
 
                                 $image = CFile::ResizeImageGet(
                                     $arItem['DISPLAY_PROPERTIES']['IMAGE']['FILE_VALUE']['ID'],
-                                    Thumb::calculateImageSize($width)
+                                    Thumb::calculateImageSize($width),
+                                    BX_RESIZE_IMAGE_PROPORTIONAL
                                 );
 
                                 ?>
+
                                 <source data-srcset="<?= $image['src']; ?>" type="<?= $image['content']; ?>">
+
                             <? } ?>
 
                             <img src="<?= Thumb::PLACEHOLDER; ?>" alt="<?= $arItem['NAME']; ?>">

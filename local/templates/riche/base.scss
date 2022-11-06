@@ -1,6 +1,8 @@
 //region  breakpoints
 
+$breakpointSmall      : 340px;
 $breakpointMobile     : 560px;
+$breakpointTablet     : 780px;
 $breakpointDesktop    : 980px;
 $breakpointWide       : 1360px;
 
@@ -14,8 +16,14 @@ $breakpointWide       : 1360px;
   }
 }
 
-@mixin Desktop {
+@mixin Tablet {
   @media (min-width : $breakpointMobile) {
+    @content;
+  }
+}
+
+@mixin Desktop {
+  @media (min-width : $breakpointTablet) {
     @content;
   }
 }
