@@ -33,7 +33,7 @@ $frame = $this->createFrame();
         <div class="indicator">
             <span class="value"></span>
             <button class="transparent">
-                <i load-icon="menu"></i>
+                <i class="icon-menu"></i>
             </button>
         </div>
 
