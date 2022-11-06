@@ -22,17 +22,13 @@
 
 ?>
 
-<div class="menu--header dropdown--container">
+<div class="menu--header on-mobiles-only">
 
-    <button class="transparent button on-mobiles-only trigger">
+    <button class="transparent button trigger">
         <i class="icon-menu"></i>
     </button>
 
     <div class="dropdown wrapper">
-
-        <button class="transparent close">
-            <i class="icon-cross"></i>
-        </button>
 
         <nav>
 
