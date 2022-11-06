@@ -57,6 +57,8 @@
   --box-shadow: 0px 1px 2px var(--color--gray);
   --box-shadow--blurry: 0px 8px 24px var(--color--gray);
 
+  --blur: blur(3px);
+  --blur--2x: blur(6px);
 }
 
 html {
@@ -182,8 +184,10 @@ input[type=submit],
 button {
   display: inline-block;
   box-sizing: border-box;
-  padding: 0.7em 1.4em;
-  padding-top: 0.5em;
+  padding: 1em 1.4em;
+  padding-top: 0.85em;
+
+  cursor: pointer;
 
   border-radius: var(--border-radius--2x);
 
@@ -269,7 +273,7 @@ button {
 // region icons
 
 i[class^="icon-"] {
-  font-size: 1.6rem;
+  //font-size: 1.6rem;
 }
 
 // endregion

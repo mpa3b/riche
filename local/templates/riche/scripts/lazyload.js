@@ -8,13 +8,19 @@ window.addEventListener(
 
         let lazyImage       = new LazyLoad(
                 {
-                    elements_selector : 'img.lazy'
+                    elements_selector: 'img.lazy'
                 }
             ),
             lazyImageNative = new LazyLoad(
                 {
-                    elements_selector : 'img[loading=lazy]',
-                    use_native :        true
+                    elements_selector: 'img[loading=lazy]',
+                    use_native       : true
+                }
+            ),
+            lazyVideo       = new LazyLoad(
+                {
+                    elements_selector: 'video',
+                    use_native       : true
                 }
             );
 
@@ -23,6 +29,8 @@ window.addEventListener(
             () => {
 
                 lazyImage.update();
+                lazyImageNative.update();
+                lazyVideo.update();
 
             }
         );
