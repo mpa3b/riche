@@ -1,22 +1,22 @@
 .dropdown--container {
-  position : relative;
+  position: relative;
 
   .dropdown {
-    position : absolute;
+    position: absolute;
   }
 
 }
 
 .buttons {
-  display        : flex;
-  flex-direction : row;
+  display:        flex;
+  flex-direction: row;
 
   button,
   > * {
-    margin-right : 0.5rem;
+    margin-right: 0.5rem;
 
     &:last-child {
-      margin-right : 0;
+      margin-right: 0;
     }
 
   }

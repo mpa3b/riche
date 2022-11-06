@@ -1,88 +1,88 @@
 @import "../base";
 
 :root {
-  --offset       : 0.85rem;
-  @media all and (min-width : $breakpointMobile) {
-    --offset : 1rem;
+  --offset:       0.85rem;
+  @media all and (min-width: $breakpointMobile) {
+    --offset: 1rem;
   }
-  @media all and (min-width : $breakpointDesktop) {
-    --offset : 1.2rem;
+  @media all and (min-width: $breakpointDesktop) {
+    --offset: 1.2rem;
   }
 
-  --offset--half : calc(var(--offset) / 2);
-  --offset--2x   : calc(var(--offset) * 2);
-  --offset--4x   : calc(var(--offset) * 4);
+  --offset--half: calc(var(--offset) / 2);
+  --offset--2x:   calc(var(--offset) * 2);
+  --offset--4x:   calc(var(--offset) * 4);
 }
 
 .wrap {
-  display    : block;
-  box-sizing : border-box;
+  display:    block;
+  box-sizing: border-box;
 
-  margin     : var(--offset--2x) auto;
-  padding    : 0 var(--offset);
+  margin:     var(--offset--2x) auto;
+  padding:    0 var(--offset);
 
   .grid,
   .column,
   .row {
 
-    display        : flex;
-    flex-direction : column;
+    display:        flex;
+    flex-direction: column;
 
     > * {
-      display    : block;
-      box-sizing : border-box;
-      padding    : var(--offset) 0;
+      display:    block;
+      box-sizing: border-box;
+      padding:    var(--offset) 0;
     }
 
   }
 
   .row {
-    margin : 0 calc(var(--offset) * -1);
+    margin: 0 calc(var(--offset) * -1);
 
     > * {
-      padding : calc(var(--offset) * 0.5);
+      padding: calc(var(--offset) * 0.5);
     }
   }
 
   @include Mobile {
 
-    padding : 0;
-    width   : 87%;
-    margin  : calc(var(--offset) * 4) auto;
+    padding: 0;
+    width:   87%;
+    margin:  calc(var(--offset) * 4) auto;
 
     .row,
     .grid {
-      flex-direction : row;
-      flex-wrap      : wrap;
-      box-sizing     : border-box;
+      flex-direction: row;
+      flex-wrap:      wrap;
+      box-sizing:     border-box;
 
-      margin         : 0 calc(var(--offset) * -0.5);
+      margin:         0 calc(var(--offset) * -0.5);
 
       > * {
-        padding : calc(var(--offset) * 0.5);
+        padding: calc(var(--offset) * 0.5);
       }
 
-      $units         : (
-              "four-fifths": 80%,
-              "three-quarters": 75%,
-              "two-thirds": 66.6666%,
-              "three-fifths": 60%,
-              "half": 50%,
-              "two-fifths": 40%,
-              "third": 33.3333%,
-              "quarter": 25%,
-              "fifth": 20%,
-              "sixth": 16.6666%
-      );
+      $units:         (
+                              "four-fifths": 80%,
+                              "three-quarters": 75%,
+                              "two-thirds": 66.6666%,
+                              "three-fifths": 60%,
+                              "half": 50%,
+                              "two-fifths": 40%,
+                              "third": 33.3333%,
+                              "quarter": 25%,
+                              "fifth": 20%,
+                              "sixth": 16.6666%
+                      );
 
       @each $code, $width in $units {
 
         > .#{$code} {
-          width : #{$width};
+          width: #{$width};
         }
 
         .offset-#{$code} {
-          margin-left : #{$width};
+          margin-left: #{$width};
         }
 
       }
@@ -92,46 +92,46 @@
   }
 
   .row {
-    display        : flex;
-    flex-direction : row;
-    flex-wrap      : nowrap;
+    display:        flex;
+    flex-direction: row;
+    flex-wrap:      nowrap;
 
-    margin         : 0 calc(var(--offset) * -0.5);
-    box-sizing     : border-box;
+    margin:         0 calc(var(--offset) * -0.5);
+    box-sizing:     border-box;
   }
 
   @include Desktop {
-    width : 82%;
+    width: 82%;
   }
 
   @include Wide {
-    width : 72%;
+    width: 72%;
   }
 
   > * {
-    padding : calc(var(--offset) * -0.5);
+    padding: calc(var(--offset) * -0.5);
   }
 
 }
 
 [hidden],
 .hidden {
-  display : none;
+  display: none;
 }
 
 .hide {
-  display : none;
+  display: none;
 
   &--on {
 
     @include Mobile {
       &-mobile {
-        display : none !important;
+        display: none !important;
       }
     }
     @include Desktop {
       &-desktop {
-        display : none !important;
+        display: none !important;
       }
     }
 
@@ -143,12 +143,12 @@
 
   @include Mobile {
     &-desktop--only {
-      display : none !important;
+      display: none !important;
     }
   }
   @include Desktop {
     &-mobile--only {
-      display : none !important;
+      display: none !important;
     }
   }
 

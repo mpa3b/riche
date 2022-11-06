@@ -2,7 +2,7 @@ $(() => {
 
     const element = $('.search-form--header');
 
-    const button = $('button.trigger', element),
+    const button     = $('button.trigger', element),
           searchForm = $('.search-form--header--form', element);
 
     button.on(

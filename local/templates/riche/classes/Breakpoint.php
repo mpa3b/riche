@@ -5,20 +5,22 @@ namespace Riche;
 class Breakpoint
 {
 
-    const breakpoints = [
-        'small' => 340,
-        'mobile' => 580,
-        'tablet' => 780,
-        'desktop' => 980,
-        'wide' => 1360
-    ];
+    const breakpoints
+        = [
+            'small'   => 340,
+            'mobile'  => 580,
+            'tablet'  => 780,
+            'desktop' => 980,
+            'wide'    => 1360
+        ];
 
     const unit = 'px';
 
-    const preload = [
-        'width' => 100,
-        'height' => 100,
-    ];
+    const preload
+        = [
+            'width'  => 100,
+            'height' => 100,
+        ];
 
     public static function getMedia(string $media, bool $max = false): string
     {

@@ -4,19 +4,19 @@
 .menu--main {
 
   ul.menu {
-    padding: 0;
-    margin: 0;
+    padding:        0;
+    margin:         0;
 
-    display: flex;
+    display:        flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap:      nowrap;
 
     li {
       list-style: none;
 
       a {
-        display: block;
-        padding: 0.5em;
+        display:     block;
+        padding:     0.5em;
         white-space: nowrap;
       }
 

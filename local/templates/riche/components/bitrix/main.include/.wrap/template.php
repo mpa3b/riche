@@ -1,6 +1,8 @@
 <?php
 
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+    die();
+}
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -20,7 +22,8 @@ $frame = $this->createFrame();
 
 if ($arResult["FILE"] <> '') { ?>
 
-    <div class="wrap <?= strtolower($arParams['AREA_FILE_SUFFIX']); ?>" data-area-name="<?= $arParams['AREA_FILE_SUFFIX']; ?>">
+    <div class="wrap <?= strtolower($arParams['AREA_FILE_SUFFIX']); ?>"
+         data-area-name="<?= $arParams['AREA_FILE_SUFFIX']; ?>">
 
         <? $frame->begin(); ?>
 

@@ -1,15 +1,15 @@
 <?php
 
-    if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
-        die();
-    }
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+    die();
+}
 
-    use Bitrix\Main\Application;
-    use Riche\Template;
+use Bitrix\Main\Application;
+use Riche\Template;
 
-    global $USER, $APPLICATION;
+global $USER, $APPLICATION;
 
-    $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
+$currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
 ?>
 

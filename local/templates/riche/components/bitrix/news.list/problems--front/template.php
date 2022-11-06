@@ -1,22 +1,21 @@
-<?php
-
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-
-use Riche\Breakpoint;
+<?php use Riche\Breakpoint;
 use Riche\Thumb;
 
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+    die();
+}
 /** @var array $arParams */
 /** @var array $arResult */
-/** @global CMain $APPLICATION */
-/** @global CUser $USER */
-/** @global CDatabase $DB */
-/** @var CBitrixComponentTemplate $this */
+/** @global \CMain $APPLICATION */
+/** @global \CUser $USER */
+/** @global \CDatabase $DB */
+/** @var \CBitrixComponentTemplate $this */
 /** @var string $templateName */
 /** @var string $templateFile */
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var array $templateData */
-/** @var CBitrixComponent $component */
+/** @var \CBitrixComponent $component */
 
 $this->setFrameMode(true);
 
@@ -30,45 +29,15 @@ $frame = $this->createFrame();
 
 <?php if (!empty($arResult['ITEMS'])) { ?>
 
-    <div class="about--front wrap">
+    <div class="problems--front">
 
         <? $frame->begin(); ?>
-
-        <h2 hidden>Самое главное</h2>
 
         <div class="items slider">
 
             <? foreach ($arResult['ITEMS'] as $arItem) { ?>
 
                 <div class="item">
-
-                    <div class="details">
-
-                        <h3><?= $arItem['NAME']; ?></h3>
-
-                        <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-                            <p><?= $arItem['PREVIEW_TEXT']; ?></p>
-                        <? } ?>
-
-                        <? if (!empty($arItem['DISPLAY_PROPERTIES']['LINK']['VALUE'])) { ?>
-                            <button data-id="<?= $arItem['ID']; ?>"
-                                    data-href="<?= $arItem['DISPLAY_PROPERTIES']['LINK']['VALUE']; ?>">
-                                <?= $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?>
-                                <i class="icon-chevron-right"></i>
-                            </button>
-                        <? } ?>
-
-                    </div>
-
-                    <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
-
-                        <video muted loop autoplay>
-
-                            <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-
-                        </video>
-
-                    <? } ?>
 
                     <? if ($arItem['DETAIL_PICTURE']) { ?>
 
@@ -97,9 +66,27 @@ $frame = $this->createFrame();
 
                     <? } ?>
 
+                    <div class="details">
+
+                        <h3><?= $arItem['NAME']; ?></h3>
+
+                        <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+                            <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+                        <? } ?>
+
+                        <? if (!empty($arItem['DISPLAY_PROPERTIES']['LINK']['VALUE'])) { ?>
+                            <button data-id="<?= $arItem['ID']; ?>"
+                                    data-href="<?= $arItem['DISPLAY_PROPERTIES']['LINK']['VALUE']; ?>">
+                                <?= $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?>
+                                <i class="icon-chevron-right"></i>
+                            </button>
+                        <? } ?>
+
+                    </div>
+
                 </div>
 
-            <?php } ?>
+            <? } ?>
 
         </div>
 

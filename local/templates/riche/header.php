@@ -18,9 +18,9 @@ Loader::registerAutoLoadClasses(
     null,
     [
         'Riche\Breakpoint' => SITE_TEMPLATE_PATH . '/classes/Breakpoint.php',
-        'Riche\Head' => SITE_TEMPLATE_PATH . '/classes/Head.php',
-        'Riche\Thumb' => SITE_TEMPLATE_PATH . '/classes/Thumb.php',
-        'Riche\Units' => SITE_TEMPLATE_PATH . '/classes/Units.php'
+        'Riche\Head'       => SITE_TEMPLATE_PATH . '/classes/Head.php',
+        'Riche\Thumb'      => SITE_TEMPLATE_PATH . '/classes/Thumb.php',
+        'Riche\Units'      => SITE_TEMPLATE_PATH . '/classes/Units.php'
     ]
 );
 
@@ -55,9 +55,11 @@ if ($currentDirectoryPath == '/') {
 
     $pageHtmlClasses = 'front';
 
-} else {
+}
+else {
 
-    $pageHtmlClasses = str_replace(DIRECTORY_SEPARATOR, '--', ltrim(strtolower($currentDirectoryPath), DIRECTORY_SEPARATOR));
+    $pageHtmlClasses = str_replace(DIRECTORY_SEPARATOR, '--',
+                                   ltrim(strtolower($currentDirectoryPath), DIRECTORY_SEPARATOR));
 
 }
 
@@ -154,17 +156,17 @@ $request = Application::getInstance()->getContext()->getRequest();
                     "bitrix:menu",
                     "header",
                     [
-                        "ROOT_MENU_TYPE" => "main",
-                        "ALLOW_MULTI_SELECT" => "N",
-                        "CHILD_MENU_TYPE" => "local",
-                        "DELAY" => "N",
-                        "MAX_LEVEL" => 1,
-                        "MENU_CACHE_GET_VARS" => [""],
-                        "MENU_CACHE_TIME" => CACHE_TTL,
-                        "MENU_CACHE_TYPE" => "A",
+                        "ROOT_MENU_TYPE"        => "main",
+                        "ALLOW_MULTI_SELECT"    => "N",
+                        "CHILD_MENU_TYPE"       => "local",
+                        "DELAY"                 => "N",
+                        "MAX_LEVEL"             => 1,
+                        "MENU_CACHE_GET_VARS"   => [""],
+                        "MENU_CACHE_TIME"       => CACHE_TTL,
+                        "MENU_CACHE_TYPE"       => "A",
                         "MENU_CACHE_USE_GROUPS" => "N",
-                        "USE_EXT" => "N",
-                        "CACHE_SELECTED_ITEMS" => "N",
+                        "USE_EXT"               => "N",
+                        "CACHE_SELECTED_ITEMS"  => "N",
 
                         "COMPOSITE_FRAME_MODE" => "A",
                         "COMPOSITE_FRAME_TYPE" => "AUTO"
@@ -196,11 +198,11 @@ $request = Application::getInstance()->getContext()->getRequest();
                     "header",
                     [
                         "PATH_TO_BASKET" => ORDER_URL,
-                        "PATH_TO_ORDER" => ORDER_URL,
+                        "PATH_TO_ORDER"  => ORDER_URL,
 
-                        "SHOW_PRODUCTS" => "N",
+                        "SHOW_PRODUCTS"     => "N",
                         "SHOW_NUM_PRODUCTS" => "Y",
-                        "SHOW_AUTHOR" => "N",
+                        "SHOW_AUTHOR"       => "N",
 
                         "HIDE_ON_BASKET_PAGES" => "Y",
 
@@ -217,17 +219,17 @@ $request = Application::getInstance()->getContext()->getRequest();
             "bitrix:menu",
             "main",
             [
-                "ROOT_MENU_TYPE" => "main",
-                "ALLOW_MULTI_SELECT" => "N",
-                "CHILD_MENU_TYPE" => "local",
-                "DELAY" => "N",
-                "MAX_LEVEL" => 1,
-                "MENU_CACHE_GET_VARS" => [""],
-                "MENU_CACHE_TIME" => CACHE_TTL,
-                "MENU_CACHE_TYPE" => "A",
+                "ROOT_MENU_TYPE"        => "main",
+                "ALLOW_MULTI_SELECT"    => "N",
+                "CHILD_MENU_TYPE"       => "local",
+                "DELAY"                 => "N",
+                "MAX_LEVEL"             => 1,
+                "MENU_CACHE_GET_VARS"   => [""],
+                "MENU_CACHE_TIME"       => CACHE_TTL,
+                "MENU_CACHE_TYPE"       => "A",
                 "MENU_CACHE_USE_GROUPS" => "N",
-                "USE_EXT" => "N",
-                "CACHE_SELECTED_ITEMS" => "N",
+                "USE_EXT"               => "N",
+                "CACHE_SELECTED_ITEMS"  => "N",
 
                 "COMPOSITE_FRAME_MODE" => "A",
                 "COMPOSITE_FRAME_TYPE" => "AUTO"
@@ -252,8 +254,8 @@ $request = Application::getInstance()->getContext()->getRequest();
                         "bitrix:breadcrumb",
                         "",
                         [
-                            "PATH" => "",
-                            "SITE_ID" => SITE_ID,
+                            "PATH"       => "",
+                            "SITE_ID"    => SITE_ID,
                             "START_FROM" => 0,
 
                             "COMPOSITE_FRAME_MODE" => "A",
@@ -271,8 +273,8 @@ $request = Application::getInstance()->getContext()->getRequest();
                     'bitrix:main.include',
                     '',
                     [
-                        "AREA_FILE_SHOW" => "sect",
-                        "AREA_FILE_SUFFIX" => "header",
+                        "AREA_FILE_SHOW"      => "sect",
+                        "AREA_FILE_SUFFIX"    => "header",
                         "AREA_FILE_RECURSIVE" => "N",
 
                         "COMPOSITE_FRAME_MODE" => "A",

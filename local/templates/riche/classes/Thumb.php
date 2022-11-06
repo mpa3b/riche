@@ -4,65 +4,29 @@ namespace Riche;
 
 use Bitrix\Main\Config\Option;
 use Bitrix\Main\Loader;
+use CFile;
 
 class Thumb
 {
-
-    private static ?string $root;
-
-    private function __construct()
-    {
-
-        self::$JPEG_QUALITY = Option::get('main', 'image_resize_quality');
-        self::$JPEG_QUALITY_PRELOAD = self::$JPEG_QUALITY / 2;
-
-        self::$root = Loader::getDocumentRoot();
-
-    }
-
-    /**
-     * Глобальная константа качества сжатия JPEG от 0 до 100
-     */
-    static $JPEG_QUALITY;
-    static $JPEG_QUALITY_PRELOAD;
 
     /**
      * Строка встраиваемого замещающего изображения
      */
     const PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+    /**
+     * Глобальная константа качества сжатия JPEG от 0 до 100
+     */
+    static $JPEG_QUALITY;
+    static $JPEG_QUALITY_PRELOAD;
+    private static ?string $root;
 
-    private static function makeUri(string $path): string
+    private function __construct()
     {
 
-        $file = self::$root . $path;
+        self::$JPEG_QUALITY         = Option::get('main', 'image_resize_quality');
+        self::$JPEG_QUALITY_PRELOAD = self::$JPEG_QUALITY / 2;
 
-        $type = mime_content_type($file);
-        $base64 = base64_encode(file_get_contents($file));
-        $uri = 'data:' . $type . ';base64,' . $base64;
-
-        return $uri;
-
-    }
-
-    private static function makeUriFromId(string $id): string
-    {
-
-        $image = \CFile::ResizeImageGet(
-            $id,
-            [
-                'width' => Breakpoint::preload,
-                'height' => Breakpoint::preload
-            ],
-            BX_RESIZE_IMAGE_EXACT
-        );
-
-        $file = $image['SRC'];
-
-        $type = mime_content_type($file);
-        $base64 = base64_encode(file_get_contents($file));
-        $uri = 'data:' . $type . ';base64,' . $base64;
-
-        return $uri;
+        self::$root = Loader::getDocumentRoot();
 
     }
 
@@ -71,9 +35,9 @@ class Thumb
      * для обработки изображений при помощи CFile::ResizeImageGet
      * Только _подсчёт_ размера!
      *
-     * @param int $targetWidth ширина
-     * @param float $proportion отношение ширины к высоте по умолчанию: 4/3
-     * @param float $scaleRatio масштаб увеличения
+     * @param int   $targetWidth ширина
+     * @param float $proportion  отношение ширины к высоте по умолчанию: 4/3
+     * @param float $scaleRatio  масштаб увеличения
      *
      * @return array $arSizes массив размеров изображения для CFile::ResizeImageGet()
      **/
@@ -82,11 +46,10 @@ class Thumb
         int   $targetWidth,
         float $proportion = 4 / 3,
         float $scaleRatio = 1
-    ): array
-    {
+    ): array {
 
         return [
-            'width' => intval($targetWidth * $scaleRatio),
+            'width'  => intval($targetWidth * $scaleRatio),
             'height' => intval($targetWidth * $scaleRatio / $proportion)
         ];
 
@@ -103,24 +66,25 @@ class Thumb
 
         if (is_int($file)) {
 
-            $file = \CFile::GetFileArray($file);
+            $file = CFile::GetFileArray($file);
 
         }
 
         if (!empty($file['SRC'])) {
 
-            $file['WEBP_SRC'] = self::convertToWebP($file['SRC'], $quality);
+            $file['WEBP_SRC']          = self::convertToWebP($file['SRC'], $quality);
             $file['WEBP_CONTENT_TYPE'] = mime_content_type($file['WEBP_SRC']);
 
             if (!$file['CONTENT_TYPE']) {
                 $file['CONTENT_TYPE'] = mime_content_type($file['SRC']);
             }
 
-        } else {
+        }
+        else {
 
             if (!empty($file['src'])) {
 
-                $file['webp_src'] = self::convertToWebP($file['src'], $quality);
+                $file['webp_src']          = self::convertToWebP($file['src'], $quality);
                 $file['webp_content_type'] = mime_content_type($file['webp_src']);
 
                 $file['content_type'] = mime_content_type($file['src']);
@@ -146,7 +110,8 @@ class Thumb
 
                 $src = $src['SRC'];
 
-            } else {
+            }
+            else {
                 if (!empty($src['src'])) {
 
                     $src = $src['src'];
@@ -196,6 +161,41 @@ class Thumb
         }
 
         return $path;
+
+    }
+
+    private static function makeUri(string $path): string
+    {
+
+        $file = self::$root . $path;
+
+        $type   = mime_content_type($file);
+        $base64 = base64_encode(file_get_contents($file));
+        $uri    = 'data:' . $type . ';base64,' . $base64;
+
+        return $uri;
+
+    }
+
+    private static function makeUriFromId(string $id): string
+    {
+
+        $image = CFile::ResizeImageGet(
+            $id,
+            [
+                'width'  => Breakpoint::preload,
+                'height' => Breakpoint::preload
+            ],
+            BX_RESIZE_IMAGE_EXACT
+        );
+
+        $file = $image['SRC'];
+
+        $type   = mime_content_type($file);
+        $base64 = base64_encode(file_get_contents($file));
+        $uri    = 'data:' . $type . ';base64,' . $base64;
+
+        return $uri;
 
     }
 

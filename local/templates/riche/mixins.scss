@@ -7,16 +7,16 @@
   .tns {
 
     &-slider {
-      display : flex;
+      display: flex;
     }
 
     &-item {
-      box-sizing : border-box;
-      padding    : 0 var(--offset--half);
+      box-sizing: border-box;
+      padding:    0 var(--offset--half);
     }
 
     &-ovh {
-      margin : 0 calc(var(--offset--half) * -1);
+      margin: 0 calc(var(--offset--half) * -1);
     }
 
   }
@@ -28,7 +28,7 @@
   .tns {
 
     &-ovh {
-      overflow : visible;
+      overflow: visible;
     }
 
   }
@@ -38,7 +38,7 @@
 @mixin wrap--ovh {
 
   .wrap {
-    overflow : hidden;
+    overflow: hidden;
   }
 
 }

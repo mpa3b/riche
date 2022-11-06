@@ -1,4 +1,6 @@
-<? if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) die();
+<? if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) {
+    die();
+}
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -38,9 +40,9 @@ $frame = $this->createFrame();
                     "bitrix:search.suggest.input",
                     "",
                     [
-                        "NAME" => "q",
-                        "VALUE" => "",
-                        "INPUT_SIZE" => 15,
+                        "NAME"          => "q",
+                        "VALUE"         => "",
+                        "INPUT_SIZE"    => 15,
                         "DROPDOWN_SIZE" => 10,
                     ],
                     $component, ["HIDE_ICONS" => "Y"]

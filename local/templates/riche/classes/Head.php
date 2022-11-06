@@ -11,6 +11,20 @@ class Head
 {
 
     /**
+     * Функция добавления внешнего ресурса в предзагрузку как *link preload*
+     *
+     * @param $url
+     */
+    public static function addHeadPreloadAsset(string $url): void
+    {
+
+        $type = self::getAssetType($url);
+
+        Asset::getInstance()->addString('<link rel="preload" href="' . $url . '" as="' . $type . '" >');
+
+    }
+
+    /**
      * Определение типа содержимого для подстановки в *link as*
      *
      * @param $url
@@ -48,20 +62,6 @@ class Head
         }
 
         return $type;
-
-    }
-
-    /**
-     * Функция добавления внешнего ресурса в предзагрузку как *link preload*
-     *
-     * @param $url
-     */
-    public static function addHeadPreloadAsset(string $url): void
-    {
-
-        $type = self::getAssetType($url);
-
-        Asset::getInstance()->addString('<link rel="preload" href="' . $url . '" as="' . $type . '" >');
 
     }
 

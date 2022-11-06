@@ -3,14 +3,14 @@
 
 :root {
 
-  --color--white: #fff;
+  --color--white:       #ffffff;
   --color--white--dark: #f0f0f0;
 
-  --color--black: #111111;
+  --color--black:       #111111;
 
   // region generated colors
 
-  $colorShift: 10;
+  $colorShift:          10;
 
   @each $name, $value in $colors {
     --color--#{$name}        : #{$value};
@@ -20,7 +20,7 @@
 
   @each $name, $value in $colors {
     --color--#{$name}--light: #{lighten($value, $colorShift)};
-    --color--#{$name}--dark: #{darken($value, $colorShift)};
+    --color--#{$name}--dark:  #{darken($value, $colorShift)};
   }
 
   // endregion
@@ -33,56 +33,56 @@
 
   // symbolic colors
 
-  --color--base: var(--color--black);
-  --color--background: var(--color--white--dark);
+  --color--base:        var(--color--black);
+  --color--background:  var(--color--white--dark);
 
   // endregion
 
-  --font--base: "Gordita", sans-serif;
+  --font--base:         "Gordita", sans-serif;
 
-  --padding: 1rem;
-  --padding--2x: calc(var(--padding) * 2);
+  --padding:            1rem;
+  --padding--2x:        calc(var(--padding) * 2);
 
-  --border-radius: 1rem;
-  --border-radius--2x: calc(var(--border-radius) * 2);
+  --border-radius:      1rem;
+  --border-radius--2x:  calc(var(--border-radius) * 2);
 
-  --transition--ease: var(--transition--time) ease;
+  --transition--ease:   var(--transition--time) ease;
 
-  --transition--time: 0.2s;
+  --transition--time:   0.2s;
   --transition--effect: ease-in-out;
-  --transition: all var(--transition--time) var(--transition--effect);
+  --transition:         all var(--transition--time) var(--transition--effect);
 
-  --opacity: #{$opacity};
+  --opacity:            #{$opacity};
 
-  --box-shadow: 0px 1px 2px var(--color--gray);
+  --box-shadow:         0px 1px 2px var(--color--gray);
   --box-shadow--blurry: 0px 8px 24px var(--color--gray);
 
-  --blur: blur(3px);
-  --blur--2x: blur(6px);
+  --blur:               blur(3px);
+  --blur--2x:           blur(6px);
 }
 
 html {
-  font-size: 10pt;
+  font-size:        10pt;
   background-color: var(--color--white--dark);
 }
 
 body {
-  font-weight: normal;
-  font-size: 1rem;
-  font-family: var(--font--base);
-  line-height: 1.4;
-  -webkit-font-smoothing: subpixel-antialiased;
+  font-weight:             normal;
+  font-size:               1rem;
+  font-family:             var(--font--base);
+  line-height:             1.4;
+  -webkit-font-smoothing:  subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-kerning: auto;
+  font-kerning:            auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size:   1.2rem;
   line-height: 1.2;
 
   &:first-of-type {
-    margin-top: 0;
+    margin-top:    0;
     margin-bottom: 0.66em;
   }
 }
@@ -128,13 +128,13 @@ picture {
   display: block;
 
   img {
-    display: block;
+    display:   block;
     max-width: 100%;
   }
 }
 
 img {
-  display: block;
+  display:   block;
   max-width: 100%;
 }
 
@@ -143,7 +143,7 @@ label {
 }
 
 a {
-  color: inherit;
+  color:           inherit;
   text-decoration: underline;
 
   &:focus {
@@ -158,18 +158,18 @@ a {
 //region controls
 
 input {
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 0.65em 1em;
-  padding-top: 0.5em;
+  display:         inline-block;
+  box-sizing:      border-box;
+  padding:         0.65em 1em;
+  padding-top:     0.5em;
 
-  border-radius: 2em;
+  border-radius:   2em;
 
   text-decoration: none;
-  line-height: 1.1;
+  line-height:     1.1;
 
-  outline: none;
-  border: none;
+  outline:         none;
+  border:          none;
 
   &:focus,
   &:hover {
@@ -182,37 +182,37 @@ input[type=button],
 input[type=reset],
 input[type=submit],
 button {
-  display: inline-block;
-  box-sizing: border-box;
-  padding: 1em 1.4em;
-  padding-top: 0.85em;
+  display:          inline-block;
+  box-sizing:       border-box;
+  padding:          1em 1.4em;
+  padding-top:      0.85em;
 
-  cursor: pointer;
+  cursor:           pointer;
 
-  border-radius: var(--border-radius--2x);
+  border-radius:    var(--border-radius--2x);
 
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  line-height: 1.1;
-  white-space: nowrap;
+  font-weight:      bold;
+  text-align:       center;
+  text-decoration:  none;
+  line-height:      1.1;
+  white-space:      nowrap;
 
-  border: none;
+  border:           none;
 
-  color: var(--color--base);
+  color:            var(--color--base);
   background-color: var(--color--gray);
 
-  transition: var(--transition);
+  transition:       var(--transition);
 
   &:hover {
     background-color: var(--color--gray--light);
   }
 
-  outline: none;
+  outline:          none;
 
   &.primary {
     background-color: var(--color--green);
-    color: var(--color--white);
+    color:            var(--color--white);
 
     &:hover {
       background-color: var(--color--green--dark);
@@ -220,15 +220,15 @@ button {
   }
 
   &.transparent {
-    background: transparent none !important;
-    border: none;
-    box-shadow: none;
-    padding-left: 0.5em;
+    background:    transparent none !important;
+    border:        none;
+    box-shadow:    none;
+    padding-left:  0.5em;
     padding-right: 0.5em;
   }
 
   &[disabled] {
-    cursor: not-allowed;
+    cursor:  not-allowed;
     opacity: var(--opacity);
   }
 

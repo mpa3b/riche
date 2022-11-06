@@ -27,7 +27,8 @@ if (!empty($arResult)) {
 
             $strReturn .= '<i class="icon-right-2"></i>';
 
-        } else {
+        }
+        else {
 
             $strReturn .= '<li>' . $title . '</li>';
 

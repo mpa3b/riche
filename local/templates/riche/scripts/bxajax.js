@@ -18,9 +18,9 @@ $.extend(
 
             const entrypoint = '/bitrix/services/main/ajax.php',
                   parameters = {
-                      c     : data.component,
+                      c:      data.component,
                       action: data.action,
-                      mode  : 'class'
+                      mode:   'class'
                   };
 
             const url = entrypoint + '?' + $.param(parameters, true);
@@ -39,8 +39,8 @@ $.extend(
             $.ajax(
                 url,
                 {
-                    data   : data,
-                    method : method,
+                    data:    data,
+                    method:  method,
                     success: (response) => {
 
                         result = response;

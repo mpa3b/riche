@@ -60,7 +60,8 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
                 <? if ($request->isAjaxRequest() && $cartUpdate) {
                     $APPLICATION->RestartBuffer();
-                } else {
+                }
+                else {
                     $dropdownFrame = $this->createFrame();
                     $dropdownFrame->begin();
                 } ?>
@@ -182,7 +183,8 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
                 <? if ($request->isAjaxRequest() && $cartUpdate) {
                     die;
-                } else {
+                }
+                else {
                     $dropdownFrame->end();
                 } ?>
 

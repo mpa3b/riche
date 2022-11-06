@@ -12,12 +12,12 @@ $(document).on(
 
         $(document).on(
             {
-                ajaxStart :    () => {
+                ajaxStart:    () => {
 
                     icon.addClass(throbber);
 
                 },
-                ajaxComplete : () => {
+                ajaxComplete: () => {
 
                     icon.removeClass(throbber);
 
