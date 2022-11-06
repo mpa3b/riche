@@ -18,7 +18,7 @@
   display    : block;
   box-sizing : border-box;
 
-  margin     : var(--offset--2x) 0;
+  margin     : var(--offset) auto;
   padding    : 0 var(--offset);
 
   .grid,
@@ -44,7 +44,7 @@
     }
   }
 
-  @media all and (min-width : $breakpointMobile) {
+  @include Mobile {
 
     padding : 0;
     width   : 87%;
@@ -100,16 +100,12 @@
     box-sizing     : border-box;
   }
 
-  @media all and (min-width : $breakpointDesktop) {
+  @include Desktop {
     width : 82%;
   }
 
-  @media all and (min-width : $breakpointWide) {
+  @include Wide {
     width : 72%;
-  }
-
-  @media all and (min-width : $breakpointWide * 1.2) {
-    width : 68%;
   }
 
   > * {
@@ -127,28 +123,30 @@
   display : none;
 
   &--on {
-    @media all and (max-width : $breakpointMobile) {
+
+    @include Mobile {
       &-mobile {
         display : none !important;
       }
     }
-    @media all and (min-width : $breakpointMobile) {
+    @include Desktop {
       &-desktop {
         display : none !important;
       }
     }
+
   }
 
 }
 
 .on {
 
-  @media all and (max-width : $breakpointMobile) {
+  @include Mobile {
     &-desktop--only {
       display : none !important;
     }
   }
-  @media all and (min-width : $breakpointMobile) {
+  @include Desktop {
     &-mobile--only {
       display : none !important;
     }
