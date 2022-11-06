@@ -5,7 +5,7 @@ $(() => {
     let cart = $.ajax(
         bxAjaxRequestUrl('local:cart'),
         {
-            data: {
+            data:    {
                 method: 'GET',
                 sessid: sessid
             },
@@ -25,7 +25,7 @@ $(() => {
         cartElement,
         (event) => {
 
-            let button = $(event.target),
+            let button     = $(event.target),
                 buttonData = button.data();
 
         }
