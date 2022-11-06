@@ -72,4 +72,29 @@ $frame = $this->createFrame();
 
     </div>
 
+    <template>
+
+        <li class="item">
+
+            <picture>
+                <img src="" alt="">
+            </picture>
+
+            <h3></h3>
+
+            <div class="prices">
+                <div class="price">
+                    <del></del>
+                    <span></span>
+                </div>
+            </div>
+
+            <button class="delete" data-action="delete">
+                <i class="icon-delete"></i>
+            </button>
+
+        </li>
+
+    </template>
+
 </noindex>

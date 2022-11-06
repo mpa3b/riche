@@ -1,30 +1,23 @@
 $(() => {
 
-    const cartElement = $('.cart--default');
+    let cartElement = $('.cart--default');
 
-    let cart;
-
-    $.ajax(
+    let cart = $.ajax(
         bxAjaxRequestUrl('local:cart'),
         {
             data: {
-                sessid: sessid,
                 method: 'GET',
+                sessid: sessid
             },
             success: (response) => {
 
-                console.debug(response);
-
-                cart = response;
-
-            },
-            complete: () => {
-
-                console.debug(cart);
+                return response;
 
             }
         }
     );
+
+    console.debug(cart);
 
     $(document).on(
         'click',
@@ -32,12 +25,8 @@ $(() => {
         cartElement,
         (event) => {
 
-            console.debug(event);
-
             let button = $(event.target),
                 buttonData = button.data();
-
-            console.debug(buttonData);
 
         }
     );
