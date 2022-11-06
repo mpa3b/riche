@@ -1,12 +1,18 @@
 <?
 require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+
+/** @global CMain $APPLICATION */
 $APPLICATION->SetTitle('Главная');
+
 ?>
 
 <?php $APPLICATION->IncludeComponent(
     'bitrix:news.list',
-    'videos--front',
-    []
+    'banner--front',
+    [
+        'IBLOCK_TYPE' => 'CONTENT',
+        'IBLOCK_ID' => 1,
+    ]
 ); ?>
 
 <?php $APPLICATION->IncludeComponent(
