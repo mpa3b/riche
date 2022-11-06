@@ -10,6 +10,8 @@
     border-radius: var(--border-radius--2x);
     overflow: hidden;
 
+    box-shadow: var(--box-shadow--blurry);
+
     .item {
       position: relative;
 
@@ -32,15 +34,42 @@
 
         filter: var(--blur);
 
+        aspect-ratio: 1/2;
+
         @include Tablet {
-          aspect-ratio: 3/1;
+          aspect-ratio: 3;
         }
         @include Desktop {
-          aspect-ratio: 4/1;
+          aspect-ratio: 4;
         }
         @include Wide {
-          aspect-ratio: 6/1;
+          aspect-ratio: 6;
         }
+
+      }
+
+      video {
+        display: none;
+
+        &.loaded {
+          display: block;
+
+          & + picture {
+            display: none;
+          }
+        }
+      }
+
+      picture {
+        img {
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      video {
+        object-fit: cover;
+        object-position: center;
       }
 
       .details {
@@ -57,9 +86,9 @@
         width: 100%;
         height: 100%;
 
-        padding: 2rem;
+        padding: 4rem;
         @include Desktop {
-          padding: 4rem;
+          padding: 6rem;
         }
 
         box-sizing: border-box;
@@ -80,6 +109,14 @@
           background-color: var(--color--white);
         }
 
+      }
+
+    }
+
+    &:not(.slick-initialized) {
+
+      .item:not(:first-of-type) {
+        display: none;
       }
 
     }

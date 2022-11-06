@@ -58,6 +58,16 @@ $frame = $this->createFrame();
 
                     </div>
 
+                    <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
+
+                        <video muted loop autoplay>
+
+                            <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+
+                        </video>
+
+                    <? } ?>
+
                     <? if ($arItem['DISPLAY_PROPERTIES']['IMAGE']) { ?>
 
                         <picture>
@@ -74,23 +84,14 @@ $frame = $this->createFrame();
 
                                 ?>
 
-                                <source data-srcset="<?= $image['src']; ?>" type="<?= $image['content']; ?>">
+                                <source data-srcset="<?= $image['src']; ?>"
+                                        media="<?= Breakpoint::getMedia($media); ?>">
 
                             <? } ?>
 
                             <img src="<?= Thumb::PLACEHOLDER; ?>" alt="<?= $arItem['NAME']; ?>">
 
                         </picture>
-
-                    <? } ?>
-
-                    <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
-
-                        <video muted loop autoplay>
-
-                            <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-
-                        </video>
 
                     <? } ?>
 
