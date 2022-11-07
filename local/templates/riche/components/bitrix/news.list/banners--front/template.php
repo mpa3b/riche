@@ -30,7 +30,7 @@ $frame = $this -> createFrame();
 
 <?php if (!empty($arResult['ITEMS'])) { ?>
 
-    <div class="banners--front wrap">
+    <nav class="banners--front wrap">
 
         <? $frame -> begin(); ?>
 
@@ -105,6 +105,6 @@ $frame = $this -> createFrame();
 
         <? $frame -> end(); ?>
 
-    </div>
+    </nav>
 
 <?php } ?>

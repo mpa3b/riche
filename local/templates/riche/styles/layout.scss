@@ -142,6 +142,13 @@
     &--outro {
       font-size:     0.7rem;
       margin-bottom: 0;
+
+      color: var(--color--gray--dark);
+
+      span {
+        display:     block;
+        white-space: nowrap;
+      }
     }
 
   }

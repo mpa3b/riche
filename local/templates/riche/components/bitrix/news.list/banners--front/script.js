@@ -23,7 +23,7 @@ $(() => {
                 slidesToScroll: 1,
                 fade:           true,
                 speed:          1000,
-                autoplay:       false,
+                autoplay:       true,
                 autoplaySpeed:  5000,
                 arrows:         false,
                 dots:           true,

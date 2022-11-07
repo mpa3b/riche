@@ -120,7 +120,7 @@ $request = Application ::getInstance() -> getContext() -> getRequest();
 
 <?php $APPLICATION -> ShowPanel(); ?>
 
-<div id="page--header">
+<nav id="page--header">
 
     <div class="wrap">
 
@@ -238,9 +238,9 @@ $request = Application ::getInstance() -> getContext() -> getRequest();
 
     </div>
 
-</div>
+</nav>
 
-<div id="page--main">
+<main id="page--main">
 
     <?php if ($APPLICATION -> GetDirProperty('HIDE_TITLE') !== 'Y' and $currentDirectoryPath !== '/') { ?>
 

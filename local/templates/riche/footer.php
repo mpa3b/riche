@@ -15,9 +15,9 @@ $currentDirectoryPath = Application ::getInstance() -> getContext() -> getReques
 
 </div>
 
-</div>
+</main>
 
-<div id="page--footer">
+<footer id="page--footer">
 
     <div id="page--footer--top" class="wrap">
 
@@ -125,7 +125,7 @@ $currentDirectoryPath = Application ::getInstance() -> getContext() -> getReques
 
     </div>
 
-</div>
+</footer>
 
 <?php $APPLICATION -> ShowBodyScripts(); ?>
 
