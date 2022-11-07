@@ -21,27 +21,33 @@ $(() => {
         .slick(
             {
                 slidesToScroll: 1,
-                fade          : true,
-                speed         : 1000,
-                autoplay      : true,
-                autoplaySpeed : 3000,
-                arrows        : false,
-                dots          : true,
-                infinite      : true,
-                mobileFirst   : true
+                fade:           true,
+                autoplay:       true,
+                autoplaySpeed:  5000,
+                arrows:         false,
+                dots:           true,
+                infinite:       true,
+                mobileFirst:    true
             }
         )
         .on(
             {
-                afterChange : (event, slick, currentSlide, nextSlide) => {
+                afterChange:  (event, slick, currentSlide, nextSlide) => {
 
-                    $('picture', event.currentTarget).fadeOut();
-                    $('video', event.currentTarget).trigger('play');
+                    let video   = $('video', event.currentTarget),
+                        picture = $('picture', event.currentTarget);
+
+                    if (video.length) {
+                        video.trigger('play');
+                        picture.fadeOut();
+                    }
 
                 },
                 beforeChange: (event, slick, currentSlide, nextSlide) => {
 
-                    $('video', event.currentTarget).trigger('pause');
+                    let video = $('video', event.currentTarget);
+
+                    video.trigger('pause');
 
                 }
             }

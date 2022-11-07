@@ -20,9 +20,9 @@ use Riche\Thumb;
 /** @var array $templateData */
 /** @var CBitrixComponent $component */
 
-$this->setFrameMode(true);
+$this -> setFrameMode(true);
 
-$frame = $this->createFrame();
+$frame = $this -> createFrame();
 
 ?>
 
@@ -30,7 +30,7 @@ $frame = $this->createFrame();
 
     <div class="features--front wrap">
 
-        <? $frame->begin(); ?>
+        <? $frame -> begin(); ?>
 
         <h2 hidden>RICHE COSMETICS</h2>
 
@@ -58,16 +58,16 @@ $frame = $this->createFrame();
 
                                 <?
 
-                                $image = CFile::ResizeImageGet(
+                                $image = CFile ::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize($width),
+                                    Thumb ::calculateImageSize($width),
                                     BX_RESIZE_IMAGE_PROPORTIONAL
                                 );
 
                                 ?>
 
                                 <source data-srcset="<?= $image['src']; ?>"
-                                        media="<?= Breakpoint::getMedia($media); ?>">
+                                        media="<?= Breakpoint ::getMedia($media); ?>">
 
                             <? } ?>
 
@@ -93,7 +93,7 @@ $frame = $this->createFrame();
 
         </div>
 
-        <? $frame->end(); ?>
+        <? $frame -> end(); ?>
 
     </div>
 

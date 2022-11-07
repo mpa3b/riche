@@ -14,7 +14,7 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
 use Riche\Head;
 
-Loader::registerAutoLoadClasses(
+Loader ::registerAutoLoadClasses(
     null,
     [
         'Riche\Breakpoint' => SITE_TEMPLATE_PATH . '/classes/Breakpoint.php',
@@ -24,32 +24,32 @@ Loader::registerAutoLoadClasses(
     ]
 );
 
-$assets = Asset::getInstance();
+$assets = Asset ::getInstance();
 
-$assets->addCss(LOCAL_ASSETS . '/normalize-css/normalize.css');
+$assets -> addCss(LOCAL_ASSETS . '/normalize-css/normalize.css');
 
-$assets->addJs(LOCAL_ASSETS . '/js-cookie/dist/js.cookie.min.js');
-$assets->addJs(LOCAL_ASSETS . '/vanilla-lazyload/dist/lazyload.min.js');
+$assets -> addJs(LOCAL_ASSETS . '/js-cookie/dist/js.cookie.min.js');
+$assets -> addJs(LOCAL_ASSETS . '/vanilla-lazyload/dist/lazyload.min.js');
 
-$assets->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.min.js');
+$assets -> addJs(LOCAL_ASSETS . '/jquery/dist/jquery.min.js');
 
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/bxajax.js');
+$assets -> addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
+$assets -> addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
+$assets -> addJs(SITE_TEMPLATE_PATH . '/scripts/bxajax.js');
 
-$assets->addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
+$assets -> addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
 
-$assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
-$assets->addCss(SITE_TEMPLATE_PATH . '/styles/components.css');
+$assets -> addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
+$assets -> addCss(SITE_TEMPLATE_PATH . '/styles/components.css');
 
-$assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
-$assets->addCss(SITE_TEMPLATE_PATH . '/fonts/hicon/style.css');
+$assets -> addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
+$assets -> addCss(SITE_TEMPLATE_PATH . '/fonts/hicon/style.css');
 
-$assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
+$assets -> addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
 
-Head::addHeadPreloadAsset(SITE_TEMPLATE_PATH . '/images/logo.svg');
+Head ::addHeadPreloadAsset(SITE_TEMPLATE_PATH . '/images/logo.svg');
 
-$currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
+$currentDirectoryPath = Application ::getInstance() -> getContext() -> getRequest() -> getRequestedPageDirectory();
 
 if ($currentDirectoryPath == '/') {
 
@@ -63,13 +63,13 @@ else {
 
 }
 
-$request = Application::getInstance()->getContext()->getRequest();
+$request = Application ::getInstance() -> getContext() -> getRequest();
 
 ?>
 <html lang="<?php echo LANGUAGE_ID ?>">
 <head>
 
-    <title><?php $APPLICATION->ShowTitle(); ?></title>
+    <title><?php $APPLICATION -> ShowTitle(); ?></title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=<?php echo strtolower(SITE_CHARSET); ?>">
     <meta name="viewport"
@@ -77,13 +77,13 @@ $request = Application::getInstance()->getContext()->getRequest();
 
     <?php
 
-    $APPLICATION->ShowHeadStrings();
+    $APPLICATION -> ShowHeadStrings();
 
-    $APPLICATION->ShowMeta("robots", false, true);
-    $APPLICATION->ShowMeta("keywords", false, true); // устаревший тег
+    $APPLICATION -> ShowMeta("robots", false, true);
+    $APPLICATION -> ShowMeta("keywords", false, true); // устаревший тег
 
-    $APPLICATION->ShowMeta("description", false, true);
-    $APPLICATION->ShowLink("canonical", null, true);
+    $APPLICATION -> ShowMeta("description", false, true);
+    $APPLICATION -> ShowLink("canonical", null, true);
 
     ?>
 
@@ -107,8 +107,8 @@ $request = Application::getInstance()->getContext()->getRequest();
 
     <?php
 
-    $APPLICATION->ShowCSS(true, false);
-    $APPLICATION->ShowHeadScripts();
+    $APPLICATION -> ShowCSS(true, false);
+    $APPLICATION -> ShowHeadScripts();
 
     ?>
 
@@ -118,7 +118,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
 <body id="page" class="<?php echo $pageHtmlClasses; ?>">
 
-<?php $APPLICATION->ShowPanel(); ?>
+<?php $APPLICATION -> ShowPanel(); ?>
 
 <div id="page--header">
 
@@ -152,7 +152,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             <div id="page--header--menu" class="half">
 
-                <?php $APPLICATION->IncludeComponent(
+                <?php $APPLICATION -> IncludeComponent(
                     "bitrix:menu",
                     "header",
                     [
@@ -193,7 +193,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
                 */ ?>
 
-                <?php $APPLICATION->IncludeComponent(
+                <?php $APPLICATION -> IncludeComponent(
                     "bitrix:sale.basket.basket.line",
                     "header",
                     [
@@ -215,7 +215,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
         </div>
 
-        <?php $APPLICATION->IncludeComponent(
+        <?php $APPLICATION -> IncludeComponent(
             "bitrix:menu",
             "main",
             [
@@ -242,15 +242,15 @@ $request = Application::getInstance()->getContext()->getRequest();
 
 <div id="page--main">
 
-    <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' and $currentDirectoryPath !== '/') { ?>
+    <?php if ($APPLICATION -> GetDirProperty('HIDE_TITLE') !== 'Y' and $currentDirectoryPath !== '/') { ?>
 
         <header id="page--main--header">
 
             <div class="wrap">
 
-                <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
+                <?php if ($APPLICATION -> GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
 
-                    <?php $APPLICATION->IncludeComponent(
+                    <?php $APPLICATION -> IncludeComponent(
                         "bitrix:breadcrumb",
                         "",
                         [
@@ -267,9 +267,9 @@ $request = Application::getInstance()->getContext()->getRequest();
 
                 <?php } ?>
 
-                <h1><?php $APPLICATION->ShowTitle(); ?></h1>
+                <h1><?php $APPLICATION -> ShowTitle(); ?></h1>
 
-                <?php $APPLICATION->IncludeComponent(
+                <?php $APPLICATION -> IncludeComponent(
                     'bitrix:main.include',
                     '',
                     [

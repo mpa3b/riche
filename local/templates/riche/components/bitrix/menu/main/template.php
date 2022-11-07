@@ -16,17 +16,17 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
-$this->setFrameMode(true);
+$this -> setFrameMode(true);
 
 ?>
 
 <? if (!empty($arResult)) { ?>
 
-    <?php $frame = $this->createFrame(); ?>
+    <?php $frame = $this -> createFrame(); ?>
 
     <div class="row menu--main">
 
-        <?php $frame->begin(); ?>
+        <?php $frame -> begin(); ?>
 
         <nav class="whole unit">
 
@@ -40,7 +40,7 @@ $this->setFrameMode(true);
 
         </nav>
 
-        <?php $frame->end(); ?>
+        <?php $frame -> end(); ?>
 
     </div>
 

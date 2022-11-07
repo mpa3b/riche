@@ -17,13 +17,13 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var array $templateData */
 /** @var \CBitrixComponent $component */
 
-$this->setFrameMode(true);
+$this -> setFrameMode(true);
 
-$this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
-$this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
-$this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
+$this -> addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
+$this -> addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
+$this -> addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
-$frame = $this->createFrame();
+$frame = $this -> createFrame();
 
 ?>
 
@@ -31,7 +31,7 @@ $frame = $this->createFrame();
 
     <div class="problems--front">
 
-        <? $frame->begin(); ?>
+        <? $frame -> begin(); ?>
 
         <div class="items slider">
 
@@ -47,16 +47,16 @@ $frame = $this->createFrame();
 
                                 <?
 
-                                $image = CFile::ResizeImageGet(
+                                $image = CFile ::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize($width),
+                                    Thumb ::calculateImageSize($width),
                                     BX_RESIZE_IMAGE_PROPORTIONAL
                                 );
 
                                 ?>
 
                                 <source data-srcset="<?= $image['src']; ?>"
-                                        media="<?= Breakpoint::getMedia($media); ?>">
+                                        media="<?= Breakpoint ::getMedia($media); ?>">
 
                             <? } ?>
 
@@ -90,7 +90,7 @@ $frame = $this->createFrame();
 
         </div>
 
-        <? $frame->end(); ?>
+        <? $frame -> end(); ?>
 
     </div>
 

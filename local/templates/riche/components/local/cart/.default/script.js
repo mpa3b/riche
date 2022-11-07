@@ -26,14 +26,14 @@ $(() => {
         (event) => {
 
             let button = $(event.target),
-                data = button.data();
+                data   = button.data();
 
             data.sessid = sessid;
 
             $.ajax(
                 bxAjaxRequestUrl('local:cart'),
                 {
-                    data: data,
+                    data:    data,
                     success: (result) => {
 
                         console.debug(result);

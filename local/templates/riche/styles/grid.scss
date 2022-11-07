@@ -2,7 +2,7 @@
 @import "../mixins";
 
 :root {
-  --offset:       0.8rem;
+  --offset:           0.8rem;
 
   @include Mobile {
     --offset: 1rem;
@@ -11,9 +11,9 @@
     --offset: 1.2rem;
   }
 
-  --offset--half: calc(var(--offset) / 2);
-  --offset--2x:   calc(var(--offset) * 2);
-  --offset--4x:   calc(var(--offset) * 4);
+  --offset--half:     calc(var(--offset) / 2);
+  --offset--2x:       calc(var(--offset) * 2);
+  --offset--4x:       calc(var(--offset) * 4);
 
   --offset--negative: calc(var(--offset) * -1);
 
@@ -23,7 +23,7 @@
   display:    block;
   box-sizing: border-box;
 
-  margin:     var(--offset--2x) auto;
+  margin:     var(--offset--2x) var(--offset);
   padding:    0;
 
   .grid,
@@ -53,46 +53,39 @@
     }
   }
 
-  @include Mobile {
+  .row,
+  .grid {
+    flex-direction: row;
+    flex-wrap:      wrap;
+    box-sizing:     border-box;
 
-    padding: 0;
-    margin:  var(--offset);
+    margin:         0 calc(var(--offset) * -0.5);
 
-    .row,
-    .grid {
-      flex-direction: row;
-      flex-wrap:      wrap;
-      box-sizing:     border-box;
+    > * {
+      padding: calc(var(--offset) * 0.5);
+    }
 
-      margin:         0 calc(var(--offset) * -0.5);
+    $units:         (
+                            "four-fifths": 80%,
+                            "three-quarters": 75%,
+                            "two-thirds": 66.6666%,
+                            "three-fifths": 60%,
+                            "half": 50%,
+                            "two-fifths": 40%,
+                            "third": 33.3333%,
+                            "quarter": 25%,
+                            "fifth": 20%,
+                            "sixth": 16.6666%
+                    );
 
-      > * {
-        padding: calc(var(--offset) * 0.5);
+    @each $code, $width in $units {
+
+      > .#{$code} {
+        width: #{$width};
       }
 
-      $units:         (
-                              "four-fifths": 80%,
-                              "three-quarters": 75%,
-                              "two-thirds": 66.6666%,
-                              "three-fifths": 60%,
-                              "half": 50%,
-                              "two-fifths": 40%,
-                              "third": 33.3333%,
-                              "quarter": 25%,
-                              "fifth": 20%,
-                              "sixth": 16.6666%
-                      );
-
-      @each $code, $width in $units {
-
-        > .#{$code} {
-          width: #{$width};
-        }
-
-        .offset-#{$code} {
-          margin-left: #{$width};
-        }
-
+      .offset-#{$code} {
+        margin-left: #{$width};
       }
 
     }
@@ -100,17 +93,17 @@
   }
 
   @include Tablet {
-    margin: var(--offset);
+    margin: var(--offset--2x) auto;
   }
 
   @include Desktop {
     width:  82%;
-    margin: var(--offset) auto;
+    margin: var(--offset--2x) auto;
   }
 
   @include Wide {
     width:  72%;
-    margin: var(--offset) auto;
+    margin: var(--offset--2x) auto;
   }
 
   .row {
@@ -121,7 +114,7 @@
     margin:         0 var(--offset--negative);
 
     @include Tablet {
-      margin:         0 var(--offset);
+      margin: 0 var(--offset);
     }
 
     box-sizing:     border-box;

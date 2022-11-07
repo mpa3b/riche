@@ -16,9 +16,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
-$this->setFrameMode(true);
+$this -> setFrameMode(true);
 
-$frame = $this->createFrame();
+$frame = $this -> createFrame();
 
 ?>
 
@@ -34,7 +34,7 @@ $frame = $this->createFrame();
 
             <ul class="menu root">
 
-                <?php $frame->begin(); ?>
+                <?php $frame -> begin(); ?>
 
                 <?php foreach ($arResult as $arItem): ?>
                     <li>
@@ -42,13 +42,13 @@ $frame = $this->createFrame();
                     </li>
                 <?php endforeach; ?>
 
-                <?php $frame->end(); ?>
+                <?php $frame -> end(); ?>
 
             </ul>
 
         </nav>
 
-        <?php $APPLICATION->IncludeComponent(
+        <?php $APPLICATION -> IncludeComponent(
             'bitrix:main.include',
             '',
             [

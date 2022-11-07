@@ -16,17 +16,17 @@ class Thumb
     /**
      * Глобальная константа качества сжатия JPEG от 0 до 100
      */
-    static $JPEG_QUALITY;
-    static $JPEG_QUALITY_PRELOAD;
+    static                 $JPEG_QUALITY;
+    static                 $JPEG_QUALITY_PRELOAD;
     private static ?string $root;
 
     private function __construct()
     {
 
-        self::$JPEG_QUALITY         = Option::get('main', 'image_resize_quality');
-        self::$JPEG_QUALITY_PRELOAD = self::$JPEG_QUALITY / 2;
+        self ::$JPEG_QUALITY         = Option ::get('main', 'image_resize_quality');
+        self ::$JPEG_QUALITY_PRELOAD = self ::$JPEG_QUALITY / 2;
 
-        self::$root = Loader::getDocumentRoot();
+        self ::$root = Loader ::getDocumentRoot();
 
     }
 
@@ -60,19 +60,19 @@ class Thumb
 
         if (!$quality) {
 
-            $quality = self::$JPEG_QUALITY;
+            $quality = self ::$JPEG_QUALITY;
 
         }
 
         if (is_int($file)) {
 
-            $file = CFile::GetFileArray($file);
+            $file = CFile ::GetFileArray($file);
 
         }
 
         if (!empty($file['SRC'])) {
 
-            $file['WEBP_SRC']          = self::convertToWebP($file['SRC'], $quality);
+            $file['WEBP_SRC']          = self ::convertToWebP($file['SRC'], $quality);
             $file['WEBP_CONTENT_TYPE'] = mime_content_type($file['WEBP_SRC']);
 
             if (!$file['CONTENT_TYPE']) {
@@ -84,7 +84,7 @@ class Thumb
 
             if (!empty($file['src'])) {
 
-                $file['webp_src']          = self::convertToWebP($file['src'], $quality);
+                $file['webp_src']          = self ::convertToWebP($file['src'], $quality);
                 $file['webp_content_type'] = mime_content_type($file['webp_src']);
 
                 $file['content_type'] = mime_content_type($file['src']);
@@ -100,7 +100,7 @@ class Thumb
 
         if (!$quality) {
 
-            $quality = self::$JPEG_QUALITY;
+            $quality = self ::$JPEG_QUALITY;
 
         }
 
@@ -127,30 +127,30 @@ class Thumb
 
             $path = str_replace(['.jpg', '.jpeg', '.gif', '.png'], '.webp', $src);
 
-            if (!file_exists(self::$root . $path)) {
+            if (!file_exists(self ::$root . $path)) {
 
-                $info = getimagesize(self::$root . $src);
+                $info = getimagesize(self ::$root . $src);
 
                 if ($info !== false && ($type = $info[2])) {
 
                     switch ($type) {
 
                         case IMAGETYPE_JPEG:
-                            $webP = imagecreatefromjpeg(self::$root . $src);
+                            $webP = imagecreatefromjpeg(self ::$root . $src);
                             break;
 
                         case IMAGETYPE_GIF:
-                            $webP = imagecreatefromgif(self::$root . $src);
+                            $webP = imagecreatefromgif(self ::$root . $src);
                             break;
 
                         case IMAGETYPE_PNG:
-                            $webP = imagecreatefrompng(self::$root . $src);
+                            $webP = imagecreatefrompng(self ::$root . $src);
                             break;
 
                     }
 
                     if ($webP) {
-                        imagewebp($webP, self::$root . $path, $quality);
+                        imagewebp($webP, self ::$root . $path, $quality);
                         imagedestroy($webP);
                     }
 
@@ -167,7 +167,7 @@ class Thumb
     private static function makeUri(string $path): string
     {
 
-        $file = self::$root . $path;
+        $file = self ::$root . $path;
 
         $type   = mime_content_type($file);
         $base64 = base64_encode(file_get_contents($file));
@@ -180,7 +180,7 @@ class Thumb
     private static function makeUriFromId(string $id): string
     {
 
-        $image = CFile::ResizeImageGet(
+        $image = CFile ::ResizeImageGet(
             $id,
             [
                 'width'  => Breakpoint::preload,

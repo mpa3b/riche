@@ -21,19 +21,19 @@ $(() => {
         .slick(
             {
                 slidesToScroll: 1,
-                fade          : true,
-                speed         : 1000,
-                autoplay      : true,
-                autoplaySpeed : 3000,
-                arrows        : false,
-                dots          : true,
-                infinite      : true,
-                mobileFirst   : true
+                fade:           true,
+                speed:          1000,
+                autoplay:       true,
+                autoplaySpeed:  3000,
+                arrows:         false,
+                dots:           true,
+                infinite:       true,
+                mobileFirst:    true
             }
         )
         .on(
             {
-                afterChange : (event, slick, currentSlide, nextSlide) => {
+                afterChange:  (event, slick, currentSlide, nextSlide) => {
 
                     $('picture', event.currentTarget).fadeOut();
                     $('video', event.currentTarget).trigger('play');

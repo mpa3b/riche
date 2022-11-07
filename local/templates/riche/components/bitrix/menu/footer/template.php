@@ -13,15 +13,15 @@
 
 /** @var CBitrixComponent $component */
 
-$this->setFrameMode(true);
+$this -> setFrameMode(true);
 
-$frame = $this->createFrame();
+$frame = $this -> createFrame();
 
 if (!empty($arResult)) { ?>
 
     <nav class="menu--footer">
 
-        <? $frame->begin(); ?>
+        <? $frame -> begin(); ?>
 
         <? //@formatter:off ?>
 
@@ -58,7 +58,7 @@ if (!empty($arResult)) { ?>
 
         <? //@formatter:on ?>
 
-                <? $frame->end(); ?>
+                <? $frame -> end(); ?>
 
     </nav>
 
