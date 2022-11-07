@@ -48,8 +48,9 @@
 
   --transition--ease:   var(--transition--time) ease;
 
-  --transition--time:   0.2s;
+  --transition--time:   0.25s;
   --transition--effect: ease-in-out;
+  --transition--common:  var(--transition--time) var(--transition--effect);
   --transition:         all var(--transition--time) var(--transition--effect);
 
   --opacity:            #{$opacity};
@@ -62,7 +63,7 @@
 }
 
 html {
-  font-size:        10pt;
+  font-size:        12pt;
   background-color: var(--color--white--dark);
 }
 
@@ -118,10 +119,6 @@ p {
   }
 }
 
-a {
-
-}
-
 hr {
 
 }
@@ -148,16 +145,14 @@ a {
   color:           inherit;
   text-decoration: underline;
 
+  transition:      color var(--transition--common);
+
   &:focus {
     outline: none;
   }
 
   &:hover {
     color: var(--color--green);
-  }
-
-  &:visible {
-    color: var(--color--green--dark);
   }
 
   &[href^="tel"] {

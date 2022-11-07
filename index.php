@@ -23,8 +23,8 @@ $APPLICATION -> SetTitle('Главная');
         "SORT_ORDER2" => "ASC",
 
         "FILTER_NAME"   => "",
-        "FIELD_CODE"    => ["ID", "PREVIEW_PICTURE", "DETAIL_PICTURE"],
-        "PROPERTY_CODE" => ["VIDEO", "BUTTON_LINK", "BUTTON_TEXT"],
+        "FIELD_CODE"    => ["ID", "DETAIL_PICTURE", "PREVIEW_TEXT", "NAME"],
+        "PROPERTY_CODE" => ["VIDEO", "LINK", "BUTTON_TEXT"],
         "CHECK_DATES"   => "Y",
 
         "SET_TITLE"            => "N",

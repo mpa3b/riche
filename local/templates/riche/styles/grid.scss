@@ -30,10 +30,8 @@
   .grid,
   .column,
   .row {
-
     display:        flex;
     flex-direction: column;
-    width:          100%;
 
     > * {
       display:    block;
@@ -62,16 +60,6 @@
     box-sizing:     border-box;
 
     margin:         0 var(--offset--negative);
-
-    @include Desktop {
-      width:  82%;
-      margin: var(--offset--2x) auto;
-    }
-
-    @include Wide {
-      width:  72%;
-      margin: var(--offset--2x) auto;
-    }
 
     > * {
       padding: var(--offset);
@@ -124,7 +112,7 @@
   }
 
   @include Wide {
-    width:  76%;
+    width:  68%;
     margin: auto;
   }
 
