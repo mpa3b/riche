@@ -52,7 +52,7 @@ $frame = $this -> createFrame();
 
                         <? if (!empty($arItem['DISPLAY_PROPERTIES']['LINK']['VALUE'])) { ?>
                             <button data-id="<?= $arItem['ID']; ?>"
-                                    data-href="<?= $arItem['DISPLAY_PROPERTIES']['LINK']['VALUE']; ?>">
+                                    data-href="<?= $arItem['DISPLAY_PROPERTIES']['BUTTON_LINK']['VALUE']; ?>">
                                 <?= $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?>
                                 <i class="icon-chevron-right"></i>
                             </button>

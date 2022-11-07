@@ -1,8 +1,8 @@
 <?
 
-use Bex\Tools\Iblock\IblockTools;
-
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
+
+use Bex\Tools\Iblock\IblockTools;
 
 /** @global CMain $APPLICATION */
 $APPLICATION -> SetTitle('Главная');
@@ -24,7 +24,7 @@ $APPLICATION -> SetTitle('Главная');
 
         "FILTER_NAME"   => "",
         "FIELD_CODE"    => ["ID", "PREVIEW_PICTURE", "DETAIL_PICTURE"],
-        "PROPERTY_CODE" => ["VIDEO", "LINK", "BUTTON_TEXT"],
+        "PROPERTY_CODE" => ["VIDEO", "BUTTON_LINK", "BUTTON_TEXT"],
         "CHECK_DATES"   => "Y",
 
         "SET_TITLE"            => "N",

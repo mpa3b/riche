@@ -152,6 +152,14 @@ a {
     outline: none;
   }
 
+  &:hover {
+    color: var(--color--green);
+  }
+
+  &:visible {
+    color: var(--color--green--dark);
+  }
+
   &[href^="tel"] {
     text-decoration: none;
   }
@@ -234,6 +242,12 @@ button {
     opacity: var(--opacity);
   }
 
+}
+
+[hidden],
+.hide,
+.hidden {
+  display: none;
 }
 
 //endregion

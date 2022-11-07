@@ -43,7 +43,7 @@ $frame = $this -> createFrame();
 
             <h2 class="title">Твой заказ</h2>
 
-            <ul class="items list"></ul>
+            <ul class="items list" data-template="cart-item"></ul>
 
             <div class="total">
 
@@ -72,11 +72,12 @@ $frame = $this -> createFrame();
 
     </div>
 
-    <template>
+    <template data-template="cart-item">
 
         <li class="item">
 
             <picture>
+                <source src="" media="">
                 <img src="" alt="">
             </picture>
 
