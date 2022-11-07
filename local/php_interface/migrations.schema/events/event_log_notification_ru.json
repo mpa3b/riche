@@ -1,0 +1,40 @@
+{
+    "event": "EVENT_LOG_NOTIFICATION",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Оповещение журнала событий",
+        "DESCRIPTION": [
+            "#EMAIL# - Email получателя\n#ADDITIONAL_TEXT# - Дополнительный текст действия\n#NAME# - Название оповещения\n#AUDIT_TYPE_ID# - Тип события\n#ITEM_ID# - Объект\n#USER_ID# - Пользователь\n#REMOTE_ADDR# - IP-адрес\n#USER_AGENT# - Браузер\n#REQUEST_URI# - Страница\n#EVENT_COUNT# - Количество записей"
+        ],
+        "SORT": "9"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL#",
+            "SUBJECT": "Оповещение журнала событий: #NAME#",
+            "MESSAGE": [
+                "Зафиксированы события в журнале, соответствующие параметрам оповещения:\n\nТип события: #AUDIT_TYPE_ID#\nОбъект: #ITEM_ID#\nПользователь: #USER_ID# \nIP-адрес: #REMOTE_ADDR#\nБраузер: #USER_AGENT#\nСтраница: #REQUEST_URI# \n\nКоличество записей: #EVENT_COUNT# \n\n#ADDITIONAL_TEXT#\n\nПерейти в журнал событий:\nhttp:\/\/#SERVER_NAME#\/bitrix\/admin\/event_log.php?set_filter=Y&find_audit_type_id=#AUDIT_TYPE_ID#"
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": "ru",
+            "EVENT_TYPE": "[ EVENT_LOG_NOTIFICATION ] Оповещение журнала событий"
+        }
+    ]
+}

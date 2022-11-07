@@ -1,0 +1,463 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "allow_encrypted_tokens",
+            "VALUE": "1"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "allow_registration",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "allow_send_user_activity",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "apple_client_id",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "apple_client_id_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "apple_key_id",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "apple_key_id_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "apple_key_pem",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "apple_key_pem_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "apple_team_id",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "apple_team_id_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "auth_services",
+            "VALUE": {
+                "Bitrix24Net": "N",
+                "Facebook": "N",
+                "YandexOAuth": "Y",
+                "MailRu2": "Y",
+                "MyMailRu": "N",
+                "OpenID": "N",
+                "MailRuOpenID": "N",
+                "Livejournal": "N",
+                "Liveinternet": "N",
+                "Blogger": "N",
+                "Twitter": "N",
+                "VKontakte": "Y",
+                "GoogleOAuth": "Y",
+                "LiveIDOAuth": "N",
+                "Office365": "N",
+                "Odnoklassniki": "N",
+                "Dropbox": "N",
+                "Box": "N",
+                "apple": "Y",
+                "zoom": "N"
+            }
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "auth_services_bx_site_s1",
+            "VALUE": {
+                "Bitrix24Net": "N",
+                "Facebook": "N",
+                "YandexOAuth": "N",
+                "MailRu2": "N",
+                "MyMailRu": "N",
+                "OpenID": "N",
+                "MailRuOpenID": "N",
+                "Livejournal": "N",
+                "Liveinternet": "N",
+                "Blogger": "N",
+                "Twitter": "N",
+                "VKontakte": "N",
+                "GoogleOAuth": "N",
+                "LiveIDOAuth": "N",
+                "Office365": "N",
+                "Odnoklassniki": "N",
+                "Dropbox": "N",
+                "Box": "N",
+                "apple": "N",
+                "zoom": "N"
+            }
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "bitrix24net_domain",
+            "VALUE": "http:\/\/riche.local"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "bitrix24net_id",
+            "VALUE": "ext.63690fe223a6a4.35467220"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "bitrix24net_id_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "bitrix24net_secret",
+            "VALUE": "N0BwakWG9BjfYCclyjZvBSBfTQfVoZKbmBUOWYOnsUWPU78ZEc"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "bitrix24net_secret_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "box_appid",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "box_appid_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "box_appsecret",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "box_appsecret_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "dropbox_appid",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "dropbox_appid_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "dropbox_appsecret",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "dropbox_appsecret_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "facebook_appid",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "facebook_appid_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "facebook_appsecret",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "facebook_appsecret_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "get_message_from_twitter",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "google_api_key",
+            "VALUE": "AIzaSyA7puwZwGDJgOjcAWsFsY7hQcrioC13A18"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "google_appid",
+            "VALUE": "798910771106.apps.googleusercontent.com"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "google_appid_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "google_appsecret",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "google_appsecret_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "group_deny_auth",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "group_deny_split",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "liveid_appid",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "liveid_appid_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "liveid_appsecret",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "liveid_appsecret_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "mailru_id",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "mailru_id_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "mailru_private_key",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "mailru_private_key_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "mailru_secret_key",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "mailru_secret_key_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "mailru2_client_id",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "mailru2_client_id_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "mailru2_client_secret",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "mailru2_client_secret_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "odnoklassniki_appid",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "odnoklassniki_appid_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "odnoklassniki_appkey",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "odnoklassniki_appkey_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "odnoklassniki_appsecret",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "odnoklassniki_appsecret_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "office365_appid",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "office365_appid_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "office365_appsecret",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "office365_appsecret_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "office365_tenant",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "office365_tenant_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "twitter_key",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "twitter_key_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "twitter_search_hash",
+            "VALUE": "#b24"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "twitter_search_hash_bx_site_s1",
+            "VALUE": null
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "twitter_secret",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "twitter_secret_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "use_on_sites",
+            "VALUE": {
+                "s1": "N"
+            }
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "vkontakte_appid",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "vkontakte_appid_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "vkontakte_appsecret",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "vkontakte_appsecret_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "yandex_appid",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "yandex_appid_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "yandex_appsecret",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "yandex_appsecret_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "zoom_client_id",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "zoom_client_id_bx_site_s1",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "zoom_client_secret",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "zoom_client_secret_bx_site_s1",
+            "VALUE": ""
+        }
+    ]
+}

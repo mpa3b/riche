@@ -1,0 +1,40 @@
+{
+    "event": "VOTE_FOR",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "email",
+        "NAME": "New vote",
+        "DESCRIPTION": [
+            "#ID# - Vote result ID\n#TIME# - Time of vote\n#VOTE_TITLE# - Poll name\n#VOTE_DESCRIPTION# - Poll description\n#VOTE_ID# - Poll ID\n#CHANNEL# - Poll group name\n#CHANNEL_ID# - Poll group ID\n#VOTER_ID# - Voter's user ID\n#USER_NAME# - User full name\n#LOGIN# - login\n#USER_ID# - User ID\n#STAT_GUEST_ID# - Visitor ID in web analytics module\n#SESSION_ID# - Session ID in web analytics module\n#IP# - IP address\n#VOTE_STATISTIC# - Summary statistics of this poll type ( - Question - Answer)\n#URL# - Poll URL"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL_TO#",
+            "SUBJECT": "#SITE_NAME#: [V] #VOTE_TITLE#",
+            "MESSAGE": [
+                "#USER_NAME# принял участие в опросе \"#VOTE_TITLE#\":\n#VOTE_STATISTIC#\n\nhttp:\/\/#SERVER_NAME##URL#\nСообщение сгенерировано автоматически."
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ VOTE_FOR ] Новый голос"
+        }
+    ]
+}

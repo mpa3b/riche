@@ -1,0 +1,14 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "conversion",
+            "NAME": "GENERATE_INITIAL_DATA",
+            "VALUE": "generated"
+        },
+        {
+            "MODULE_ID": "conversion",
+            "NAME": "START_DATE_TIME",
+            "VALUE": "2022-11-07 16:53:20"
+        }
+    ]
+}

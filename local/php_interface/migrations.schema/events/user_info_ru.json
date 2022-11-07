@@ -1,0 +1,40 @@
+{
+    "event": "USER_INFO",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Информация о пользователе",
+        "DESCRIPTION": [
+            "\n\n#USER_ID# - ID пользователя\n#STATUS# - Статус логина\n#MESSAGE# - Сообщение пользователю\n#LOGIN# - Логин\n#URL_LOGIN# - Логин, закодированный для использования в URL\n#CHECKWORD# - Контрольная строка для смены пароля\n#NAME# - Имя\n#LAST_NAME# - Фамилия\n#EMAIL# - E-Mail пользователя\n"
+        ],
+        "SORT": "2"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL#",
+            "SUBJECT": "#SITE_NAME#: Регистрационная информация",
+            "MESSAGE": [
+                "Информационное сообщение сайта #SITE_NAME#\n------------------------------------------\n#NAME# #LAST_NAME#,\n\n#MESSAGE#\n\nВаша регистрационная информация:\n\nID пользователя: #USER_ID#\nСтатус профиля: #STATUS#\nLogin: #LOGIN#\n\nВы можете изменить пароль, перейдя по следующей ссылке:\nhttp:\/\/#SERVER_NAME#\/auth\/index.php?change_password=yes&lang=ru&USER_CHECKWORD=#CHECKWORD#&USER_LOGIN=#URL_LOGIN#\n\nСообщение сгенерировано автоматически."
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": "ru",
+            "EVENT_TYPE": "[ USER_INFO ] Информация о пользователе"
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "event": "FORUM_NEW_MESSAGE_MAIL",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "email",
+        "NAME": "New message at the forum (e-mail messaging mode)",
+        "DESCRIPTION": [
+            "#FORUM_NAME# - Forum name\n#AUTHOR# - Message author\n#FROM_EMAIL# - E-Mail in the &amp;From&amp; field\n#RECIPIENT# - Message recipient\n#TOPIC_TITLE# - Message subject\n#MESSAGE_TEXT# - Message text\n#PATH2FORUM# - Message URL\n#MESSAGE_DATE# - Message date\n#FORUM_EMAIL# - E-Mail to add messages to the forum \n#FORUM_ID# - Forum ID\n#TOPIC_ID# - Topic ID \n#MESSAGE_ID# - Message ID\n#TAPPROVED# - Topic approved and published\n#MAPPROVED# - Message approved and published\n"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#FROM_EMAIL#",
+            "EMAIL_TO": "#RECIPIENT#",
+            "SUBJECT": "#TOPIC_TITLE#",
+            "MESSAGE": [
+                "#MESSAGE_TEXT#\n\n------------------------------------------  \nВы получили это сообщение, так как выподписаны на форум #FORUM_NAME#.\n\nОтветить на сообщение можно по электронной почте или через форму на сайте:\nhttp:\/\/#SERVER_NAME##PATH2FORUM#\n\nНаписать новое сообщение: #FORUM_EMAIL#\n\nАвтор сообщения: #AUTHOR#\n\nСообщение сгенерировано автоматически на сайте #SITE_NAME#.\n"
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ FORUM_NEW_MESSAGE_MAIL ] Новое сообщение на форуме в режиме общения по E-Mail"
+        }
+    ]
+}

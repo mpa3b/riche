@@ -1,0 +1,40 @@
+{
+    "event": "USER_CODE_REQUEST",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Запрос кода авторизации",
+        "DESCRIPTION": [
+            "#USER_ID# - ID пользователя\n#STATUS# - Статус логина\n#LOGIN# - Логин\n#CHECKWORD# - Код для авторизации\n#NAME# - Имя\n#LAST_NAME# - Фамилия\n#EMAIL# - Email пользователя\n"
+        ],
+        "SORT": "10"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL#",
+            "SUBJECT": "#SITE_NAME#: Запрос кода авторизации",
+            "MESSAGE": [
+                "Используйте для авторизации код:\n\n#CHECKWORD#\n\nПосле авторизации вы сможете изменить свой пароль в редактировании профиля.\n\nВаша регистрационная информация:\n\nID пользователя: #USER_ID#\nСтатус профиля: #STATUS#\nЛогин: #LOGIN#\n\nСообщение создано автоматически."
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": "ru",
+            "EVENT_TYPE": "[ USER_CODE_REQUEST ] Запрос кода авторизации"
+        }
+    ]
+}

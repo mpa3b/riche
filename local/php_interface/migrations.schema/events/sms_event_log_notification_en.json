@@ -1,0 +1,13 @@
+{
+    "event": "SMS_EVENT_LOG_NOTIFICATION",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "sms",
+        "NAME": "Event log notification",
+        "DESCRIPTION": [
+            "#PHONE_NUMBER# - Recipient phone number\n#ADDITIONAL_TEXT# - Action additional text\n#NAME# - Notification name\n#AUDIT_TYPE_ID# - Event type\n#ITEM_ID# - Object\n#USER_ID# - User\n#REMOTE_ADDR# - IP address\n#USER_AGENT# - Browser\n#REQUEST_URI# - Page URL\n#EVENT_COUNT# - Number of events"
+        ],
+        "SORT": "100"
+    },
+    "messages": []
+}

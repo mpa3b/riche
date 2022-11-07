@@ -1,0 +1,40 @@
+{
+    "event": "SALE_ORDER_REMIND_PAYMENT",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "email",
+        "NAME": "Order Payment Reminder",
+        "DESCRIPTION": [
+            "#ORDER_ID# - order ID\n#ORDER_ACCOUNT_NUMBER_ENCODE# - order ID (for URL's)\n#ORDER_REAL_ID# - real order ID\n#ORDER_DATE# - order date\n#ORDER_USER# - customer\n#PRICE# - order amount\n#EMAIL# - customer e-mail\n#BCC# - BCC e-mail\n#ORDER_LIST# - order contents\n#ORDER_PUBLIC_URL# - order view link for unauthorized users (requires configuration in the e-Store module settings)\n#SALE_EMAIL# - sales dept. e-mail"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#SALE_EMAIL#",
+            "EMAIL_TO": "#EMAIL#",
+            "SUBJECT": "#SITE_NAME#: Напоминание об оплате заказа N#ORDER_ID# ",
+            "MESSAGE": [
+                "<!DOCTYPE HTML PUBLIC \"-\/\/W3C\/\/DTD HTML 4.01 Transitional\/\/EN\" \"http:\/\/www.w3.org\/TR\/html4\/loose.dtd\">\n<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\" xml:lang=\"ru\" lang=\"ru\">\n<head>\n\t<meta http-equiv=\"Content-Type\" content=\"text\/html;charset=UTF-8\"\/>\n\t<style>\n\t\tbody\n\t\t{\n\t\t\tfont-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n\t\t\tfont-size: 14px;\n\t\t\tcolor: #000;\n\t\t}\n\t<\/style>\n<\/head>\n<body>\n<table cellpadding=\"0\" cellspacing=\"0\" width=\"850\" style=\"background-color: #d1d1d1; border-radius: 2px; border:1px solid #d1d1d1; margin: 0 auto;\" border=\"1\" bordercolor=\"#d1d1d1\">\n\t<tr>\n\t\t<td height=\"83\" width=\"850\" bgcolor=\"#eaf3f5\" style=\"border: none; padding-top: 23px; padding-right: 17px; padding-bottom: 24px; padding-left: 17px;\">\n\t\t\t<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\">\n\t\t\t\t<tr>\n\t\t\t\t\t<td bgcolor=\"#ffffff\" height=\"75\" style=\"font-weight: bold; text-align: center; font-size: 26px; color: #0b3961;\">Напоминаем вам об оплате заказа на сайте #SITE_NAME#<\/td>\n\t\t\t\t<\/tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td bgcolor=\"#bad3df\" height=\"11\"><\/td>\n\t\t\t\t<\/tr>\n\t\t\t<\/table>\n\t\t<\/td>\n\t<\/tr>\n\t<tr>\n\t\t<td width=\"850\" bgcolor=\"#f7f7f7\" valign=\"top\" style=\"border: none; padding-top: 0; padding-right: 44px; padding-bottom: 16px; padding-left: 44px;\">\n\t\t\t<p style=\"margin-top:30px; margin-bottom: 28px; font-weight: bold; font-size: 19px;\">Уважаемый #ORDER_USER#,<\/p>\n\t\t\t<p style=\"margin-top: 0; margin-bottom: 20px; line-height: 20px;\">Вами был оформлен заказ N #ORDER_ID# от #ORDER_DATE# на сумму #PRICE#.<br \/>\n<br \/>\nК сожалению, на сегодняшний день средства по этому заказу не поступили к нам.<br \/>\n<br \/>\nВы можете следить за выполнением своего заказа (на какой стадии выполнения он находится), войдя в Ваш персональный раздел сайта #SITE_NAME#.<br \/>\n<br \/>\nОбратите внимание, что для входа в этот раздел Вам необходимо будет ввести логин и пароль пользователя сайта #SITE_NAME#.<br \/>\n<br \/>\nДля того, чтобы аннулировать заказ, воспользуйтесь функцией отмены заказа, которая доступна в Вашем персональном разделе сайта #SITE_NAME#.<br \/>\n<br \/>\nПожалуйста, при обращении к администрации сайта #SITE_NAME# ОБЯЗАТЕЛЬНО указывайте номер Вашего заказа - #ORDER_ID#.<br \/>\n<br \/>\nСпасибо за покупку!<br \/>\n<\/p>\n\t\t<\/td>\n\t<\/tr>\n\t<tr>\n\t\t<td height=\"40px\" width=\"850\" bgcolor=\"#f7f7f7\" valign=\"top\" style=\"border: none; padding-top: 0; padding-right: 44px; padding-bottom: 30px; padding-left: 44px;\">\n\t\t\t<p style=\"border-top: 1px solid #d1d1d1; margin-bottom: 5px; margin-top: 0; padding-top: 20px; line-height:21px;\">С уважением,<br \/>администрация <a href=\"http:\/\/#SERVER_NAME#\" style=\"color:#2e6eb6;\">Интернет-магазина<\/a><br \/>\n\t\t\t\tE-mail: <a href=\"mailto:#SALE_EMAIL#\" style=\"color:#2e6eb6;\">#SALE_EMAIL#<\/a>\n\t\t\t<\/p>\n\t\t<\/td>\n\t<\/tr>\n<\/table>\n<\/body>\n<\/html>"
+            ],
+            "BODY_TYPE": "html",
+            "BCC": "#BCC#",
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ SALE_ORDER_REMIND_PAYMENT ] Напоминание об оплате заказа"
+        }
+    ]
+}

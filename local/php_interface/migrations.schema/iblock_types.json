@@ -1,0 +1,64 @@
+{
+    "items": [
+        {
+            "ID": "CATALOG",
+            "SECTIONS": "Y",
+            "EDIT_FILE_BEFORE": "",
+            "EDIT_FILE_AFTER": "",
+            "IN_RSS": "N",
+            "SORT": "500",
+            "LANG": {
+                "ru": {
+                    "NAME": "Каталог товаров",
+                    "SECTION_NAME": "Разделы каталога",
+                    "ELEMENT_NAME": "Товары"
+                },
+                "en": {
+                    "NAME": "Goods",
+                    "SECTION_NAME": "Sections",
+                    "ELEMENT_NAME": "Items"
+                }
+            }
+        },
+        {
+            "ID": "COMPANY",
+            "SECTIONS": "Y",
+            "EDIT_FILE_BEFORE": "",
+            "EDIT_FILE_AFTER": "",
+            "IN_RSS": "N",
+            "SORT": "500",
+            "LANG": {
+                "ru": {
+                    "NAME": "О компании",
+                    "SECTION_NAME": "Разделы",
+                    "ELEMENT_NAME": "Элементы"
+                },
+                "en": {
+                    "NAME": "Company",
+                    "SECTION_NAME": "Sections",
+                    "ELEMENT_NAME": "Elements"
+                }
+            }
+        },
+        {
+            "ID": "CONTENT",
+            "SECTIONS": "Y",
+            "EDIT_FILE_BEFORE": "",
+            "EDIT_FILE_AFTER": "",
+            "IN_RSS": "N",
+            "SORT": "500",
+            "LANG": {
+                "ru": {
+                    "NAME": "Содержимое сайта",
+                    "SECTION_NAME": "Разделы",
+                    "ELEMENT_NAME": "Элементы"
+                },
+                "en": {
+                    "NAME": "Site content",
+                    "SECTION_NAME": "Sections",
+                    "ELEMENT_NAME": "Elements"
+                }
+            }
+        }
+    ]
+}

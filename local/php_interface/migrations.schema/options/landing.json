@@ -1,0 +1,24 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "landing",
+            "NAME": "new_blocks",
+            "VALUE": {
+                "date": 1667834740,
+                "items": [
+                    "68.1.faq",
+                    "68.2.faq",
+                    "68.3.faq",
+                    "68.4.faq",
+                    "68.5.faq",
+                    "68.6.faq"
+                ]
+            }
+        },
+        {
+            "MODULE_ID": "landing",
+            "NAME": "pub_path_s1",
+            "VALUE": "\/lp\/"
+        }
+    ]
+}

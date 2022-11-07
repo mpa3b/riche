@@ -1,0 +1,120 @@
+{
+    "items": [
+        {
+            "ENTITY_ID": "BLOG_POST",
+            "FIELD_NAME": "UF_GRATITUDE",
+            "USER_TYPE_ID": "integer",
+            "XML_ID": "UF_GRATITUDE",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "N",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": []
+        },
+        {
+            "ENTITY_ID": "FORUM_MESSAGE",
+            "FIELD_NAME": "UF_FORUM_MES_URL_PRV",
+            "USER_TYPE_ID": "url_preview",
+            "XML_ID": "UF_FORUM_MES_URL_PRV",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "N",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": []
+        },
+        {
+            "ENTITY_ID": "FORUM_MESSAGE",
+            "FIELD_NAME": "UF_TASK_COMMENT_TYPE",
+            "USER_TYPE_ID": "integer",
+            "XML_ID": "UF_TASK_COMMENT_TYPE",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "N",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": []
+        },
+        {
+            "ENTITY_ID": "BLOG_POST",
+            "FIELD_NAME": "UF_IMPRTANT_DATE_END",
+            "USER_TYPE_ID": "datetime",
+            "XML_ID": "UF_IMPRTANT_DATE_END",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "N",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": [],
+            "EDIT_FORM_LABEL": {
+                "en": "Active until",
+                "ru": "Срок действия"
+            },
+            "LIST_COLUMN_LABEL": {
+                "en": "Active until",
+                "ru": "Срок"
+            },
+            "LIST_FILTER_LABEL": {
+                "en": null,
+                "ru": null
+            },
+            "ERROR_MESSAGE": {
+                "en": null,
+                "ru": null
+            },
+            "HELP_MESSAGE": {
+                "en": null,
+                "ru": null
+            }
+        },
+        {
+            "ENTITY_ID": "PRODUCT",
+            "FIELD_NAME": "UF_PRODUCT_GROUP",
+            "USER_TYPE_ID": "hlblock",
+            "XML_ID": "MARKING_CODE_GROUP",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "S",
+            "SHOW_IN_LIST": "Y",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": {
+                "DISPLAY": "LIST",
+                "LIST_HEIGHT": 1,
+                "HLBLOCK_ID": "ProductMarkingCodeGroup",
+                "HLFIELD_ID": "UF_NAME",
+                "DEFAULT_VALUE": 0
+            },
+            "EDIT_FORM_LABEL": {
+                "en": "Product group",
+                "ru": "Группа товаров"
+            },
+            "LIST_COLUMN_LABEL": {
+                "en": "Product group",
+                "ru": "Группа товаров"
+            },
+            "LIST_FILTER_LABEL": {
+                "en": "Product group",
+                "ru": "Группа товаров"
+            },
+            "ERROR_MESSAGE": {
+                "en": null,
+                "ru": null
+            },
+            "HELP_MESSAGE": {
+                "en": null,
+                "ru": null
+            }
+        }
+    ]
+}

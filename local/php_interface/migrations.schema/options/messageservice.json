@@ -1,0 +1,16 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "messageservice",
+            "NAME": "clean_up_period",
+            "VALUE": "14"
+        },
+        {
+            "MODULE_ID": "messageservice",
+            "NAME": "sender.sms.ednaru",
+            "VALUE": {
+                "is_migrated_to_new_api": "Y"
+            }
+        }
+    ]
+}

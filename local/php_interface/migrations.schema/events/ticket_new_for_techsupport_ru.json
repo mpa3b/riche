@@ -1,0 +1,40 @@
+{
+    "event": "TICKET_NEW_FOR_TECHSUPPORT",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Новое обращение (для техподдержки)",
+        "DESCRIPTION": [
+            "\n#ID# - ID обращения\n#LANGUAGE_ID# - идентификатор языка сайта к которому привязано обращение\n#DATE_CREATE# - дата создания \n#TIMESTAMP# - дата изменения\n#DATE_CLOSE# - дата закрытия\n#TITLE# - заголовок обращения\n#CATEGORY# - категория обращения\n#STATUS# - статус обращения\n#CRITICALITY# - критичность обращения\n#SLA# - уровень техподдержки\n#SOURCE# - источник обращения (web, email, телефон и т.п.)\n#SPAM_MARK# - отметка о спаме\n#MESSAGE_BODY# - текст сообщения\n#FILES_LINKS# - ссылки на прикрепленные файлы\n#ADMIN_EDIT_URL# - ссылка для изменения обращения (в административную часть)\n#PUBLIC_EDIT_URL# - ссылка для изменения обращения (в публичную часть)\n\n#OWNER_EMAIL# - #OWNER_USER_EMAIL# и\/или #OWNER_SID#\n#OWNER_USER_ID# - ID автора обращения\n#OWNER_USER_NAME# - имя автора обращения\n#OWNER_USER_LOGIN# - логин автора обращения\n#OWNER_USER_EMAIL# - email автора обращения\n#OWNER_TEXT# - [#OWNER_USER_ID#] (#OWNER_USER_LOGIN#) #OWNER_USER_NAME#\n#OWNER_SID# - произвольный идентификатор автора обращения (email, телефон и т.п.)\n\n#SUPPORT_EMAIL# - #RESPONSIBLE_USER_EMAIL# или #SUPPORT_ADMIN_EMAIL#\n#RESPONSIBLE_USER_ID# - ID ответственного за обращение\n#RESPONSIBLE_USER_NAME# - имя ответственного за обращение\n#RESPONSIBLE_USER_LOGIN# - логин ответственного за обращение\n#RESPONSIBLE_USER_EMAIL# - email ответственного за обращение\n#RESPONSIBLE_TEXT# - [#RESPONSIBLE_USER_ID#] (#RESPONSIBLE_USER_LOGIN#) #RESPONSIBLE_USER_NAME#\n#SUPPORT_ADMIN_EMAIL# - EMail всех администраторов техподдержки\n\n#CREATED_USER_ID# - ID создателя обращения\n#CREATED_USER_LOGIN# - логин создателя обращения\n#CREATED_USER_EMAIL# - email создателя обращения\n#CREATED_USER_NAME# - имя создателя обращения\n#CREATED_MODULE_NAME# - идентификатор модуля средствами которого было создан обращение\n#CREATED_TEXT# - [#CREATED_USER_ID#] (#CREATED_USER_LOGIN#) #CREATED_USER_NAME#\n\n#SUPPORT_COMMENTS# - административный комментарий\n\n#COUPON# - Купон\n"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#SUPPORT_EMAIL#",
+            "SUBJECT": "[TID##ID#] #SERVER_NAME#: Новое обращение",
+            "MESSAGE": [
+                "Новое обращение # #ID# в службу техподдержки сайта #SERVER_NAME#.\n#SPAM_MARK#\nОт кого: #SOURCE##OWNER_SID##OWNER_TEXT#\n\nТема: #TITLE# \n\n>======================= СООБЩЕНИЕ ===================================\n\n#FILES_LINKS##MESSAGE_BODY#\n\n>=====================================================================\n\nОтветственный     - #RESPONSIBLE_TEXT#\nКатегория         - #CATEGORY#\nКритичность       - #CRITICALITY#\nУровень поддержки - #SLA#\nСоздано           - #CREATED_TEXT##CREATED_MODULE_NAME# [#DATE_CREATE#]\n\nДля просмотра и редактирования обращения воспользуйтесь ссылкой:\nhttp:\/\/#SERVER_NAME##ADMIN_EDIT_URL#?ID=#ID#&lang=#LANGUAGE_ID#\n\nПисьмо сгенерировано автоматически. \n"
+            ],
+            "BODY_TYPE": "text",
+            "BCC": "#SUPPORT_ADMIN_EMAIL#",
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ TICKET_NEW_FOR_TECHSUPPORT ] Новое обращение (для техподдержки)"
+        }
+    ]
+}

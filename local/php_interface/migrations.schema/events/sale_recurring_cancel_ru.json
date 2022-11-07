@@ -1,0 +1,40 @@
+{
+    "event": "SALE_RECURRING_CANCEL",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Подписка отменена",
+        "DESCRIPTION": [
+            "#ORDER_ID# - код заказа\n#ORDER_ACCOUNT_NUMBER_ENCODE# - код заказа(для ссылок)\n#ORDER_REAL_ID# - реальный ID заказа\n#ORDER_DATE# - дата заказа\n#EMAIL# - E-Mail пользователя\n#CANCELED_REASON# - причина отмены\n#SALE_EMAIL# - E-Mail отдела продаж"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#SALE_EMAIL#",
+            "EMAIL_TO": "#EMAIL#",
+            "SUBJECT": "#SITE_NAME#: Подписка отменена",
+            "MESSAGE": [
+                "Информационное сообщение сайта #SITE_NAME#\n------------------------------------------\n\nПодписка отменена\n\n#CANCELED_REASON#\n#SITE_NAME#\n"
+            ],
+            "BODY_TYPE": "text",
+            "BCC": "#BCC#",
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ SALE_RECURRING_CANCEL ] Подписка отменена"
+        }
+    ]
+}

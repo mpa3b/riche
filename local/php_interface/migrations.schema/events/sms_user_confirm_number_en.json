@@ -1,0 +1,13 @@
+{
+    "event": "SMS_USER_CONFIRM_NUMBER",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "sms",
+        "NAME": "Verify phone number using SMS",
+        "DESCRIPTION": [
+            "#USER_PHONE# - phone number\n#CODE# - confirmation code"
+        ],
+        "SORT": "100"
+    },
+    "messages": []
+}

@@ -1,0 +1,40 @@
+{
+    "event": "CATALOG_PRODUCT_SUBSCRIBE_NOTIFY_REPEATED",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "email",
+        "NAME": "Уведомление о товаре в магазине",
+        "DESCRIPTION": [
+            "#USER_NAME# - имя пользователя\n#EMAIL_TO# - email пользователя\n#NAME# - название товара\n#PAGE_URL# - детальная страница товара\n#PRODUCT_ID# - id товара для формирования ссылок\n#UNSUBSCRIBE_URL# - ссылка отписки от товара\n#UNSUBSCRIBE_URL_PARAMETERS# - параметры ссылки отписки от товара\n"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL_TO#",
+            "SUBJECT": "Уведомление о товаре в магазине #SITE_NAME#",
+            "MESSAGE": [
+                "\n\t\t\t<!DOCTYPE HTML PUBLIC \"-\/\/W3C\/\/DTD HTML 4.01 Transitional\/\/EN\" \"http:\/\/www.w3.org\/TR\/html4\/loose.dtd\">\n\t\t\t<html xmlns=\"http:\/\/www.w3.org\/1999\/xhtml\">\n\t\t\t<head>\n\t\t\t\t<style>\n\t\t\t\t\tbody\n\t\t\t\t\t{\n\t\t\t\t\t\tfont-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\n\t\t\t\t\t\tfont-size: 14px;\n\t\t\t\t\t\tcolor: #000;\n\t\t\t\t\t}\n\t\t\t\t<\/style>\n\t\t\t<\/head>\n\t\t\t<body>\n\t\t\t<table cellpadding=\"0\" cellspacing=\"0\" width=\"850\" style=\"background-color: #d1d1d1; border-radius: 2px; \n\t\t\t\tborder:1px solid #d1d1d1; margin: 0 auto;\" border=\"1\" bordercolor=\"#d1d1d1\">\n\t\t\t\t<tr>\n\t\t\t\t\t<td height=\"83\" width=\"850\" bgcolor=\"#eaf3f5\" style=\"border: none; padding-top: 23px; \n\t\t\t\t\t\tpadding-right: 17px; padding-bottom: 24px; padding-left: 17px;\">\n\t\t\t\t\t\t<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" width=\"100%\">\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<td bgcolor=\"#ffffff\" height=\"75\" style=\"font-weight: bold; text-align: \n\t\t\t\t\t\t\t\tcenter; font-size: 26px; color: #0b3961;\">Уведомление о товаре в магазине #SITE_NAME#<\/td>\n\t\t\t\t\t\t\t<\/tr>\n\t\t\t\t\t\t\t<tr>\n\t\t\t\t\t\t\t\t<td bgcolor=\"#bad3df\" height=\"11\"><\/td>\n\t\t\t\t\t\t\t<\/tr>\n\t\t\t\t\t\t<\/table>\n\t\t\t\t\t<\/td>\n\t\t\t\t<\/tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td width=\"850\" bgcolor=\"#f7f7f7\" valign=\"top\" style=\"border: none; padding-top: 0; \n\t\t\t\t\t\tpadding-right: 44px; padding-bottom: 16px; padding-left: 44px;\">\n\t\t\t\t\t\t<p style=\"margin-top:30px; margin-bottom: 28px; font-weight: bold; font-size: 19px;\">Уважаемый, #USER_NAME#!<\/p>\n\t\t\t\t\t\t<p style=\"margin-top: 0; margin-bottom: 20px; line-height: 20px;\">\nТовар \"#NAME#\" (#PAGE_URL#) к сожалению снова закончился.<br><br>\nМы обязательно сообщим вам о поступлении товара.<br><br>\nНе отвечайте на письмо, оно сформировано автоматически.<br><br>\nСпасибо, что вы с нами!<br>\n<\/p>\n\t\t\t\t\t<\/td>\n\t\t\t\t<\/tr>\n\t\t\t\t<tr>\n\t\t\t\t\t<td height=\"40px\" width=\"850\" bgcolor=\"#f7f7f7\" valign=\"top\" style=\"border: none; padding-top: 0; \n\t\t\t\t\t\tpadding-right: 44px; padding-bottom: 30px; padding-left: 44px;\">\n\t\t\t\t\t\t<p style=\"border-top: 1px solid #d1d1d1; margin-bottom: 5px; margin-top: 0; padding-top: 20px; \n\t\t\t\t\t\t\tline-height:21px;\">С уважением, администрация \n\t\t\t\t\t\t\t<a href=\"http:\/\/#SERVER_NAME#\" style=\"color:#2e6eb6;\">Интернет-магазина<\/a><br \/>\n\t\t\t\t\t\t\tE-mail: <a href=\"mailto:#DEFAULT_EMAIL_FROM#\" style=\"color:#2e6eb6;\">#DEFAULT_EMAIL_FROM#<\/a>\n\t\t\t\t\t\t\t<br><a href=\"#UNSUBSCRIBE_URL#\">Отписаться<\/a>\n\t\t\t\t\t\t<\/p>\n\t\t\t\t\t<\/td>\n\t\t\t\t<\/tr>\n\t\t\t<\/table>\n\t\t\t<\/body>\n\t\t\t<\/html>\n\t\t"
+            ],
+            "BODY_TYPE": "html",
+            "BCC": "#BCC#",
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ CATALOG_PRODUCT_SUBSCRIBE_NOTIFY_REPEATED ] Уведомление о товаре в магазине"
+        }
+    ]
+}

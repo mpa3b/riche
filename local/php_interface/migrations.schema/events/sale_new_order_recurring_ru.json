@@ -1,0 +1,40 @@
+{
+    "event": "SALE_NEW_ORDER_RECURRING",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Новый заказ на продление подписки",
+        "DESCRIPTION": [
+            "#ORDER_ID# - код заказа\n#ORDER_ACCOUNT_NUMBER_ENCODE# - код заказа(для ссылок)\n#ORDER_REAL_ID# - реальный ID заказа\n#ORDER_DATE# - дата заказа\n#ORDER_USER# - заказчик\n#PRICE# - сумма заказа\n#EMAIL# - E-Mail заказчика\n#BCC# - E-Mail скрытой копии\n#ORDER_LIST# - состав заказа\n#SALE_EMAIL# - E-Mail отдела продаж"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#SALE_EMAIL#",
+            "EMAIL_TO": "#EMAIL#",
+            "SUBJECT": "#SITE_NAME#: Новый заказ N#ORDER_ID# на продление подписки",
+            "MESSAGE": [
+                "Информационное сообщение сайта #SITE_NAME#\n------------------------------------------\n\nУважаемый #ORDER_USER#,\n\nВаш заказ номер #ORDER_ID# от #ORDER_DATE# на продление подписки принят.\n\nСтоимость заказа: #PRICE#.\n\nСостав заказа:\n#ORDER_LIST#\n\nВы можете следить за выполнением своего заказа (на какой\nстадии выполнения он находится), войдя в Ваш персональный\nраздел сайта #SITE_NAME#. Обратите внимание, что для входа\nв этот раздел Вам необходимо будет ввести логин и пароль\nпользователя сайта #SITE_NAME#.\n\nДля того, чтобы аннулировать заказ, воспользуйтесь функцией\nотмены заказа, которая доступна в Вашем персональном\nразделе сайта #SITE_NAME#.\n\nПожалуйста, при обращении к администрации сайта #SITE_NAME#\nОБЯЗАТЕЛЬНО указывайте номер Вашего заказа - #ORDER_ID#.\n\nСпасибо за покупку!\n"
+            ],
+            "BODY_TYPE": "text",
+            "BCC": "#BCC#",
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ SALE_NEW_ORDER_RECURRING ] Новый заказ на продление подписки"
+        }
+    ]
+}

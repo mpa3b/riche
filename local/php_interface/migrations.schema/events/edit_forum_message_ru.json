@@ -1,0 +1,40 @@
+{
+    "event": "EDIT_FORUM_MESSAGE",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Изменение сообщения на форуме",
+        "DESCRIPTION": [
+            "\n\t\t\t#FORUM_ID# - ID форума\n\t\t\t#FORUM_NAME# - Название форума\n\t\t\t#TOPIC_ID# - ID темы\n\t\t\t#MESSAGE_ID# - ID сообщения\n\t\t\t#TOPIC_TITLE# - Тема сообщения\n\t\t\t#MESSAGE_TEXT# - Текст сообщения\n\t\t\t#MESSAGE_DATE# - Дата сообщения\n\t\t\t#AUTHOR# - Автор сообщения\n\t\t\t#RECIPIENT# - Получатель сообщения\n\t\t\t#TAPPROVED# - Тема сообщения показывается\n\t\t\t#MAPPROVED# - Тело сообщения показывается\n\t\t\t#PATH2FORUM# - Адрес сообщения\n\t\t\t#FROM_EMAIL# - E-Mail для поля From письма"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#FROM_EMAIL#",
+            "EMAIL_TO": "#RECIPIENT#",
+            "SUBJECT": "#SITE_NAME#: [F] #TOPIC_TITLE# : #FORUM_NAME#",
+            "MESSAGE": [
+                "Информационное сообщение сайта #SITE_NAME#\n------------------------------------------\n\nИзменение сообщения на форуме #SERVER_NAME#.\n\nТема:\n#TOPIC_TITLE#\n\nАвтор: #AUTHOR#\nДата : #MESSAGE_DATE#\nТекст сообщения:\n\n#MESSAGE_TEXT#\n\nАдрес сообщения:\nhttp:\/\/#SERVER_NAME##PATH2FORUM#\n\nСообщение сгенерировано автоматически.\n"
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ EDIT_FORUM_MESSAGE ] Изменение сообщения на форуме"
+        }
+    ]
+}

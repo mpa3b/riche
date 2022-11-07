@@ -1,0 +1,44 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "schema_agentschema",
+            "VALUE": "08693991a89d5efa2993ade88b8b25f7"
+        },
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "schema_eventschema",
+            "VALUE": "38c3ffe30722f2e360cce982660554bf"
+        },
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "schema_groupschema",
+            "VALUE": "984d24691e27ad38189e2113fb52ea20"
+        },
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "schema_hlblockschema",
+            "VALUE": "2ed6e3db11d8fba8489021d31beee255"
+        },
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "schema_iblockschema",
+            "VALUE": "9dbf890942a2db31fee23b87ff0ff37b"
+        },
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "schema_optionschema",
+            "VALUE": "134730f8852e1b367520483460c5ce24"
+        },
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "schema_usertypeentitiesschema",
+            "VALUE": "2363163e296739e4bc5e0a49606102a8"
+        },
+        {
+            "MODULE_ID": "sprint.migration",
+            "NAME": "upgrade3_0cb1fbfb39557866ff1875c8228ecb05",
+            "VALUE": "1"
+        }
+    ]
+}
