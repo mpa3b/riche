@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dccd7be255588c73cf846bc7ece56020",
+    "content-hash": "ff1393be37420adacfa6c7e163cad91c",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -105,6 +105,59 @@
                 }
             ],
             "time": "2022-09-06T11:08:23+00:00"
+        },
+        {
+            "name": "andreyryabin/sprint.migration",
+            "version": "4.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andreyryabin/sprint.migration.git",
+                "reference": "5cabbd434ee893bb3eb5cba811625ef2e85fbfe4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andreyryabin/sprint.migration/zipball/5cabbd434ee893bb3eb5cba811625ef2e85fbfe4",
+                "reference": "5cabbd434ee893bb3eb5cba811625ef2e85fbfe4",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1",
+                "ext-iconv": "*",
+                "ext-json": "*",
+                "php": ">=7.0"
+            },
+            "type": "bitrix-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Andrey Ryabin",
+                    "email": "andreyryabin@yandex.ru",
+                    "role": "Author"
+                }
+            ],
+            "description": "bitrix migration module",
+            "homepage": "http://marketplace.1c-bitrix.ru/solutions/sprint.migration/",
+            "keywords": [
+                "andrey",
+                "bitrix",
+                "migration",
+                "ryabin",
+                "sprint"
+            ],
+            "support": {
+                "issues": "https://github.com/andreyryabin/sprint.migration/issues",
+                "source": "https://github.com/andreyryabin/sprint.migration/tree/4.1.2"
+            },
+            "funding": [
+                {
+                    "url": "https://yoomoney.ru/to/410012104240288",
+                    "type": "custom"
+                }
+            ],
+            "time": "2022-09-06T11:09:38+00:00"
         },
         {
             "name": "bitrix-expert/tools",
@@ -275,24 +328,6 @@
             },
             "require": {
                 "bower-asset/jquery": ">=1.7"
-            },
-            "type": "bower-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "bower-asset/tiny-slider",
-            "version": "v2.9.4",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ganlanyuan/tiny-slider.git",
-                "reference": "0fcb2e643489802da28eb1a84b15fec6c7ed54b6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ganlanyuan/tiny-slider/zipball/0fcb2e643489802da28eb1a84b15fec6c7ed54b6",
-                "reference": "0fcb2e643489802da28eb1a84b15fec6c7ed54b6"
             },
             "type": "bower-asset",
             "license": [

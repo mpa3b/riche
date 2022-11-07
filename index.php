@@ -5,17 +5,17 @@ use Bex\Tools\Iblock\IblockTools;
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 
 /** @global CMain $APPLICATION */
-$APPLICATION->SetTitle('Главная');
+$APPLICATION -> SetTitle('Главная');
 
 ?>
 
-<?php $APPLICATION->IncludeComponent(
+<?php $APPLICATION -> IncludeComponent(
     'bitrix:news.list',
     'banners--front',
     [
-        "IBLOCK_TYPE" => IblockTools::find('CONTENT', 'BANNERS')->type(),
-        "IBLOCK_ID"   => IblockTools::find('CONTENT', 'BANNERS')->id(),
-        "NEWS_COUNT"  => 3,
+        "IBLOCK_TYPE" => IblockTools ::find('CONTENT', 'BANNERS') -> type(),
+        "IBLOCK_ID"   => IblockTools ::find('CONTENT', 'BANNERS') -> id(),
+        "NEWS_COUNT"  => 5,
 
         "SORT_BY1"    => "ACTIVE_FROM",
         "SORT_ORDER1" => "DESC",
