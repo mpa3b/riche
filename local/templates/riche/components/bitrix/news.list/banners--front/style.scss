@@ -23,16 +23,19 @@
 
         color:           var(--color--white);
 
-        padding:         2rem;
+        padding:         4rem 2rem;
+        height:          100%;
 
         @include Tablet {
-          padding: 4rem;
           width:   80%;
+          padding: 4rem;
           margin:  auto;
         }
         @include Desktop {
-          padding: 6rem;
-          width:   80%;
+          padding: 8rem;
+        }
+        @include Wide {
+          padding: 10rem;
         }
 
         box-sizing:      border-box;
@@ -44,6 +47,8 @@
         button {
           margin-top:       1rem;
           background-color: var(--color--white);
+
+          box-shadow:       var(--box-shadow);
         }
 
       }
@@ -55,30 +60,22 @@
         opacity:          var(--opacity);
         position:         absolute;
         width:            100%;
-        height:           105%;
+        height:           100%;
         z-index:          100;
       }
 
       picture,
       video {
-        display:      block;
-        position:     absolute;
+        display:  block;
+        position: absolute;
 
-        top:          0;
-        left:         0;
+        top:      0;
+        left:     0;
 
-        width:        100%;
-        height:       100%;
+        width:    100%;
+        height:   100%;
 
-        aspect-ratio: 1/1.75;
-
-        @include Tablet {
-          aspect-ratio: 2;
-        }
-        @include Desktop {
-          aspect-ratio: 2.25;
-        }
-
+        filter:   var(--blur);
       }
 
       video {
@@ -97,10 +94,11 @@
 
       picture {
         img {
+          display:         block;
+
           object-fit:      cover;
           object-position: center;
 
-          display:         block;
           height:          100%;
           width:           100%;
         }

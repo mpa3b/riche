@@ -251,20 +251,24 @@
     content: "\e935";
   }
 
-  &-align-center:before {
-    content: "\e936";
-  }
+  &-align {
 
-  &-align-justify:before {
-    content: "\e937";
-  }
+    &-center:before {
+      content: "\e936";
+    }
 
-  &-align-left:before {
-    content: "\e938";
-  }
+    &-justify:before {
+      content: "\e937";
+    }
 
-  &-align-right:before {
-    content: "\e939";
+    &-left:before {
+      content: "\e938";
+    }
+
+    &-right:before {
+      content: "\e939";
+    }
+
   }
 
   &-anchor:before {
@@ -275,96 +279,116 @@
     content: "\e93b";
   }
 
-  &-arrow-down-1:before {
-    content: "\e93c";
-  }
+  &-arrow {
 
-  &-arrow-down-cricle:before {
-    content: "\e93d";
-  }
+    &-down-1:before {
+      content: "\e93c";
+    }
 
-  &-arrow-down-left-circle:before {
-    content: "\e93e";
-  }
+    &-down {
 
-  &-arrow-down-left-square:before {
-    content: "\e93f";
-  }
+      &-cricle:before {
+        content: "\e93d";
+      }
 
-  &-arrow-down-left:before {
-    content: "\e940";
-  }
+      &-left-circle:before {
+        content: "\e93e";
+      }
 
-  &-arrow-down-right-circle:before {
-    content: "\e941";
-  }
+      &-left-square:before {
+        content: "\e93f";
+      }
 
-  &-arrow-down-right:before {
-    content: "\e942";
-  }
+      &-left:before {
+        content: "\e940";
+      }
 
-  &-arrow-down-square:before {
-    content: "\e943";
-  }
+      &-right-circle:before {
+        content: "\e941";
+      }
 
-  &-arrow-down:before {
-    content: "\e944";
-  }
+      &-right:before {
+        content: "\e942";
+      }
 
-  &-arrow-left-cricle:before {
-    content: "\e945";
-  }
+      &-square:before {
+        content: "\e943";
+      }
 
-  &-arrow-left-square:before {
-    content: "\e946";
-  }
+      &:before {
+        content: "\e944";
+      }
 
-  &-arrow-right-cricle:before {
-    content: "\e947";
-  }
+    }
 
-  &-arrow-right-square:before {
-    content: "\e948";
-  }
+    &-left {
 
-  &-arrow-right:before {
-    content: "\e949";
-  }
+      &-cricle:before {
+        content: "\e945";
+      }
 
-  &-arrow-up-circle:before {
-    content: "\e94a";
-  }
+      &-square:before {
+        content: "\e946";
+      }
 
-  &-arrow-up-left-cricle:before {
-    content: "\e94b";
-  }
+    }
 
-  &-arrow-up-left-square:before {
-    content: "\e94c";
-  }
+    &-right {
 
-  &-arrow-up-left:before {
-    content: "\e94d";
-  }
+      &-cricle:before {
+        content: "\e947";
+      }
 
-  &-arrow-up-right-circle:before {
-    content: "\e94e";
-  }
+      &-square:before {
+        content: "\e948";
+      }
 
-  &-arrow-up-right-square:before {
-    content: "\e94f";
-  }
+      &:before {
+        content: "\e949";
+      }
 
-  &-arrow-up-right:before {
-    content: "\e950";
-  }
+    }
 
-  &-arrow-up-square:before {
-    content: "\e951";
-  }
+    &-up {
 
-  &-arrow-up:before {
-    content: "\e952";
+      &-circle:before {
+        content: "\e94a";
+      }
+
+      &-left-cricle:before {
+        content: "\e94b";
+      }
+
+      &-left-square:before {
+        content: "\e94c";
+      }
+
+      &-left:before {
+        content: "\e94d";
+      }
+
+      &-right-circle:before {
+        content: "\e94e";
+      }
+
+      &-right-square:before {
+        content: "\e94f";
+      }
+
+      &-right:before {
+        content: "\e950";
+      }
+
+      &-square:before {
+        content: "\e951";
+      }
+
+      &:before {
+        content: "\e952";
+      }
+
+    }
+
   }
 
   &-award:before {
@@ -383,40 +407,48 @@
     content: "\e956";
   }
 
-  &-bar-chart-1:before {
-    content: "\e957";
+  &-bar {
+
+    &-chart-1:before {
+      content: "\e957";
+    }
+
+    &-chart-2:before {
+      content: "\e958";
+    }
+
+    &-chart-down:before {
+      content: "\e959";
+    }
+
+    &-chart-up:before {
+      content: "\e95a";
+    }
+
   }
 
-  &-bar-chart-2:before {
-    content: "\e958";
-  }
+  &-battery {
 
-  &-bar-chart-down:before {
-    content: "\e959";
-  }
+    &-charging:before {
+      content: "\e95b";
+    }
 
-  &-bar-chart-up:before {
-    content: "\e95a";
-  }
+    &-ending:before {
+      content: "\e95c";
+    }
 
-  &-battery-charging:before {
-    content: "\e95b";
-  }
+    &-half:before {
+      content: "\e95d";
+    }
 
-  &-battery-ending:before {
-    content: "\e95c";
-  }
+    &-off:before {
+      content: "\e95e";
+    }
 
-  &-battery-half:before {
-    content: "\e95d";
-  }
+    &:before {
+      content: "\e95f";
+    }
 
-  &-battery-off:before {
-    content: "\e95e";
-  }
-
-  &-battery:before {
-    content: "\e95f";
   }
 
   &-bell-off:before {

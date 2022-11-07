@@ -22,7 +22,8 @@ $(() => {
             {
                 slidesToScroll: 1,
                 fade:           true,
-                autoplay:       true,
+                speed:          1000,
+                autoplay:       false,
                 autoplaySpeed:  5000,
                 arrows:         false,
                 dots:           true,
