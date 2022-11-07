@@ -97,4 +97,6 @@ $frame = $this -> createFrame();
 
     </template>
 
+    <? // @todo вот не знаю, как решать это: пока лучше всего подходит Vue, но он избыточен ?>
+
 </noindex>

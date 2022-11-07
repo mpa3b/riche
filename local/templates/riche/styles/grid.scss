@@ -2,13 +2,13 @@
 @import "../mixins";
 
 :root {
-  --offset:           0.8rem;
+  --offset:           0.35rem;
 
   @include Mobile {
-    --offset: 1rem;
+    --offset: 0.45rem;
   }
   @include Desktop {
-    --offset: 1.2rem;
+    --offset: 0.55rem;
   }
 
   --offset--half:     calc(var(--offset) / 2);
@@ -16,6 +16,7 @@
   --offset--4x:       calc(var(--offset) * 4);
 
   --offset--negative: calc(var(--offset) * -1);
+  --offset--half--negative: calc(var(--offset) * -0.5);
 
 }
 
@@ -59,10 +60,20 @@
     flex-wrap:      wrap;
     box-sizing:     border-box;
 
-    margin:         0 calc(var(--offset) * -0.5);
+    margin:         0 var(--offset--negative);
+
+    @include Desktop {
+      width:  82%;
+      margin: var(--offset--2x) auto;
+    }
+
+    @include Wide {
+      width:  72%;
+      margin: var(--offset--2x) auto;
+    }
 
     > * {
-      padding: calc(var(--offset) * 0.5);
+      padding: var(--offset);
     }
 
     $units:         (
@@ -84,26 +95,12 @@
         width: #{$width};
       }
 
-      .offset-#{$code} {
+      .shift--#{$code} {
         margin-left: #{$width};
       }
 
     }
 
-  }
-
-  @include Tablet {
-    margin: var(--offset--2x) auto;
-  }
-
-  @include Desktop {
-    width:  82%;
-    margin: var(--offset--2x) auto;
-  }
-
-  @include Wide {
-    width:  72%;
-    margin: var(--offset--2x) auto;
   }
 
   .row {
@@ -112,10 +109,6 @@
     flex-wrap:      nowrap;
 
     margin:         0 var(--offset--negative);
-
-    @include Tablet {
-      margin: 0 var(--offset);
-    }
 
     box-sizing:     border-box;
   }
@@ -137,10 +130,11 @@
   &--on {
 
     @include Mobile {
-      &-mobile {
+      &-mobiles {
         display: none !important;
       }
     }
+
     @include Desktop {
       &-desktop {
         display: none !important;
@@ -158,8 +152,9 @@
       display: none !important;
     }
   }
+
   @include Desktop {
-    &-mobile--only {
+    &-mobiles--only {
       display: none !important;
     }
   }
