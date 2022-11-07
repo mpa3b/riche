@@ -57,8 +57,7 @@
     "rosell-dk/webp-convert": "^2.7",
     "webarchitect609/bitrix-cache": "^1.11",
     "webarchitect609/bitrix-user-type": "^0.7.3",
-    "wikimedia/composer-merge-plugin": "^2.0",
-    "worksolutions/bitrix-reduce-migrations": "^1.1"
+    "wikimedia/composer-merge-plugin": "^2.0"
   },
   "require-dev": {
     "kint-php/kint": "^4.0",
