@@ -64,7 +64,7 @@ $APPLICATION->SetTitle('Главная');
         "SORT_ORDER2" => "ASC",
 
         "FILTER_NAME" => "",
-        "FIELD_CODE" => ["ID", "PREVIEW_TEXT", "PREVIEW_PICTURE", "NAME"],
+        "FIELD_CODE" => ["ID", "PREVIEW_TEXT", "DETAIL_TEXT", "PREVIEW_PICTURE", "DETAIL_PICTURE", "NAME"],
         "PROPERTY_CODE" => ["VIDEO", "LINK", "BUTTON_TEXT"],
         "CHECK_DATES" => "Y",
 
@@ -105,7 +105,7 @@ $APPLICATION->SetTitle('Главная');
         "SORT_ORDER2" => "ASC",
 
         "FILTER_NAME" => "",
-        "FIELD_CODE" => ["ID", "PREVIEW_TEXT", "PREVIEW_PICTURE", "NAME"],
+        "FIELD_CODE" => ["ID", "PREVIEW_TEXT", "DETAIL_TEXT", "PREVIEW_PICTURE", "DETAIL_PICTURE", "NAME"],
         "PROPERTY_CODE" => ["VIDEO", "LINK", "BUTTON_TEXT"],
         "CHECK_DATES" => "Y",
 

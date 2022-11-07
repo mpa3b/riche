@@ -89,7 +89,7 @@ $frame = $this->createFrame();
 
                             <? } ?>
 
-                            <img src="<?= Thumb::PLACEHOLDER; ?>" alt="<?= $arItem['NAME']; ?>">
+                            <img src="<?= Thumb::PLACEHOLDER; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
 
                         </picture>
 
@@ -106,5 +106,3 @@ $frame = $this->createFrame();
     </div>
 
 <?php } ?>
-
-<? d($arResult['ITEMS']); ?>

@@ -4,37 +4,24 @@
 .features--front {
 
   .items {
-    padding: 0;
-    margin: 0;
+    padding:       0;
+    margin:        0;
 
     border-radius: var(--border-radius--2x);
-    overflow: hidden;
+    overflow:      hidden;
 
-    box-shadow: var(--box-shadow--blurry);
+    box-shadow:    var(--box-shadow--blurry);
 
     .item {
-      padding: var(--offset--2x);
+      overflow: hidden;
 
       picture,
       video {
-        display: block;
-        width: 100%;
-        height: 100%;
+        display:      block;
+        width:        100%;
+        height:       100%;
 
-        filter: var(--blur);
-
-        aspect-ratio: 1/2;
-
-        @include Tablet {
-          aspect-ratio: 2;
-        }
-        @include Desktop {
-          aspect-ratio: 3;
-        }
-        @include Wide {
-          aspect-ratio: 4;
-        }
-
+        aspect-ratio: 2;
       }
 
       video {
@@ -50,54 +37,30 @@
       }
 
       picture {
+        overflow: hidden;
+
         img {
-          object-fit: cover;
+          object-fit:      cover;
           object-position: center;
         }
       }
 
       video {
-        object-fit: cover;
+        object-fit:      cover;
         object-position: center;
       }
 
       .details {
-        display: flex;
-        flex-direction: column;
+        display:         flex;
+        flex-direction:  column;
 
-        color: var(--color--white);
+        padding:         var(--offset--2x);
 
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 110;
-
-        width: 100%;
-        height: 100%;
-
-        padding: 4rem;
-        @include Desktop {
-          padding: 6rem;
-        }
-
-        box-sizing: border-box;
+        box-sizing:      border-box;
 
         justify-content: center;
-        align-items: center;
-        text-align: center;
-
-        h3 {
-
-        }
-
-        p {
-          margin: 1rem 0;
-        }
-
-        button {
-          background-color: var(--color--white);
-        }
-
+        align-items:     center;
+        text-align:      center;
       }
 
       &:not(:first-of-type) {

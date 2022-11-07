@@ -40,52 +40,52 @@ $frame = $this->createFrame();
 
                 <li class="item">
 
-                    <div class="picture">
+                    <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
 
-                        <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
+                        <video muted loop autoplay>
 
-                            <video muted loop autoplay>
+                            <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
 
-                                <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                        </video>
 
-                            </video>
+                    <? } ?>
 
-                        <? } ?>
+                    <? if ($arItem['DETAIL_PICTURE']) { ?>
 
-                        <? if ($arItem['DETAIL_PICTURE']) { ?>
+                        <picture>
 
-                            <picture>
+                            <? foreach (Breakpoint::breakpoints as $media => $width) { ?>
 
-                                <? foreach (Breakpoint::breakpoints as $media => $width) { ?>
+                                <?
 
-                                    <?
+                                $image = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize($width),
+                                    BX_RESIZE_IMAGE_PROPORTIONAL
+                                );
 
-                                    $image = CFile::ResizeImageGet(
-                                        $arItem['DETAIL_PICTURE']['ID'],
-                                        Thumb::calculateImageSize($width),
-                                        BX_RESIZE_IMAGE_PROPORTIONAL
-                                    );
+                                ?>
 
-                                    ?>
+                                <source data-srcset="<?= $image['src']; ?>"
+                                        media="<?= Breakpoint::getMedia($media); ?>">
 
-                                    <source data-srcset="<?= $image['src']; ?>"
-                                            media="<?= Breakpoint::getMedia($media); ?>">
+                            <? } ?>
 
-                                <? } ?>
+                            <img src="<?= Thumb::PLACEHOLDER; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
 
-                                <img src="<?= Thumb::PLACEHOLDER; ?>" alt="<?= $arItem['NAME']; ?>">
+                        </picture>
 
-                            </picture>
+                    <? } ?>
 
+                    <div class="details">
+
+                        <h3><?= $arItem['NAME']; ?></h3>
+
+                        <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+                            <p><?= $arItem['PREVIEW_TEXT']; ?></p>
                         <? } ?>
 
                     </div>
-
-                    <h3><?= $arItem['NAME']; ?></h3>
-
-                    <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-                        <p><?= $arItem['PREVIEW_TEXT']; ?></p>
-                    <? } ?>
 
                 </li>
 
@@ -98,3 +98,5 @@ $frame = $this->createFrame();
     </div>
 
 <?php } ?>
+
+<?php d($arResult); ?>

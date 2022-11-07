@@ -22,10 +22,10 @@ class Breakpoint
             'height' => 100,
         ];
 
-    public static function getMedia(string $media, bool $max = false): string
+    public static function getMedia(string $breakpoint): string
     {
 
-        switch ($media) {
+        switch ($breakpoint) {
 
             case 'small' :
 

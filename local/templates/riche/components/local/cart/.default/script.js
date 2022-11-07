@@ -25,8 +25,22 @@ $(() => {
         cartElement,
         (event) => {
 
-            let button     = $(event.target),
-                buttonData = button.data();
+            let button = $(event.target),
+                data = button.data();
+
+            data.sessid = sessid;
+
+            $.ajax(
+                bxAjaxRequestUrl('local:cart'),
+                {
+                    data: data,
+                    success: (result) => {
+
+                        console.debug(result);
+
+                    }
+                }
+            );
 
         }
     );

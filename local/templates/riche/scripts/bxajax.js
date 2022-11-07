@@ -1,6 +1,6 @@
-// region bxAjax
+// region Bitrix AJAX
 
-// @todo надо переделать на синтаксис, близкий к jQuery.ajax();
+// @todo переделать на синтаксис, близкий к jQuery.ajax();
 
 const bxAjaxRequestUrl = (component, action) => {
 
