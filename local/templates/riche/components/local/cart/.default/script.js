@@ -30,17 +30,9 @@ $(() => {
 
             data.sessid = sessid;
 
-            $.ajax(
-                bxAjaxRequestUrl('local:cart'),
-                {
-                    data:    data,
-                    success: (result) => {
+            let result = $.bxajax(data);
 
-                        console.debug(result);
-
-                    }
-                }
-            );
+            console.debug(result);
 
         }
     );

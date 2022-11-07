@@ -15,3 +15,32 @@ const bxAjaxRequestUrl = (component, action) => {
 }
 
 // endregion
+
+$.extend(
+    {
+        bxajax: (data) => {
+
+            let query = {
+                c:      data.component,
+                action: data.action,
+                mode:   'class'
+            };
+
+            data.sessid = sessid;
+
+            let request = $.ajax(
+                {
+                    url:  '/bitrix/services/main/ajax.php?' + $.param(query, true),
+                    data: data
+                }
+            );
+
+            request.done(
+                (response) => {
+                    console.log(response);
+                }
+            );
+
+        }
+    }
+);

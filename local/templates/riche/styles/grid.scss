@@ -2,7 +2,7 @@
 @import "../mixins";
 
 :root {
-  --offset:           0.35rem;
+  --offset:                 0.35rem;
 
   @include Mobile {
     --offset: 0.45rem;
@@ -11,11 +11,11 @@
     --offset: 0.55rem;
   }
 
-  --offset--half:     calc(var(--offset) / 2);
-  --offset--2x:       calc(var(--offset) * 2);
-  --offset--4x:       calc(var(--offset) * 4);
+  --offset--half:           calc(var(--offset) / 2);
+  --offset--2x:             calc(var(--offset) * 2);
+  --offset--4x:             calc(var(--offset) * 4);
 
-  --offset--negative: calc(var(--offset) * -1);
+  --offset--negative:       calc(var(--offset) * -1);
   --offset--half--negative: calc(var(--offset) * -0.5);
 
 }
@@ -115,6 +115,16 @@
 
   > * {
     padding: calc(var(--offset) * -0.5);
+  }
+
+  @include Desktop {
+    width:  82%;
+    margin: auto;
+  }
+
+  @include Wide {
+    width:  76%;
+    margin: auto;
   }
 
 }
