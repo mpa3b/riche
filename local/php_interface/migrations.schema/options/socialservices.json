@@ -62,7 +62,7 @@
                 "Bitrix24Net": "N",
                 "Facebook": "N",
                 "YandexOAuth": "Y",
-                "MailRu2": "Y",
+                "MailRu2": "N",
                 "MyMailRu": "N",
                 "OpenID": "N",
                 "MailRuOpenID": "N",
@@ -115,7 +115,7 @@
         {
             "MODULE_ID": "socialservices",
             "NAME": "bitrix24net_id",
-            "VALUE": "ext.63690fe223a6a4.35467220"
+            "VALUE": "ext.636a0d836049f2.30497893"
         },
         {
             "MODULE_ID": "socialservices",
@@ -125,7 +125,7 @@
         {
             "MODULE_ID": "socialservices",
             "NAME": "bitrix24net_secret",
-            "VALUE": "N0BwakWG9BjfYCclyjZvBSBfTQfVoZKbmBUOWYOnsUWPU78ZEc"
+            "VALUE": "MGomI8LENu9yTvtXMDBDkUJmhqpL8UFrio4dLOEtQyR8E4OlTt"
         },
         {
             "MODULE_ID": "socialservices",

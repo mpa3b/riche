@@ -73,7 +73,7 @@
         {
             "MODULE_ID": "iblock",
             "NAME": "show_xml_id",
-            "VALUE": "Y"
+            "VALUE": "N"
         },
         {
             "MODULE_ID": "iblock",

@@ -59,6 +59,26 @@
                     "ELEMENT_NAME": "Elements"
                 }
             }
+        },
+        {
+            "ID": "CUSTOMER",
+            "SECTIONS": "Y",
+            "EDIT_FILE_BEFORE": "",
+            "EDIT_FILE_AFTER": "",
+            "IN_RSS": "N",
+            "SORT": "500",
+            "LANG": {
+                "ru": {
+                    "NAME": "Клиент",
+                    "SECTION_NAME": "Разделы",
+                    "ELEMENT_NAME": "Элементы"
+                },
+                "en": {
+                    "NAME": "Customer",
+                    "SECTION_NAME": "Sections",
+                    "ELEMENT_NAME": "Elements"
+                }
+            }
         }
     ]
 }

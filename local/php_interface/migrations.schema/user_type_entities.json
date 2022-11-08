@@ -15,34 +15,6 @@
             "SETTINGS": []
         },
         {
-            "ENTITY_ID": "FORUM_MESSAGE",
-            "FIELD_NAME": "UF_FORUM_MES_URL_PRV",
-            "USER_TYPE_ID": "url_preview",
-            "XML_ID": "UF_FORUM_MES_URL_PRV",
-            "SORT": "100",
-            "MULTIPLE": "N",
-            "MANDATORY": "N",
-            "SHOW_FILTER": "N",
-            "SHOW_IN_LIST": "N",
-            "EDIT_IN_LIST": "Y",
-            "IS_SEARCHABLE": "N",
-            "SETTINGS": []
-        },
-        {
-            "ENTITY_ID": "FORUM_MESSAGE",
-            "FIELD_NAME": "UF_TASK_COMMENT_TYPE",
-            "USER_TYPE_ID": "integer",
-            "XML_ID": "UF_TASK_COMMENT_TYPE",
-            "SORT": "100",
-            "MULTIPLE": "N",
-            "MANDATORY": "N",
-            "SHOW_FILTER": "N",
-            "SHOW_IN_LIST": "N",
-            "EDIT_IN_LIST": "Y",
-            "IS_SEARCHABLE": "N",
-            "SETTINGS": []
-        },
-        {
             "ENTITY_ID": "BLOG_POST",
             "FIELD_NAME": "UF_IMPRTANT_DATE_END",
             "USER_TYPE_ID": "datetime",

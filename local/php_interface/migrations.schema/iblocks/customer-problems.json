@@ -1,13 +1,13 @@
 {
     "iblock": {
-        "IBLOCK_TYPE_ID": "COMPANY",
+        "IBLOCK_TYPE_ID": "CUSTOMER",
         "LID": [
             "s1"
         ],
-        "CODE": "FEATURES",
-        "API_CODE": "features",
+        "CODE": "PROBLEMS",
+        "API_CODE": "problems",
         "REST_ON": "N",
-        "NAME": "Особенности компании",
+        "NAME": "Проблемы",
         "ACTIVE": "Y",
         "SORT": "500",
         "LIST_PAGE_URL": "",
@@ -23,7 +23,7 @@
         "RSS_FILE_LIMIT": null,
         "RSS_FILE_DAYS": null,
         "RSS_YANDEX_ACTIVE": "N",
-        "XML_ID": "",
+        "XML_ID": null,
         "INDEX_ELEMENT": "N",
         "INDEX_SECTION": "N",
         "WORKFLOW": "N",
@@ -31,9 +31,9 @@
         "SECTION_CHOOSER": "L",
         "LIST_MODE": "",
         "RIGHTS_MODE": "S",
-        "SECTION_PROPERTY": "Y",
+        "SECTION_PROPERTY": "N",
         "PROPERTY_INDEX": "N",
-        "VERSION": "2",
+        "VERSION": "1",
         "LAST_CONV_ELEMENT": "0",
         "SOCNET_GROUP_ID": null,
         "EDIT_FILE_BEFORE": "",
@@ -42,7 +42,7 @@
         "SECTION_NAME": "Раздел",
         "ELEMENTS_NAME": "Элементы",
         "ELEMENT_NAME": "Элемент",
-        "EXTERNAL_ID": "",
+        "EXTERNAL_ID": null,
         "LANG_DIR": "\/",
         "SERVER_NAME": "riche.skin",
         "IPROPERTY_TEMPLATES": [],
@@ -213,7 +213,7 @@
         "SECTION_DESCRIPTION_TYPE": {
             "NAME": "Тип описания",
             "IS_REQUIRED": "Y",
-            "DEFAULT_VALUE": "text"
+            "DEFAULT_VALUE": "html"
         },
         "SECTION_DESCRIPTION": {
             "NAME": "Описание",
@@ -252,8 +252,8 @@
             "NAME": "Символьный код",
             "IS_REQUIRED": "N",
             "DEFAULT_VALUE": {
-                "UNIQUE": "N",
-                "TRANSLITERATION": "N",
+                "UNIQUE": "Y",
+                "TRANSLITERATION": "Y",
                 "TRANS_LEN": 100,
                 "TRANS_CASE": "L",
                 "TRANS_SPACE": "-",
@@ -275,7 +275,7 @@
             "COL_COUNT": "30",
             "LIST_TYPE": "L",
             "MULTIPLE": "N",
-            "XML_ID": "",
+            "XML_ID": null,
             "FILE_TYPE": "",
             "MULTIPLE_CNT": "5",
             "LINK_IBLOCK_ID": "0",
@@ -283,7 +283,7 @@
             "SEARCHABLE": "N",
             "FILTRABLE": "N",
             "IS_REQUIRED": "N",
-            "VERSION": "2",
+            "VERSION": "1",
             "USER_TYPE": "video",
             "USER_TYPE_SETTINGS": {
                 "BUFFER_LENGTH": 10,

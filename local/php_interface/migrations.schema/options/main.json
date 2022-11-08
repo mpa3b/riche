@@ -93,21 +93,6 @@
         },
         {
             "MODULE_ID": "main",
-            "NAME": "~rsa_key_pem",
-            "VALUE": "-----BEGIN PRIVATE KEY-----\nMIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAMOp6SgsDIaePgsX\nK47c8bSeojTboyBOQuqE7aeHBTj+ZCNx6OwmiU2IX9ll0AGMYZ57hHioQkSq7Xtd\nSPgTzYmZBgtqgnN5y\/KTLhQNLS6n6YCEwksoy2S4IfKRQyaTZp6S5pNAl5V+zZ3S\n3zl9SKPUOvgKHt7+4+OByxazVWyFAgMBAAECgYBcs4Gd4NDGbu6iPoYKl6+Ejav4\nMx9kTO\/zQKuANb5JtG0pRey\/BbsDmtsemtgkA6i0d3zZ1Y4gDoOZcScDMg6sj2u8\nab5d\/HJaSz+RWDMlJx2+fSnoijIKmvXq9pRfW\/IPmP+46iEuIQDEg2a2YWb24EJT\nj4dMhN3WIw9eOrWNQQJBAPXQH5pSWHp0M3eL2hBAfvnE0av92Dd5B6wmTcnHyQ8J\njuYIelgmEoiyE5QGx8XxPJ6BAsGmGU1zlq\/cJ2Opm9kCQQDLxb6FUan0eS5h8jqV\nYftMkTyh\/GJJkaTI1VKXXvRPqvHvlv7Bvd9Zx4ejhT1k2YUP9Jit16LZcHki81Ou\nr4aNAkEA1AuDF4atWITg2OFFbPuWDTPhgzJo0AGRwskQFV5IbLZcFMd\/cob1OgIT\nrX\/j2TbuifTUQeRcs1lgxbduKyTmkQJAcuZryY0Ewj9acgw+EGGRa9kxUT2YxlcD\njeMLkSMPq6R+i1SfDevcdylVSFUnCyjEKP0I4m2G\/Ai5pYWDGCsNOQJAF0FyBVi2\nLfO7eHNOzGDJmF+i4hVeGmhKdNF50s3QSyIOisn6CoGfcLXEN2Jom4Bd5H\/Gb8jG\nUppz34UCF2Vl\/A==\n-----END PRIVATE KEY-----\n"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "~rsa_keys_openssl",
-            "VALUE": {
-                "M": "hWxVsxbLgePj\/t4eCvg61KNIfTnf0p3NfpWXQJPmkp5mkyZDkfIhuGTLKEvChIDppy4tDRQuk\/LLeXOCagsGmYnNE\/hIXXvtqkRCqHiEe55hjAHQZdlfiE2JJuzocSNk\/jgFh6fthOpCTiCj2zSinrTx3I4rFws+noYMLCjpqcM=",
-                "E": "AQAB",
-                "D": "QY21Ol4PI9bdhEyHj1NC4PZmYbZmg8QAIS4h6rj\/mA\/yW1+U9ur1mgoyiugpfb4dJyUzWJE\/S1py\/F2+abxrj6wOMgMncZmDDiCO1dl8d7SoAyTYmh7bmgO7Bb\/sRSlttEm+NYCrQPPvTGQfM\/irjYSvlwqGPqLubsbQ4J2Bs1w=",
-                "chunk": 128
-            }
-        },
-        {
-            "MODULE_ID": "main",
             "NAME": "~sale_converted_15",
             "VALUE": "Y"
         },
@@ -118,11 +103,6 @@
         },
         {
             "MODULE_ID": "main",
-            "NAME": "~show_composite_banner",
-            "VALUE": "N"
-        },
-        {
-            "MODULE_ID": "main",
             "NAME": "~support_finish_date",
             "VALUE": "2023-01-11"
         },
@@ -130,7 +110,7 @@
             "MODULE_ID": "main",
             "NAME": "~update_autocheck_result",
             "VALUE": {
-                "check_date": 1667835989,
+                "check_date": 1667902759,
                 "result": false,
                 "error": "",
                 "modules": []
@@ -140,11 +120,6 @@
             "MODULE_ID": "main",
             "NAME": "admin_lid",
             "VALUE": "ru"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "admin_passwordh",
-            "VALUE": "FVgQemYUBwUtCUVcBRcACgsTAQ=="
         },
         {
             "MODULE_ID": "main",
@@ -208,11 +183,6 @@
         },
         {
             "MODULE_ID": "main",
-            "NAME": "collect_geonames",
-            "VALUE": "Y"
-        },
-        {
-            "MODULE_ID": "main",
             "NAME": "compres_css_js_files",
             "VALUE": "N"
         },
@@ -248,13 +218,108 @@
         },
         {
             "MODULE_ID": "main",
-            "NAME": "device_history_cleanup_days",
-            "VALUE": "180"
+            "NAME": "disk_space",
+            "VALUE": ""
         },
         {
             "MODULE_ID": "main",
-            "NAME": "disk_space",
+            "NAME": "dump_archive_size_limit_auto",
+            "VALUE": "104857600"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_base_auto",
+            "VALUE": "1"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_base_skip_log_auto",
+            "VALUE": "0"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_base_skip_search_auto",
+            "VALUE": "0"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_base_skip_stat_auto",
+            "VALUE": "0"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_bucket_id_auto",
+            "VALUE": "0"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_delete_old_auto",
+            "VALUE": "4"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_do_clouds_auto",
+            "VALUE": "0"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_file_kernel_auto",
+            "VALUE": "1"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_file_public_auto",
+            "VALUE": "1"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_integrity_check_auto",
+            "VALUE": "1"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_max_exec_time_auto",
+            "VALUE": "20"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_max_exec_time_sleep_auto",
+            "VALUE": "3"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_max_file_size_auto",
+            "VALUE": "0"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_old_cnt_auto",
+            "VALUE": "3"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_old_size_auto",
+            "VALUE": "0"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_old_time_auto",
+            "VALUE": "0"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_site_id_auto",
+            "VALUE": null
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_temporary_cache",
             "VALUE": ""
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_use_compression_auto",
+            "VALUE": "1"
         },
         {
             "MODULE_ID": "main",
@@ -410,8 +475,24 @@
             "MODULE_ID": "main",
             "NAME": "last_mp_modules_result",
             "VALUE": {
-                "check_date": 1667830454,
-                "update_module": [],
+                "check_date": 1667894907,
+                "update_module": {
+                    "bitrix.eshop": {
+                        "ID": "bitrix.eshop",
+                        "NAME": "Современный интернет-магазин",
+                        "DESCRIPTION": "Готовый интернет-магазин, включающий в себя новые яркие шаблоны дизайнов, а также уникальные возможности для повышения эффективности бизнеса, помогающие продавать через Интернет. \r\n\r\nХиты, новинки, категории товаров, варианты SKU, несколько вариантов меню каталога товаров, различные формы представления списков и карточек товаров - все это правильно воспринимается покупателями.\r\n\r\nФункциональный фи...",
+                        "IMAGE": "",
+                        "IMAGE_HEIGHT": "",
+                        "IMAGE_WIDTH": "",
+                        "BUYED": "",
+                        "PARTNER": "1С-Битрикс",
+                        "PARTNER_ID": "46844",
+                        "DATE_CREATE": "",
+                        "DATE_UPDATE": "",
+                        "CATEGORY": "Готовые интернет-магазины, Одежда, обувь, аксессуары",
+                        "TYPE": "Модуль, Шаблоны сайтов, Мастера создания (установка)"
+                    }
+                },
                 "end_update": [],
                 "new_module": []
             }
@@ -444,12 +525,12 @@
         {
             "MODULE_ID": "main",
             "NAME": "map_left_menu_type",
-            "VALUE": "left"
+            "VALUE": "local"
         },
         {
             "MODULE_ID": "main",
             "NAME": "map_top_menu_type",
-            "VALUE": "top"
+            "VALUE": "main"
         },
         {
             "MODULE_ID": "main",
@@ -464,7 +545,23 @@
         {
             "MODULE_ID": "main",
             "NAME": "mp_modules_date",
-            "VALUE": []
+            "VALUE": [
+                {
+                    "ID": "ipol.apiship2v",
+                    "NAME": "Интеграция с Apiship 2.0",
+                    "TMS": 1667902709
+                },
+                {
+                    "ID": "asd.iblock",
+                    "NAME": "Информационные блоки, инструменты",
+                    "TMS": 1667902717
+                },
+                {
+                    "ID": "rodzeta.redirect",
+                    "NAME": "Редиректы для SEO",
+                    "TMS": 1667902761
+                }
+            ]
         },
         {
             "MODULE_ID": "main",
@@ -479,7 +576,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "new_user_email_uniq_check",
-            "VALUE": "Y"
+            "VALUE": "N"
         },
         {
             "MODULE_ID": "main",
@@ -534,7 +631,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "phone_number_default_country",
-            "VALUE": "1"
+            "VALUE": "16"
         },
         {
             "MODULE_ID": "main",
@@ -699,7 +796,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "server_uniq_id",
-            "VALUE": "ada7b5bd225ad4896ace4c0b802a024c"
+            "VALUE": "a90c42ca0cfeaa694bde730e3ae28549"
         },
         {
             "MODULE_ID": "main",
@@ -729,12 +826,27 @@
         {
             "MODULE_ID": "main",
             "NAME": "signer_default_key",
-            "VALUE": "73739087a4bcd448eb93e04768d62d627d33329470a87b43f92577eecfe365d7dcd431e6d6a4e116bade98d70225384e13a417d7de85b6fcd1d531f3875fd015"
+            "VALUE": "5e7973c28146517cca75ee3b5172b1336b3a2e2dc54075fc20ff50b6a982cbcc2d77aefc8f1e670600d90bf1b901e236b0ba95c119e8be4addaf838fc20000f0"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "site_checker_success",
+            "VALUE": "Y"
         },
         {
             "MODULE_ID": "main",
             "NAME": "site_name",
             "VALUE": "RICHE COSMETICS"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "skip_mask_array_auto",
+            "VALUE": null
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "skip_mask_auto",
+            "VALUE": "0"
         },
         {
             "MODULE_ID": "main",
@@ -844,12 +956,12 @@
         {
             "MODULE_ID": "main",
             "NAME": "update_system_check",
-            "VALUE": "07.11.2022 18:46:14"
+            "VALUE": "08.11.2022 13:20:00"
         },
         {
             "MODULE_ID": "main",
             "NAME": "update_system_update",
-            "VALUE": "07.11.2022 18:46:29"
+            "VALUE": "08.11.2022 13:19:19"
         },
         {
             "MODULE_ID": "main",
@@ -874,7 +986,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "use_encrypted_auth",
-            "VALUE": "Y"
+            "VALUE": "N"
         },
         {
             "MODULE_ID": "main",
@@ -899,21 +1011,6 @@
         {
             "MODULE_ID": "main",
             "NAME": "use_time_zones",
-            "VALUE": "N"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "user_device_geodata",
-            "VALUE": "N"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "user_device_history",
-            "VALUE": "N"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "user_device_notify",
             "VALUE": "N"
         },
         {

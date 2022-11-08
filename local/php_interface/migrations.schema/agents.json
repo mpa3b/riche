@@ -6,7 +6,7 @@
             "SORT": "100",
             "NAME": "\\Bitrix\\Calendar\\Sync\\Office365\\SectionManager::updateSectionsAgent();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 00:00:00",
+            "NEXT_EXEC": "08.11.2022 00:00:00",
             "AGENT_INTERVAL": "3600",
             "IS_PERIOD": "N",
             "RETRY_COUNT": null
@@ -17,7 +17,7 @@
             "SORT": "100",
             "NAME": "\\Bitrix\\Calendar\\Update\\GoogleToNewSync::execAgent();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 18:40:39",
+            "NEXT_EXEC": "08.11.2022 12:58:46",
             "AGENT_INTERVAL": "1",
             "IS_PERIOD": "Y",
             "RETRY_COUNT": null
@@ -28,7 +28,7 @@
             "SORT": "100",
             "NAME": "\\Bitrix\\Catalog\\CatalogViewedProductTable::clearAgent();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:48",
+            "NEXT_EXEC": "13.11.2022 11:07:36",
             "AGENT_INTERVAL": "432000",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -45,78 +45,12 @@
             "RETRY_COUNT": null
         },
         {
-            "MODULE_ID": "forum",
-            "USER_ID": null,
-            "SORT": "100",
-            "NAME": "CForumStat::CleanUp();",
-            "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:51",
-            "AGENT_INTERVAL": "86400",
-            "IS_PERIOD": "N",
-            "RETRY_COUNT": "0"
-        },
-        {
-            "MODULE_ID": "forum",
-            "USER_ID": null,
-            "SORT": "100",
-            "NAME": "CForumFiles::CleanUp();",
-            "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:51",
-            "AGENT_INTERVAL": "86400",
-            "IS_PERIOD": "N",
-            "RETRY_COUNT": "0"
-        },
-        {
-            "MODULE_ID": "landing",
-            "USER_ID": null,
-            "SORT": "100",
-            "NAME": "Bitrix\\Landing\\Agent::clearRecycle();",
-            "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 21:12:55",
-            "AGENT_INTERVAL": "7200",
-            "IS_PERIOD": "N",
-            "RETRY_COUNT": "0"
-        },
-        {
-            "MODULE_ID": "landing",
-            "USER_ID": null,
-            "SORT": "100",
-            "NAME": "Bitrix\\Landing\\Agent::clearFiles(30);",
-            "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 21:26:59",
-            "AGENT_INTERVAL": "3600",
-            "IS_PERIOD": "N",
-            "RETRY_COUNT": "0"
-        },
-        {
-            "MODULE_ID": "landing",
-            "USER_ID": null,
-            "SORT": "100",
-            "NAME": "Bitrix\\Landing\\Agent::sendRestStatistic();",
-            "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:53",
-            "AGENT_INTERVAL": "86400",
-            "IS_PERIOD": "N",
-            "RETRY_COUNT": "0"
-        },
-        {
-            "MODULE_ID": "landing",
-            "USER_ID": null,
-            "SORT": "100",
-            "NAME": "Bitrix\\Landing\\Agent::clearTempFiles();",
-            "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:53",
-            "AGENT_INTERVAL": "86400",
-            "IS_PERIOD": "N",
-            "RETRY_COUNT": "0"
-        },
-        {
             "MODULE_ID": "location",
             "USER_ID": null,
             "SORT": "100",
             "NAME": "\\Bitrix\\Location\\Infrastructure\\DataInstaller::installAreasAgent();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 18:29:14",
+            "NEXT_EXEC": "08.11.2022 12:44:28",
             "AGENT_INTERVAL": "60",
             "IS_PERIOD": "N",
             "RETRY_COUNT": null
@@ -127,7 +61,7 @@
             "SORT": "100",
             "NAME": "\\Bitrix\\Main\\Analytics\\CounterDataTable::submitData();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 20:31:08",
+            "NEXT_EXEC": "08.11.2022 19:01:41",
             "AGENT_INTERVAL": "60",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -138,7 +72,7 @@
             "SORT": "100",
             "NAME": "CCaptchaAgent::DeleteOldCaptcha(3600);",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 21:26:58",
+            "NEXT_EXEC": "08.11.2022 19:34:21",
             "AGENT_INTERVAL": "3600",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -281,7 +215,7 @@
             "SORT": "100",
             "NAME": "CPullChannel::CheckOnlineChannel();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 20:30:59",
+            "NEXT_EXEC": "08.11.2022 19:03:08",
             "AGENT_INTERVAL": "240",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -292,7 +226,7 @@
             "SORT": "100",
             "NAME": "CPullChannel::CheckExpireAgent();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 05:12:56",
+            "NEXT_EXEC": "08.11.2022 23:07:42",
             "AGENT_INTERVAL": "43200",
             "IS_PERIOD": "N",
             "RETRY_COUNT": null
@@ -303,7 +237,7 @@
             "SORT": "100",
             "NAME": "CPullWatch::CheckExpireAgent();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 20:46:59",
+            "NEXT_EXEC": "08.11.2022 19:15:20",
             "AGENT_INTERVAL": "600",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -314,7 +248,7 @@
             "SORT": "100",
             "NAME": "CSaleRecurring::AgentCheckRecurring();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 21:12:55",
+            "NEXT_EXEC": "08.11.2022 19:34:15",
             "AGENT_INTERVAL": "7200",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -325,7 +259,7 @@
             "SORT": "100",
             "NAME": "CSaleViewedProduct::ClearViewed();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:54",
+            "NEXT_EXEC": "09.11.2022 11:07:41",
             "AGENT_INTERVAL": "86400",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -336,7 +270,7 @@
             "SORT": "100",
             "NAME": "CSaleOrder::ClearProductReservedQuantity();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:54",
+            "NEXT_EXEC": "09.11.2022 11:07:41",
             "AGENT_INTERVAL": "86400",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -358,7 +292,7 @@
             "SORT": "100",
             "NAME": "\\Bitrix\\Sale\\Internals\\Analytics\\Agent::send();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:54",
+            "NEXT_EXEC": "09.11.2022 11:07:41",
             "AGENT_INTERVAL": "86400",
             "IS_PERIOD": "Y",
             "RETRY_COUNT": null
@@ -369,7 +303,18 @@
             "SORT": "100",
             "NAME": "CSaleOrder::RemindPayment();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 18:29:45",
+            "NEXT_EXEC": "09.11.2022 12:30:58",
+            "AGENT_INTERVAL": "86400",
+            "IS_PERIOD": "N",
+            "RETRY_COUNT": "0"
+        },
+        {
+            "MODULE_ID": "sale",
+            "USER_ID": null,
+            "SORT": "100",
+            "NAME": "\\Bitrix\\Sale\\Product2ProductTable::addProductsByAgent(100);",
+            "ACTIVE": "Y",
+            "NEXT_EXEC": "09.11.2022 12:33:32",
             "AGENT_INTERVAL": "86400",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -380,7 +325,7 @@
             "SORT": "100",
             "NAME": "\\Bitrix\\Sale\\Product2ProductTable::deleteOldProducts(10);",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 18:29:45",
+            "NEXT_EXEC": "18.11.2022 12:30:58",
             "AGENT_INTERVAL": "864000",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -389,9 +334,20 @@
             "MODULE_ID": "sale",
             "USER_ID": null,
             "SORT": "100",
-            "NAME": "\\Bitrix\\Sale\\Archive\\Manager::archiveOnAgent(100,30);",
+            "NAME": "\\Bitrix\\Sale\\Archive\\Manager::archiveOnAgent(1000,30);",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 18:29:45",
+            "NEXT_EXEC": "09.11.2022 12:30:58",
+            "AGENT_INTERVAL": "86400",
+            "IS_PERIOD": "N",
+            "RETRY_COUNT": "0"
+        },
+        {
+            "MODULE_ID": "sale",
+            "USER_ID": null,
+            "SORT": "100",
+            "NAME": "\\Bitrix\\Sale\\OrderHistory::deleteOldAgent(\"365\", \"1000\");",
+            "ACTIVE": "Y",
+            "NEXT_EXEC": "09.11.2022 12:32:10",
             "AGENT_INTERVAL": "86400",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -402,7 +358,7 @@
             "SORT": "10",
             "NAME": "CSearchSuggest::CleanUpAgent();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:56",
+            "NEXT_EXEC": "09.11.2022 11:07:42",
             "AGENT_INTERVAL": "86400",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -413,7 +369,7 @@
             "SORT": "10",
             "NAME": "CSearchStatistic::CleanUpAgent();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:56",
+            "NEXT_EXEC": "09.11.2022 11:07:43",
             "AGENT_INTERVAL": "86400",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -424,7 +380,7 @@
             "SORT": "100",
             "NAME": "Bitrix\\Seo\\Engine\\YandexDirect::updateAgent();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 21:26:59",
+            "NEXT_EXEC": "08.11.2022 19:34:21",
             "AGENT_INTERVAL": "3600",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -435,7 +391,7 @@
             "SORT": "100",
             "NAME": "Bitrix\\Seo\\Adv\\LogTable::clean();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:55",
+            "NEXT_EXEC": "09.11.2022 11:07:42",
             "AGENT_INTERVAL": "86400",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -446,7 +402,7 @@
             "SORT": "100",
             "NAME": "Bitrix\\Seo\\Adv\\Auto::checkQuantityAgent();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 21:26:59",
+            "NEXT_EXEC": "08.11.2022 19:34:21",
             "AGENT_INTERVAL": "3600",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -457,7 +413,7 @@
             "SORT": "100",
             "NAME": "CSocServMessage::CleanUp();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 18:32:18",
+            "NEXT_EXEC": "09.11.2022 12:32:11",
             "AGENT_INTERVAL": "86400",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"
@@ -485,45 +441,12 @@
             "RETRY_COUNT": null
         },
         {
-            "MODULE_ID": "support",
-            "USER_ID": null,
-            "SORT": "100",
-            "NAME": "CTicketReminder::AgentFunction();",
-            "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 20:31:08",
-            "AGENT_INTERVAL": "60",
-            "IS_PERIOD": "N",
-            "RETRY_COUNT": "0"
-        },
-        {
-            "MODULE_ID": "support",
-            "USER_ID": null,
-            "SORT": "100",
-            "NAME": "CTicket::CleanUpOnline();",
-            "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:56",
-            "AGENT_INTERVAL": "86400",
-            "IS_PERIOD": "N",
-            "RETRY_COUNT": "0"
-        },
-        {
-            "MODULE_ID": "support",
-            "USER_ID": null,
-            "SORT": "100",
-            "NAME": "CTicket::AutoClose();",
-            "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 17:12:56",
-            "AGENT_INTERVAL": "86400",
-            "IS_PERIOD": "N",
-            "RETRY_COUNT": "0"
-        },
-        {
             "MODULE_ID": "ui",
             "USER_ID": null,
             "SORT": "100",
             "NAME": "\\Bitrix\\UI\\FileUploader\\TempFileAgent::clearOldRecords();",
             "ACTIVE": "Y",
-            "NEXT_EXEC": "09.11.2022 20:33:59",
+            "NEXT_EXEC": "08.11.2022 19:07:12",
             "AGENT_INTERVAL": "1800",
             "IS_PERIOD": "N",
             "RETRY_COUNT": "0"

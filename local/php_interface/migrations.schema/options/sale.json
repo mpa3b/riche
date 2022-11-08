@@ -55,7 +55,7 @@
         {
             "MODULE_ID": "sale",
             "NAME": "archive_limit",
-            "VALUE": "100"
+            "VALUE": "1000"
         },
         {
             "MODULE_ID": "sale",
@@ -63,6 +63,7 @@
             "VALUE": {
                 "PERIOD": 365,
                 "STATUS_ID": [
+                    "N",
                     "F"
                 ]
             }
@@ -100,7 +101,7 @@
         {
             "MODULE_ID": "sale",
             "NAME": "crypt_algorithm",
-            "VALUE": "RC4"
+            "VALUE": null
         },
         {
             "MODULE_ID": "sale",
@@ -160,7 +161,7 @@
         {
             "MODULE_ID": "sale",
             "NAME": "location_zip",
-            "VALUE": "428001"
+            "VALUE": ""
         },
         {
             "MODULE_ID": "sale",
@@ -180,7 +181,7 @@
         {
             "MODULE_ID": "sale",
             "NAME": "order_changes_cleaner_active",
-            "VALUE": null
+            "VALUE": "Y"
         },
         {
             "MODULE_ID": "sale",
@@ -190,7 +191,7 @@
         {
             "MODULE_ID": "sale",
             "NAME": "order_changes_cleaner_limit",
-            "VALUE": "10000"
+            "VALUE": "1000"
         },
         {
             "MODULE_ID": "sale",
@@ -220,7 +221,7 @@
         {
             "MODULE_ID": "sale",
             "NAME": "p2p_allow_collect_data",
-            "VALUE": "N"
+            "VALUE": "Y"
         },
         {
             "MODULE_ID": "sale",
@@ -254,20 +255,20 @@
             "NAME": "pay_amount",
             "VALUE": {
                 "1": {
-                    "AMOUNT": 100,
-                    "CURRENCY": "RUB"
+                    "AMOUNT": 10,
+                    "CURRENCY": "EUR"
                 },
                 "2": {
-                    "AMOUNT": 250,
-                    "CURRENCY": "RUB"
+                    "AMOUNT": 20,
+                    "CURRENCY": "EUR"
                 },
                 "3": {
-                    "AMOUNT": 500,
-                    "CURRENCY": "RUB"
+                    "AMOUNT": 30,
+                    "CURRENCY": "EUR"
                 },
                 "4": {
-                    "AMOUNT": 1000,
-                    "CURRENCY": "RUB"
+                    "AMOUNT": 40,
+                    "CURRENCY": "EUR"
                 }
             }
         },
@@ -315,7 +316,7 @@
         {
             "MODULE_ID": "sale",
             "NAME": "sale_data_file",
-            "VALUE": ""
+            "VALUE": null
         },
         {
             "MODULE_ID": "sale",

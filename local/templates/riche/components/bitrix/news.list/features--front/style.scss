@@ -139,9 +139,9 @@
         .details {
           display:        flex;
           flex-direction: column;
-          padding:        var(--offset--2x);
+          padding:        var(--offset--4x);
 
-          p {
+          i {
             display: none;
           }
         }

@@ -3,12 +3,12 @@
         {
             "MODULE_ID": "sprint.migration",
             "NAME": "schema_agentschema",
-            "VALUE": "08693991a89d5efa2993ade88b8b25f7"
+            "VALUE": "609d2194a1d59ce7cc43c72eff2979b2"
         },
         {
             "MODULE_ID": "sprint.migration",
             "NAME": "schema_eventschema",
-            "VALUE": "38c3ffe30722f2e360cce982660554bf"
+            "VALUE": "efbe8bc9f6c6bf01e25127d734536de0"
         },
         {
             "MODULE_ID": "sprint.migration",
@@ -23,17 +23,17 @@
         {
             "MODULE_ID": "sprint.migration",
             "NAME": "schema_iblockschema",
-            "VALUE": "9dbf890942a2db31fee23b87ff0ff37b"
+            "VALUE": "3b1ee4765a0321c5b881b04c9a188049"
         },
         {
             "MODULE_ID": "sprint.migration",
             "NAME": "schema_optionschema",
-            "VALUE": "134730f8852e1b367520483460c5ce24"
+            "VALUE": "d3158dacfffc4b39345d717ecbf88222"
         },
         {
             "MODULE_ID": "sprint.migration",
             "NAME": "schema_usertypeentitiesschema",
-            "VALUE": "2363163e296739e4bc5e0a49606102a8"
+            "VALUE": "9672e5e38e9b1566feaee97f5d0a780c"
         },
         {
             "MODULE_ID": "sprint.migration",

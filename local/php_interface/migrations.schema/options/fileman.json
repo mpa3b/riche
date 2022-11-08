@@ -173,7 +173,7 @@
         {
             "MODULE_ID": "fileman",
             "NAME": "use_medialib",
-            "VALUE": "Y"
+            "VALUE": "N"
         },
         {
             "MODULE_ID": "fileman",

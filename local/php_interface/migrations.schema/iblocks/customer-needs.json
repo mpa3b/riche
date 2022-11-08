@@ -1,13 +1,13 @@
 {
     "iblock": {
-        "IBLOCK_TYPE_ID": "COMPANY",
+        "IBLOCK_TYPE_ID": "CUSTOMER",
         "LID": [
             "s1"
         ],
-        "CODE": "FEATURES",
-        "API_CODE": "features",
+        "CODE": "NEEDS",
+        "API_CODE": "needs",
         "REST_ON": "N",
-        "NAME": "Особенности компании",
+        "NAME": "Потребности",
         "ACTIVE": "Y",
         "SORT": "500",
         "LIST_PAGE_URL": "",
@@ -23,7 +23,7 @@
         "RSS_FILE_LIMIT": null,
         "RSS_FILE_DAYS": null,
         "RSS_YANDEX_ACTIVE": "N",
-        "XML_ID": "",
+        "XML_ID": null,
         "INDEX_ELEMENT": "N",
         "INDEX_SECTION": "N",
         "WORKFLOW": "N",
@@ -31,9 +31,9 @@
         "SECTION_CHOOSER": "L",
         "LIST_MODE": "",
         "RIGHTS_MODE": "S",
-        "SECTION_PROPERTY": "Y",
+        "SECTION_PROPERTY": "N",
         "PROPERTY_INDEX": "N",
-        "VERSION": "2",
+        "VERSION": "1",
         "LAST_CONV_ELEMENT": "0",
         "SOCNET_GROUP_ID": null,
         "EDIT_FILE_BEFORE": "",
@@ -42,7 +42,7 @@
         "SECTION_NAME": "Раздел",
         "ELEMENTS_NAME": "Элементы",
         "ELEMENT_NAME": "Элемент",
-        "EXTERNAL_ID": "",
+        "EXTERNAL_ID": null,
         "LANG_DIR": "\/",
         "SERVER_NAME": "riche.skin",
         "IPROPERTY_TEMPLATES": [],
@@ -58,7 +58,7 @@
             "NAME": "Привязка к разделам",
             "IS_REQUIRED": "N",
             "DEFAULT_VALUE": {
-                "KEEP_IBLOCK_SECTION_ID": "N"
+                "KEEP_IBLOCK_SECTION_ID": "Y"
             }
         },
         "ACTIVE": {
@@ -263,48 +263,7 @@
             }
         }
     },
-    "props": [
-        {
-            "NAME": "Видео",
-            "ACTIVE": "Y",
-            "SORT": "500",
-            "CODE": "VIDEO",
-            "DEFAULT_VALUE": [],
-            "PROPERTY_TYPE": "S",
-            "ROW_COUNT": "1",
-            "COL_COUNT": "30",
-            "LIST_TYPE": "L",
-            "MULTIPLE": "N",
-            "XML_ID": "",
-            "FILE_TYPE": "",
-            "MULTIPLE_CNT": "5",
-            "LINK_IBLOCK_ID": "0",
-            "WITH_DESCRIPTION": "N",
-            "SEARCHABLE": "N",
-            "FILTRABLE": "N",
-            "IS_REQUIRED": "N",
-            "VERSION": "2",
-            "USER_TYPE": "video",
-            "USER_TYPE_SETTINGS": {
-                "BUFFER_LENGTH": 10,
-                "CONTROLBAR": "bottom",
-                "AUTOSTART": "N",
-                "VOLUME": 90,
-                "SKIN": "",
-                "FLASHVARS": "",
-                "WMODE_FLV": "transparent",
-                "BGCOLOR": "FFFFFF",
-                "COLOR": "000000",
-                "OVER_COLOR": "000000",
-                "SCREEN_COLOR": "000000",
-                "SILVERVARS": "",
-                "WMODE_WMV": "windowless",
-                "WIDTH": "400",
-                "HEIGHT": "300"
-            },
-            "HINT": ""
-        }
-    ],
+    "props": [],
     "element_form": [],
     "section_form": []
 }
