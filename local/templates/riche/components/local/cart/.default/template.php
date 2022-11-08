@@ -27,8 +27,7 @@ $frame = $this -> createFrame();
 
 <noindex>
 
-    <div class="cart--default dropdown--container"
-         data-component="local:cart">
+    <div class="cart--default dropdown--container">
 
         <div class="indicator">
             <span class="value"></span>
@@ -43,15 +42,47 @@ $frame = $this -> createFrame();
 
             <h2 class="title">Твой заказ</h2>
 
-            <ul class="items list" data-template="cart-item"></ul>
+            <template name="cart">
 
-            <div class="total">
+                <ul v-for="item in items" class="items">
 
-                <div class="price"></div>
-                <div class="delivery"></div>
-                <div class="total"></div>
+                    <li class="item">
 
-            </div>
+                        <picture>
+                            <source v-for="(media, source) in item.images" src="{{ src }}" media="{{ media }}">
+                            <img src="{{ sources.preload.src }}" alt="{{ name }}">
+                        </picture>
+
+                        <h3>{{ item.name }}</h3>
+
+                        <div class="prices">
+                            <div v-for="price in prices" class="price">
+                                <del v-if="discount > 0">{{ base_price }}</del>
+                                <span>{{ price }}</span>
+                            </div>
+                        </div>
+
+                        <div class="quantity">
+                            {{ item.quantity }}
+                        </div>
+
+                        <button class="delete" data-action="delete" data-id="{{ item.id }}">
+                            <i class="icon-delete"></i>
+                        </button>
+
+                    </li>
+
+                </ul>
+
+                <div class="total">
+
+                    <div class="price">{{ cart.price }}</div>
+                    <div class="delivery">{{ cart.delivery }}</div>
+                    <div class="total">{{ cart.total }}</div>
+
+                </div>
+
+            </template>
 
             <div class="actions buttons">
 
@@ -71,32 +102,6 @@ $frame = $this -> createFrame();
         </div>
 
     </div>
-
-    <template data-template="cart-item">
-
-        <li class="item">
-
-            <picture>
-                <source src="" media="">
-                <img src="" alt="">
-            </picture>
-
-            <h3></h3>
-
-            <div class="prices">
-                <div class="price">
-                    <del></del>
-                    <span></span>
-                </div>
-            </div>
-
-            <button class="delete" data-action="delete">
-                <i class="icon-delete"></i>
-            </button>
-
-        </li>
-
-    </template>
 
     <? // @todo вот не знаю, как решать это: пока лучше всего подходит Vue, но он избыточен ?>
 
