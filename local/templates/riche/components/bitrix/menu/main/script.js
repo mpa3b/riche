@@ -1,0 +1,5 @@
+$(() => {
+
+    const element = $('.menu--main');
+
+});

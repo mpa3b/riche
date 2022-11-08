@@ -68,6 +68,7 @@
   }
 
   &--footer {
+    padding-top: var(--offset--4x);
 
     &--contact {
 
@@ -143,7 +144,7 @@
       font-size:     0.7rem;
       margin-bottom: 0;
 
-      color: var(--color--gray--dark);
+      color:         var(--color--gray--dark);
 
       span {
         display:     block;

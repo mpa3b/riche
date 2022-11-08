@@ -20,17 +20,9 @@ use Riche\Thumb;
 /** @var array $templateData */
 /** @var CBitrixComponent $component */
 
-$this -> setFrameMode(true);
+$this->setFrameMode(true);
 
-$ratios = [
-    'small'   => 2,
-    'mobile'  => 2,
-    'tablet'  => 1 / 1.5,
-    'desktop' => 1 / 1.5,
-    'wide'    => 1 / 2,
-];
-
-$frame = $this -> createFrame();
+$frame = $this->createFrame();
 
 ?>
 
@@ -38,52 +30,96 @@ $frame = $this -> createFrame();
 
     <article class="features--front wrap">
 
-        <? $frame -> begin(); ?>
+        <? $frame->begin(); ?>
 
         <h2 hidden>RICHE COSMETICS</h2>
 
         <div class="accordion items">
 
-            <? foreach ($arResult['ITEMS'] as $arItem) { ?>
+            <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                <section class="item">
+                <section class="item <? if ($i == 0) { ?>expanded<? } ?>">
 
-                    <? if ($arItem['DETAIL_PICTURE']) { ?>
+                    <div class="image">
 
-                        <picture>
+                        <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
 
-                            <? foreach (Breakpoint::breakpoints as $media => $width) { ?>
+                            <video muted loop autoplay>
+                                <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                            </video>
 
-                                <?
+                        <? } ?>
 
-                                $image = CFile ::ResizeImageGet(
-                                    $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb ::calculateImageSize($width, $ratios[$media]),
-                                    BX_RESIZE_IMAGE_PROPORTIONAL
-                                );
+                        <? if ($arItem['DETAIL_PICTURE']) { ?>
 
-                                ?>
-                                <source data-srcset="<?= $image['src']; ?>"
-                                        media="<?= Breakpoint ::getMedia($media); ?>">
-                            <? } ?>
+                            <?
 
-                            <img src="<?= Thumb::PLACEHOLDER; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
+                            $preload = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 2),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
 
-                        </picture>
+                            $small = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 2),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
 
-                    <? } ?>
+                            $mobile = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 2),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
+
+                            $tablet = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 1.75),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
+
+                            $desktop = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 1.75),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
+
+                            $wide = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 1.75),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
+
+                            ?>
+
+                            <picture>
+
+                                <source data-srcset="<?= $small['src']; ?>" media="<?= Breakpoint::getMedia('small'); ?>">
+                                <source data-srcset="<?= $mobile['src']; ?>" media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                <source data-srcset="<?= $tablet['src']; ?>" media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                <source data-srcset="<?= $desktop['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                <source data-srcset="<?= $wide['src']; ?>" media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                                <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
+
+                            </picture>
+
+                        <? } ?>
+
+                    </div>
 
                     <div class="details">
 
                         <h3><?= $arItem['NAME']; ?></h3>
 
                         <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-                            <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+                            <div class="announce">
+                                <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+                            </div>
                         <? } ?>
 
-                        <? if (!empty($arItem['DETAIL_PAGE_URL'])) { ?>
-                            <a href="<?= $arItem['DETAIL_PAGE_URL'] ?>">Подробнее</a>
-                        <? } ?>
+                        <i class="icon-chevron-up"></i>
 
                     </div>
 
@@ -93,7 +129,7 @@ $frame = $this -> createFrame();
 
         </div>
 
-        <? $frame -> end(); ?>
+        <? $frame->end(); ?>
 
     </article>
 

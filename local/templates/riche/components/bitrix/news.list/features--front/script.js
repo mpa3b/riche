@@ -1,7 +1,21 @@
 $(() => {
 
-    const features = $('.features--front');
+    const features = $('.features--front'),
+          expanded = 'expanded';
 
-    let item = $('.item', features);
+    let items = $('.item', features);
+
+    items.on(
+        'click',
+        (event) => {
+
+            let item = $(event.currentTarget);
+
+            items.removeClass(expanded);
+            item.addClass(expanded);
+
+
+        }
+    );
 
 });

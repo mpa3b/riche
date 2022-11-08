@@ -7,21 +7,15 @@ class Breakpoint
 
     const breakpoints
         = [
+            'preload' => 100,
             'small'   => 340,
             'mobile'  => 580,
             'tablet'  => 780,
-            'desktop' => 980,
-            'wide'    => 1360
+            'desktop' => 1080,
+            'wide'    => 1460
         ];
 
     const unit = 'px';
-
-    const preload
-        = [
-            'width'  => 100,
-            'height' => 100,
-            'ratio' => 1,
-        ];
 
     public static function getMedia(string $breakpoint): string
     {
