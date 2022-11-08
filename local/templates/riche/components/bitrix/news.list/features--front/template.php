@@ -22,13 +22,21 @@ use Riche\Thumb;
 
 $this -> setFrameMode(true);
 
+$ratios = [
+    'small'   => 2,
+    'mobile'  => 2,
+    'tablet'  => 1 / 1.5,
+    'desktop' => 1 / 1.5,
+    'wide'    => 1 / 2,
+];
+
 $frame = $this -> createFrame();
 
 ?>
 
 <?php if (!empty($arResult['ITEMS'])) { ?>
 
-    <div class="features--front wrap">
+    <article class="features--front wrap">
 
         <? $frame -> begin(); ?>
 
@@ -38,17 +46,7 @@ $frame = $this -> createFrame();
 
             <? foreach ($arResult['ITEMS'] as $arItem) { ?>
 
-                <li class="item">
-
-                    <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
-
-                        <video muted loop autoplay>
-
-                            <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-
-                        </video>
-
-                    <? } ?>
+                <section class="item">
 
                     <? if ($arItem['DETAIL_PICTURE']) { ?>
 
@@ -60,15 +58,13 @@ $frame = $this -> createFrame();
 
                                 $image = CFile ::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb ::calculateImageSize($width),
+                                    Thumb ::calculateImageSize($width, $ratios[$media]),
                                     BX_RESIZE_IMAGE_PROPORTIONAL
                                 );
 
                                 ?>
-
                                 <source data-srcset="<?= $image['src']; ?>"
                                         media="<?= Breakpoint ::getMedia($media); ?>">
-
                             <? } ?>
 
                             <img src="<?= Thumb::PLACEHOLDER; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
@@ -85,9 +81,13 @@ $frame = $this -> createFrame();
                             <p><?= $arItem['PREVIEW_TEXT']; ?></p>
                         <? } ?>
 
+                        <? if (!empty($arItem['DETAIL_PAGE_URL'])) { ?>
+                            <a href="<?= $arItem['DETAIL_PAGE_URL'] ?>">Подробнее</a>
+                        <? } ?>
+
                     </div>
 
-                </li>
+                </section>
 
             <? } ?>
 
@@ -95,6 +95,6 @@ $frame = $this -> createFrame();
 
         <? $frame -> end(); ?>
 
-    </div>
+    </article>
 
 <?php } ?>

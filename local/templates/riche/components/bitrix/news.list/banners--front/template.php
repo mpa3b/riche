@@ -26,6 +26,14 @@ $this -> addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
 $frame = $this -> createFrame();
 
+$ratios = [
+    'small'   => 2,
+    'mobile'  => 2,
+    'tablet'  => 1 / 1.5,
+    'desktop' => 1 / 1.5,
+    'wide'    => 1 / 2,
+];
+
 ?>
 
 <?php if (!empty($arResult['ITEMS'])) { ?>
@@ -42,34 +50,6 @@ $frame = $this -> createFrame();
 
                 <div class="item">
 
-                    <div class="details">
-
-                        <h3><?= $arItem['NAME']; ?></h3>
-
-                        <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-                            <p><?= $arItem['PREVIEW_TEXT']; ?></p>
-                        <? } ?>
-
-                        <? if (!empty($arItem['DISPLAY_PROPERTIES']['LINK']['VALUE'])) { ?>
-                            <button data-id="<?= $arItem['ID']; ?>"
-                                    data-href="<?= $arItem['DISPLAY_PROPERTIES']['LINK']['VALUE']; ?>">
-                                <?= $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?>
-                                <i class="icon-chevron-right"></i>
-                            </button>
-                        <? } ?>
-
-                    </div>
-
-                    <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
-
-                        <video muted loop autoplay>
-
-                            <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-
-                        </video>
-
-                    <? } ?>
-
                     <? if ($arItem['DETAIL_PICTURE']) { ?>
 
                         <picture>
@@ -80,15 +60,13 @@ $frame = $this -> createFrame();
 
                                 $image = CFile ::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb ::calculateImageSize($width),
+                                    Thumb ::calculateImageSize($width, $ratios[$media]),
                                     BX_RESIZE_IMAGE_PROPORTIONAL
                                 );
 
                                 ?>
-
                                 <source data-srcset="<?= $image['src']; ?>"
                                         media="<?= Breakpoint ::getMedia($media); ?>">
-
                             <? } ?>
 
                             <img src="<?= Thumb::PLACEHOLDER; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
@@ -96,6 +74,33 @@ $frame = $this -> createFrame();
                         </picture>
 
                     <? } ?>
+
+                    <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
+
+                        <video muted loop autoplay>
+                            <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                        </video>
+
+                    <? } ?>
+
+                    <div class="details">
+
+                        <h3><?= $arItem['NAME']; ?></h3>
+
+                        <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+                            <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+                        <? } ?>
+
+                        <? if (!empty($arItem['DISPLAY_PROPERTIES']['LINK']['VALUE'])) { ?>
+                            <button class="outlined"
+                                    data-id="<?= $arItem['ID']; ?>"
+                                    data-href="<?= $arItem['DISPLAY_PROPERTIES']['LINK']['VALUE']; ?>">
+                                <?= $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?>
+                                <i class="icon-chevron-right"></i>
+                            </button>
+                        <? } ?>
+
+                    </div>
 
                 </div>
 

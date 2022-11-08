@@ -24,6 +24,8 @@
   font-style  : italic;
 }
 
+*/
+
 @font-face {
   font-family : "Gordita";
   src         : url("Gordita-Medium.eot");
@@ -48,31 +50,6 @@
   font-style  : italic;
 }
 
-*/
-
-@font-face {
-  font-family: "Gordita";
-  src:         url("Gordita-Bold.eot");
-  src:         local("Gordita Bold"), local("Gordita-Bold"),
-               url("Gordita-Bold.eot?#iefix") format("embedded-opentype"),
-               url("Gordita-Bold.woff2") format("woff2"),
-               url("Gordita-Bold.woff") format("woff"),
-               url("Gordita-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style:  normal;
-}
-
-@font-face {
-  font-family: "Gordita";
-  src:         url("Gordita-BoldItalic.eot");
-  src:         local("Gordita Bold Italic"), local("Gordita-BoldItalic"),
-               url("Gordita-BoldItalic.eot?#iefix") format("embedded-opentype"),
-               url("Gordita-BoldItalic.woff2") format("woff2"),
-               url("Gordita-BoldItalic.woff") format("woff"),
-               url("Gordita-BoldItalic.ttf") format("truetype");
-  font-weight: bold;
-  font-style:  italic;
-}
 
 @font-face {
   font-family: "Gordita";
@@ -99,6 +76,30 @@
 }
 
 /*
+
+@font-face {
+  font-family: "Gordita";
+  src:         url("Gordita-Bold.eot");
+  src:         local("Gordita Bold"), local("Gordita-Bold"),
+               url("Gordita-Bold.eot?#iefix") format("embedded-opentype"),
+               url("Gordita-Bold.woff2") format("woff2"),
+               url("Gordita-Bold.woff") format("woff"),
+               url("Gordita-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style:  normal;
+}
+
+@font-face {
+  font-family: "Gordita";
+  src:         url("Gordita-BoldItalic.eot");
+  src:         local("Gordita Bold Italic"), local("Gordita-BoldItalic"),
+               url("Gordita-BoldItalic.eot?#iefix") format("embedded-opentype"),
+               url("Gordita-BoldItalic.woff2") format("woff2"),
+               url("Gordita-BoldItalic.woff") format("woff"),
+               url("Gordita-BoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style:  italic;
+}
 
 @font-face {
   font-family : "Gordita";

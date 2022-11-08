@@ -20,6 +20,7 @@ class Breakpoint
         = [
             'width'  => 100,
             'height' => 100,
+            'ratio' => 1,
         ];
 
     public static function getMedia(string $breakpoint): string
