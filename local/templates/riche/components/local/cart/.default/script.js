@@ -25,9 +25,9 @@ $(() => {
             template: 'todo-list',
             data:     () => {
                 return {
-                    items: [
+                    items:   [
                         {
-                            id: 1,
+                            id:       1,
                             name:     'Товар 1',
                             images:   {
                                 preload: '/images/p1-preload.png',
@@ -39,7 +39,7 @@ $(() => {
                             quantity: 2
                         },
                         {
-                            id: 2,
+                            id:       2,
                             name:     'Товар 2',
                             images:   {
                                 preload: '/images/p2-preload.png',

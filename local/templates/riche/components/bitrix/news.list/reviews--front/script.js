@@ -1,34 +1,32 @@
 $(() => {
 
-    const problems = $('.problems--front');
+    const frontReviews = $('.reviews--front');
 
-    let frontProblemsSlider = $('.slider', problems);
+    let frontReviewsSlider = $('.slider', frontReviews);
 
-    frontProblemsSlider.slick(
+    frontReviewsSlider.slick(
         {
-            slidesToShow:   2,
+            slidesToShow:   1,
             slidesToScroll: 1,
             fade:           false,
             speed:          1000,
             autoplay:       true,
             autoplaySpeed:  5000,
-            arrows:         true,
-            prevArrow:      '<button class="arrow transparent prev"><i class="icon-chevron-left"></button>',
-            nextArrow:      '<button class="arrow transparent next"><i class="icon-chevron-right"></button>',
+            arrows:         false,
             dots:           false,
-            infinite:       true,
+            infinite:       false,
             mobileFirst:    true,
             responsive:     [
                 {
                     breakpoint: 580,
                     settings:   {
-                        slidesToShow: 3
+                        slidesToShow: 2
                     }
                 },
                 {
                     breakpoint: 780,
                     settings:   {
-                        slidesToShow: 4
+                        slidesToShow: 3
                     }
                 },
             ]

@@ -16,9 +16,9 @@
 
 /** @var \CBitrixComponent $component */
 
-$this -> setFrameMode(true);
+$this->setFrameMode(true);
 
-$frame = $this -> createFrame();
+$frame = $this->createFrame();
 
 ?>
 
@@ -30,13 +30,13 @@ $frame = $this -> createFrame();
 
     <div class="search-form--header--form hidden">
 
-        <? $frame -> begin(); ?>
+        <? $frame->begin(); ?>
 
         <form action="/search/" method="post">
 
             <? if ($arParams["USE_SUGGEST"] === "Y") { ?>
 
-                <? $APPLICATION -> IncludeComponent(
+                <? $APPLICATION->IncludeComponent(
                     "bitrix:search.suggest.input",
                     "",
                     [
@@ -59,7 +59,7 @@ $frame = $this -> createFrame();
 
         </form>
 
-        <? $frame -> end(); ?>
+        <? $frame->end(); ?>
 
     </div>
 

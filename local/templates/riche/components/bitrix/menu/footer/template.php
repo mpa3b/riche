@@ -13,15 +13,15 @@
 
 /** @var CBitrixComponent $component */
 
-$this -> setFrameMode(true);
+$this->setFrameMode(true);
 
-$frame = $this -> createFrame();
+$frame = $this->createFrame();
 
 if (!empty($arResult)) { ?>
 
     <nav class="menu--footer">
 
-        <? $frame -> begin(); ?>
+        <? $frame->begin(); ?>
 
         <? //@formatter:off ?>
 
@@ -29,9 +29,13 @@ if (!empty($arResult)) { ?>
 
             <? $previousLevel = 0; ?>
 
-            <? foreach ($arResult as $arItem) { ?>
+            <? foreach ($arResult
 
-            <? if ($previousLevel and $arItem["DEPTH_LEVEL"] < $previousLevel) echo str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
+            as $arItem) { ?>
+
+            <? if ($previousLevel and $arItem["DEPTH_LEVEL"] < $previousLevel) {
+                echo str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));
+            } ?>
 
             <? if ($arItem["IS_PARENT"]): ?>
 
@@ -52,13 +56,13 @@ if (!empty($arResult)) { ?>
 
                     <? $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
 
-            <? } ?>
+                    <? } ?>
 
-        </ul>
+                </ul>
 
-        <? //@formatter:on ?>
+                <? //@formatter:on ?>
 
-                <? $frame -> end(); ?>
+                <? $frame->end(); ?>
 
     </nav>
 

@@ -21,25 +21,25 @@ use Riche\Units;
 /** @var array $templateData */
 /** @var \CBitrixComponent $component */
 
-$context = Application ::getInstance() -> getContext();
+$context = Application::getInstance()->getContext();
 
-$request = $context -> getRequest();
+$request = $context->getRequest();
 
-$cartUpdate = $request -> getPost('cartUpdate');
+$cartUpdate = $request->getPost('cartUpdate');
 
-$this -> setFrameMode(true);
+$this->setFrameMode(true);
 
-$frame = $this -> createFrame();
+$frame = $this->createFrame();
 
 if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
     <div class="basket-line--header">
 
-        <a href="<?= $arParams['PATH_TO_BASKET']; ?>?back_url=<?= $APPLICATION -> GetCurUri(); ?>"
-           title="<?= Units ::plural($arResult['NUM_PRODUCTS'], 'товар'); ?>"
+        <a href="<?= $arParams['PATH_TO_BASKET']; ?>?back_url=<?= $APPLICATION->GetCurUri(); ?>"
+           title="<?= Units::plural($arResult['NUM_PRODUCTS'], 'товар'); ?>"
            class="button transparent">
 
-            <? $frame -> begin(); ?>
+            <? $frame->begin(); ?>
 
             <i class="icon-shopping-cart"></i>
 
@@ -49,7 +49,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
                     } ?></span>
             <? } ?>
 
-            <? $frame -> end(); ?>
+            <? $frame->end(); ?>
 
         </a>
 
@@ -58,12 +58,12 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
             <div class="dropdown">
 
-                <? if ($request -> isAjaxRequest() && $cartUpdate) {
-                    $APPLICATION -> RestartBuffer();
+                <? if ($request->isAjaxRequest() && $cartUpdate) {
+                    $APPLICATION->RestartBuffer();
                 }
                 else {
-                    $dropdownFrame = $this -> createFrame();
-                    $dropdownFrame -> begin();
+                    $dropdownFrame = $this->createFrame();
+                    $dropdownFrame->begin();
                 } ?>
 
                 <? foreach ($arResult['CATEGORIES'] as $code => $arCategory) { ?>
@@ -76,27 +76,27 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
                         <? foreach ($arCategory as $arItem) {
 
-                            $picture_preload = CFile ::ResizeImageGet(
+                            $picture_preload = CFile::ResizeImageGet(
                                 $arItem['PREVIEW_PICTURE'],
-                                Thumb ::calculateImageSize(32, 1),
+                                Thumb::calculateImageSize(32, 1),
                                 BX_RESIZE_IMAGE_PROPORTIONAL,
                                 false,
                                 [],
                                 false,
-                                Thumb ::$JPEG_QUALITY_PRELOAD,
+                                Thumb::$JPEG_QUALITY_PRELOAD,
                             );
 
-                            $picture = CFile ::ResizeImageGet(
+                            $picture = CFile::ResizeImageGet(
                                 $arItem['PREVIEW_PICTURE'],
-                                Thumb ::calculateImageSize(64, 1),
+                                Thumb::calculateImageSize(64, 1),
                                 BX_RESIZE_IMAGE_PROPORTIONAL,
                                 false,
                                 [],
                                 false,
-                                Thumb ::$JPEG_QUALITY,
+                                Thumb::$JPEG_QUALITY,
                             );
 
-                            Thumb ::getWebP($picture);
+                            Thumb::getWebP($picture);
 
                             ?>
 
@@ -169,7 +169,7 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
                 <div class="bottom">
 
-                    <p>Итого <span class="nowrap"><?= Units ::plural($arResult['NUM_PRODUCTS'], 'товар'); ?></span>
+                    <p>Итого <span class="nowrap"><?= Units::plural($arResult['NUM_PRODUCTS'], 'товар'); ?></span>
                         на сумму: <span class="nowrap"><?= $arResult['TOTAL_PRICE']; ?></span></p>
 
                 </div>
@@ -181,11 +181,11 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
                     </button>
                 </form>
 
-                <? if ($request -> isAjaxRequest() && $cartUpdate) {
+                <? if ($request->isAjaxRequest() && $cartUpdate) {
                     die;
                 }
                 else {
-                    $dropdownFrame -> end();
+                    $dropdownFrame->end();
                 } ?>
 
             </div>

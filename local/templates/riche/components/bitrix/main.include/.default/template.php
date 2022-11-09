@@ -16,20 +16,20 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
-$this -> setFrameMode(true);
+$this->setFrameMode(true);
 
-$frame = $this -> createFrame();
+$frame = $this->createFrame();
 
 if ($arResult["FILE"] <> '') { ?>
 
     <div class="include-area <?= strtolower($arParams['AREA_FILE_SUFFIX']); ?>"
          data-area-name="<?= $arParams['AREA_FILE_SUFFIX']; ?>">
 
-        <? $frame -> begin(); ?>
+        <? $frame->begin(); ?>
 
         <? include($arResult["FILE"]); ?>
 
-        <? $frame -> end(); ?>
+        <? $frame->end(); ?>
 
     </div>
 

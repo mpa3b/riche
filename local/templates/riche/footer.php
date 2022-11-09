@@ -9,11 +9,11 @@ use Riche\Template;
 
 global $USER, $APPLICATION;
 
-$currentDirectoryPath = Application ::getInstance() -> getContext() -> getRequest() -> getRequestedPageDirectory();
+$currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
 ?>
 
-    </div>
+</div>
 
 </main>
 
@@ -41,7 +41,7 @@ $currentDirectoryPath = Application ::getInstance() -> getContext() -> getReques
 
                 <? } ?>
 
-                <? $APPLICATION -> IncludeComponent(
+                <? $APPLICATION->IncludeComponent(
                     "bitrix:main.include",
                     ".default",
                     [
@@ -63,7 +63,7 @@ $currentDirectoryPath = Application ::getInstance() -> getContext() -> getReques
 
             <div id="page--footer--menu" class="three-fifths">
 
-                <? $APPLICATION -> IncludeComponent(
+                <? $APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "footer",
                     [
@@ -84,7 +84,7 @@ $currentDirectoryPath = Application ::getInstance() -> getContext() -> getReques
                     ]
                 ); ?>
 
-                <? $APPLICATION -> IncludeComponent(
+                <? $APPLICATION->IncludeComponent(
                     "bitrix:main.include",
                     ".default",
                     [
@@ -127,7 +127,7 @@ $currentDirectoryPath = Application ::getInstance() -> getContext() -> getReques
 
 </footer>
 
-<?php $APPLICATION -> ShowBodyScripts(); ?>
+<?php $APPLICATION->ShowBodyScripts(); ?>
 
 </body>
 </html>

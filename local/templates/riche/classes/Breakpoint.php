@@ -11,13 +11,13 @@ class Breakpoint
             'small'   => 340,
             'mobile'  => 580,
             'tablet'  => 780,
-            'desktop' => 1080,
-            'wide'    => 1420
+            'desktop' => 980,
+            'wide'    => 1280
         ];
 
     const unit = 'px';
 
-    public static function getMedia(string $breakpoint): string
+    public static function getMedia(string $breakpoint) : string
     {
 
         switch ($breakpoint) {
@@ -55,6 +55,18 @@ class Breakpoint
         }
 
         return $media;
+
+    }
+
+    public static function setFrontendBreakpointsObject()
+    {
+
+        foreach (self::breakpoints as $media => $width) {
+            $breakpoints[$media] = $width;
+        }
+
+        return json_encode($breakpoints);
+
 
     }
 

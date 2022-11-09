@@ -15,7 +15,7 @@
   --offset--8x:             calc(var(--offset) * 8);
 
   --offset--negative:       calc(var(--offset) * -1);
-  --offset--negative--2x:   calc(var(--offset) * -2);
+  --offset--2x--negative:   calc(var(--offset) * -2);
   --offset--half--negative: calc(var(--offset) * -0.5);
 
 }
@@ -36,7 +36,8 @@
   }
 
   @include Wide {
-    width: 72%;
+    width:     72%;
+    max-width: 1380px;
   }
 
   padding:    0;

@@ -1,15 +1,12 @@
 .articles--front {
+  padding-top:    var(--offset--2x);
+  padding-bottom: var(--offset--2x);
 
   h2 {
     font-size: 2.8rem;
   }
 
-  p {
-    font-size: 1.2rem;
-  }
-
   .items {
-    padding-top: var(--offset--2x);
 
     .item {
       display:        flex;

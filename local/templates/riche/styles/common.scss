@@ -5,7 +5,7 @@
 
   // region generated colors
 
-  $colorShift:              15;
+  $colorShift:              10;
 
   @each $name, $value in $colors {
 
@@ -64,6 +64,9 @@
 
 html {
   font-size:        10pt;
+  @include Desktop {
+    font-size: 11pt;
+  }
   background-color: var(--color--white--dark);
 }
 
@@ -85,10 +88,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size:   1.4rem;
   line-height: 1.2;
 
-  margin:      0.6em 0;
+  margin:      0.4em 0;
 
   &:first-of-type {
-    margin-top: 0;
+    margin-top: 0.2em;
   }
 }
 
@@ -236,7 +239,7 @@ button {
     background: transparent none;
     border:     none;
     box-shadow: none;
-    padding:    var(--offset--2x) var(--offset);
+    padding:    var(--offset);
   }
 
   &[disabled] {

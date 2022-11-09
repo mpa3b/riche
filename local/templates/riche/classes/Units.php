@@ -38,7 +38,7 @@ class Units
             'вариант'     => ['вариант', 'варианта', "вариантов"]
         ];
 
-    public static function plural(string $value, string $unit): string
+    public static function plural(string $value, string $unit) : string
     {
 
         $unit = self::UNITS[$unit];

@@ -4,9 +4,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
-use Riche\Breakpoint;
-use Riche\Thumb;
-
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */

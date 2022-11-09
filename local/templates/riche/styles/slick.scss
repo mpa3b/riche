@@ -59,7 +59,7 @@
       opacity:          var(--opacity);
       margin:           0.25rem;
 
-      transition: all var(--transition--common);
+      transition:       all var(--transition--common);
 
       &.slick-active {
         background-color: var(--color--green);

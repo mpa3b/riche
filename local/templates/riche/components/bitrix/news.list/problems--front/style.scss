@@ -11,7 +11,7 @@
   }
 
   .items {
-    margin-top: var(--offset--2x);
+    padding-top: var(--offset--2x);
 
     .item {
       display:        flex;
@@ -40,7 +40,8 @@
   .slick {
 
     &-slider {
-
+      position: relative;
+      margin:   0 var(--offset--negative);
     }
 
     &-list {
@@ -53,10 +54,26 @@
     &-slide {
 
       > div {
-        box-sizing:    border-box;
-        padding-right: var(--offset--2x);
+        box-sizing: border-box;
+        padding:    0 var(--offset);
       }
 
+    }
+
+    &-arrow {
+      height:     var(--offset--4x);
+      margin-top: var(--offset--2x--negative);
+      position:   absolute;
+      left:       var(--offset--negative);
+      top:        50%;
+      z-index:    100;
+
+      color:      var(--color--white);
+
+      &.next {
+        left:  unset;
+        right: var(--offset--negative);
+      }
     }
 
   }

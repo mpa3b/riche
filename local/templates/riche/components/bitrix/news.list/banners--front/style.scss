@@ -2,6 +2,8 @@
 @import "../../../../mixins";
 
 .banners--front {
+  padding-top:    var(--offset--2x);
+  padding-bottom: var(--offset--2x);
 
   .items {
     padding:       0;
@@ -45,7 +47,7 @@
         text-align:      center;
 
         button {
-          margin-top:       1rem;
+          margin-top: 1rem;
         }
 
       }

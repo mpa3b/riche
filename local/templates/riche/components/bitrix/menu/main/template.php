@@ -16,17 +16,19 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
-$this -> setFrameMode(true);
+$this->setFrameMode(true);
 
 ?>
 
 <? if (!empty($arResult)) { ?>
 
-    <?php $frame = $this -> createFrame(); ?>
+    <?php $frame = $this->createFrame(); ?>
 
     <div class="menu--main row">
 
-        <?php $frame -> begin(); ?>
+        <?php $frame->begin(); ?>
+
+        <nav>
 
             <ul class="menu root">
                 <?php foreach ($arResult as $arItem): ?>
@@ -36,7 +38,9 @@ $this -> setFrameMode(true);
                 <?php endforeach; ?>
             </ul>
 
-        <?php $frame -> end(); ?>
+        </nav>
+
+        <?php $frame->end(); ?>
 
     </div>
 

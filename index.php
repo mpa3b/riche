@@ -234,7 +234,7 @@ $APPLICATION->SetTitle('Главная');
 
         "FILTER_NAME"   => "",
         "FIELD_CODE"    => ["ID", "DETAIL_TEXT"],
-        "PROPERTY_CODE" => ["RATING"],
+        "PROPERTY_CODE" => ["RATING", "AUTHOR_NAME", "AUTHOR_PICTURE", "SKU"],
 
         "ACTIVE_DATE_FORMAT" => "j F",
 

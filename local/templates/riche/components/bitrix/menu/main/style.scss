@@ -2,6 +2,7 @@
 @import "../../../../mixins";
 
 .menu--main {
+  margin: var(--offset) 0;
 
   ul.menu {
     padding:        0;
@@ -16,7 +17,7 @@
 
       a {
         display:     block;
-        padding:     var(--offset--2x) var(--offset);
+        padding:     var(--offset);
         white-space: nowrap;
       }
 

@@ -55,10 +55,8 @@ $(() => {
                 afterChange:  (event, slick, currentSlide, nextSlide) => {
 
 
-
                 },
                 beforeChange: (event, slick, currentSlide, nextSlide) => {
-
 
 
                 }

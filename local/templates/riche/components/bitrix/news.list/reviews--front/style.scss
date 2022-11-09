@@ -1,13 +1,47 @@
 .reviews--front {
+  padding-top:    var(--offset--2x);
+  padding-bottom: var(--offset--2x);
+
 
   .items {
 
     .item {
+      background-color: var(--color--white);
+      border-radius:    var(--border-radius);
+      padding:          var(--offset--4x);
+      box-sizing:       border-box;
+      height:           100%;
 
       .date {
         color:         var(--color--gray--dark);
         font-size:     0.8rem;
         margin-bottom: var(--offset);
+        display:       block;
+        margin-top:    var(--offset--negative);
+      }
+
+    }
+
+  }
+
+  .slick {
+
+    &-slider {
+      margin: 0 var(--offset--negative);
+    }
+
+    &-list {
+      overflow: visible;
+    }
+
+    &-track {
+    }
+
+    &-slide {
+
+      > div {
+        box-sizing: border-box;
+        padding:    0 var(--offset);
       }
 
     }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "582d5271c8f08083f3228632b84508ab",
+    "content-hash": "fab9d302c9673a28a543b9f6f1ac5d20",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -2018,7 +2018,8 @@
     "platform": {
         "ext-curl": "*",
         "ext-fileinfo": "*",
-        "ext-gd": "*"
+        "ext-gd": "*",
+        "ext-json": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.3.0"

@@ -34,7 +34,7 @@ $frame = $this->createFrame();
 
 <? if (!empty($arResult['ITEMS'])) { ?>
 
-    <div class="problems--front">
+    <section class="problems--front">
 
         <? $frame->begin(); ?>
 
@@ -107,7 +107,8 @@ $frame = $this->createFrame();
                                     <source data-srcset="<?= $wide['src']; ?>"
                                             media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                                    <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
+                                    <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>"
+                                         loading="lazy">
 
                                 </picture>
 
@@ -127,6 +128,6 @@ $frame = $this->createFrame();
 
         <? $frame->end(); ?>
 
-    </div>
+    </section>
 
 <? } ?>

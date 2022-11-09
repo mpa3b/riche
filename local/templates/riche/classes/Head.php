@@ -15,12 +15,12 @@ class Head
      *
      * @param $url
      */
-    public static function addHeadPreloadAsset(string $url): void
+    public static function addHeadPreloadAsset(string $url) : void
     {
 
-        $type = self ::getAssetType($url);
+        $type = self::getAssetType($url);
 
-        Asset ::getInstance() -> addString('<link rel="preload" href="' . $url . '" as="' . $type . '" >');
+        Asset::getInstance()->addString('<link rel="preload" href="' . $url . '" as="' . $type . '" >');
 
     }
 
@@ -70,12 +70,12 @@ class Head
      *
      * @param $url
      */
-    public static function addHeadPrefetchAsset(string $url): void
+    public static function addHeadPrefetchAsset(string $url) : void
     {
 
-        $type = self ::getAssetType($url);
+        $type = self::getAssetType($url);
 
-        Asset ::getInstance() -> addString('<link rel="prefetch" href="' . $url . '" as="' . $type . '">');
+        Asset::getInstance()->addString('<link rel="prefetch" href="' . $url . '" as="' . $type . '">');
 
 
     }
@@ -87,12 +87,12 @@ class Head
      *
      * @return void
      */
-    public static function preconnectDomain($url): void
+    public static function preconnectDomain($url) : void
     {
 
         $domain = parse_url($url, PHP_URL_SCHEME) . '//' . parse_url($url, PHP_URL_HOST);
 
-        Asset ::getInstance() -> addString('<link rel="preconnect" href="' . $domain . '">');
+        Asset::getInstance()->addString('<link rel="preconnect" href="' . $domain . '">');
 
     }
 
@@ -103,10 +103,10 @@ class Head
      *
      * @return void
      */
-    public static function addPrerenderLink($url): void
+    public static function addPrerenderLink($url) : void
     {
 
-        Asset ::getInstance() -> addString('<link rel="prerender" href="' . $url . '">');
+        Asset::getInstance()->addString('<link rel="prerender" href="' . $url . '">');
 
     }
 

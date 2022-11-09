@@ -1,11 +1,11 @@
 <?php
 
+use Riche\Breakpoint;
+use Riche\Thumb;
+
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
-
-use Riche\Breakpoint;
-use Riche\Thumb;
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -48,12 +48,50 @@ $frame = $this->createFrame();
 
                         <span class="date"><?= $arItem['DISPLAY_ACTIVE_FROM']; ?></span>
 
+                        <div class="author">
+
+                            <?
+
+
+                            $mobile = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(100, 1),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
+
+
+                            $desktop = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(120, 1),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
+
+                            ?>
+
+                            <picture class="picture">
+
+                                <source data-srcset="<?= $desktop['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
+
+                                <img data-src="<?= $mobile['src']; ?>"
+                                     alt="<?= $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>"
+                                     loading="lazy">
+
+                            </picture>
+
+                            <span class="name">
+                                <?= $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>
+                            </span>
+
+                        </div>
+
                         <div class="review">
                             <?= trim($arItem['DETAIL_TEXT']); ?>
                         </div>
 
                         <? if ($arItem['DISPLAY_PROPERTIES']['RATING']) { ?>
-                            <div class="rating field" data-rating="<?= $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']; ?>">
+                            <div class="rating field"
+                                 data-rating="<?= $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']; ?>">
                                 <i class="star"></i>
                             </div>
                         <? } ?>
@@ -71,3 +109,5 @@ $frame = $this->createFrame();
     </section>
 
 <? } ?>
+
+<? d($arResult); ?>

@@ -27,27 +27,27 @@
 */
 
 @font-face {
-  font-family : "Gordita";
-  src         : url("Gordita-Medium.eot");
-  src         : local("Gordita Medium"), local("Gordita-Medium"),
-  url("Gordita-Medium.eot?#iefix") format("embedded-opentype"),
-  url("Gordita-Medium.woff2") format("woff2"),
-  url("Gordita-Medium.woff") format("woff"),
-  url("Gordita-Medium.ttf") format("truetype");
-  font-weight : 500;
-  font-style  : normal;
+  font-family: "Gordita";
+  src:         url("Gordita-Medium.eot");
+  src:         local("Gordita Medium"), local("Gordita-Medium"),
+               url("Gordita-Medium.eot?#iefix") format("embedded-opentype"),
+               url("Gordita-Medium.woff2") format("woff2"),
+               url("Gordita-Medium.woff") format("woff"),
+               url("Gordita-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style:  normal;
 }
 
 @font-face {
-  font-family : "Gordita";
-  src         : url("Gordita-MediumItalic.eot");
-  src         : local("Gordita Medium Italic"), local("Gordita-MediumItalic"),
-  url("Gordita-MediumItalic.eot?#iefix") format("embedded-opentype"),
-  url("Gordita-MediumItalic.woff2") format("woff2"),
-  url("Gordita-MediumItalic.woff") format("woff"),
-  url("Gordita-MediumItalic.ttf") format("truetype");
-  font-weight : 500;
-  font-style  : italic;
+  font-family: "Gordita";
+  src:         url("Gordita-MediumItalic.eot");
+  src:         local("Gordita Medium Italic"), local("Gordita-MediumItalic"),
+               url("Gordita-MediumItalic.eot?#iefix") format("embedded-opentype"),
+               url("Gordita-MediumItalic.woff2") format("woff2"),
+               url("Gordita-MediumItalic.woff") format("woff"),
+               url("Gordita-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style:  italic;
 }
 
 
