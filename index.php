@@ -93,7 +93,7 @@ $APPLICATION->SetTitle('Главная');
 
 <?php $APPLICATION->IncludeComponent(
     'bitrix:news.list',
-    'features--front',
+    'slider--front',
     [
         "IBLOCK_TYPE" => IblockTools::find('COMPANY', 'SLIDES')->type(),
         "IBLOCK_ID"   => IblockTools::find('COMPANY', 'SLIDES')->id(),
@@ -105,8 +105,8 @@ $APPLICATION->SetTitle('Главная');
         "SORT_ORDER2" => "ASC",
 
         "FILTER_NAME"   => "",
-        "FIELD_CODE"    => ["ID", "DETAIL_PICTURE", "PREVIEW_TEXT", "NAME", "DETAIL_PAGE_URL", "VIDEO"],
-        "PROPERTY_CODE" => ["VIDEO"],
+        "FIELD_CODE"    => ["ID", "DETAIL_PICTURE", "PREVIEW_TEXT", "DETAIL_TEXT", "NAME", "DETAIL_PAGE_URL"],
+        "PROPERTY_CODE" => ["VIDEO", "BUTTON_TEXT", "BUTTON_LINK"],
         "CHECK_DATES"   => "Y",
 
         "SET_TITLE"            => "N",

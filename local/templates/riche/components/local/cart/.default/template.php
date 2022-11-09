@@ -17,11 +17,11 @@ if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) {
 /** @var array $templateData */
 /** @var \CBitrixComponent $component */
 
-$this -> setFrameMode(true);
+$this->setFrameMode(true);
 
-$this -> addExternalJs(LOCAL_ASSETS . '/jsrender/jsrender.js');
+$this->addExternalJs(LOCAL_ASSETS . '/jsrender/jsrender.js');
 
-$frame = $this -> createFrame();
+$frame = $this->createFrame();
 
 ?>
 
@@ -38,15 +38,15 @@ $frame = $this -> createFrame();
 
         <div class="dropdown cart">
 
-            <?php $frame -> begin(); ?>
+            <?php $frame->begin(); ?>
 
             <h2 class="title">Твой заказ</h2>
 
-            <template name="cart">
+            <template id="local-cart--default">
 
-                <ul v-for="item in items" class="items">
+                <ul class="items">
 
-                    <li class="item">
+                    <li v-for="item in items" class="item">
 
                         <picture>
                             <source v-for="(media, source) in item.images" src="{{ src }}" media="{{ media }}">
@@ -97,7 +97,7 @@ $frame = $this -> createFrame();
 
             </div>
 
-            <?php $frame -> end(); ?>
+            <?php $frame->end(); ?>
 
         </div>
 

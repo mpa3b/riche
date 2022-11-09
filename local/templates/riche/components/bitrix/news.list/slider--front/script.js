@@ -1,11 +1,11 @@
 $(() => {
 
-    const bannersFront = $('.banners--front');
+    const sliderFront = $('.slider--front');
 
-    const bannersFrontSlider = $('.slider', bannersFront);
-    const bannersFrontSlideVideo = $('video', bannersFrontSlider);
+    const sliderFrontSlider = $('.slider', sliderFront);
+    const sliderFrontSlideVideo = $('video', sliderFrontSlider);
 
-    bannersFrontSlideVideo.on(
+    sliderFrontSlideVideo.on(
         'loaded',
         (event) => {
 
@@ -17,9 +17,10 @@ $(() => {
         }
     );
 
-    bannersFrontSlider
+    sliderFrontSlider
         .slick(
             {
+                slidesToShow:   1,
                 slidesToScroll: 1,
                 fade:           true,
                 speed:          1000,
@@ -28,7 +29,25 @@ $(() => {
                 arrows:         false,
                 dots:           true,
                 infinite:       true,
-                mobileFirst:    true
+                mobileFirst:    true,
+                responsive:     [
+                    {
+                        breakpoint: 580,
+                        settings:   {
+                            fade:         false,
+                            dots:         false,
+                            slidesToShow: 2,
+                        }
+                    },
+                    {
+                        breakpoint: 780,
+                        settings:   {
+                            slidesToShow: 3,
+                            fade:         false,
+                            dots:         false,
+                        }
+                    },
+                ]
             }
         )
         .on(
@@ -54,7 +73,7 @@ $(() => {
             }
         );
 
-    $('button', bannersFrontSlider).on(
+    $('button', sliderFrontSlider).on(
         'click',
         (event) => {
 
