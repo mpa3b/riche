@@ -50,6 +50,7 @@
     "bower-asset/js-cookie": "^3.0",
     "bower-asset/normalize-css": "^8.0",
     "bower-asset/slick-carousel": "^1.8",
+    "bower-asset/tiny-slider": "^2.9",
     "bower-asset/vanilla-lazyload": "^17.4",
     "composer/installers": "^1.7",
     "hafsoft/php-minifier": "^0.9.1",

@@ -1,0 +1,66 @@
+.problems--front {
+
+  .intro {
+    padding-bottom: var(--offset--2x);
+
+    h2 {
+      font-size: 2.8rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+
+  }
+
+  .items {
+
+    .item {
+      display:        flex;
+      flex-direction: column;
+      box-sizing:     border-box;
+
+      picture {
+        border-radius: var(--border-radius);
+        overflow:      hidden;
+        margin-bottom: var(--offset);
+
+        img {
+          display: block;
+        }
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
+    }
+
+  }
+
+  .slick {
+
+    &-slider {
+
+    }
+
+    &-list {
+      overflow: visible;
+      margin-right: -33%;
+    }
+
+    &-track {
+    }
+
+    &-slide {
+
+      > div {
+        box-sizing:    border-box;
+        padding-right: var(--offset--2x);
+      }
+
+    }
+
+  }
+
+}

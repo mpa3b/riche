@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5c937f355171d9cfe7bbb2e47bb65a5c",
+    "content-hash": "582d5271c8f08083f3228632b84508ab",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -310,6 +310,24 @@
             },
             "require": {
                 "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "bower-asset/tiny-slider",
+            "version": "v2.9.4",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ganlanyuan/tiny-slider.git",
+                "reference": "0fcb2e643489802da28eb1a84b15fec6c7ed54b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ganlanyuan/tiny-slider/zipball/0fcb2e643489802da28eb1a84b15fec6c7ed54b6",
+                "reference": "0fcb2e643489802da28eb1a84b15fec6c7ed54b6"
             },
             "type": "bower-asset",
             "license": [
