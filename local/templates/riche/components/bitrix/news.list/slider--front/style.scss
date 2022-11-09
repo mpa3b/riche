@@ -124,12 +124,8 @@
 
     }
 
-    @include Tablet {
-
-      &-list {
-        margin: 0 var(--offset--negative);
-      }
-
+    &-list {
+      overflow: visible;
     }
 
     &-slide {

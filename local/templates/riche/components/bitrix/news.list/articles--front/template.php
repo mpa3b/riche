@@ -34,17 +34,11 @@ $frame = $this->createFrame();
 
 <? if (!empty($arResult['ITEMS'])) { ?>
 
-    <nav class="problems--front wrap">
+    <nav class="articles--front wrap">
 
         <? $frame->begin(); ?>
 
-        <div class="intro">
-
-            <h2>Что тебя волнует?</h2>
-
-            <p>У нас есть опыт и мы можем помочь.</p>
-
-        </div>
+        <h2>Полезные статьи</h2>
 
         <div class="items slider">
 
