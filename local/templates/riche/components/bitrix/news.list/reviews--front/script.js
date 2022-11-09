@@ -18,13 +18,13 @@ $(() => {
             mobileFirst:    true,
             responsive:     [
                 {
-                    breakpoint: 580,
+                    breakpoint: breakpoint.mobile,
                     settings:   {
                         slidesToShow: 2
                     }
                 },
                 {
-                    breakpoint: 780,
+                    breakpoint: breakpoint.tablet,
                     settings:   {
                         slidesToShow: 3
                     }

@@ -113,8 +113,8 @@ $request = Application::getInstance()->getContext()->getRequest();
 
     ?>
 
-    <script>window.breakpoints = <? Breakpoint::setFrontendBreakpointsObject(); ?></script>
-    <script>const sessid = '<?php echo bitrix_sessid(); ?>';</script>
+    <script>window.breakpoint = <?= Breakpoint::setFrontendBreakpointsObject(); ?></script>
+    <script>const sessid = '<?= bitrix_sessid(); ?>';</script>
 
 </head>
 

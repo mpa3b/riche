@@ -44,55 +44,52 @@ $frame = $this->createFrame();
 
                 <? foreach ($arResult['ITEMS'] as $arItem) { ?>
 
+                    <?
+
+                    $image = CFile::ResizeImageGet(
+                        $arItem['DISPLAY_PROPERTIES']['AUTHOR_PICTURE']['VALUE'],
+                        Thumb::calculateImageSize(60, 1),
+                        BX_RESIZE_IMAGE_EXACT
+                    );
+
+                    ?>
+
                     <div class="item">
 
-                        <span class="date"><?= $arItem['DISPLAY_ACTIVE_FROM']; ?></span>
+                        <div class="header field">
 
-                        <div class="author">
+                            <div class="author">
 
-                            <?
+                                <picture class="picture">
 
+                                    <img data-src="<?= $image['src']; ?>"
+                                         alt="<?= $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>"
+                                         loading="lazy">
 
-                            $mobile = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(100, 1),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                </picture>
 
+                                <span class="name">
+                                    <?= $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>
+                                </span>
 
-                            $desktop = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(120, 1),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                            </div>
 
-                            ?>
-
-                            <picture class="picture">
-
-                                <source data-srcset="<?= $desktop['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
-
-                                <img data-src="<?= $mobile['src']; ?>"
-                                     alt="<?= $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>"
-                                     loading="lazy">
-
-                            </picture>
-
-                            <span class="name">
-                                <?= $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>
-                            </span>
+                            <span class="date"><?= $arItem['DISPLAY_ACTIVE_FROM']; ?></span>
 
                         </div>
 
-                        <div class="review">
+                        <div class="review field">
                             <?= trim($arItem['DETAIL_TEXT']); ?>
                         </div>
 
                         <? if ($arItem['DISPLAY_PROPERTIES']['RATING']) { ?>
                             <div class="rating field"
                                  data-rating="<?= $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']; ?>">
-                                <i class="star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
                             </div>
                         <? } ?>
 
