@@ -3,33 +3,27 @@
 
 :root {
 
-  --color--white:           #ffffff;
-  --color--white--dark:     #f0f0f0;
-
-  --color--black:           #111111;
-
   // region generated colors
 
-  $colorShift:              30;
+  $colorShift:              5;
 
   @each $name, $value in $colors {
+
+    --color--#{$name}--light:  #{lighten($value, $colorShift)};
     --color--#{$name}        : #{$value};
-  }
+    --color--#{$name}--dark:   #{darken($value, $colorShift)};
 
-  // region generated colors shifted
-
-  @each $name, $value in $colors {
-    --color--#{$name}--light: #{lighten($value, $colorShift)};
-    --color--#{$name}--dark:  #{darken($value, $colorShift)};
   }
 
   // endregion
 
   @each $name, $value in $colors {
-    --color--#{$name}--transparent: #{rgba($value, $opacity)};
+    --color--#{$name}--transparent: #{rgba($value, $opacity / 2)};
   }
 
   // endregion
+
+  --color--black:           #111111;
 
   // symbolic colors
 
@@ -235,7 +229,7 @@ button {
   }
 
   &.transparent {
-    background:    transparent;
+    background:    transparent none;
     border:        none;
     box-shadow:    none;
     padding-left:  0.5em;
@@ -252,9 +246,15 @@ button {
 .button,
 button {
 
-  &.transparent {
-    padding-top:    0.5em;
-    padding-bottom: 0.5em;
+  &.outlined {
+    color:      var(--color--white);
+    border:     1px solid var(--color--white);
+    background: transparent none;
+
+    &:hover {
+      background-color: var(--color--white--transparent);
+    }
+
   }
 
 }

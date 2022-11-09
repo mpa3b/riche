@@ -50,6 +50,14 @@ $ratios = [
 
                 <div class="item">
 
+                    <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
+
+                        <video muted loop autoplay>
+                            <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                        </video>
+
+                    <? } ?>
+
                     <? if ($arItem['DETAIL_PICTURE']) { ?>
 
                         <?
@@ -107,14 +115,6 @@ $ratios = [
 
                     <? } ?>
 
-                    <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
-
-                        <video muted loop autoplay>
-                            <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-                        </video>
-
-                    <? } ?>
-
                     <div class="details">
 
                         <h3><?= $arItem['NAME']; ?></h3>
@@ -124,8 +124,7 @@ $ratios = [
                         <? } ?>
 
                         <? if (!empty($arItem['DISPLAY_PROPERTIES']['LINK']['VALUE'])) { ?>
-                            <button class="outlined"
-                                    data-id="<?= $arItem['ID']; ?>"
+                            <button data-id="<?= $arItem['ID']; ?>"
                                     data-href="<?= $arItem['DISPLAY_PROPERTIES']['LINK']['VALUE']; ?>">
                                 <?= $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?>
                                 <i class="icon-chevron-right"></i>

@@ -23,19 +23,19 @@
 
         color:           var(--color--white);
 
-        padding:         4rem 2rem;
+        padding:         6rem 2rem;
         height:          100%;
 
         @include Tablet {
           width:   80%;
-          padding: 6rem;
+          padding: 8rem 4rem;
           margin:  auto;
         }
         @include Desktop {
-          padding: 8rem;
+          padding: 10rem;
         }
         @include Wide {
-          padding: 10rem;
+          padding: 12rem;
         }
 
         box-sizing:      border-box;

@@ -35,20 +35,12 @@ $(() => {
             {
                 afterChange:  (event, slick, currentSlide, nextSlide) => {
 
-                    let video   = $('video', event.currentTarget),
-                        picture = $('picture', event.currentTarget);
 
-                    if (video.length) {
-                        video.trigger('play').prop('muted', true);
-                        picture.fadeOut();
-                    }
 
                 },
                 beforeChange: (event, slick, currentSlide, nextSlide) => {
 
-                    let video = $('video', event.currentTarget);
 
-                    video.trigger('pause');
 
                 }
             }

@@ -20,6 +20,7 @@
   --offset--8x:             calc(var(--offset) * 8);
 
   --offset--negative:       calc(var(--offset) * -1);
+  --offset--negative--2x:   calc(var(--offset) * -2);
   --offset--half--negative: calc(var(--offset) * -0.5);
 
 }

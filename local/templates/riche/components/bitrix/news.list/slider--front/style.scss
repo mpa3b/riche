@@ -20,43 +20,6 @@
       @include Tablet {
         border-radius: var(--border-radius);
         overflow:      hidden;
-
-        box-shadow:    var(--box-shadow--blurry);
-      }
-
-      .details {
-        display:         flex;
-        flex-direction:  column;
-        position:        relative;
-        z-index:         100;
-
-        color:           var(--color--white);
-
-        padding:         4rem 2rem;
-        height:          100%;
-
-        @include Tablet {
-          width:   80%;
-          padding: 6rem;
-          margin:  auto;
-        }
-        @include Desktop {
-          padding: 8rem;
-        }
-        @include Wide {
-          padding: 10rem;
-        }
-
-        box-sizing:      border-box;
-
-        justify-content: center;
-        align-items:     center;
-        text-align:      center;
-
-        button {
-          margin-top: 1rem;
-        }
-
       }
 
       &:before {
@@ -108,6 +71,39 @@
         }
       }
 
+      .details {
+        display:         flex;
+        flex-direction:  column;
+        position:        relative;
+        z-index:         100;
+
+        color:           var(--color--white);
+
+        padding:         var(--offset--2x);
+        padding-bottom: var(--offset--4x);
+        padding-top:     50%;
+        height:          100%;
+
+        @include Tablet {
+          margin: auto;
+        }
+
+        box-sizing:      border-box;
+
+        justify-content: flex-end;
+        align-items:     center;
+        text-align:      center;
+
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        button {
+          margin-top: 1rem;
+        }
+
+      }
+
     }
 
     &:not(.slick-initialized) {
@@ -125,7 +121,12 @@
     &-slide {
 
       > div {
-        width: 100%;
+        width:      100%;
+        box-sizing: border-box;
+
+        @include Tablet {
+          margin: 0 var(--offset);
+        }
 
         .item {
           margin-bottom: -0.5rem;
