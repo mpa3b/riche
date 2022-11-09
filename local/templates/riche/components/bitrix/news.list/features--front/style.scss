@@ -2,10 +2,12 @@
 @import "../../../../mixins";
 
 .features--front {
+  padding-top:    var(--offset--2x);
+  padding-bottom: var(--offset--2x);
 
   .items {
-    padding:        0;
-    margin:         0;
+    padding: 0;
+    margin:  0;
 
     @include Mobile {
       overflow:      hidden;

@@ -2,6 +2,8 @@
 @import "../../../../mixins";
 
 .slider--front {
+  padding-top:    var(--offset--2x);
+  padding-bottom: var(--offset--2x);
 
   .items {
     padding: 0;

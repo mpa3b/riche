@@ -124,12 +124,14 @@ hr {
 }
 
 picture {
-  display: block;
+  display:    block;
+  box-sizing: border-box;
 
   img {
-    display:   block;
-    max-width: 100%;
+    display: block;
+    width:   100%;
   }
+
 }
 
 img {

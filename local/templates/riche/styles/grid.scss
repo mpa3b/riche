@@ -3,20 +3,15 @@
 
 :root {
 
-  --offset:                 0.45rem;
-  @include Mobile {
-    --offset: 0.5rem;
-  }
+  --offset:                 0.5rem;
   @include Tablet {
     --offset: 0.55rem;
-  }
-  @include Desktop {
-    --offset: 0.6rem;
   }
 
   --offset--half:           calc(var(--offset) / 2);
   --offset--2x:             calc(var(--offset) * 2);
   --offset--4x:             calc(var(--offset) * 4);
+  --offset--6x:             calc(var(--offset) * 6);
   --offset--8x:             calc(var(--offset) * 8);
 
   --offset--negative:       calc(var(--offset) * -1);

@@ -1,6 +1,4 @@
 .problems--front {
-  padding-top:    var(--offset--2x);
-  padding-bottom: var(--offset--2x);
 
   .intro {
     padding-bottom: var(--offset--2x);
@@ -29,7 +27,6 @@
 
         img {
           display: block;
-          width:   100%;
         }
       }
 
@@ -49,6 +46,7 @@
 
     &-list {
       overflow: visible;
+      margin-right: -33%;
     }
 
     &-track {
