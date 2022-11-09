@@ -3,14 +3,14 @@
 
 :root {
 
-  --color--white:       #ffffff;
-  --color--white--dark: #f0f0f0;
+  --color--white:           #ffffff;
+  --color--white--dark:     #f0f0f0;
 
-  --color--black:       #111111;
+  --color--black:           #111111;
 
   // region generated colors
 
-  $colorShift:          20;
+  $colorShift:              30;
 
   @each $name, $value in $colors {
     --color--#{$name}        : #{$value};
@@ -33,33 +33,39 @@
 
   // symbolic colors
 
-  --color--base:        var(--color--black);
-  --color--background:  var(--color--white--dark);
+  --color--base:            var(--color--black);
+  --color--background:      var(--color--white--dark);
 
   // endregion
 
-  --font--base:         "Gordita", sans-serif;
+  --font--base:             "Gordita", sans-serif;
 
-  --padding:            1rem;
-  --padding--2x:        calc(var(--padding) * 2);
+  --padding:                1rem;
+  --padding--2x:            calc(var(--padding) * 2);
 
-  --border-radius:      1rem;
-  --border-radius--2x:  calc(var(--border-radius) * 2);
+  --border-radius:          1rem;
+  --border-radius--2x:      calc(var(--border-radius) * 2);
 
-  --transition--ease:   var(--transition--time) ease;
+  --transition--ease:       var(--transition--time) ease;
 
-  --transition--time:   0.5s;
-  --transition--effect: ease-in-out;
-  --transition--common: var(--transition--time) var(--transition--effect);
-  --transition:         all var(--transition--time) var(--transition--effect);
+  --transition--time:       0.5s;
+  --transition--effect:     ease-in-out;
+  --transition--common:     var(--transition--time) var(--transition--effect);
+  --transition:             all var(--transition--time) var(--transition--effect);
 
-  --opacity:            #{$opacity};
+  --opacity:                #{$opacity};
 
-  --box-shadow:         0px 1px 2px var(--color--gray--dark);
-  --box-shadow--blurry: 0px 8px 24px var(--color--gray--dark);
+  --box-shadow:             0px 1px 2px var(--color--gray--dark);
+  --box-shadow--blurry:     0px 6px 12px var(--color--gray--dark);
+  --box-shadow--blurry--2x: 0px 8px 24px var(--color--gray--dark);
 
-  --blur:               blur(3px);
-  --blur--2x:           blur(6px);
+  @include Tablet {
+    --box-shadow--blurry:     0px 6px 14px var(--color--gray--dark);
+    --box-shadow--blurry--2x: 0px 8px 28px var(--color--gray--dark);
+  }
+
+  --blur:                   blur(3px);
+  --blur--2x:               blur(6px);
 }
 
 html {

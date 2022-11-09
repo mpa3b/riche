@@ -14,7 +14,13 @@
     }
 
     .item {
-      overflow: hidden;
+      overflow:         hidden;
+
+      background-color: var(--color--white--dark);
+
+      &.expanded {
+        background-color: var(--color--white);
+      }
 
       .image {
 
@@ -30,7 +36,7 @@
             aspect-ratio: 1.5;
           }
           @include Desktop {
-            aspect-ratio: 1.75;
+            aspect-ratio: 2;
           }
         }
 
@@ -54,6 +60,7 @@
 
           img {
             width:           100%;
+            min-height:      100%;
             display:         block;
             object-fit:      cover;
             object-position: center;
@@ -74,7 +81,7 @@
         box-sizing:     border-box;
 
         h3 {
-          font-size:     1.4rem;
+          font-size:     1.2rem;
           text-align:    left;
           margin-bottom: 0;
           margin-top:    -0.2em;
@@ -130,18 +137,29 @@
       margin:         0 var(--offset--negative);
 
       .item {
-        border-radius: var(--border-radius);
-        box-shadow:    var(--box-shadow--blurry);
+        border-radius: unset;
+        box-shadow:    none;
         margin:        0 var(--offset);
+        background-color:    unset !important;
+        border-bottom: none !important;
 
         flex-basis:    50%;
+
+        overflow:      visible;
+
+        .image {
+          border-radius: var(--border-radius);
+          overflow:      hidden;
+          box-shadow:    var(--box-shadow--blurry);
+        }
 
         .details {
           display:        flex;
           flex-direction: column;
-          padding:        var(--offset--4x);
+          padding:        0;
+          margin-top: var(--offset--2x);
 
-          i {
+          i  {
             display: none;
           }
         }
