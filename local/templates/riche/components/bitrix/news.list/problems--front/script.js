@@ -6,7 +6,7 @@ $(() => {
 
     frontProblemsSlider.slick(
         {
-            slidesToShow:   3,
+            slidesToShow:   2,
             slidesToScroll: 1,
             fade:           false,
             speed:          1000,
@@ -20,13 +20,13 @@ $(() => {
                 {
                     breakpoint: 580,
                     settings:   {
-                        slidesToShow: 4
+                        slidesToShow: 3
                     }
                 },
                 {
                     breakpoint: 780,
                     settings:   {
-                        slidesToShow: 5
+                        slidesToShow: 4
                     }
                 },
             ]

@@ -5,7 +5,7 @@
 
   // region generated colors
 
-  $colorShift:              5;
+  $colorShift:              15;
 
   @each $name, $value in $colors {
 
@@ -85,9 +85,10 @@ h1, h2, h3, h4, h5, h6 {
   font-size:   1.4rem;
   line-height: 1.2;
 
+  margin:      0.6em 0;
+
   &:first-of-type {
-    margin-top:    0;
-    margin-bottom: 0.4em;
+    margin-top: 0;
   }
 }
 
@@ -128,8 +129,8 @@ picture {
   box-sizing: border-box;
 
   img {
-    display: block;
-    width:   100%;
+    display:   block;
+    max-width: 100%;
   }
 
 }
@@ -218,6 +219,7 @@ button {
   box-shadow:       var(--box-shadow);
 
   &:hover {
+    color:            var(--color--green--dark);
     background-color: var(--color--white);
   }
 
@@ -231,11 +233,10 @@ button {
   }
 
   &.transparent {
-    background:    transparent none;
-    border:        none;
-    box-shadow:    none;
-    padding-left:  0.5em;
-    padding-right: 0.5em;
+    background: transparent none;
+    border:     none;
+    box-shadow: none;
+    padding:    var(--offset--2x) var(--offset);
   }
 
   &[disabled] {

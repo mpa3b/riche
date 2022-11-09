@@ -24,11 +24,9 @@ $this -> setFrameMode(true);
 
     <?php $frame = $this -> createFrame(); ?>
 
-    <div class="row menu--main">
+    <div class="menu--main row">
 
         <?php $frame -> begin(); ?>
-
-        <nav class="whole unit">
 
             <ul class="menu root">
                 <?php foreach ($arResult as $arItem): ?>
@@ -37,8 +35,6 @@ $this -> setFrameMode(true);
                     </li>
                 <?php endforeach; ?>
             </ul>
-
-        </nav>
 
         <?php $frame -> end(); ?>
 

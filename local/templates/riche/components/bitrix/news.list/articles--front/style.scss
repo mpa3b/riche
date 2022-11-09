@@ -1,19 +1,15 @@
 .articles--front {
 
-  .intro {
-    padding-bottom: var(--offset--2x);
+  h2 {
+    font-size: 2.8rem;
+  }
 
-    h2 {
-      font-size: 2.8rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-    }
-
+  p {
+    font-size: 1.2rem;
   }
 
   .items {
+    padding-top: var(--offset--2x);
 
     .item {
       display:        flex;
@@ -30,6 +26,12 @@
         }
       }
 
+      .date {
+        color:         var(--color--gray--dark);
+        font-size:     0.8rem;
+        margin-bottom: var(--offset);
+      }
+
       h3 {
         font-size: 1.2rem;
       }
@@ -41,7 +43,7 @@
   .slick {
 
     &-slider {
-
+      margin: 0 var(--offset--negative);
     }
 
     &-list {
@@ -54,8 +56,8 @@
     &-slide {
 
       > div {
-        box-sizing:    border-box;
-        padding-right: var(--offset--2x);
+        box-sizing: border-box;
+        padding:    0 var(--offset);
       }
 
     }

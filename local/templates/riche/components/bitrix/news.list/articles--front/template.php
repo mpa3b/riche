@@ -1,13 +1,11 @@
-<?php use Riche\Breakpoint;
+<?php
+
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+    die();
+}
+
+use Riche\Breakpoint;
 use Riche\Thumb;
-
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
-    die();
-}
-
-if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
-    die();
-}
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -88,22 +86,33 @@ $frame = $this->createFrame();
 
                         ?>
 
-                        <picture>
+                        <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
 
-                            <source data-srcset="<?= $small['src']; ?>" media="<?= Breakpoint::getMedia('small'); ?>">
-                            <source data-srcset="<?= $mobile['src']; ?>" media="<?= Breakpoint::getMedia('mobile'); ?>">
-                            <source data-srcset="<?= $tablet['src']; ?>" media="<?= Breakpoint::getMedia('tablet'); ?>">
-                            <source data-srcset="<?= $desktop['src']; ?>"
-                                    media="<?= Breakpoint::getMedia('desktop'); ?>">
-                            <source data-srcset="<?= $wide['src']; ?>" media="<?= Breakpoint::getMedia('wide'); ?>">
+                            <picture>
 
-                            <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
+                                <source data-srcset="<?= $small['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('small'); ?>">
+                                <source data-srcset="<?= $mobile['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                <source data-srcset="<?= $tablet['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                <source data-srcset="<?= $desktop['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                <source data-srcset="<?= $wide['src']; ?>" media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                        </picture>
+                                <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
+
+                            </picture>
+
+                        </a>
 
                     <? } ?>
 
-                    <h3><?= $arItem['NAME']; ?></h3>
+                    <span class="date"><?= $arItem['DISPLAY_ACTIVE_FROM']; ?></span>
+
+                    <h3>
+                        <?= $arItem['NAME']; ?>
+                    </h3>
 
                     <p><?= $arItem['PREVIEW_TEXT']; ?></p>
 

@@ -30,7 +30,7 @@
       }
 
       img {
-        height: 1.6rem;
+        height: 1.8rem;
       }
 
       @media all and (max-width: $breakpointMobile) {
@@ -46,6 +46,10 @@
         }
       }
 
+    }
+
+    &--menu {
+      padding: 0;
     }
 
     &--buttons {
