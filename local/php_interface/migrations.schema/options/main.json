@@ -110,7 +110,7 @@
             "MODULE_ID": "main",
             "NAME": "~update_autocheck_result",
             "VALUE": {
-                "check_date": 1667902759,
+                "check_date": 1667989372,
                 "result": false,
                 "error": "",
                 "modules": []
@@ -120,6 +120,11 @@
             "MODULE_ID": "main",
             "NAME": "admin_lid",
             "VALUE": "ru"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "admin_passwordh",
+            "VALUE": "FVgQemYUBwUtCUVcBRcOCgsTAQ=="
         },
         {
             "MODULE_ID": "main",
@@ -183,6 +188,11 @@
         },
         {
             "MODULE_ID": "main",
+            "NAME": "collect_geonames",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "main",
             "NAME": "compres_css_js_files",
             "VALUE": "N"
         },
@@ -218,108 +228,13 @@
         },
         {
             "MODULE_ID": "main",
+            "NAME": "device_history_cleanup_days",
+            "VALUE": "180"
+        },
+        {
+            "MODULE_ID": "main",
             "NAME": "disk_space",
             "VALUE": ""
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_archive_size_limit_auto",
-            "VALUE": "104857600"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_base_auto",
-            "VALUE": "1"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_base_skip_log_auto",
-            "VALUE": "0"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_base_skip_search_auto",
-            "VALUE": "0"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_base_skip_stat_auto",
-            "VALUE": "0"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_bucket_id_auto",
-            "VALUE": "0"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_delete_old_auto",
-            "VALUE": "4"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_do_clouds_auto",
-            "VALUE": "0"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_file_kernel_auto",
-            "VALUE": "1"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_file_public_auto",
-            "VALUE": "1"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_integrity_check_auto",
-            "VALUE": "1"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_max_exec_time_auto",
-            "VALUE": "20"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_max_exec_time_sleep_auto",
-            "VALUE": "3"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_max_file_size_auto",
-            "VALUE": "0"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_old_cnt_auto",
-            "VALUE": "3"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_old_size_auto",
-            "VALUE": "0"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_old_time_auto",
-            "VALUE": "0"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_site_id_auto",
-            "VALUE": null
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_temporary_cache",
-            "VALUE": ""
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_use_compression_auto",
-            "VALUE": "1"
         },
         {
             "MODULE_ID": "main",
@@ -475,24 +390,8 @@
             "MODULE_ID": "main",
             "NAME": "last_mp_modules_result",
             "VALUE": {
-                "check_date": 1667894907,
-                "update_module": {
-                    "bitrix.eshop": {
-                        "ID": "bitrix.eshop",
-                        "NAME": "Современный интернет-магазин",
-                        "DESCRIPTION": "Готовый интернет-магазин, включающий в себя новые яркие шаблоны дизайнов, а также уникальные возможности для повышения эффективности бизнеса, помогающие продавать через Интернет. \r\n\r\nХиты, новинки, категории товаров, варианты SKU, несколько вариантов меню каталога товаров, различные формы представления списков и карточек товаров - все это правильно воспринимается покупателями.\r\n\r\nФункциональный фи...",
-                        "IMAGE": "",
-                        "IMAGE_HEIGHT": "",
-                        "IMAGE_WIDTH": "",
-                        "BUYED": "",
-                        "PARTNER": "1С-Битрикс",
-                        "PARTNER_ID": "46844",
-                        "DATE_CREATE": "",
-                        "DATE_UPDATE": "",
-                        "CATEGORY": "Готовые интернет-магазины, Одежда, обувь, аксессуары",
-                        "TYPE": "Модуль, Шаблоны сайтов, Мастера создания (установка)"
-                    }
-                },
+                "check_date": 1667980804,
+                "update_module": [],
                 "end_update": [],
                 "new_module": []
             }
@@ -525,12 +424,12 @@
         {
             "MODULE_ID": "main",
             "NAME": "map_left_menu_type",
-            "VALUE": "local"
+            "VALUE": "left"
         },
         {
             "MODULE_ID": "main",
             "NAME": "map_top_menu_type",
-            "VALUE": "main"
+            "VALUE": "top"
         },
         {
             "MODULE_ID": "main",
@@ -547,19 +446,14 @@
             "NAME": "mp_modules_date",
             "VALUE": [
                 {
-                    "ID": "ipol.apiship2v",
-                    "NAME": "Интеграция с Apiship 2.0",
-                    "TMS": 1667902709
+                    "ID": "sprint.migration",
+                    "NAME": "Миграции для разработчиков",
+                    "TMS": 1667988220
                 },
                 {
-                    "ID": "asd.iblock",
-                    "NAME": "Информационные блоки, инструменты",
-                    "TMS": 1667902717
-                },
-                {
-                    "ID": "rodzeta.redirect",
-                    "NAME": "Редиректы для SEO",
-                    "TMS": 1667902761
+                    "ID": "sprint.editor",
+                    "NAME": "Редактор для контент-менеджеров",
+                    "TMS": 1667988318
                 }
             ]
         },
@@ -791,12 +685,12 @@
         {
             "MODULE_ID": "main",
             "NAME": "server_name",
-            "VALUE": "riche.skin"
+            "VALUE": "riche.local"
         },
         {
             "MODULE_ID": "main",
             "NAME": "server_uniq_id",
-            "VALUE": "a90c42ca0cfeaa694bde730e3ae28549"
+            "VALUE": "cf7e793eba359c7dbcead30eb98a077a"
         },
         {
             "MODULE_ID": "main",
@@ -826,27 +720,12 @@
         {
             "MODULE_ID": "main",
             "NAME": "signer_default_key",
-            "VALUE": "5e7973c28146517cca75ee3b5172b1336b3a2e2dc54075fc20ff50b6a982cbcc2d77aefc8f1e670600d90bf1b901e236b0ba95c119e8be4addaf838fc20000f0"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "site_checker_success",
-            "VALUE": "Y"
+            "VALUE": "15297fa6a3b7c7ea7b51d90714dfec85d275171f11d60741eb0931ac04437531b080d4954e6f88e9b11b7bd1a14b42aeda28af3f54965c6e8b29f60d983d9477"
         },
         {
             "MODULE_ID": "main",
             "NAME": "site_name",
-            "VALUE": "RICHE COSMETICS"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "skip_mask_array_auto",
-            "VALUE": null
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "skip_mask_auto",
-            "VALUE": "0"
+            "VALUE": "riche.local"
         },
         {
             "MODULE_ID": "main",
@@ -956,12 +835,12 @@
         {
             "MODULE_ID": "main",
             "NAME": "update_system_check",
-            "VALUE": "08.11.2022 13:20:00"
+            "VALUE": "09.11.2022 13:22:40"
         },
         {
             "MODULE_ID": "main",
             "NAME": "update_system_update",
-            "VALUE": "08.11.2022 13:19:19"
+            "VALUE": "09.11.2022 13:22:52"
         },
         {
             "MODULE_ID": "main",
@@ -991,7 +870,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "use_hot_keys",
-            "VALUE": "N"
+            "VALUE": "Y"
         },
         {
             "MODULE_ID": "main",
@@ -1011,6 +890,21 @@
         {
             "MODULE_ID": "main",
             "NAME": "use_time_zones",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "user_device_geodata",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "user_device_history",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "user_device_notify",
             "VALUE": "N"
         },
         {

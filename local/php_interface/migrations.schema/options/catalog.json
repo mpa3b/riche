@@ -2,11 +2,6 @@
     "items": [
         {
             "MODULE_ID": "catalog",
-            "NAME": "GROUP_DEFAULT_TASK",
-            "VALUE": "24"
-        },
-        {
-            "MODULE_ID": "catalog",
             "NAME": "subscribe_repeated_notify",
             "VALUE": "Y"
         }

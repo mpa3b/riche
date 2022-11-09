@@ -33,7 +33,7 @@
         {
             "MODULE_ID": "iblock",
             "NAME": "iblock_activity_dates",
-            "VALUE": ""
+            "VALUE": "1,2,6"
         },
         {
             "MODULE_ID": "iblock",
@@ -73,7 +73,7 @@
         {
             "MODULE_ID": "iblock",
             "NAME": "show_xml_id",
-            "VALUE": "N"
+            "VALUE": "Y"
         },
         {
             "MODULE_ID": "iblock",

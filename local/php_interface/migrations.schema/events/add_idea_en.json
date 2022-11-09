@@ -1,0 +1,40 @@
+{
+    "event": "ADD_IDEA",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "email",
+        "NAME": "New idea added",
+        "DESCRIPTION": [
+            "#FULL_PATH# - Idea full path\n#TITLE# - Idea title\n#AUTHOR# - Idea author\n#IDEA_TEXT# - Idea text\n#DATE_PUBLISH# - Date and time idea was created\n#EMAIL_TO# - Subscriber e-mail\n#CATEGORY# - Category"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL_TO#",
+            "SUBJECT": "#SITE_NAME#: Добавлена новая идея: #IDEA_TITLE#",
+            "MESSAGE": [
+                "Информационное сообщение сайта #SITE_NAME#\n------------------------------------------\n\nДобавлена новая идея в категории #CATEGORY# на сайте #SERVER_NAME#.\n\nТема: #TITLE#\n\nАвтор: #AUTHOR#\n\nДобавлена: #DATE_PUBLISH#\n\nОписание:\n#IDEA_TEXT#\n\nАдрес идеи:\n#FULL_PATH#\n\nСообщение сгенерировано автоматически.\n"
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ ADD_IDEA ] Добавлена новая идея"
+        }
+    ]
+}

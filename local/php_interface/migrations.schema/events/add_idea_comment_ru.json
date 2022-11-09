@@ -1,0 +1,40 @@
+{
+    "event": "ADD_IDEA_COMMENT",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Добавлен новый комментарий к идее",
+        "DESCRIPTION": [
+            "#FULL_PATH# - Путь к комментарию к идее\n#IDEA_TITLE# - Заголовок идеи\n#AUTHOR# - Имя автора комментария к идее\n#IDEA_COMMENT_TEXT# - Текст комментария к идее\n#DATE_CREATE# - Дата и время создания комментария к идее\n#EMAIL_TO# - Email подписчика"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL_TO#",
+            "SUBJECT": "#SITE_NAME#: Добавлен новый комментарий к идее: #IDEA_TITLE#",
+            "MESSAGE": [
+                "Информационное сообщение сайта #SITE_NAME#\n------------------------------------------\n\nДобавлен новый комментарий к идее на сайте #SERVER_NAME#.\n\nТема идеи: #IDEA_TITLE#\n\nАвтор комментария: #AUTHOR#\n\nДата комментария: #DATE_CREATE#\n\nТекст комментария:\n#IDEA_COMMENT_TEXT#\n\nАдрес сообщения:\n#FULL_PATH#\n\nСообщение сгенерировано автоматически.\n"
+            ],
+            "BODY_TYPE": "text",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ ADD_IDEA_COMMENT ] Добавлен новый комментарий к идее"
+        }
+    ]
+}
