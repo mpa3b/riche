@@ -4,8 +4,8 @@
 .features--front {
 
   .items {
-    padding: 0;
-    margin:  0;
+    padding:        0;
+    margin:         0;
 
     @include Mobile {
       overflow:      hidden;
@@ -137,29 +137,28 @@
       margin:         0 var(--offset--negative);
 
       .item {
-        border-radius: unset;
-        box-shadow:    none;
-        margin:        0 var(--offset);
-        background-color:    unset !important;
-        border-bottom: none !important;
+        border-radius:    unset;
+        box-shadow:       none;
+        margin:           0 var(--offset);
+        background-color: unset !important;
+        border-bottom:    none !important;
 
-        flex-basis:    50%;
+        flex-basis:       50%;
 
-        overflow:      visible;
+        overflow:         visible;
 
         .image {
           border-radius: var(--border-radius);
           overflow:      hidden;
-          box-shadow:    var(--box-shadow--blurry);
         }
 
         .details {
           display:        flex;
           flex-direction: column;
           padding:        0;
-          margin-top: var(--offset--2x);
+          margin-top:     var(--offset--2x);
 
-          i  {
+          i {
             display: none;
           }
         }
