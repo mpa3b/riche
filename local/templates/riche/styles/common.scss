@@ -5,7 +5,7 @@
 
   // region generated colors
 
-  $colorShift:              5;
+  $colorShift:              10;
 
   @each $name, $value in $colors {
 
@@ -28,7 +28,7 @@
 
   --color--black:           #111111;
   --color--base:            var(--color--black);
-  --color--background:      var(--color--white);
+  --color--background:      var(--color--gray--light);
 
   // endregion
 
@@ -67,7 +67,7 @@ html {
   @include Desktop {
     font-size: 12pt;
   }
-  background-color: var(--color--background);
+  background-color: var(--color--white);
 }
 
 body {
@@ -182,8 +182,12 @@ a {
 input {
   display:         inline-block;
   box-sizing:      border-box;
-  padding:         0.65em 1em;
-  padding-top:     0.5em;
+
+  padding:          0.4em 0.75em;
+  padding-top:      0.4em;
+  padding-bottom:   0.6em;
+
+  background-color: var(--color--background);
 
   border-radius:   2em;
 
@@ -207,10 +211,12 @@ button {
   display:          inline-block;
   box-sizing:       border-box;
 
-  padding:          0.4em 0.6em;
+  padding:          0.6em 0.8em;
+  padding-top:      0.5em;
+  padding-bottom:   0.7125em;
 
   &.big {
-    padding:     1em 2.2em;
+    padding: 1em 2.2em;
   }
 
   cursor:           pointer;

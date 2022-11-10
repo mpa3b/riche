@@ -46,7 +46,10 @@ $APPLICATION->SetTitle('Главная');
         "AJAX_OPTION_JUMP"       => "N",
         "AJAX_OPTION_STYLE"      => "N",
         "AJAX_OPTION_HISTORY"    => "N",
-        "AJAX_OPTION_ADDITIONAL" => ""
+        "AJAX_OPTION_ADDITIONAL" => "",
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
     ]
 ); ?>
 
@@ -87,7 +90,10 @@ $APPLICATION->SetTitle('Главная');
         "AJAX_OPTION_JUMP"       => "N",
         "AJAX_OPTION_STYLE"      => "N",
         "AJAX_OPTION_HISTORY"    => "N",
-        "AJAX_OPTION_ADDITIONAL" => ""
+        "AJAX_OPTION_ADDITIONAL" => "",
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
     ]
 ); ?>
 
@@ -128,7 +134,10 @@ $APPLICATION->SetTitle('Главная');
         "AJAX_OPTION_JUMP"       => "N",
         "AJAX_OPTION_STYLE"      => "N",
         "AJAX_OPTION_HISTORY"    => "N",
-        "AJAX_OPTION_ADDITIONAL" => ""
+        "AJAX_OPTION_ADDITIONAL" => "",
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
     ]
 ); ?>
 
@@ -169,7 +178,10 @@ $APPLICATION->SetTitle('Главная');
         "AJAX_OPTION_JUMP"       => "N",
         "AJAX_OPTION_STYLE"      => "N",
         "AJAX_OPTION_HISTORY"    => "N",
-        "AJAX_OPTION_ADDITIONAL" => ""
+        "AJAX_OPTION_ADDITIONAL" => "",
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
     ]
 ); ?>
 
@@ -186,7 +198,7 @@ $APPLICATION->SetTitle('Главная');
         "SORT_ORDER1" => "DESC",
         "SORT_BY2"    => "SORT",
 
-        "CHECK_DATES"   => "Y",
+        "CHECK_DATES" => "Y",
 
         "FILTER_NAME"   => "",
         "FIELD_CODE"    => ["ID", "DETAIL_PICTURE", "PREVIEW_TEXT", "DETAIL_TEXT", "NAME", "DETAIL_PAGE_URL"],
@@ -213,7 +225,10 @@ $APPLICATION->SetTitle('Главная');
         "AJAX_OPTION_JUMP"       => "N",
         "AJAX_OPTION_STYLE"      => "N",
         "AJAX_OPTION_HISTORY"    => "N",
-        "AJAX_OPTION_ADDITIONAL" => ""
+        "AJAX_OPTION_ADDITIONAL" => "",
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
     ]
 ); ?>
 
@@ -230,7 +245,7 @@ $APPLICATION->SetTitle('Главная');
         "SORT_ORDER1" => "DESC",
         "SORT_BY2"    => "SORT",
 
-        "CHECK_DATES"   => "Y",
+        "CHECK_DATES" => "Y",
 
         "FILTER_NAME"   => "",
         "FIELD_CODE"    => ["ID", "DETAIL_TEXT"],
@@ -257,7 +272,34 @@ $APPLICATION->SetTitle('Главная');
         "AJAX_OPTION_JUMP"       => "N",
         "AJAX_OPTION_STYLE"      => "N",
         "AJAX_OPTION_HISTORY"    => "N",
-        "AJAX_OPTION_ADDITIONAL" => ""
+        "AJAX_OPTION_ADDITIONAL" => "",
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
+    ]
+); ?>
+
+<? $APPLICATION->IncludeComponent(
+    "bitrix:sender.subscribe",
+    ".default",
+    [
+        "USE_PERSONALIZATION" => "Y",
+        "CONFIRMATION"        => "Y",
+        "SHOW_HIDDEN"         => "N",
+        "HIDE_MAILINGS"       => "N",
+
+        "CACHE_TYPE" => "A",
+        "CACHE_TIME" => CACHE_TTL,
+
+        "AJAX_MODE"           => "Y",
+        "AJAX_OPTION_JUMP"    => "Y",
+        "AJAX_OPTION_STYLE"   => "Y",
+        "AJAX_OPTION_HISTORY" => "Y",
+
+        "SET_TITLE" => "N",
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
     ]
 ); ?>
 

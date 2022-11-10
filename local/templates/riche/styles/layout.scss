@@ -88,6 +88,7 @@
     font-size:   0.85rem;
 
     &--contact {
+      padding-right: var(--offset--2x);
 
       .logo {
         margin-bottom: 1rem;
@@ -194,7 +195,7 @@
     }
 
     &--outro {
-      font-size:     0.7rem;
+      font-size: 0.7rem;
 
       .row {
         display:        flex;
@@ -206,7 +207,7 @@
         }
       }
 
-      color:         var(--color--gray--dark);
+      color:     var(--color--gray--dark);
 
       @include Mobile {
 

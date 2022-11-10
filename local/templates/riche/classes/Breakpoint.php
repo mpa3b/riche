@@ -12,7 +12,7 @@ class Breakpoint
             'mobile'  => 580,
             'tablet'  => 780,
             'desktop' => 980,
-            'wide'    => 1280
+            'wide'    => 1360
         ];
 
     const unit = 'px';
