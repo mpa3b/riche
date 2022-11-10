@@ -34,10 +34,7 @@
           margin:  auto;
         }
         @include Desktop {
-          padding: 10rem;
-        }
-        @include Wide {
-          padding: 12rem;
+          padding: 8rem;
         }
 
         box-sizing:      border-box;
