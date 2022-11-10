@@ -52,6 +52,19 @@ jQuery.event.special.mousewheel = {
 
 // endregion
 
+// region scroll
+
+$(window).on(
+    'scroll',
+    () => {
+
+
+
+    }
+);
+
+// endregion
+
 // region кнопка с индикатором прогресса
 
 $(document).on(

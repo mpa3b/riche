@@ -24,24 +24,20 @@ $this->setFrameMode(true);
 
     <?php $frame = $this->createFrame(); ?>
 
-    <div class="menu--main row">
+    <nav class="menu--main row">
 
         <?php $frame->begin(); ?>
 
-        <nav>
-
-            <ul class="menu root">
-                <?php foreach ($arResult as $arItem): ?>
-                    <li>
-                        <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
-                    </li>
-                <?php endforeach; ?>
-            </ul>
-
-        </nav>
+        <ul class="menu root">
+            <?php foreach ($arResult as $arItem): ?>
+                <li>
+                    <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
 
         <?php $frame->end(); ?>
 
-    </div>
+    </nav>
 
 <?php } ?>

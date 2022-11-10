@@ -12,8 +12,6 @@
     @include Mobile {
       border-radius: var(--border-radius);
       overflow:      hidden;
-
-      box-shadow:    var(--box-shadow--blurry);
     }
 
     .item {

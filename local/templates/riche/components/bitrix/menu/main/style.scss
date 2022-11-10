@@ -2,10 +2,8 @@
 @import "../../../../mixins";
 
 .menu--main {
-  margin: var(--offset) 0;
 
   ul.menu {
-    padding:        0;
     margin:         0 var(--offset--negative);
 
     display:        flex;

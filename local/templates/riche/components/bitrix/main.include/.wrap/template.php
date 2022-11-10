@@ -22,8 +22,7 @@ $frame = $this->createFrame();
 
 if ($arResult["FILE"] <> '') { ?>
 
-    <div class="wrap <?= strtolower($arParams['AREA_FILE_SUFFIX']); ?>"
-         data-area-name="<?= $arParams['AREA_FILE_SUFFIX']; ?>">
+    <div class="wrap <?= strtolower($arParams['AREA_FILE_SUFFIX']); ?>">
 
         <? $frame->begin(); ?>
 

@@ -10,7 +10,9 @@
     z-index:          5000;
     background-color: var(--color--white);
 
-    box-shadow:       var(--box-shadow);
+    @at-root .scrolled & {
+      box-shadow:       var(--box-shadow);
+    }
 
     > .wrap {
       margin-top:    0;

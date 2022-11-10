@@ -179,36 +179,36 @@ class Thumb
 
     }
 
-    private static function makeUri(string $path) : string
-    {
-
-        $file = self::$root . $path;
-
-        $type   = mime_content_type($file);
-        $base64 = base64_encode(file_get_contents($file));
-        $uri    = 'data:' . $type . ';base64,' . $base64;
-
-        return $uri;
-
-    }
-
-    private static function makeUriFromId(string $id) : string
+    public static function makeUriFromId(string $id) : string
     {
 
         $image = CFile::ResizeImageGet(
             $id,
             [
-                'width'  => Breakpoint::breakpoints['preload'],
-                'height' => Breakpoint::breakpoints['preload']
+                'width'  => 100,
+                'height' => 100
             ],
-            BX_RESIZE_IMAGE_EXACT
+            BX_RESIZE_IMAGE_EXACT,
+            false,
+            [],
+            false
         );
 
-        $file = $image['SRC'];
+        $uri = false;
 
-        $type   = mime_content_type($file);
-        $base64 = base64_encode(file_get_contents($file));
-        $uri    = 'data:' . $type . ';base64,' . $base64;
+        if (!empty($image['src'])) {
+
+            $type   = mime_content_type($image['src']);
+            $base64 = base64_encode($image['src']);
+
+            if (!empty($base64)) {
+
+                $uri = 'data:' . $type . ';base64,' . $base64;
+
+            }
+
+
+        }
 
         return $uri;
 
