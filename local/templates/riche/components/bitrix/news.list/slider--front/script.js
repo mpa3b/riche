@@ -24,7 +24,7 @@ $(() => {
                 slidesToScroll: 1,
                 fade:           true,
                 speed:          1000,
-                autoplay:       true,
+                autoplay:       false,
                 autoplaySpeed:  5000,
                 arrows:         false,
                 dots:           true,
@@ -52,12 +52,18 @@ $(() => {
         )
         .on(
             {
-                afterChange:  (event, slick, currentSlide, nextSlide) => {
-
-
-                },
                 beforeChange: (event, slick, currentSlide, nextSlide) => {
 
+                    let element = slick.$slides[currentSlide];
+
+                    $('video', element).trigger('pause');
+
+                },
+                afterChange:  (event, slick, currentSlide, nextSlide) => {
+
+                    let element = slick.$slides[currentSlide];
+
+                    $('video', element).trigger('play');
 
                 }
             }

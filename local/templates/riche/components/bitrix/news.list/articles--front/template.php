@@ -52,25 +52,25 @@ $frame = $this->createFrame();
 
                             $preload = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 1),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $small = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 2, 0.75),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 2, 1),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $mobile = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 2, 0.75),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 2, 1),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $tablet = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 1.25),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 1),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
@@ -103,7 +103,8 @@ $frame = $this->createFrame();
                                     <source data-srcset="<?= $wide['src']; ?>"
                                             media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                                    <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>"
+                                    <img data-src="<?= $preload['src']; ?>"
+                                         alt="<?= $arItem['NAME']; ?>"
                                          loading="lazy">
 
                                 </picture>
@@ -114,11 +115,9 @@ $frame = $this->createFrame();
 
                         <span class="date"><?= $arItem['DISPLAY_ACTIVE_FROM']; ?></span>
 
-                        <h3>
-                            <?= $arItem['NAME']; ?>
-                        </h3>
+                        <h3><?= $arItem['NAME']; ?></h3>
 
-                        <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+                        <p class="hide--on-mobiles"><?= $arItem['PREVIEW_TEXT']; ?></p>
 
                     </div>
 

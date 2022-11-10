@@ -18,8 +18,10 @@
     }
 
     .row {
-      align-items: center;
-      position:    relative;
+      align-items:    center;
+      position:       relative;
+      display:        flex;
+      flex-direction: row;
     }
 
     &--logo {
@@ -30,7 +32,7 @@
       }
 
       img {
-        height: 1.8rem;
+        height: 1.6rem;
       }
 
       @media all and (max-width: $breakpointMobile) {
@@ -148,6 +150,16 @@
     &--outro {
       font-size:     0.7rem;
       margin-bottom: 0;
+
+      .row {
+        display:        flex;
+        flex-direction: row;
+        flex-wrap:      nowrap;
+
+        > {
+          flex-basis: 50%;
+        }
+      }
 
       color:         var(--color--gray--dark);
 

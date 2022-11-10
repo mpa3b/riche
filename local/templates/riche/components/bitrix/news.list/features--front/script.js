@@ -9,12 +9,11 @@ $(() => {
         'click',
         (event) => {
 
+            items.removeClass(expanded).find('video').trigger('pause');
+
             let item = $(event.currentTarget);
 
-            items.removeClass(expanded);
-
-            item.addClass(expanded);
-
+            item.addClass(expanded).find('video').trigger('play');
 
         }
     );

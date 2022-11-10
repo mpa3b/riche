@@ -2,11 +2,13 @@
   padding-top:    var(--offset--2x);
   padding-bottom: var(--offset--2x);
 
+  overflow: hidden;
 
   .items {
+    margin-top: var(--offset--2x);
 
     .item {
-      background-color: var(--color--white);
+      background-color: var(--color--white--dark);
       border-radius:    var(--border-radius);
       padding:          var(--offset--4x);
       box-sizing:       border-box;
@@ -68,7 +70,7 @@
         .icon-star {
           font-size: 1rem;
 
-          opacity:   calc(var(--opacity) / 2);
+          opacity:   calc(var(--opacity) / 3);
 
           &.active {
             color:   var(--color--green--dark);

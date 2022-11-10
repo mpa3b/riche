@@ -21,7 +21,7 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
 
     <div id="page--footer--top" class="wrap">
 
-        <div class="grid">
+        <div class="row">
 
             <div id="page--footer--contact" class="two-fifths">
 
@@ -67,16 +67,73 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
                     "bitrix:menu",
                     "footer",
                     [
-                        "ALLOW_MULTI_SELECT"    => "N",
+                        "ROOT_MENU_TYPE"        => "footer",
                         "CHILD_MENU_TYPE"       => "local",
+
                         "DELAY"                 => "N",
+                        "ALLOW_MULTI_SELECT"    => "N",
+
                         "MAX_LEVEL"             => 2,
+
                         "MENU_CACHE_GET_VARS"   => [""],
                         "MENU_CACHE_TIME"       => CACHE_TTL,
                         "MENU_CACHE_TYPE"       => "A",
                         "MENU_CACHE_USE_GROUPS" => "N",
-                        "ROOT_MENU_TYPE"        => "footer",
+
                         "USE_EXT"               => "N",
+
+                        "CACHE_SELECTED_ITEMS"  => "N",
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO"
+                    ]
+                ); ?>
+
+                <? $APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "footer",
+                    [
+                        "ROOT_MENU_TYPE"        => "catalog",
+                        "CHILD_MENU_TYPE"       => "local",
+
+                        "DELAY"                 => "N",
+                        "ALLOW_MULTI_SELECT"    => "N",
+
+                        "MAX_LEVEL"             => 2,
+
+                        "MENU_CACHE_GET_VARS"   => [""],
+                        "MENU_CACHE_TIME"       => CACHE_TTL,
+                        "MENU_CACHE_TYPE"       => "A",
+                        "MENU_CACHE_USE_GROUPS" => "N",
+
+                        "USE_EXT"               => "N",
+
+                        "CACHE_SELECTED_ITEMS"  => "N",
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO"
+                    ]
+                ); ?>
+
+                <? $APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "footer",
+                    [
+                        "ROOT_MENU_TYPE"        => "catalog",
+                        "CHILD_MENU_TYPE"       => "law",
+
+                        "DELAY"                 => "N",
+                        "ALLOW_MULTI_SELECT"    => "N",
+
+                        "MAX_LEVEL"             => 2,
+
+                        "MENU_CACHE_GET_VARS"   => [""],
+                        "MENU_CACHE_TIME"       => CACHE_TTL,
+                        "MENU_CACHE_TYPE"       => "A",
+                        "MENU_CACHE_USE_GROUPS" => "N",
+
+                        "USE_EXT"               => "N",
+
                         "CACHE_SELECTED_ITEMS"  => "N",
 
                         "COMPOSITE_FRAME_MODE" => "A",

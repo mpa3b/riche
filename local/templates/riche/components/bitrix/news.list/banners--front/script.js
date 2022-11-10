@@ -50,6 +50,10 @@ $(() => {
 
             event.preventDefault();
 
+            let url = $(event.currentTarget).data('href');
+
+            window.location.href = url;
+
         }
     );
 

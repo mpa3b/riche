@@ -12,17 +12,12 @@
     @include Mobile {
       overflow:      hidden;
       border-radius: var(--border-radius);
-      box-shadow:    var(--box-shadow--blurry);
     }
 
     .item {
       overflow:         hidden;
 
       background-color: var(--color--white--dark);
-
-      &.expanded {
-        background-color: var(--color--white);
-      }
 
       .image {
 

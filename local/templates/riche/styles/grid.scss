@@ -3,9 +3,12 @@
 
 :root {
 
-  --offset:                 0.5rem;
+  --offset:                 0.55rem;
+  @include Mobile {
+    --offset: 0.65rem;
+  }
   @include Tablet {
-    --offset: 0.6rem;
+    --offset: 0.75rem;
   }
 
   --offset--half:           calc(var(--offset) / 2);
@@ -24,15 +27,15 @@
   display:    block;
   box-sizing: border-box;
 
-  margin:     var(--offset--2x);
+  margin:     var(--offset) var(--offset--2x);
 
   @include Tablet {
-    margin: var(--offset--2x) var(--offset--4x);
+    margin: var(--offset) var(--offset--2x);
   }
 
   @include Desktop {
     width:  88%;
-    margin: var(--offset--2x) auto;
+    margin: var(--offset) auto;
   }
 
   @include Wide {
@@ -80,27 +83,31 @@
       padding: var(--offset);
     }
 
-    $units:         (
-                            "four-fifths": 80%,
-                            "three-quarters": 75%,
-                            "two-thirds": 66.6666%,
-                            "three-fifths": 60%,
-                            "half": 50%,
-                            "two-fifths": 40%,
-                            "third": 33.3333%,
-                            "quarter": 25%,
-                            "fifth": 20%,
-                            "sixth": 16.6666%
-                    );
+    @include Tablet {
 
-    @each $code, $width in $units {
+      $units: (
+                      "four-fifths": 80%,
+                      "three-quarters": 75%,
+                      "two-thirds": 66.6666%,
+                      "three-fifths": 60%,
+                      "half": 50%,
+                      "two-fifths": 40%,
+                      "third": 33.3333%,
+                      "quarter": 25%,
+                      "fifth": 20%,
+                      "sixth": 16.6666%
+              );
 
-      > .#{$code} {
-        width: #{$width};
-      }
+      @each $code, $width in $units {
 
-      .shift--#{$code} {
-        margin-left: #{$width};
+        > .#{$code} {
+          width: #{$width};
+        }
+
+        .shift--#{$code} {
+          margin-left: #{$width};
+        }
+
       }
 
     }
@@ -109,10 +116,13 @@
 
   .row {
     display:        flex;
-    flex-direction: row;
-    flex-wrap:      nowrap;
+    flex-direction: column;
 
-    margin:         0 var(--offset--negative);
+    @include Tablet {
+      flex-direction: row;
+      flex-wrap:      nowrap;
+      margin:         0 var(--offset--negative);
+    }
 
     box-sizing:     border-box;
   }

@@ -18,6 +18,7 @@
 
     .item {
       position: relative;
+      height:   100%;
 
       @include Tablet {
         border-radius: var(--border-radius);
@@ -82,8 +83,8 @@
         color:           var(--color--white);
 
         padding:         var(--offset--2x);
-        padding-bottom:  var(--offset--4x);
-        padding-top:     50%;
+        padding-bottom:  var(--offset--6x);
+        padding-top:     80%;
         height:          100%;
 
         @include Tablet {
@@ -120,23 +121,27 @@
 
   .slick {
 
-    &-slider {
-      margin: 0 var(--offset--negative);
-    }
+    @include Tablet {
 
-    &-list {
-      overflow: visible;
-    }
+      &-slider {
+        margin: 0 var(--offset--negative);
+      }
 
-    &-slide {
+      &-list {
+        overflow: visible;
+      }
 
-      > div {
-        box-sizing: border-box;
-        padding:    0 var(--offset);
+      &-slide {
 
-        .item {
-          margin-bottom: -0.5rem;
-          height:        100%;
+        > div {
+          box-sizing: border-box;
+          padding:    0 var(--offset);
+
+          .item {
+            margin-bottom: -0.5rem;
+            height:        100%;
+          }
+
         }
 
       }
