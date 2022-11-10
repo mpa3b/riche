@@ -1,4 +1,5 @@
 @import "../base";
+@import "../mixins";
 
 #cbox {
 
@@ -104,40 +105,52 @@
 
 #cbox {
 
-  &TopLeft {
-    width:  0;
-    height: 0;
+  &Top {
+
+    &Left {
+      width:  0;
+      height: 0;
+    }
+
+    &Center {
+      height: 0;
+    }
+
+    &Right {
+      width:  0;
+      height: 0;
+    }
+
   }
 
-  &TopRight {
-    width:  0;
-    height: 0;
+  &Middle {
+
+    &Left {
+      width: 0;
+    }
+
+    &Right {
+      width: 0;
+    }
+
   }
 
-  &BottomLeft {
-    width:  0;
-    height: 0;
-  }
+  &Bottom {
 
-  &BottomRight {
-    width:  0;
-    height: 0;
-  }
+    &Left {
+      width:  0;
+      height: 0;
+    }
 
-  &MiddleLeft {
-    width: 0;
-  }
+    &Center {
+      height: 0;
+    }
 
-  &MiddleRight {
-    width: 0;
-  }
+    &Right {
+      width:  0;
+      height: 0;
+    }
 
-  &TopCenter {
-    height: 0;
-  }
-
-  &BottomCenter {
-    height: 0;
   }
 
   &Content {
@@ -148,21 +161,15 @@
 
     overflow:      hidden;
 
-    @media all and (max-width: $breakpointMobile) {
+    @include Mobile {
 
       @at-root .bx-touch & {
         border-bottom-left-radius:  0;
         border-bottom-right-radius: 0;
       }
+
     }
 
-    @at-root .no-borders & {
-      padding: 0;
-    }
-  }
-
-  &LoadedContent {
-    padding: 0;
     @at-root .no-borders & {
       padding: 0;
     }
@@ -189,11 +196,22 @@
     color:    var(--color--gray);
   }
 
-  &LoadingOverlay {
+  &Loading {
 
-  }
+    &Overlay {
 
-  &LoadingGraphic {
+    }
+
+    &Graphic {
+
+    }
+
+    &Content {
+      padding: 0;
+      @at-root .no-borders & {
+        padding: 0;
+      }
+    }
 
   }
 

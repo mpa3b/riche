@@ -4,7 +4,7 @@
 .menu--main {
 
   ul.menu {
-    margin:         0 var(--offset--negative);
+    margin:         0 var(--offset--half--negative);
 
     display:        flex;
     flex-direction: row;
@@ -15,7 +15,7 @@
 
       a {
         display:         block;
-        padding:         var(--offset);
+        padding:         var(--offset--half);
         white-space:     nowrap;
         text-decoration: none;
         position:        relative;

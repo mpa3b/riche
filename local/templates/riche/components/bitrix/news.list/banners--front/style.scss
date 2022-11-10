@@ -96,6 +96,10 @@
         }
       }
 
+      button {
+        background-color: var(--color--white);
+      }
+
     }
 
     &:not(.slick-initialized) {

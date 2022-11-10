@@ -5,13 +5,13 @@
 
   // region generated colors
 
-  $colorShift:              5;
+  $colorShift:              10;
 
   @each $name, $value in $colors {
 
     --color--#{$name}--light:  #{lighten($value, $colorShift)};
     --color--#{$name}        : #{$value};
-    --color--#{$name}--dark:   #{darken($value, $colorShift)};
+    --color--#{$name}--dark:   #{darken($value, $colorShift * 2)};
 
   }
 
@@ -49,7 +49,7 @@
 
   --opacity:                #{$opacity};
 
-  --box-shadow:             0px 1px 2px var(--color--gray--dark);
+  --box-shadow:             0px 2px 4px var(--color--gray--dark);
   --box-shadow--blurry:     0px 6px 18px var(--color--gray--dark);
   --box-shadow--blurry--2x: 0px 8px 24px var(--color--gray--dark);
 

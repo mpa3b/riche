@@ -54,14 +54,39 @@ jQuery.event.special.mousewheel = {
 
 // region scroll
 
-$(window).on(
-    'scroll',
-    () => {
+$(() => {
 
+    const header     = $('#page--header'),
+          constainer = $('html'),
+          scrolled   = 'scrolled';
 
+    let limit = header.height();
+
+    if (header.length > 0) {
+
+        $(window).on(
+            'scroll',
+            () => {
+
+                let scrollTop = $(window).scrollTop();
+
+                if (scrollTop > limit) {
+
+                    constainer.addClass(scrolled);
+
+                } else {
+
+                    constainer.removeClass(scrolled);
+
+                }
+
+            }
+        );
 
     }
-);
+
+});
+
 
 // endregion
 

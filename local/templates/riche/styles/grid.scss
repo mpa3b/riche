@@ -3,12 +3,12 @@
 
 :root {
 
-  --offset:                 0.55rem;
+  --offset:                 0.45rem;
   @include Mobile {
-    --offset: 0.65rem;
+    --offset: 0.5rem;
   }
   @include Tablet {
-    --offset: 0.75rem;
+    --offset: 0.55rem;
   }
 
   --offset--half:           calc(var(--offset) / 2);
