@@ -46,7 +46,7 @@ $frame = $this->createFrame();
 
                             <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
 
-                                <video muted loop autoplay>
+                                <video muted loop>
                                     <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
                                 </video>
 

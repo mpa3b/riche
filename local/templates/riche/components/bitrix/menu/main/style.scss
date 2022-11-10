@@ -16,9 +16,11 @@
       list-style: none;
 
       a {
-        display:     block;
-        padding:     var(--offset);
-        white-space: nowrap;
+        display:         block;
+        padding:         var(--offset);
+        white-space:     nowrap;
+        text-decoration: none;
+        position:        relative;
       }
 
     }
