@@ -129,10 +129,10 @@
 
   > * {
     padding: calc(var(--offset) * -0.5);
-  }
 
-  .unit:empty {
-    display: none;
+    &:empty {
+      display: none;
+    }
   }
 
 }

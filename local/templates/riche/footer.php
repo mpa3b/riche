@@ -61,28 +61,28 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
 
             </div>
 
-            <div id="page--footer--menu" class="three-fifths">
+            <div id="page--footer--menu" class="two-fifths">
 
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:menu",
                     "footer",
                     [
-                        "ROOT_MENU_TYPE"        => "footer",
-                        "CHILD_MENU_TYPE"       => "local",
+                        "ROOT_MENU_TYPE"  => "footer",
+                        "CHILD_MENU_TYPE" => "local",
 
-                        "DELAY"                 => "N",
-                        "ALLOW_MULTI_SELECT"    => "N",
+                        "DELAY"              => "N",
+                        "ALLOW_MULTI_SELECT" => "N",
 
-                        "MAX_LEVEL"             => 2,
+                        "MAX_LEVEL" => 2,
 
                         "MENU_CACHE_GET_VARS"   => [""],
                         "MENU_CACHE_TIME"       => CACHE_TTL,
                         "MENU_CACHE_TYPE"       => "A",
                         "MENU_CACHE_USE_GROUPS" => "N",
 
-                        "USE_EXT"               => "N",
+                        "USE_EXT" => "N",
 
-                        "CACHE_SELECTED_ITEMS"  => "N",
+                        "CACHE_SELECTED_ITEMS" => "N",
 
                         "COMPOSITE_FRAME_MODE" => "A",
                         "COMPOSITE_FRAME_TYPE" => "AUTO"
@@ -93,22 +93,22 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
                     "bitrix:menu",
                     "footer",
                     [
-                        "ROOT_MENU_TYPE"        => "catalog",
-                        "CHILD_MENU_TYPE"       => "local",
+                        "ROOT_MENU_TYPE"  => "catalog",
+                        "CHILD_MENU_TYPE" => "local",
 
-                        "DELAY"                 => "N",
-                        "ALLOW_MULTI_SELECT"    => "N",
+                        "DELAY"              => "N",
+                        "ALLOW_MULTI_SELECT" => "N",
 
-                        "MAX_LEVEL"             => 2,
+                        "MAX_LEVEL" => 2,
 
                         "MENU_CACHE_GET_VARS"   => [""],
                         "MENU_CACHE_TIME"       => CACHE_TTL,
                         "MENU_CACHE_TYPE"       => "A",
                         "MENU_CACHE_USE_GROUPS" => "N",
 
-                        "USE_EXT"               => "N",
+                        "USE_EXT" => "N",
 
-                        "CACHE_SELECTED_ITEMS"  => "N",
+                        "CACHE_SELECTED_ITEMS" => "N",
 
                         "COMPOSITE_FRAME_MODE" => "A",
                         "COMPOSITE_FRAME_TYPE" => "AUTO"
@@ -119,27 +119,31 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
                     "bitrix:menu",
                     "footer",
                     [
-                        "ROOT_MENU_TYPE"        => "catalog",
-                        "CHILD_MENU_TYPE"       => "law",
+                        "ROOT_MENU_TYPE"  => "catalog",
+                        "CHILD_MENU_TYPE" => "law",
 
-                        "DELAY"                 => "N",
-                        "ALLOW_MULTI_SELECT"    => "N",
+                        "DELAY"              => "N",
+                        "ALLOW_MULTI_SELECT" => "N",
 
-                        "MAX_LEVEL"             => 2,
+                        "MAX_LEVEL" => 2,
 
                         "MENU_CACHE_GET_VARS"   => [""],
                         "MENU_CACHE_TIME"       => CACHE_TTL,
                         "MENU_CACHE_TYPE"       => "A",
                         "MENU_CACHE_USE_GROUPS" => "N",
 
-                        "USE_EXT"               => "N",
+                        "USE_EXT" => "N",
 
-                        "CACHE_SELECTED_ITEMS"  => "N",
+                        "CACHE_SELECTED_ITEMS" => "N",
 
                         "COMPOSITE_FRAME_MODE" => "A",
                         "COMPOSITE_FRAME_TYPE" => "AUTO"
                     ]
                 ); ?>
+
+            </div>
+
+            <div id="page--footer--links" class="fifth">
 
                 <? $APPLICATION->IncludeComponent(
                     "bitrix:main.include",

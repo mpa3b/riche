@@ -1,3 +1,6 @@
+@import "../../../../base";
+@import "../../../../mixins";
+
 .problems--front {
   padding-top:    var(--offset--2x);
   padding-bottom: var(--offset--2x);
@@ -52,6 +55,11 @@
         }
 
       }
+
+      @include Mobile {
+        padding-right: 20%;
+      }
+
     }
 
     &-list {
