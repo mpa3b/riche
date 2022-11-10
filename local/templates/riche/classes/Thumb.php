@@ -179,39 +179,4 @@ class Thumb
 
     }
 
-    public static function makeUriFromId(string $id) : string
-    {
-
-        $image = CFile::ResizeImageGet(
-            $id,
-            [
-                'width'  => 100,
-                'height' => 100
-            ],
-            BX_RESIZE_IMAGE_EXACT,
-            false,
-            [],
-            false
-        );
-
-        $uri = false;
-
-        if (!empty($image['src'])) {
-
-            $type   = mime_content_type($image['src']);
-            $base64 = base64_encode($image['src']);
-
-            if (!empty($base64)) {
-
-                $uri = 'data:' . $type . ';base64,' . $base64;
-
-            }
-
-
-        }
-
-        return $uri;
-
-    }
-
 }
