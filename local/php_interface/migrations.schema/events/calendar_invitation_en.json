@@ -1,0 +1,40 @@
+{
+    "event": "CALENDAR_INVITATION",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "email",
+        "NAME": "Invitation",
+        "DESCRIPTION": [
+            "\n\n#EMAIL_TO# - invited person e-mail\n#TITLE# - subject\n#MESSAGE# - full description of the event\n"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL_TO#",
+            "SUBJECT": "#TITLE#",
+            "MESSAGE": [
+                "#MESSAGE#\n\n---------------------------------------------------------------------\n\nСообщение сгенерировано автоматически."
+            ],
+            "BODY_TYPE": "text",
+            "BCC": "",
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ CALENDAR_INVITATION ] Приглашение на встречу"
+        }
+    ]
+}

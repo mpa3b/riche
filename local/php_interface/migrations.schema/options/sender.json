@@ -1,3 +1,94 @@
 {
-    "items": []
+    "items": [
+        {
+            "MODULE_ID": "sender",
+            "NAME": "~mail_max_consent_requests",
+            "VALUE": "1"
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "address_from",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "address_send_to_me",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "auto_agent_interval",
+            "VALUE": "0"
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "auto_method",
+            "VALUE": "agent"
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "GROUP_DEFAULT_RIGHT",
+            "VALUE": "D"
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "interval",
+            "VALUE": "20"
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "link_protocol",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "mail_consent",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "mail_headers",
+            "VALUE": []
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "max_emails_per_cron",
+            "VALUE": "500"
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "max_emails_per_hit",
+            "VALUE": "500"
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "reiterate_interval",
+            "VALUE": "60"
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "reiterate_method",
+            "VALUE": "agent"
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "sub_link",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "thread_type",
+            "VALUE": "Single"
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "track_mails",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "sender",
+            "NAME": "unsub_link",
+            "VALUE": ""
+        }
+    ]
 }

@@ -1,0 +1,40 @@
+{
+    "event": "SEND_ICAL_INVENT",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Отправка приглашения участнику ",
+        "DESCRIPTION": [
+            "\n#DATE_START# - время начала описание\n#DATE_END# - время окончания описание\n#MESSAGE# - тестовое сообщение описание\n"
+        ],
+        "SORT": "1"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL_TO#",
+            "SUBJECT": "#MESSAGE_SUBJECT#",
+            "MESSAGE": [
+                "<?EventMessageThemeCompiler::includeComponent(\n\t\t\t\t\t\t\t\t\"bitrix:calendar.ical.mail\",\n\t\t\t\t\t\t\t\t\"\",\n\t\t\t\t\t\t\t\tArray(\n\t\t\t\t\t\t\t\t\t\"PARAMS\" => $arParams,\n\t\t\t\t\t\t\t\t)\n\t\t\t\t\t\t\t);?>"
+            ],
+            "BODY_TYPE": "html",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ SEND_ICAL_INVENT ] Отправка приглашения участнику "
+        }
+    ]
+}

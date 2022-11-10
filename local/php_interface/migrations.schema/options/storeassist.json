@@ -1,3 +1,17 @@
 {
-    "items": []
+    "items": [
+        {
+            "MODULE_ID": "storeassist",
+            "NAME": "num_orders",
+            "VALUE": {
+                "newDay": 0,
+                "prevDay": 0
+            }
+        },
+        {
+            "MODULE_ID": "storeassist",
+            "NAME": "progress_percent",
+            "VALUE": "0"
+        }
+    ]
 }

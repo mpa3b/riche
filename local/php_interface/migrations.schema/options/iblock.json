@@ -28,7 +28,7 @@
         {
             "MODULE_ID": "iblock",
             "NAME": "excel_export_rights",
-            "VALUE": "N"
+            "VALUE": "Y"
         },
         {
             "MODULE_ID": "iblock",

@@ -2,6 +2,16 @@
     "items": [
         {
             "MODULE_ID": "search",
+            "NAME": "agent_duration",
+            "VALUE": "30"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "agent_stemming",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "search",
             "NAME": "dbnode_id",
             "VALUE": "N"
         },
@@ -9,6 +19,101 @@
             "MODULE_ID": "search",
             "NAME": "dbnode_status",
             "VALUE": "ok"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "exclude_mask",
+            "VALUE": "\/bitrix\/*;\/404.php;\/upload\/*;*\/.hg\/*;*\/.svn\/*;*\/.git\/*;*\/cgi-bin\/*;\/bitrix_personal\/*;\/local\/*"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "full_text_engine",
+            "VALUE": "bitrix"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "include_mask",
+            "VALUE": "*.php;*.html;*.htm"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "letters",
+            "VALUE": "-"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "max_body_size",
+            "VALUE": "100000"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "max_file_size",
+            "VALUE": ""
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "max_result_size",
+            "VALUE": "500"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "mysql_note",
+            "VALUE": null
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "page_tag_property",
+            "VALUE": "tags"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "sphinx_connection",
+            "VALUE": "127.0.0.1:9306"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "sphinx_index_name",
+            "VALUE": "bitrix"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "sphinx_note",
+            "VALUE": null
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "stat_phrase",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "stat_phrase_save_days",
+            "VALUE": "360"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "suggest_save_days",
+            "VALUE": "30"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "use_social_rating",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "use_stemming",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "use_tf_cache",
+            "VALUE": "N"
+        },
+        {
+            "MODULE_ID": "search",
+            "NAME": "use_word_distance",
+            "VALUE": "Y"
         },
         {
             "MODULE_ID": "search",

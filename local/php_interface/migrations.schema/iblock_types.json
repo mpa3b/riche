@@ -9,8 +9,8 @@
             "SORT": "500",
             "LANG": {
                 "ru": {
-                    "NAME": "Каталог товаров",
-                    "SECTION_NAME": "Разделы каталога",
+                    "NAME": "Продукты",
+                    "SECTION_NAME": "Разделы",
                     "ELEMENT_NAME": "Товары"
                 },
                 "en": {
