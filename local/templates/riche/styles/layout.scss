@@ -11,7 +11,7 @@
     background-color: var(--color--white);
 
     @at-root .scrolled & {
-      box-shadow:       var(--box-shadow);
+      box-shadow: var(--box-shadow);
     }
 
     > .wrap {
@@ -34,7 +34,13 @@
       }
 
       img {
-        height: 1.6rem;
+        height: 1.4rem;
+        @include Tablet {
+          height: 1.6rem;
+        }
+        @include Desktop {
+          height: 1.8rem;
+        }
       }
 
       @include Mobile {
@@ -113,7 +119,7 @@
       display:        flex;
       flex-direction: column;
 
-      @include Mobile{
+      @include Mobile {
         flex-direction: row;
       }
 

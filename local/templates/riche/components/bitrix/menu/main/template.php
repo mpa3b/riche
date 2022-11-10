@@ -24,7 +24,7 @@ $this->setFrameMode(true);
 
     <?php $frame = $this->createFrame(); ?>
 
-    <nav class="menu--main row">
+    <nav class="menu--main">
 
         <?php $frame->begin(); ?>
 

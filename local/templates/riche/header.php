@@ -217,26 +217,52 @@ $request = Application::getInstance()->getContext()->getRequest();
 
         </div>
 
-        <?php $APPLICATION->IncludeComponent(
-            "bitrix:menu",
-            "main",
-            [
-                "ROOT_MENU_TYPE"        => "main",
-                "ALLOW_MULTI_SELECT"    => "N",
-                "CHILD_MENU_TYPE"       => "local",
-                "DELAY"                 => "N",
-                "MAX_LEVEL"             => 1,
-                "MENU_CACHE_GET_VARS"   => [""],
-                "MENU_CACHE_TIME"       => CACHE_TTL,
-                "MENU_CACHE_TYPE"       => "A",
-                "MENU_CACHE_USE_GROUPS" => "N",
-                "USE_EXT"               => "N",
-                "CACHE_SELECTED_ITEMS"  => "N",
+        <div class="row">
 
-                "COMPOSITE_FRAME_MODE" => "A",
-                "COMPOSITE_FRAME_TYPE" => "AUTO"
-            ]
-        ); ?>
+            <div class="two-thirds unit">
+
+                <?php $APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "main",
+                    [
+                        "ROOT_MENU_TYPE"        => "main",
+                        "ALLOW_MULTI_SELECT"    => "N",
+                        "CHILD_MENU_TYPE"       => "local",
+                        "DELAY"                 => "N",
+                        "MAX_LEVEL"             => 1,
+                        "MENU_CACHE_GET_VARS"   => [""],
+                        "MENU_CACHE_TIME"       => CACHE_TTL,
+                        "MENU_CACHE_TYPE"       => "A",
+                        "MENU_CACHE_USE_GROUPS" => "N",
+                        "USE_EXT"               => "N",
+                        "CACHE_SELECTED_ITEMS"  => "N",
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO"
+                    ]
+                ); ?>
+
+            </div>
+
+            <div class="third unit hide--on-mobiles">
+
+                <?php $APPLICATION->IncludeComponent(
+                    'bitrix:main.include',
+                    '',
+                    [
+                        "AREA_FILE_SHOW"      => "sect",
+                        "AREA_FILE_SUFFIX"    => "header",
+                        "AREA_FILE_RECURSIVE" => "N",
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO",
+                    ],
+                    false
+                ); ?>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -276,7 +302,7 @@ $request = Application::getInstance()->getContext()->getRequest();
                     '',
                     [
                         "AREA_FILE_SHOW"      => "sect",
-                        "AREA_FILE_SUFFIX"    => "header",
+                        "AREA_FILE_SUFFIX"    => "above",
                         "AREA_FILE_RECURSIVE" => "N",
 
                         "COMPOSITE_FRAME_MODE" => "A",
