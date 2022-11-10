@@ -1,0 +1,72 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "convert_mode",
+            "VALUE": [
+                "hitConvert",
+                "postConvert"
+            ]
+        },
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "convert_quality",
+            "VALUE": "80"
+        },
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "enable_element",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "enable_resize",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "enable_save",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "enable_section",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "jpeg_progressive",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "jpegoptim_compress",
+            "VALUE": "80"
+        },
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "opti_algorithm_jpeg",
+            "VALUE": "jpegoptim"
+        },
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "opti_algorithm_png",
+            "VALUE": "optipng"
+        },
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "optipng_compress",
+            "VALUE": "3"
+        },
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "path_to_jpegoptim",
+            "VALUE": "\/usr\/bin"
+        },
+        {
+            "MODULE_ID": "dev2fun.imagecompress",
+            "NAME": "path_to_optipng",
+            "VALUE": "\/usr\/bin"
+        }
+    ]
+}

@@ -23,7 +23,7 @@
         "RSS_FILE_LIMIT": null,
         "RSS_FILE_DAYS": null,
         "RSS_YANDEX_ACTIVE": "N",
-        "XML_ID": null,
+        "XML_ID": "",
         "INDEX_ELEMENT": "N",
         "INDEX_SECTION": "N",
         "WORKFLOW": "N",
@@ -42,7 +42,7 @@
         "SECTION_NAME": "Раздел",
         "ELEMENTS_NAME": "Элементы",
         "ELEMENT_NAME": "Элемент",
-        "EXTERNAL_ID": null,
+        "EXTERNAL_ID": "",
         "LANG_DIR": "\/",
         "SERVER_NAME": null,
         "IPROPERTY_TEMPLATES": [],
@@ -263,7 +263,150 @@
             }
         }
     },
-    "props": [],
+    "props": [
+        {
+            "NAME": "Оценка",
+            "ACTIVE": "Y",
+            "SORT": "500",
+            "CODE": "RATING",
+            "DEFAULT_VALUE": "5",
+            "PROPERTY_TYPE": "N",
+            "ROW_COUNT": "1",
+            "COL_COUNT": "30",
+            "LIST_TYPE": "L",
+            "MULTIPLE": "N",
+            "XML_ID": "",
+            "FILE_TYPE": "",
+            "MULTIPLE_CNT": "5",
+            "LINK_IBLOCK_ID": "0",
+            "WITH_DESCRIPTION": "N",
+            "SEARCHABLE": "N",
+            "FILTRABLE": "N",
+            "IS_REQUIRED": "Y",
+            "VERSION": "1",
+            "USER_TYPE": null,
+            "USER_TYPE_SETTINGS": null,
+            "HINT": "",
+            "FEATURES": [
+                {
+                    "MODULE_ID": "iblock",
+                    "FEATURE_ID": "DETAIL_PAGE_SHOW",
+                    "IS_ENABLED": "Y"
+                },
+                {
+                    "MODULE_ID": "iblock",
+                    "FEATURE_ID": "LIST_PAGE_SHOW",
+                    "IS_ENABLED": "Y"
+                }
+            ]
+        },
+        {
+            "NAME": "Ссылка на товар каталога",
+            "ACTIVE": "Y",
+            "SORT": "500",
+            "CODE": "SKU",
+            "DEFAULT_VALUE": "",
+            "PROPERTY_TYPE": "E",
+            "ROW_COUNT": "1",
+            "COL_COUNT": "30",
+            "LIST_TYPE": "L",
+            "MULTIPLE": "N",
+            "XML_ID": "",
+            "FILE_TYPE": "",
+            "MULTIPLE_CNT": "5",
+            "LINK_IBLOCK_ID": "CATALOG:PRODUCTS",
+            "WITH_DESCRIPTION": "N",
+            "SEARCHABLE": "N",
+            "FILTRABLE": "N",
+            "IS_REQUIRED": "N",
+            "VERSION": "1",
+            "USER_TYPE": "SKU",
+            "USER_TYPE_SETTINGS": {
+                "VIEW": "A",
+                "SHOW_ADD": "N",
+                "MAX_WIDTH": 0,
+                "MIN_HEIGHT": 24,
+                "MAX_HEIGHT": 1000,
+                "BAN_SYM": ",;",
+                "REP_SYM": " ",
+                "OTHER_REP_SYM": "",
+                "IBLOCK_MESS": "N"
+            },
+            "HINT": "",
+            "FEATURES": [
+                {
+                    "MODULE_ID": "iblock",
+                    "FEATURE_ID": "DETAIL_PAGE_SHOW",
+                    "IS_ENABLED": "N"
+                },
+                {
+                    "MODULE_ID": "iblock",
+                    "FEATURE_ID": "LIST_PAGE_SHOW",
+                    "IS_ENABLED": "Y"
+                }
+            ]
+        },
+        {
+            "NAME": "Имя автора",
+            "ACTIVE": "Y",
+            "SORT": "500",
+            "CODE": "AUTHOR_NAME",
+            "DEFAULT_VALUE": "",
+            "PROPERTY_TYPE": "S",
+            "ROW_COUNT": "1",
+            "COL_COUNT": "30",
+            "LIST_TYPE": "L",
+            "MULTIPLE": "N",
+            "XML_ID": "",
+            "FILE_TYPE": "",
+            "MULTIPLE_CNT": "5",
+            "LINK_IBLOCK_ID": "0",
+            "WITH_DESCRIPTION": "N",
+            "SEARCHABLE": "N",
+            "FILTRABLE": "N",
+            "IS_REQUIRED": "N",
+            "VERSION": "1",
+            "USER_TYPE": null,
+            "USER_TYPE_SETTINGS": null,
+            "HINT": ""
+        },
+        {
+            "NAME": "Изображение автора",
+            "ACTIVE": "Y",
+            "SORT": "500",
+            "CODE": "AUTHOR_PICTURE",
+            "DEFAULT_VALUE": "",
+            "PROPERTY_TYPE": "F",
+            "ROW_COUNT": "1",
+            "COL_COUNT": "30",
+            "LIST_TYPE": "L",
+            "MULTIPLE": "N",
+            "XML_ID": "",
+            "FILE_TYPE": "jpg, gif, png, jpeg, webp",
+            "MULTIPLE_CNT": "5",
+            "LINK_IBLOCK_ID": "0",
+            "WITH_DESCRIPTION": "N",
+            "SEARCHABLE": "N",
+            "FILTRABLE": "N",
+            "IS_REQUIRED": "N",
+            "VERSION": "1",
+            "USER_TYPE": null,
+            "USER_TYPE_SETTINGS": null,
+            "HINT": "",
+            "FEATURES": [
+                {
+                    "MODULE_ID": "iblock",
+                    "FEATURE_ID": "DETAIL_PAGE_SHOW",
+                    "IS_ENABLED": "Y"
+                },
+                {
+                    "MODULE_ID": "iblock",
+                    "FEATURE_ID": "LIST_PAGE_SHOW",
+                    "IS_ENABLED": "Y"
+                }
+            ]
+        }
+    ],
     "element_form": [],
     "section_form": []
 }

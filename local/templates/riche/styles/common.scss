@@ -5,7 +5,7 @@
 
   // region generated colors
 
-  $colorShift:              15;
+  $colorShift:              10;
 
   @each $name, $value in $colors {
 
@@ -84,7 +84,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 500;
+  font-weight: bold;
   font-size:   1.4rem;
   line-height: 1.2;
 
@@ -148,7 +148,7 @@ label {
 }
 
 strong, b {
-  font-weight: 500;
+  font-weight: bold;
 }
 
 a {
@@ -205,7 +205,7 @@ button {
 
   border-radius:    var(--border-radius--2x);
 
-  font-weight:      500;
+  font-weight:      bold;
 
   text-align:       center;
   text-decoration:  none;

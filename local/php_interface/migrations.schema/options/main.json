@@ -110,7 +110,7 @@
             "MODULE_ID": "main",
             "NAME": "~update_autocheck_result",
             "VALUE": {
-                "check_date": 1667989372,
+                "check_date": 1667989484,
                 "result": false,
                 "error": "",
                 "modules": []
@@ -446,14 +446,19 @@
             "NAME": "mp_modules_date",
             "VALUE": [
                 {
-                    "ID": "sprint.migration",
-                    "NAME": "Миграции для разработчиков",
-                    "TMS": 1667988220
-                },
-                {
                     "ID": "sprint.editor",
                     "NAME": "Редактор для контент-менеджеров",
                     "TMS": 1667988318
+                },
+                {
+                    "ID": "asd.iblock",
+                    "NAME": "Информационные блоки, инструменты",
+                    "TMS": 1667989424
+                },
+                {
+                    "ID": "dev2fun.imagecompress",
+                    "NAME": "Оптимизация картинок",
+                    "TMS": 1667989468
                 }
             ]
         },
@@ -835,12 +840,12 @@
         {
             "MODULE_ID": "main",
             "NAME": "update_system_check",
-            "VALUE": "09.11.2022 13:22:40"
+            "VALUE": "09.11.2022 13:24:40"
         },
         {
             "MODULE_ID": "main",
             "NAME": "update_system_update",
-            "VALUE": "09.11.2022 13:22:52"
+            "VALUE": "09.11.2022 13:24:44"
         },
         {
             "MODULE_ID": "main",

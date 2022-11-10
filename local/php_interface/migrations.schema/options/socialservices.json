@@ -1,0 +1,34 @@
+{
+    "items": [
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "allow_encrypted_tokens",
+            "VALUE": "1"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "bitrix24net_domain",
+            "VALUE": "http:\/\/riche.local"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "bitrix24net_id",
+            "VALUE": "ext.636b5cc98c3e74.14444029"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "bitrix24net_secret",
+            "VALUE": "BxEw8OV4rKHAUnuqJB1NAe6xfatwivpo72bmjpTI7RJ4NZy0pA"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "google_api_key",
+            "VALUE": "AIzaSyA7puwZwGDJgOjcAWsFsY7hQcrioC13A18"
+        },
+        {
+            "MODULE_ID": "socialservices",
+            "NAME": "google_appid",
+            "VALUE": "798910771106.apps.googleusercontent.com"
+        }
+    ]
+}
