@@ -1,6 +1,13 @@
 @import "../../../../base";
 
 .menu--footer {
+  margin-bottom: var(--offset--2x);
+
+  h2 {
+    font-weight: normal;
+    font-size:   1rem;
+    color:       var(--color--gray);
+  }
 
   ul.menu {
     display:        flex;
@@ -10,8 +17,10 @@
     padding:        0;
 
     li {
-      list-style: none;
-      flex-basis: 50%;
+      list-style:  none;
+      box-sizing:  border-box;
+      flex-basis:  49.5%;
+      flex-shrink: 0;
 
       a {
         display: block;

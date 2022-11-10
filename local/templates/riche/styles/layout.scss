@@ -85,11 +85,17 @@
   &--footer {
     padding-top: var(--offset--4x);
 
+    font-size:   0.85rem;
+
     &--contact {
 
       .logo {
         margin-bottom: 1rem;
         width:         6rem;
+      }
+
+      .contact {
+
       }
 
     }
@@ -118,10 +124,6 @@
     &--menu {
       display:        flex;
       flex-direction: column;
-
-      @include Mobile {
-        flex-direction: row;
-      }
 
       h3 {
         font-size:   0.8rem;
@@ -158,14 +160,24 @@
     &--links {
 
       .links {
-        display:         flex;
-        flex-direction:  row;
-        flex-wrap:       nowrap;
-        justify-content: flex-end;
+        display:        flex;
+        flex-direction: row;
+        flex-wrap:      nowrap;
+
+        @include Desktop {
+          justify-content: flex-end;
+        }
 
         > a {
           display:       block;
-          margin-left:   var(--offset);
+          margin:        0 var(--offset);
+
+          @include Mobile {
+            margin-left: 0;
+          }
+          @include Desktop {
+            margin-right: 0;
+          }
 
           border:        1px solid var(--color--gray--light);
           border-radius: 100%;
@@ -183,7 +195,6 @@
 
     &--outro {
       font-size:     0.7rem;
-      margin-bottom: 0;
 
       .row {
         display:        flex;
@@ -197,10 +208,16 @@
 
       color:         var(--color--gray--dark);
 
-      span {
-        display:     block;
-        white-space: nowrap;
+      @include Mobile {
+
+        span {
+          display:      block;
+          white-space:  nowrap;
+          padding-left: 1em;
+        }
+
       }
+
     }
 
   }

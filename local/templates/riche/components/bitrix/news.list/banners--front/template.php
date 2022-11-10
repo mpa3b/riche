@@ -124,11 +124,14 @@ $ratios = [
                         <? } ?>
 
                         <? if (!empty($arItem['DISPLAY_PROPERTIES']['LINK']['VALUE'])) { ?>
-                            <button data-id="<?= $arItem['ID']; ?>"
+
+                            <button class="big white button"
+                                    data-id="<?= $arItem['ID']; ?>"
                                     data-href="<?= $arItem['DISPLAY_PROPERTIES']['LINK']['VALUE']; ?>">
                                 <?= $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?>
                                 <i class="icon-chevron-right"></i>
                             </button>
+
                         <? } ?>
 
                     </div>

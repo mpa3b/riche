@@ -67,9 +67,30 @@ $frame = $this->createFrame();
 
                                 </picture>
 
-                                <span class="name">
-                                    <?= $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>
-                                </span>
+                                <div>
+
+                                    <div class="name">
+                                        <?= $arItem['DISPLAY_PROPERTIES']['AUTHOR_NAME']['VALUE']; ?>
+                                    </div>
+                                    <?
+
+                                    $ratingLimit = 5;
+
+                                    // @todo возможно свойство стоит переделать на другой тип. Список, например.
+
+                                    ?>
+
+                                    <? if ($arItem['DISPLAY_PROPERTIES']['RATING']) { ?>
+
+                                        <div class="rating field">
+                                            <? for ($i = 1; $i <= $ratingLimit; $i++) { ?>
+                                                <i class="icon-star <? if ($i <= $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']) { ?> active<? } ?>"></i>
+                                            <? } ?>
+                                        </div>
+
+                                    <? } ?>
+
+                                </div>
 
                             </div>
 
@@ -81,21 +102,17 @@ $frame = $this->createFrame();
                             <?= trim($arItem['DETAIL_TEXT']); ?>
                         </div>
 
-                        <?
+                        <div class="controls field">
 
-                        $ratingLimit = 5;
+                            <button class="vote" data-action="vote" data-value="down" data-id="<?= $arItem['ID']; ?>">
+                                <i class="icon-thumbs-down"></i>
+                            </button>
 
-                        // @todo возможно свойство стоит переделать на другой тип. Список, например.
+                            <button class="vote" data-action="vote" data-value="up" data-id="<?= $arItem['ID']; ?>">
+                                <i class="icon-thumbs-up"></i>
+                            </button>
 
-                        ?>
-
-                        <? if ($arItem['DISPLAY_PROPERTIES']['RATING']) { ?>
-                            <div class="rating field">
-                                <? for ($i = 1; $i <= $ratingLimit; $i++) { ?>
-                                    <i class="icon-star <? if ($i <= $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']) { ?> active<? } ?>"></i>
-                                <? } ?>
-                            </div>
-                        <? } ?>
+                        </div>
 
                     </div>
 

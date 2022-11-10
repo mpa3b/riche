@@ -206,7 +206,12 @@ input[type=submit],
 button {
   display:          inline-block;
   box-sizing:       border-box;
-  padding:          1em 1.6em;
+
+  padding:          0.4em 0.6em;
+
+  &.big {
+    padding:     1em 2.2em;
+  }
 
   cursor:           pointer;
 

@@ -67,6 +67,8 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
                     "bitrix:menu",
                     "footer",
                     [
+                        "TITLE" => "Полезные ссылки",
+
                         "ROOT_MENU_TYPE"  => "footer",
                         "CHILD_MENU_TYPE" => "local",
 
@@ -93,8 +95,9 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
                     "bitrix:menu",
                     "footer",
                     [
+                        "TITLE" => "Наши продукты",
+
                         "ROOT_MENU_TYPE"  => "catalog",
-                        "CHILD_MENU_TYPE" => "local",
 
                         "DELAY"              => "N",
                         "ALLOW_MULTI_SELECT" => "N",
@@ -119,8 +122,9 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
                     "bitrix:menu",
                     "footer",
                     [
-                        "ROOT_MENU_TYPE"  => "catalog",
-                        "CHILD_MENU_TYPE" => "law",
+                        "TITLE" => "Правовая информация",
+
+                        "ROOT_MENU_TYPE"  => "law",
 
                         "DELAY"              => "N",
                         "ALLOW_MULTI_SELECT" => "N",
@@ -137,7 +141,8 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
                         "CACHE_SELECTED_ITEMS" => "N",
 
                         "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO"
+                        "COMPOSITE_FRAME_TYPE" => "AUTO",
+
                     ]
                 ); ?>
 

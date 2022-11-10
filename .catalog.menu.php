@@ -28,18 +28,14 @@ $sections = $rSections->fetchAll();
 
 if (!empty($sections)) {
 
-    $aMenuLinks = [];
-
     foreach ($sections as $section) {
 
         $aMenuLinks[] = [
-            [
-                $section['NAME'],
-                $section['URL'],
-                [],
-                [],
-                ""
-            ]
+            $section['NAME'],
+            $section['URL'],
+            [],
+            [],
+            ""
         ];
 
     }

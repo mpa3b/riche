@@ -62,26 +62,34 @@
           font-weight: bold;
         }
 
+        .rating {
+          margin-top: var(--offset--half);
+          font-size:  0;
+
+          .icon-star {
+            font-size: 0.8rem;
+
+            opacity:   calc(var(--opacity) / 3);
+
+            &.active {
+              color:   var(--color--green--dark);
+              opacity: 1;
+            }
+
+          }
+
+        }
+
       }
 
       .review {
 
       }
 
-      .rating {
-
-        .icon-star {
-          font-size: 1rem;
-
-          opacity:   calc(var(--opacity) / 3);
-
-          &.active {
-            color:   var(--color--green--dark);
-            opacity: 1;
-          }
-
-        }
-
+      .controls {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
       }
 
     }

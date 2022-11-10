@@ -25,6 +25,12 @@ if (!empty($arResult)) { ?>
 
         <? //@formatter:off ?>
 
+        <? if(!empty($arParams['TITLE'])) { ?>
+
+            <h2><?= $arParams['TITLE']; ?></h2>
+
+        <? } ?>
+
         <ul class="menu">
 
             <? $previousLevel = 0; ?>
