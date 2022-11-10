@@ -5,7 +5,7 @@
 
   // region generated colors
 
-  $colorShift:              10;
+  $colorShift:              20;
 
   @each $name, $value in $colors {
 
@@ -23,22 +23,22 @@
 
   // endregion
 
-  --color--black:           #111111;
 
   // symbolic colors
 
-  --color--base:            var(--color--black);
-  --color--background:      var(--color--white--dark);
+  --color--black:      #111111;
+  --color--base:       var(--color--black);
+  --color--background: #f2f2f2;
 
   // endregion
 
-  --font--base:             "Gordita", sans-serif;
+  --font--base:        "Gordita", sans-serif;
 
-  --padding:                1rem;
-  --padding--2x:            calc(var(--padding) * 2);
+  --padding:           1rem;
+  --padding--2x:       calc(var(--padding) * 2);
 
-  --border-radius:          1rem;
-  --border-radius--2x:      calc(var(--border-radius) * 2);
+  --border-radius:     1rem;
+  --border-radius--2x: calc(var(--border-radius) * 2);
 
   --transition--ease:       var(--transition--time) ease;
 
@@ -67,7 +67,10 @@ html {
   @include Desktop {
     font-size: 11pt;
   }
-  background-color: var(--color--white--dark);
+  @include Wide {
+    font-size: 12pt;
+  }
+  background-color: var(--color--background);
 }
 
 body {
@@ -255,10 +258,10 @@ button {
   &.outlined {
     color:      var(--color--white);
     border:     1px solid var(--color--white);
-    background: transparent none;
+    background-color: var(--color--white--transparent);
 
     &:hover {
-      background-color: var(--color--white--transparent);
+      background-color: var(--color--green--transparent);
     }
 
   }

@@ -121,7 +121,7 @@
   .slick {
 
     &-slider {
-
+      margin: 0 var(--offset--negative);
     }
 
     &-list {
@@ -131,12 +131,8 @@
     &-slide {
 
       > div {
-        width:      100%;
         box-sizing: border-box;
-
-        @include Tablet {
-          margin: 0 var(--offset);
-        }
+        padding:    0 var(--offset);
 
         .item {
           margin-bottom: -0.5rem;

@@ -57,10 +57,25 @@
           font-weight: bold;
         }
 
-
       }
 
       .review {
+
+      }
+
+      .rating {
+
+        .icon-star {
+          font-size: 1rem;
+
+          opacity:   calc(var(--opacity) / 2);
+
+          &.active {
+            color:   var(--color--green--dark);
+            opacity: 1;
+          }
+
+        }
 
       }
 

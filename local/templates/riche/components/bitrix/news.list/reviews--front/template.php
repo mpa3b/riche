@@ -1,6 +1,5 @@
 <?php
 
-use Riche\Breakpoint;
 use Riche\Thumb;
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
@@ -82,14 +81,19 @@ $frame = $this->createFrame();
                             <?= trim($arItem['DETAIL_TEXT']); ?>
                         </div>
 
+                        <?
+
+                        $ratingLimit = 5;
+
+                        // @todo возможно свойство стоит переделать на другой тип. Список, например.
+
+                        ?>
+
                         <? if ($arItem['DISPLAY_PROPERTIES']['RATING']) { ?>
-                            <div class="rating field"
-                                 data-rating="<?= $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']; ?>">
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
-                                <i class="icon-star"></i>
+                            <div class="rating field">
+                                <? for ($i = 1; $i <= $ratingLimit; $i++) { ?>
+                                    <i class="icon-star <? if ($i <= $arItem['DISPLAY_PROPERTIES']['RATING']['VALUE']) { ?> active<? } ?>"></i>
+                                <? } ?>
                             </div>
                         <? } ?>
 
@@ -106,5 +110,3 @@ $frame = $this->createFrame();
     </section>
 
 <? } ?>
-
-<? d($arResult); ?>
