@@ -9,7 +9,7 @@ $(() => {
             {
                 slidesToShow:   1,
                 slidesToScroll: 1,
-                fade:           true,
+                fade:           false,
                 speed:          1000,
                 autoplay:       false,
                 autoplaySpeed:  5000,
@@ -19,17 +19,17 @@ $(() => {
                 mobileFirst:    true,
                 responsive:     [
                     {
-                        breakpoint: breakpoint.mobile,
+                        breakpoint: breakpoint.tablet,
                         settings:   {
+                            slidesToShow: 2,
                             fade:         false,
                             dots:         false,
-                            slidesToShow: 2,
                         }
                     },
                     {
-                        breakpoint: breakpoint.tablet,
+                        breakpoint: breakpoint.desktop,
                         settings:   {
-                            slidesToShow: 3,
+                            slidesToShow: 4,
                             fade:         false,
                             dots:         false,
                         }

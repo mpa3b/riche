@@ -128,23 +128,35 @@ $request = Application::getInstance()->getContext()->getRequest();
 
         <div class="row">
 
-            <div id="page--header--logo" class="quarter">
+            <div id="page--header--logo" class="third">
 
                 <?php if ($currentDirectoryPath == "/") { ?>
 
-                    <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo--full.svg"
-                         loading="eager"
-                         alt="RICHE"
-                         class="logo">
+                    <picture>
+
+                        <source srcset="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg" media="<?= Breakpoint::getMedia('mobile'); ?>">
+                        <source srcset="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo--full.svg" media="<?= Breakpoint::getMedia('tablet'); ?>">
+
+                        <img loading="eager"
+                             alt="RICHE"
+                             class="logo">
+
+                    </picture>
 
                 <?php } else { ?>
 
                     <a href="/">
 
-                        <img src="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo--full.svg"
-                             loading="eager"
-                             alt="RICHE"
-                             class="logo">
+                        <picture>
+
+                            <source srcset="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg" media="<?= Breakpoint::getMedia('mobile'); ?>">
+                            <source srcset="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo--full.svg" media="<?= Breakpoint::getMedia('tablet'); ?>">
+
+                            <img loading="eager"
+                                 alt="RICHE"
+                                 class="logo">
+
+                        </picture>
 
                     </a>
 
@@ -152,7 +164,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             </div>
 
-            <div id="page--header--menu" class="half">
+            <div id="page--header--menu" class="third">
 
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:menu",
@@ -177,7 +189,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             </div>
 
-            <div id="page--header--buttons" class="quarter">
+            <div id="page--header--buttons" class="third">
 
                 <? /*
 

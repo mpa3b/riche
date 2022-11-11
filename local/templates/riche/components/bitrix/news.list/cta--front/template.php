@@ -77,37 +77,37 @@ $ratios = [
 
                             $preload = CFile::ResizeImageGet(
                                 $fileId,
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.5),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 1),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $small = CFile::ResizeImageGet(
                                 $fileId,
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 0.5),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 1),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $mobile = CFile::ResizeImageGet(
                                 $fileId,
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 0.5),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 1),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $tablet = CFile::ResizeImageGet(
                                 $fileId,
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'], 3),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 2, 1),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $desktop = CFile::ResizeImageGet(
                                 $fileId,
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'], 4),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 3, 1),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $wide = CFile::ResizeImageGet(
                                 $fileId,
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'], 5),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 1),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 

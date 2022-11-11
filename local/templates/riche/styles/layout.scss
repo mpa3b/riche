@@ -28,16 +28,20 @@
 
     &--logo {
 
+      > picture {
+        display:   block;
+        width:     auto;
+        max-width: unset;
+      }
+
       > img,
       > a {
         display: block;
       }
 
       img {
-        height: 1.4rem;
-        @include Tablet {
-          height: 1.6rem;
-        }
+        height: 1.6rem;
+        width:  auto;
         @include Desktop {
           height: 1.8rem;
         }
