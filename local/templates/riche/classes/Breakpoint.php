@@ -9,7 +9,7 @@ class Breakpoint
         = [
             'preload' => 100,
             'small'   => 340,
-            'mobile'  => 580,
+            'mobile'  => 560,
             'tablet'  => 780,
             'desktop' => 980,
             'wide'    => 1360

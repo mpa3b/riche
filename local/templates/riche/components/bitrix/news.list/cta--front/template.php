@@ -44,7 +44,7 @@ $ratios = [
 
         <div class="wrap">
 
-            <h2 hidden>Самое главное</h2>
+            <h2 hidden>Мы рекомендуем</h2>
 
             <div class="items slider">
 
@@ -52,50 +52,61 @@ $ratios = [
 
                     <div class="item">
 
-                        <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
+                        <? if ($arItem['DISPLAY_PROPERTIES']['ILLUSTRATION']) { ?>
 
-                            <video muted loop>
-                                <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-                            </video>
+                            <? if ($arItem['DISPLAY_PROPERTIES']['ILLUSTRATION']['FILE_VALUE']['CONTENT_TYPE'] == 'image/svg+xml') { ?>
+
+                                <img src="<?= $arItem['DISPLAY_PROPERTIES']['ILLUSTRATION']['FILE_VALUE']['SRC']; ?>"
+                                     loading="lazy">
+
+                            <? } else { ?>
+
+                                <? $fileId = $arItem['DISPLAY_PROPERTIES']['ILLUSTRATION']['ID']; ?>
+
+                            <? } ?>
+
+                        <? } elseif ($arItem['DETAIL_PICTURE']) { ?>
+
+                            <? $fileId = $arItem['DETAIL_PICTURE']['ID']; ?>
 
                         <? } ?>
 
-                        <? if ($arItem['DETAIL_PICTURE']) { ?>
+                        <? if (!empty($fileId)) { ?>
 
                             <?
 
                             $preload = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
+                                $fileId,
                                 Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.5),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $small = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
+                                $fileId,
                                 Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 0.5),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $mobile = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
+                                $fileId,
                                 Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 0.5),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $tablet = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
+                                $fileId,
                                 Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'], 3),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $desktop = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
+                                $fileId,
                                 Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'], 4),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $wide = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
+                                $fileId,
                                 Thumb::calculateImageSize(Breakpoint::breakpoints['wide'], 5),
                                 BX_RESIZE_IMAGE_EXACT
                             );
@@ -129,18 +140,22 @@ $ratios = [
 
                             <h3><?= $arItem['NAME']; ?></h3>
 
-                            <? if (!empty($arItem['DISPLAY_PROPERTIES']['BUTTON_LINK']['VALUE'])) { ?>
-
-                                <button class="big outlined button"
-                                        data-id="<?= $arItem['ID']; ?>"
-                                        data-href="<?= $arItem['DISPLAY_PROPERTIES']['BUTTON_LINK']['VALUE']; ?>">
-                                    <?= $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?>
-                                    <i class="icon-chevron-right"></i>
-                                </button>
-
+                            <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+                                <p><?= $arItem['PREVIEW_TEXT']; ?></p>
                             <? } ?>
 
                         </div>
+
+                        <? if (!empty($arItem['DISPLAY_PROPERTIES']['BUTTON_LINK']['VALUE'])) { ?>
+
+                            <button class="big primary button"
+                                    data-id="<?= $arItem['ID']; ?>"
+                                    data-href="<?= $arItem['DISPLAY_PROPERTIES']['BUTTON_LINK']['VALUE']; ?>">
+                                <?= $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?>
+                                <i class="icon-chevron-right"></i>
+                            </button>
+
+                        <? } ?>
 
                     </div>
 

@@ -279,8 +279,6 @@ $APPLICATION->SetTitle('Главная');
     ]
 ); ?>
 
-
-
 <?php $APPLICATION->IncludeComponent(
     'bitrix:news.list',
     'cta--front',
@@ -297,8 +295,8 @@ $APPLICATION->SetTitle('Главная');
         "CHECK_DATES" => "Y",
 
         "FILTER_NAME"   => "",
-        "FIELD_CODE"    => ["ID", "DETAIL_TEXT"],
-        "PROPERTY_CODE" => ["RATING", "AUTHOR_NAME", "AUTHOR_PICTURE", "SKU"],
+        "FIELD_CODE"    => ["ID", "PREVIEW_TEXT", "DETAIL_TEXT", "DETAIL_PICTURE"],
+        "PROPERTY_CODE" => ["ILLUSTRATION", "BUTTON_TEXT", "BUTTON_LINK"],
 
         "ACTIVE_DATE_FORMAT" => "j F",
 
@@ -328,9 +326,9 @@ $APPLICATION->SetTitle('Главная');
     ]
 ); ?>
 
-<? $APPLICATION->IncludeComponent(
+<?php $APPLICATION->IncludeComponent(
     "bitrix:sender.subscribe",
-    "subcribe--front",
+    "subcsribe--front",
     [
         "USE_PERSONALIZATION" => "Y",
         "CONFIRMATION"        => "Y",

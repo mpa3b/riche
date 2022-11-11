@@ -109,7 +109,7 @@ $ratios = [
                                     media="<?= Breakpoint::getMedia('desktop'); ?>">
                             <source data-srcset="<?= $wide['src']; ?>" media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                            <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
+                            <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="eager">
 
                         </picture>
 

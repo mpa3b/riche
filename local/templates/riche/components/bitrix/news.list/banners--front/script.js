@@ -28,7 +28,8 @@ $(() => {
                 arrows:         false,
                 dots:           true,
                 infinite:       true,
-                mobileFirst:    true
+                mobileFirst:    true,
+                loading:        'progressive'
             }
         )
         .on(

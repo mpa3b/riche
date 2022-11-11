@@ -3,19 +3,6 @@ $(() => {
     const sliderFront = $('.cta--front');
 
     const sliderFrontSlider = $('.slider', sliderFront);
-    const sliderFrontSlideVideo = $('video', sliderFrontSlider);
-
-    sliderFrontSlideVideo.on(
-        'loaded',
-        (event) => {
-
-            let container = $(event.currentTarget).closest('.slide'),
-                picture   = $('picture', container);
-
-            picture.fadeOut();
-
-        }
-    );
 
     sliderFrontSlider
         .slick(
@@ -32,7 +19,7 @@ $(() => {
                 mobileFirst:    true,
                 responsive:     [
                     {
-                        breakpoint: 580,
+                        breakpoint: breakpoint.mobile,
                         settings:   {
                             fade:         false,
                             dots:         false,
@@ -40,7 +27,7 @@ $(() => {
                         }
                     },
                     {
-                        breakpoint: 780,
+                        breakpoint: breakpoint.tablet,
                         settings:   {
                             slidesToShow: 3,
                             fade:         false,
@@ -48,24 +35,6 @@ $(() => {
                         }
                     },
                 ]
-            }
-        )
-        .on(
-            {
-                beforeChange: (event, slick, currentSlide, nextSlide) => {
-
-                    let element = slick.$slides[currentSlide];
-
-                    $('video', element).trigger('pause');
-
-                },
-                afterChange:  (event, slick, currentSlide, nextSlide) => {
-
-                    let element = slick.$slides[currentSlide];
-
-                    $('video', element).trigger('play');
-
-                }
             }
         );
 

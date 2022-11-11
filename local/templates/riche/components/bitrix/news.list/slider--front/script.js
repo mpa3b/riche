@@ -32,7 +32,7 @@ $(() => {
                 mobileFirst:    true,
                 responsive:     [
                     {
-                        breakpoint: 580,
+                        breakpoint: breakpoint.mobile,
                         settings:   {
                             fade:         false,
                             dots:         false,
@@ -40,7 +40,7 @@ $(() => {
                         }
                     },
                     {
-                        breakpoint: 780,
+                        breakpoint: breakpoint.tablet,
                         settings:   {
                             slidesToShow: 3,
                             fade:         false,
