@@ -281,7 +281,7 @@ $APPLICATION->SetTitle('Главная');
 
 <? $APPLICATION->IncludeComponent(
     "bitrix:sender.subscribe",
-    ".default",
+    "subcribe--front",
     [
         "USE_PERSONALIZATION" => "Y",
         "CONFIRMATION"        => "Y",
