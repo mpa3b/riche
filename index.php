@@ -279,6 +279,55 @@ $APPLICATION->SetTitle('Главная');
     ]
 ); ?>
 
+
+
+<?php $APPLICATION->IncludeComponent(
+    'bitrix:news.list',
+    'cta--front',
+    [
+        "IBLOCK_TYPE" => IblockTools::find('CONTENT', 'CTA')->type(),
+        "IBLOCK_ID"   => IblockTools::find('CONTENT', 'CTA')->id(),
+        "NEWS_COUNT"  => 3,
+        "SORT_ORDER2" => "ASC",
+
+        "SORT_BY1"    => "ACTIVE_FROM",
+        "SORT_ORDER1" => "DESC",
+        "SORT_BY2"    => "SORT",
+
+        "CHECK_DATES" => "Y",
+
+        "FILTER_NAME"   => "",
+        "FIELD_CODE"    => ["ID", "DETAIL_TEXT"],
+        "PROPERTY_CODE" => ["RATING", "AUTHOR_NAME", "AUTHOR_PICTURE", "SKU"],
+
+        "ACTIVE_DATE_FORMAT" => "j F",
+
+        "SET_TITLE"            => "N",
+        "SET_BROWSER_TITLE"    => "N",
+        "SET_META_KEYWORDS"    => "N",
+        "SET_META_DESCRIPTION" => "N",
+        "SET_LAST_MODIFIED"    => "N",
+
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+
+        "ADD_SECTIONS_CHAIN" => "N",
+
+        "CACHE_TYPE"   => "A",
+        "CACHE_TIME"   => CACHE_TTL,
+        "CACHE_FILTER" => "Y",
+        "CACHE_GROUPS" => "Y",
+
+        "AJAX_MODE"              => "N",
+        "AJAX_OPTION_JUMP"       => "N",
+        "AJAX_OPTION_STYLE"      => "N",
+        "AJAX_OPTION_HISTORY"    => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
+    ]
+); ?>
+
 <? $APPLICATION->IncludeComponent(
     "bitrix:sender.subscribe",
     "subcribe--front",

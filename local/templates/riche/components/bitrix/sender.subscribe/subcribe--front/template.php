@@ -28,9 +28,9 @@ $frame = $this->createFrame("sender-subscribe", false);
             <div class="half announce">
 
                 <h2>Больше вкусного контента</h2>
-                <p>В наших рассылках. <br>
-                    Получи скидку 10% на первый заказ на сайте, 50 баллов рише в личном кабинете и все это за подписку
-                    на наш вкусный и полезный контент.</p>
+                <p>В наших рассылках.<br>
+                    Получи <strong>скидку 10%</strong> на первый заказ на сайте, <strong>50&nbsp;баллов </strong>RICHE в
+                    личном кабинете и всё это за подписку на наш вкусный и полезный контент.</p>
 
             </div>
 
@@ -78,30 +78,31 @@ $frame = $this->createFrame("sender-subscribe", false);
 
                     <? } ?>
 
-                    <? if (($arParams['USER_CONSENT'] ?? '') == 'Y' && $arParams['AJAX_MODE'] <> 'Y'): ?>
-
-                        <? $APPLICATION->IncludeComponent(
-                            "bitrix:main.userconsent.request",
-                            "",
-                            [
-                                "ID"            => $arParams["USER_CONSENT_ID"],
-                                "IS_CHECKED"    => $arParams["USER_CONSENT_IS_CHECKED"],
-                                "AUTO_SAVE"     => "Y",
-                                "IS_LOADED"     => $arParams["USER_CONSENT_IS_LOADED"],
-                                "ORIGIN_ID"     => "sender/sub",
-                                "ORIGINATOR_ID" => "",
-                                "REPLACE"       => [
-                                    "button_caption" => "Подпшись",
-                                    "fields"         => ["Твой email"]
-                                ],
-                            ]
-                        ); ?>
-
-                    <? endif; ?>
-
                     <button>Подпишись</button>
 
                 </form>
+
+
+                <? if (($arParams['USER_CONSENT'] ?? '') == 'Y' && $arParams['AJAX_MODE'] <> 'Y') { ?>
+
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:main.userconsent.request",
+                        "",
+                        [
+                            "ID"            => $arParams["USER_CONSENT_ID"],
+                            "IS_CHECKED"    => $arParams["USER_CONSENT_IS_CHECKED"],
+                            "AUTO_SAVE"     => "Y",
+                            "IS_LOADED"     => $arParams["USER_CONSENT_IS_LOADED"],
+                            "ORIGIN_ID"     => "sender/sub",
+                            "ORIGINATOR_ID" => "",
+                            "REPLACE"       => [
+                                "button_caption" => "Подпшись",
+                                "fields"         => ["Твой email"]
+                            ],
+                        ]
+                    ); ?>
+
+                <? } ?>
 
             </div>
 

@@ -1,10 +1,21 @@
 .subscribe--front {
 
+  .wrap {
+    border-radius:    var(--border-radius--2x);
+    background-color: var(--color--background);
+    padding:          var(--offset--4x);
+  }
+
   .announce {
 
   }
 
   .form {
+
+    input,
+    button {
+      background-color: var(--color--white);
+    }
 
   }
 

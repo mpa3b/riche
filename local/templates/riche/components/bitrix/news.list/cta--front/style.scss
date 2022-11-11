@@ -1,0 +1,151 @@
+@import "../../../../base";
+@import "../../../../mixins";
+
+.cta--front {
+  padding-top:    var(--offset--2x);
+  padding-bottom: var(--offset--2x);
+
+  .items {
+    padding: 0;
+    margin:  0;
+
+    @include Mobile {
+      border-radius: var(--border-radius);
+      overflow:      hidden;
+    }
+
+    .item {
+      position: relative;
+      height:   100%;
+
+      @include Tablet {
+        border-radius: var(--border-radius);
+        overflow:      hidden;
+      }
+
+      &:before {
+        display:          block;
+        content:          "";
+        background-color: var(--color--black);
+        opacity:          var(--opacity);
+        position:         absolute;
+        width:            100%;
+        height:           100%;
+        z-index:          100;
+      }
+
+      picture,
+      video {
+        display:  block;
+        position: absolute;
+
+        top:      0;
+        left:     0;
+
+        width:    100%;
+        height:   100%;
+      }
+
+      video {
+        display:         none;
+        object-fit:      cover;
+        object-position: center;
+
+        &.loaded {
+          display: block;
+
+          & + picture {
+            display: none;
+          }
+        }
+      }
+
+      picture {
+        img {
+          display:         block;
+
+          object-fit:      cover;
+          object-position: center;
+
+          height:          100%;
+          width:           100%;
+        }
+      }
+
+      .details {
+        display:         flex;
+        flex-direction:  column;
+        position:        relative;
+        z-index:         100;
+
+        color:           var(--color--white);
+
+        padding:         var(--offset--2x);
+        padding-bottom:  var(--offset--6x);
+        padding-top:     80%;
+        height:          100%;
+
+        @include Tablet {
+          margin: auto;
+        }
+
+        box-sizing:      border-box;
+
+        justify-content: flex-end;
+        align-items:     center;
+        text-align:      center;
+
+        h3 {
+          font-size: 1.2rem;
+        }
+
+        button {
+          margin-top: 1rem;
+        }
+
+      }
+
+    }
+
+    &:not(.slick-initialized) {
+
+      .item:not(:first-of-type) {
+        display: none;
+      }
+
+    }
+
+  }
+
+  .slick {
+
+    @include Tablet {
+
+      &-slider {
+        margin: 0 var(--offset--negative);
+      }
+
+      &-list {
+        overflow: visible;
+      }
+
+      &-slide {
+
+        > div {
+          box-sizing: border-box;
+          padding:    0 var(--offset);
+
+          .item {
+            margin-bottom: -0.5rem;
+            height:        100%;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
