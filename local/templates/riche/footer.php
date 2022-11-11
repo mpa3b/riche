@@ -5,7 +5,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 }
 
 use Bitrix\Main\Application;
-use Riche\Template;
 
 global $USER, $APPLICATION;
 
@@ -13,7 +12,7 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
 
 ?>
 
-</div>
+    </div>
 
 </main>
 
@@ -97,7 +96,7 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
                     [
                         "TITLE" => "Наши продукты",
 
-                        "ROOT_MENU_TYPE"  => "catalog",
+                        "ROOT_MENU_TYPE" => "catalog",
 
                         "DELAY"              => "N",
                         "ALLOW_MULTI_SELECT" => "N",
@@ -124,7 +123,7 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
                     [
                         "TITLE" => "Правовая информация",
 
-                        "ROOT_MENU_TYPE"  => "law",
+                        "ROOT_MENU_TYPE" => "law",
 
                         "DELAY"              => "N",
                         "ALLOW_MULTI_SELECT" => "N",
@@ -161,10 +160,6 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
 
                         "COMPOSITE_FRAME_MODE" => "A",
                         "COMPOSITE_FRAME_TYPE" => "AUTO"
-                    ],
-                    false,
-                    [
-                        "HIDE_ICONS" => "Y",
                     ]
                 ); ?>
 
