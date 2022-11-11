@@ -56,8 +56,16 @@ $ratios = [
 
                             <? if ($arItem['DISPLAY_PROPERTIES']['ILLUSTRATION']['FILE_VALUE']['CONTENT_TYPE'] == 'image/svg+xml') { ?>
 
-                                <img src="<?= $arItem['DISPLAY_PROPERTIES']['ILLUSTRATION']['FILE_VALUE']['SRC']; ?>"
-                                     loading="lazy">
+                                <? $isSVG = true; ?>
+
+                                <picture>
+
+                                    <img src="<?= $arItem['DISPLAY_PROPERTIES']['ILLUSTRATION']['FILE_VALUE']['SRC']; ?>"
+                                         type="image/svg+xml"
+                                         loading="lazy">
+
+                                </picture>
+
 
                             <? } else { ?>
 
@@ -71,7 +79,7 @@ $ratios = [
 
                         <? } ?>
 
-                        <? if (!empty($fileId)) { ?>
+                        <? if (!empty($fileId) && !$isSVG) { ?>
 
                             <?
 
