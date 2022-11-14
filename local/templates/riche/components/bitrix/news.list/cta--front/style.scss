@@ -35,22 +35,23 @@
           width:           100%;
 
           &.illustration {
-            margin-top: 25%;
+            margin-top: 0;
           }
         }
 
       }
 
       .details {
-        position:   absolute;
-        z-index:    100;
+        position:       absolute;
+        z-index:        100;
 
-        padding:    var(--offset--2x);
+        padding:        var(--offset--2x);
+        padding-bottom: 25%;
 
-        box-sizing: border-box;
+        box-sizing:     border-box;
 
-        left:       0;
-        top:        0;
+        left:           0;
+        top:            0;
 
         h3 {
           font-size: 1.6rem;
@@ -61,7 +62,7 @@
       button {
         position:   absolute;
         right:      var(--offset--2x);
-        bottom:     var(--offset--6x);
+        bottom:     var(--offset--2x);
         box-sizing: border-box;
       }
 
@@ -80,8 +81,8 @@
   .slick {
 
     &-slider {
-      position: relative;
-      margin:   0 var(--offset--negative);
+      position:       relative;
+      margin:         0 var(--offset--negative);
 
       &:hover {
 
@@ -95,6 +96,7 @@
         padding-right: 20%;
       }
 
+      padding-bottom: 2rem;
     }
 
     &-list {
@@ -113,6 +115,21 @@
         height:     100%;
       }
 
+    }
+
+    &-dots {
+      bottom:        0;
+      margin-bottom: 0;
+
+      li {
+        background-color: var(--color--gray--transparent);
+
+        &.slick-active {
+          background-color: var(--color--green);
+          opacity:          1;
+        }
+
+      }
     }
 
   }
