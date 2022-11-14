@@ -1,0 +1,56 @@
+.quiz-front--new {
+
+  .fields {
+
+    &:not(.slick-initialized) {
+
+      .field:not(:first-of-type) {
+        display: none;
+      }
+
+
+    }
+
+    .field {
+
+      .input {
+
+      }
+
+      .radio {
+
+      }
+
+      .checkbox {
+
+      }
+
+      .textarea {
+
+      }
+
+      .multiselect {
+
+      }
+
+      .date {
+
+      }
+
+      .image {
+
+      }
+
+      .email {
+
+      }
+
+      .text {
+
+      }
+
+    }
+
+  }
+
+}
