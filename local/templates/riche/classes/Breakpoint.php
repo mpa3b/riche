@@ -2,6 +2,8 @@
 
 namespace Riche;
 
+use Bitrix\Main\Page\Asset;
+
 class Breakpoint
 {
 
@@ -67,6 +69,14 @@ class Breakpoint
 
         return json_encode($breakpoints);
 
+    }
+
+    public static function addbreakpointsToHead()
+    {
+
+        $string = '<script>window.breakpoint = ' . self::setFrontendBreakpointsObject() . '</script>';
+
+        Asset::getInstance()->addString($string);
 
     }
 

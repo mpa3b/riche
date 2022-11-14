@@ -57,7 +57,8 @@ $ratios = [
                             <? if ($arItem['DISPLAY_PROPERTIES']['ILLUSTRATION']['FILE_VALUE']['CONTENT_TYPE'] == 'image/svg+xml') { ?>
 
                                 <img src="<?= $arItem['DISPLAY_PROPERTIES']['ILLUSTRATION']['FILE_VALUE']['SRC']; ?>"
-                                     type="image/svg+xml"
+                                     alt="<?= $arItem['NAME']; ?>"
+                                     class="illustration"
                                      loading="lazy">
 
                             <? } else { ?>
@@ -129,7 +130,9 @@ $ratios = [
                                     <source data-srcset="<?= $wide['src']; ?>"
                                             media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                                    <img src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
+                                    <img src="<?= $preload['src']; ?>"
+                                         alt="<?= $arItem['NAME']; ?>"
+                                         loading="lazy">
 
                                 <? } ?>
 

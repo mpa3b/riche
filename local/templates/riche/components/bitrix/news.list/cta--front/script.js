@@ -29,7 +29,7 @@ $(() => {
                     {
                         breakpoint: breakpoint.desktop,
                         settings:   {
-                            slidesToShow: 4,
+                            slidesToShow: 3,
                             fade:         false,
                             dots:         false,
                         }

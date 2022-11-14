@@ -111,9 +111,10 @@ $request = Application::getInstance()->getContext()->getRequest();
     $APPLICATION->ShowCSS(true, false);
     $APPLICATION->ShowHeadScripts();
 
+    Breakpoint::addbreakpointsToHead();
+
     ?>
 
-    <script>window.breakpoint = <?= Breakpoint::setFrontendBreakpointsObject(); ?></script>
     <script>const sessid = '<?= bitrix_sessid(); ?>';</script>
 
 </head>
