@@ -130,7 +130,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
         <?php foreach ($arResult["QUESTIONS"] as $sid => $arQuestion) { ?>
 
-            <? if ($arQuestion['FIELD_TYPE'] == 'hidden') { ?>
+            <? if ($arQuestion['STRUCTURE'][0]['FIELD_TYPE'] == 'hidden') { ?>
 
                 <input type="hidden"
                        value=""
@@ -148,9 +148,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                         <?php foreach ($arQuestion['STRUCTURE'] as $i => $arField) { ?>
 
-                            <?php if ($arField['FIELD_TYPE'] == 'hidden') { ?>
-
-                            <?php } else { ?>
+                            <?php if ($arField['FIELD_TYPE'] !== 'hidden') { ?>
 
                                 <div class="input <?= $arField['FIELD_TYPE']; ?>">
 
