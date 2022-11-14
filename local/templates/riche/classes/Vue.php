@@ -93,7 +93,7 @@ class Vue
     public static function includeComponent($componentName, array $addFiles = [])
     {
 
-        // Подключаем Vue.js и Vuex
+        // Подключаем Vue и Vuex
 
         Asset::getInstance()->addJs('https://unpkg.com/vue');
         Asset::getInstance()->addJs('https://unpkg.com/vuex');
