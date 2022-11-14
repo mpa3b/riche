@@ -2,6 +2,7 @@
 
 namespace Riche;
 
+use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
 
 
@@ -23,7 +24,6 @@ class Vue
      */
     public static function getComponentsPath() : string
     {
-
         return self::COMPONENTS_PATH;
     }
 
@@ -36,10 +36,12 @@ class Vue
     {
         $script = '<script>';
         $script .= 'Vue.prototype.$bx=';
-        $script .= json_encode([
-                                   'componentsPath'   => self::getComponentsPath(),
-                                   'siteTemplatePath' => SITE_TEMPLATE_PATH
-                               ]);
+        $script .= json_encode(
+            [
+                'componentsPath'   => self::getComponentsPath(),
+                'siteTemplatePath' => SITE_TEMPLATE_PATH
+            ]
+        );
         $script .= '</script>';
 
         return $script;
@@ -105,7 +107,7 @@ class Vue
             self::$arIncluded[$name] = true;
 
             $docPath  = self::getComponentsPath();
-            $rootPath = $_SERVER['DOCUMENT_ROOT'] . $docPath;
+            $rootPath = Loader::getDocumentRoot() . $docPath;
 
             // Подключает зависимости скрипты/стили
             if (file_exists($settings = $rootPath . '/' . $name . '/.settings.php')) {
