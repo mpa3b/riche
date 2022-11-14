@@ -12,10 +12,6 @@ use Bitrix\Main\Application;
 /** @global \Bitrix\Main\Component\ $component */
 /** @global $arParams */
 
-$this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
-$this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
-$this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
-
 $request = Application::getInstance()->getContext()->getRequest();
 
 $frame = $this->createFrame();

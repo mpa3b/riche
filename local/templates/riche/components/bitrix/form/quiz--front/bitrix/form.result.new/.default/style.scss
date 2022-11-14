@@ -1,4 +1,11 @@
+@import "../../../../../../../base";
+@import "../../../../../../../mixins";
+
 .quiz-front--new {
+  padding:          var(--offset--4x);
+  border-radius:    var(--border-radius--2x);
+  background-color: var(--color--background);
+  overflow:         hidden;
 
   .fields {
 
@@ -13,43 +20,96 @@
 
     .field {
 
-      .input {
+      h3 {
 
       }
 
-      .radio {
+      .input-wrapper {
+        margin-top:     var(--offset--2x);
+        display:        flex;
+        flex-direction: column;
 
-      }
-
-      .checkbox {
-
-      }
-
-      .textarea {
-
-      }
-
-      .multiselect {
-
-      }
-
-      .date {
-
-      }
-
-      .image {
-
-      }
-
-      .email {
-
-      }
-
-      .text {
+        .input {
+          margin-bottom: var(--offset);
+        }
 
       }
 
     }
+
+    .note {
+      picture {
+        margin-top: var(--offset--2x);
+      }
+    }
+
+    .input {
+
+      select,
+      textarea,
+      input {
+        background: var(--color--white);
+      }
+
+      input[type=radio],
+      input[type=checkbox] {
+
+      }
+
+    }
+
+    .radio {
+
+    }
+
+    .checkbox {
+
+    }
+
+    .textarea {
+      input {
+        width: 100%;
+      }
+    }
+
+    .multiselect {
+
+    }
+
+    .dropdown {
+      select {
+        width: 100%;
+      }
+    }
+
+    .date {
+      input {
+        width: 100%;
+      }
+    }
+
+    .image {
+      input {
+        width: 100%;
+      }
+    }
+
+    .email {
+
+    }
+
+    .text {
+
+      input {
+        width: 100%;
+      }
+
+    }
+
+  }
+
+  .slick {
+
 
   }
 

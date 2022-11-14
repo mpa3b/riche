@@ -134,8 +134,8 @@ picture {
   max-width:  100%;
 
   img {
-    display: block;
-    width:   100%;
+    display:   block;
+    max-width: 100%;
   }
 
 }
@@ -179,28 +179,30 @@ a {
 
 //region controls
 
+select,
+textarea,
 input {
-  display:         inline-block;
-  box-sizing:      border-box;
+  display:          inline-block;
+  box-sizing:       border-box;
 
   padding:          0.4em 0.75em;
   padding-top:      0.4em;
   padding-bottom:   0.6em;
 
-  background-color: var(--color--background);
+  text-decoration:  none;
+  line-height:      1.1;
 
-  border-radius:   2em;
+  outline:          none;
+  border:           none;
 
-  text-decoration: none;
-  line-height:     1.1;
+  background-color: var(--color--gray--light);
+  border-radius:    var(--border-radius--2x);
 
-  outline:         none;
-  border:          none;
+  border:           none;
 
-  &:focus,
-  &:hover {
-  }
+  transition:       var(--transition);
 
+  box-shadow:       var(--box-shadow);
 }
 
 a.button,
@@ -287,6 +289,15 @@ button {
 .hide,
 .hidden {
   display: none;
+}
+
+select[multiple],
+textarea {
+  padding:       1em;
+  border-radius: var(--border-radius);
+  width:         100%;
+  display:       block;
+  user-modify:   none;
 }
 
 //endregion
