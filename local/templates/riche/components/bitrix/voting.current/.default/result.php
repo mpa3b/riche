@@ -17,15 +17,11 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var array $templateData */
 /** @var CBitrixComponent $component */
 
-$this->setFrameMode(true);
-
-$frame = $this->createFrame();
-
 ?>
 
 <? $APPLICATION->IncludeComponent(
     "bitrix:voting.result",
-    "main_page",
+    "",
     [
         "VOTE_ID"             => $arResult["VOTE_ID"],
         "PERMISSION"          => $arParams["PERMISSION"],
@@ -34,6 +30,6 @@ $frame = $this->createFrame();
         "ADDITIONAL_CACHE_ID" => $arResult["ADDITIONAL_CACHE_ID"],
         "VOTE_ALL_RESULTS"    => $arParams["VOTE_ALL_RESULTS"],
     ],
-    ($this->__component->__parent ? $this->__component->__parent : $component)
+    $component
 );
 ?>
