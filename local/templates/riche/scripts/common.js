@@ -54,7 +54,15 @@ jQuery.event.special.mousewheel = {
 
 // region header sticky
 
-$('#page--header').sticky();
+$(() => {
+
+    $('#page--header').sticky(
+        {
+            zIndex: 5000
+        }
+    );
+
+});
 
 // endregion
 

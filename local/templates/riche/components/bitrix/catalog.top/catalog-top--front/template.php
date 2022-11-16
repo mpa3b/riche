@@ -60,11 +60,11 @@ $frame = $this->createFrame();
                     <div class="item" data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
                          data-id="<?= $arItem['ID']; ?>">
 
-                        <div class="picture">
+                        <div class="image">
 
                             <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
 
-                                <video muted loop autoplay >
+                                <video muted loop>
                                     <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
                                 </video>
 
@@ -234,5 +234,3 @@ $frame = $this->createFrame();
     </section>
 
 <?php } ?>
-
-<?php d($arResult); ?>

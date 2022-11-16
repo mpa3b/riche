@@ -266,7 +266,7 @@ $APPLICATION->SetTitle('Главная');
         "HIDE_NOT_AVAILABLE_OFFERS"   => "L",
 
         "OFFERS_CART_PROPERTIES"      => [""],
-        "OFFERS_FIELD_CODE"           => ["", ""],
+        "OFFERS_FIELD_CODE"           => [""],
         "OFFERS_LIMIT"                => 5,
         "OFFERS_PROPERTY_CODE"        => [""],
         "OFFERS_SORT_FIELD"           => "sort",
@@ -287,7 +287,7 @@ $APPLICATION->SetTitle('Главная');
         "PRODUCT_QUANTITY_VARIABLE"   => "",
 
         "PRODUCT_SUBSCRIPTION"        => "Y",
-        "PROPERTY_CODE"               => [""],
+        "PROPERTY_CODE"               => ["VIDEO"],
         "PROPERTY_CODE_MOBILE"        => [],
 
         "RELATIVE_QUANTITY_FACTOR"    => 5, // что это?

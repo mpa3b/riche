@@ -50,7 +50,7 @@ $ratios = [
 
                 <div class="item">
 
-                    <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
+                    <? if (!empty($arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE'])) { ?>
 
                         <video muted loop autoplay>
                             <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">

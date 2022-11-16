@@ -4,34 +4,59 @@ $(() => {
 
     let frontCatalogSlider = $('.slider', catalogTop);
 
-    frontCatalogSlider.slick(
-        {
-            slidesToShow:   2,
-            slidesToScroll: 1,
-            fade:           false,
-            speed:          1000,
-            autoplay:       false,
-            arrows:         false,
-            dots:           false,
-            infinite:       true,
-            mobileFirst:    true,
-            lazyload:       'progressive',
-            responsive:     [
-                {
-                    breakpoint: breakpoint.tablet,
-                    settings:   {
-                        slidesToShow: 3
-                    }
-                },
-                {
-                    breakpoint: breakpoint.desktop,
-                    settings:   {
-                        slidesToShow: 4
-                    }
-                }
-            ]
+    $('video').on(
+        'loaded',
+        frontCatalogSlider,
+        (event) => {
+
+            $(event.target).fadeIn();
+
         }
     );
+
+    frontCatalogSlider
+        .slick(
+            {
+                slidesToShow:   2,
+                slidesToScroll: 1,
+                fade:           false,
+                speed:          1000,
+                autoplay:       false,
+                arrows:         false,
+                dots:           false,
+                infinite:       true,
+                mobileFirst:    true,
+                lazyload:       'progressive',
+                responsive:     [
+                    {
+                        breakpoint: breakpoint.tablet,
+                        settings:   {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: breakpoint.desktop,
+                        settings:   {
+                            slidesToShow: 4
+                        }
+                    }
+                ]
+            }
+        )
+        .on(
+            {
+                afterChange:  (event, slick, currentSlide, nextSlide) => {
+
+
+
+                },
+                beforeChange: (event, slick, currentSlide, nextSlide) => {
+
+
+
+                }
+            }
+        );
 
     let catalogTopFiltered = false;
 

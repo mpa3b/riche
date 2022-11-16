@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65e5109fb31156dc701aeea4ec339e8a",
+    "content-hash": "7582e87c38cf50f15e27c6b5de1074f8",
     "packages": [
         {
             "name": "anahkiasen/html-object",
@@ -514,18 +514,6 @@
             "dist": {
                 "type": "tar",
                 "url": "https://registry.npmjs.org/slick-carousel/-/slick-carousel-1.8.1.tgz"
-            },
-            "type": "npm-asset",
-            "license": [
-                "MIT"
-            ]
-        },
-        {
-            "name": "npm-asset/tiny-slider",
-            "version": "2.9.4",
-            "dist": {
-                "type": "tar",
-                "url": "https://registry.npmjs.org/tiny-slider/-/tiny-slider-2.9.4.tgz"
             },
             "type": "npm-asset",
             "license": [

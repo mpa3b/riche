@@ -1,15 +1,15 @@
 @import "../base";
 
+.sticky-wrapper {
+  position: relative;
+  z-index:  1000;
+}
+
 #page {
 
   &--header {
     margin-bottom:    var(--offset);
-
     overflow:         hidden;
-
-    position:         sticky;
-    top:              0;
-    z-index:          5000;
     background-color: var(--color--white);
 
     @at-root .scrolled & {
