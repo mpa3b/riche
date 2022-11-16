@@ -33,6 +33,7 @@ $assets->addJs(LOCAL_ASSETS . '/js-cookie/dist/js.cookie.min.js');
 $assets->addJs(LOCAL_ASSETS . '/vanilla-lazyload/dist/lazyload.min.js');
 
 $assets->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.min.js');
+$assets->addJs(LOCAL_ASSETS . '/jquery-sticky/jquery-sticky.js');
 
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
@@ -135,8 +136,10 @@ $request = Application::getInstance()->getContext()->getRequest();
 
                     <picture>
 
-                        <source srcset="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg" media="<?= Breakpoint::getMedia('mobile'); ?>">
-                        <source srcset="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo--full.svg" media="<?= Breakpoint::getMedia('tablet'); ?>">
+                        <source srcset="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+                                media="<?= Breakpoint::getMedia('mobile'); ?>">
+                        <source srcset="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo--full.svg"
+                                media="<?= Breakpoint::getMedia('tablet'); ?>">
 
                         <img loading="eager"
                              alt="RICHE"
@@ -150,8 +153,10 @@ $request = Application::getInstance()->getContext()->getRequest();
 
                         <picture>
 
-                            <source srcset="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg" media="<?= Breakpoint::getMedia('mobile'); ?>">
-                            <source srcset="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo--full.svg" media="<?= Breakpoint::getMedia('tablet'); ?>">
+                            <source srcset="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo.svg"
+                                    media="<?= Breakpoint::getMedia('mobile'); ?>">
+                            <source srcset="<?php echo SITE_TEMPLATE_PATH; ?>/images/logo--full.svg"
+                                    media="<?= Breakpoint::getMedia('tablet'); ?>">
 
                             <img loading="eager"
                                  alt="RICHE"

@@ -5,6 +5,8 @@
   &--header {
     margin-bottom:    var(--offset);
 
+    overflow:         hidden;
+
     position:         sticky;
     top:              0;
     z-index:          5000;
@@ -63,7 +65,7 @@
     }
 
     &--menu {
-      padding: 0;
+      padding: var(--offset--half);
     }
 
     &--buttons {

@@ -3,6 +3,8 @@
 .catalog-top--front {
   overflow: hidden;
 
+  margin:   var(--offset--4x) 0;
+
   .filter {
     display:        flex;
     flex-direction: row;
@@ -34,6 +36,7 @@
 
           display:        flex;
           flex-direction: row;
+          align-items:    end;
 
           i {
             color:        var(--color--green);

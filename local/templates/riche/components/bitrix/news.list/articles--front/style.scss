@@ -1,8 +1,7 @@
 @import "../../../../base";
 
 .articles--front {
-  padding-top:    var(--offset--2x);
-  padding-bottom: var(--offset--2x);
+  margin:   var(--offset--4x) 0;
 
   overflow: hidden;
 
@@ -51,16 +50,13 @@
       margin: 0 var(--offset--negative);
 
       @include Mobile {
-        padding-right: 20%;
+        margin-right: -30%;
       }
 
     }
 
     &-list {
       overflow: visible;
-    }
-
-    &-track {
     }
 
     &-slide {

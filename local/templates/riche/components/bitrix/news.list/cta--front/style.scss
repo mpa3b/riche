@@ -1,8 +1,8 @@
 @import "../../../../base";
 
 .cta--front {
-  padding-top:    var(--offset--2x);
-  padding-bottom: var(--offset--2x);
+  margin:   var(--offset--4x) 0;
+  overflow: hidden;
 
   .items {
     padding: 0;
