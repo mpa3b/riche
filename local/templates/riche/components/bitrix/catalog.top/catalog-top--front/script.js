@@ -15,6 +15,7 @@ $(() => {
             dots:           false,
             infinite:       true,
             mobileFirst:    true,
+            lazyload:       'progressive',
             responsive:     [
                 {
                     breakpoint: breakpoint.tablet,
@@ -29,6 +30,31 @@ $(() => {
                     }
                 }
             ]
+        }
+    );
+
+    let catalogTopFiltered = false;
+
+    $('button.filter-button', catalogTop).on(
+        'click',
+        (event) => {
+
+            let button = $(event.currentTarget),
+                id     = button.data('id');
+
+            if (catalogTopFiltered === false) {
+
+                frontCatalogSlider.slick('slickFilter', '[data-section-id=' + id + ']');
+
+                catalogTopFiltered = true;
+
+            } else {
+
+                frontCatalogSlider.slick('slickUnfilter');
+
+                catalogTopFiltered = false;
+            }
+
         }
     );
 

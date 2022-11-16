@@ -44,7 +44,9 @@ $frame = $this->createFrame();
                 <div class="filter">
 
                     <? foreach ($arResult['SECTIONS'] as $i => $arSection) { ?>
-                        <button data-id="<?= $arSection['ID']; ?>"><?= $arSection['NAME']; ?></button>
+                        <button class="filter-button"
+                                data-action="filter"
+                                data-id="<?= $arSection['ID']; ?>"><?= $arSection['NAME']; ?></button>
                     <? } ?>
 
                 </div>
@@ -114,8 +116,12 @@ $frame = $this->createFrame();
                                         media="<?= Breakpoint::getMedia('wide'); ?>">
 
                                 <img data-src="<?= $preload['src']; ?>"
-                                     alt="<?= $arItem['NAME']; ?>"
-                                     loading="lazy">
+                                    <? if ($i == 0) { ?>
+                                        loading="eager"
+                                    <? } else { ?>
+                                        loading="lazy"
+                                    <? } ?>
+                                     alt="<?= $arItem['NAME']; ?>">
 
                             </picture>
 

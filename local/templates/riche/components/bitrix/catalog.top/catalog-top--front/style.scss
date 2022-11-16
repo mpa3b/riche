@@ -2,6 +2,7 @@
 @import "../../../../mixins";
 
 .catalog-top--front {
+  overflow: hidden;
 
   .filter {
     display:        flex;
@@ -36,7 +37,8 @@
           flex-direction: row;
 
           i {
-            color: var(--color--green);
+            color:        var(--color--green);
+            margin-right: var(--offset--half);
           }
 
           .value {
@@ -51,11 +53,7 @@
         }
 
         h3 {
-          font-size: 1.2rem;
-        }
-
-        p {
-          font-size: 0.8rem;
+          font-size: 1.4rem;
         }
 
       }
@@ -79,9 +77,13 @@
       margin:   0 var(--offset--negative);
 
       @include Mobile {
-        margin-right: -60%;
+        margin-right: -80%;
       }
 
+    }
+
+    &-list {
+      overflow: visible;
     }
 
     &-slide {
@@ -89,6 +91,19 @@
       > div {
         box-sizing: border-box;
         padding:    0 var(--offset);
+      }
+
+    }
+
+    @include Mobile {
+
+      &-slide {
+        opacity:    calc(var(--opacity) / 2);
+        transition: opacity var(--transition--common);
+      }
+
+      &-current {
+        opacity: 1;
       }
 
     }

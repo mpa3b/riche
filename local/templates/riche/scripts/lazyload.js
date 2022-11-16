@@ -13,7 +13,7 @@ window.addEventListener(
             ),
             lazyImageNative = new LazyLoad(
                 {
-                    elements_selector: 'img[loading=lazy]',
+                    elements_selector: 'img[loading]',
                     use_native:        true
                 }
             ),
