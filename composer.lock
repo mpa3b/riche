@@ -213,7 +213,7 @@
             "version": "5.0.7",
             "source": {
                 "type": "git",
-                "url": "git@github.com:RobinHerbots/Inputmask.git",
+                "url": "https://github.com/RobinHerbots/Inputmask.git",
                 "reference": "e76b7c9dd9049e2d0f8f439b5f393fd5a5f1c84f"
             },
             "dist": {
@@ -234,7 +234,7 @@
             "version": "3.6.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jquery/jquery-dist.git",
+                "url": "git@github.com:jquery/jquery-dist.git",
                 "reference": "3711efedf0ca2e998cd0417324f717f2e0b828ec"
             },
             "dist": {

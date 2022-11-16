@@ -1,56 +1,59 @@
 <?php
 
+use Riche\Breakpoint;
+use Riche\Thumb;
+
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
-
-use Riche\Breakpoint;
-use Riche\Thumb;
 
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
 /** @global CUser $USER */
 /** @global CDatabase $DB */
-/** @var CBitrixComponentTemplate $this */
+/** @var \CBitrixComponentTemeplate $this */
 /** @var string $templateName */
 /** @var string $templateFile */
 /** @var string $templateFolder */
 /** @var string $componentPath */
-/** @var array $templateData */
 /** @var CBitrixComponent $component */
 
 $this->setFrameMode(true);
 
 $frame = $this->createFrame();
 
+d($arResult);
+
 ?>
 
 <?php if (!empty($arResult['ITEMS'])) { ?>
 
-    <section class="features--front">
+    <section class="catalog-top--front">
 
         <? $frame->begin(); ?>
 
         <div class="wrap">
 
-            <h2 hidden>RICHE COSMETICS</h2>
+            <? if(!empty($arResult['SECTIONS'])) { ?>
+                <nav>
+                    <? foreach ($arResult['SECTIONS'] as $i => $arSection) { ?>
+                        <button data-id="<?= $arSection['SECTION_ID']; ?>"><?= $arSection['NAME']; ?></button>
+                    <? } ?>
+                </nav>
+            <? } ?>
 
-            <div class="accordion items">
+            <div class="items">
 
                 <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                    <div class="item <? if ($i == 0) { ?>expanded<? } ?>">
+                    <div class="item" data-section-id="<?= $arItem['SECTION_ID']; ?>">
+
+                        <button data-id="<?= $arItem['ID']; ?>" data-action="favorite" class="transparent button">
+                            <i class="icon-star"></i>
+                        </button>
 
                         <div class="image">
-
-                            <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
-
-                                <video muted loop>
-                                    <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-                                </video>
-
-                            <? } ?>
 
                             <? if ($arItem['DETAIL_PICTURE']) { ?>
 
@@ -107,7 +110,8 @@ $frame = $this->createFrame();
                                     <source data-srcset="<?= $wide['src']; ?>"
                                             media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                                    <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>"
+                                    <img data-src="<?= $preload['src']; ?>"
+                                         alt="<?= $arItem['NAME']; ?>"
                                          loading="lazy">
 
                                 </picture>
@@ -118,15 +122,49 @@ $frame = $this->createFrame();
 
                         <div class="details">
 
-                            <h3><?= $arItem['NAME']; ?></h3>
+                            <? if(!empty($arItem['REVIEWS'])) { ?>
 
-                            <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-                                <div class="announce">
-                                    <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+                                <div class="reviews">
+
+                                    <i class="icon-star"></i>
+
+                                    <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
+                                    <span class="count"><?= $arItem['REVIEWS']['COUNT']; ?></span>
+
                                 </div>
+
                             <? } ?>
 
-                            <i class="icon-chevron-up"></i>
+                            <h3><?= $arItem['NAME']; ?></h3>
+
+                            <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+
+                        </div>
+
+                        <div class="prices">
+
+                            <? foreach ($arItem['PRICES'] as $arPrice) { ?>
+
+                                <div class="price <?= strtolower($arPrice['CODE']); ?>">
+
+                                    <? if($arPrice['DISCOUNT'] > 0) {?>
+                                        <del class="old price"><?= $arPrice['BASE_PRICE']; ?></del>
+                                        <span class="discount price"><?= $arPrice['PRICE']; ?></span>
+                                    <? } else { ?>
+                                        <span class="price"><?= $arPrice['PRICE']; ?></span>
+                                    <? } ?>
+
+                                </div>
+
+                            <? } ?>
+
+                        </div>
+
+                        <div class="action">
+
+                            <button class="primary add button" data-id="<?= $arItem['ID']; ?>">
+                                <i class="icon-plus"></i>
+                            </button>
 
                         </div>
 

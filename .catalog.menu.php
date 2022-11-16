@@ -19,7 +19,7 @@ $rSections = SectionTable::getList(
             'URL' => 'IBLOCK.SECTION_PAGE_URL'
         ],
         'cache'  => [
-            'cache_ttl' => CACHE_TTL
+            'ttl' => CACHE_TTL
         ]
     ]
 );

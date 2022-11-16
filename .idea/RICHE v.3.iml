@@ -123,6 +123,9 @@
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/log" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/location/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/rodzeta.redirect/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/dev2fun.imagecompress/install" />
       <excludePattern pattern="install" />
       <excludePattern pattern="admin" />
     </content>
