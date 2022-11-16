@@ -9,7 +9,8 @@ $(() => {
         'loaded',
         (event) => {
 
-            let container = $(event.currentTarget).closest('.slide'),
+            let video     = $(event.currentTarget),
+                container = video.closest('.slide'),
                 picture   = $('picture', container);
 
             picture.fadeOut();

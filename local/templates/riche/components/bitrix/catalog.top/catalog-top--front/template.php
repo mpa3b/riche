@@ -62,15 +62,15 @@ $frame = $this->createFrame();
 
                         <div class="image">
 
-                            <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
-
-                                <video muted loop>
-                                    <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-                                </video>
-
-                            <? } ?>
-
                             <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
+
+                                <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
+
+                                    <video <? if ($i == 0) { ?>autoplay<? } ?> muted loop>
+                                        <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                                    </video>
+
+                                <? } ?>
 
                                 <?
 
@@ -169,11 +169,6 @@ $frame = $this->createFrame();
 
                         <? if ($arParams['USE_BUY'] == "Y" && $arItem['ITEM_PRICES_CAN_BUY'] && false) { ?>
 
-                            <? if ($arParams['USE_QUANTITY']) { ?>
-                                <input type="number" name="quantity" step="1"
-                                       max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
-                            <? } ?>
-
                             <? if (!empty($arItem['ITEM_PRICES'])) { ?>
 
                                 <div class="prices">
@@ -198,6 +193,13 @@ $frame = $this->createFrame();
                             <? } ?>
 
                             <div class="action">
+
+                                <? if ($arParams['USE_QUANTITY']) { ?>
+                                    <input type="number"
+                                           name="quantity"
+                                           step="1"
+                                           max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
+                                <? } ?>
 
                                 <button class="add button"
                                         <? if (!$arItem['CAN_BUY']) { ?>disabled<? } ?>
@@ -225,7 +227,11 @@ $frame = $this->createFrame();
 
             </div>
 
-            <a href="<?= SHOP_ROOT_URL; ?>" class="primary big button">Перейти в каталог</a>
+            <div class="footer">
+
+                <a href="<?= SHOP_ROOT_URL; ?>" class="primary big shop button">Перейти в каталог</a>
+
+            </div>
 
         </div>
 

@@ -2,14 +2,17 @@ $(() => {
 
     const catalogTop = $('.catalog-top--front');
 
-    let frontCatalogSlider = $('.slider', catalogTop);
+    const frontCatalogSlider = $('.slider', catalogTop);
+    const frontCatalogSliderVideo = $('video', frontCatalogSlider);
 
-    $('video').on(
+    frontCatalogSliderVideo.on(
         'loaded',
-        frontCatalogSlider,
         (event) => {
 
-            $(event.target).fadeIn();
+            let container = $(event.currentTarget).closest('.slide'),
+                picture   = $('picture', container);
+
+            picture.fadeOut();
 
         }
     );
@@ -47,12 +50,16 @@ $(() => {
             {
                 afterChange:  (event, slick, currentSlide, nextSlide) => {
 
+                    let element = slick.$slides[currentSlide];
 
+                    $('video', element).trigger('play');
 
                 },
                 beforeChange: (event, slick, currentSlide, nextSlide) => {
 
+                    let element = slick.$slides[currentSlide];
 
+                    $('video', element).trigger('pause');
 
                 }
             }

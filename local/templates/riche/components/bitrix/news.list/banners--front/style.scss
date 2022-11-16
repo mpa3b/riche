@@ -78,12 +78,15 @@
           display: block;
 
           & + picture {
-            display: none;
+            opacity: 0;
           }
         }
       }
 
       picture {
+        opacity:    1;
+        transition: opacity var(--transition--common);
+
         img {
           display:         block;
 

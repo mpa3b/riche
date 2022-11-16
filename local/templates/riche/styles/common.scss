@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 
   > a {
     text-decoration: none;
-    white-space: normal;
+    white-space:     normal;
   }
 }
 
@@ -227,7 +227,8 @@ button {
   padding-bottom:   0.7125em;
 
   &.big {
-    padding: 1em 2.2em;
+    padding:     1em 2.2em;
+    padding-top: 0.8em;
   }
 
   cursor:           pointer;

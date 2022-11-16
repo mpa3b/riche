@@ -29,9 +29,8 @@
   margin:     var(--offset) var(--offset--2x);
 
   @include Tablet {
-    margin: var(--offset) var(--offset--2x);
+    width: 92%;
   }
-
   @include Desktop {
     width:  78%;
     margin: var(--offset) auto;
