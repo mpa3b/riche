@@ -10,8 +10,10 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
+use Bitrix\Iblock\ElementTable;
 use Bitrix\Main\Engine\ActionFilter;
 use Bitrix\Main\Engine\Contract\Controllerable;
+use Bitrix\Main\Engine\Response\ResizedImage;
 use Bitrix\Main\Loader;
 use Bitrix\Sale\Basket;
 use Bitrix\Sale\DiscountCouponsManager;
@@ -31,6 +33,11 @@ use CCurrencyLang;
 class Cart extends \CBitrixComponent implements Controllerable
 {
 
+    /**
+     * @var array Выхлоп корзины
+     */
+    private array $output;
+
     public function onPrepareComponentParams($params)
     {
 
@@ -40,43 +47,54 @@ class Cart extends \CBitrixComponent implements Controllerable
 
     /**
      * Константа модуля каталога
+     *
      * @todo как бы это получать, а не задавать?
      */
     const catalog = 'catalog';
-
     /**
      * Объект корзины
+     *
      * @var \Bitrix\Sale\Basket
      */
-    public Basket $cart;
+    public $cart;
     /**
      * Валюта
+     *
      * @var string
      */
     public string $currency;
     /**
      * Поставщик каталога
+     *
      * @var string
      */
     public string $catalogProvider;
 
     /**
      * Выполняем компонент
+     *
      * @return void
      */
-    public function executeComponent(): void
+    public function executeComponent() : void
     {
 
-        $this->includeComponentTemplate(); // сюда будет уходить скорее всего только статическая заглушка
+        if (Loader::includeModule('sale')) {
+
+            $this->getCart();
+
+            $this->includeComponentTemplate(); // сюда будет уходить скорее всего только статическая заглушка
+
+        }
 
     }
 
     /**
      * Для работы Controllerable
+     *
      * @inheritDoc
      * @return array
      */
-    public function configureActions(): array
+    public function configureActions() : array
     {
 
         // Сбрасываем фильтры по-умолчанию (ActionFilter\Authentication и ActionFilter\HttpMethod)
@@ -94,22 +112,22 @@ class Cart extends \CBitrixComponent implements Controllerable
         ];
 
         return [
-            'get' => [
+            'get'      => [
                 'prefilters' => $filters
             ],
-            'add' => [
+            'add'      => [
                 'prefilters' => $filters
             ],
-            'delete' => [
+            'delete'   => [
                 'prefilters' => $filters
             ],
-            'update' => [
+            'update'   => [
                 'prefilters' => $filters
             ],
             'postpone' => [
                 'prefilters' => $filters
             ],
-            'coupon' => [
+            'coupon'   => [
                 'prefilters' => $filters
             ]
         ];
@@ -119,7 +137,7 @@ class Cart extends \CBitrixComponent implements Controllerable
     /**
      * Добавление товара
      *
-     * @param int $id товар
+     * @param int $id       товар
      * @param int $quantity количество
      *
      * @return void
@@ -130,7 +148,7 @@ class Cart extends \CBitrixComponent implements Controllerable
      * @throws \Bitrix\Main\ArgumentException
      * @throws \Bitrix\Main\NotSupportedException
      */
-    public function addAction(int $id, int $quantity = 1): void
+    public function addAction(int $id, int $quantity = 1) : void
     {
 
         if ($item = $this->cart->getItemById($id)) {
@@ -140,15 +158,16 @@ class Cart extends \CBitrixComponent implements Controllerable
                 $item->getField('QUANTITY') + $quantity
             );
 
-        } else {
+        }
+        else {
 
             $item = $this->cart->createItem(self::catalog, $id);
 
             $item->setFields(
                 [
-                    'QUANTITY' => $quantity,
-                    'CURRENCY' => $this->currency,
-                    'LID' => $this->getSiteId(),
+                    'QUANTITY'               => $quantity,
+                    'CURRENCY'               => $this->currency,
+                    'LID'                    => $this->getSiteId(),
                     'PRODUCT_PROVIDER_CLASS' => $this->catalogProvider
                 ]
             );
@@ -174,7 +193,7 @@ class Cart extends \CBitrixComponent implements Controllerable
      * @throws \Bitrix\Main\ObjectNotFoundException
      * @throws \Bitrix\Main\ArgumentException
      */
-    public function deleteAction(int $id): void
+    public function deleteAction(int $id) : void
     {
 
         if ($item = $this->cart->getItemById($id)) {
@@ -242,7 +261,7 @@ class Cart extends \CBitrixComponent implements Controllerable
      *
      * @return void
      */
-    public function couponAction(string $coupon): void
+    public function couponAction(string $coupon) : void
     {
 
         if ($coupon && DiscountCouponsManager::isExist($coupon)) {
@@ -255,115 +274,85 @@ class Cart extends \CBitrixComponent implements Controllerable
 
     }
 
-    private function initCart(): void
+    private function getCart() : void
     {
 
-        if (Loader::includeModule('sale')) {
-
-            $this->cart = Basket::loadItemsForFUser(Fuser::getId(), $this->getSiteId());
-
-        }
+        $this->cart = Basket::loadItemsForFUser(Fuser::getId(), $this->getSiteId());
 
     }
 
     /**
      * Возвращает массив состава корзины
-     * @return array
+     *
+     * @return array|false|string
      * @throws \Bitrix\Main\ArgumentNullException
      */
     private function returnCart()
     {
 
-        $cart = [
-            'total' => CCurrencyLang::CurrencyFormat($this->cart->getPrice(), $this->currency),
+        $this->prepareCart();
+        $this->getCartImages();
+
+        return json_encode($this->output);
+
+    }
+
+    private function prepareCart()
+    {
+
+        $this->output = [
+            'total'      => CCurrencyLang::CurrencyFormat($this->cart->getPrice(), $this->currency),
             'total_base' => CCurrencyLang::CurrencyFormat($this->cart->getBasePrice(), $this->currency),
-            'count' => count($this->cart->getQuantityList()),
+            'count'      => count($this->cart->getQuantityList()),
         ];
 
         /* @var $item \Bitrix\Sale\BasketItem */
 
         foreach ($this->cart as $item) {
 
-            $id = $item->getId();
-
-            // @todo выяснить где тут IBLOCK_ELEMENT_ID чтобы получать картинку
-
-            $cart['items'][$id] = [
+            $this->output['items'][$item->getId()] = [
+                'id'         => $item->getId(),
                 'product_id' => $item->getProductId(),
-                'name' => $item->getField('NAME'),
-                'quantity' => intval($item->getQuantity()),
+                'name'       => $item->getField('NAME'),
+                'quantity'   => $item->getQuantity(),
+                'available'  => $item->canBuy(),
+                'delay'      => $item->isDelay(),
                 'base_price' => CCurrencyLang::CurrencyFormat($item->getBasePrice(), $this->currency),
-                'price' => CCurrencyLang::CurrencyFormat($item->getPrice(), $this->currency),
-                'discount' => CCurrencyLang::CurrencyFormat($item->getDiscountPrice(), $this->currency),
-                'total' => CCurrencyLang::CurrencyFormat($item->getFinalPrice(), $this->currency),
-                'discount_percent' => $item->getDiscountPricePercent(),
-                'available' => $item->canBuy(),
-                'delay' => $item->isDelay()
-            ];
-
-            $cart['items'][$id]['images'] = [
-                'preload' => $this->getBasketItemImage($id, '32x32', BX_RESIZE_IMAGE_EXACT),
-                'mobile' => $this->getBasketItemImage($id, '48x48', BX_RESIZE_IMAGE_EXACT),
-                'tablet' => $this->getBasketItemImage($id, '64x64', BX_RESIZE_IMAGE_EXACT),
-                'desktop' => $this->getBasketItemImage($id, '96x96', BX_RESIZE_IMAGE_EXACT),
+                'price'      => CCurrencyLang::CurrencyFormat($item->getPrice(), $this->currency),
+                'discount'   => CCurrencyLang::CurrencyFormat($item->getDiscountPrice(), $this->currency),
+                'total'      => CCurrencyLang::CurrencyFormat($item->getFinalPrice(), $this->currency)
             ];
 
         }
 
-        return $cart;
+        return $this->output;
 
     }
 
-    private function getSizes(string $size)
+    private function getCartImages()
     {
 
-        $dimensions = explode($size, 'x');
-
-        $sizes = [
-            'width' => $dimensions[0],
-            'height' => $dimensions[1],
-        ];
-
-        return $sizes;
-
-    }
-
-    private function getBasketItemImage(int $id, string $size, mixed $mode)
-    {
-
-        if (!$id) {
-            return false;
-        }
-        if (!$size) {
-
-            $sizes = [
-                'width' => 64,
-                'height' => 64
-            ];
-
-        } else {
-
-            $sizes = self::getSizes($size);
-
-        }
-        if (!$mode) {
-
-            $mode = BX_RESIZE_IMAGE_EXACT;
-
-        }
-
-        $imageId = 0;
-
-        $image = \CFile::ResizeImageGet(
-            $imageId,
-            $sizes,
-            $mode,
-            false,
-            [],
-            ''
+        $rItems = ElementTable::getList(
+            [
+                'select' => [
+                    'ID',
+                    'PREVIEW_PICTURE'
+                ],
+                'filter' => [
+                    'ID' => array_column((array) $this->output['items'], 'product-id')
+                ]
+            ]
         );
 
-        return $image;
+        while ($item = $rItems->fetch()) {
+
+            $this->output['items'][$item['ID']]['images'] = [
+                'preload' => ResizedImage::createByFileId($item['PREVIEW_PICTURE'], 24, 24),
+                'mobile'  => ResizedImage::createByFileId($item['PREVIEW_PICTURE'], 48, 48),
+                'desktop' => ResizedImage::createByFileId($item['PREVIEW_PICTURE'], 64, 64)
+            ];
+
+        }
 
     }
 
