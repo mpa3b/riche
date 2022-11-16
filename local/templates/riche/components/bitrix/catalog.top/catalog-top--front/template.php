@@ -213,6 +213,8 @@ $frame = $this->createFrame();
 
             </div>
 
+            <a href="<?= SHOP_ROOT_URL; ?>" class="primary big button">Перейти в каталог</a>
+
         </div>
 
         <? $frame->end(); ?>
@@ -220,3 +222,5 @@ $frame = $this->createFrame();
     </section>
 
 <?php } ?>
+
+<?php d($arResult); ?>

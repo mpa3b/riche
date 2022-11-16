@@ -52,3 +52,27 @@ $colors:            (
 $opacity:           0.5;
 
 // endregion
+
+// region util mixins
+
+@mixin wrap--ovh {
+
+  .wrap {
+    overflow: hidden;
+  }
+
+}
+
+@mixin slick--hide-not-initialized--item {
+
+  &:not(.slick-initialized) {
+
+    .item:not(:first-of-type) {
+      display: none;
+    }
+
+  }
+
+}
+
+// endregion

@@ -35,8 +35,9 @@ $(() => {
 
     let catalogTopFiltered = false;
 
-    $('button.filter-button', catalogTop).on(
+    $('button.filter-button').on(
         'click',
+        catalogTop,
         (event) => {
 
             let button = $(event.currentTarget),
@@ -44,7 +45,7 @@ $(() => {
 
             if (catalogTopFiltered === false) {
 
-                frontCatalogSlider.slick('slickFilter', '[data-section-id=' + id + ']');
+                frontCatalogSlider.slick('slickFilter', '.item[data-section-id="' + id + '"]');
 
                 catalogTopFiltered = true;
 
