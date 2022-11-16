@@ -16,21 +16,22 @@ use Bitrix\Iblock\Elements\ElementReviewsTable;
 
 // @todo тут нужно суммировать и усреднять значение рейтинга
 
-$product_id = array_column($arResult['ITEMS'], 'ID');
+$products = array_column($arResult['ITEMS'], 'ID');
 
-if (!empty($product_id)) {
+d($products);
+
+if (!empty($products)) {
 
     $rReviews = ElementReviewsTable::getList(
         [
             'select'        => [
-                'REVIEW_ID'     => 'ID',
                 'REVIEW_SKU'    => 'SKU.VALUE',
                 'REVIEW_RATING' => 'RATING.VALUE'
             ],
             'filter'        => [
-                'IBLOCK_ID' => IblockTools::find('CUSTOMER', 'REVIEWS')->id(),
-                'ID'        => array_column($arResult['ITEMS'], 'ID'),
-                'ACTIVE'    => 'Y'
+                'IBLOCK_ID'  => IblockTools::find('CUSTOMER', 'REVIEWS')->id(),
+                'REVIEW_SKU' => $products,
+                'ACTIVE'     => 'Y'
             ],
             'data_doubling' => false,
             'cache'         => [
@@ -39,5 +40,21 @@ if (!empty($product_id)) {
             ]
         ]
     );
+
+    $arReviews = [];
+
+    while ($review = $rReviews->fetch()) {
+
+        $arReviews[$review['REVIEW_SKU']] = $review['REVIEW_RATING'];
+
+    }
+
+    d($arReviews);
+
+    foreach ($arResult['ITEMS'] as &$arItem) {
+
+        $arItem['REVIEWS'] = $arReviews[$arItem['ID']];
+
+    }
 
 }
