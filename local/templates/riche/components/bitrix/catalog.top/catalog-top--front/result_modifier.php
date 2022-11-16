@@ -45,15 +45,24 @@ if (!empty($products)) {
 
     while ($review = $rReviews->fetch()) {
 
-        $arReviews[$review['REVIEW_SKU']] = $review['REVIEW_RATING'];
+        $arReviews[$review['REVIEW_SKU']][] = $review['REVIEW_RATING'];
 
     }
 
-    d($arReviews);
-
     foreach ($arResult['ITEMS'] as &$arItem) {
 
-        $arItem['REVIEWS'] = $arReviews[$arItem['ID']];
+        if ($arReviews[$arItem['ID']]) {
+
+            $count  = count($arReviews[$arItem['ID']]);
+            $sum    = array_sum($arReviews[$arItem['ID']]);
+            $median = round($sum / $count, 2);
+
+            $arItem['REVIEWS'] = [
+                'MEDIAN' => $median,
+                'COUNT'  => $count
+            ];
+
+        }
 
     }
 
