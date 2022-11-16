@@ -7,6 +7,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 
 use Riche\Breakpoint;
 use Riche\Thumb;
+use Riche\Units;
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -43,28 +44,21 @@ $frame = $this->createFrame();
                 <div class="filter">
 
                     <? foreach ($arResult['SECTIONS'] as $i => $arSection) { ?>
-                        <button data-id="<?= $arSection['SECTION_ID']; ?>"><?= $arSection['NAME']; ?></button>
+                        <button data-id="<?= $arSection['ID']; ?>"><?= $arSection['NAME']; ?></button>
                     <? } ?>
 
                 </div>
 
             <? } ?>
 
-            <div class="items">
+            <div class="items slider">
 
                 <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                    <div class="item" data-section-id="<?= $arItem['SECTION_ID']; ?>" data-id="<?= $arItem['ID']; ?>">
+                    <div class="item" data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
+                         data-id="<?= $arItem['ID']; ?>">
 
-                        <? if (false) { ?>
-
-                            <button data-id="<?= $arItem['ID']; ?>" data-action="favorite" class="transparent button">
-                                <i class="icon-star"></i>
-                            </button>
-
-                        <? } ?>
-
-                        <? if ($arItem['DETAIL_PICTURE']) { ?>
+                        <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
 
                             <?
 
@@ -106,7 +100,7 @@ $frame = $this->createFrame();
 
                             ?>
 
-                            <picture>
+                            <picture class="picture">
 
                                 <source data-srcset="<?= $small['src']; ?>"
                                         media="<?= Breakpoint::getMedia('small'); ?>">
@@ -125,7 +119,7 @@ $frame = $this->createFrame();
 
                             </picture>
 
-                        <? } ?>
+                        </a>
 
                         <div class="details">
 
@@ -136,15 +130,22 @@ $frame = $this->createFrame();
                                     <i class="icon-star"></i>
 
                                     <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
-                                    <span class="count"><?= $arItem['REVIEWS']['COUNT']; ?></span>
+                                    <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
+                                                                          'отзыв') ?></span>
 
                                 </div>
 
                             <? } ?>
 
-                            <h3><?= $arItem['NAME']; ?></h3>
+                            <h3>
+                                <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
+                            </h3>
 
-                            <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+                            <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+
+                                <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+
+                            <? } ?>
 
                         </div>
 
@@ -213,9 +214,3 @@ $frame = $this->createFrame();
     </section>
 
 <?php } ?>
-
-<?php
-
-d($arResult);
-
-?>

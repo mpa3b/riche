@@ -6,6 +6,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 
 use Bex\Tools\Iblock\IblockTools;
 use Bitrix\Iblock\Elements\ElementReviewsTable;
+use Bitrix\Iblock\SectionTable;
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -33,8 +34,7 @@ if (!empty($products)) {
             ],
             'data_doubling' => false,
             'cache'         => [
-                'ttl'         => $arParams['CACHE_TIME'],
-                'cache_joins' => true
+                'ttl'         => $arParams['CACHE_TIME']
             ]
         ]
     );
@@ -65,3 +65,21 @@ if (!empty($products)) {
     }
 
 }
+
+$rSections = SectionTable::getList(
+    [
+        'filter' => [
+            'IBLOCK_ID' => $arParams['IBLOCK_ID'],
+            'ID'        => array_column($arResult['ITEMS'], 'IBLOCK_SECTION_ID')
+        ],
+        'select' => [
+            'ID',
+            'NAME'
+        ],
+        'cache'         => [
+            'ttl'         => $arParams['CACHE_TIME']
+        ]
+    ]
+);
+
+$arResult['SECTIONS'] = $rSections->fetchAll();

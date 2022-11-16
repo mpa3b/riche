@@ -28,6 +28,10 @@
 
   --color--black:           #111111;
   --color--base:            var(--color--black);
+
+  --color--primary:         var(--color--green);
+  --color--secondary:       var(--color--violet);
+
   --color--background:      var(--color--gray--light);
 
   // endregion
@@ -93,6 +97,11 @@ h1, h2, h3, h4, h5, h6 {
   &:first-of-type {
     margin-top: 0;
   }
+
+  > a {
+    text-decoration: none;
+    white-space: normal;
+  }
 }
 
 h5 {
@@ -134,8 +143,9 @@ picture {
   max-width:  100%;
 
   img {
-    display:   block;
-    max-width: 100%;
+    box-sizing: border-box;
+    display:    block;
+    width:      100%;
   }
 
 }

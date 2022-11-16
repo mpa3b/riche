@@ -42,3 +42,15 @@
   }
 
 }
+
+@mixin slick--hide-not-initialized--item {
+
+  &:not(.slick-initialized) {
+
+    .item:not(:first-of-type) {
+      display: none;
+    }
+
+  }
+
+}
