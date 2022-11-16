@@ -102,18 +102,6 @@ $frame = $this->createFrame();
                             <?= trim($arItem['DETAIL_TEXT']); ?>
                         </div>
 
-                        <div class="controls field">
-
-                            <button class="vote" data-action="vote" data-value="down" data-id="<?= $arItem['ID']; ?>">
-                                <i class="icon-thumbs-down"></i>
-                            </button>
-
-                            <button class="vote" data-action="vote" data-value="up" data-id="<?= $arItem['ID']; ?>">
-                                <i class="icon-thumbs-up"></i>
-                            </button>
-
-                        </div>
-
                     </div>
 
                 <?php } ?>
