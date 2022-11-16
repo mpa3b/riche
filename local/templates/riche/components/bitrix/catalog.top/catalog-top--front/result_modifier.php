@@ -18,8 +18,6 @@ use Bitrix\Iblock\Elements\ElementReviewsTable;
 
 $products = array_column($arResult['ITEMS'], 'ID');
 
-d($products);
-
 if (!empty($products)) {
 
     $rReviews = ElementReviewsTable::getList(
