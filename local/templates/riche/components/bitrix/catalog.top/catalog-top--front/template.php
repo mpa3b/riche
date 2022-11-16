@@ -1,11 +1,12 @@
 <?php
 
-use Riche\Breakpoint;
-use Riche\Thumb;
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
+
+use Riche\Breakpoint;
+use Riche\Thumb;
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -19,11 +20,13 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
+$this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
+$this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
+$this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
+
 $this->setFrameMode(true);
 
 $frame = $this->createFrame();
-
-d($arResult);
 
 ?>
 
@@ -35,19 +38,23 @@ d($arResult);
 
         <div class="wrap">
 
-            <? if(!empty($arResult['SECTIONS'])) { ?>
-                <nav>
+            <? if (!empty($arResult['SECTIONS'])) { ?>
+
+                <div class="filter">
+
                     <? foreach ($arResult['SECTIONS'] as $i => $arSection) { ?>
                         <button data-id="<?= $arSection['SECTION_ID']; ?>"><?= $arSection['NAME']; ?></button>
                     <? } ?>
-                </nav>
+
+                </div>
+
             <? } ?>
 
             <div class="items">
 
                 <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                    <div class="item" data-section-id="<?= $arItem['SECTION_ID']; ?>">
+                    <div class="item" data-section-id="<?= $arItem['SECTION_ID']; ?>" data-id="<?= $arItem['ID']; ?>">
 
                         <button data-id="<?= $arItem['ID']; ?>" data-action="favorite" class="transparent button">
                             <i class="icon-star"></i>
@@ -61,37 +68,37 @@ d($arResult);
 
                                 $preload = CFile::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 2),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 $small = CFile::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 2),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 0.75),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 $mobile = CFile::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 2),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 0.75),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 $tablet = CFile::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 1.75),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 0.75),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 $desktop = CFile::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 2),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 0.75),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 $wide = CFile::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 2),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 0.75),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
@@ -122,7 +129,7 @@ d($arResult);
 
                         <div class="details">
 
-                            <? if(!empty($arItem['REVIEWS'])) { ?>
+                            <? if (!empty($arItem['REVIEWS'])) { ?>
 
                                 <div class="reviews">
 
@@ -141,32 +148,57 @@ d($arResult);
 
                         </div>
 
-                        <div class="prices">
+                        <? if ($arParams['USE_BUY'] == "Y" && $arItem['ITEM_PRICES_CAN_BUY']) { ?>
 
-                            <? foreach ($arItem['PRICES'] as $arPrice) { ?>
+                            <? if ($arParams['USE_QUANTITY']) { ?>
+                                <input type="number" name="quantity" step="1"
+                                       max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
+                            <? } ?>
 
-                                <div class="price <?= strtolower($arPrice['CODE']); ?>">
+                            <? if (!empty($arItem['ITEM_PRICES'])) { ?>
 
-                                    <? if($arPrice['DISCOUNT'] > 0) {?>
-                                        <del class="old price"><?= $arPrice['BASE_PRICE']; ?></del>
-                                        <span class="discount price"><?= $arPrice['PRICE']; ?></span>
-                                    <? } else { ?>
-                                        <span class="price"><?= $arPrice['PRICE']; ?></span>
+                                <div class="prices">
+
+                                    <? foreach ($arItem['ITEM_PRICES'] as $arPrice) { ?>
+
+                                        <div class="price <?= strtolower($arPrice['CODE']); ?>">
+
+                                            <? if ($arPrice['DISCOUNT'] > 0) { ?>
+                                                <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
+                                                <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                            <? } else { ?>
+                                                <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                            <? } ?>
+
+                                        </div>
+
                                     <? } ?>
 
                                 </div>
 
                             <? } ?>
 
-                        </div>
+                            <div class="action">
 
-                        <div class="action">
+                                <button class="add button"
+                                        <? if (!$arItem['CAN_BUY']) { ?>disabled<? } ?>
+                                        data-quantity=""
+                                        data-id="<?= $arItem['ID']; ?>"
+                                        data-action="add">
+                                    <i class="icon-plus"></i>
+                                </button>
 
-                            <button class="primary add button" data-id="<?= $arItem['ID']; ?>">
-                                <i class="icon-plus"></i>
-                            </button>
+                                <button class="primary buy button"
+                                        data-quantity=""
+                                        <? if (!$arItem['CAN_BUY']) { ?>disabled<? } ?>
+                                        data-id="<?= $arItem['ID']; ?>"
+                                        data-action="buy">
+                                    <i class="icon-buy"></i>
+                                </button>
 
-                        </div>
+                            </div>
+
+                        <? } ?>
 
                     </div>
 
@@ -181,3 +213,9 @@ d($arResult);
     </section>
 
 <?php } ?>
+
+<?php
+
+d($arResult);
+
+?>

@@ -5,7 +5,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 }
 
 use Bex\Tools\Iblock\IblockTools;
-use Bitrix\Iblock\ElementTable;
+use Bitrix\Iblock\Elements\ElementReviewsTable;
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -14,30 +14,30 @@ use Bitrix\Iblock\ElementTable;
 /** @global \CDatabase $DB */
 /** @var CBitrixComponentTemplate $this */
 
-// @todo тут нужна группировка по ID, чтобы было ID => RATING
+// @todo тут нужно суммировать и усреднять значение рейтинга
 
-$rReviews = ElementTable::getList(
-    [
-        // 'order' => [],
-        'filter'        => [
-            'IBLOCK_ID' => IblockTools::find('CUSTOMER', 'REVIEWS')->id(),
-            'ID'        => array_column($arResult['ITEMS'], 'ID'),
-            'ACTIVE'    => 'Y'
-        ],
-        'select'        => [
-            'ID',
-            'SKU',
-            'RATING'
-        ],
-        'group'         => 'SKU',
-        // 'limit' => 1000,
-        // 'offset' => 0, // целое число, указывающее номер первого столбца в результате
-        // 'count_total' => 1,
-        // 'runtime' => [], // массив полей сущности, создающихся динамически
-        'data_doubling' => false,
-        'cache'         => [
-            'ttl'         => $arParams['CACHE_TIME'],
-            'cache_joins' => true // Кешировать ли выборки с JOIN
+$product_id = array_column($arResult['ITEMS'], 'ID');
+
+if (!empty($product_id)) {
+
+    $rReviews = ElementReviewsTable::getList(
+        [
+            'select'        => [
+                'REVIEW_ID'     => 'ID',
+                'REVIEW_SKU'    => 'SKU.VALUE',
+                'REVIEW_RATING' => 'RATING.VALUE'
+            ],
+            'filter'        => [
+                'IBLOCK_ID' => IblockTools::find('CUSTOMER', 'REVIEWS')->id(),
+                'ID'        => array_column($arResult['ITEMS'], 'ID'),
+                'ACTIVE'    => 'Y'
+            ],
+            'data_doubling' => false,
+            'cache'         => [
+                'ttl'         => $arParams['CACHE_TIME'],
+                'cache_joins' => true
+            ]
         ]
-    ]
-);
+    );
+
+}

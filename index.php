@@ -237,7 +237,7 @@ $APPLICATION->SetTitle('Главная');
     'catalog-top--front',
     [
         "IBLOCK_TYPE" => IblockTools::find('CATALOG', 'PRODUCTS')->type(),
-        "IBLOCK_ID"   => IblockTools::find('CATALOG', 'OFFERS')->id(),
+        "IBLOCK_ID"   => IblockTools::find('CATALOG', 'PRODUCTS')->id(),
 
         "ACTION_VARIABLE"             => "action",
         "ADD_PROPERTIES_TO_BASKET"    => "Y",
