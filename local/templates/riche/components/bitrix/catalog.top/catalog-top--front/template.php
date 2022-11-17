@@ -167,7 +167,7 @@ $frame = $this->createFrame();
 
                         </div>
 
-                        <? if ($arParams['USE_BUY'] == "Y" && $arItem['ITEM_PRICES_CAN_BUY'] && false) { ?>
+                        <? if ($arItem['ITEM_PRICES_CAN_BUY'] && false) { ?>
 
                             <? if (!empty($arItem['ITEM_PRICES'])) { ?>
 
