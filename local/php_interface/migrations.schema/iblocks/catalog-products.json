@@ -44,7 +44,7 @@
         "ELEMENT_NAME": "Элемент",
         "EXTERNAL_ID": "",
         "LANG_DIR": "\/",
-        "SERVER_NAME": null,
+        "SERVER_NAME": "",
         "IPROPERTY_TEMPLATES": [],
         "ELEMENT_ADD": "Добавить элемент",
         "ELEMENT_EDIT": "Изменить элемент",
@@ -297,6 +297,100 @@
                     "MODULE_ID": "iblock",
                     "FEATURE_ID": "LIST_PAGE_SHOW",
                     "IS_ENABLED": "Y"
+                }
+            ]
+        },
+        {
+            "NAME": "Видео",
+            "ACTIVE": "Y",
+            "SORT": "500",
+            "CODE": "VIDEO",
+            "DEFAULT_VALUE": [],
+            "PROPERTY_TYPE": "S",
+            "ROW_COUNT": "1",
+            "COL_COUNT": "30",
+            "LIST_TYPE": "L",
+            "MULTIPLE": "N",
+            "XML_ID": "",
+            "FILE_TYPE": "",
+            "MULTIPLE_CNT": "5",
+            "LINK_IBLOCK_ID": "0",
+            "WITH_DESCRIPTION": "N",
+            "SEARCHABLE": "N",
+            "FILTRABLE": "N",
+            "IS_REQUIRED": "N",
+            "VERSION": "2",
+            "USER_TYPE": "video",
+            "USER_TYPE_SETTINGS": {
+                "BUFFER_LENGTH": 10,
+                "CONTROLBAR": "bottom",
+                "AUTOSTART": "N",
+                "VOLUME": 90,
+                "SKIN": "",
+                "FLASHVARS": "",
+                "WMODE_FLV": "transparent",
+                "BGCOLOR": "FFFFFF",
+                "COLOR": "000000",
+                "OVER_COLOR": "000000",
+                "SCREEN_COLOR": "000000",
+                "SILVERVARS": "",
+                "WMODE_WMV": "windowless",
+                "WIDTH": "400",
+                "HEIGHT": "300"
+            },
+            "HINT": "",
+            "FEATURES": [
+                {
+                    "MODULE_ID": "iblock",
+                    "FEATURE_ID": "DETAIL_PAGE_SHOW",
+                    "IS_ENABLED": "Y"
+                },
+                {
+                    "MODULE_ID": "iblock",
+                    "FEATURE_ID": "LIST_PAGE_SHOW",
+                    "IS_ENABLED": "Y"
+                }
+            ]
+        },
+        {
+            "NAME": "Ингредиенты",
+            "ACTIVE": "Y",
+            "SORT": "500",
+            "CODE": "INGREDIENTS",
+            "DEFAULT_VALUE": "",
+            "PROPERTY_TYPE": "S",
+            "ROW_COUNT": "1",
+            "COL_COUNT": "30",
+            "LIST_TYPE": "L",
+            "MULTIPLE": "N",
+            "XML_ID": "",
+            "FILE_TYPE": "",
+            "MULTIPLE_CNT": "5",
+            "LINK_IBLOCK_ID": "0",
+            "WITH_DESCRIPTION": "N",
+            "SEARCHABLE": "N",
+            "FILTRABLE": "N",
+            "IS_REQUIRED": "N",
+            "VERSION": "2",
+            "USER_TYPE": "directory",
+            "USER_TYPE_SETTINGS": {
+                "size": 1,
+                "width": 0,
+                "group": "N",
+                "multiple": "N",
+                "TABLE_NAME": "b_hlbd_ingredients"
+            },
+            "HINT": "",
+            "FEATURES": [
+                {
+                    "MODULE_ID": "iblock",
+                    "FEATURE_ID": "DETAIL_PAGE_SHOW",
+                    "IS_ENABLED": "N"
+                },
+                {
+                    "MODULE_ID": "iblock",
+                    "FEATURE_ID": "LIST_PAGE_SHOW",
+                    "IS_ENABLED": "N"
                 }
             ]
         }

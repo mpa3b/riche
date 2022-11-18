@@ -201,7 +201,7 @@
         {
             "MODULE_ID": "sale",
             "NAME": "order_email",
-            "VALUE": "order@riche.local"
+            "VALUE": "order@riche.skin"
         },
         {
             "MODULE_ID": "sale",
@@ -352,6 +352,26 @@
             "MODULE_ID": "sale",
             "NAME": "sale_ps_success_path",
             "VALUE": "\/"
+        },
+        {
+            "MODULE_ID": "sale",
+            "NAME": "sale.location.index_recheck_counter",
+            "VALUE": "3"
+        },
+        {
+            "MODULE_ID": "sale",
+            "NAME": "sale.location.index_valid",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "sale",
+            "NAME": "sale.location.indexed_langs",
+            "VALUE": "ru:en"
+        },
+        {
+            "MODULE_ID": "sale",
+            "NAME": "sale.location.indexed_types",
+            "VALUE": ""
         },
         {
             "MODULE_ID": "sale",

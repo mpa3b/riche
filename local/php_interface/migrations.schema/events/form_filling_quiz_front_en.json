@@ -1,0 +1,13 @@
+{
+    "event": "FORM_FILLING_QUIZ_FRONT",
+    "type": {
+        "LID": "en",
+        "EVENT_TYPE": "email",
+        "NAME": "Web form filled \"QUIZ_FRONT\"",
+        "DESCRIPTION": [
+            "#RS_FORM_ID# - Form ID\n#RS_FORM_NAME# - Form name\n#RS_FORM_SID# - Form SID\n#RS_RESULT_ID# - Result ID\n#RS_DATE_CREATE# - Form filling date\n#RS_USER_ID# - User ID\n#RS_USER_EMAIL# - User e-mail\n#RS_USER_NAME# - First and last user names\n#RS_USER_AUTH# - User authorized?\n#RS_STAT_GUEST_ID# - Visitor ID\n#RS_STAT_SESSION_ID# - Session ID\n#AGE# - Твой возвраст\n#AGE_RAW# - Твой возвраст (original value)\n#HAIR_COLOR# - Твой естественный цвет волос\n#HAIR_COLOR_RAW# - Твой естественный цвет волос (original value)\n#HAIR_WINTER_REACTION# - Как твои волосы реагируют на зиму?\n#HAIR_WINTER_REACTION_RAW# - Как твои волосы реагируют на зиму? (original value)\n#HAIR_LENGTH# - Длина твоих волос?\n#HAIR_LENGTH_RAW# - Длина твоих волос? (original value)\n#SAMPLE_STRING# - Напиши сюда что-нибудь\n#SAMPLE_STRING_RAW# - Напиши сюда что-нибудь (original value)\n#SAMPLE_TEXT# - Напиши сочинение на тему \"Актуальность образа Печорина для реалий 21-го века\"\n#SAMPLE_TEXT_RAW# - Напиши сочинение на тему \"Актуальность образа Печорина для реалий 21-го века\" (original value)\n#AGREE# - Ты согласна со следующими утверждениями? \n#AGREE_RAW# - Ты согласна со следующими утверждениями?  (original value)\n#DROPDOWN# - Нажми и оно выпадет. Это -- селект. \n#DROPDOWN_RAW# - Нажми и оно выпадет. Это -- селект.  (original value)\n#CHOICE# - Выбери, что нравится\n#CHOICE_RAW# - Выбери, что нравится (original value)\n#DATE# - Укажи дату чего-нибудь\n#DATE_RAW# - Укажи дату чего-нибудь (original value)\n#PHOTO# - Приложи фотку. \n#PHOTO_RAW# - Приложи фотку.  (original value)\n#EMAIL# - Скажи имэйл\n#EMAIL_RAW# - Скажи имэйл (original value)\n#SOMETHING# - Тут текст вопроса\n#SOMETHING_RAW# - Тут текст вопроса (original value)\n#MARK# - \n#MARK_RAW# -  (original value)\n"
+        ],
+        "SORT": "100"
+    },
+    "messages": []
+}

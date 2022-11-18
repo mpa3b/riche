@@ -344,7 +344,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "email_from",
-            "VALUE": "ilya.petrovsky@yandex.ru"
+            "VALUE": "mail@riche.skin"
         },
         {
             "MODULE_ID": "main",
@@ -790,7 +790,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "server_name",
-            "VALUE": "riche.skin"
+            "VALUE": "riche.local"
         },
         {
             "MODULE_ID": "main",
@@ -835,7 +835,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "site_name",
-            "VALUE": "RICHE COSMETICS"
+            "VALUE": "riche.local"
         },
         {
             "MODULE_ID": "main",

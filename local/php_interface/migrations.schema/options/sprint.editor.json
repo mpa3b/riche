@@ -1,3 +1,29 @@
 {
-    "items": []
+    "items": [
+        {
+            "MODULE_ID": "sprint.editor",
+            "NAME": "instagram_app_id",
+            "VALUE": "2741760692768967"
+        },
+        {
+            "MODULE_ID": "sprint.editor",
+            "NAME": "instagram_app_secret",
+            "VALUE": "828e97ef193404e336cbc1e7e9628412"
+        },
+        {
+            "MODULE_ID": "sprint.editor",
+            "NAME": "load_dotjs",
+            "VALUE": "yes"
+        },
+        {
+            "MODULE_ID": "sprint.editor",
+            "NAME": "load_jquery",
+            "VALUE": "no"
+        },
+        {
+            "MODULE_ID": "sprint.editor",
+            "NAME": "load_jquery_ui",
+            "VALUE": "yes"
+        }
+    ]
 }
