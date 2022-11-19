@@ -66,10 +66,7 @@
 }
 
 html {
-  font-size:        11pt;
-  @include Desktop {
-    font-size: 12pt;
-  }
+  font-size:        10pt;
   background-color: var(--color--white);
 }
 
@@ -88,7 +85,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-  font-size:   1.4rem;
+  font-size:   1.6rem;
   line-height: 1.2;
 
   margin:      0.4em 0;
@@ -104,23 +101,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h5 {
-  font-size: 1.6rem;
-}
-
-h4 {
   font-size: 1.8rem;
 }
 
-h3 {
+h4 {
   font-size: 2rem;
 }
 
-h2 {
+h3 {
   font-size: 2.2rem;
 }
 
-h1 {
+h2 {
   font-size: 2.4rem;
+}
+
+h1 {
+  font-size: 2.8rem;
 }
 
 p {
@@ -223,12 +220,12 @@ button {
   box-sizing:       border-box;
 
   padding:          0.6em 0.8em;
-  padding-top:      0.55em;
+  padding-top:      0.5em;
   padding-bottom:   0.7125em;
 
   &.big {
     padding:     1em 2.2em;
-    padding-top: 0.9em;
+    padding-top: 0.8em;
   }
 
   cursor:           pointer;

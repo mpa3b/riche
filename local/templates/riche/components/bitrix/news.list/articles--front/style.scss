@@ -53,6 +53,15 @@
         margin-right: -30%;
       }
 
+
+    }
+
+    &-track {
+      width: 100% !important;
+
+      .slick-slide {
+        flex-grow: 1;
+      }
     }
 
     &-list {

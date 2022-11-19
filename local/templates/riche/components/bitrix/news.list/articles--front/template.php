@@ -50,39 +50,41 @@ $frame = $this->createFrame();
 
                             <?
 
+                            $fileId = $arItem['DETAIL_PICTURE']['ID'];
+
                             $preload = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
+                                $fileId,
                                 Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $small = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
+                                $fileId,
                                 Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 2, 0.75),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $mobile = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
+                                $fileId,
                                 Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 2, 1.25),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $tablet = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
+                                $fileId,
                                 Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 1.25),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $desktop = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
+                                $fileId,
                                 Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 3, 1.25),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $wide = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 1.25),
+                                $fileId,
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 3, 1.25),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 

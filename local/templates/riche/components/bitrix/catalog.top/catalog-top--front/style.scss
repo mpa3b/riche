@@ -122,6 +122,14 @@
 
     }
 
+    &-track {
+      width: 100% !important;
+
+      .slick-slide {
+        flex-grow: 1;
+      }
+    }
+
     &-list {
       overflow: visible;
     }
