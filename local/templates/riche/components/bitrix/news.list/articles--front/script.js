@@ -8,6 +8,7 @@ $(() => {
         {
             slidesToShow:   2,
             slidesToScroll: 1,
+            centerMode:     false,
             fade:           false,
             speed:          1000,
             autoplay:       true,
@@ -24,7 +25,7 @@ $(() => {
                     }
                 },
                 {
-                    breakpoint: breakpoint.tablet,
+                    breakpoint: breakpoint.desktop,
                     settings:   {
                         slidesToShow: 4
                     }

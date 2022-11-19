@@ -80,13 +80,13 @@ $frame = $this->createFrame();
 
                             $desktop = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 1.5),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 1.25),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $wide = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 5, 1.5),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 5, 1.25),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 

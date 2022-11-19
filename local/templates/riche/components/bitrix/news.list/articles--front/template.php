@@ -42,7 +42,7 @@ $frame = $this->createFrame();
 
             <div class="items slider">
 
-                <? foreach ($arResult['ITEMS'] as $arItem) { ?>
+                <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
                     <div class="item">
 
@@ -52,37 +52,37 @@ $frame = $this->createFrame();
 
                             $preload = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 1),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $small = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 2, 1),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 2, 0.75),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $mobile = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 2, 1),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 2, 1.25),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $tablet = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 1),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 1.25),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $desktop = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 1.5),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 3, 1.25),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
                             $wide = CFile::ResizeImageGet(
                                 $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 5, 1.5),
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 1.25),
                                 BX_RESIZE_IMAGE_EXACT
                             );
 
@@ -104,8 +104,8 @@ $frame = $this->createFrame();
                                             media="<?= Breakpoint::getMedia('wide'); ?>">
 
                                     <img data-src="<?= $preload['src']; ?>"
-                                         alt="<?= $arItem['NAME']; ?>"
-                                         loading="lazy">
+                                         loading="lazy"
+                                         alt="<?= $arItem['NAME']; ?>">
 
                                 </picture>
 

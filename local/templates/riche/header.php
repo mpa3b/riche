@@ -237,7 +237,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
         <div class="row">
 
-            <div class="two-thirds unit">
+            <div class="two-thirds">
 
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:menu",
@@ -262,7 +262,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             </div>
 
-            <div class="third unit hide--on-mobiles">
+            <div class="third hide--on-mobiles">
 
                 <?php $APPLICATION->IncludeComponent(
                     'bitrix:main.include',

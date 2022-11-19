@@ -16,7 +16,7 @@ $(() => {
             prevArrow:      '<button class="arrow transparent prev"><i class="icon-chevron-left"></button>',
             nextArrow:      '<button class="arrow transparent next"><i class="icon-chevron-right"></button>',
             dots:           false,
-            infinite:       true,
+            infinite:       false,
             mobileFirst:    true,
             responsive:     [
                 {
