@@ -122,6 +122,8 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                 <?php } ?>
 
+                <button class="start button">Пройти опрос</button>
+
             </div>
 
         <?php } ?>
@@ -300,6 +302,8 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                     </div>
 
+                    <button class="next button">Далее</button>
+
                 </div>
 
             <? } ?>
@@ -335,6 +339,8 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
     </div>
 
+    <? /*
+
     <div class="controls">
 
         <button class="arrow transparent prev" type="button">
@@ -346,6 +352,8 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
         </button>
 
     </div>
+
+    */ ?>
 
     <?= $arResult["FORM_FOOTER"]; ?>
 

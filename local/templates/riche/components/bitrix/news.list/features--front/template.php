@@ -107,8 +107,19 @@ $frame = $this->createFrame();
                                     <source data-srcset="<?= $wide['src']; ?>"
                                             media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                                    <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>"
-                                         loading="lazy">
+                                    <? if($i == 0) { ?>
+
+                                        <img data-src="<?= $preload['src']; ?>"
+                                             alt="<?= $arItem['NAME']; ?>"
+                                             loading="eager">
+
+                                    <? } else  {?>
+
+                                        <img data-src="<?= $preload['src']; ?>"
+                                             alt="<?= $arItem['NAME']; ?>"
+                                             loading="lazy">
+
+                                    <? } ?>
 
                                 </picture>
 

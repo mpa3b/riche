@@ -25,3 +25,13 @@ const LOCAL_ASSETS = '/local/assets';
 // endregion
 
 $eventManager = EventManager::getInstance();
+
+//region специфическое свойство -- *пропорция*
+
+$eventManager->addEventHandler(
+    "iblock",
+    "OnIBlockPropertyBuildList",
+    [Local\CCustomTypeElementIngredientProportion::class, 'GetUserTypeDescription']
+);
+
+//endregion
