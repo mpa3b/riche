@@ -1,10 +1,12 @@
 <?
+
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 
 use Bex\Tools\Iblock\IblockTools;
 
 /** @global CMain $APPLICATION */
-$APPLICATION->SetTitle("Товары RICHE COSMETICS");
+$APPLICATION->SetTitle("Товары");
+$APPLICATION->SetPageProperty("tags", "каталог, товары");
 
 ?>
 
@@ -104,8 +106,6 @@ $APPLICATION->SetTitle("Товары RICHE COSMETICS");
         "INCLUDE_SUBSECTIONS" => "Y",
         "INSTANT_RELOAD"      => "N",
 
-        "LABEL_PROP" => [],
-
         "LINE_ELEMENT_COUNT" => "3",
         "LINK_ELEMENTS_URL"  => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
         "LINK_IBLOCK_ID"     => "",
@@ -142,7 +142,7 @@ $APPLICATION->SetTitle("Товары RICHE COSMETICS");
 
         "PAGER_BASE_LINK_ENABLE"          => "N",
         "PAGER_DESC_NUMBERING"            => "N",
-        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => CACHE_TTL * 2,
         "PAGER_SHOW_ALL"                  => "N",
         "PAGER_SHOW_ALWAYS"               => "N",
         "PAGER_TEMPLATE"                  => ".default",
@@ -163,7 +163,7 @@ $APPLICATION->SetTitle("Товары RICHE COSMETICS");
 
         "SEARCH_CHECK_DATES"             => "Y",
         "SEARCH_NO_WORD_LOGIC"           => "N",
-        "SEARCH_PAGE_RESULT_COUNT"       => "50",
+        "SEARCH_PAGE_RESULT_COUNT"       => 12,
         "SEARCH_RESTART"                 => "N",
         "SEARCH_USE_LANGUAGE_GUESS"      => "Y",
         "SEARCH_USE_SEARCH_RESULT_ORDER" => "N",
@@ -174,6 +174,7 @@ $APPLICATION->SetTitle("Товары RICHE COSMETICS");
         "SECTION_COUNT_ELEMENTS"           => "Y",
         "SECTION_ID_VARIABLE"              => "SECTION_ID",
         "SECTION_TOP_DEPTH"                => 2,
+
         "SEF_FOLDER"                       => SHOP_ROOT_URL,
         "SEF_MODE"                         => "Y",
         "SEF_URL_TEMPLATES"                => [
