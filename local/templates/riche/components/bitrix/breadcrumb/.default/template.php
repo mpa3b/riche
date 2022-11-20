@@ -8,7 +8,9 @@ if (!empty($arResult)) {
 
     $itemSize = count($arResult);
 
-    $strReturn = '<nav class="breadcrumb"><ul>';
+    $strReturn = '<nav class="breadcrumb">';
+    $strReturn .= '<img src="' . SITE_TEMPLATE_PATH . '/images/logo.svg">';
+    $strReturn .= '<ul>';
 
     for ($index = 0; $index < $itemSize; $index++) {
 
@@ -23,9 +25,9 @@ if (!empty($arResult)) {
 
             $strReturn .= '<li itemtype="//data-vocabulary.org/breadcrumbs/"' . $child . $nextRef . '><a href="' .
                           $arResult[$index]["LINK"] . '" title="' . $title . '" itemprop="url">' . $title .
-                          '</a></li>';
-
-            $strReturn .= '<i class="icon-right-2"></i>';
+                          '</a>';
+            $strReturn .= '<i class="icon-chevron-right"></i>';
+            $strReturn .= '</li>';
 
         }
         else {
