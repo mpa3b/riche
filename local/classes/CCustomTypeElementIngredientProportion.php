@@ -50,7 +50,7 @@ class CCustomTypeElementIngredientProportion
         }
         else {
 
-            $rsPriceTypes = CIBlockElement::GetList(
+            $rsElements = CIBlockElement::GetList(
                 ["SORT" => "ASC"],
                 [
                     "IBLOCK_ID" => 2,
@@ -66,7 +66,7 @@ class CCustomTypeElementIngredientProportion
             $html = '<select name="' . $strHTMLControlName["DESCRIPTION"] . '">';
             $html .= '<option value="">(выберите ингредиент)</option>';
 
-            while ($arPriceTypes = $rsPriceTypes->GetNext()) {
+            while ($arPriceTypes = $rsElements->GetNext()) {
                 $html .= '<option value="' . $arPriceTypes["ID"] . '"';
                 if ($arPriceTypes["ID"] == $value["DESCRIPTION"]) {
                     $html .= 'selected="selected"';

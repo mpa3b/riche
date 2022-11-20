@@ -28,10 +28,16 @@ $eventManager = EventManager::getInstance();
 
 //region специфическое свойство -- *пропорция*
 
+//$eventManager->addEventHandler(
+//    "iblock",
+//    "OnIBlockPropertyBuildList",
+//    [Local\CCustomTypeElementIngredientProportion::class, 'GetUserTypeDescription']
+//);
+
 $eventManager->addEventHandler(
     "iblock",
     "OnIBlockPropertyBuildList",
-    [Local\CCustomTypeElementIngredientProportion::class, 'GetUserTypeDescription']
+    [Local\CCustomTypeElementIngredientProportionHL::class, 'GetUserTypeDescription']
 );
 
 //endregion
