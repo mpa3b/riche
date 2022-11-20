@@ -3,7 +3,7 @@
 .reviews--front {
   margin:   var(--offset--4x) 0;
 
-  overflow:       hidden;
+  overflow: hidden;
 
   .items {
     margin-top: var(--offset--2x);
@@ -11,7 +11,12 @@
     .item {
       background-color: var(--color--background);
       border-radius:    var(--border-radius);
+
       padding:          var(--offset--2x);
+      @include Tablet {
+        padding: var(--offset--4x);
+      }
+
       box-sizing:       border-box;
       height:           100%;
 

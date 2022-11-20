@@ -15,23 +15,19 @@ $(() => {
                 autoplaySpeed:  5000,
                 arrows:         false,
                 dots:           true,
-                infinite:       true,
+                infinite:       false,
                 mobileFirst:    true,
                 responsive:     [
                     {
                         breakpoint: breakpoint.tablet,
                         settings:   {
-                            slidesToShow: 2,
-                            fade:         false,
-                            dots:         false,
+                            slidesToShow: 2
                         }
                     },
                     {
                         breakpoint: breakpoint.desktop,
                         settings:   {
-                            slidesToShow: 3,
-                            fade:         false,
-                            dots:         false,
+                            slidesToShow: 3
                         }
                     },
                 ]

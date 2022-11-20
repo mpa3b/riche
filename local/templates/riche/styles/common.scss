@@ -212,7 +212,7 @@ input {
   box-shadow:       var(--box-shadow);
 }
 
-a.button,
+.button,
 input[type=button],
 input[type=reset],
 input[type=submit],
@@ -292,7 +292,7 @@ button {
   }
 
   &.rounded {
-    padding:          var(--offset--2x);
+    padding:          var(--offset);
     border-radius:    var(--border-radius--2x);
   }
 

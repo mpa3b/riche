@@ -12,12 +12,10 @@
 
     @include Tablet {
 
-      width: 100% !important;
-
       .slick-slide {
         flex-grow: 1;
       }
-      
+
     }
 
   }

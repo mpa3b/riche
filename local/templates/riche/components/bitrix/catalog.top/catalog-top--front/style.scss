@@ -165,26 +165,22 @@
   .footer {
     margin-top: var(--offset--2x);
 
-    @include Mobile {
+    a {
+      margin:          auto;
+      text-align:      right;
+      text-decoration: none;
 
-      a {
-        margin:          auto;
-        text-align:      right;
-        text-decoration: none;
+      display:         flex;
+      flex-direction:  row;
+      flex-wrap:       nowrap;
 
-        display:         flex;
-        flex-direction:  row;
-        flex-wrap:       nowrap;
+      justify-content: end;
+      align-items:     center;
 
-        justify-content: end;
-        align-items:     center;
-
-        i {
-          display:          inline-block;
-          margin-left:      var(--offset);
-        }
+      i {
+        display:     inline-block;
+        margin-left: var(--offset);
       }
-
     }
 
   }

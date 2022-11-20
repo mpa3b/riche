@@ -231,7 +231,7 @@ $frame = $this->createFrame();
 
                 <a href="<?= SHOP_ROOT_URL; ?>">
                     Перейти в каталог
-                    <i class="icon-chevron-right primary rounded button"></i>
+                    <i class="icon-chevron-right rounded button"></i>
                 </a>
 
             </div>

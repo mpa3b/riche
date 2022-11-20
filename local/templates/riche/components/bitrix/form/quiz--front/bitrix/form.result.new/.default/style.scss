@@ -6,6 +6,13 @@
   background-color: var(--color--background);
   overflow:         hidden;
 
+  h2 {
+    font-size: 1.8rem;
+    @include Tablet {
+      font-size: 2.4rem;
+    }
+  }
+
   .fields {
 
     &:not(.slick-initialized) {

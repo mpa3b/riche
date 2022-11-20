@@ -46,7 +46,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                 <?php if ($arResult["isFormDescription"] == "Y" || $arResult["isFormImage"] == "Y") { ?>
 
-                    <h3><?= $arResult["FORM_TITLE"]; ?></h3>
+                    <h2><?= $arResult["FORM_TITLE"]; ?></h2>
 
                     <?php if ($arResult['arForm']['DESCRIPTION_TYPE'] == 'html') { ?>
                         <?= $arResult["FORM_DESCRIPTION"]; ?>

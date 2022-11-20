@@ -1,10 +1,23 @@
+@import "../../../../base";
+
 .subscribe--front {
-  margin:   var(--offset--4x) 0;
+  margin: var(--offset--4x) 0;
 
   .wrap {
     border-radius:    var(--border-radius--2x);
     background-color: var(--color--background);
     padding:          var(--offset--4x);
+
+    .grid {
+      @include Tablet {
+        align-items: center;
+
+        .announce {
+          padding-right: var(--offset--4x);
+        }
+      }
+    }
+
   }
 
   .announce {

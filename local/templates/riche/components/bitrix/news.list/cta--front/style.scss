@@ -45,6 +45,11 @@
         z-index:        100;
 
         padding:        var(--offset--2x);
+
+        @include Tablet {
+          padding:        var(--offset--4x);
+        }
+
         padding-bottom: 25%;
 
         box-sizing:     border-box;
@@ -79,6 +84,19 @@
 
   .slick {
 
+    @include Mobile {
+
+      &-slide {
+        opacity:    calc(var(--opacity) / 2);
+        transition: opacity var(--transition--common);
+      }
+
+      &-current {
+        opacity: 1;
+      }
+
+    }
+
     &-slider {
       position:       relative;
       margin:         0 var(--offset--negative);
@@ -93,9 +111,9 @@
 
       @include Mobile {
         padding-right: 20%;
+        padding-bottom: 2rem;
       }
 
-      padding-bottom: 2rem;
     }
 
     &-list {
@@ -103,6 +121,7 @@
     }
 
     &-track {
+
     }
 
     &-slide {

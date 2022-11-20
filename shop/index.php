@@ -106,7 +106,7 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
         "INCLUDE_SUBSECTIONS" => "Y",
         "INSTANT_RELOAD"      => "N",
 
-        "LINE_ELEMENT_COUNT" => "3",
+        "LINE_ELEMENT_COUNT" => 3,
         "LINK_ELEMENTS_URL"  => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
         "LINK_IBLOCK_ID"     => "",
         "LINK_IBLOCK_TYPE"   => "",

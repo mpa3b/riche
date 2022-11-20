@@ -92,11 +92,15 @@ $request = Application::getInstance()->getContext()->getRequest();
     <?php //region favicon ?>
 
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/favicon.ico"/>
+
     <link rel="apple-touch-icon" sizes="180x180" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/apple-touch-icon.png">
+
     <link rel="icon" type="image/png" sizes="32x32" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/favicon-16x16.png">
+
     <link rel="mask-icon" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/safari-pinned-tab.svg" color="#50e182">
     <link rel="manifest" href="<?php echo SITE_TEMPLATE_PATH; ?>/favicons/site.webmanifest">
+
     <meta name="apple-mobile-web-app-title" content="RICHE COSMETICS">
     <meta name="application-name" content="RICHE COSMETICS">
     <meta name="msapplication-TileColor" content="#50e182">
@@ -125,7 +129,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
     <div class="wrap">
 
-        <div class="row">
+        <div class="row header">
 
             <div id="page--header--logo" class="third">
 
@@ -232,7 +236,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
         </div>
 
-        <div class="row">
+        <div class="row nav">
 
             <div class="two-thirds">
 
