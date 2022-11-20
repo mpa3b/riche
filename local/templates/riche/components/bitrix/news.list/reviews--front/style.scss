@@ -13,9 +13,6 @@
       border-radius:    var(--border-radius);
 
       padding:          var(--offset--2x);
-      @include Tablet {
-        padding: var(--offset--4x);
-      }
 
       box-sizing:       border-box;
       height:           100%;

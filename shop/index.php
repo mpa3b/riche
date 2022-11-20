@@ -5,6 +5,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 use Bex\Tools\Iblock\IblockTools;
 
 /** @global CMain $APPLICATION */
+
 $APPLICATION->SetTitle("Товары");
 $APPLICATION->SetPageProperty("tags", "каталог, товары");
 

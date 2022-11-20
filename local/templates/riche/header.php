@@ -198,22 +198,6 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             <div id="page--header--buttons" class="third">
 
-                <? /*
-
-                <?php $APPLICATION->IncludeComponent(
-                    "bitrix:search.form",
-                    "header",
-                    [
-                        "USE_SUGGEST" => "N",
-                        "PAGE" => "/search/",
-
-                        "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO",
-                    ]
-                ); ?>
-
-                */ ?>
-
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:sale.basket.basket.line",
                     "header",

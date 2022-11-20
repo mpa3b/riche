@@ -81,7 +81,7 @@
 
     .nav {
       > * {
-        padding: 0;
+        padding: var(--offset--half);
       }
     }
 
