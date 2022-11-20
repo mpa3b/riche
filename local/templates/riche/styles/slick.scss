@@ -6,8 +6,18 @@
     display: flex;
 
     .slick-slide {
-      display:   flex;
-      height:    auto;
+      display: flex;
+      height:  auto;
+    }
+
+    @include Tablet {
+
+      width: 100% !important;
+
+      .slick-slide {
+        flex-grow: 1;
+      }
+      
     }
 
   }
@@ -27,6 +37,7 @@
 
     > div {
       box-sizing: border-box;
+      width:      100%;
     }
 
   }

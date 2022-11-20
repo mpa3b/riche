@@ -291,7 +291,7 @@ $APPLICATION->SetTitle('Главная');
         "PROPERTY_CODE_MOBILE"        => [],
 
         "RELATIVE_QUANTITY_FACTOR"    => 5, // что это?
-        "SEF_MODE"                    => "N",
+        "SEF_MODE"                    => "Y",
         "SEF_RULE"                    => "",
 
         "SHOW_DISCOUNT_PERCENT"       => "N",
@@ -352,6 +352,62 @@ $APPLICATION->SetTitle('Главная');
 
         "COMPOSITE_FRAME_MODE" => "A",
         "COMPOSITE_FRAME_TYPE" => "AUTO"
+    ]
+); ?>
+
+<?php $APPLICATION->IncludeComponent(
+    'bitrix:form',
+    'quiz--front',
+    [
+        "WEB_FORM_ID" => 1,
+        "RESULT_ID"   => $_REQUEST["RESULT_ID"],
+
+        "START_PAGE"             => "new",
+        "SUCCESS_URL"            => "success",
+
+        "SHOW_LIST_PAGE"         => "N",
+        "SHOW_EDIT_PAGE"         => "N",
+        "SHOW_VIEW_PAGE"         => "N",
+        "SHOW_ANSWER_VALUE"      => "Y",
+        "SHOW_ADDITIONAL"        => "Y",
+        "SHOW_STATUS"            => "N",
+
+        "EDIT_ADDITIONAL"        => "N",
+        "EDIT_STATUS"            => "N",
+
+        "NOT_SHOW_FILTER"        => [],
+        "NOT_SHOW_TABLE"         => [],
+
+        "CHAIN_ITEM_TEXT"        => "",
+        "CHAIN_ITEM_LINK"        => "",
+
+        "IGNORE_CUSTOM_TEMPLATE" => "Y",
+        "USE_EXTENDED_ERRORS"    => "N",
+
+        "CACHE_TYPE"             => "A",
+        "CACHE_TIME"             => CACHE_TTL,
+
+        "SEF_MODE"               => "Y",
+        "SEF_FOLDER"             => "/dev/",
+        "SEF_URL_TEMPLATES"      => [
+            "new"  => "#WEB_FORM_ID#/",
+            "list" => "#WEB_FORM_ID#/list/",
+            "edit" => "#WEB_FORM_ID#/edit/#RESULT_ID#/",
+            "view" => "#WEB_FORM_ID#/view/#RESULT_ID#/"
+        ],
+
+        "AJAX_MODE"              => "Y",
+        "AJAX_OPTION_JUMP"       => "N",
+        "AJAX_OPTION_STYLE"      => "Y",
+        "AJAX_OPTION_HISTORY"    => "N",
+
+        "VARIABLE_ALIASES"       => [
+            "new"  => [],
+            "list" => [],
+            "edit" => [],
+            "view" => [],
+        ]
+
     ]
 ); ?>
 

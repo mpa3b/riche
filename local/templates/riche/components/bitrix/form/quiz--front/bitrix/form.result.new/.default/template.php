@@ -26,8 +26,6 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
 ?>
 
-<?php d($arResult); ?>
-
 <div class="quiz-front--new default">
 
     <?= $arResult["FORM_NOTE"]; ?>
@@ -115,7 +113,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
                             <source data-srcset="<?= $wide['src']; ?>"
                                     media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                            <img src="<?= $preload['src']; ?>"
+                            <img data-src="<?= $preload['src']; ?>"
                                  loading="lazy">
 
                         </picture>

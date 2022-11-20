@@ -22,10 +22,11 @@
 
   // endregion
 
-
   // symbolic colors
 
   --color--black:           #111111;
+  --color--black--transparent:  #{rgba(black, $opacity / 2)};
+
   --color--base:            var(--color--black);
 
   --color--primary:         var(--color--green);
@@ -52,13 +53,13 @@
 
   --opacity:                #{$opacity};
 
-  --box-shadow:             0px 2px 4px var(--color--gray--transparent);
-  --box-shadow--blurry:     0px 6px 18px var(--color--gray--transparent);
-  --box-shadow--blurry--2x: 0px 8px 24px var(--color--gray--transparent);
+  --box-shadow:             0px 2px 4px var(--color--black--transparent);
+  --box-shadow--blurry:     0px 6px 18px var(--color--black--transparent);
+  --box-shadow--blurry--2x: 0px 8px 24px var(--color--black--transparent);
 
   @include Tablet {
-    --box-shadow--blurry:     0px 6px 18px var(--color--gray--transparent);
-    --box-shadow--blurry--2x: 0px 8px 28px var(--color--gray--transparent);
+    --box-shadow--blurry:     0px 6px 18px var(--color--black--transparent);
+    --box-shadow--blurry--2x: 0px 8px 28px var(--color--black--transparent);
   }
 
   --blur:                   blur(3px);
@@ -288,6 +289,11 @@ button {
       background-color: var(--color--green--transparent);
     }
 
+  }
+
+  &.rounded {
+    padding:          var(--offset--2x);
+    border-radius:    var(--border-radius--2x);
   }
 
 }

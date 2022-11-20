@@ -18,26 +18,34 @@ $frame = $this->createFrame();
 
 ?>
 
-<div class="quiz--front">
+<section class="quiz--front">
 
     <? $frame->begin(); ?>
 
-    <? if ($request->get('formresult') !== 'addok' || $request->get('WEB_FORM_ID') !== $arParams['WEB_FORM_ID']) { ?>
+    <div class="wrap">
 
-        <? $APPLICATION->IncludeComponent("bitrix:form.result.new", ".default", $arParams, $component); ?>
+        <div class="wrapper">
 
-    <? } else { ?>
+            <? if ($request->get('formresult') !== 'addok' || $request->get('WEB_FORM_ID') !== $arParams['WEB_FORM_ID']) { ?>
 
-        <div class="form--calculator--success">
+                <? $APPLICATION->IncludeComponent("bitrix:form.result.new", ".default", $arParams, $component); ?>
 
-            <h2>Успешно!</h2>
+            <? } else { ?>
 
-            <p>У нас всё получилось!</p>
+                <div class="quiz--front--success">
+
+                    <h2>Успешно!</h2>
+
+                    <p>У нас всё получилось!</p>
+
+                </div>
+
+            <? } ?>
 
         </div>
 
-    <? } ?>
+    </div>
 
     <? $frame->end(); ?>
 
-</div>
+</section>

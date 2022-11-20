@@ -1,8 +1,8 @@
 @import "../../../../../../../base";
 
 .quiz-front--new {
-  padding:          var(--offset--4x);
-  border-radius:    var(--border-radius--2x);
+  padding:          var(--offset--2x);
+  border-radius:    var(--border-radius);
   background-color: var(--color--background);
   overflow:         hidden;
 
@@ -107,7 +107,12 @@
 
   }
 
+  .controls {
+    margin-top: var(--offset--2x);
+  }
+
   .slick {
+
 
 
   }

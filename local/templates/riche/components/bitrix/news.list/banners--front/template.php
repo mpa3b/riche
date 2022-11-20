@@ -46,7 +46,7 @@ $ratios = [
 
         <div class="items slider">
 
-            <? foreach ($arResult['ITEMS'] as $arItem) { ?>
+            <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
                 <div class="item">
 
@@ -109,7 +109,11 @@ $ratios = [
                                     media="<?= Breakpoint::getMedia('desktop'); ?>">
                             <source data-srcset="<?= $wide['src']; ?>" media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                            <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="eager">
+                            <? if ($i == 0) { ?>
+                                <img src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="eager">
+                            <? } else { ?>
+                                <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
+                            <? } ?>
 
                         </picture>
 

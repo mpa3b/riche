@@ -117,17 +117,21 @@
       margin:   0 var(--offset--negative);
 
       @include Mobile {
-        margin-right: -80%;
+        margin-right: -75%;
       }
 
     }
 
     &-track {
-      width: 100% !important;
 
-      .slick-slide {
-        flex-grow: 1;
+      @include Tablet {
+        width: 100% !important;
+
+        .slick-slide {
+          flex-grow: 1;
+        }
       }
+
     }
 
     &-list {
@@ -160,6 +164,29 @@
 
   .footer {
     margin-top: var(--offset--2x);
+
+    @include Mobile {
+
+      a {
+        margin:          auto;
+        text-align:      right;
+        text-decoration: none;
+
+        display:         flex;
+        flex-direction:  row;
+        flex-wrap:       nowrap;
+
+        justify-content: end;
+        align-items:     center;
+
+        i {
+          display:          inline-block;
+          margin-left:      var(--offset);
+        }
+      }
+
+    }
+
   }
 
 }

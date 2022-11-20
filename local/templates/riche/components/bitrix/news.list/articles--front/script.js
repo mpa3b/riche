@@ -11,7 +11,7 @@ $(() => {
             centerMode:     false,
             fade:           false,
             speed:          1000,
-            autoplay:       true,
+            autoplay:       false,
             autoplaySpeed:  5000,
             arrows:         false,
             dots:           false,
