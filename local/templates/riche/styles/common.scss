@@ -220,12 +220,12 @@ button {
   display:          inline-block;
   box-sizing:       border-box;
 
-  padding:          0.6em 0.8em;
+  padding:          0.6em 1.8em;
   padding-top:      0.55em;
   padding-bottom:   0.7125em;
 
   &.big {
-    padding:     1em 2.2em;
+    padding:     1em 3em;
     padding-top: 0.9em;
   }
 
@@ -306,7 +306,7 @@ button {
 
 select[multiple],
 textarea {
-  padding:       1em;
+  padding:       var(--offset);
   border-radius: var(--border-radius);
   width:         100%;
   display:       block;

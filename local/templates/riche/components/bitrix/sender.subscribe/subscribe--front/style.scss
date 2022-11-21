@@ -1,30 +1,22 @@
 @import "../../../../base";
 
 .subscribe--front {
-  margin: var(--offset--4x) 0;
+  border-radius:    var(--border-radius--2x);
+  background-color: var(--color--background);
 
-  .wrap {
-    border-radius:    var(--border-radius--2x);
-    background-color: var(--color--background);
-    padding:          var(--offset--4x);
-
-    .grid {
-      @include Tablet {
-        align-items: center;
-
-        .announce {
-          padding-right: var(--offset--4x);
-        }
-      }
+  h2 {
+    font-size: 1.8rem;
+    @include Tablet {
+      font-size: 2.4rem;
     }
-
   }
 
-  .announce {
-
+  .wrapper {
+    padding: var(--offset--4x);
   }
 
-  .form {
+  form {
+    margin-top: var(--offset--2x);
 
     input,
     button {

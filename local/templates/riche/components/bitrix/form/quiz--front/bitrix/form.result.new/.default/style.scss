@@ -1,10 +1,13 @@
 @import "../../../../../../../base";
 
 .quiz-front--new {
-  padding:          var(--offset--2x);
-  border-radius:    var(--border-radius);
+  border-radius:    var(--border-radius--2x);
   background-color: var(--color--background);
   overflow:         hidden;
+
+  .wrapper {
+    margin: var(--offset--4x);
+  }
 
   h2 {
     font-size: 1.8rem;
@@ -110,6 +113,33 @@
         width: 100%;
       }
 
+    }
+
+    .controls {
+      margin-top: var(--offset--2x);
+      text-align: center;
+    }
+
+  }
+
+  .progress {
+    background-color: var(--color--white);
+    margin-bottom:    var(--offset);
+
+    .progress--bar {
+      display:          block;
+      width:            0;
+      height:           var(--offset--half);
+      background-color: var(--color--primary);
+      transition:       width var(--transition--common);
+    }
+
+  }
+
+  .slick {
+
+    &-dots {
+      margin-bottom: 0;
     }
 
   }

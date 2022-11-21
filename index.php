@@ -239,69 +239,69 @@ $APPLICATION->SetTitle('RICHE');
         "IBLOCK_TYPE" => IblockTools::find('CATALOG', 'PRODUCTS')->type(),
         "IBLOCK_ID"   => IblockTools::find('CATALOG', 'PRODUCTS')->id(),
 
-        "ACTION_VARIABLE"             => "action",
-        "ADD_PROPERTIES_TO_BASKET"    => "Y",
-        "ADD_TO_BASKET_ACTION"        => "ADD",
-        "BASKET_URL"                  => ORDER_URL,
+        "ACTION_VARIABLE"          => "action",
+        "ADD_PROPERTIES_TO_BASKET" => "Y",
+        "ADD_TO_BASKET_ACTION"     => "ADD",
+        "BASKET_URL"               => ORDER_URL,
 
-        "CACHE_FILTER"                => "Y",
-        "CACHE_GROUPS"                => "N",
-        "CACHE_TYPE"                  => "A",
-        "CACHE_TIME"                  => CACHE_TTL,
+        "CACHE_FILTER" => "Y",
+        "CACHE_GROUPS" => "N",
+        "CACHE_TYPE"   => "A",
+        "CACHE_TIME"   => CACHE_TTL,
 
-        "COMPATIBLE_MODE"             => "N",
-        "CONVERT_CURRENCY"            => "Y",
-        "CURRENCY_ID"                 => "RUB",
+        "COMPATIBLE_MODE"  => "N",
+        "CONVERT_CURRENCY" => "Y",
+        "CURRENCY_ID"      => "RUB",
 
-        "DETAIL_URL"                  => "",
+        "DETAIL_URL" => "",
 
-        "ELEMENT_COUNT"               => 32,
-        "ELEMENT_SORT_FIELD"          => "sort",
-        "ELEMENT_SORT_FIELD2"         => "id",
-        "ELEMENT_SORT_ORDER"          => "asc",
-        "ELEMENT_SORT_ORDER2"         => "desc",
+        "ELEMENT_COUNT"       => 32,
+        "ELEMENT_SORT_FIELD"  => "sort",
+        "ELEMENT_SORT_FIELD2" => "id",
+        "ELEMENT_SORT_ORDER"  => "asc",
+        "ELEMENT_SORT_ORDER2" => "desc",
 
-        "FILTER_NAME"                 => "", // тут будет фильтр для главной
-        "HIDE_NOT_AVAILABLE"          => "L",
-        "HIDE_NOT_AVAILABLE_OFFERS"   => "L",
+        "FILTER_NAME"               => "", // тут будет фильтр для главной
+        "HIDE_NOT_AVAILABLE"        => "L",
+        "HIDE_NOT_AVAILABLE_OFFERS" => "L",
 
-        "OFFERS_CART_PROPERTIES"      => [""],
-        "OFFERS_FIELD_CODE"           => [""],
-        "OFFERS_LIMIT"                => 5,
-        "OFFERS_PROPERTY_CODE"        => [""],
-        "OFFERS_SORT_FIELD"           => "sort",
-        "OFFERS_SORT_FIELD2"          => "id",
-        "OFFERS_SORT_ORDER"           => "asc",
-        "OFFERS_SORT_ORDER2"          => "desc",
-        "OFFER_ADD_PICT_PROP"         => "IMAGES",
-        "OFFER_TREE_PROPS"            => [""],
+        "OFFERS_CART_PROPERTIES" => [""],
+        "OFFERS_FIELD_CODE"      => [""],
+        "OFFERS_LIMIT"           => 5,
+        "OFFERS_PROPERTY_CODE"   => [""],
+        "OFFERS_SORT_FIELD"      => "sort",
+        "OFFERS_SORT_FIELD2"     => "id",
+        "OFFERS_SORT_ORDER"      => "asc",
+        "OFFERS_SORT_ORDER2"     => "desc",
+        "OFFER_ADD_PICT_PROP"    => "IMAGES",
+        "OFFER_TREE_PROPS"       => [""],
 
-        "PARTIAL_PRODUCT_PROPERTIES"  => "N",
-        "PRICE_CODE"                  => ["BASE"],
-        "PRICE_VAT_INCLUDE"           => "Y",
+        "PARTIAL_PRODUCT_PROPERTIES" => "N",
+        "PRICE_CODE"                 => ["BASE"],
+        "PRICE_VAT_INCLUDE"          => "Y",
 
-        "PRODUCT_DISPLAY_MODE"        => "Y",
-        "PRODUCT_ID_VARIABLE"         => "id",
-        "PRODUCT_PROPERTIES"          => [""],
-        "PRODUCT_PROPS_VARIABLE"      => "prop",
-        "PRODUCT_QUANTITY_VARIABLE"   => "",
+        "PRODUCT_DISPLAY_MODE"      => "Y",
+        "PRODUCT_ID_VARIABLE"       => "id",
+        "PRODUCT_PROPERTIES"        => [""],
+        "PRODUCT_PROPS_VARIABLE"    => "prop",
+        "PRODUCT_QUANTITY_VARIABLE" => "",
 
-        "PRODUCT_SUBSCRIPTION"        => "Y",
-        "PROPERTY_CODE"               => ["VIDEO"],
-        "PROPERTY_CODE_MOBILE"        => [],
+        "PRODUCT_SUBSCRIPTION" => "Y",
+        "PROPERTY_CODE"        => ["VIDEO"],
+        "PROPERTY_CODE_MOBILE" => [],
 
-        "RELATIVE_QUANTITY_FACTOR"    => 5, // что это?
-        "SEF_MODE"                    => "Y",
-        "SEF_RULE"                    => "",
+        "RELATIVE_QUANTITY_FACTOR" => 5, // что это?
+        "SEF_MODE"                 => "Y",
+        "SEF_RULE"                 => "",
 
-        "SHOW_DISCOUNT_PERCENT"       => "N",
-        "SHOW_MAX_QUANTITY"           => "M",
-        "SHOW_OLD_PRICE"              => "Y",
-        "SHOW_PAGINATION"             => "N",
-        "SHOW_PRICE_COUNT"            => 1,
+        "SHOW_DISCOUNT_PERCENT" => "N",
+        "SHOW_MAX_QUANTITY"     => "M",
+        "SHOW_OLD_PRICE"        => "Y",
+        "SHOW_PAGINATION"       => "N",
+        "SHOW_PRICE_COUNT"      => 1,
 
-        "USE_PRICE_COUNT"             => "N",
-        "USE_PRODUCT_QUANTITY"        => "Y",
+        "USE_PRICE_COUNT"      => "N",
+        "USE_PRODUCT_QUANTITY" => "Y",
 
         "COMPOSITE_FRAME_MODE" => "A",
         "COMPOSITE_FRAME_TYPE" => "AUTO"
@@ -356,62 +356,6 @@ $APPLICATION->SetTitle('RICHE');
 ); ?>
 
 <?php $APPLICATION->IncludeComponent(
-    'bitrix:form',
-    'quiz--front',
-    [
-        "WEB_FORM_ID" => 1,
-        "RESULT_ID"   => $_REQUEST["RESULT_ID"],
-
-        "START_PAGE"             => "new",
-        "SUCCESS_URL"            => "success",
-
-        "SHOW_LIST_PAGE"         => "N",
-        "SHOW_EDIT_PAGE"         => "N",
-        "SHOW_VIEW_PAGE"         => "N",
-        "SHOW_ANSWER_VALUE"      => "Y",
-        "SHOW_ADDITIONAL"        => "Y",
-        "SHOW_STATUS"            => "N",
-
-        "EDIT_ADDITIONAL"        => "N",
-        "EDIT_STATUS"            => "N",
-
-        "NOT_SHOW_FILTER"        => [],
-        "NOT_SHOW_TABLE"         => [],
-
-        "CHAIN_ITEM_TEXT"        => "",
-        "CHAIN_ITEM_LINK"        => "",
-
-        "IGNORE_CUSTOM_TEMPLATE" => "Y",
-        "USE_EXTENDED_ERRORS"    => "N",
-
-        "CACHE_TYPE"             => "A",
-        "CACHE_TIME"             => CACHE_TTL,
-
-        "SEF_MODE"               => "Y",
-        "SEF_FOLDER"             => "/dev/",
-        "SEF_URL_TEMPLATES"      => [
-            "new"  => "#WEB_FORM_ID#/",
-            "list" => "#WEB_FORM_ID#/list/",
-            "edit" => "#WEB_FORM_ID#/edit/#RESULT_ID#/",
-            "view" => "#WEB_FORM_ID#/view/#RESULT_ID#/"
-        ],
-
-        "AJAX_MODE"              => "Y",
-        "AJAX_OPTION_JUMP"       => "N",
-        "AJAX_OPTION_STYLE"      => "Y",
-        "AJAX_OPTION_HISTORY"    => "N",
-
-        "VARIABLE_ALIASES"       => [
-            "new"  => [],
-            "list" => [],
-            "edit" => [],
-            "view" => [],
-        ]
-
-    ]
-); ?>
-
-<?php $APPLICATION->IncludeComponent(
     'bitrix:news.list',
     'cta--front',
     [
@@ -458,28 +402,97 @@ $APPLICATION->SetTitle('RICHE');
     ]
 ); ?>
 
-<?php $APPLICATION->IncludeComponent(
-    "bitrix:sender.subscribe",
-    "subscribe--front",
-    [
-        "USE_PERSONALIZATION" => "Y",
-        "CONFIRMATION"        => "Y",
-        "SHOW_HIDDEN"         => "N",
-        "HIDE_MAILINGS"       => "N",
+<div class="wrap">
 
-        "CACHE_TYPE" => "A",
-        "CACHE_TIME" => CACHE_TTL,
+    <div class="grid">
 
-        "AJAX_MODE"           => "Y",
-        "AJAX_OPTION_JUMP"    => "Y",
-        "AJAX_OPTION_STYLE"   => "Y",
-        "AJAX_OPTION_HISTORY" => "Y",
+        <div class="half">
 
-        "SET_TITLE" => "N",
+            <?php $APPLICATION->IncludeComponent(
+                'bitrix:form',
+                'quiz--front',
+                [
+                    "WEB_FORM_ID" => 1,
+                    "RESULT_ID"   => $_REQUEST["RESULT_ID"],
 
-        "COMPOSITE_FRAME_MODE" => "A",
-        "COMPOSITE_FRAME_TYPE" => "AUTO"
-    ]
-); ?>
+                    "START_PAGE"  => "new",
+                    "SUCCESS_URL" => "?success",
+
+                    "SHOW_LIST_PAGE"    => "N",
+                    "SHOW_EDIT_PAGE"    => "N",
+                    "SHOW_VIEW_PAGE"    => "N",
+                    "SHOW_ANSWER_VALUE" => "Y",
+                    "SHOW_ADDITIONAL"   => "Y",
+                    "SHOW_STATUS"       => "N",
+
+                    "EDIT_ADDITIONAL" => "N",
+                    "EDIT_STATUS"     => "N",
+
+                    "NOT_SHOW_FILTER" => [],
+                    "NOT_SHOW_TABLE"  => [],
+
+                    "CHAIN_ITEM_TEXT" => "",
+                    "CHAIN_ITEM_LINK" => "",
+
+                    "IGNORE_CUSTOM_TEMPLATE" => "Y",
+                    "USE_EXTENDED_ERRORS"    => "N",
+
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => CACHE_TTL,
+
+                    "SEF_MODE"          => "Y",
+                    "SEF_FOLDER"        => "/",
+                    "SEF_URL_TEMPLATES" => [
+                        "new" => "/"
+                    ],
+
+                    "AJAX_MODE"           => "Y",
+                    "AJAX_OPTION_JUMP"    => "N",
+                    "AJAX_OPTION_STYLE"   => "Y",
+                    "AJAX_OPTION_HISTORY" => "N",
+
+                    "VARIABLE_ALIASES" => [
+                        "new"  => [],
+                        "list" => [],
+                        "edit" => [],
+                        "view" => [],
+                    ]
+
+                ]
+            ); ?>
+
+        </div>
+
+        <div class="half">
+
+            <?php $APPLICATION->IncludeComponent(
+                "bitrix:sender.subscribe",
+                "subscribe--front",
+                [
+                    "USE_PERSONALIZATION" => "Y",
+                    "CONFIRMATION"        => "Y",
+                    "SHOW_HIDDEN"         => "N",
+                    "HIDE_MAILINGS"       => "N",
+
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => CACHE_TTL,
+
+                    "AJAX_MODE"           => "Y",
+                    "AJAX_OPTION_JUMP"    => "Y",
+                    "AJAX_OPTION_STYLE"   => "Y",
+                    "AJAX_OPTION_HISTORY" => "Y",
+
+                    "SET_TITLE" => "N",
+
+                    "COMPOSITE_FRAME_MODE" => "A",
+                    "COMPOSITE_FRAME_TYPE" => "AUTO"
+                ]
+            ); ?>
+
+        </div>
+
+    </div>
+
+</div>
 
 <? require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>

@@ -33,6 +33,9 @@
         @include Desktop {
           padding: 6rem;
         }
+        @include Wide {
+          padding: 8rem;
+        }
 
         box-sizing:      border-box;
 

@@ -1,8 +1,8 @@
 $(() => {
 
-    const element = $('.quiz-front--new');
+    const quiz = $('.quiz-front--new');
 
-    const quizSlider = $('.fields', element);
+    const quizSlider = $('.fields', quiz);
 
     quizSlider.slick(
         {
@@ -12,13 +12,62 @@ $(() => {
             speed:          500,
             autoplay:       false,
             arrows:         false,
-            // prevArrow:      $('button.prev', element),
-            // nextArrow:      $('button.next', element),
-            // prevArrow:      '<button class="arrow transparent prev" type="button"><i class="icon-chevron-left"></button>',
-            // nextArrow:      '<button class="arrow transparent next" type="button"><i class="icon-chevron-right"></button>',
-            dots:        false,
-            infinite:    false,
-            mobileFirst: true
+            dots:           false,
+            infinite:       false,
+            mobileFirst:    true
+        }
+    );
+
+    $('button.start', quizSlider).on(
+        'click',
+        (event) => {
+
+            event.preventDefault();
+
+            quizSlider.slick('slickNext');
+
+        }
+    );
+
+    $('button.next', quizSlider).on(
+        'click',
+        (slick, currentSlide) => {
+
+            quizSlider.slick('slickNext');
+
+        }
+    );
+
+    const progress = $('.progress', quiz);
+    const progressBar = $('.progress--bar', progress);
+    const progressValue = $('.progress--value', progress);
+
+    $('.field', quizSlider).on(
+        'change',
+        (event) => {
+
+            let container  = $(event.currentTarget),
+                nextButton = $('button.next', container);
+
+            nextButton.removeAttr('disabled');
+
+        }
+    );
+
+    quizSlider.on(
+        {
+            init:        () => {
+
+                progressBar.fadeIn();
+                progressBar.width(100 / quizSlider.length + '%');
+
+            },
+            afterChange: (slick, currentSlide) => {
+
+                progressBar.width(100 / currentSlide.slideCount * currentSlide.currentSlide + '%');
+                progressValue.text(currentSlide.currentSlide + '/' + currentSlide.slideCount);
+
+            }
         }
     );
 
