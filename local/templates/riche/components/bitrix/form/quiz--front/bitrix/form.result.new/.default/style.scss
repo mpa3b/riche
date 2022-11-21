@@ -1,13 +1,10 @@
 @import "../../../../../../../base";
 
 .quiz-front--new {
-  border-radius:    var(--border-radius--2x);
+  border-radius:    var(--border-radius);
   background-color: var(--color--background);
   overflow:         hidden;
-
-  .wrapper {
-    margin: var(--offset--4x);
-  }
+  padding:          var(--offset--2x);
 
   h2 {
     font-size: 1.8rem;

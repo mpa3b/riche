@@ -1,18 +1,15 @@
 @import "../../../../base";
 
 .subscribe--front {
-  border-radius:    var(--border-radius--2x);
+  border-radius:    var(--border-radius);
   background-color: var(--color--background);
+  padding: var(--offset--2x);
 
   h2 {
     font-size: 1.8rem;
     @include Tablet {
       font-size: 2.4rem;
     }
-  }
-
-  .wrapper {
-    padding: var(--offset--4x);
   }
 
   form {

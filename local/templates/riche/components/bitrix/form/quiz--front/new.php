@@ -22,25 +22,21 @@ $frame = $this->createFrame();
 
     <? $frame->begin(); ?>
 
-    <div class="wrapper">
+    <? if ($request->get('formresult') !== 'addok' || $request->get('WEB_FORM_ID') !== $arParams['WEB_FORM_ID']) { ?>
 
-        <? if ($request->get('formresult') !== 'addok' || $request->get('WEB_FORM_ID') !== $arParams['WEB_FORM_ID']) { ?>
+        <? $APPLICATION->IncludeComponent("bitrix:form.result.new", ".default", $arParams, $component); ?>
 
-            <? $APPLICATION->IncludeComponent("bitrix:form.result.new", ".default", $arParams, $component); ?>
+    <? } else { ?>
 
-        <? } else { ?>
+        <div class="quiz--front--success">
 
-            <div class="quiz--front--success">
+            <h2>Успешно!</h2>
 
-                <h2>Успешно!</h2>
+            <p>У нас всё получилось!</p>
 
-                <p>У нас всё получилось!</p>
+        </div>
 
-            </div>
-
-        <? } ?>
-
-    </div>
+    <? } ?>
 
     <? $frame->end(); ?>
 
