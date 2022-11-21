@@ -14,7 +14,9 @@ $(() => {
             arrows:         false,
             dots:           false,
             infinite:       false,
-            mobileFirst:    true
+            mobileFirst:    true,
+            draggable:      'false',
+            swipe:          'false',
         }
     );
 

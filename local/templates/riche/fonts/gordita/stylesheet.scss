@@ -34,7 +34,7 @@
                url("Gordita-Medium.woff2") format("woff2"),
                url("Gordita-Medium.woff") format("woff"),
                url("Gordita-Medium.ttf") format("truetype");
-  font-weight: bold;
+  font-weight: 500;
   font-style:  normal;
 }
 
@@ -46,7 +46,7 @@
                url("Gordita-MediumItalic.woff2") format("woff2"),
                url("Gordita-MediumItalic.woff") format("woff"),
                url("Gordita-MediumItalic.ttf") format("truetype");
-  font-weight: bold;
+  font-weight: 500;
   font-style:  italic;
 }
 
@@ -74,8 +74,6 @@
   font-weight: normal;
   font-style:  italic;
 }
-
-/*
 
 @font-face {
   font-family: "Gordita";
@@ -124,5 +122,3 @@
   font-weight : 900;
   font-style  : italic;
 }
-
-*/

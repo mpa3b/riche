@@ -38,6 +38,12 @@
       width:      100%;
     }
 
+    transition: opacity var(--transition--common);
+
+    &[aria-hidden="true"] {
+      opacity: calc(var(--opacity) / 2);
+    }
+
   }
 
   &-disabled {

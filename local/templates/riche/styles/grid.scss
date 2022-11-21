@@ -2,13 +2,17 @@
 
 :root {
 
-  --offset:                 1rem;
+  --offset:                 0.75rem;
   @include Mobile {
-    --offset: 1.25rem;
+    --offset: 1rem;
   }
   @include Tablet {
-    --offset: 1.5rem;
+    --offset: 1.175rem;
   }
+  @include Desktop {
+    --offset: 1.25rem;
+  }
+
   --offset--negative:       calc(var(--offset) * -1);
 
   --offset--half:           calc(var(--offset) / 2);
@@ -26,9 +30,6 @@
 
   margin:     var(--offset);
 
-  @include Mobile {
-    margin: var(--offset) var(--offset--2x);
-  }
   @include Tablet {
     width:  92%;
     margin: var(--offset) auto;
@@ -49,26 +50,18 @@
   .row {
     display:        flex;
     flex-direction: column;
+    box-sizing:     border-box;
 
     > * {
       display:    block;
       box-sizing: border-box;
-      padding:    var(--offset) 0;
       max-width:  100%;
-
-      &:empty {
-        display: none;
-      }
     }
 
-  }
-
-  .row {
-    margin: 0 calc(var(--offset) * -1);
-
-    > * {
-      padding: calc(var(--offset) * 0.5);
+    &.no-gutters {
+      padding: 0;
     }
+
   }
 
   .row,
@@ -76,8 +69,6 @@
     flex-direction: row;
     flex-wrap:      wrap;
     box-sizing:     border-box;
-
-    margin:         0 var(--offset--negative);
 
     @include Tablet {
 
@@ -117,17 +108,19 @@
     @include Tablet {
       flex-direction: row;
       flex-wrap:      nowrap;
-      margin:         0 var(--offset--negative);
     }
 
-    box-sizing:     border-box;
   }
 
-  > * {
-    padding: calc(var(--offset) * -0.5);
+  .grid {
+    display:        flex;
+    flex-direction: row;
+    flex-wrap:      wrap;
 
-    &:empty {
-      display: none;
+    margin:         0 var(--offset--half--negative);
+
+    > * {
+      padding: var(--offset--half);
     }
   }
 
@@ -154,18 +147,14 @@
 
 }
 
-.on {
-
-  @include Mobile {
-    &-desktop--only {
-      display: none !important;
-    }
+@include Mobile {
+  .desktop-only {
+    display: none !important;
   }
+}
 
-  @include Tablet {
-    &-mobiles--only {
-      display: none !important;
-    }
+@include Tablet {
+  .mobiles-only {
+    display: none !important;
   }
-
 }

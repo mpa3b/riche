@@ -62,88 +62,92 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
 
             <div id="page--footer--menu" class="two-fifths">
 
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "footer",
-                    [
-                        "TITLE" => "Полезные ссылки",
+                <div class="column">
 
-                        "ROOT_MENU_TYPE"  => "footer",
-                        "CHILD_MENU_TYPE" => "local",
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "footer",
+                        [
+                            "TITLE" => "Полезные ссылки",
 
-                        "DELAY"              => "N",
-                        "ALLOW_MULTI_SELECT" => "N",
+                            "ROOT_MENU_TYPE"  => "footer",
+                            "CHILD_MENU_TYPE" => "local",
 
-                        "MAX_LEVEL" => 2,
+                            "DELAY"              => "N",
+                            "ALLOW_MULTI_SELECT" => "N",
 
-                        "MENU_CACHE_GET_VARS"   => [""],
-                        "MENU_CACHE_TIME"       => CACHE_TTL,
-                        "MENU_CACHE_TYPE"       => "A",
-                        "MENU_CACHE_USE_GROUPS" => "N",
+                            "MAX_LEVEL" => 2,
 
-                        "USE_EXT" => "N",
+                            "MENU_CACHE_GET_VARS"   => [""],
+                            "MENU_CACHE_TIME"       => CACHE_TTL,
+                            "MENU_CACHE_TYPE"       => "A",
+                            "MENU_CACHE_USE_GROUPS" => "N",
 
-                        "CACHE_SELECTED_ITEMS" => "N",
+                            "USE_EXT" => "N",
 
-                        "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO"
-                    ]
-                ); ?>
+                            "CACHE_SELECTED_ITEMS" => "N",
 
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "footer",
-                    [
-                        "TITLE" => "Наши продукты",
+                            "COMPOSITE_FRAME_MODE" => "A",
+                            "COMPOSITE_FRAME_TYPE" => "AUTO"
+                        ]
+                    ); ?>
 
-                        "ROOT_MENU_TYPE" => "catalog",
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "footer",
+                        [
+                            "TITLE" => "Наши продукты",
 
-                        "DELAY"              => "N",
-                        "ALLOW_MULTI_SELECT" => "N",
+                            "ROOT_MENU_TYPE" => "catalog",
 
-                        "MAX_LEVEL" => 2,
+                            "DELAY"              => "N",
+                            "ALLOW_MULTI_SELECT" => "N",
 
-                        "MENU_CACHE_GET_VARS"   => [""],
-                        "MENU_CACHE_TIME"       => CACHE_TTL,
-                        "MENU_CACHE_TYPE"       => "A",
-                        "MENU_CACHE_USE_GROUPS" => "N",
+                            "MAX_LEVEL" => 2,
 
-                        "USE_EXT" => "N",
+                            "MENU_CACHE_GET_VARS"   => [""],
+                            "MENU_CACHE_TIME"       => CACHE_TTL,
+                            "MENU_CACHE_TYPE"       => "A",
+                            "MENU_CACHE_USE_GROUPS" => "N",
 
-                        "CACHE_SELECTED_ITEMS" => "N",
+                            "USE_EXT" => "N",
 
-                        "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO"
-                    ]
-                ); ?>
+                            "CACHE_SELECTED_ITEMS" => "N",
 
-                <? $APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "footer",
-                    [
-                        "TITLE" => "Правовая информация",
+                            "COMPOSITE_FRAME_MODE" => "A",
+                            "COMPOSITE_FRAME_TYPE" => "AUTO"
+                        ]
+                    ); ?>
 
-                        "ROOT_MENU_TYPE" => "law",
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:menu",
+                        "footer",
+                        [
+                            "TITLE" => "Правовая информация",
 
-                        "DELAY"              => "N",
-                        "ALLOW_MULTI_SELECT" => "N",
+                            "ROOT_MENU_TYPE" => "law",
 
-                        "MAX_LEVEL" => 2,
+                            "DELAY"              => "N",
+                            "ALLOW_MULTI_SELECT" => "N",
 
-                        "MENU_CACHE_GET_VARS"   => [""],
-                        "MENU_CACHE_TIME"       => CACHE_TTL,
-                        "MENU_CACHE_TYPE"       => "A",
-                        "MENU_CACHE_USE_GROUPS" => "N",
+                            "MAX_LEVEL" => 2,
 
-                        "USE_EXT" => "N",
+                            "MENU_CACHE_GET_VARS"   => [""],
+                            "MENU_CACHE_TIME"       => CACHE_TTL,
+                            "MENU_CACHE_TYPE"       => "A",
+                            "MENU_CACHE_USE_GROUPS" => "N",
 
-                        "CACHE_SELECTED_ITEMS" => "N",
+                            "USE_EXT" => "N",
 
-                        "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO",
+                            "CACHE_SELECTED_ITEMS" => "N",
 
-                    ]
-                ); ?>
+                            "COMPOSITE_FRAME_MODE" => "A",
+                            "COMPOSITE_FRAME_TYPE" => "AUTO",
+
+                        ]
+                    ); ?>
+
+                </div>
 
             </div>
 

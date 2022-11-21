@@ -6,6 +6,7 @@
   overflow: hidden;
 
   .items {
+    margin:     0 var(--offset--half--negative);
     margin-top: var(--offset);
 
     .item {
@@ -89,7 +90,7 @@
   .slick {
 
     &-slider {
-      margin: 0 var(--offset--negative);
+      margin: 0 var(--offset--half--negative);
 
       @include Mobile {
         padding-right: 20%;

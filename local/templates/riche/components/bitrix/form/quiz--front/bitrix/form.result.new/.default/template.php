@@ -4,6 +4,9 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
+use Riche\Breakpoint;
+use Riche\Thumb;
+
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -25,12 +28,20 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
 <div class="quiz-front--new default">
 
-    <?= $arResult["FORM_NOTE"]; ?>
+    <div class="header">
+
+        <h2><?= $arResult["FORM_TITLE"]; ?></h2>
+
+        <?= $arResult["FORM_NOTE"]; ?>
+
+    </div>
 
     <?php if ($arResult["isFormErrors"] == "Y"): ?>
+
         <div class="errors">
             <?= $arResult["FORM_ERRORS_TEXT"]; ?>
         </div>
+
     <?php endif; ?>
 
     <?= $arResult["FORM_HEADER"]; ?>
@@ -43,81 +54,11 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                 <?php if ($arResult["isFormDescription"] == "Y" || $arResult["isFormImage"] == "Y") { ?>
 
-                    <h2><?= $arResult["FORM_TITLE"]; ?></h2>
-
                     <?php if ($arResult['arForm']['DESCRIPTION_TYPE'] == 'html') { ?>
                         <?= $arResult["FORM_DESCRIPTION"]; ?>
                     <?php } else { ?>
                         <p><?= $arResult["FORM_DESCRIPTION"]; ?></p>
                     <?php } ?>
-
-                    <? /*
-                        <?php if ($arResult["isFormImage"] == "Y") { ?>
-
-                            <picture>
-
-                                <?php
-
-                                $preload = CFile::ResizeImageGet(
-                                    $arResult['FORM_IMAGE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 1),
-                                    BX_RESIZE_IMAGE_EXACT
-                                );
-
-                                $small = CFile::ResizeImageGet(
-                                    $arResult['FORM_IMAGE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 1),
-                                    BX_RESIZE_IMAGE_EXACT
-                                );
-
-                                $mobile = CFile::ResizeImageGet(
-                                    $arResult['FORM_IMAGE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 1),
-                                    BX_RESIZE_IMAGE_EXACT
-                                );
-
-                                $tablet = CFile::ResizeImageGet(
-                                    $arResult['FORM_IMAGE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 2, 1),
-                                    BX_RESIZE_IMAGE_EXACT
-                                );
-
-                                $desktop = CFile::ResizeImageGet(
-                                    $arResult['FORM_IMAGE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 3, 1),
-                                    BX_RESIZE_IMAGE_EXACT
-                                );
-
-                                $wide = CFile::ResizeImageGet(
-                                    $arResult['FORM_IMAGE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 1),
-                                    BX_RESIZE_IMAGE_EXACT
-                                );
-
-                                ?>
-
-                                <source data-srcset="<?= $small['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('small'); ?>">
-
-                                <source data-srcset="<?= $mobile['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('mobile'); ?>">
-
-                                <source data-srcset="<?= $tablet['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('tablet'); ?>">
-
-                                <source data-srcset="<?= $desktop['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
-
-                                <source data-srcset="<?= $wide['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('wide'); ?>">
-
-                                <img data-src="<?= $preload['src']; ?>"
-                                     loading="lazy">
-
-                            </picture>
-
-                        <?php } ?>
-                        */ ?>
 
                 <?php } ?>
 
@@ -126,6 +67,72 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
                     <button class="big primary start button" type="button">Пройти опрос</button>
 
                 </div>
+
+                <?php if ($arResult["isFormImage"] == "Y") { ?>
+
+                    <picture>
+
+                        <?php
+
+                        $preload = CFile::ResizeImageGet(
+                            $arResult['FORM_IMAGE']['ID'],
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 1),
+                            BX_RESIZE_IMAGE_EXACT
+                        );
+
+                        $small = CFile::ResizeImageGet(
+                            $arResult['FORM_IMAGE']['ID'],
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 1),
+                            BX_RESIZE_IMAGE_EXACT
+                        );
+
+                        $mobile = CFile::ResizeImageGet(
+                            $arResult['FORM_IMAGE']['ID'],
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 1),
+                            BX_RESIZE_IMAGE_EXACT
+                        );
+
+                        $tablet = CFile::ResizeImageGet(
+                            $arResult['FORM_IMAGE']['ID'],
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 2, 1),
+                            BX_RESIZE_IMAGE_EXACT
+                        );
+
+                        $desktop = CFile::ResizeImageGet(
+                            $arResult['FORM_IMAGE']['ID'],
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 3, 1),
+                            BX_RESIZE_IMAGE_EXACT
+                        );
+
+                        $wide = CFile::ResizeImageGet(
+                            $arResult['FORM_IMAGE']['ID'],
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 1),
+                            BX_RESIZE_IMAGE_EXACT
+                        );
+
+                        ?>
+
+                        <source data-srcset="<?= $small['src']; ?>"
+                                media="<?= Breakpoint::getMedia('small'); ?>">
+
+                        <source data-srcset="<?= $mobile['src']; ?>"
+                                media="<?= Breakpoint::getMedia('mobile'); ?>">
+
+                        <source data-srcset="<?= $tablet['src']; ?>"
+                                media="<?= Breakpoint::getMedia('tablet'); ?>">
+
+                        <source data-srcset="<?= $desktop['src']; ?>"
+                                media="<?= Breakpoint::getMedia('desktop'); ?>">
+
+                        <source data-srcset="<?= $wide['src']; ?>"
+                                media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                        <img data-src="<?= $preload['src']; ?>"
+                             loading="lazy">
+
+                    </picture>
+
+                <?php } ?>
 
             </div>
 
@@ -139,7 +146,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                     <?= $arQuestion["IS_INPUT_CAPTION_IMAGE"] == "Y" ? "<br />" . $arQuestion["IMAGE"]["HTML_CODE"] : ""; ?>
 
-                    <h4><?= $arQuestion['CAPTION']; ?></h4>
+                    <h3><?= $arQuestion['CAPTION']; ?></h3>
 
                     <div class="input-wrapper">
 
@@ -307,7 +314,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                     <div class="controls">
 
-                        <button class="next button" type="button" disabled>Далее</button>
+                        <button class="next button big" type="button" disabled>Далее</button>
 
                     </div>
 
@@ -337,8 +344,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
         <div class="actions field">
 
-            <input disabled
-                   type="submit"
+            <input type="submit"
                    name="web_form_submit"
                    value="<?= htmlspecialcharsbx(trim($arResult["arForm"]["BUTTON"]) == '' ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]); ?>"/>
 
@@ -374,11 +380,11 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
     <? } ?>
 
-    <?= $arResult["FORM_FOOTER"]; ?>
-
-    <div class="progress" hidden>
+    <div class="progress">
         <span class="progress--bar"></span>
         <span class="progress--value"></span>
     </div>
+
+    <?= $arResult["FORM_FOOTER"]; ?>
 
 </div>

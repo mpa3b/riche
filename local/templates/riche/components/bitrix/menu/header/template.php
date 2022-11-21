@@ -22,7 +22,7 @@ $frame = $this->createFrame();
 
 ?>
 
-<div class="menu--header on-mobiles--only">
+<div class="menu--header mobiles-only">
 
     <button class="transparent button trigger">
         <i class="icon-menu"></i>

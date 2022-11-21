@@ -6,7 +6,7 @@
 
   .items {
     padding: 0;
-    margin:  0;
+    margin:  0 var(--offset--half--negative);
 
     .item {
       position:         relative;
@@ -43,12 +43,9 @@
       .details {
         position:       absolute;
         z-index:        100;
+        box-sizing: border-box;
 
         padding:        var(--offset);
-
-        @include Tablet {
-          padding: var(--offset--2x);
-        }
 
         padding-bottom: 25%;
 
@@ -99,7 +96,7 @@
 
     &-slider {
       position: relative;
-      margin:   0 var(--offset--negative);
+      margin:     0 var(--offset--half--negative);
 
       &:hover {
 

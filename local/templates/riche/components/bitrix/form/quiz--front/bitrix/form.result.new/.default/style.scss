@@ -4,10 +4,50 @@
   border-radius:    var(--border-radius);
   background-color: var(--color--background);
   overflow:         hidden;
-  padding:          var(--offset--2x);
+  position:         relative;
 
-  h2 {
-    font-size: 1.8rem;
+  .header {
+    display:        block;
+    padding:        var(--offset);
+    padding-bottom: 0;
+  }
+
+  .progress {
+    position:        absolute;
+    bottom:          var(--offset);
+    left:            0;
+
+    width:           100%;
+    padding-left:    var(--offset);
+    padding-right:   10rem;
+    box-sizing:      border-box;
+
+    padding-bottom:  var(--offset);
+
+    display:         flex;
+    flex-direction:  row;
+    flex-wrap:       nowrap;
+
+    justify-content: space-between;
+    align-items:     center;
+
+    height:          var(--offset);
+
+    &--bar {
+      border-radius:    3px;
+      display:          block;
+      width:            0;
+      height:           3px;
+      background-color: var(--color--primary);
+      transition:       width var(--transition--common);
+    }
+
+    &--value {
+      margin-left: var(--offset);
+      font-size:   0.8rem;
+      opacity:     var(--opacity);
+    }
+
   }
 
   .fields {
@@ -18,22 +58,40 @@
         display: none;
       }
 
-
     }
 
     .field {
+      padding:        var(--offset);
+      box-sizing:     border-box;
+      height:         100%;
+
+      padding-top:    0;
+      padding-bottom: var(--offset--2x);
 
       h3 {
-
+        font-size: 1.4rem;
       }
 
       .input-wrapper {
-        margin-top:     var(--offset);
+        margin:         var(--offset) 0;
         display:        flex;
         flex-direction: column;
 
         .input {
           margin-bottom: var(--offset--half);
+
+          &.image,
+          &.date,
+          &.text,
+          &.textarea {
+
+            label {
+              display:       block;
+              margin-bottom: var(--offset--half);
+            }
+
+          }
+
         }
 
       }
@@ -41,9 +99,16 @@
     }
 
     .note {
+      position: relative;
+
       picture {
-        margin-top: var(--offset);
+        position: absolute;
+        bottom:   0;
+        left:     0;
+        width:    100%;
+        z-index:  -1;
       }
+
     }
 
     .input {
@@ -110,22 +175,9 @@
     }
 
     .controls {
-      margin-top: var(--offset);
-      text-align: center;
-    }
-
-  }
-
-  .progress {
-    background-color: var(--color--white);
-    margin-bottom:    var(--offset--half);
-
-    .progress--bar {
-      display:          block;
-      width:            0;
-      height:           var(--offset--half);
-      background-color: var(--color--primary);
-      transition:       width var(--transition--common);
+      text-align:  right;
+      box-sizing:  border-box;
+      padding-top: 0;
     }
 
   }
@@ -133,20 +185,21 @@
   .slick {
 
     &-slide {
+
       & > div {
         position: relative;
-
-        .field {
-          margin-bottom: 4rem;
-        }
 
         .controls {
           position: absolute;
           bottom:   0;
           left:     0;
           width:    100%;
+          padding:  var(--offset);
+          z-index:  10;
         }
+
       }
+
     }
 
     &-dots {

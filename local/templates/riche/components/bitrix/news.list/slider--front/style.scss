@@ -85,7 +85,7 @@
         color:           var(--color--white);
 
         padding:         var(--offset);
-        padding-bottom:  var(--offset--6x);
+        padding-bottom:  var(--offset--2x);
         padding-top:     80%;
         height:          100%;
 
@@ -126,7 +126,7 @@
     @include Tablet {
 
       &-slider {
-        margin: 0 var(--offset--negative);
+        margin: 0 var(--offset--half--negative);
       }
 
       &-list {

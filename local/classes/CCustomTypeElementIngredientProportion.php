@@ -8,6 +8,9 @@ use Bitrix\Main\Loader;
 /**
  * Класс, реализующий самодельное свойство для ИБ типа "ссылка на элемент" с указанием количества для указания ингридиентов.
  *
+ * @link https://it-svalka.ru/blog/bitrix/polzovatelskiy-tip-svoystv-infobloka-v-1s-bitriks/
+ * @link https://it-svalka.ru/blog/bitrix/sobstvennyy-tip-polzovatelskikh-poley-v-1s-bitriks/
+ *
  * @todo можно дополнить проверкой суммы значений, чтобы все "ингридиенты" не давали в сумме более 100%.
  */
 class CCustomTypeElementIngredientProportion

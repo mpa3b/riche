@@ -76,12 +76,12 @@
       align-items:     center;
 
       margin-left:     auto;
-      padding:         var(--offset--half);
+      padding:         0;
     }
 
     .nav {
       > * {
-        padding: var(--offset--half);
+        padding: 0;
       }
     }
 
@@ -92,7 +92,7 @@
   }
 
   &--footer {
-    padding-top: var(--offset--4x);
+    padding-top: var(--offset--2x);
 
     &--contact {
       padding-right: var(--offset--2x);
@@ -167,12 +167,16 @@
 
     &--links {
 
+      @include Tablet {
+        margin-left: auto;
+      }
+
       .links {
         display:        flex;
         flex-direction: row;
         flex-wrap:      nowrap;
 
-        @include Desktop {
+        @include Tablet {
           justify-content: flex-end;
         }
 

@@ -3,8 +3,6 @@
 .catalog-top--catalog--slider {
   overflow: hidden;
 
-  margin:   var(--offset--2x) 0;
-
   .items {
 
     &:not(.slick-initialized) {
@@ -49,7 +47,7 @@
 
       > div {
         box-sizing: border-box;
-        padding:    0 var(--offset--half);
+        padding:    0 var(--offset);
       }
 
     }

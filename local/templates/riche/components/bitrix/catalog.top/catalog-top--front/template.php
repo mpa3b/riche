@@ -229,9 +229,13 @@ $frame = $this->createFrame();
 
             <div class="footer">
 
-                <a href="<?= SHOP_ROOT_URL; ?>">
+                <a href="<?= SHOP_ROOT_URL; ?>" class="mobiles-only">
                     Перейти в каталог
                     <i class="icon-chevron-right rounded button"></i>
+                </a>
+
+                <a href="<?= SHOP_ROOT_URL; ?>" class="primary big desktop-only button">
+                    Перейти в каталог
                 </a>
 
             </div>

@@ -139,6 +139,3 @@ if (!empty($arResult['SECTIONS'])) {
     <?php
 
 }
-
-d($arResult);
-d($arParams);
