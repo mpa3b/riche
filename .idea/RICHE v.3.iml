@@ -132,6 +132,7 @@
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/dev2fun.redirects/install" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/grain.customsettings/install" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/ls.codegeneratorfree/install" />
+      <excludeFolder url="file://$MODULE_DIR$/local/php_interface/migrations.schema" />
       <excludePattern pattern="install" />
       <excludePattern pattern="admin" />
     </content>
