@@ -47,7 +47,7 @@
         padding:        var(--offset--2x);
 
         @include Tablet {
-          padding:        var(--offset--4x);
+          padding: var(--offset--4x);
         }
 
         padding-bottom: 25%;
@@ -98,8 +98,8 @@
     }
 
     &-slider {
-      position:       relative;
-      margin:         0 var(--offset--negative);
+      position: relative;
+      margin:   0 var(--offset--negative);
 
       &:hover {
 
@@ -110,7 +110,7 @@
       }
 
       @include Mobile {
-        padding-right: 20%;
+        padding-right:  20%;
         padding-bottom: 2rem;
       }
 

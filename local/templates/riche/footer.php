@@ -12,7 +12,7 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
 
 ?>
 
-    </div>
+</div>
 
 </main>
 

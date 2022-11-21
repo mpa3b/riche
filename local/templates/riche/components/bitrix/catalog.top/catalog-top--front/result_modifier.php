@@ -34,7 +34,7 @@ if (!empty($products)) {
             ],
             'data_doubling' => false,
             'cache'         => [
-                'ttl'         => $arParams['CACHE_TIME']
+                'ttl' => $arParams['CACHE_TIME']
             ]
         ]
     );
@@ -76,8 +76,8 @@ $rSections = SectionTable::getList(
             'ID',
             'NAME'
         ],
-        'cache'         => [
-            'ttl'         => $arParams['CACHE_TIME']
+        'cache'  => [
+            'ttl' => $arParams['CACHE_TIME']
         ]
     ]
 );

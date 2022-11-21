@@ -40,7 +40,8 @@ if (!empty($arResult['SECTIONS'])) {
                     <li>
 
                         <? if ($arParams['COUNT_ELEMENTS'] && $section['ELEMENT_CNT'] > 0) { ?>
-                            <span class="count" title="<?= $section['ELEMENT_CNT_TITLE']; ?>"><?= $section['ELEMENT_CNT']; ?></span>
+                            <span class="count"
+                                  title="<?= $section['ELEMENT_CNT_TITLE']; ?>"><?= $section['ELEMENT_CNT']; ?></span>
                         <? } ?>
 
                         <a href="<?= $section['SECTION_PAGE_URL']; ?>">

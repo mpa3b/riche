@@ -25,7 +25,7 @@ if (!empty($arResult)) { ?>
 
         <? //@formatter:off ?>
 
-        <? if(!empty($arParams['TITLE'])) { ?>
+        <? if (!empty($arParams['TITLE'])) { ?>
 
             <h2><?= $arParams['TITLE']; ?></h2>
 

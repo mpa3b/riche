@@ -18,5 +18,4 @@
 <div class="catalog--default search">
 
 
-
 </div>
