@@ -33,95 +33,95 @@ if (!empty($arResult['SECTIONS'])) {
 
         <nav>
 
-            <ul>
+            <ul class="row">
 
                 <?php foreach ($arResult['SECTIONS'] as $i => $section) { ?>
 
                     <li>
 
-                        <? if ($arParams['SHOW_ELEMENT_COUNT']) { ?>
-                            <span class="count" title="<?= $section['ELEMENT_CNT_TITLE']; ?>">
-                                <?= $section['ELEMENT_CNT']; ?>
-                            </span>
+                        <? if ($arParams['COUNT_ELEMENTS'] && $section['ELEMENT_CNT'] > 0) { ?>
+                            <span class="count" title="<?= $section['ELEMENT_CNT_TITLE']; ?>"><?= $section['ELEMENT_CNT']; ?></span>
                         <? } ?>
 
-                        <? if (is_set($section['PICTURE']['ID'])) { ?>
+                        <a href="<?= $section['SECTION_PAGE_URL']; ?>">
+                            <? if (is_set($section['PICTURE']['ID'])) { ?>
 
-                            <?
+                                <?
 
-                            $preload = CFile::ResizeImageGet(
-                                $section['PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 1),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                $preload = CFile::ResizeImageGet(
+                                    $section['PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 1),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
 
-                            $small = CFile::ResizeImageGet(
-                                $section['PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 2, 1),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                $small = CFile::ResizeImageGet(
+                                    $section['PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 2, 1),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
 
-                            $mobile = CFile::ResizeImageGet(
-                                $section['PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 3, 1),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                $mobile = CFile::ResizeImageGet(
+                                    $section['PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 3, 1),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
 
-                            $tablet = CFile::ResizeImageGet(
-                                $section['PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 4, 1),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                $tablet = CFile::ResizeImageGet(
+                                    $section['PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 4, 1),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
 
-                            $desktop = CFile::ResizeImageGet(
-                                $section['PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 6, 1),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                $desktop = CFile::ResizeImageGet(
+                                    $section['PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 6, 1),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
 
-                            $wide = CFile::ResizeImageGet(
-                                $section['PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 6, 1),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                $wide = CFile::ResizeImageGet(
+                                    $section['PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 6, 1),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
 
-                            ?>
+                                ?>
 
-                            <picture>
+                                <picture>
 
-                                <source data-srcset="<?= $small['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('small'); ?>">
-                                <source data-srcset="<?= $mobile['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('mobile'); ?>">
-                                <source data-srcset="<?= $tablet['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('tablet'); ?>">
-                                <source data-srcset="<?= $desktop['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
-                                <source data-srcset="<?= $wide['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('wide'); ?>">
+                                    <source data-srcset="<?= $small['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('small'); ?>">
+                                    <source data-srcset="<?= $mobile['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                    <source data-srcset="<?= $tablet['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                    <source data-srcset="<?= $desktop['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                    <source data-srcset="<?= $wide['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                                <img
-                                    <? if ($i == 0) { ?>
-                                        loading="eager"
-                                        src="<?= $preload['src']; ?>"
-                                    <? } else { ?>
-                                        loading="lazy"
-                                        data-src="<?= $preload['src']; ?>"
-                                    <? } ?>
-                                        alt="<?= $section['NAME']; ?>">
+                                    <img
+                                        <? if ($i == 0) { ?>
+                                            loading="eager"
+                                            src="<?= $preload['src']; ?>"
+                                        <? } else { ?>
+                                            loading="lazy"
+                                            data-src="<?= $preload['src']; ?>"
+                                        <? } ?>
+                                            alt="<?= $section['NAME']; ?>">
 
-                            </picture>
+                                </picture>
 
-                        <? } ?>
+                            <? } ?>
+                            <span class="name"><?= $section['NAME']; ?></span>
+                        </a>
 
-
-                        <a href="<?= $section['SECTION_PAGE_URL']; ?>"><?= $section['NAME']; ?></a>
-
+                        <? /*
                         <? if ($section['DESCRIPTION_TYPE'] == "html") { ?>
                             <?= $section['DESCRIPTION']; ?>
                         <? } else { ?>
                             <p><?= $section['DESCRIPTION']; ?></p>
                         <? } ?>
+                        */ ?>
 
                     </li>
 

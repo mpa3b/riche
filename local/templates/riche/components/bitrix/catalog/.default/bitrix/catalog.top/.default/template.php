@@ -42,8 +42,13 @@ $frame = $this->createFrame();
 
                 <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                    <div class="item" data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
+                    <div class="item"
+                         data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
                          data-id="<?= $arItem['ID']; ?>">
+
+                        <button class="transparent button" data-id="<?= $arItem['ID']; ?>" data-action="favorite">
+                            <i class="icon-heart"></i>
+                        </button>
 
                         <div class="image">
 
@@ -118,7 +123,7 @@ $frame = $this->createFrame();
                                             loading="lazy"
                                             data-src="<?= $preload['src']; ?>"
                                         <? } ?>
-                                         alt="<?= $arItem['NAME']; ?>">
+                                            alt="<?= $arItem['NAME']; ?>">
 
                                 </picture>
 
@@ -145,12 +150,6 @@ $frame = $this->createFrame();
                             <h3>
                                 <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
                             </h3>
-
-                            <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-
-                                <p><?= $arItem['PREVIEW_TEXT']; ?></p>
-
-                            <? } ?>
 
                         </div>
 
@@ -205,6 +204,16 @@ $frame = $this->createFrame();
                                 </button>
 
                             </div>
+
+                            <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+
+                                <div class="description">
+
+                                    <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+
+                                </div>
+
+                            <? } ?>
 
                         <? } ?>
 
