@@ -2,30 +2,27 @@
 
 :root {
 
-  --offset:                 0.5rem;
+  --offset:                 1rem;
   @include Mobile {
-    --offset: 0.55rem;
+    --offset: 1.25rem;
   }
   @include Tablet {
-    --offset: 0.65rem;
+    --offset: 1.5rem;
   }
+  --offset--negative:       calc(var(--offset) * -1);
 
   --offset--half:           calc(var(--offset) / 2);
-  --offset--2x:             calc(var(--offset) * 2);
-  --offset--4x:             calc(var(--offset) * 4);
-  --offset--6x:             calc(var(--offset) * 6);
-  --offset--8x:             calc(var(--offset) * 8);
-
-  --offset--negative:       calc(var(--offset) * -1);
-  --offset--2x--negative:   calc(var(--offset) * -2);
   --offset--half--negative: calc(var(--offset) * -0.5);
+
+  --offset--2x:             calc(var(--offset) * 2);
+  --offset--2x--negative:   calc(var(--offset) * -2);
+
 
 }
 
 .wrap {
   display:    block;
   box-sizing: border-box;
-
 
   margin:     var(--offset);
 

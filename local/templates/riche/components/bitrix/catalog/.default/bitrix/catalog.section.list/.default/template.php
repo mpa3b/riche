@@ -27,11 +27,11 @@ if (!empty($arResult['SECTIONS'])) {
 
     ?>
 
-    <div class="section-list--catalog--default wrap">
+    <nav class="section-list--catalog--default">
 
         <? $frame->begin(); ?>
 
-        <nav>
+        <div class="wrap">
 
             <ul class="row">
 
@@ -130,11 +130,11 @@ if (!empty($arResult['SECTIONS'])) {
 
             </ul>
 
-        </nav>
+        </div>
 
         <? $frame->end(); ?>
 
-    </div>
+    </nav>
 
     <?php
 

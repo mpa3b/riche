@@ -1,7 +1,7 @@
 @import "../../../../base";
 
 .slider--front {
-  margin: var(--offset--4x) 0;
+  margin: var(--offset--2x) 0;
 
   .items {
     padding: 0;
@@ -84,7 +84,7 @@
 
         color:           var(--color--white);
 
-        padding:         var(--offset--2x);
+        padding:         var(--offset);
         padding-bottom:  var(--offset--6x);
         padding-top:     80%;
         height:          100%;
@@ -137,7 +137,7 @@
 
         > div {
           box-sizing: border-box;
-          padding:    0 var(--offset);
+          padding:    0 var(--offset--half);
 
           .item {
             margin-bottom: -0.5rem;

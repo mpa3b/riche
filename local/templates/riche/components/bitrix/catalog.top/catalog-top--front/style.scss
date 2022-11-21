@@ -3,13 +3,13 @@
 .catalog-top--front {
   overflow: hidden;
 
-  margin:   var(--offset--4x) 0;
+  margin:   var(--offset--2x) 0;
 
   .filter {
     display:        flex;
     flex-direction: row;
-    gap:            var(--offset);
-    margin-bottom:  var(--offset--2x);
+    gap:            var(--offset--half);
+    margin-bottom:  var(--offset);
   }
 
   .items {
@@ -55,7 +55,7 @@
         .controls {
           position:        absolute;
           z-index:         100;
-          bottom:          var(--offset);
+          bottom:          var(--offset--half);
           left:            0;
           width:           100%;
 
@@ -70,7 +70,7 @@
         flex-direction: column;
 
         .reviews {
-          margin:         var(--offset) 0;
+          margin:         var(--offset--half) 0;
 
           display:        flex;
           flex-direction: row;
@@ -82,7 +82,7 @@
           }
 
           .value {
-            padding-right: var(--offset);
+            padding-right: var(--offset--half);
           }
 
           .count {
@@ -142,7 +142,7 @@
 
       > div {
         box-sizing: border-box;
-        padding:    0 var(--offset);
+        padding:    0 var(--offset--half);
       }
 
     }
@@ -163,7 +163,7 @@
   }
 
   .footer {
-    margin-top: var(--offset--2x);
+    margin-top: var(--offset);
 
     a {
       margin:          auto;
@@ -179,7 +179,7 @@
 
       i {
         display:     inline-block;
-        margin-left: var(--offset);
+        margin-left: var(--offset--half);
       }
     }
 

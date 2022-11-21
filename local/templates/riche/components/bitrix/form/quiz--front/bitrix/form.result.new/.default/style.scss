@@ -4,7 +4,7 @@
   border-radius:    var(--border-radius);
   background-color: var(--color--background);
   overflow:         hidden;
-  padding:          var(--offset--4x);
+  padding:          var(--offset--2x);
 
   h2 {
     font-size: 1.8rem;
@@ -28,12 +28,12 @@
       }
 
       .input-wrapper {
-        margin-top:     var(--offset--2x);
+        margin-top:     var(--offset);
         display:        flex;
         flex-direction: column;
 
         .input {
-          margin-bottom: var(--offset);
+          margin-bottom: var(--offset--half);
         }
 
       }
@@ -42,7 +42,7 @@
 
     .note {
       picture {
-        margin-top: var(--offset--2x);
+        margin-top: var(--offset);
       }
     }
 
@@ -110,7 +110,7 @@
     }
 
     .controls {
-      margin-top: var(--offset--2x);
+      margin-top: var(--offset);
       text-align: center;
     }
 
@@ -118,7 +118,7 @@
 
   .progress {
     background-color: var(--color--white);
-    margin-bottom:    var(--offset);
+    margin-bottom:    var(--offset--half);
 
     .progress--bar {
       display:          block;

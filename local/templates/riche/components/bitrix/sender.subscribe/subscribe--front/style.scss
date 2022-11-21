@@ -7,7 +7,7 @@
 .subscribe--front {
   border-radius:    var(--border-radius);
   background-color: var(--color--background);
-  padding:          var(--offset--4x);
+  padding:          var(--offset--2x);
 
   height:           100%;
   box-sizing:       border-box;
@@ -17,7 +17,7 @@
   }
 
   form {
-    margin-top: var(--offset--2x);
+    margin-top: var(--offset);
 
     input,
     button {

@@ -1,6 +1,6 @@
 $(() => {
 
-    const catalogTop = $('.catalog-top--catalog--default');
+    const catalogTop = $('.catalog-top--catalog--slider');
 
     const frontCatalogSlider = $('.slider', catalogTop);
     const frontCatalogSliderVideo = $('video', frontCatalogSlider);

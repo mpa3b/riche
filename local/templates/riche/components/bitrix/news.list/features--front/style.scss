@@ -1,7 +1,7 @@
 @import "../../../../base";
 
 .features--front {
-  margin: var(--offset--4x) 0;
+  margin: var(--offset--2x) 0;
 
   .items {
     padding: 0;
@@ -70,8 +70,8 @@
         display:        flex;
         flex-direction: column;
 
-        padding:        var(--offset--2x);
-        padding-right:  var(--offset--4x);
+        padding:        var(--offset);
+        padding-right:  var(--offset--2x);
 
         box-sizing:     border-box;
 
@@ -83,13 +83,13 @@
         }
 
         p {
-          margin-top: var(--offset);
+          margin-top: var(--offset--half);
         }
 
         i {
           position:   absolute;
-          right:      var(--offset--2x);
-          top:        var(--offset--2x);
+          right:      var(--offset);
+          top:        var(--offset);
           transition: transform var(--transition--common);
           opacity:    var(--opacity);
         }
@@ -134,7 +134,7 @@
       .item {
         border-radius:    unset;
         box-shadow:       none;
-        margin:           0 var(--offset);
+        margin:           0 var(--offset--half);
         background-color: unset !important;
         border-bottom:    none !important;
 
@@ -151,7 +151,7 @@
           display:        flex;
           flex-direction: column;
           padding:        0;
-          margin-top:     var(--offset--2x);
+          margin-top:     var(--offset);
 
           i {
             display: none;

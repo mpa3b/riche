@@ -1,0 +1,72 @@
+@import "../../../../../../../base";
+
+.catalog-top--catalog--slider {
+  overflow: hidden;
+
+  margin:   var(--offset--2x) 0;
+
+  .items {
+
+    &:not(.slick-initialized) {
+
+      .item:not(:first-of-type) {
+        display: none;
+      }
+
+    }
+
+  }
+
+  .slick {
+
+    &-slider {
+      position: relative;
+      margin:   0 var(--offset--negative);
+
+      @include Mobile {
+        margin-right: -75%;
+      }
+
+    }
+
+    &-track {
+
+      @include Tablet {
+        width: 100% !important;
+
+        .slick-slide {
+          flex-grow: 1;
+        }
+      }
+
+    }
+
+    &-list {
+      overflow: visible;
+    }
+
+    &-slide {
+
+      > div {
+        box-sizing: border-box;
+        padding:    0 var(--offset--half);
+      }
+
+    }
+
+    @include Mobile {
+
+      &-slide {
+        opacity:    calc(var(--opacity) / 2);
+        transition: opacity var(--transition--common);
+      }
+
+      &-current {
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+}

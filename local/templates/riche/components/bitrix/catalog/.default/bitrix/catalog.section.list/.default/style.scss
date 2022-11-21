@@ -1,31 +1,27 @@
 .section-list--catalog--default {
 
-  nav {
+  ul {
+    display:        flex;
+    flex-direction: row;
+    flex-wrap:      nowrap;
 
-    ul {
-      display:        flex;
-      flex-direction: row;
-      flex-wrap:      nowrap;
+    padding:        0;
+    margin:         0;
 
-      padding:        0;
-      margin:         0;
+    li {
+      position: relative;
 
-      li {
-        position: relative;
+      span.count {
+        position: absolute;
+      }
 
-        span.count {
-          position: absolute;
-        }
+      a {
 
-        a {
+      }
 
-        }
-
-        picture {
-          border-radius: var(--border-radius);
-          overflow:      hidden;
-        }
-
+      picture {
+        border-radius: var(--border-radius);
+        overflow:      hidden;
       }
 
     }

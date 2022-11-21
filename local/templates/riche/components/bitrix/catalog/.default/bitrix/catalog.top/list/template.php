@@ -20,25 +20,21 @@ use Riche\Units;
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
-$this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
-$this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
-$this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
-
 $this->setFrameMode(true);
-
-$frame = $this->createFrame();
 
 ?>
 
 <?php if (!empty($arResult['ITEMS'])) { ?>
 
-    <section class="catalog-top--catalog--default">
+    <?php $frame = $this->createFrame(); ?>
 
-        <?php $frame->begin(); ?>
+    <section class="catalog-top--catalog--list">
 
         <div class="wrap">
 
-            <div class="items slider">
+            <div class="items row">
+
+                <?php $frame->begin(); ?>
 
                 <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
@@ -46,21 +42,13 @@ $frame = $this->createFrame();
                          data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
                          data-id="<?= $arItem['ID']; ?>">
 
-                        <button class="transparent button" data-id="<?= $arItem['ID']; ?>" data-action="favorite">
+                        <button class="transparent favorite button" data-id="<?= $arItem['ID']; ?>" data-action="favorite">
                             <i class="icon-heart"></i>
                         </button>
 
                         <div class="image">
 
                             <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
-
-                                <?php if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
-
-                                    <video <?php if ($i == 0) { ?>autoplay<?php } ?> muted loop>
-                                        <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-                                    </video>
-
-                                <?php } ?>
 
                                 <?php
 
@@ -211,25 +199,15 @@ $frame = $this->createFrame();
 
                         <?php } ?>
 
-                        <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-
-                            <div class="description">
-
-                                <p><?= $arItem['PREVIEW_TEXT']; ?></p>
-
-                            </div>
-
-                        <?php } ?>
-
                     </div>
 
                 <?php } ?>
 
+                <?php $frame->end(); ?>
+
             </div>
 
         </div>
-
-        <?php $frame->end(); ?>
 
     </section>
 
