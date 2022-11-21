@@ -31,8 +31,8 @@
         "SECTION_CHOOSER": "L",
         "LIST_MODE": "",
         "RIGHTS_MODE": "S",
-        "SECTION_PROPERTY": "N",
-        "PROPERTY_INDEX": "I",
+        "SECTION_PROPERTY": "Y",
+        "PROPERTY_INDEX": "Y",
         "VERSION": "2",
         "LAST_CONV_ELEMENT": "0",
         "SOCNET_GROUP_ID": null,
@@ -353,47 +353,6 @@
             ]
         },
         {
-            "NAME": "Ключевые компоненты",
-            "ACTIVE": "Y",
-            "SORT": "500",
-            "CODE": "KEY_INGREDIENTS",
-            "DEFAULT_VALUE": "",
-            "PROPERTY_TYPE": "E",
-            "ROW_COUNT": "1",
-            "COL_COUNT": "30",
-            "LIST_TYPE": "L",
-            "MULTIPLE": "Y",
-            "XML_ID": "",
-            "FILE_TYPE": "",
-            "MULTIPLE_CNT": "5",
-            "LINK_IBLOCK_ID": "CONTENT:INGREDIENTS",
-            "WITH_DESCRIPTION": "N",
-            "SEARCHABLE": "N",
-            "FILTRABLE": "N",
-            "IS_REQUIRED": "N",
-            "VERSION": "2",
-            "USER_TYPE": null,
-            "USER_TYPE_SETTINGS": null,
-            "HINT": "",
-            "FEATURES": [
-                {
-                    "MODULE_ID": "catalog",
-                    "FEATURE_ID": "IN_BASKET",
-                    "IS_ENABLED": "N"
-                },
-                {
-                    "MODULE_ID": "iblock",
-                    "FEATURE_ID": "DETAIL_PAGE_SHOW",
-                    "IS_ENABLED": "Y"
-                },
-                {
-                    "MODULE_ID": "iblock",
-                    "FEATURE_ID": "LIST_PAGE_SHOW",
-                    "IS_ENABLED": "N"
-                }
-            ]
-        },
-        {
             "NAME": "Состав",
             "ACTIVE": "Y",
             "SORT": "500",
@@ -417,6 +376,47 @@
             "USER_TYPE_SETTINGS": {
                 "IBLOCK_ID": 11
             },
+            "HINT": "",
+            "FEATURES": [
+                {
+                    "MODULE_ID": "catalog",
+                    "FEATURE_ID": "IN_BASKET",
+                    "IS_ENABLED": "N"
+                },
+                {
+                    "MODULE_ID": "iblock",
+                    "FEATURE_ID": "DETAIL_PAGE_SHOW",
+                    "IS_ENABLED": "Y"
+                },
+                {
+                    "MODULE_ID": "iblock",
+                    "FEATURE_ID": "LIST_PAGE_SHOW",
+                    "IS_ENABLED": "N"
+                }
+            ]
+        },
+        {
+            "NAME": "Ключевые компоненты",
+            "ACTIVE": "Y",
+            "SORT": "500",
+            "CODE": "KEY_INGREDIENTS",
+            "DEFAULT_VALUE": "",
+            "PROPERTY_TYPE": "E",
+            "ROW_COUNT": "1",
+            "COL_COUNT": "30",
+            "LIST_TYPE": "L",
+            "MULTIPLE": "Y",
+            "XML_ID": "",
+            "FILE_TYPE": "",
+            "MULTIPLE_CNT": "5",
+            "LINK_IBLOCK_ID": "CONTENT:INGREDIENTS",
+            "WITH_DESCRIPTION": "N",
+            "SEARCHABLE": "N",
+            "FILTRABLE": "N",
+            "IS_REQUIRED": "N",
+            "VERSION": "2",
+            "USER_TYPE": null,
+            "USER_TYPE_SETTINGS": null,
             "HINT": "",
             "FEATURES": [
                 {

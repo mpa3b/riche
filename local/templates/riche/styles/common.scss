@@ -34,6 +34,15 @@
 
   --color--background:         var(--color--gray--light);
 
+  --color--test:               var(--color--white);
+  --color--test:               var(--color--gray);
+  --color--test:               var(--color--pink);
+  --color--test:               var(--color--red);
+  --color--test:               var(--color--yellow);
+  --color--test:               var(--color--green);
+  --color--test:               var(--color--blue);
+  --color--test:               var(--color--violet);
+
   // endregion
 
   --font--base:                "Gordita", sans-serif;
@@ -41,7 +50,7 @@
   --padding:                   1rem;
   --padding--2x:               calc(var(--padding) * 2);
 
-  --border-radius:             1rem;
+  --border-radius:             1.5rem;
   --border-radius--2x:         calc(var(--border-radius) * 2);
 
   --transition--ease:          var(--transition--time) ease;
@@ -218,7 +227,7 @@ button {
   box-sizing:       border-box;
 
   padding:          0.85em 1.6em;
-  padding-top:   0.75em;
+  padding-top:      0.75em;
 
   &.big {
     padding:     1em 2em;

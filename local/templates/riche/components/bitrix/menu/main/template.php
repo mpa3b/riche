@@ -31,7 +31,8 @@ $this->setFrameMode(true);
         <ul class="menu root">
             <?php foreach ($arResult as $arItem): ?>
                 <li>
-                    <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
+                    <a href="<?= $arItem['LINK']; ?>"
+                       <? if ($arItem['SELECTED'] == 'Y') { ?>class="active" <? } ?>><?= $arItem['TEXT']; ?></a>
                 </li>
             <?php endforeach; ?>
         </ul>

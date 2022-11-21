@@ -404,7 +404,7 @@ $APPLICATION->SetTitle('RICHE');
 
 <aside class="wrap">
 
-    <div class="grid">
+    <div class="row">
 
         <div class="half quiz">
 

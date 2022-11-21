@@ -6,6 +6,19 @@ $breakpointTablet:  780px;
 $breakpointDesktop: 980px;
 $breakpointWide:    1360px;
 
+$units: (
+                "four-fifths": 80%,
+                "three-quarters": 75%,
+                "two-thirds": 66.6666%,
+                "three-fifths": 60%,
+                "half": 50%,
+                "two-fifths": 40%,
+                "third": 33.3333%,
+                "quarter": 25%,
+                "fifth": 20%,
+                "sixth": 16.6666%
+        );
+
 // должно отвечать local/templates/riche/classes/Breakpoint.php
 
 // endregion
@@ -42,13 +55,13 @@ $breakpointWide:    1360px;
 
 $colors:            (
                             "white" : #ffffff,
-                            "gray" : #d9d9d9,
-                            "pink" : #f196cc,
-                            "red" : #ea8e8e,
-                            "yellow": #e3ea7b,
-                            "green" : #50e182,
-                            "blue" : #8eb8ff,
-                            "violet" : #c08dff
+                            "gray" : #b6b6b6,
+                            "pink" : #e86db3,
+                            "red" : #e75b5b,
+                            "yellow": #d8e168,
+                            "green" : #25cb73,
+                            "blue" : #5a87dc,
+                            "violet" : #8b58d0
                     );
 
 $opacity:           0.5;

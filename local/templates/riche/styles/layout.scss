@@ -172,10 +172,11 @@
       }
 
       .links {
-        display:        flex;
-        flex-direction: row;
-        flex-wrap:      nowrap;
+        display:         flex;
+        flex-direction:  row;
+        flex-wrap:       nowrap;
 
+        justify-content: center;
         @include Tablet {
           justify-content: flex-end;
         }
@@ -223,9 +224,12 @@
       @include Mobile {
 
         span {
-          display:      block;
-          white-space:  nowrap;
-          padding-left: 1em;
+          display:     block;
+          white-space: nowrap;
+        }
+
+        .requisites {
+          text-align: right;
         }
 
       }

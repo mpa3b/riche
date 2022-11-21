@@ -175,13 +175,13 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
 
     <div id="page--footer--outro" class="wrap">
 
-        <div class="row">
+        <div class="grid">
 
-            <div class="half">
+            <div class="half copyright">
                 <span>© RICHE, 2015 – <?= Date('Y'); ?> гг.</span>
             </div>
 
-            <div class="half text-align--right">
+            <div class="half requisites">
                 <span>КПП 213001001</span>
                 <span>ИНН 213016070</span>
             </div>

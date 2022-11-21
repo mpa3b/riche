@@ -70,20 +70,9 @@
     flex-wrap:      wrap;
     box-sizing:     border-box;
 
-    @include Tablet {
+    margin:         0 var(--offset--half--negative);
 
-      $units: (
-                      "four-fifths": 80%,
-                      "three-quarters": 75%,
-                      "two-thirds": 66.6666%,
-                      "three-fifths": 60%,
-                      "half": 50%,
-                      "two-fifths": 40%,
-                      "third": 33.3333%,
-                      "quarter": 25%,
-                      "fifth": 20%,
-                      "sixth": 16.6666%
-              );
+    @include Tablet {
 
       @each $code, $width in $units {
 
@@ -97,6 +86,10 @@
 
       }
 
+    }
+
+    > * {
+      padding: var(--offset--half);
     }
 
   }
@@ -113,15 +106,16 @@
   }
 
   .grid {
-    display:        flex;
-    flex-direction: row;
     flex-wrap:      wrap;
 
-    margin:         0 var(--offset--half--negative);
+    @each $code, $width in $units {
 
-    > * {
-      padding: var(--offset--half);
+      > .#{$code} {
+        width: #{$width};
+      }
+
     }
+
   }
 
 }

@@ -94,7 +94,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "~rsa_key_pem",
-            "VALUE": "-----BEGIN PRIVATE KEY-----\nMIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAJ6\/ro+uQxQju0Ru\n6QDumE99uaPJaKmv7ylyCePYtgNT1soGRs34Hm5FXUCWvZScwUkh6ZgmWQ0aXpJ5\nSedNgtQ\/FqzcIBTcimSuafJFT\/Gnya1Ogi6kKUvj89+p7EQrO94Fn+Ku0lYWG7m2\neSGbr03mqygv04XwHt1SIB2fCURBAgMBAAECgYAZy3m43Q8HQbsXJpJz1VEocXxt\nsbdxAyZwbJhQzpDcv43CK\/zrUOrY7ip16UiK0mHR2VHUqD6GE4fUcyLgE8czJj17\nF52N2YTeBqR\/f4+QN57AAyfByKNDdsrAZDif6GqeuiwKkEbf0rFSogs93QZIGiD\/\nl0xxdn4zfd8kbALBNQJBAMpf1SBWQDSayEX0HlSYMDgtuOjwJvrpgoug6oqjaAGC\nkJfaZQKyeMwQLpcOjTGQ5DQAH0G8ty6qvwRhl+LdOJMCQQDI0Hw2LwDKlYtyndOm\ngWIEfRKFW0rwZ+gRCnLyf3\/ZXr2zIcMXecuCm3ZFeXBGuoxmy8iqGoofoCjhJCGz\nojhbAkEAhN742rtmemNpvOw0AczOVARJFL+giDtKmAx2EcKJ5fvonZspmOS\/BRRW\n0p0ePP3ppu6xlwKlrwEyW1kMVUpz+wJABmqS7XBHCDILCJh+YL2Vkisk4lnuZQwM\n4C6DSbhFL37VdNnJUAC2PfAVsVaV\/cyMG+S6\/qRmcWg+piLvaLvwLQJBALpdKQNb\nrozO0aA9nJN0hOtXRJDYMRtBYCKXVSPCaz9Vea8beArEMLwPseD0HJALLwn7PVSp\nv5clDjB2haZeruY=\n-----END PRIVATE KEY-----\n"
+            "VALUE": "-----BEGIN PRIVATE KEY-----\r\nMIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAJ6\/ro+uQxQju0Ru\r\n6QDumE99uaPJaKmv7ylyCePYtgNT1soGRs34Hm5FXUCWvZScwUkh6ZgmWQ0aXpJ5\r\nSedNgtQ\/FqzcIBTcimSuafJFT\/Gnya1Ogi6kKUvj89+p7EQrO94Fn+Ku0lYWG7m2\r\neSGbr03mqygv04XwHt1SIB2fCURBAgMBAAECgYAZy3m43Q8HQbsXJpJz1VEocXxt\r\nsbdxAyZwbJhQzpDcv43CK\/zrUOrY7ip16UiK0mHR2VHUqD6GE4fUcyLgE8czJj17\r\nF52N2YTeBqR\/f4+QN57AAyfByKNDdsrAZDif6GqeuiwKkEbf0rFSogs93QZIGiD\/\r\nl0xxdn4zfd8kbALBNQJBAMpf1SBWQDSayEX0HlSYMDgtuOjwJvrpgoug6oqjaAGC\r\nkJfaZQKyeMwQLpcOjTGQ5DQAH0G8ty6qvwRhl+LdOJMCQQDI0Hw2LwDKlYtyndOm\r\ngWIEfRKFW0rwZ+gRCnLyf3\/ZXr2zIcMXecuCm3ZFeXBGuoxmy8iqGoofoCjhJCGz\r\nojhbAkEAhN742rtmemNpvOw0AczOVARJFL+giDtKmAx2EcKJ5fvonZspmOS\/BRRW\r\n0p0ePP3ppu6xlwKlrwEyW1kMVUpz+wJABmqS7XBHCDILCJh+YL2Vkisk4lnuZQwM\r\n4C6DSbhFL37VdNnJUAC2PfAVsVaV\/cyMG+S6\/qRmcWg+piLvaLvwLQJBALpdKQNb\r\nrozO0aA9nJN0hOtXRJDYMRtBYCKXVSPCaz9Vea8beArEMLwPseD0HJALLwn7PVSp\r\nv5clDjB2haZeruY=\r\n-----END PRIVATE KEY-----\r\n"
         },
         {
             "MODULE_ID": "main",
@@ -130,7 +130,7 @@
             "MODULE_ID": "main",
             "NAME": "~update_autocheck_result",
             "VALUE": {
-                "check_date": 1668982889,
+                "check_date": 1669016258,
                 "result": false,
                 "error": "",
                 "modules": []
@@ -433,11 +433,6 @@
         },
         {
             "MODULE_ID": "main",
-            "NAME": "dump_site_id_auto",
-            "VALUE": null
-        },
-        {
-            "MODULE_ID": "main",
             "NAME": "dump_temporary_cache",
             "VALUE": "Bn0yNYf7w8NTSSqZheIfSRlGSDfRt2Eb"
         },
@@ -670,10 +665,15 @@
             "MODULE_ID": "main",
             "NAME": "mp_modules_date",
             "VALUE": {
+                "0": {
+                    "ID": "rodzeta.redirect",
+                    "NAME": "Редиректы для SEO",
+                    "TMS": 1669015834
+                },
                 "2": {
                     "ID": "ls.codegeneratorfree",
                     "NAME": "Массовая генерация символьного кода FREE",
-                    "TMS": 1668983008
+                    "TMS": 1669015885
                 }
             }
         },
@@ -910,7 +910,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "server_name",
-            "VALUE": "riche.local"
+            "VALUE": "riche.skin"
         },
         {
             "MODULE_ID": "main",
@@ -955,7 +955,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "site_name",
-            "VALUE": "riche.local"
+            "VALUE": "RICHE COSMETICS"
         },
         {
             "MODULE_ID": "main",
@@ -968,11 +968,6 @@
             "VALUE": [
                 "\/upload\/resize_cache"
             ]
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "skip_mask_array_auto",
-            "VALUE": null
         },
         {
             "MODULE_ID": "main",
@@ -1087,12 +1082,12 @@
         {
             "MODULE_ID": "main",
             "NAME": "update_system_check",
-            "VALUE": "21.11.2022 06:00:38"
+            "VALUE": "21.11.2022 10:37:42"
         },
         {
             "MODULE_ID": "main",
             "NAME": "update_system_update",
-            "VALUE": "21.11.2022 01:21:29"
+            "VALUE": "21.11.2022 10:37:39"
         },
         {
             "MODULE_ID": "main",
