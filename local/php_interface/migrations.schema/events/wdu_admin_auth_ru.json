@@ -1,0 +1,71 @@
+{
+    "event": "WDU_ADMIN_AUTH",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Уведомление об авторизации администратора (webdebug.utilities)",
+        "DESCRIPTION": [
+            "#EMAIL_TO# - Email получатея",
+            "#SITE_ID# - ID сайта",
+            "#USER_ID# - ID пользователя",
+            "#LOGIN# - Логин",
+            "#NAME# - Имя и фамилия",
+            "#EMAIL# - Email пользователя",
+            "#IP# - IP-адрес",
+            "#URL# - Адрес страницы",
+            "#USER_AGENT# - Браузер",
+            "#REFERER# - Источник перехода",
+            "#DATETIME# - Источник перехода",
+            "#SERVER# - $_SERVER",
+            "#TRACE# - Trace"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL_TO#",
+            "SUBJECT": "#SERVER_NAME#: Уведомление об авторизации администратора (webdebug.utilities)",
+            "MESSAGE": [
+                "<p>На сайте #SERVER_NAME# авторизовался администратор.<\/p>",
+                "",
+                "<ul>",
+                "\t<li>ID: <a href=\"http:\/\/#SERVER_NAME#\/bitrix\/admin\/user_edit.php?lang=ru&ID=#USER_ID#\">#USER_ID#<\/a><\/li>",
+                "\t<li>Логин: <a href=\"http:\/\/#SERVER_NAME#\/bitrix\/admin\/user_edit.php?lang=ru&ID=#USER_ID#\">#LOGIN#<\/a><\/li>",
+                "\t<li>Имя и фамилия: #NAME#<\/li>",
+                "\t<li>Email: <a href=\"mailto:#EMAIL#\">#EMAIL#<a><\/li>",
+                "\t<li>IP-адрес: <a href=\"https:\/\/ip2geolocation.com\/?ip=#IP#\">#IP#<\/a><\/li>",
+                "\t<li>ID сайта: #SITE_ID#<\/li>",
+                "\t<li>URL: <a href=\"#URL#\">#URL#<\/a><\/li>",
+                "\t<li>Браузер: #USER_AGENT#<\/li>",
+                "\t<li>Источник: <a href=\"#REFERER#\">#REFERER#<\/a><\/li>",
+                "\t<li>Дата и время: #DATETIME#<\/li>",
+                "<\/ul>",
+                "",
+                "<p><b><code>$_SERVER<\/code>:<\/b><\/p>",
+                "<pre>#SERVER#<\/pre>",
+                "",
+                "<p><b>Трассировка вызова:<\/b><\/p>",
+                "<pre>#TRACE#<\/pre>"
+            ],
+            "BODY_TYPE": "html",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ WDU_ADMIN_AUTH ] Уведомление об авторизации администратора (webdebug.utilities)"
+        }
+    ]
+}

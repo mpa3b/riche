@@ -1,0 +1,50 @@
+{
+    "event": "WDU_BACKUP",
+    "type": {
+        "LID": "ru",
+        "EVENT_TYPE": "email",
+        "NAME": "Создана резервная копия важных данных (webdebug.utilities)",
+        "DESCRIPTION": [
+            "#EMAIL_TO# - Адрес получателя",
+            "#FILESIZE# - Размер файла",
+            "#FILENAME# - Имя файла",
+            "#SITE_ID# - ID сайта",
+            "#LANGUAGE_ID# - ID языка"
+        ],
+        "SORT": "100"
+    },
+    "messages": [
+        {
+            "LID": [
+                "s1"
+            ],
+            "ACTIVE": "Y",
+            "EMAIL_FROM": "#DEFAULT_EMAIL_FROM#",
+            "EMAIL_TO": "#EMAIL_TO#",
+            "SUBJECT": "#SERVER_NAME#: Создана резервная копия важных данных (webdebug.utilities)",
+            "MESSAGE": [
+                "<p>Информационное сообщение сайта #SERVER_NAME#.<br>",
+                "---------------------------------------------<\/p>",
+                "<p>Создана резервная копия важных файлов и данных из базы данных.<\/p>",
+                "<p>Размер архива: #FILESIZE#. Файл во вложении.<\/p>",
+                "<p>Имя файла на сайте: <a href=\"http:\/\/#SERVER_NAME#\/bitrix\/admin\/fileman_file_view.php?path=#FILENAME#&site=#SITE_ID#&lang=#LANGUAGE_ID#\">#FILENAME#<\/a>.<\/p>",
+                "<p>---------------------------------------------<br>",
+                "Письмо сгенерировано автоматически.<\/p>"
+            ],
+            "BODY_TYPE": "html",
+            "BCC": null,
+            "REPLY_TO": null,
+            "CC": null,
+            "IN_REPLY_TO": null,
+            "PRIORITY": null,
+            "FIELD1_NAME": null,
+            "FIELD1_VALUE": null,
+            "FIELD2_NAME": null,
+            "FIELD2_VALUE": null,
+            "SITE_TEMPLATE_ID": null,
+            "ADDITIONAL_FIELD": [],
+            "LANGUAGE_ID": null,
+            "EVENT_TYPE": "[ WDU_BACKUP ] Создана резервная копия важных данных (webdebug.utilities)"
+        }
+    ]
+}
