@@ -1,11 +1,13 @@
 /dev/
 
 /bitrix/
+
 /upload/
 
 /local/assets/
 /local/vendor/
-/local/bin/
+
+/bin/
 
 *.css.map
 *.js.map

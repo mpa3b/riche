@@ -6,7 +6,7 @@ use Bex\Tools\Iblock\IblockTools;
 
 /** @global CMain $APPLICATION */
 
-$APPLICATION->SetTitle("Товары");
+$APPLICATION->SetTitle("Магазин");
 $APPLICATION->SetPageProperty("tags", "каталог, товары");
 
 ?>
@@ -82,18 +82,18 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
 
         "GIFTS_DETAIL_BLOCK_TITLE"        => "Выберите один из подарков",
         "GIFTS_DETAIL_HIDE_BLOCK_TITLE"   => "N",
-        "GIFTS_DETAIL_PAGE_ELEMENT_COUNT" => "4",
+        "GIFTS_DETAIL_PAGE_ELEMENT_COUNT" => 3,
         "GIFTS_DETAIL_TEXT_LABEL_GIFT"    => "Подарок",
 
         "GIFTS_MAIN_PRODUCT_DETAIL_BLOCK_TITLE"        => "Выберите один из товаров, чтобы получить подарок",
         "GIFTS_MAIN_PRODUCT_DETAIL_HIDE_BLOCK_TITLE"   => "N",
-        "GIFTS_MAIN_PRODUCT_DETAIL_PAGE_ELEMENT_COUNT" => "4",
+        "GIFTS_MAIN_PRODUCT_DETAIL_PAGE_ELEMENT_COUNT" => 3,
 
         "GIFTS_MESS_BTN_BUY" => "Выбрать",
 
         "GIFTS_SECTION_LIST_BLOCK_TITLE"        => "Подарки к товарам этого раздела",
         "GIFTS_SECTION_LIST_HIDE_BLOCK_TITLE"   => "N",
-        "GIFTS_SECTION_LIST_PAGE_ELEMENT_COUNT" => "4",
+        "GIFTS_SECTION_LIST_PAGE_ELEMENT_COUNT" => 3,
         "GIFTS_SECTION_LIST_TEXT_LABEL_GIFT"    => "Подарок",
 
         "GIFTS_SHOW_DISCOUNT_PERCENT" => "Y",
@@ -118,7 +118,7 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
         "LIST_META_DESCRIPTION"     => "-",
         "LIST_META_KEYWORDS"        => "-",
         "LIST_OFFERS_FIELD_CODE"    => [""],
-        "LIST_OFFERS_LIMIT"         => 5,
+        "LIST_OFFERS_LIMIT"         => 6,
         "LIST_PROPERTY_CODE_MOBILE" => [],
         "LIST_SLIDER_PROGRESS"      => "N",
 
@@ -180,9 +180,9 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
         "SEF_MODE"                         => "Y",
         "SEF_URL_TEMPLATES"                => [
             "compare"      => "",
-            "element"      => "#SECTION_CODE_PATH#/#ELEMENT_CODE#",
-            "section"      => "#SECTION_CODE_PATH#",
-            "sections"     => "",
+            "element"      => "/#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
+            "section"      => "/#SECTION_CODE_PATH#/",
+            "sections"     => "/",
             "smart_filter" => ""
         ],
 
@@ -208,7 +208,7 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
 
         "TOP_LINE_ELEMENT_COUNT"           => 3,
         "TOP_OFFERS_FIELD_CODE"            => ["NAME"],
-        "TOP_OFFERS_LIMIT"                 => 5,
+        "TOP_OFFERS_LIMIT"                 => 3,
         "TOP_SHOW_SLIDER"                  => "Y",
 
         "USER_CONSENT"                     => "N",

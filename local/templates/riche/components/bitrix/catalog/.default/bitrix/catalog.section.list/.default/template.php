@@ -1,4 +1,9 @@
-<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
+<?
+
+use Riche\Breakpoint;
+use Riche\Thumb;
+
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
@@ -16,197 +21,123 @@
 
 $this->setFrameMode(true);
 
-$strSectionEdit        = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_EDIT");
-$strSectionDelete      = CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "SECTION_DELETE");
-$arSectionDeleteParams = ["CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM')];
+if (!empty($arResult['SECTIONS'])) {
 
-?>
+    $frame = $this->createFrame();
 
-<div class="<? echo $arCurView['CONT']; ?>">
-
-    <?
-    if ('Y' == $arParams['SHOW_PARENT_NAME'] && 0 < $arResult['SECTION']['ID']) {
-        $this->AddEditAction($arResult['SECTION']['ID'], $arResult['SECTION']['EDIT_LINK'], $strSectionEdit);
-        $this->AddDeleteAction($arResult['SECTION']['ID'], $arResult['SECTION']['DELETE_LINK'], $strSectionDelete,
-                               $arSectionDeleteParams);
-
-        ?><h1
-        class="<? echo $arCurView['TITLE']; ?>"
-        id="<? echo $this->GetEditAreaId($arResult['SECTION']['ID']); ?>"
-        ><a href="<? echo $arResult['SECTION']['SECTION_PAGE_URL']; ?>"><?
-            echo(
-            isset($arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"]) && $arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"] != ""
-                ? $arResult['SECTION']["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"]
-                : $arResult['SECTION']['NAME']
-            );
-            ?></a></h1><?
-    }
     ?>
 
-    <? if (0 < $arResult["SECTIONS_COUNT"]) { ?>
-        <ul class="<? echo $arCurView['LIST']; ?>">
-            <?
-            switch ($arParams['VIEW_MODE'])
-            {
-            case 'LINE':
-                foreach ($arResult['SECTIONS'] as &$arSection) {
-                    $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
-                    $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete,
-                                           $arSectionDeleteParams);
+    <div class="section-list--catalog--default wrap">
 
-                    if (false === $arSection['PICTURE']) {
-                        $arSection['PICTURE'] = [
-                            'SRC'   => $arCurView['EMPTY_IMG'],
-                            'ALT'   => (
-                            '' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
-                                ? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
-                                : $arSection["NAME"]
-                            ),
-                            'TITLE' => (
-                            '' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
-                                ? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
-                                : $arSection["NAME"]
-                            )
-                        ];
-                    }
-                    ?>
-                <li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
-                    <a
-                            href="<? echo $arSection['SECTION_PAGE_URL']; ?>"
-                            class="bx_catalog_line_img"
-                            style="background-image: url('<? echo $arSection['PICTURE']['SRC']; ?>');"
-                            title="<? echo $arSection['PICTURE']['TITLE']; ?>"
-                    ></a>
-                    <h2 class="bx_catalog_line_title"><a
-                                href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
-                        if ($arParams["COUNT_ELEMENTS"] && $arSection['ELEMENT_CNT'] !== null) {
-                            ?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
-                        }
-                        ?></h2><?
-                    if ('' != $arSection['DESCRIPTION']) {
-                        ?><p class="bx_catalog_line_description"><? echo $arSection['DESCRIPTION']; ?></p><?
-                    }
-                    ?>
-                    <div style="clear: both;"></div>
-                    </li><?
-                }
-                unset($arSection);
-                break;
-            case 'TEXT':
-                foreach ($arResult['SECTIONS'] as &$arSection) {
-                    $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
-                    $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete,
-                                           $arSectionDeleteParams);
+        <? $frame->begin(); ?>
 
-                    ?>
-                <li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>"><h2 class="bx_catalog_text_title"><a
-                                href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
-                        if ($arParams["COUNT_ELEMENTS"] && $arSection['ELEMENT_CNT'] !== null) {
-                            ?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
-                        }
-                        ?></h2></li><?
-                }
-                unset($arSection);
-                break;
-            case 'TILE':
-                foreach ($arResult['SECTIONS'] as &$arSection) {
-                    $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
-                    $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete,
-                                           $arSectionDeleteParams);
+        <nav>
 
-                    if (false === $arSection['PICTURE']) {
-                        $arSection['PICTURE'] = [
-                            'SRC'   => $arCurView['EMPTY_IMG'],
-                            'ALT'   => (
-                            '' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
-                                ? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_ALT"]
-                                : $arSection["NAME"]
-                            ),
-                            'TITLE' => (
-                            '' != $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
-                                ? $arSection["IPROPERTY_VALUES"]["SECTION_PICTURE_FILE_TITLE"]
-                                : $arSection["NAME"]
-                            )
-                        ];
-                    }
-                    ?>
-                <li id="<? echo $this->GetEditAreaId($arSection['ID']); ?>">
-                <a
-                        href="<? echo $arSection['SECTION_PAGE_URL']; ?>"
-                        class="bx_catalog_tile_img"
-                        style="background-image:url('<? echo $arSection['PICTURE']['SRC']; ?>');"
-                        title="<? echo $arSection['PICTURE']['TITLE']; ?>"
-                > </a><?
-                    if ('Y' != $arParams['HIDE_SECTION_NAME']) {
-                        ?><h2 class="bx_catalog_tile_title"><a
-                        href="<? echo $arSection['SECTION_PAGE_URL']; ?>"><? echo $arSection['NAME']; ?></a><?
-                        if ($arParams["COUNT_ELEMENTS"] && $arSection['ELEMENT_CNT'] !== null) {
-                            ?> <span>(<? echo $arSection['ELEMENT_CNT']; ?>)</span><?
-                        }
-                        ?></h2><?
-                    }
-                    ?></li><?
-                }
-                unset($arSection);
-                break;
-            case 'LIST':
+            <ul>
 
-            $intCurrentDepth = 1;
-            $boolFirst       = true;
+                <?php foreach ($arResult['SECTIONS'] as $i => $section) { ?>
 
-            foreach ($arResult['SECTIONS'] as &$arSection)
-            {
+                    <li>
 
-            $this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
-            $this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete,
-                                   $arSectionDeleteParams);
+                        <? if ($arParams['SHOW_ELEMENT_COUNT']) { ?>
+                            <span class="count" title="<?= $section['ELEMENT_CNT_TITLE']; ?>">
+                                <?= $section['ELEMENT_CNT']; ?>
+                            </span>
+                        <? } ?>
 
-            if ($intCurrentDepth < $arSection['RELATIVE_DEPTH_LEVEL']) {
-                if (0 < $intCurrentDepth) {
-                    echo "\n", str_repeat("\t", $arSection['RELATIVE_DEPTH_LEVEL']), '<ul>';
-                }
-            }
-            elseif ($intCurrentDepth == $arSection['RELATIVE_DEPTH_LEVEL']) {
-                if (!$boolFirst) {
-                    echo '</li>';
-                }
-            }
-            else {
-                while ($intCurrentDepth > $arSection['RELATIVE_DEPTH_LEVEL']) {
-                    echo '</li>', "\n", str_repeat("\t", $intCurrentDepth), '</ul>', "\n", str_repeat("\t",
-                                                                                                      $intCurrentDepth - 1);
-                    $intCurrentDepth--;
-                }
-                echo str_repeat("\t", $intCurrentDepth - 1), '</li>';
-            }
+                        <? if (is_set($section['PICTURE']['ID'])) { ?>
 
-            echo(!$boolFirst ? "\n" : ''), str_repeat("\t", $arSection['RELATIVE_DEPTH_LEVEL']);
-            ?>
-            <li id="<?= $this->GetEditAreaId($arSection['ID']); ?>"><h2 class="bx_sitemap_li_title"><a
-                            href="<? echo $arSection["SECTION_PAGE_URL"]; ?>"><? echo $arSection["NAME"]; ?><?
-                        if ($arParams["COUNT_ELEMENTS"] && $arSection['ELEMENT_CNT'] !== null) {
-                            ?> <span>(<? echo $arSection["ELEMENT_CNT"]; ?>)</span><?
-                        }
-                        ?></a></h2><?
+                            <?
 
-                $intCurrentDepth = $arSection['RELATIVE_DEPTH_LEVEL'];
-                $boolFirst       = false;
-                }
-                unset($arSection);
-                while ($intCurrentDepth > 1) {
-                    echo '</li>', "\n", str_repeat("\t", $intCurrentDepth), '</ul>', "\n", str_repeat("\t",
-                                                                                                      $intCurrentDepth - 1);
-                    $intCurrentDepth--;
-                }
-                if ($intCurrentDepth > 0) {
-                    echo '</li>', "\n";
-                }
-                break;
-                }
-                ?>
-        </ul>
-        <?
-        echo('LINE' != $arParams['VIEW_MODE'] ? '<div style="clear: both;"></div>' : '');
-    }
-    ?>
-</div>
+                            $preload = CFile::ResizeImageGet(
+                                $section['PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 1),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
+
+                            $small = CFile::ResizeImageGet(
+                                $section['PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 2, 1),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
+
+                            $mobile = CFile::ResizeImageGet(
+                                $section['PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 3, 1),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
+
+                            $tablet = CFile::ResizeImageGet(
+                                $section['PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 4, 1),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
+
+                            $desktop = CFile::ResizeImageGet(
+                                $section['PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 6, 1),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
+
+                            $wide = CFile::ResizeImageGet(
+                                $section['PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 6, 1),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
+
+                            ?>
+
+                            <picture>
+
+                                <source data-srcset="<?= $small['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('small'); ?>">
+                                <source data-srcset="<?= $mobile['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                <source data-srcset="<?= $tablet['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                <source data-srcset="<?= $desktop['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                <source data-srcset="<?= $wide['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                                <img
+                                    <? if ($i == 0) { ?>
+                                        loading="eager"
+                                        src="<?= $preload['src']; ?>"
+                                    <? } else { ?>
+                                        loading="lazy"
+                                        data-src="<?= $preload['src']; ?>"
+                                    <? } ?>
+                                        alt="<?= $section['NAME']; ?>">
+
+                            </picture>
+
+                        <? } ?>
+
+
+                        <a href="<?= $section['SECTION_PAGE_URL']; ?>"><?= $section['NAME']; ?></a>
+
+                        <? if ($section['DESCRIPTION_TYPE'] == "html") { ?>
+                            <?= $section['DESCRIPTION']; ?>
+                        <? } else { ?>
+                            <p><?= $section['DESCRIPTION']; ?></p>
+                        <? } ?>
+
+                    </li>
+
+                <?php } ?>
+
+            </ul>
+
+        </nav>
+
+        <? $frame->end(); ?>
+
+    </div>
+
+    <?php
+
+}
+
+d($arResult);
+d($arParams);

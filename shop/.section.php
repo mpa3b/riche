@@ -1,8 +1,8 @@
 <?
-$sSectionName    = "Наши товары";
+$sSectionName    = "Магазин";
 $arDirProperties = [
-    "description" => "Товары RICHE COSMETICS",
+    "description" => "Магазин RICHE COSMETICS",
     "keywords"    => "RICHE COSMETICS, косметика, уход, товары, продукты",
-    "TITLE"       => "Наши товары"
+    "TITLE"       => "Магазин RICHE"
 ];
 ?>

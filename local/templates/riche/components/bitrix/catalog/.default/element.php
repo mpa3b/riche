@@ -14,3 +14,11 @@
 /** @var string $componentPath */
 
 /** @var CBitrixComponent $component */
+
+?>
+
+<div class="catalog--default element">
+
+
+
+</div>

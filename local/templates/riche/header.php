@@ -279,6 +279,8 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             <div class="wrap">
 
+                <h1><?php $APPLICATION->ShowTitle(); ?></h1>
+
                 <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
 
                     <?php $APPLICATION->IncludeComponent(
@@ -298,23 +300,21 @@ $request = Application::getInstance()->getContext()->getRequest();
 
                 <?php } ?>
 
-                <h1><?php $APPLICATION->ShowTitle(); ?></h1>
-
-                <?php $APPLICATION->IncludeComponent(
-                    'bitrix:main.include',
-                    '',
-                    [
-                        "AREA_FILE_SHOW"      => "sect",
-                        "AREA_FILE_SUFFIX"    => "above",
-                        "AREA_FILE_RECURSIVE" => "N",
-
-                        "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO",
-                    ],
-                    false
-                ); ?>
-
             </div>
+
+            <?php $APPLICATION->IncludeComponent(
+                'bitrix:main.include',
+                '.wrap',
+                [
+                    "AREA_FILE_SHOW"      => "sect",
+                    "AREA_FILE_SUFFIX"    => "above",
+                    "AREA_FILE_RECURSIVE" => "N",
+
+                    "COMPOSITE_FRAME_MODE" => "A",
+                    "COMPOSITE_FRAME_TYPE" => "AUTO",
+                ],
+                false
+            ); ?>
 
         </header>
 

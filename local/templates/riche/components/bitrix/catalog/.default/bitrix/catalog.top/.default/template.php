@@ -1,6 +1,5 @@
 <?php
 
-
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
@@ -38,20 +37,6 @@ $frame = $this->createFrame();
         <? $frame->begin(); ?>
 
         <div class="wrap">
-
-            <? if (!empty($arResult['SECTIONS'])) { ?>
-
-                <div class="filter">
-
-                    <? foreach ($arResult['SECTIONS'] as $i => $arSection) { ?>
-                        <button class="filter-button"
-                                data-action="filter"
-                                data-id="<?= $arSection['ID']; ?>"><?= $arSection['NAME']; ?></button>
-                    <? } ?>
-
-                </div>
-
-            <? } ?>
 
             <div class="items slider">
 
@@ -125,11 +110,13 @@ $frame = $this->createFrame();
                                     <source data-srcset="<?= $wide['src']; ?>"
                                             media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                                    <img data-src="<?= $preload['src']; ?>"
+                                    <img
                                         <? if ($i == 0) { ?>
                                             loading="eager"
+                                            src="<?= $preload['src']; ?>"
                                         <? } else { ?>
                                             loading="lazy"
+                                            data-src="<?= $preload['src']; ?>"
                                         <? } ?>
                                          alt="<?= $arItem['NAME']; ?>">
 

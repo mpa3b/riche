@@ -126,6 +126,12 @@
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/anahkiasen/html-object" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/vasoft.git/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/askaron.agents/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/rumaster.cleaner/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/dev2fun.redirects/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/grain.customsettings/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/ls.codegeneratorfree/install" />
       <excludePattern pattern="install" />
       <excludePattern pattern="admin" />
     </content>

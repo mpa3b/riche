@@ -17,59 +17,63 @@ $this->setFrameMode(true);
 
 ?>
 
-<? $APPLICATION->IncludeComponent(
-    "bitrix:catalog.compare.result",
-    "",
-    [
-        "IBLOCK_TYPE"                => $arParams["IBLOCK_TYPE"],
-        "IBLOCK_ID"                  => $arParams["IBLOCK_ID"],
+<div class="catalog--default compare">
 
-        "BASKET_URL"                 => $arParams["BASKET_URL"],
+    <? $APPLICATION->IncludeComponent(
+        "bitrix:catalog.compare.result",
+        "",
+        [
+            "IBLOCK_TYPE"                => $arParams["IBLOCK_TYPE"],
+            "IBLOCK_ID"                  => $arParams["IBLOCK_ID"],
 
-        "ACTION_VARIABLE"            => (!empty($arParams["ACTION_VARIABLE"]) ? $arParams["ACTION_VARIABLE"] : "action") . "_ccr",
+            "BASKET_URL"                 => $arParams["BASKET_URL"],
 
-        "PRODUCT_ID_VARIABLE"        => $arParams["PRODUCT_ID_VARIABLE"],
+            "ACTION_VARIABLE"            => (!empty($arParams["ACTION_VARIABLE"]) ? $arParams["ACTION_VARIABLE"] : "action") . "_ccr",
 
-        "SECTION_ID_VARIABLE"        => $arParams["SECTION_ID_VARIABLE"],
+            "PRODUCT_ID_VARIABLE"        => $arParams["PRODUCT_ID_VARIABLE"],
 
-        "FIELD_CODE"                 => $arParams["COMPARE_FIELD_CODE"],
+            "SECTION_ID_VARIABLE"        => $arParams["SECTION_ID_VARIABLE"],
 
-        "PROPERTY_CODE"              => (isset($arParams["COMPARE_PROPERTY_CODE"]) ? $arParams["COMPARE_PROPERTY_CODE"] : []),
+            "FIELD_CODE"                 => $arParams["COMPARE_FIELD_CODE"],
 
-        "NAME"                       => $arParams["COMPARE_NAME"],
+            "PROPERTY_CODE"              => (isset($arParams["COMPARE_PROPERTY_CODE"]) ? $arParams["COMPARE_PROPERTY_CODE"] : []),
 
-        "CACHE_TYPE"                 => $arParams["CACHE_TYPE"],
-        "CACHE_TIME"                 => $arParams["CACHE_TIME"],
+            "NAME"                       => $arParams["COMPARE_NAME"],
 
-        "PRICE_CODE"                 => $arParams["~PRICE_CODE"],
-        "USE_PRICE_COUNT"            => $arParams["USE_PRICE_COUNT"],
-        "SHOW_PRICE_COUNT"           => $arParams["SHOW_PRICE_COUNT"],
+            "CACHE_TYPE"                 => $arParams["CACHE_TYPE"],
+            "CACHE_TIME"                 => $arParams["CACHE_TIME"],
 
-        "PRICE_VAT_INCLUDE"          => $arParams["PRICE_VAT_INCLUDE"],
-        "PRICE_VAT_SHOW_VALUE"       => $arParams["PRICE_VAT_SHOW_VALUE"],
+            "PRICE_CODE"                 => $arParams["~PRICE_CODE"],
+            "USE_PRICE_COUNT"            => $arParams["USE_PRICE_COUNT"],
+            "SHOW_PRICE_COUNT"           => $arParams["SHOW_PRICE_COUNT"],
 
-        "DISPLAY_ELEMENT_SELECT_BOX" => $arParams["DISPLAY_ELEMENT_SELECT_BOX"],
+            "PRICE_VAT_INCLUDE"          => $arParams["PRICE_VAT_INCLUDE"],
+            "PRICE_VAT_SHOW_VALUE"       => $arParams["PRICE_VAT_SHOW_VALUE"],
 
-        "ELEMENT_SORT_FIELD_BOX"     => $arParams["ELEMENT_SORT_FIELD_BOX"],
-        "ELEMENT_SORT_ORDER_BOX"     => $arParams["ELEMENT_SORT_ORDER_BOX"],
-        "ELEMENT_SORT_FIELD_BOX2"    => $arParams["ELEMENT_SORT_FIELD_BOX2"],
-        "ELEMENT_SORT_ORDER_BOX2"    => $arParams["ELEMENT_SORT_ORDER_BOX2"],
-        "ELEMENT_SORT_FIELD"         => $arParams["COMPARE_ELEMENT_SORT_FIELD"],
-        "ELEMENT_SORT_ORDER"         => $arParams["COMPARE_ELEMENT_SORT_ORDER"],
+            "DISPLAY_ELEMENT_SELECT_BOX" => $arParams["DISPLAY_ELEMENT_SELECT_BOX"],
 
-        "DETAIL_URL"                 => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["element"],
+            "ELEMENT_SORT_FIELD_BOX"     => $arParams["ELEMENT_SORT_FIELD_BOX"],
+            "ELEMENT_SORT_ORDER_BOX"     => $arParams["ELEMENT_SORT_ORDER_BOX"],
+            "ELEMENT_SORT_FIELD_BOX2"    => $arParams["ELEMENT_SORT_FIELD_BOX2"],
+            "ELEMENT_SORT_ORDER_BOX2"    => $arParams["ELEMENT_SORT_ORDER_BOX2"],
+            "ELEMENT_SORT_FIELD"         => $arParams["COMPARE_ELEMENT_SORT_FIELD"],
+            "ELEMENT_SORT_ORDER"         => $arParams["COMPARE_ELEMENT_SORT_ORDER"],
 
-        "OFFERS_FIELD_CODE"          => $arParams["COMPARE_OFFERS_FIELD_CODE"],
-        "OFFERS_PROPERTY_CODE"       => (isset($arParams["COMPARE_OFFERS_PROPERTY_CODE"]) ? $arParams["COMPARE_OFFERS_PROPERTY_CODE"] : []),
-        "OFFERS_CART_PROPERTIES"     => $arParams["OFFERS_CART_PROPERTIES"],
+            "DETAIL_URL"                 => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["element"],
 
-        'CONVERT_CURRENCY'           => $arParams['CONVERT_CURRENCY'],
+            "OFFERS_FIELD_CODE"          => $arParams["COMPARE_OFFERS_FIELD_CODE"],
+            "OFFERS_PROPERTY_CODE"       => (isset($arParams["COMPARE_OFFERS_PROPERTY_CODE"]) ? $arParams["COMPARE_OFFERS_PROPERTY_CODE"] : []),
+            "OFFERS_CART_PROPERTIES"     => $arParams["OFFERS_CART_PROPERTIES"],
 
-        'CURRENCY_ID'                => $arParams['CURRENCY_ID'],
+            'CONVERT_CURRENCY'           => $arParams['CONVERT_CURRENCY'],
 
-        'HIDE_NOT_AVAILABLE'         => $arParams['HIDE_NOT_AVAILABLE'],
+            'CURRENCY_ID'                => $arParams['CURRENCY_ID'],
 
-    ],
-    $component,
-    ["HIDE_ICONS" => "Y"]
-); ?>
+            'HIDE_NOT_AVAILABLE'         => $arParams['HIDE_NOT_AVAILABLE'],
+
+        ],
+        $component,
+        ["HIDE_ICONS" => "Y"]
+    ); ?>
+
+</div>
