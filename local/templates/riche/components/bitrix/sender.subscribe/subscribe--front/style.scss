@@ -3,7 +3,10 @@
 .subscribe--front {
   border-radius:    var(--border-radius);
   background-color: var(--color--background);
-  padding: var(--offset--2x);
+  padding:          var(--offset--4x);
+
+  height:           100%;
+  box-sizing:       border-box;
 
   h2 {
     font-size: 1.8rem;
