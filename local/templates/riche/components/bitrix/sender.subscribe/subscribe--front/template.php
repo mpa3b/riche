@@ -13,7 +13,9 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
-$frame = $this->createFrame("sender-subscribe", false);
+$this->setFrameMode(true);
+
+$frame = $this->createFrame();
 
 ?>
 

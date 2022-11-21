@@ -8,9 +8,6 @@
 
   h2 {
     font-size: 1.8rem;
-    @include Tablet {
-      font-size: 2.4rem;
-    }
   }
 
   .fields {
@@ -134,6 +131,23 @@
   }
 
   .slick {
+
+    &-slide {
+      & > div {
+        position: relative;
+
+        .field {
+          margin-bottom: 4rem;
+        }
+
+        .controls {
+          position: absolute;
+          bottom:   0;
+          left:     0;
+          width:    100%;
+        }
+      }
+    }
 
     &-dots {
       margin-bottom: 0;

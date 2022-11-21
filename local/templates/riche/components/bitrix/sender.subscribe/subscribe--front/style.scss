@@ -1,5 +1,9 @@
 @import "../../../../base";
 
+.half.subscribe > div {
+  height: 100%;
+}
+
 .subscribe--front {
   border-radius:    var(--border-radius);
   background-color: var(--color--background);
@@ -10,9 +14,6 @@
 
   h2 {
     font-size: 1.8rem;
-    @include Tablet {
-      font-size: 2.4rem;
-    }
   }
 
   form {

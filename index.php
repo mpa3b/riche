@@ -402,11 +402,11 @@ $APPLICATION->SetTitle('RICHE');
     ]
 ); ?>
 
-<div class="wrap">
+<aside class="wrap">
 
     <div class="grid">
 
-        <div class="half">
+        <div class="half quiz">
 
             <?php $APPLICATION->IncludeComponent(
                 'bitrix:form',
@@ -463,7 +463,7 @@ $APPLICATION->SetTitle('RICHE');
 
         </div>
 
-        <div class="half">
+        <div class="half subscribe">
 
             <?php $APPLICATION->IncludeComponent(
                 "bitrix:sender.subscribe",
@@ -493,6 +493,6 @@ $APPLICATION->SetTitle('RICHE');
 
     </div>
 
-</div>
+</aside>
 
 <? require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php'); ?>

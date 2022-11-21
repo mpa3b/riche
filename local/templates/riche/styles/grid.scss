@@ -57,6 +57,7 @@
       display:    block;
       box-sizing: border-box;
       padding:    var(--offset) 0;
+      max-width:  100%;
 
       &:empty {
         display: none;
@@ -80,10 +81,6 @@
     box-sizing:     border-box;
 
     margin:         0 var(--offset--negative);
-
-    > * {
-      padding: var(--offset);
-    }
 
     @include Tablet {
 
@@ -112,11 +109,6 @@
 
       }
 
-    }
-
-    > * > * {
-      height:     100%;
-      box-sizing: border-box;
     }
 
   }
