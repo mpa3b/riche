@@ -26,11 +26,15 @@
   display:    block;
   box-sizing: border-box;
 
-  margin:     var(--offset) var(--offset--2x);
 
+  margin:     var(--offset);
+
+  @include Mobile {
+    margin: var(--offset) var(--offset--2x);
+  }
   @include Tablet {
     width:  92%;
-    margin: var(--offset--2x) auto;
+    margin: var(--offset) auto;
   }
   @include Desktop {
     width: 78%;

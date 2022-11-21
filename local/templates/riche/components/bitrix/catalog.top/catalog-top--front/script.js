@@ -32,13 +32,13 @@ $(() => {
                 lazyload:       'progressive',
                 responsive:     [
                     {
-                        breakpoint: breakpoint.desktop,
+                        breakpoint: breakpoint.mobile,
                         settings:   {
                             slidesToShow: 3
                         }
                     },
                     {
-                        breakpoint: breakpoint.wide,
+                        breakpoint: breakpoint.desktop,
                         settings:   {
                             slidesToShow: 4
                         }
