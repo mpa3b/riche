@@ -5,8 +5,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 }
 
 use Bitrix\Main\Loader;
-use Bitrix\Main\Localization\Loc;
-use Bitrix\Main\ModuleManager;
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -137,14 +135,6 @@ else {
 
 <div class="catalog--default sections">
 
-    <? $APPLICATION->IncludeComponent(
-        "bitrix:catalog.section.list",
-        "",
-        $sectionListParams,
-        $component,
-        ($arParams["SHOW_TOP_ELEMENTS"] !== "N" ? ["HIDE_ICONS" => "Y"] : [])
-    ); ?>
-
     <?
     //if ($arParams["USE_COMPARE"] === "Y") {
     //
@@ -169,7 +159,7 @@ else {
     //}
     ?>
 
-    <? if ($arParams['USE_FILTER'] == 'Y'): ?>
+    <?php if ($arParams['USE_FILTER'] == 'Y') { ?>
 
         <? $APPLICATION->IncludeComponent(
             "bitrix:catalog.smart.filter",
@@ -202,7 +192,7 @@ else {
             ['HIDE_ICONS' => 'Y']
         ); ?>
 
-    <? endif ?>
+    <? } ?>
 
     <? $APPLICATION->IncludeComponent(
         "bitrix:catalog.top",
@@ -286,6 +276,14 @@ else {
         ],
         $component,
         ["HIDE_ICONS" => "Y"]
+    ); ?>
+
+    <? $APPLICATION->IncludeComponent(
+        "bitrix:catalog.section.list",
+        "",
+        $sectionListParams,
+        $component,
+        ($arParams["SHOW_TOP_ELEMENTS"] !== "N" ? ["HIDE_ICONS" => "Y"] : [])
     ); ?>
 
 </div>

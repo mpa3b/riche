@@ -2,4 +2,34 @@
 
 .catalog--default {
 
+  .actions {
+    display:         flex;
+    flex-direction:  row;
+
+    flex-wrap:       nowrap;
+    justify-content: space-between;
+  }
+
+  .prices {
+    margin: var(--offset) 0;
+  }
+
+  .price {
+    font-size:   1.2rem;
+    font-weight: bold;
+
+    &.old {
+      color: var(--color--gray--dark);
+    }
+
+    &.discount {
+      color: var(--color--green--dark);
+    }
+
+  }
+
+  .description {
+    margin-top: var(--offset--2x);
+  }
+
 }
