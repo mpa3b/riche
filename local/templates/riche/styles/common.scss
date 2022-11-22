@@ -150,14 +150,6 @@ picture {
 img {
   display:   block;
   max-width: 100%;
-
-  &[loading=lazy] {
-    filter: blur(3px);
-
-    &[data-ll-status] {
-      filter: unset;
-    }
-  }
 }
 
 label {
@@ -366,6 +358,18 @@ button {
 
   }
 
+}
+
+// endregion
+
+// region img lazyload CSS filter blur
+
+img[loading] {
+  //filter: blur(3px);
+  //
+  //&[data-ll-status] {
+  //  filter: unset;
+  //}
 }
 
 // endregion

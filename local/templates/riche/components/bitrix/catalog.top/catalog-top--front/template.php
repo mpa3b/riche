@@ -139,21 +139,21 @@ $frame = $this->createFrame();
 
                         </div>
 
+                        <? if (!empty($arItem['REVIEWS'])) { ?>
+
+                            <div class="reviews">
+
+                                <i class="icon-star"></i>
+
+                                <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
+                                <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
+                                                                      'отзыв') ?></span>
+
+                            </div>
+
+                        <? } ?>
+
                         <div class="details">
-
-                            <? if (!empty($arItem['REVIEWS'])) { ?>
-
-                                <div class="reviews">
-
-                                    <i class="icon-star"></i>
-
-                                    <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
-                                    <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
-                                                                          'отзыв') ?></span>
-
-                                </div>
-
-                            <? } ?>
 
                             <h3>
                                 <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>

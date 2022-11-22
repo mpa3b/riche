@@ -110,6 +110,8 @@ $frame = $this->createFrame();
 
         </div>
 
+        <? $frame->beginStub(); ?>
+
         <? $frame->end(); ?>
 
     </section>

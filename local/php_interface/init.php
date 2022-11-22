@@ -27,13 +27,6 @@ const LOCAL_ASSETS = '/local/assets';
 
 $eventManager = EventManager::getInstance();
 
-//region отладка для композита
-
-define("BX_COMPOSITE_DEBUG", true);
-define("LOG_FILENAME", Loader::getDocumentRoot() . "/debug.log");
-
-//endregion
-
 //region специфическое свойство -- *пропорция*
 
 $eventManager->addEventHandler(

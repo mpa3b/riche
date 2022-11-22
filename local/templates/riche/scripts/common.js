@@ -52,6 +52,19 @@ jQuery.event.special.mousewheel = {
 
 // endregion
 
+// region JS detect
+
+window.addEventListener(
+    'load',
+    () => {
+
+        document.documentElement.classList.remove('nojs');
+
+    }
+);
+
+// endregion
+
 // region header sticky
 
 $(() => {

@@ -1,9 +1,11 @@
-<?php use Riche\Breakpoint;
-use Riche\Thumb;
+<?php
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
+
+use Riche\Breakpoint;
+use Riche\Thumb;
 
 /** @var array $arParams */
 /** @var array $arResult */
@@ -24,8 +26,6 @@ $this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
 $this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
 $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
-$frame = $this->createFrame();
-
 $ratios = [
     'small'   => 2,
     'mobile'  => 2,
@@ -37,6 +37,15 @@ $ratios = [
 ?>
 
 <?php if (!empty($arResult['ITEMS'])) { ?>
+
+    <?php
+
+    $frame = $this->createFrame();
+
+    $frame->setAnimation(false);
+    $frame->setStub('');
+
+    ?>
 
     <section class="cta--front">
 
@@ -169,7 +178,7 @@ $ratios = [
 
         </div>
 
-        <? $frame->beginStub(); ?>
+        <? $frame->beginStub(''); ?>
 
         <? $frame->end(); ?>
 

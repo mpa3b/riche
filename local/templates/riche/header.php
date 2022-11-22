@@ -12,6 +12,7 @@ if (!defined('B_PROLOG_INCLUDED') or B_PROLOG_INCLUDED !== true) {
 use Bitrix\Main\Application;
 use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
+use Bitrix\Main\Page\AssetMode;
 use Riche\Breakpoint;
 use Riche\Head;
 
@@ -26,6 +27,8 @@ Loader::registerAutoLoadClasses(
 );
 
 $assets = Asset::getInstance();
+
+$assets->setMode(AssetMode::ALL);
 
 $assets->addCss(LOCAL_ASSETS . '/normalize-css/normalize.css');
 
@@ -68,7 +71,7 @@ else {
 $request = Application::getInstance()->getContext()->getRequest();
 
 ?>
-<html lang="<?php echo LANGUAGE_ID ?>">
+<html lang="<?php echo LANGUAGE_ID ?>" class="nojs">
 <head>
 
     <title><?php $APPLICATION->ShowTitle(); ?></title>
