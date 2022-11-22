@@ -18,8 +18,8 @@ if (Option::get('main', 'update_devsrv') == 'Y') {
 
 const CACHE_TTL = 60 * 60 * 24 * 3;
 
-const SHOP_ROOT_URL = '/shop/';
-const ORDER_URL     = '/order/';
+const SHOP_ROOT_URL = '/shop';
+const ORDER_URL     = '/order';
 
 const LOCAL_ASSETS = '/local/assets';
 

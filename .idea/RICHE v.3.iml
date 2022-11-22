@@ -134,6 +134,11 @@
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/ls.codegeneratorfree/install" />
       <excludeFolder url="file://$MODULE_DIR$/local/php_interface/migrations.schema" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/backup" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/asd.tplvars/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/atum.smartsearch/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/webdebug.utilities/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/zverushki.seofilter/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/site05.usertypeyesno/install" />
       <excludePattern pattern="install" />
       <excludePattern pattern="admin" />
     </content>
