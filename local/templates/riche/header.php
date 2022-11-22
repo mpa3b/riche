@@ -171,7 +171,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             </div>
 
-            <div id="page--header--menu" class="third">
+            <div id="page--header--menu" class="third mobiles-only">
 
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:menu",

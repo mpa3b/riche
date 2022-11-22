@@ -93,7 +93,7 @@ $footerFrame->setStub('');
 
                             "USE_EXT" => "N",
 
-                            "CACHE_SELECTED_ITEMS" => "N",
+                            "CACHE_SELECTED_ITEMS" => "Y",
 
                             "COMPOSITE_FRAME_MODE" => "A",
                             "COMPOSITE_FRAME_TYPE" => "AUTO"
@@ -120,7 +120,7 @@ $footerFrame->setStub('');
 
                             "USE_EXT" => "N",
 
-                            "CACHE_SELECTED_ITEMS" => "N",
+                            "CACHE_SELECTED_ITEMS" => "Y",
 
                             "COMPOSITE_FRAME_MODE" => "A",
                             "COMPOSITE_FRAME_TYPE" => "AUTO"
@@ -147,7 +147,7 @@ $footerFrame->setStub('');
 
                             "USE_EXT" => "N",
 
-                            "CACHE_SELECTED_ITEMS" => "N",
+                            "CACHE_SELECTED_ITEMS" => "Y",
 
                             "COMPOSITE_FRAME_MODE" => "A",
                             "COMPOSITE_FRAME_TYPE" => "AUTO",

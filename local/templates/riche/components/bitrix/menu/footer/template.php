@@ -37,36 +37,38 @@ if (!empty($arResult)) { ?>
 
             <? foreach ($arResult as $arItem) { ?>
 
-            <? if ($previousLevel and $arItem["DEPTH_LEVEL"] < $previousLevel) {
-                echo str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));
-            } ?>
+                <? if ($previousLevel and $arItem["DEPTH_LEVEL"] < $previousLevel) { ?>
+                    <?= str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
+                <? } ?>
 
-            <? if ($arItem["IS_PARENT"]): ?>
+                <? if ($arItem["IS_PARENT"]): ?>
 
-            <li>
+                    <li>
 
-                <span><?= $arItem["TEXT"] ?></span>
+                        <span><?= $arItem["TEXT"] ?></span>
 
-                <ul>
+                        <ul>
 
-                    <? else: ?>
+                <? else: ?>
 
-                        <li>
-                            <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
+                    <li>
+                        <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
 
-                        </li>
+                    </li>
 
-                    <? endif; ?>
+                <? endif; ?>
 
-                    <? $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
+                <? $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
 
-                    <? } ?>
+            <? } ?>
 
-                </ul>
+        </ul>
 
-                <? //@formatter:on ?>
+        <? //@formatter:on ?>
 
-                <? $frame->end(); ?>
+        <? $frame->beginStub(); ?>
+
+        <? $frame->end(); ?>
 
     </nav>
 

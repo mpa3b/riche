@@ -56,11 +56,52 @@ jQuery.event.special.mousewheel = {
 
 $(() => {
 
-    $('#page--header').sticky(
+    const header = $('#page--header');
+    const headerNav = $('.nav', header);
+
+    //region прилипчивая шапка сайта
+
+    header.sticky(
         {
             zIndex: 5000
         }
     );
+
+    //endregion
+
+    //region скрывающаяся панель навигации в шапке при прокрутке
+
+    // @todo вынести в плагин?
+
+    let prevScrollPosition = 0,
+        currentScrollPosition;
+
+    $(window).on(
+        'scroll',
+        () => {
+
+            setTimeout(
+                () => {
+
+                    currentScrollPosition = $(window).scrollTop();
+
+                    if (prevScrollPosition > currentScrollPosition) {
+                        headerNav.slideDown();
+                    } else {
+                        headerNav.slideUp();
+                    }
+
+
+                },
+                250
+            );
+
+            prevScrollPosition = currentScrollPosition;
+
+        }
+    );
+
+    //endregion
 
 });
 

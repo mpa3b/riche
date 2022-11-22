@@ -402,7 +402,7 @@ $APPLICATION->SetTitle('RICHE');
     ]
 ); ?>
 
-<aside class="wrap">
+<aside class="front--bottom wrap">
 
     <div class="row">
 
@@ -480,10 +480,10 @@ $APPLICATION->SetTitle('RICHE');
                     "CACHE_TYPE" => "A",
                     "CACHE_TIME" => CACHE_TTL,
 
-                    "AJAX_MODE"           => "Y",
-                    "AJAX_OPTION_JUMP"    => "Y",
+                    "AJAX_MODE"           => "N",
+                    "AJAX_OPTION_JUMP"    => "N",
                     "AJAX_OPTION_STYLE"   => "Y",
-                    "AJAX_OPTION_HISTORY" => "Y",
+                    "AJAX_OPTION_HISTORY" => "N",
 
                     "SET_TITLE" => "N",
 

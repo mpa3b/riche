@@ -169,6 +169,8 @@ $ratios = [
 
         </div>
 
+        <? $frame->beginStub(); ?>
+
         <? $frame->end(); ?>
 
     </section>

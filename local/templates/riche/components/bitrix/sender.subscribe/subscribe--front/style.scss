@@ -12,7 +12,7 @@
     background-color: var(--color--background);
     padding:          var(--offset);
 
-    height:           100%;
+    display:          block;
     box-sizing:       border-box;
 
     h2 {
@@ -27,6 +27,15 @@
         background-color: var(--color--white);
       }
 
+    }
+
+  }
+
+  @include Tablet {
+    height: 100%;
+
+    .wrapper {
+      height: 100%;
     }
 
   }

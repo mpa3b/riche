@@ -12,6 +12,8 @@
     overflow:         hidden;
     background-color: var(--color--white);
 
+    position: sticky;
+
     @at-root .is-sticky & {
       box-shadow: var(--box-shadow--blurry);
     }
@@ -76,7 +78,7 @@
       align-items:     center;
 
       margin-left:     auto;
-      padding:         0;
+      padding:         var(--offset--half);
     }
 
   }
