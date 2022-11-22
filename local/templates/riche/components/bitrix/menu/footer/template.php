@@ -35,9 +35,7 @@ if (!empty($arResult)) { ?>
 
             <? $previousLevel = 0; ?>
 
-            <? foreach ($arResult
-
-            as $arItem) { ?>
+            <? foreach ($arResult as $arItem) { ?>
 
             <? if ($previousLevel and $arItem["DEPTH_LEVEL"] < $previousLevel) {
                 echo str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));

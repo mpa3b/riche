@@ -5,18 +5,26 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 }
 
 use Bitrix\Main\Application;
+use Bitrix\Main\Composite\StaticArea;
+use Bitrix\Main\Page\AssetMode;
 
 global $USER, $APPLICATION;
 
 $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
-?>
+$footerFrame = new StaticArea('page--footer');
 
-</div>
+$footerFrame->setAssetMode(AssetMode::COMPOSITE);
+$footerFrame->setAnimation(false);
+$footerFrame->setStub('');
+
+?>
 
 </main>
 
 <footer id="page--footer">
+
+    <? $footerFrame->startDynamicArea(); ?>
 
     <div id="page--footer--top" class="wrap">
 
@@ -189,6 +197,8 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
         </div>
 
     </div>
+
+    <? $footerFrame->finishDynamicArea(); ?>
 
 </footer>
 

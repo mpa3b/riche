@@ -1,27 +1,32 @@
 @import "../../../../base";
 
-.half.subscribe > div {
-  height: 100%;
-}
+/* на случай AJAX-режима работы компонента */
+//.half.subscribe > div {
+//  height: 100%;
+//}
 
 .subscribe--front {
-  border-radius:    var(--border-radius);
-  background-color: var(--color--background);
-  padding:          var(--offset);
 
-  height:           100%;
-  box-sizing:       border-box;
+  .wrapper {
+    border-radius:    var(--border-radius);
+    background-color: var(--color--background);
+    padding:          var(--offset);
 
-  h2 {
-    font-size: 1.8rem;
-  }
+    height:           100%;
+    box-sizing:       border-box;
 
-  form {
-    margin-top: var(--offset);
+    h2 {
+      font-size: 1.8rem;
+    }
 
-    input,
-    button {
-      background-color: var(--color--white);
+    form {
+      margin-top: var(--offset);
+
+      input,
+      button {
+        background-color: var(--color--white);
+      }
+
     }
 
   }

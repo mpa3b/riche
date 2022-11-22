@@ -24,16 +24,45 @@ window.addEventListener(
                 }
             );
 
+        const updateLazies = () => {
+
+            lazyImage.update();
+            lazyImageNative.update();
+            lazyVideo.update();
+
+        }
+
         $(document).on(
             'ajaxComplete',
             () => {
 
-                lazyImage.update();
-                lazyImageNative.update();
-                lazyVideo.update();
+                updateLazies();
 
             }
         );
+
+        if (typeof BX !== "undefined") {
+
+            BX.ready(
+                () => {
+
+                    updateLazies();
+
+                }
+            );
+
+            if (window.frameCacheVars !== undefined) {
+
+                BX.addCustomEvent(
+                    "onFrameDataReceived",
+                    () => {
+                        updateLazies();
+                    }
+                );
+
+            }
+
+        }
 
     }
 );

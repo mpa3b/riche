@@ -446,7 +446,7 @@ $APPLICATION->SetTitle('RICHE');
                         "new" => "/"
                     ],
 
-                    "AJAX_MODE"           => "Y",
+                    "AJAX_MODE"           => "N",
                     "AJAX_OPTION_JUMP"    => "N",
                     "AJAX_OPTION_STYLE"   => "Y",
                     "AJAX_OPTION_HISTORY" => "N",
@@ -456,7 +456,10 @@ $APPLICATION->SetTitle('RICHE');
                         "list" => [],
                         "edit" => [],
                         "view" => [],
-                    ]
+                    ],
+
+                    "COMPOSITE_FRAME_MODE" => "A",
+                    "COMPOSITE_FRAME_TYPE" => "AUTO"
 
                 ]
             ); ?>

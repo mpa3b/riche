@@ -37,6 +37,8 @@ $this->setFrameMode(true);
             <?php endforeach; ?>
         </ul>
 
+        <?php $frame->beginStub(); ?>
+
         <?php $frame->end(); ?>
 
     </nav>

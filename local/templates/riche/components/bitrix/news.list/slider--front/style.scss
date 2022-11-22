@@ -1,7 +1,8 @@
 @import "../../../../base";
 
 .slider--front {
-  margin: var(--offset--2x) 0;
+  margin:   var(--offset--2x) 0;
+  overflow: hidden;
 
   .items {
     padding: 0;

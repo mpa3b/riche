@@ -8,6 +8,7 @@ use Bitrix\Main\Loader;
 /**
  * Класс, реализующий самодельное свойство для ИБ типа "ссылка на элемент" с указанием количества для указания ингридиентов.
  *
+ * @link https://habr.com/ru/post/697050/
  * @link https://it-svalka.ru/blog/bitrix/polzovatelskiy-tip-svoystv-infobloka-v-1s-bitriks/
  * @link https://it-svalka.ru/blog/bitrix/sobstvennyy-tip-polzovatelskikh-poley-v-1s-bitriks/
  *

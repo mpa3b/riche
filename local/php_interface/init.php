@@ -4,6 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/local/vendor/autoload.php";
 
 use Bitrix\Main\Config\Option;
 use Bitrix\Main\EventManager;
+use Bitrix\Main\Loader;
 
 // region константа DEBUG
 
@@ -25,6 +26,13 @@ const LOCAL_ASSETS = '/local/assets';
 // endregion
 
 $eventManager = EventManager::getInstance();
+
+//region отладка для композита
+
+define("BX_COMPOSITE_DEBUG", true);
+define("LOG_FILENAME", Loader::getDocumentRoot() . "/debug.log");
+
+//endregion
 
 //region специфическое свойство -- *пропорция*
 

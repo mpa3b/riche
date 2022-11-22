@@ -79,16 +79,6 @@
       padding:         0;
     }
 
-    .nav {
-      > * {
-        padding: 0;
-      }
-    }
-
-  }
-
-  &--main {
-
   }
 
   &--footer {
@@ -183,7 +173,7 @@
 
         > a {
           display:       block;
-          margin:        0 var(--offset);
+          margin:        0 var(--offset--half);
 
           @include Mobile {
             margin-left: 0;
@@ -194,12 +184,13 @@
 
           border:        1px solid var(--color--gray--light);
           border-radius: 100%;
-          padding:       var(--offset);
+          padding:       var(--offset--half);
 
           img {
             display: block;
             height:  1.25rem;
             width:   1.25rem;
+            max-width: unset;
           }
         }
       }

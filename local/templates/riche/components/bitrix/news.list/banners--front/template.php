@@ -24,8 +24,6 @@ $this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
 $this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
 $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
-$frame = $this->createFrame();
-
 $ratios = [
     'small'   => 2,
     'mobile'  => 2,
@@ -38,115 +36,133 @@ $ratios = [
 
 <?php if (!empty($arResult['ITEMS'])) { ?>
 
-    <nav class="banners--front wrap">
+    <nav class="banners--front">
 
-        <? $frame->begin(); ?>
+        <?php
 
-        <h2 hidden>Самое главное</h2>
+        $frame = $this->createFrame();
 
-        <div class="items slider">
+        $frame->begin();
 
-            <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
+        ?>
 
-                <div class="item">
+        <div class="wrap">
 
-                    <? if (!empty($arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE'])) { ?>
+            <h2 hidden>Самое главное</h2>
 
-                        <video muted loop autoplay>
-                            <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-                        </video>
+            <div class="items slider">
 
-                    <? } ?>
+                <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                    <? if ($arItem['DETAIL_PICTURE']) { ?>
+                    <div class="item">
 
-                        <?
+                        <?php if (!empty($arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE'])) { ?>
 
-                        $preload = CFile::ResizeImageGet(
-                            $arItem['DETAIL_PICTURE']['ID'],
-                            Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.5),
-                            BX_RESIZE_IMAGE_EXACT
-                        );
+                            <video muted loop autoplay>
+                                <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                            </video>
 
-                        $small = CFile::ResizeImageGet(
-                            $arItem['DETAIL_PICTURE']['ID'],
-                            Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 0.5),
-                            BX_RESIZE_IMAGE_EXACT
-                        );
+                        <?php } ?>
 
-                        $mobile = CFile::ResizeImageGet(
-                            $arItem['DETAIL_PICTURE']['ID'],
-                            Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 0.5),
-                            BX_RESIZE_IMAGE_EXACT
-                        );
+                        <?php if ($arItem['DETAIL_PICTURE']) { ?>
 
-                        $tablet = CFile::ResizeImageGet(
-                            $arItem['DETAIL_PICTURE']['ID'],
-                            Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'], 3),
-                            BX_RESIZE_IMAGE_EXACT
-                        );
+                            <?php
 
-                        $desktop = CFile::ResizeImageGet(
-                            $arItem['DETAIL_PICTURE']['ID'],
-                            Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'], 4),
-                            BX_RESIZE_IMAGE_EXACT
-                        );
+                            $preload = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.5),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
 
-                        $wide = CFile::ResizeImageGet(
-                            $arItem['DETAIL_PICTURE']['ID'],
-                            Thumb::calculateImageSize(Breakpoint::breakpoints['wide'], 5),
-                            BX_RESIZE_IMAGE_EXACT
-                        );
+                            $small = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 0.5),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
 
-                        ?>
+                            $mobile = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 0.5),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
 
-                        <picture>
+                            $tablet = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'], 3),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
 
-                            <source data-srcset="<?= $small['src']; ?>" media="<?= Breakpoint::getMedia('small'); ?>">
-                            <source data-srcset="<?= $mobile['src']; ?>" media="<?= Breakpoint::getMedia('mobile'); ?>">
-                            <source data-srcset="<?= $tablet['src']; ?>" media="<?= Breakpoint::getMedia('tablet'); ?>">
-                            <source data-srcset="<?= $desktop['src']; ?>"
-                                    media="<?= Breakpoint::getMedia('desktop'); ?>">
-                            <source data-srcset="<?= $wide['src']; ?>" media="<?= Breakpoint::getMedia('wide'); ?>">
+                            $desktop = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'], 4),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
 
-                            <? if ($i == 0) { ?>
-                                <img src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="eager">
-                            <? } else { ?>
-                                <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="lazy">
-                            <? } ?>
+                            $wide = CFile::ResizeImageGet(
+                                $arItem['DETAIL_PICTURE']['ID'],
+                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'], 5),
+                                BX_RESIZE_IMAGE_EXACT
+                            );
 
-                        </picture>
+                            ?>
 
-                    <? } ?>
+                            <picture>
 
-                    <div class="details">
+                                <source data-srcset="<?= $small['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('small'); ?>">
+                                <source data-srcset="<?= $mobile['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                <source data-srcset="<?= $tablet['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                <source data-srcset="<?= $desktop['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                <source data-srcset="<?= $wide['src']; ?>" media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                        <h3><?= $arItem['NAME']; ?></h3>
+                                <?php if ($i == 0) { ?>
+                                    <img src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>" loading="eager">
+                                <?php } else { ?>
+                                    <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>"
+                                         loading="lazy">
+                                <?php } ?>
 
-                        <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-                            <p><?= $arItem['PREVIEW_TEXT']; ?></p>
-                        <? } ?>
+                            </picture>
 
-                        <? if (!empty($arItem['DISPLAY_PROPERTIES']['LINK']['VALUE'])) { ?>
+                        <?php } ?>
 
-                            <button class="big white button"
-                                    data-id="<?= $arItem['ID']; ?>"
-                                    data-href="<?= $arItem['DISPLAY_PROPERTIES']['LINK']['VALUE']; ?>">
-                                <?= $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?>
-                                <i class="icon-chevron-right"></i>
-                            </button>
+                        <div class="details">
 
-                        <? } ?>
+                            <h3><?= $arItem['NAME']; ?></h3>
+
+                            <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+                                <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+                            <?php } ?>
+
+                            <?php if (!empty($arItem['DISPLAY_PROPERTIES']['LINK']['VALUE'])) { ?>
+
+                                <button class="big white button"
+                                        data-id="<?= $arItem['ID']; ?>"
+                                        data-href="<?= $arItem['DISPLAY_PROPERTIES']['LINK']['VALUE']; ?>">
+                                    <?= $arItem['DISPLAY_PROPERTIES']['BUTTON_TEXT']['VALUE']; ?>
+                                    <i class="icon-chevron-right"></i>
+                                </button>
+
+                            <?php } ?>
+
+                        </div>
 
                     </div>
 
-                </div>
+                <?php } ?>
 
-            <?php } ?>
+            </div>
 
         </div>
 
-        <? $frame->end(); ?>
+        <?php
+
+        $frame->end();
+
+        ?>
 
     </nav>
 

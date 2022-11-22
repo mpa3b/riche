@@ -4,19 +4,35 @@ $(() => {
 
     const quizSlider = $('.fields', quiz);
 
-    quizSlider.slick(
+    quizSlider
+        .slick(
+            {
+                slidesToShow:   1,
+                slidesToScroll: 1,
+                fade:           true,
+                speed:          500,
+                autoplay:       false,
+                arrows:         false,
+                dots:           false,
+                infinite:       false,
+                mobileFirst:    true,
+                draggable:      'false',
+                swipe:          'false',
+            }
+        ).on(
         {
-            slidesToShow:   1,
-            slidesToScroll: 1,
-            fade:           true,
-            speed:          500,
-            autoplay:       false,
-            arrows:         false,
-            dots:           false,
-            infinite:       false,
-            mobileFirst:    true,
-            draggable:      'false',
-            swipe:          'false',
+            init:        () => {
+
+                progressBar.fadeIn();
+                progressBar.width(100 / quizSlider.length + '%');
+
+            },
+            afterChange: (slick, currentSlide) => {
+
+                progressBar.width(100 / currentSlide.slideCount * currentSlide.currentSlide + '%');
+                progressValue.text(currentSlide.currentSlide + '/' + currentSlide.slideCount);
+
+            }
         }
     );
 
@@ -53,23 +69,6 @@ $(() => {
 
             nextButton.removeAttr('disabled');
 
-        }
-    );
-
-    quizSlider.on(
-        {
-            init:        () => {
-
-                progressBar.fadeIn();
-                progressBar.width(100 / quizSlider.length + '%');
-
-            },
-            afterChange: (slick, currentSlide) => {
-
-                progressBar.width(100 / currentSlide.slideCount * currentSlide.currentSlide + '%');
-                progressValue.text(currentSlide.currentSlide + '/' + currentSlide.slideCount);
-
-            }
         }
     );
 

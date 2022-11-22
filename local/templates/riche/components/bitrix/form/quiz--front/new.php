@@ -4,15 +4,24 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
+/** @var array $arParams */
+/** @var array $arResult */
+/** @global CMain $APPLICATION */
+/** @global CUser $USER */
+/** @global CDatabase $DB */
+/** @var CBitrixComponentTemplate $this */
+/** @var string $templateName */
+/** @var string $templateFile */
+/** @var string $templateFolder */
+/** @var string $componentPath */
+
+/** @var CBitrixComponent $component */
+
 use Bitrix\Main\Application;
 
-/** @global \CMain $APPLICATION */
-/** @global \CUser $USER */
-
-/** @global \Bitrix\Main\Component\ $component */
-/** @global $arParams */
-
 $request = Application::getInstance()->getContext()->getRequest();
+
+$this->setFrameMode(true);
 
 $frame = $this->createFrame();
 
@@ -37,6 +46,8 @@ $frame = $this->createFrame();
         </div>
 
     <? } ?>
+
+    <? $frame->beginStub(); ?>
 
     <? $frame->end(); ?>
 

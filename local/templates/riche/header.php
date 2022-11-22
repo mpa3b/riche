@@ -319,5 +319,3 @@ $request = Application::getInstance()->getContext()->getRequest();
         </header>
 
     <?php } ?>
-
-    <div id="page--main--content">

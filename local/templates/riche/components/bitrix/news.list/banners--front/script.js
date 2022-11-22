@@ -18,20 +18,20 @@ $(() => {
     );
 
     bannersFrontSlider
-        .slick(
-            {
-                slidesToScroll: 1,
-                fade:           true,
-                speed:          1000,
-                autoplay:       false,
-                autoplaySpeed:  5000,
-                arrows:         false,
-                dots:           true,
-                infinite:       true,
-                mobileFirst:    true,
-                loading:        'progressive'
-            }
-        )
+        // .slick(
+        //     {
+        //         slidesToScroll: 1,
+        //         fade:           true,
+        //         speed:          1000,
+        //         autoplay:       false,
+        //         autoplaySpeed:  5000,
+        //         arrows:         false,
+        //         dots:           true,
+        //         infinite:       true,
+        //         mobileFirst:    true,
+        //         loading:        'progressive'
+        //     }
+        // )
         .on(
             {
                 afterChange:  (event, slick, currentSlide, nextSlide) => {
