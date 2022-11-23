@@ -74,47 +74,53 @@ $(() => {
 
     //region прилипчивая шапка сайта
 
-    header.sticky(
-        {
-            zIndex: 5000
-        }
-    );
+    // header.sticky(
+    //     {
+    //         zIndex: 5000
+    //     }
+    // );
 
     //endregion
 
-    //region скрывающаяся панель навигации в шапке при прокрутке
-
-    // @todo вынести в плагин?
-
-    let prevScrollPosition = 0,
-        currentScrollPosition;
-
-    $(window).on(
-        'scroll',
-        () => {
-
-            setTimeout(
-                () => {
-
-                    currentScrollPosition = $(window).scrollTop();
-
-                    if (prevScrollPosition > currentScrollPosition) {
-                        headerNav.slideDown();
-                    } else {
-                        headerNav.slideUp();
-                    }
-
-
-                },
-                250
-            );
-
-            prevScrollPosition = currentScrollPosition;
-
-        }
-    );
-
-    //endregion
+    // //region скрывающаяся панель навигации в шапке при прокрутке
+    //
+    // // @todo вынести в плагин?
+    //
+    // let scrollStopTimeout  = null,
+    //     prevScrollPosition = $(window).scrollTop(),
+    //     currentScrollPosition;
+    //
+    // $(window).on(
+    //     'scroll',
+    //     () => {
+    //
+    //         if (scrollStopTimeout) {
+    //
+    //             clearTimeout(scrollStopTimeout);
+    //
+    //         }
+    //
+    //         scrollStopTimeout = setTimeout(
+    //             () => {
+    //
+    //                 currentScrollPosition = $(window).scrollTop();
+    //
+    //                 if (prevScrollPosition > currentScrollPosition) {
+    //                     headerNav.slideDown();
+    //                 } else {
+    //                     headerNav.slideUp();
+    //                 }
+    //
+    //                 prevScrollPosition = currentScrollPosition;
+    //
+    //             },
+    //             200
+    //         );
+    //
+    //     }
+    // );
+    //
+    // //endregion
 
 });
 

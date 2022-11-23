@@ -1,5 +1,7 @@
 $(() => {
 
+    console.debug('##');
+
     const problems = $('.problems--front');
 
     let frontProblemsSlider = $('.slider', problems);

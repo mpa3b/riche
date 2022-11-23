@@ -59,8 +59,6 @@ $frame = $this->createFrame();
 
     </div>
 
-    <?php $frame->beginStub(); ?>
-
     <?php $frame->end(); ?>
 
 </nav>
