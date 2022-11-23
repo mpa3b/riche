@@ -87,7 +87,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   font-size:   1.4rem;
-  line-height: 1.2;
+  line-height: 1.1;
 
   &:first-child {
     margin-top: 0;
@@ -364,12 +364,12 @@ button {
 
 // region img lazyload CSS filter blur
 
-img[loading] {
-  //filter: blur(3px);
-  //
-  //&[data-ll-status] {
-  //  filter: unset;
-  //}
+img[loading=lazy] {
+  filter: blur(3px);
+
+  &.loaded {
+    filter: unset;
+  }
 }
 
 // endregion

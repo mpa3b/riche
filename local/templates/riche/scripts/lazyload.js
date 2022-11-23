@@ -8,7 +8,8 @@ window.addEventListener(
 
         let lazyImage       = new LazyLoad(
                 {
-                    elements_selector: 'img.lazy'
+                    elements_selector: 'img.lazy, img.lazyload',
+                    use_native:        false
                 }
             ),
             lazyImageNative = new LazyLoad(

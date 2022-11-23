@@ -28,7 +28,7 @@ Loader::registerAutoLoadClasses(
 
 $assets = Asset::getInstance();
 
-$assets->setMode(AssetMode::ALL);
+//$assets->setMode(AssetMode::ALL);
 
 $assets->addCss(LOCAL_ASSETS . '/normalize-css/normalize.css');
 
@@ -51,8 +51,6 @@ $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
 $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/hicon/style.css');
 
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
-
-Head::addHeadPreloadAsset(SITE_TEMPLATE_PATH . '/images/logo.svg');
 
 $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 

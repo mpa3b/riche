@@ -22,7 +22,7 @@ class CCustomTypeElementIngredientProportion
      *
      * @return array
      */
-    function GetUserTypeDescription()
+    static function GetUserTypeDescription()
     {
 
         return [
@@ -51,7 +51,7 @@ class CCustomTypeElementIngredientProportion
      * @throws \Bitrix\Main\ObjectPropertyException
      * @throws \Bitrix\Main\SystemException
      */
-    function GetPropertyFieldHtml($arProperty, $value, $strHTMLControlName)
+    static function GetPropertyFieldHtml($arProperty, $value, $strHTMLControlName)
     {
 
         if (!is_set($arProperty["USER_TYPE_SETTINGS"]["IBLOCK_ID"])) {
@@ -114,7 +114,7 @@ class CCustomTypeElementIngredientProportion
      *
      * @return mixed
      */
-    function ConvertToDB($arProperty, $value)
+    static function ConvertToDB($arProperty, $value)
     {
         return $value;
     }
@@ -128,7 +128,7 @@ class CCustomTypeElementIngredientProportion
      *
      * @return mixed
      */
-    function ConvertFromDB($arProperty, $value)
+    static function ConvertFromDB($arProperty, $value)
     {
 
         return $value;
@@ -141,7 +141,7 @@ class CCustomTypeElementIngredientProportion
      *
      * @return string[]
      */
-    function PrepareSettings($arUserField)
+    static function PrepareSettings($arUserField)
     {
 
         $iblock_id = intval($arUserField["USER_TYPE_SETTINGS"]["IBLOCK_ID"]);
@@ -165,7 +165,7 @@ class CCustomTypeElementIngredientProportion
      * @return string
      * @throws \Bitrix\Main\LoaderException
      */
-    function GetSettingsHTML($arUserField = false, $arHtmlControl, $bVarsFromForm)
+    static function GetSettingsHTML($arUserField = false, $arHtmlControl, $bVarsFromForm)
     {
 
         if ($bVarsFromForm) {

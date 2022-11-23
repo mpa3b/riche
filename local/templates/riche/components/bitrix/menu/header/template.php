@@ -22,7 +22,9 @@ $frame = $this->createFrame();
 
 ?>
 
-<div class="menu--header">
+<nav class="menu--header" role="navigation">
+
+    <?php $frame->begin(); ?>
 
     <button class="transparent button trigger">
         <i class="icon-menu"></i>
@@ -30,23 +32,16 @@ $frame = $this->createFrame();
 
     <div class="dropdown wrapper">
 
-        <nav>
+        <ul class="menu root">
 
-            <ul class="menu root">
+            <?php foreach ($arResult as $arItem): ?>
+                <li>
+                    <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
+                </li>
+            <?php endforeach; ?>
 
-                <?php $frame->begin(); ?>
 
-                <?php foreach ($arResult as $arItem): ?>
-                    <li>
-                        <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
-                    </li>
-                <?php endforeach; ?>
-
-                <?php $frame->end(); ?>
-
-            </ul>
-
-        </nav>
+        </ul>
 
         <?php $APPLICATION->IncludeComponent(
             'bitrix:main.include',
@@ -64,4 +59,8 @@ $frame = $this->createFrame();
 
     </div>
 
-</div>
+    <?php $frame->beginStub(); ?>
+
+    <?php $frame->end(); ?>
+
+</nav>

@@ -76,10 +76,9 @@ $footerFrame->setStub('');
                         "bitrix:menu",
                         "footer",
                         [
-                            "TITLE" => "Полезные ссылки",
+                            "TITLE" => "Наши продукты",
 
-                            "ROOT_MENU_TYPE"  => "footer",
-                            "CHILD_MENU_TYPE" => "local",
+                            "ROOT_MENU_TYPE" => "catalog",
 
                             "DELAY"              => "N",
                             "ALLOW_MULTI_SELECT" => "N",
@@ -104,9 +103,10 @@ $footerFrame->setStub('');
                         "bitrix:menu",
                         "footer",
                         [
-                            "TITLE" => "Наши продукты",
+                            "TITLE" => "Полезные ссылки",
 
-                            "ROOT_MENU_TYPE" => "catalog",
+                            "ROOT_MENU_TYPE"  => "footer",
+                            "CHILD_MENU_TYPE" => "local",
 
                             "DELAY"              => "N",
                             "ALLOW_MULTI_SELECT" => "N",

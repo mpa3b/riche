@@ -5,6 +5,7 @@
 /upload/
 
 /local/assets/
+/local/logs/
 /local/vendor/
 
 /bin/

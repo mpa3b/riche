@@ -73,6 +73,7 @@
     margin:         0 var(--offset--negative);
 
     @include Tablet {
+      margin:         0 var(--offset--half--negative);
 
       @each $code, $width in $units {
 

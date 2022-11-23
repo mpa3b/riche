@@ -1,47 +1,50 @@
-<? if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) {
+<?php if (!defined("B_PROLOG_INCLUDED") or B_PROLOG_INCLUDED !== true) {
     die();
 }
 
+/** @var array $arParams */
+/** @var array $arResult */
 /** @global CMain $APPLICATION */
 /** @global CUser $USER */
 /** @global CDatabase $DB */
-/** @var CBitrixComponentTemplate $this */
+/** @var \CBitrixComponentTemeplate $this */
 /** @var string $templateName */
 /** @var string $templateFile */
 /** @var string $templateFolder */
 /** @var string $componentPath */
-
 /** @var CBitrixComponent $component */
 
 $this->setFrameMode(true);
 
-$frame = $this->createFrame();
-
 if (!empty($arResult)) { ?>
 
-    <nav class="menu--footer">
+    <?php $frame = $this->createFrame(); ?>
 
-        <? $frame->begin(); ?>
+    <nav class="menu--footer <?= strtolower($arParams['ROOT_MENU_TYPE']); ?>" role="navigation">
 
-        <? //@formatter:off ?>
+        <?php $frame->begin(); ?>
 
-        <? if (!empty($arParams['TITLE'])) { ?>
+        <?php $frame->setAnimation('false'); ?>
+
+        <?php //@formatter:off ?>
+
+        <?php if (!empty($arParams['TITLE'])) { ?>
 
             <h2><?= $arParams['TITLE']; ?></h2>
 
-        <? } ?>
+        <?php } ?>
 
         <ul class="menu">
 
-            <? $previousLevel = 0; ?>
+            <?php $previousLevel = 0; ?>
 
-            <? foreach ($arResult as $arItem) { ?>
+            <?php foreach ($arResult as $arItem) { ?>
 
-                <? if ($previousLevel and $arItem["DEPTH_LEVEL"] < $previousLevel) { ?>
+                <?php if ($previousLevel and $arItem["DEPTH_LEVEL"] < $previousLevel) { ?>
                     <?= str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
-                <? } ?>
+                <?php } ?>
 
-                <? if ($arItem["IS_PARENT"]): ?>
+                <?php if ($arItem["IS_PARENT"]): ?>
 
                     <li>
 
@@ -49,27 +52,27 @@ if (!empty($arResult)) { ?>
 
                         <ul>
 
-                <? else: ?>
+                <?php else: ?>
 
                     <li>
                         <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
 
                     </li>
 
-                <? endif; ?>
+                <?php endif; ?>
 
-                <? $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
+                <?php $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
 
-            <? } ?>
+            <?php } ?>
 
         </ul>
 
-        <? //@formatter:on ?>
+        <?php $frame->beginStub(); ?>
 
-        <? $frame->beginStub(); ?>
+        <?php $frame->end(); ?>
 
-        <? $frame->end(); ?>
+        <?php //@formatter:on ?>
 
     </nav>
 
-<? } ?>
+<?php } ?>
