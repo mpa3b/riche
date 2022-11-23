@@ -28,6 +28,8 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
 $frame = $this->createFrame();
 
+$frame->setAnimation(false);
+
 ?>
 
 <? if (!empty($arResult['ITEMS'])) { ?>
@@ -129,6 +131,7 @@ $frame = $this->createFrame();
 
         </div>
 
+        <? $frame->beginStub(); ?>
         <? $frame->end(); ?>
 
     </section>

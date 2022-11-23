@@ -14,8 +14,6 @@ $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->
 
 $footerFrame = new StaticArea('page--footer');
 
-$footerFrame->setAssetMode(AssetMode::COMPOSITE);
-$footerFrame->setAnimation(false);
 $footerFrame->setStub('');
 
 ?>

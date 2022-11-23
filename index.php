@@ -402,6 +402,76 @@ $APPLICATION->SetTitle('RICHE');
     ]
 ); ?>
 
+<? $APPLICATION->IncludeComponent(
+    "bitrix:catalog.products.viewed",
+    "viewed-products--slider",
+    [
+        "ACTION_VARIABLE" => "action_cpv",
+
+        "ADD_PROPERTIES_TO_BASKET" => "Y",
+        "ADD_TO_BASKET_ACTION"     => "BUY",
+
+        "BASKET_URL" => ORDER_URL,
+
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME"   => CACHE_TTL,
+        "CACHE_TYPE"   => "A",
+
+        "CONVERT_CURRENCY" => "Y",
+        "CURRENCY_ID"      => "RUB",
+
+        "DATA_LAYER_NAME" => "dataLayer",
+
+        "DEPTH" => "",
+
+        "HIDE_NOT_AVAILABLE"        => "N",
+        "HIDE_NOT_AVAILABLE_OFFERS" => "L",
+
+        "IBLOCK_TYPE" => IblockTools::find('CATALOG', 'PRODUCTS')->type(),
+        "IBLOCK_ID"   => IblockTools::find('CATALOG', 'PRODUCTS')->id(),
+        "IBLOCK_MODE" => "single",
+
+        "MESS_BTN_ADD_TO_BASKET"      => "В корзину",
+        "MESS_BTN_BUY"                => "Купить",
+        "MESS_BTN_DETAIL"             => "Подробнее",
+        "MESS_BTN_SUBSCRIBE"          => "Подписаться",
+        "MESS_NOT_AVAILABLE"          => "Нет в наличии",
+        "MESS_RELATIVE_QUANTITY_FEW"  => "мало",
+        "MESS_RELATIVE_QUANTITY_MANY" => "много",
+        "MESS_SHOW_MAX_QUANTITY"      => "Наличие",
+
+        "PAGE_ELEMENT_COUNT" => 6,
+
+        "PARTIAL_PRODUCT_PROPERTIES" => "N",
+
+        "PRICE_CODE"        => ["BASE"],
+        "PRICE_VAT_INCLUDE" => "Y",
+
+        "PRODUCT_ID_VARIABLE"       => "id",
+        "PRODUCT_PROPS_VARIABLE"    => "prop",
+        "PRODUCT_QUANTITY_VARIABLE" => "quantity",
+        "PRODUCT_ROW_VARIANTS"      => "[{'VARIANT':'3','BIG_DATA':false},{'VARIANT':'3','BIG_DATA':false}]",
+        "PRODUCT_SUBSCRIPTION"      => "Y",
+
+        "RELATIVE_QUANTITY_FACTOR" => 5, // я не знаю что это
+
+        "SECTION_CODE"         => "",
+        "SECTION_ELEMENT_CODE" => "",
+        "SECTION_ELEMENT_ID"   => "",
+        "SECTION_ID"           => "",
+
+        "SHOW_DISCOUNT_PERCENT" => "Y",
+        "SHOW_FROM_SECTION"     => "N",
+        "SHOW_MAX_QUANTITY"     => "M",
+        "SHOW_OLD_PRICE"        => "Y",
+        "SHOW_PRICE_COUNT"      => "1",
+
+        "USE_ENHANCED_ECOMMERCE" => "N",
+        "USE_PRICE_COUNT"        => "N",
+        "USE_PRODUCT_QUANTITY"   => "Y"
+    ]
+); ?>
+
 <aside class="front--bottom wrap">
 
     <div class="row">

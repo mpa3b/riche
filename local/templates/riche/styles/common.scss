@@ -370,6 +370,10 @@ img[loading=lazy] {
   &.loaded {
     filter: unset;
   }
+
+  &[data-ll-status] {
+    filter: unset;
+  }
 }
 
 // endregion

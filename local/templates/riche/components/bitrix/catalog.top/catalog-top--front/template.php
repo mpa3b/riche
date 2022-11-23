@@ -29,6 +29,8 @@ $this->setFrameMode(true);
 
 $frame = $this->createFrame();
 
+$frame->setAnimation(false);
+
 ?>
 
 <?php if (!empty($arResult['ITEMS'])) { ?>
@@ -242,6 +244,7 @@ $frame = $this->createFrame();
 
         </div>
 
+        <? $frame->beginStub(); ?>
         <? $frame->end(); ?>
 
     </section>
