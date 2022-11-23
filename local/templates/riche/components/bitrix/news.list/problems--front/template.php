@@ -1,9 +1,12 @@
-<?php use Riche\Breakpoint;
-use Riche\Thumb;
+<?php
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
+
+use Bitrix\Main\Page\AssetMode;
+use Riche\Breakpoint;
+use Riche\Thumb;
 
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
@@ -24,15 +27,22 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
 
 $this->setFrameMode(true);
 
-$this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
-$this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
-$this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
-
-$frame = $this->createFrame();
-
 ?>
 
 <? if (!empty($arResult['ITEMS'])) { ?>
+
+    <?php
+
+    $this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
+    $this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
+    $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
+
+    $frame = $this->createFrame();
+
+    $frame->setAssetMode(AssetMode::ALL);
+    $frame->setAnimation(false);
+
+    ?>
 
     <section class="problems--front">
 
@@ -125,6 +135,8 @@ $frame = $this->createFrame();
             </div>
 
         </div>
+
+        <? $frame->beginStub(); ?>
 
         <? $frame->end(); ?>
 

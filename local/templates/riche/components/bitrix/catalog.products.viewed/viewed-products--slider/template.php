@@ -1,5 +1,7 @@
 <?
 
+use Bitrix\Main\Page\AssetMode;
+
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
@@ -14,11 +16,20 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 
 $this->setFrameMode(true);
 
-$frame = $this->createFrame();
-
 if (!empty($arResult['ITEMS'])) { ?>
 
+    <?php $frame = $this->createFrame(); ?>
+
     <section class="viewed-products--default">
+
+        <?
+
+        $frame->begin();
+
+        $frame->setAssetMode(AssetMode::ALL);
+        $frame->setAnimation(false);
+
+        ?>
 
         <div class="wrap">
 
@@ -40,9 +51,10 @@ if (!empty($arResult['ITEMS'])) { ?>
 
         </div>
 
+        <? $frame->beginStub(); ?>
+
+        <? $frame->end(); ?>
+
     </section>
 
 <?php } ?>
-
-<?php d($arParams); ?>
-<?php d($arResult); ?>
