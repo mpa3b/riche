@@ -429,7 +429,7 @@ $APPLICATION->SetTitle('RICHE');
 
         "IBLOCK_TYPE" => IblockTools::find('CATALOG', 'PRODUCTS')->type(),
         "IBLOCK_ID"   => IblockTools::find('CATALOG', 'PRODUCTS')->id(),
-        "IBLOCK_MODE" => "single",
+        "IBLOCK_MODE" => "single", // ?
 
         "MESS_BTN_ADD_TO_BASKET"      => "В корзину",
         "MESS_BTN_BUY"                => "Купить",
