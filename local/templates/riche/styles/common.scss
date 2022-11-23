@@ -225,6 +225,11 @@ button {
     padding-top: 0.9em;
   }
 
+  &.small {
+    padding:     0.4em 0.6em;
+    padding-top: 0.3em;
+  }
+
   cursor:           pointer;
 
   border-radius:    var(--border-radius--2x);

@@ -46,7 +46,7 @@ $frame->setAnimation(false);
                 <div class="filter">
 
                     <? foreach ($arResult['SECTIONS'] as $i => $arSection) { ?>
-                        <button class="filter-button"
+                        <button class="filter-button small button"
                                 data-action="filter"
                                 data-id="<?= $arSection['ID']; ?>"><?= $arSection['NAME']; ?></button>
                     <? } ?>
