@@ -33,27 +33,7 @@ $(() => {
                   },
               ]
           };
-
-    if (typeof $().slick !== "undefined") {
-
-        if (window.frameCacheVars !== undefined) {
-
-            $(document).on(
-                'onFrameDataReceived',
-                () => {
-
-                    frontProblemsSlider.slick(sliderParams);
-
-                }
-            );
-
-        } else {
-
-            frontProblemsSlider.slick(sliderParams);
-
-        }
-
-
-    }
+    
+    frontProblemsSlider.slick(sliderParams);
 
 });

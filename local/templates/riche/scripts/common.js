@@ -112,24 +112,19 @@ $(document).on(
 
 // region frame mode debug
 
-window.addEventListener(
-    'load',
-    () => {
+BX.ready(
+    function () {
 
-        if (typeof BX !== "undefined") {
+        if (window.frameCacheVars !== undefined) {
 
-            if (window.frameCacheVars !== undefined) {
+            BX.addCustomEvent(
+                "onFrameDataReceived",
+                () => {
 
-                BX.addCustomEvent(
-                    "onFrameDataReceived",
-                    () => {
+                    $(document).trigger('onFrameDataReceived');
 
-                        $(document).trigger('onFrameDataReceived');
-
-                    }
-                );
-
-            }
+                }
+            );
 
         }
 
