@@ -109,3 +109,31 @@ $(document).on(
 );
 
 // endregion
+
+// region frame mode debug
+
+window.addEventListener(
+    'load',
+    () => {
+
+        if (typeof BX !== "undefined") {
+
+            if (window.frameCacheVars !== undefined) {
+
+                BX.addCustomEvent(
+                    "onFrameDataReceived",
+                    () => {
+
+                        $(document).trigger('onFrameDataReceived');
+
+                    }
+                );
+
+            }
+
+        }
+
+    }
+);
+
+// endregion

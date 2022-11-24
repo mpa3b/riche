@@ -119,7 +119,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
     ?>
 
-    <script>const sessid = '<?= bitrix_sessid(); ?>';</script>
+    <script>window.sessid = '<?= bitrix_sessid(); ?>';</script>
 
 </head>
 

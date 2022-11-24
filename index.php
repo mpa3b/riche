@@ -3,6 +3,7 @@
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 
 use Bex\Tools\Iblock\IblockTools;
+use Bitrix\Main\Page\Asset;
 
 /** @global CMain $APPLICATION */
 $APPLICATION->SetTitle('RICHE');

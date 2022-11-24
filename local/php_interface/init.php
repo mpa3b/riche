@@ -4,7 +4,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . "/local/vendor/autoload.php";
 
 use Bitrix\Main\Config\Option;
 use Bitrix\Main\EventManager;
-use Bitrix\Main\Loader;
+use Local\Buffer;
 
 // region константа DEBUG
 
@@ -33,6 +33,16 @@ $eventManager->addEventHandler(
     "iblock",
     "OnIBlockPropertyBuildList",
     [Local\CCustomTypeElementIngredientProportion::class, 'GetUserTypeDescription']
+);
+
+//endregion
+
+//region подчищаем буффер
+
+$eventManager->addEventHandler(
+    'main',
+    'OnEndBufferContent',
+    [Buffer::class, "clean"]
 );
 
 //endregion
