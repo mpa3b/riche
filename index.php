@@ -474,95 +474,99 @@ $APPLICATION->SetTitle('RICHE');
     ]
 ); ?>
 
-<aside class="front--bottom wrap">
+<aside class="front--bottom">
 
-    <div class="row">
+    <div class="wrap">
 
-        <div class="half quiz">
+        <div class="row">
 
-            <?php $APPLICATION->IncludeComponent(
-                'bitrix:form',
-                'quiz--front',
-                [
-                    "WEB_FORM_ID" => 1,
-                    "RESULT_ID"   => $_REQUEST["RESULT_ID"],
+            <div class="half quiz">
 
-                    "START_PAGE"  => "new",
-                    "SUCCESS_URL" => "?success",
+                <?php $APPLICATION->IncludeComponent(
+                    'bitrix:form',
+                    'quiz--front',
+                    [
+                        "WEB_FORM_ID" => 1,
+                        "RESULT_ID"   => $_REQUEST["RESULT_ID"],
 
-                    "SHOW_LIST_PAGE"    => "N",
-                    "SHOW_EDIT_PAGE"    => "N",
-                    "SHOW_VIEW_PAGE"    => "N",
-                    "SHOW_ANSWER_VALUE" => "Y",
-                    "SHOW_ADDITIONAL"   => "Y",
-                    "SHOW_STATUS"       => "N",
+                        "START_PAGE"  => "new",
+                        "SUCCESS_URL" => "?success",
 
-                    "EDIT_ADDITIONAL" => "N",
-                    "EDIT_STATUS"     => "N",
+                        "SHOW_LIST_PAGE"    => "N",
+                        "SHOW_EDIT_PAGE"    => "N",
+                        "SHOW_VIEW_PAGE"    => "N",
+                        "SHOW_ANSWER_VALUE" => "Y",
+                        "SHOW_ADDITIONAL"   => "Y",
+                        "SHOW_STATUS"       => "N",
 
-                    "NOT_SHOW_FILTER" => [],
-                    "NOT_SHOW_TABLE"  => [],
+                        "EDIT_ADDITIONAL" => "N",
+                        "EDIT_STATUS"     => "N",
 
-                    "CHAIN_ITEM_TEXT" => "",
-                    "CHAIN_ITEM_LINK" => "",
+                        "NOT_SHOW_FILTER" => [],
+                        "NOT_SHOW_TABLE"  => [],
 
-                    "IGNORE_CUSTOM_TEMPLATE" => "Y",
-                    "USE_EXTENDED_ERRORS"    => "N",
+                        "CHAIN_ITEM_TEXT" => "",
+                        "CHAIN_ITEM_LINK" => "",
 
-                    "CACHE_TYPE" => "A",
-                    "CACHE_TIME" => CACHE_TTL,
+                        "IGNORE_CUSTOM_TEMPLATE" => "Y",
+                        "USE_EXTENDED_ERRORS"    => "N",
 
-                    "SEF_MODE"          => "Y",
-                    "SEF_FOLDER"        => "/",
-                    "SEF_URL_TEMPLATES" => [
-                        "new" => "/"
-                    ],
+                        "CACHE_TYPE" => "A",
+                        "CACHE_TIME" => CACHE_TTL,
 
-                    "AJAX_MODE"           => "N",
-                    "AJAX_OPTION_JUMP"    => "N",
-                    "AJAX_OPTION_STYLE"   => "Y",
-                    "AJAX_OPTION_HISTORY" => "N",
+                        "SEF_MODE"          => "Y",
+                        "SEF_FOLDER"        => "/",
+                        "SEF_URL_TEMPLATES" => [
+                            "new" => "/"
+                        ],
 
-                    "VARIABLE_ALIASES" => [
-                        "new"  => [],
-                        "list" => [],
-                        "edit" => [],
-                        "view" => [],
-                    ],
+                        "AJAX_MODE"           => "N",
+                        "AJAX_OPTION_JUMP"    => "N",
+                        "AJAX_OPTION_STYLE"   => "Y",
+                        "AJAX_OPTION_HISTORY" => "N",
 
-                    "COMPOSITE_FRAME_MODE" => "A",
-                    "COMPOSITE_FRAME_TYPE" => "AUTO"
+                        "VARIABLE_ALIASES" => [
+                            "new"  => [],
+                            "list" => [],
+                            "edit" => [],
+                            "view" => [],
+                        ],
 
-                ]
-            ); ?>
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO"
 
-        </div>
+                    ]
+                ); ?>
 
-        <div class="half subscribe">
+            </div>
 
-            <?php $APPLICATION->IncludeComponent(
-                "bitrix:sender.subscribe",
-                "subscribe--front",
-                [
-                    "USE_PERSONALIZATION" => "Y",
-                    "CONFIRMATION"        => "Y",
-                    "SHOW_HIDDEN"         => "N",
-                    "HIDE_MAILINGS"       => "N",
+            <div class="half subscribe">
 
-                    "CACHE_TYPE" => "A",
-                    "CACHE_TIME" => CACHE_TTL,
+                <?php $APPLICATION->IncludeComponent(
+                    "bitrix:sender.subscribe",
+                    "subscribe--front",
+                    [
+                        "USE_PERSONALIZATION" => "Y",
+                        "CONFIRMATION"        => "Y",
+                        "SHOW_HIDDEN"         => "N",
+                        "HIDE_MAILINGS"       => "N",
 
-                    "AJAX_MODE"           => "N",
-                    "AJAX_OPTION_JUMP"    => "N",
-                    "AJAX_OPTION_STYLE"   => "Y",
-                    "AJAX_OPTION_HISTORY" => "N",
+                        "CACHE_TYPE" => "A",
+                        "CACHE_TIME" => CACHE_TTL,
 
-                    "SET_TITLE" => "N",
+                        "AJAX_MODE"           => "N",
+                        "AJAX_OPTION_JUMP"    => "N",
+                        "AJAX_OPTION_STYLE"   => "Y",
+                        "AJAX_OPTION_HISTORY" => "N",
 
-                    "COMPOSITE_FRAME_MODE" => "A",
-                    "COMPOSITE_FRAME_TYPE" => "AUTO"
-                ]
-            ); ?>
+                        "SET_TITLE" => "N",
+
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO"
+                    ]
+                ); ?>
+
+            </div>
 
         </div>
 

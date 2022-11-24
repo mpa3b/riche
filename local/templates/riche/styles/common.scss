@@ -382,3 +382,7 @@ img[loading=lazy] {
 }
 
 // endregion
+
+*:empty {
+  empty: true;
+}

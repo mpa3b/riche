@@ -96,24 +96,35 @@ $frame = $this->createFrame();
 
                                 <picture>
 
-                                    <source data-srcset="<?= $small['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('small'); ?>">
-                                    <source data-srcset="<?= $mobile['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('mobile'); ?>">
-                                    <source data-srcset="<?= $tablet['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('tablet'); ?>">
-                                    <source data-srcset="<?= $desktop['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('desktop'); ?>">
-                                    <source data-srcset="<?= $wide['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('wide'); ?>">
-
                                     <? if ($i == 0) { ?>
 
-                                        <img data-src="<?= $preload['src']; ?>"
+                                        <source srcset="<?= $small['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('small'); ?>">
+                                        <source srcset="<?= $mobile['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                        <source srcset="<?= $tablet['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                        <source srcset="<?= $desktop['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                        <source srcset="<?= $wide['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                                        <img src="<?= $preload['src']; ?>"
                                              alt="<?= $arItem['NAME']; ?>"
-                                             loading="eager">
+                                             loading="lazy">
 
                                     <? } else { ?>
+
+                                        <source data-srcset="<?= $small['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('small'); ?>">
+                                        <source data-srcset="<?= $mobile['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                        <source data-srcset="<?= $tablet['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                        <source data-srcset="<?= $desktop['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                        <source data-srcset="<?= $wide['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('wide'); ?>">
 
                                         <img data-src="<?= $preload['src']; ?>"
                                              alt="<?= $arItem['NAME']; ?>"

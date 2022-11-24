@@ -39,9 +39,6 @@ $this->setFrameMode(true);
 
     $frame = $this->createFrame();
 
-    $frame->setAssetMode(AssetMode::ALL);
-    $frame->setAnimation(false);
-
     ?>
 
     <section class="problems--front">

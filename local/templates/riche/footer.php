@@ -33,15 +33,13 @@ $footerFrame->setStub('');
                 <?php if ($currentDirectoryPath == "/") { ?>
 
                     <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo--full.svg"
-                         class="logo"
-                         loading="lazy">
+                         class="logo">
 
                 <? } else { ?>
 
                     <a href="/">
                         <img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo--full.svg"
-                             class="logo"
-                             loading="lazy">
+                             class="logo">
                     </a>
 
                 <? } ?>

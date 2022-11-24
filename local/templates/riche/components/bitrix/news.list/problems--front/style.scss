@@ -1,7 +1,6 @@
 @import "../../../../base";
 
 .problems--front {
-  margin:   var(--offset--2x) 0;
 
   overflow: hidden;
 
@@ -37,6 +36,14 @@
 
       h3 {
         font-size: 1.2rem;
+      }
+
+    }
+
+    &:not(.slick-initialized) {
+
+      .item:not(:first-of-type) {
+        display: none;
       }
 
     }
