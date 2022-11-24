@@ -6,7 +6,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 
 use Bitrix\Main\Application;
 use Bitrix\Main\Composite\StaticArea;
-use Bitrix\Main\Page\AssetMode;
 
 global $USER, $APPLICATION;
 
@@ -197,6 +196,8 @@ $footerFrame->setStub('');
     <? $footerFrame->finishDynamicArea(); ?>
 
 </footer>
+
+<?php $APPLICATION->ShowHeadScripts(); ?>
 
 <?php $APPLICATION->ShowBodyScripts(); ?>
 

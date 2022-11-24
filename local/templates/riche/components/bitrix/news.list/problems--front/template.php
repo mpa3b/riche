@@ -4,7 +4,6 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
-use Bitrix\Main\Page\AssetMode;
 use Riche\Breakpoint;
 use Riche\Thumb;
 
@@ -53,7 +52,7 @@ $this->setFrameMode(true);
 
             <div class="items slider">
 
-                <? foreach ($arResult['ITEMS'] as $arItem) { ?>
+                <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
                     <div class="item">
 
@@ -103,19 +102,42 @@ $this->setFrameMode(true);
 
                                 <picture>
 
-                                    <source data-srcset="<?= $small['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('small'); ?>">
-                                    <source data-srcset="<?= $mobile['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('mobile'); ?>">
-                                    <source data-srcset="<?= $tablet['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('tablet'); ?>">
-                                    <source data-srcset="<?= $desktop['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('desktop'); ?>">
-                                    <source data-srcset="<?= $wide['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('wide'); ?>">
+                                    <? if ($i == 0) { ?>
 
-                                    <img data-src="<?= $preload['src']; ?>" alt="<?= $arItem['NAME']; ?>"
-                                         loading="lazy">
+                                        <source srcset="<?= $small['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('small'); ?>">
+                                        <source srcset="<?= $mobile['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                        <source srcset="<?= $tablet['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                        <source srcset="<?= $desktop['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                        <source srcset="<?= $wide['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                                        <img alt="<?= $arItem['NAME']; ?>"
+                                             src="<?= $preload['src']; ?>"
+                                             loading="lazy">
+
+                                    <? } else { ?>
+
+                                        <source data-srcset="<?= $small['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('small'); ?>">
+                                        <source data-srcset="<?= $mobile['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                        <source data-srcset="<?= $tablet['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                        <source data-srcset="<?= $desktop['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                        <source data-srcset="<?= $wide['src']; ?>"
+                                                media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                                        <img alt="<?= $arItem['NAME']; ?>"
+                                             data-src="<?= $preload['src']; ?>"
+                                             loading="lazy">
+
+                                    <? } ?>
+
 
                                 </picture>
 
@@ -132,8 +154,6 @@ $this->setFrameMode(true);
             </div>
 
         </div>
-
-        <? $frame->beginStub(); ?>
 
         <? $frame->end(); ?>
 

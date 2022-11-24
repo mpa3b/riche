@@ -33,7 +33,18 @@ $(() => {
                   },
               ]
           };
-    
+
+    console.log('slider is ' + frontProblemsSlider.length + ' items long');
+
     frontProblemsSlider.slick(sliderParams);
+
+    $(document).on(
+        'onFrameDataReceived',
+        () => {
+
+            console.log('slider is ' + frontProblemsSlider.length + ' items long');
+
+        }
+    );
 
 });

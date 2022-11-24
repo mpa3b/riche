@@ -24,34 +24,38 @@ Loader::registerAutoLoadClasses(
     ]
 );
 
-$assets = Asset::getInstance();
+Breakpoint::addbreakpointsToHead();
 
 // CSS
 
-$assets->addCss(LOCAL_ASSETS . '/normalize-css/normalize.css');
+$styles = Asset::getInstance();
 
-$assets->addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
+$styles->addCss(LOCAL_ASSETS . '/normalize-css/normalize.css');
 
-$assets->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
-$assets->addCss(SITE_TEMPLATE_PATH . '/styles/components.css');
+$styles->addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
 
-$assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
-$assets->addCss(SITE_TEMPLATE_PATH . '/fonts/hicon/style.css');
+$styles->addCss(SITE_TEMPLATE_PATH . '/styles/common.css');
+$styles->addCss(SITE_TEMPLATE_PATH . '/styles/components.css');
 
-$assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
+$styles->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
+$styles->addCss(SITE_TEMPLATE_PATH . '/fonts/hicon/style.css');
+
+$styles->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
 
 // JS
 
-$assets->addJs(LOCAL_ASSETS . '/js-cookie/dist/js.cookie.js');
-$assets->addJs(LOCAL_ASSETS . '/vanilla-lazyload/dist/lazyload.js');
+$scripts = Asset::getInstance();
 
-$assets->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.js');
-$assets->addJs(LOCAL_ASSETS . '/jquery-sticky/jquery.sticky.js');
+$scripts->addJs(LOCAL_ASSETS . '/js-cookie/dist/js.cookie.js');
+$scripts->addJs(LOCAL_ASSETS . '/vanilla-lazyload/dist/lazyload.js');
 
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
+$scripts->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.js');
+$scripts->addJs(LOCAL_ASSETS . '/jquery-sticky/jquery.sticky.js');
 
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/passiveListeners.js', true);
+$scripts->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
+
+$scripts->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
+$scripts->addJs(SITE_TEMPLATE_PATH . '/scripts/passiveListeners.js');
 
 $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
@@ -81,8 +85,6 @@ $request = Application::getInstance()->getContext()->getRequest();
 
     <?php
 
-    $APPLICATION->ShowHeadStrings();
-
     $APPLICATION->ShowMeta("robots", false, true);
     $APPLICATION->ShowMeta("keywords", false, true); // устаревший тег
 
@@ -110,16 +112,11 @@ $request = Application::getInstance()->getContext()->getRequest();
 
     <?php //endregion ?>
 
-    <?php
+    <?php $APPLICATION->ShowCSS(true, false); ?>
 
-    $APPLICATION->ShowCSS(true, false);
-    $APPLICATION->ShowHeadScripts();
+    <script>const sessid = '<?= bitrix_sessid(); ?>';</script>
 
-    Breakpoint::addbreakpointsToHead();
-
-    ?>
-
-    <script>window.sessid = '<?= bitrix_sessid(); ?>';</script>
+    <?php $APPLICATION->ShowHeadStrings(); ?>
 
 </head>
 
