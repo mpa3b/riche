@@ -26,22 +26,9 @@ Loader::registerAutoLoadClasses(
 
 $assets = Asset::getInstance();
 
-//$assets->setMode(AssetMode::ALL);
+// CSS
 
 $assets->addCss(LOCAL_ASSETS . '/normalize-css/normalize.css');
-
-$assets->addJs(LOCAL_ASSETS . '/js-cookie/dist/js.cookie.min.js');
-$assets->addJs(LOCAL_ASSETS . '/vanilla-lazyload/dist/lazyload.min.js');
-
-$assets->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.min.js');
-$assets->addJs(LOCAL_ASSETS . '/jquery-sticky/jquery.sticky.js');
-
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
-
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js', true);
-
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/passiveListeners.js', true);
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/bxAjaxControllerable.js', true);
 
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
 
@@ -52,6 +39,19 @@ $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/gordita/stylesheet.css');
 $assets->addCss(SITE_TEMPLATE_PATH . '/fonts/hicon/style.css');
 
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
+
+// JS
+
+$assets->addJs(LOCAL_ASSETS . '/js-cookie/dist/js.cookie.js');
+$assets->addJs(LOCAL_ASSETS . '/vanilla-lazyload/dist/lazyload.js');
+
+$assets->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.js');
+$assets->addJs(LOCAL_ASSETS . '/jquery-sticky/jquery.sticky.js');
+
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
+
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/passiveListeners.js', true);
 
 $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
