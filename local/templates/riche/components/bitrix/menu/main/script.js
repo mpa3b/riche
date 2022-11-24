@@ -1,5 +1,5 @@
 $(() => {
 
-    const element = $('.menu--main');
+    const mainMenuElement = $('.menu--main');
 
 });

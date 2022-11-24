@@ -50,7 +50,6 @@
   font-style:  italic;
 }
 
-
 @font-face {
   font-family: "Gordita";
   src:         url("Gordita-Regular.eot");
@@ -100,25 +99,25 @@
 }
 
 @font-face {
-  font-family : "Gordita";
-  src         : url("Gordita-Black.eot");
-  src         : local("Gordita Black"), local("Gordita-Black"),
-  url("Gordita-Black.eot?#iefix") format("embedded-opentype"),
-  url("Gordita-Black.woff2") format("woff2"),
-  url("Gordita-Black.woff") format("woff"),
-  url("Gordita-Black.ttf") format("truetype");
-  font-weight : 900;
-  font-style  : normal;
+  font-family: "Gordita";
+  src:         url("Gordita-Black.eot");
+  src:         local("Gordita Black"), local("Gordita-Black"),
+               url("Gordita-Black.eot?#iefix") format("embedded-opentype"),
+               url("Gordita-Black.woff2") format("woff2"),
+               url("Gordita-Black.woff") format("woff"),
+               url("Gordita-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style:  normal;
 }
 
 @font-face {
-  font-family : "Gordita";
-  src         : url("Gordita-BlackItalic.eot");
-  src         : local("Gordita Black Italic"), local("Gordita-BlackItalic"),
-  url("Gordita-BlackItalic.eot?#iefix") format("embedded-opentype"),
-  url("Gordita-BlackItalic.woff2") format("woff2"),
-  url("Gordita-BlackItalic.woff") format("woff"),
-  url("Gordita-BlackItalic.ttf") format("truetype");
-  font-weight : 900;
-  font-style  : italic;
+  font-family: "Gordita";
+  src:         url("Gordita-BlackItalic.eot");
+  src:         local("Gordita Black Italic"), local("Gordita-BlackItalic"),
+               url("Gordita-BlackItalic.eot?#iefix") format("embedded-opentype"),
+               url("Gordita-BlackItalic.woff2") format("woff2"),
+               url("Gordita-BlackItalic.woff") format("woff"),
+               url("Gordita-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style:  italic;
 }

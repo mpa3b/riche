@@ -12,9 +12,7 @@ if (!defined('B_PROLOG_INCLUDED') or B_PROLOG_INCLUDED !== true) {
 use Bitrix\Main\Application;
 use Bitrix\Main\Loader;
 use Bitrix\Main\Page\Asset;
-use Bitrix\Main\Page\AssetMode;
 use Riche\Breakpoint;
-use Riche\Head;
 
 Loader::registerAutoLoadClasses(
     null,
@@ -36,11 +34,14 @@ $assets->addJs(LOCAL_ASSETS . '/js-cookie/dist/js.cookie.min.js');
 $assets->addJs(LOCAL_ASSETS . '/vanilla-lazyload/dist/lazyload.min.js');
 
 $assets->addJs(LOCAL_ASSETS . '/jquery/dist/jquery.min.js');
-//$assets->addJs(LOCAL_ASSETS . '/jquery-sticky/jquery.sticky.js');
+$assets->addJs(LOCAL_ASSETS . '/jquery-sticky/jquery.sticky.js');
 
 $assets->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
-$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/bxajax.js');
+
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js', true);
+
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/passiveListeners.js', true);
+$assets->addJs(SITE_TEMPLATE_PATH . '/scripts/bxAjaxControllerable.js', true);
 
 $assets->addCss(SITE_TEMPLATE_PATH . '/styles/grid.css');
 

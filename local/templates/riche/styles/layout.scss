@@ -20,6 +20,8 @@
       box-shadow: var(--box-shadow--blurry);
     }
 
+    transform:        scaleY(1);
+
     > .wrap {
       margin-top:    0;
       margin-bottom: 0;

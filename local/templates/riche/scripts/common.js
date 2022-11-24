@@ -1,56 +1,4 @@
-// region passive listeners
-
-/** @link https://stackoverflow.com/questions/60357083/does-not-use-passive-listeners-to-improve-scrolling-performance-lighthouse-repo **/
-
-jQuery.event.special.touchstart = {
-    setup: function (_, ns, handle) {
-        this.addEventListener(
-            "touchstart",
-            handle,
-            {
-                passive: !ns.includes("noPreventDefault")
-            }
-        );
-    }
-};
-
-jQuery.event.special.touchmove = {
-    setup: function (_, ns, handle) {
-        this.addEventListener(
-            "touchmove",
-            handle,
-            {
-                passive: !ns.includes("noPreventDefault")
-            }
-        );
-    }
-};
-
-jQuery.event.special.wheel = {
-    setup: function (_, ns, handle) {
-        this.addEventListener(
-            "wheel",
-            handle,
-            {
-                passive: true
-            }
-        );
-    }
-};
-
-jQuery.event.special.mousewheel = {
-    setup: function (_, ns, handle) {
-        this.addEventListener(
-            "mousewheel",
-            handle,
-            {
-                passive: true
-            }
-        );
-    }
-};
-
-// endregion
+'use strict';
 
 // region JS detect
 
@@ -65,66 +13,70 @@ window.addEventListener(
 
 // endregion
 
-// region header sticky
+//region прилипчивая шапка сайта
 
 $(() => {
 
     const header = $('#page--header');
-    const headerNav = $('.nav', header);
 
-    //region прилипчивая шапка сайта
-
-    // header.sticky(
-    //     {
-    //         zIndex: 5000
-    //     }
-    // );
-
-    //endregion
-
-    // //region скрывающаяся панель навигации в шапке при прокрутке
-    //
-    // // @todo вынести в плагин?
-    //
-    // let scrollStopTimeout  = null,
-    //     prevScrollPosition = $(window).scrollTop(),
-    //     currentScrollPosition;
-    //
-    // $(window).on(
-    //     'scroll',
-    //     () => {
-    //
-    //         if (scrollStopTimeout) {
-    //
-    //             clearTimeout(scrollStopTimeout);
-    //
-    //         }
-    //
-    //         scrollStopTimeout = setTimeout(
-    //             () => {
-    //
-    //                 currentScrollPosition = $(window).scrollTop();
-    //
-    //                 if (prevScrollPosition > currentScrollPosition) {
-    //                     headerNav.slideDown();
-    //                 } else {
-    //                     headerNav.slideUp();
-    //                 }
-    //
-    //                 prevScrollPosition = currentScrollPosition;
-    //
-    //             },
-    //             200
-    //         );
-    //
-    //     }
-    // );
-    //
-    // //endregion
+    header.sticky(
+        {
+            zIndex: 5000
+        }
+    );
 
 });
 
-// endregion
+//endregion
+
+// region скрываемая панель в шапке  прокрутке
+
+$(() => {
+
+    const headerNav          = $('.nav', '#page--header'),
+          scrollResetTimeout = 200;
+
+    let currentScrollTop,
+        prevScrollTop = 0,
+        scrollTimeout = null;
+
+    $(window).on(
+        'scroll',
+        () => {
+
+            if (scrollTimeout !== null) {
+
+                clearInterval(scrollTimeout);
+
+            }
+
+            scrollTimeout = setTimeout(
+                () => {
+
+                    currentScrollTop = $(window).scrollTop();
+
+                    if (currentScrollTop > prevScrollTop) {
+
+                        headerNav.slideUp();
+
+                    } else {
+
+                        headerNav.slideDown();
+
+                    }
+
+                },
+                scrollResetTimeout
+            );
+
+            prevScrollTop = currentScrollTop;
+
+        }
+    );
+
+});
+
+//endregion
 
 // region кнопка с индикатором прогресса
 
