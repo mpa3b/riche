@@ -70,10 +70,9 @@
     flex-wrap:      wrap;
     box-sizing:     border-box;
 
-    margin:         0 var(--offset--negative);
+    margin:         0 var(--offset--half--negative);
 
     @include Tablet {
-      margin:         0 var(--offset--half--negative);
 
       @each $code, $width in $units {
 

@@ -1,9 +1,9 @@
 $(() => {
 
-    const problems = $('.problems--front');
+    const frontProblems = $('.problems--front');
 
-    const frontProblemsSlider = $('.slider', problems),
-          sliderParams        = {
+    const frontProblemsSlider       = $('.slider', frontProblems),
+          frontProblemsSliderParams = {
               slidesToShow:   2,
               slidesToScroll: 1,
               fade:           false,
@@ -34,17 +34,7 @@ $(() => {
               ]
           };
 
-    console.log('slider is ' + frontProblemsSlider.length + ' items long');
 
-    frontProblemsSlider.slick(sliderParams);
-
-    $(document).on(
-        'onFrameDataReceived',
-        () => {
-
-            console.log('slider is ' + frontProblemsSlider.length + ' items long');
-
-        }
-    );
+    frontProblemsSlider.slick(frontProblemsSliderParams);
 
 });

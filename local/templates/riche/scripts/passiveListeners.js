@@ -2,6 +2,7 @@
 
 /** @link https://stackoverflow.com/questions/60357083/does-not-use-passive-listeners-to-improve-scrolling-performance-lighthouse-repo **/
 
+/*
 jQuery.event.special.touchstart = {
     setup: function (_, ns, handle) {
         this.addEventListener(
@@ -49,5 +50,7 @@ jQuery.event.special.mousewheel = {
         );
     }
 };
+
+*/
 
 // endregion

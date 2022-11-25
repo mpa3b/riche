@@ -26,14 +26,6 @@ $this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
 $this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
 $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
-$ratios = [
-    'small'   => 2,
-    'mobile'  => 2,
-    'tablet'  => 1 / 1.5,
-    'desktop' => 1 / 1.5,
-    'wide'    => 1 / 2,
-];
-
 ?>
 
 <?php if (!empty($arResult['ITEMS'])) { ?>
@@ -65,7 +57,7 @@ $ratios = [
 
                             <? if ($arItem['DISPLAY_PROPERTIES']['ILLUSTRATION']['FILE_VALUE']['CONTENT_TYPE'] == 'image/svg+xml') { ?>
 
-                                <img src="<?= $arItem['DISPLAY_PROPERTIES']['ILLUSTRATION']['FILE_VALUE']['SRC']; ?>"
+                                <img data-src="<?= $arItem['DISPLAY_PROPERTIES']['ILLUSTRATION']['FILE_VALUE']['SRC']; ?>"
                                      alt="<?= $arItem['NAME']; ?>"
                                      class="illustration"
                                      loading="lazy">
@@ -112,13 +104,13 @@ $ratios = [
 
                                     $desktop = CFile::ResizeImageGet(
                                         $fileId,
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 3, 1),
+                                        Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 3, 1.33),
                                         BX_RESIZE_IMAGE_EXACT
                                     );
 
                                     $wide = CFile::ResizeImageGet(
                                         $fileId,
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 1),
+                                        Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 1.33),
                                         BX_RESIZE_IMAGE_EXACT
                                     );
 
@@ -139,7 +131,7 @@ $ratios = [
                                     <source data-srcset="<?= $wide['src']; ?>"
                                             media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                                    <img src="<?= $preload['src']; ?>"
+                                    <img data-src="<?= $preload['src']; ?>"
                                          alt="<?= $arItem['NAME']; ?>"
                                          loading="lazy">
 

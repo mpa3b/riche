@@ -163,29 +163,7 @@
   .footer {
     margin-top: var(--offset);
 
-    a.mobiles-only {
-      margin:          auto;
-      text-align:      right;
-      text-decoration: none;
-
-      display:         flex;
-      flex-direction:  row;
-      flex-wrap:       nowrap;
-
-      justify-content: end;
-      align-items:     center;
-
-      i {
-        display:     inline-block;
-        margin-left: var(--offset--half);
-      }
-    }
-
-    a.desktop-only {
-      margin:  auto;
-      display: inline-block;
-    }
-
+    text-align: center;
   }
 
 }

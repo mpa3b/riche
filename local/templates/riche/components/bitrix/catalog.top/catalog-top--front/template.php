@@ -65,7 +65,9 @@ $this->setFrameMode(true);
 
                 <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                    <div class="item" data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
+                    <div class="item"
+                         data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
+                         data-section-code="<?= $arResult['SECTIONS'][$arItem['IBLOCK_SECTION_ID']]['CODE']; ?>"
                          data-id="<?= $arItem['ID']; ?>">
 
                         <div class="image">
@@ -80,47 +82,47 @@ $this->setFrameMode(true);
 
                                 <? } ?>
 
-                                <?
-
-                                $preload = CFile::ResizeImageGet(
-                                    $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
-                                    BX_RESIZE_IMAGE_EXACT
-                                );
-
-                                $small = CFile::ResizeImageGet(
-                                    $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 0.75),
-                                    BX_RESIZE_IMAGE_EXACT
-                                );
-
-                                $mobile = CFile::ResizeImageGet(
-                                    $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 0.75),
-                                    BX_RESIZE_IMAGE_EXACT
-                                );
-
-                                $tablet = CFile::ResizeImageGet(
-                                    $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 0.75),
-                                    BX_RESIZE_IMAGE_EXACT
-                                );
-
-                                $desktop = CFile::ResizeImageGet(
-                                    $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 0.75),
-                                    BX_RESIZE_IMAGE_EXACT
-                                );
-
-                                $wide = CFile::ResizeImageGet(
-                                    $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 0.75),
-                                    BX_RESIZE_IMAGE_EXACT
-                                );
-
-                                ?>
-
                                 <picture>
+
+                                    <?
+
+                                    $preload = CFile::ResizeImageGet(
+                                        $arItem['DETAIL_PICTURE']['ID'],
+                                        Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
+                                        BX_RESIZE_IMAGE_EXACT
+                                    );
+
+                                    $small = CFile::ResizeImageGet(
+                                        $arItem['DETAIL_PICTURE']['ID'],
+                                        Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 0.75),
+                                        BX_RESIZE_IMAGE_EXACT
+                                    );
+
+                                    $mobile = CFile::ResizeImageGet(
+                                        $arItem['DETAIL_PICTURE']['ID'],
+                                        Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 0.75),
+                                        BX_RESIZE_IMAGE_EXACT
+                                    );
+
+                                    $tablet = CFile::ResizeImageGet(
+                                        $arItem['DETAIL_PICTURE']['ID'],
+                                        Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 0.75),
+                                        BX_RESIZE_IMAGE_EXACT
+                                    );
+
+                                    $desktop = CFile::ResizeImageGet(
+                                        $arItem['DETAIL_PICTURE']['ID'],
+                                        Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 0.75),
+                                        BX_RESIZE_IMAGE_EXACT
+                                    );
+
+                                    $wide = CFile::ResizeImageGet(
+                                        $arItem['DETAIL_PICTURE']['ID'],
+                                        Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 0.75),
+                                        BX_RESIZE_IMAGE_EXACT
+                                    );
+
+                                    ?>
 
                                     <source data-srcset="<?= $small['src']; ?>"
                                             media="<?= Breakpoint::getMedia('small'); ?>">
@@ -235,18 +237,18 @@ $this->setFrameMode(true);
 
             </div>
 
-            <div class="footer">
+            <?php if (!empty(SHOP_ROOT_URL)) { ?>
 
-                <a href="<?= SHOP_ROOT_URL; ?>" class="mobiles-only">
-                    Перейти в каталог
-                    <i class="icon-chevron-right rounded button"></i>
-                </a>
+                <div class="footer">
 
-                <a href="<?= SHOP_ROOT_URL; ?>" class="primary big desktop-only button">
-                    Перейти в каталог
-                </a>
+                    <a href="<?= SHOP_ROOT_URL; ?>" class="primary big button">
+                        Перейти в каталог
+                        <i class="icon-chevron-right"></i>
+                    </a>
 
-            </div>
+                </div>
+
+            <?php } ?>
 
         </div>
 

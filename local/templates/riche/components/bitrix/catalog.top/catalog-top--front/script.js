@@ -1,94 +1,113 @@
 $(() => {
 
-    const catalogTop = $('.catalog-top--front');
+    const frontCatalogTop = $('.catalog-top--front');
 
-    const frontCatalogSlider = $('.slider', catalogTop);
-    const frontCatalogSliderVideo = $('video', frontCatalogSlider);
-
-    frontCatalogSliderVideo.on(
-        'loaded',
-        (event) => {
-
-            let container = $(event.currentTarget).closest('.slide'),
-                picture   = $('picture', container);
-
-            picture.fadeOut();
-
-        }
-    );
+    const frontCatalogSlider       = $('.slider', frontCatalogTop),
+          frontCatalogSliderParams = {
+              slidesToShow:   2,
+              slidesToScroll: 1,
+              fade:           false,
+              speed:          1000,
+              autoplay:       true,
+              arrows:         false,
+              dots:           false,
+              infinite:       true,
+              mobileFirst:    true,
+              responsive:     [
+                  {
+                      breakpoint: breakpoint.mobile,
+                      settings:   {
+                          slidesToShow: 3
+                      }
+                  },
+                  {
+                      breakpoint: breakpoint.desktop,
+                      settings:   {
+                          slidesToShow: 5
+                      }
+                  }
+              ]
+          };
 
     frontCatalogSlider
-        .slick(
-            {
-                slidesToShow:   2,
-                slidesToScroll: 1,
-                fade:           false,
-                speed:          1000,
-                autoplay:       false,
-                arrows:         false,
-                dots:           false,
-                infinite:       true,
-                mobileFirst:    true,
-                lazyload:       'progressive',
-                responsive:     [
-                    {
-                        breakpoint: breakpoint.mobile,
-                        settings:   {
-                            slidesToShow: 3
-                        }
-                    },
-                    {
-                        breakpoint: breakpoint.desktop,
-                        settings:   {
-                            slidesToShow: 4
-                        }
-                    }
-                ]
-            }
-        )
+        .slick(frontCatalogSliderParams)
         .on(
             {
-                afterChange:  (event, slick, currentSlide, nextSlide) => {
+                afterChange:  (event, slick, currentSlide) => {
 
-                    let element = slick.$slides[currentSlide];
+                    let element = slick.$slides[currentSlide],
+                        video   = $('video', element);
 
-                    $('video', element).trigger('play');
+                    video.trigger('play');
 
                 },
-                beforeChange: (event, slick, currentSlide, nextSlide) => {
+                beforeChange: (event, slick, currentSlide) => {
 
-                    let element = slick.$slides[currentSlide];
+                    let element = slick.$slides[currentSlide],
+                        video   = $('video', element);
 
-                    $('video', element).trigger('pause');
+                    video.trigger('pause');
 
                 }
             }
         );
 
-    let catalogTopFiltered = false;
+    // region filter
+
+    let frontCatalogTopFiltered = false;
 
     $('button.filter-button').on(
         'click',
-        catalogTop,
+        frontCatalogTop,
         (event) => {
 
             let button = $(event.currentTarget),
                 id     = button.data('id');
 
-            if (catalogTopFiltered === false) {
+            console.debug(frontCatalogSlider);
 
-                frontCatalogSlider.slick('slickFilter', '.item[data-section-id="' + id + '"]');
+            if (frontCatalogTopFiltered === false) {
 
-                catalogTopFiltered = true;
+                frontCatalogTopFiltered = true;
 
             } else {
 
-                frontCatalogSlider.slick('slickUnfilter');
-
-                catalogTopFiltered = false;
+                frontCatalogTopFiltered = false;
             }
 
         }
     );
+
+    // endregion
+
+    // region video
+
+    const frontCatalogSliderVideo = $('video', frontCatalogSlider),
+          videoPlayingClass       = 'playing';
+
+    frontCatalogSliderVideo.on(
+        {
+            loaded: (event) => {
+
+                let container = $(event.currentTarget).closest('.slide'),
+                    picture   = $('picture', container);
+
+                picture.fadeOut();
+
+            },
+            play:   (event) => {
+
+                $(event.currentTarget).addClass(videoPlayingClass);
+
+            },
+            pause:  (event) => {
+
+                $(event.currentTarget).removeClass(videoPlayingClass);
+
+            }
+        }
+    );
+
+    // endregion
 
 });

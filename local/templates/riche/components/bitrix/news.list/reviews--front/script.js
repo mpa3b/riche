@@ -10,11 +10,11 @@ $(() => {
             slidesToScroll: 1,
             fade:           false,
             speed:          1000,
-            autoplay:       true,
+            autoplay:       false,
             autoplaySpeed:  5000,
             arrows:         false,
             dots:           false,
-            infinite:       false,
+            infinite:       true,
             mobileFirst:    true,
             responsive:     [
                 {

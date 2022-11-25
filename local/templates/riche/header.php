@@ -26,7 +26,7 @@ Loader::registerAutoLoadClasses(
 
 Breakpoint::addbreakpointsToHead();
 
-// CSS
+// region CSS
 
 $styles = Asset::getInstance();
 
@@ -42,7 +42,9 @@ $styles->addCss(SITE_TEMPLATE_PATH . '/fonts/hicon/style.css');
 
 $styles->addCss(SITE_TEMPLATE_PATH . '/styles/layout.css');
 
-// JS
+//endregion
+
+// region JS
 
 $scripts = Asset::getInstance();
 
@@ -57,6 +59,10 @@ $scripts->addJs(SITE_TEMPLATE_PATH . '/scripts/lazyload.js');
 $scripts->addJs(SITE_TEMPLATE_PATH . '/scripts/common.js');
 $scripts->addJs(SITE_TEMPLATE_PATH . '/scripts/passiveListeners.js');
 
+$scripts->setShowBodyScript(true);
+
+//endregion
+
 $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
 if ($currentDirectoryPath == '/') {
@@ -66,8 +72,7 @@ if ($currentDirectoryPath == '/') {
 }
 else {
 
-    $pageHtmlClasses = str_replace(DIRECTORY_SEPARATOR, '--',
-                                   ltrim(strtolower($currentDirectoryPath), DIRECTORY_SEPARATOR));
+    $pageHtmlClasses = trim(implode(' ', explode('/', $currentDirectoryPath)));
 
 }
 
@@ -85,11 +90,11 @@ $request = Application::getInstance()->getContext()->getRequest();
 
     <?php
 
-    $APPLICATION->ShowMeta("robots", false, true);
-    $APPLICATION->ShowMeta("keywords", false, true); // устаревший тег
+    $APPLICATION->ShowMeta("robots");
+    $APPLICATION->ShowMeta("keywords"); // устаревший тег
 
-    $APPLICATION->ShowMeta("description", false, true);
-    $APPLICATION->ShowLink("canonical", null, true);
+    $APPLICATION->ShowMeta("description");
+    $APPLICATION->ShowLink("canonical");
 
     ?>
 

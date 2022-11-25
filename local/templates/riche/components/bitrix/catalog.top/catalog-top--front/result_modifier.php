@@ -74,7 +74,8 @@ $rSections = SectionTable::getList(
         ],
         'select' => [
             'ID',
-            'NAME'
+            'NAME',
+            'CODE'
         ],
         'cache'  => [
             'ttl' => $arParams['CACHE_TIME']
@@ -82,4 +83,8 @@ $rSections = SectionTable::getList(
     ]
 );
 
-$arResult['SECTIONS'] = $rSections->fetchAll();
+while ($section = $rSections->fetch()) {
+
+    $arResult['SECTIONS'][$section['ID']] = $section;
+
+}

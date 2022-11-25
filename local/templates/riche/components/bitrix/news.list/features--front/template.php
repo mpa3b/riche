@@ -76,19 +76,19 @@ $frame = $this->createFrame();
 
                                 $tablet = CFile::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 1.75),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 1.5),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 $desktop = CFile::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 2),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 1.5),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 $wide = CFile::ResizeImageGet(
                                     $arItem['DETAIL_PICTURE']['ID'],
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 2),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 1.5),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
@@ -96,41 +96,20 @@ $frame = $this->createFrame();
 
                                 <picture>
 
-                                    <? if ($i == 0) { ?>
+                                    <source data-srcset="<?= $small['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('small'); ?>">
+                                    <source data-srcset="<?= $mobile['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                    <source data-srcset="<?= $tablet['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                    <source data-srcset="<?= $desktop['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                    <source data-srcset="<?= $wide['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                                        <source srcset="<?= $small['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('small'); ?>">
-                                        <source srcset="<?= $mobile['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('mobile'); ?>">
-                                        <source srcset="<?= $tablet['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('tablet'); ?>">
-                                        <source srcset="<?= $desktop['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('desktop'); ?>">
-                                        <source srcset="<?= $wide['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('wide'); ?>">
-
-                                        <img src="<?= $preload['src']; ?>"
-                                             alt="<?= $arItem['NAME']; ?>"
-                                             loading="lazy">
-
-                                    <? } else { ?>
-
-                                        <source data-srcset="<?= $small['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('small'); ?>">
-                                        <source data-srcset="<?= $mobile['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('mobile'); ?>">
-                                        <source data-srcset="<?= $tablet['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('tablet'); ?>">
-                                        <source data-srcset="<?= $desktop['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('desktop'); ?>">
-                                        <source data-srcset="<?= $wide['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('wide'); ?>">
-
-                                        <img data-src="<?= $preload['src']; ?>"
-                                             alt="<?= $arItem['NAME']; ?>"
-                                             loading="lazy">
-
-                                    <? } ?>
+                                    <img data-src="<?= $preload['src']; ?>"
+                                         alt="<?= $arItem['NAME']; ?>"
+                                         loading="lazy">
 
                                 </picture>
 

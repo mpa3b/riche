@@ -15,7 +15,7 @@ $(() => {
                 autoplaySpeed:  5000,
                 arrows:         false,
                 dots:           true,
-                infinite:       false,
+                infinite:       true,
                 mobileFirst:    true,
                 responsive:     [
                     {

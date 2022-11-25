@@ -33,6 +33,13 @@
           height:          100%;
           width:           100%;
 
+          @include Tablet {
+            aspect-ratio: 1;
+          }
+          @include Desktop {
+            aspect-ratio: 1.33;
+          }
+
           &.illustration {
             margin-top: 0;
           }
@@ -43,13 +50,11 @@
       .details {
         position:       absolute;
         z-index:        100;
-        box-sizing: border-box;
+        box-sizing:     border-box;
 
         padding:        var(--offset);
 
         padding-bottom: 25%;
-
-        box-sizing:     border-box;
 
         left:           0;
         top:            0;
@@ -96,7 +101,7 @@
 
     &-slider {
       position: relative;
-      margin:     0 var(--offset--half--negative);
+      margin:   0 var(--offset--half--negative);
 
       &:hover {
 

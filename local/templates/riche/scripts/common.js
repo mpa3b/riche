@@ -109,26 +109,3 @@ $(document).on(
 );
 
 // endregion
-
-// region frame mode debug
-
-BX.ready(
-    function () {
-
-        if (window.frameCacheVars !== undefined) {
-
-            BX.addCustomEvent(
-                "onFrameDataReceived",
-                () => {
-
-                    $(document).trigger('onFrameDataReceived');
-
-                }
-            );
-
-        }
-
-    }
-);
-
-// endregion

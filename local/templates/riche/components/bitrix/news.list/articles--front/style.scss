@@ -41,6 +41,14 @@
 
     }
 
+    &:not(.slick-initialized) {
+
+      .item:not(:first-of-type) {
+        display: none;
+      }
+
+    }
+
   }
 
   .slick {
