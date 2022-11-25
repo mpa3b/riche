@@ -47,7 +47,7 @@ $this->setFrameMode(true);
 
         <div class="wrap">
 
-            <? if (!empty($arResult['SECTIONS'])) { ?>
+            <? if (!empty($arResult['SECTIONS']) && false) { ?>
 
                 <div class="filter">
 

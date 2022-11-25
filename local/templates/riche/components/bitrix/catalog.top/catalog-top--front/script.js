@@ -52,34 +52,6 @@ $(() => {
             }
         );
 
-    // region filter
-
-    let frontCatalogTopFiltered = false;
-
-    $('button.filter-button').on(
-        'click',
-        frontCatalogTop,
-        (event) => {
-
-            let button = $(event.currentTarget),
-                id     = button.data('id');
-
-            console.debug(frontCatalogSlider);
-
-            if (frontCatalogTopFiltered === false) {
-
-                frontCatalogTopFiltered = true;
-
-            } else {
-
-                frontCatalogTopFiltered = false;
-            }
-
-        }
-    );
-
-    // endregion
-
     // region video
 
     const frontCatalogSliderVideo = $('video', frontCatalogSlider),
