@@ -35,19 +35,18 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
     $frame = $this->createFrame();
 
     $frame->setAnimation(false);
-    $frame->setStub('');
 
     ?>
 
     <div class="cta--front">
-
-        <? $frame->begin(); ?>
 
         <div class="wrap">
 
             <h2 hidden>Узнай больше</h2>
 
             <div class="items slider">
+
+                <? $frame->begin(); ?>
 
                 <? foreach ($arResult['ITEMS'] as $arItem) { ?>
 
@@ -98,7 +97,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                                     $tablet = CFile::ResizeImageGet(
                                         $fileId,
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 2, 1),
+                                        Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 2, 1.33),
                                         BX_RESIZE_IMAGE_EXACT
                                     );
 
@@ -166,13 +165,13 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                 <?php } ?>
 
+                <? $frame->beginStub(''); ?>
+
+                <? $frame->end(); ?>
+
             </div>
 
         </div>
-
-        <? $frame->beginStub(''); ?>
-
-        <? $frame->end(); ?>
 
     </div>
 

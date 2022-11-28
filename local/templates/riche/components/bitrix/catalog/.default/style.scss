@@ -8,13 +8,13 @@
 
       .item {
         @include Mobile {
-          flex-basis: 49%;
+          flex-basis: 49.5%;
         }
         @include Tablet {
-          flex-basis: 32.33%;
+          flex-basis: 33.33%;
         }
         @include Desktop {
-          flex-basis: 24.5%;
+          flex-basis: 24.95%;
         }
       }
     }

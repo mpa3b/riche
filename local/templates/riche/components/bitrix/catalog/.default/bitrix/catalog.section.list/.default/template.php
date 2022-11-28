@@ -40,11 +40,11 @@ if (!empty($arResult['SECTIONS'])) {
 
     <nav class="section-list--catalog--default">
 
-        <? $frame->begin(); ?>
-
         <div class="wrap">
 
             <div class="items slider">
+
+                <? $frame->begin(); ?>
 
                 <?php foreach ($arResult['SECTIONS'] as $i => $section) { ?>
 
@@ -129,11 +129,13 @@ if (!empty($arResult['SECTIONS'])) {
 
                 <?php } ?>
 
+                <? $frame->beginStub(); ?>
+
+                <? $frame->end(); ?>
+
             </div>
 
         </div>
-
-        <? $frame->end(); ?>
 
     </nav>
 
