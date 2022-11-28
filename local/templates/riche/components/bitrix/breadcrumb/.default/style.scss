@@ -38,6 +38,7 @@ nav.breadcrumb {
         font-size:    1em;
         margin-left:  var(--offset--half);
         margin-right: var(--offset--half);
+        opacity: var(--opacity);
       }
 
       &:last-of-type {

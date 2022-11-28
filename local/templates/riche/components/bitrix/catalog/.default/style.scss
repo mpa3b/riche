@@ -8,26 +8,41 @@
 
       .item {
         @include Mobile {
-          flex-basis: 50%;
+          flex-basis: 49%;
         }
         @include Tablet {
-          flex-basis: 33%;
+          flex-basis: 32.33%;
         }
         @include Desktop {
-          flex-basis: 25%;
+          flex-basis: 24.5%;
         }
       }
     }
 
     .item {
-
-      position: relative;
+      position:       relative;
+      display:        flex;
+      flex-direction: column;
 
       button.favorite {
         position: absolute;
         right:    var(--offset);
         top:      var(--offset);
         z-index:  100;
+
+        @include Tablet {
+          transition: opacity var(--transition--common);
+          opacity:    0;
+        }
+
+      }
+
+      @include Tablet {
+        &:hover {
+          button.favorite {
+            opacity: 1;
+          }
+        }
       }
 
       .image {
@@ -107,7 +122,7 @@
       }
 
       h3 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       }
 
       .actions {
@@ -118,7 +133,7 @@
         align-items:     center;
         justify-content: space-between;
 
-        margin:          var(--offset--half) 0;
+        margin-top:      auto;
         margin-bottom:   0;
       }
 
