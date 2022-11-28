@@ -20,15 +20,15 @@ use Riche\Units;
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 
-$this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
-$this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
-$this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
-
 $this->setFrameMode(true);
 
-?>
+if (!empty($arResult['ITEMS'])) {
 
-<?php if (!empty($arResult['ITEMS'])) { ?>
+    $this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
+    $this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
+    $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
+
+    ?>
 
     <section class="catalog-top--catalog--slider">
 

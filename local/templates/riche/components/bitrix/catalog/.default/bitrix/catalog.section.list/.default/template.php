@@ -27,6 +27,10 @@ $this->setFrameMode(true);
 
 if (!empty($arResult['SECTIONS'])) {
 
+    $this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
+    $this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
+    $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
+
     $catalogDepthLimit = $arResult["SECTION"]["DEPTH_LEVEL"];
     $currentDepth      = $catalogDepthLimit;
 
@@ -40,7 +44,7 @@ if (!empty($arResult['SECTIONS'])) {
 
         <div class="wrap">
 
-            <div class="items row">
+            <div class="items row slider">
 
                 <?php foreach ($arResult['SECTIONS'] as $i => $section) { ?>
 

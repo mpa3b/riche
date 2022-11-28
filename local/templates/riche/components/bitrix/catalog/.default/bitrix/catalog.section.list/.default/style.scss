@@ -1,3 +1,5 @@
+@import "../../../../../../../base";
+
 .section-list--catalog--default {
 
   .items {
@@ -20,8 +22,8 @@
           top:         var(--offset--2x);
           font-weight: 500;
           font-size:   1.4rem;
-          max-width: 60%;
-          display: block;
+          max-width:   60%;
+          display:     block;
         }
 
         a.link {
