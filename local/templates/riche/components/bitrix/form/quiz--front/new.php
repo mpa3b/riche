@@ -27,7 +27,7 @@ $frame = $this->createFrame();
 
 ?>
 
-<section class="quiz--front">
+<div class="quiz--front">
 
     <? $frame->begin(); ?>
 
@@ -51,4 +51,4 @@ $frame = $this->createFrame();
 
     <? $frame->end(); ?>
 
-</section>
+</div>

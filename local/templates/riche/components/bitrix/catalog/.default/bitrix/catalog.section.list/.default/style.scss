@@ -10,6 +10,10 @@
         border-radius: var(--border-radius);
         overflow:      hidden;
 
+        picture img {
+          aspect-ratio: 1.5;
+        }
+
         .name {
           position:    absolute;
           left:        var(--offset--2x);

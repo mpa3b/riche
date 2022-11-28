@@ -92,34 +92,32 @@ if (!empty($arResult['SECTIONS'])) {
 
                                 <source data-srcset="<?= $small['src']; ?>"
                                         media="<?= Breakpoint::getMedia('small'); ?>">
+
                                 <source data-srcset="<?= $mobile['src']; ?>"
                                         media="<?= Breakpoint::getMedia('mobile'); ?>">
+
                                 <source data-srcset="<?= $tablet['src']; ?>"
                                         media="<?= Breakpoint::getMedia('tablet'); ?>">
+
                                 <source data-srcset="<?= $desktop['src']; ?>"
                                         media="<?= Breakpoint::getMedia('desktop'); ?>">
+
                                 <source data-srcset="<?= $wide['src']; ?>"
                                         media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                                <img
-                                    <? if ($i == 0) { ?>
-                                        loading="eager"
-                                        src="<?= $preload['src']; ?>"
-                                    <? } else { ?>
-                                        loading="lazy"
-                                        data-src="<?= $preload['src']; ?>"
-                                    <? } ?>
-                                        alt="<?= $section['NAME']; ?>">
+                                <img loading="lazy"
+                                     data-src="<?= $preload['src']; ?>"
+                                     alt="<?= $section['NAME']; ?>">
 
                             </picture>
 
                             <span class="name"><?= $section['NAME']; ?></span>
 
+                            <a href="<?= $section['SECTION_PAGE_URL']; ?>" class="link"></a>
+
                             <button class="rounded">
                                 <i class="icon-chevron-right"></i>
                             </button>
-
-                            <a href="<?= $section['SECTION_PAGE_URL']; ?>" class="link"></a>
 
                         </div>
 
