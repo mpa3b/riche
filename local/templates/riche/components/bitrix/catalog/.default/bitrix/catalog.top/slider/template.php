@@ -46,7 +46,8 @@ $this->setFrameMode(true);
                          data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
                          data-id="<?= $arItem['ID']; ?>">
 
-                        <button class="transparent favorite button" data-id="<?= $arItem['ID']; ?>" data-action="favorite">
+                        <button class="transparent favorite button" data-id="<?= $arItem['ID']; ?>"
+                                data-action="favorite">
                             <i class="icon-heart"></i>
                         </button>
 
@@ -144,7 +145,7 @@ $this->setFrameMode(true);
                             </div>
 
                         <?php } ?>
-
+                        
                         <h3>
                             <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
                         </h3>
@@ -202,16 +203,6 @@ $this->setFrameMode(true);
                                     </button>
 
                                 </div>
-
-                            </div>
-
-                        <?php } ?>
-
-                        <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-
-                            <div class="description">
-
-                                <p><?= $arItem['PREVIEW_TEXT']; ?></p>
 
                             </div>
 

@@ -27,7 +27,7 @@ $this->setFrameMode(true);
 
     <?php $frame = $this->createFrame(); ?>
 
-    <section class="catalog-top--catalog--list">
+    <section class="catalog-section--catalog--default" data-id="<?= $arResult['ID'] ?>">
 
         <div class="wrap">
 

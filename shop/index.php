@@ -175,7 +175,7 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
         "SECTION_ADD_TO_BASKET_ACTION"     => "ADD",
         "SECTION_COUNT_ELEMENTS"           => "Y",
         "SECTION_ID_VARIABLE"              => "SECTION_ID",
-        "SECTION_TOP_DEPTH"                => 2,
+        "SECTION_TOP_DEPTH"                => 1,
 
         "SEF_FOLDER"                       => SHOP_ROOT_URL,
         "SEF_MODE"                         => "Y",

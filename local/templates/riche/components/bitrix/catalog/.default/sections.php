@@ -159,6 +159,14 @@ else {
     //}
     ?>
 
+    <? $APPLICATION->IncludeComponent(
+        "bitrix:catalog.section.list",
+        "",
+        $sectionListParams,
+        $component,
+        ($arParams["SHOW_TOP_ELEMENTS"] !== "N" ? ["HIDE_ICONS" => "Y"] : [])
+    ); ?>
+
     <?php if ($arParams['USE_FILTER'] == 'Y') {
 
         $APPLICATION->IncludeComponent(
@@ -277,15 +285,6 @@ else {
         $component,
         ["HIDE_ICONS" => "Y"]
     ); ?>
-
-    <? $APPLICATION->IncludeComponent(
-        "bitrix:catalog.section.list",
-        "",
-        $sectionListParams,
-        $component,
-        ($arParams["SHOW_TOP_ELEMENTS"] !== "N" ? ["HIDE_ICONS" => "Y"] : [])
-    ); ?>
-
 
     <? $APPLICATION->IncludeComponent(
         "bitrix:catalog.top",
