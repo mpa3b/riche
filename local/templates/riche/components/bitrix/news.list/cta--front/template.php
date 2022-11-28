@@ -39,7 +39,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
     ?>
 
-    <section class="cta--front">
+    <div class="cta--front">
 
         <? $frame->begin(); ?>
 
@@ -174,6 +174,6 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
         <? $frame->end(); ?>
 
-    </section>
+    </div>
 
 <?php } ?>

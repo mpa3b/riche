@@ -109,10 +109,10 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
 
         "LINE_ELEMENT_COUNT" => 3,
 
-        "LINK_ELEMENTS_URL"  => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
-        "LINK_IBLOCK_ID"     => "",
-        "LINK_IBLOCK_TYPE"   => "",
-        "LINK_PROPERTY_SID"  => "",
+        "LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
+        "LINK_IBLOCK_ID"    => "",
+        "LINK_IBLOCK_TYPE"  => "",
+        "LINK_PROPERTY_SID" => "",
 
         "LIST_BROWSER_TITLE" => "-",
 
@@ -172,14 +172,14 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
 
         "SECTIONS_SHOW_PARENT_NAME" => "Y",
 
-        "SECTION_ADD_TO_BASKET_ACTION"     => "ADD",
-        "SECTION_COUNT_ELEMENTS"           => "Y",
-        "SECTION_ID_VARIABLE"              => "SECTION_ID",
-        "SECTION_TOP_DEPTH"                => 1,
+        "SECTION_ADD_TO_BASKET_ACTION" => "ADD",
+        "SECTION_COUNT_ELEMENTS"       => "Y",
+        "SECTION_ID_VARIABLE"          => "SECTION_ID",
+        "SECTION_TOP_DEPTH"            => 1,
 
-        "SEF_FOLDER"                       => SHOP_ROOT_URL,
-        "SEF_MODE"                         => "Y",
-        "SEF_URL_TEMPLATES"                => [
+        "SEF_FOLDER"        => SHOP_ROOT_URL,
+        "SEF_MODE"          => "Y",
+        "SEF_URL_TEMPLATES" => [
             "compare"      => "",
             "element"      => "/#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
             "section"      => "/#SECTION_CODE_PATH#/",
@@ -187,55 +187,102 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
             "smart_filter" => ""
         ],
 
-        "SET_LAST_MODIFIED"                => "Y",
-        "SET_STATUS_404"                   => "N",
-        "SET_TITLE"                        => "Y",
+        "SET_LAST_MODIFIED" => "Y",
+        "SET_STATUS_404"    => "N",
+        "SET_TITLE"         => "Y",
 
-        "SHOW_404"                         => "N",
-        "SHOW_DEACTIVATED"                 => "N",
-        "SHOW_DISCOUNT_PERCENT"            => "Y",
-        "SHOW_MAX_QUANTITY"                => "N",
-        "SHOW_OLD_PRICE"                   => "Y",
-        "SHOW_PRICE_COUNT"                 => 1,
-        "SHOW_SKU_DESCRIPTION"             => "N",
-        "SHOW_TOP_ELEMENTS"                => "Y",
+        "SHOW_404"              => "N",
+        "SHOW_DEACTIVATED"      => "N",
+        "SHOW_DISCOUNT_PERCENT" => "Y",
+        "SHOW_MAX_QUANTITY"     => "N",
+        "SHOW_OLD_PRICE"        => "Y",
+        "SHOW_PRICE_COUNT"      => 1,
+        "SHOW_SKU_DESCRIPTION"  => "N",
+        "SHOW_TOP_ELEMENTS"     => "Y",
 
-        "TOP_ADD_TO_BASKET_ACTION"         => "ADD",
-        "TOP_ELEMENT_COUNT"                => 6,
-        "TOP_ELEMENT_SORT_FIELD"           => "sort",
-        "TOP_ELEMENT_SORT_FIELD2"          => "id",
-        "TOP_ELEMENT_SORT_ORDER"           => "asc",
-        "TOP_ELEMENT_SORT_ORDER2"          => "desc",
+        "TOP_ADD_TO_BASKET_ACTION" => "ADD",
+        "TOP_ELEMENT_COUNT"        => 6,
+        "TOP_ELEMENT_SORT_FIELD"   => "sort",
+        "TOP_ELEMENT_SORT_FIELD2"  => "id",
+        "TOP_ELEMENT_SORT_ORDER"   => "asc",
+        "TOP_ELEMENT_SORT_ORDER2"  => "desc",
 
-        "TOP_LINE_ELEMENT_COUNT"           => 3,
-        "TOP_OFFERS_FIELD_CODE"            => ["NAME"],
-        "TOP_OFFERS_LIMIT"                 => 3,
-        "TOP_SHOW_SLIDER"                  => "Y",
+        "TOP_LINE_ELEMENT_COUNT" => 3,
+        "TOP_OFFERS_FIELD_CODE"  => ["NAME"],
+        "TOP_OFFERS_LIMIT"       => 3,
+        "TOP_SHOW_SLIDER"        => "Y",
 
-        "USER_CONSENT"                     => "N",
-        "USER_CONSENT_ID"                  => "0",
-        "USER_CONSENT_IS_CHECKED"          => "Y",
-        "USER_CONSENT_IS_LOADED"           => "N",
-        "USE_BIG_DATA"                     => "Y",
+        "USER_CONSENT"            => "N",
+        "USER_CONSENT_ID"         => "0",
+        "USER_CONSENT_IS_CHECKED" => "Y",
+        "USER_CONSENT_IS_LOADED"  => "N",
+        "USE_BIG_DATA"            => "Y",
 
-        "USE_COMPARE"                      => "N",
-        "USE_ELEMENT_COUNTER"              => "Y",
-        "USE_ENHANCED_ECOMMERCE"           => "Y",
+        "USE_COMPARE"            => "N",
+        "USE_ELEMENT_COUNTER"    => "Y",
+        "USE_ENHANCED_ECOMMERCE" => "Y",
 
-        "USE_FILTER"                       => "N",
+        "USE_FILTER" => "N",
 
-        "USE_GIFTS_DETAIL"                 => "Y",
-        "USE_GIFTS_MAIN_PR_SECTION_LIST"   => "Y",
-        "USE_GIFTS_SECTION"                => "Y",
+        "USE_GIFTS_DETAIL"               => "Y",
+        "USE_GIFTS_MAIN_PR_SECTION_LIST" => "Y",
+        "USE_GIFTS_SECTION"              => "Y",
 
-        "USE_MAIN_ELEMENT_SECTION"         => "Y",
+        "USE_MAIN_ELEMENT_SECTION" => "Y",
 
-        "USE_PRICE_COUNT"                  => "N",
-        "USE_PRODUCT_QUANTITY"             => "N",
+        "USE_PRICE_COUNT"      => "N",
+        "USE_PRODUCT_QUANTITY" => "N",
 
-        "USE_SALE_BESTSELLERS"             => "Y",
+        "USE_SALE_BESTSELLERS" => "Y",
 
-        "USE_STORE"                        => "N"
+        "USE_STORE" => "N"
+    ]
+); ?>
+
+<?php $APPLICATION->IncludeComponent(
+    'bitrix:news.list',
+    'cta--front',
+    [
+        "IBLOCK_TYPE" => IblockTools::find('CONTENT', 'CTA')->type(),
+        "IBLOCK_ID"   => IblockTools::find('CONTENT', 'CTA')->id(),
+        "NEWS_COUNT"  => 3,
+        "SORT_ORDER2" => "ASC",
+
+        "SORT_BY1"    => "ACTIVE_FROM",
+        "SORT_ORDER1" => "DESC",
+        "SORT_BY2"    => "SORT",
+
+        "CHECK_DATES" => "Y",
+
+        "FILTER_NAME"   => "",
+        "FIELD_CODE"    => ["ID", "PREVIEW_TEXT", "DETAIL_TEXT", "DETAIL_PICTURE"],
+        "PROPERTY_CODE" => ["ILLUSTRATION", "BUTTON_TEXT", "BUTTON_LINK"],
+
+        "ACTIVE_DATE_FORMAT" => "j F",
+
+        "SET_TITLE"            => "N",
+        "SET_BROWSER_TITLE"    => "N",
+        "SET_META_KEYWORDS"    => "N",
+        "SET_META_DESCRIPTION" => "N",
+        "SET_LAST_MODIFIED"    => "N",
+
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+
+        "ADD_SECTIONS_CHAIN" => "N",
+
+        "CACHE_TYPE"   => "A",
+        "CACHE_TIME"   => CACHE_TTL,
+        "CACHE_FILTER" => "Y",
+        "CACHE_GROUPS" => "Y",
+
+        "AJAX_MODE"              => "N",
+        "AJAX_OPTION_JUMP"       => "N",
+        "AJAX_OPTION_STYLE"      => "N",
+        "AJAX_OPTION_HISTORY"    => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
     ]
 ); ?>
 

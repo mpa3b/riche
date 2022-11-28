@@ -19,24 +19,6 @@ $footerFrame->setStub('');
 
 </main>
 
-<? $APPLICATION->IncludeComponent(
-    "bitrix:main.include",
-    "aside--wrap",
-    [
-        "AREA_FILE_SHOW"      => "sect",
-        "AREA_FILE_SUFFIX"    => "footer",
-        "EDIT_TEMPLATE"       => "",
-        "AREA_FILE_RECURSIVE" => "Y",
-
-        "COMPOSITE_FRAME_MODE" => "A",
-        "COMPOSITE_FRAME_TYPE" => "AUTO"
-    ],
-    false,
-    [
-        "HIDE_ICONS" => "Y",
-    ]
-); ?>
-
 <footer id="page--footer">
 
     <? $footerFrame->startDynamicArea(); ?>

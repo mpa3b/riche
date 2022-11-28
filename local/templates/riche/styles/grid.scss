@@ -106,7 +106,7 @@
   }
 
   .grid {
-    flex-wrap:      wrap;
+    flex-wrap: wrap;
 
     @each $code, $width in $units {
 
