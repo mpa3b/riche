@@ -18,12 +18,13 @@
 
         .name {
           position:    absolute;
-          left:        var(--offset--2x);
-          top:         var(--offset--2x);
+          left:        var(--offset);
+          top:         var(--offset);
           font-weight: 500;
           font-size:   1.4rem;
           max-width:   60%;
           display:     block;
+          line-height: 1.1;
         }
 
         a.link {
@@ -37,10 +38,41 @@
 
         button {
           position: absolute;
-          left:     var(--offset--2x);
-          bottom:   var(--offset--2x);
+          left:     var(--offset);
+          bottom:   var(--offset);
         }
 
+      }
+
+    }
+
+    &:not(.slick-initialized) {
+
+      .item:not(:first-of-type) {
+        display: none;
+      }
+
+    }
+
+  }
+
+  .slick {
+
+    &-slider {
+      position: relative;
+      margin:   0 var(--offset--half--negative);
+
+      @include Mobile {
+        margin-right: -75%;
+      }
+
+    }
+
+    &-slide {
+
+      > div {
+        box-sizing: border-box;
+        padding:    0 var(--offset--half);
       }
 
     }

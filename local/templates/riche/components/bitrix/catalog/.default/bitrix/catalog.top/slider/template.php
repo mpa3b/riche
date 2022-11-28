@@ -42,7 +42,7 @@ if (!empty($arResult['ITEMS'])) {
 
                 <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                    <div class="item section--<?= strtolower($arItem['IBLOCK_SECTION_CODE']); ?>"
+                    <div class="item"
                          data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
                          data-id="<?= $arItem['ID']; ?>">
 

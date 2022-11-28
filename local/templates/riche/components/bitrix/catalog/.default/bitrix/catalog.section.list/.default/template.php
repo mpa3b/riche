@@ -44,13 +44,15 @@ if (!empty($arResult['SECTIONS'])) {
 
         <div class="wrap">
 
-            <div class="items row slider">
+            <div class="items slider">
 
                 <?php foreach ($arResult['SECTIONS'] as $i => $section) { ?>
 
                     <div class="item">
 
                         <div class="wrapper" data-id="<?= $section['ID']; ?>">
+
+                            <h3 class="name"><?= $section['NAME']; ?></h3>
 
                             <?
 
@@ -115,13 +117,11 @@ if (!empty($arResult['SECTIONS'])) {
 
                             </picture>
 
-                            <span class="name"><?= $section['NAME']; ?></span>
-
-                            <a href="<?= $section['SECTION_PAGE_URL']; ?>" class="link"></a>
-
                             <button class="rounded">
                                 <i class="icon-chevron-right"></i>
                             </button>
+
+                            <a href="<?= $section['SECTION_PAGE_URL']; ?>" class="link"></a>
 
                         </div>
 

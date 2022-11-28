@@ -197,7 +197,7 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
         "SHOW_MAX_QUANTITY"     => "N",
         "SHOW_OLD_PRICE"        => "Y",
         "SHOW_PRICE_COUNT"      => 1,
-        "SHOW_SKU_DESCRIPTION"  => "N",
+        "SHOW_SKU_DESCRIPTION"  => "Y",
         "SHOW_TOP_ELEMENTS"     => "Y",
 
         "TOP_ADD_TO_BASKET_ACTION" => "ADD",

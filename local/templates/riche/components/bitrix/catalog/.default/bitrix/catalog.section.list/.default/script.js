@@ -1,7 +1,6 @@
 $(() => {
 
     const catalogSectionList = $('.section-list--catalog--default');
-
     const catalogSectionListSlider = $('.slider', catalogSectionList);
 
     catalogSectionListSlider
