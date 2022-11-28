@@ -131,27 +131,23 @@ $this->setFrameMode(true);
 
                         </div>
 
-                        <div class="details">
+                        <?php if (!empty($arItem['REVIEWS'])) { ?>
 
-                            <?php if (!empty($arItem['REVIEWS'])) { ?>
+                            <div class="reviews">
 
-                                <div class="reviews">
+                                <i class="icon-star"></i>
 
-                                    <i class="icon-star"></i>
+                                <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
+                                <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
+                                                                      'отзыв') ?></span>
 
-                                    <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
-                                    <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
-                                                                          'отзыв') ?></span>
+                            </div>
 
-                                </div>
+                        <?php } ?>
 
-                            <?php } ?>
-
-                            <h3>
-                                <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
-                            </h3>
-
-                        </div>
+                        <h3>
+                            <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
+                        </h3>
 
                         <?php if ($arItem['ITEM_PRICES_CAN_BUY'] == true) { ?>
 
@@ -224,6 +220,8 @@ $this->setFrameMode(true);
                     </div>
 
                 <?php } ?>
+
+                <?php $frame->beginStub(); ?>
 
                 <?php $frame->end(); ?>
 

@@ -159,9 +159,9 @@ else {
     //}
     ?>
 
-    <?php if ($arParams['USE_FILTER'] == 'Y') { ?>
+    <?php if ($arParams['USE_FILTER'] == 'Y') {
 
-        <? $APPLICATION->IncludeComponent(
+        $APPLICATION->IncludeComponent(
             "bitrix:catalog.smart.filter",
             "",
             [
@@ -190,9 +190,9 @@ else {
             ],
             $component,
             ['HIDE_ICONS' => 'Y']
-        ); ?>
+        );
 
-    <? } ?>
+    } ?>
 
     <? $APPLICATION->IncludeComponent(
         "bitrix:catalog.top",

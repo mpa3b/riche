@@ -175,6 +175,8 @@ $this->setFrameMode(true);
 
                 <?php } ?>
 
+                <?php $frame->beginStub(); ?>
+
                 <?php $frame->end(); ?>
 
             </div>

@@ -107,24 +107,26 @@
       }
 
       h3 {
-        font-size:  1.4rem;
+        font-size: 1.4rem;
       }
 
       .actions {
         display:         flex;
         flex-direction:  row;
-
         flex-wrap:       nowrap;
-        justify-content: space-between;
-      }
 
-      .prices {
-        margin: var(--offset--half) 0;
+        align-items:     center;
+        justify-content: space-between;
+
+        margin:          var(--offset--half) 0;
+        margin-bottom:   0;
       }
 
       .price {
         font-size:   1.2rem;
-        font-weight: bold;
+        font-weight: 500;
+
+        white-space: nowrap;
 
         &.old {
           color: var(--color--gray--dark);
@@ -137,7 +139,19 @@
       }
 
       .description {
-        margin-top: var(--offset);
+        margin-top: var(--offset--half);
+      }
+
+      .controls {
+        display:         flex;
+        flex-direction:  row;
+        flex-wrap:       nowrap;
+        justify-content: flex-end;
+
+        > * {
+          margin-left: var(--offset--half);
+        }
+
       }
 
     }

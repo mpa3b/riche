@@ -5,6 +5,14 @@
 
   .items {
 
+    .item {
+
+      h3 {
+        font-size: 1.4rem;
+      }
+
+    }
+
     &:not(.slick-initialized) {
 
       .item:not(:first-of-type) {

@@ -9,6 +9,14 @@
 
     .item {
 
+      .image {
+        border-radius: var(--border-radius);
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+
     }
 
   }
