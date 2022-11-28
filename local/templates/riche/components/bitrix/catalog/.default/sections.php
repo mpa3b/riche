@@ -20,13 +20,11 @@ use Bitrix\Main\Loader;
 /** @var CBitrixComponent $component */
 
 /**
- *
  * Это корень каталога
  * Здесь должны быть какие-то компоненты.
  * Наверное, список топа товаров, список разделов как минимум.
  * Ну ещё поиск.
  * Пока не знаю, что ещё.
- *
  **/
 
 $arParams['USE_FILTER'] = (isset($arParams['USE_FILTER']) && $arParams['USE_FILTER'] == 'Y' ? 'Y' : 'N');
@@ -133,41 +131,19 @@ else {
 
 ?>
 
-<div class="catalog--default sections">
+<div class="catalog--default sections shop--root">
 
     <?
-    //if ($arParams["USE_COMPARE"] === "Y") {
-    //
-    //    $APPLICATION->IncludeComponent(
-    //        "bitrix:catalog.compare.list",
-    //        "",
-    //        [
-    //            "IBLOCK_TYPE"         => $arParams["IBLOCK_TYPE"],
-    //            "IBLOCK_ID"           => $arParams["IBLOCK_ID"],
-    //            "NAME"                => $arParams["COMPARE_NAME"],
-    //            "DETAIL_URL"          => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["element"],
-    //            "COMPARE_URL"         => $arResult["FOLDER"] . $arResult["URL_TEMPLATES"]["compare"],
-    //            "ACTION_VARIABLE"     => (!empty($arParams["ACTION_VARIABLE"]) ? $arParams["ACTION_VARIABLE"] : "action"),
-    //            "PRODUCT_ID_VARIABLE" => $arParams["PRODUCT_ID_VARIABLE"],
-    //            'POSITION_FIXED'      => isset($arParams['COMPARE_POSITION_FIXED']) ? $arParams['COMPARE_POSITION_FIXED'] : '',
-    //            'POSITION'            => isset($arParams['COMPARE_POSITION']) ? $arParams['COMPARE_POSITION'] : ''
-    //        ],
-    //        $component,
-    //        ["HIDE_ICONS" => "Y"]
-    //    );
-    //
-    //}
-    ?>
 
-    <? $APPLICATION->IncludeComponent(
+    $APPLICATION->IncludeComponent(
         "bitrix:catalog.section.list",
         "",
         $sectionListParams,
         $component,
         ($arParams["SHOW_TOP_ELEMENTS"] !== "N" ? ["HIDE_ICONS" => "Y"] : [])
-    ); ?>
+    );
 
-    <?php if ($arParams['USE_FILTER'] == 'Y') {
+    if ($arParams['USE_FILTER'] == 'Y') {
 
         $APPLICATION->IncludeComponent(
             "bitrix:catalog.smart.filter",
@@ -200,9 +176,9 @@ else {
             ['HIDE_ICONS' => 'Y']
         );
 
-    } ?>
+    }
 
-    <? $APPLICATION->IncludeComponent(
+    $APPLICATION->IncludeComponent(
         "bitrix:catalog.top",
         "slider",
         [
@@ -305,9 +281,9 @@ else {
         ],
         $component,
         ["HIDE_ICONS" => "Y"]
-    ); ?>
+    );
 
-    <? $APPLICATION->IncludeComponent(
+    $APPLICATION->IncludeComponent(
         "bitrix:catalog.top",
         "list",
         [
@@ -399,10 +375,9 @@ else {
         ],
         $component,
         ["HIDE_ICONS" => "Y"]
-    ); ?>
+    );
 
-
-    <? $APPLICATION->IncludeComponent(
+    $APPLICATION->IncludeComponent(
         "bitrix:catalog.products.viewed",
         "viewed-products--slider",
         [

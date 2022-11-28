@@ -41,7 +41,7 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
         "BASKET_URL" => ORDER_URL,
 
         "CACHE_FILTER" => "Y",
-        "CACHE_GROUPS" => "N",
+        "CACHE_GROUPS" => "Y",
         "CACHE_TIME"   => CACHE_TTL,
         "CACHE_TYPE"   => "A",
 
@@ -165,7 +165,7 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
 
         "SEARCH_CHECK_DATES"             => "Y",
         "SEARCH_NO_WORD_LOGIC"           => "N",
-        "SEARCH_PAGE_RESULT_COUNT"       => 12,
+        "SEARCH_PAGE_RESULT_COUNT"       => 6,
         "SEARCH_RESTART"                 => "N",
         "SEARCH_USE_LANGUAGE_GUESS"      => "Y",
         "SEARCH_USE_SEARCH_RESULT_ORDER" => "N",
@@ -184,7 +184,7 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
             "element"      => "/#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
             "section"      => "/#SECTION_CODE_PATH#/",
             "sections"     => "/",
-            "smart_filter" => ""
+            "smart_filter" => "/filter"
         ],
 
         "SET_LAST_MODIFIED" => "Y",
