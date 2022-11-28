@@ -35,11 +35,10 @@
     margin: var(--offset) auto;
   }
   @include Desktop {
-    width: 86%;
+    width: 82%;
   }
-
   @include Wide {
-    width:     74%;
+    width:     68%;
     max-width: 1380px;
   }
 

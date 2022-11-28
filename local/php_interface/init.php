@@ -36,13 +36,3 @@ $eventManager->addEventHandler(
 );
 
 //endregion
-
-//region подчищаем буффер
-
-$eventManager->addEventHandler(
-    'main',
-    'OnEndBufferContent',
-    [Buffer::class, "clean"]
-);
-
-//endregion

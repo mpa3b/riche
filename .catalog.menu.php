@@ -11,7 +11,8 @@ $rSections = SectionTable::getList(
         'filter' => [
             'IBLOCK_ID'     => IblockTools::find('CATALOG', 'PRODUCTS')->id(),
             'ACTIVE'        => 'Y',
-            'GLOBAL_ACTIVE' => 'Y'
+            'GLOBAL_ACTIVE' => 'Y',
+            'DEPTH_LEVEL'   => 1
         ],
         'select' => [
             'ID',

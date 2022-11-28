@@ -177,14 +177,14 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
         "SECTION_ID_VARIABLE"          => "SECTION_ID",
         "SECTION_TOP_DEPTH"            => 1,
 
-        "SEF_FOLDER"        => SHOP_ROOT_URL,
+        "SEF_FOLDER"        => "/shop/",
         "SEF_MODE"          => "Y",
         "SEF_URL_TEMPLATES" => [
             "compare"      => "",
-            "element"      => "/#SECTION_CODE_PATH#/#ELEMENT_CODE#/",
-            "section"      => "/#SECTION_CODE_PATH#/",
-            "sections"     => "/",
-            "smart_filter" => "/filter"
+            "sections"     => "/shop/",
+            "section"      => "#SECTION_CODE_PATH#",
+            "element"      => "#SECTION_CODE_PATH#/#ELEMENT_CODE#",
+            "smart_filter" => ""
         ],
 
         "SET_LAST_MODIFIED" => "Y",
