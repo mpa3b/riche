@@ -1,7 +1,5 @@
 <?
 
-use Bitrix\Main\Page\AssetMode;
-
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
@@ -26,7 +24,6 @@ if (!empty($arResult['ITEMS'])) { ?>
 
         $frame->begin();
 
-        $frame->setAssetMode(AssetMode::ALL);
         $frame->setAnimation(false);
 
         ?>

@@ -211,14 +211,6 @@ $this->setFrameMode(true);
                                            max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
                                 <? } ?>
 
-                                <button class="add button"
-                                        <? if (!$arItem['CAN_BUY']) { ?>disabled<? } ?>
-                                        data-quantity=""
-                                        data-id="<?= $arItem['ID']; ?>"
-                                        data-action="add">
-                                    <i class="icon-plus"></i>
-                                </button>
-
                                 <button class="primary buy button"
                                         data-quantity=""
                                         <? if (!$arItem['CAN_BUY']) { ?>disabled<? } ?>

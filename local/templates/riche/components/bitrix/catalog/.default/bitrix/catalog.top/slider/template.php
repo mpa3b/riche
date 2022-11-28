@@ -145,7 +145,7 @@ $this->setFrameMode(true);
                             </div>
 
                         <?php } ?>
-                        
+
                         <h3>
                             <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
                         </h3>
@@ -185,14 +185,6 @@ $this->setFrameMode(true);
                                                step="1"
                                                max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
                                     <?php } ?>
-
-                                    <button class="add button"
-                                            <?php if (!$arItem['CAN_BUY']) { ?>disabled<?php } ?>
-                                            data-quantity=""
-                                            data-id="<?= $arItem['ID']; ?>"
-                                            data-action="add">
-                                        <i class="icon-plus"></i>
-                                    </button>
 
                                     <button class="primary buy button"
                                             data-quantity=""

@@ -78,7 +78,7 @@ $footerFrame->setStub('');
                             "DELAY"              => "N",
                             "ALLOW_MULTI_SELECT" => "N",
 
-                            "MAX_LEVEL" => 2,
+                            "MAX_LEVEL" => 1,
 
                             "MENU_CACHE_GET_VARS"   => [""],
                             "MENU_CACHE_TIME"       => CACHE_TTL,
@@ -106,7 +106,7 @@ $footerFrame->setStub('');
                             "DELAY"              => "N",
                             "ALLOW_MULTI_SELECT" => "N",
 
-                            "MAX_LEVEL" => 2,
+                            "MAX_LEVEL" => 1,
 
                             "MENU_CACHE_GET_VARS"   => [""],
                             "MENU_CACHE_TIME"       => CACHE_TTL,
@@ -133,7 +133,7 @@ $footerFrame->setStub('');
                             "DELAY"              => "N",
                             "ALLOW_MULTI_SELECT" => "N",
 
-                            "MAX_LEVEL" => 2,
+                            "MAX_LEVEL" => 1,
 
                             "MENU_CACHE_GET_VARS"   => [""],
                             "MENU_CACHE_TIME"       => CACHE_TTL,

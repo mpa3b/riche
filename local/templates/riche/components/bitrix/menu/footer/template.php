@@ -58,7 +58,6 @@ if (!empty($arResult)) { ?>
 
                     <li>
                         <a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
-
                     </li>
 
                 <?php endif; ?>
