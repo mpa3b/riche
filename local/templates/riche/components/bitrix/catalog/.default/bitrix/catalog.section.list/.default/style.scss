@@ -70,13 +70,13 @@
 
     &-track {
 
-      @include Desktop {
-        width: 100% !important;
-
-        .slick-slide {
-          flex-grow: 1;
-        }
-      }
+      //@include Desktop {
+      //  width: 100% !important;
+      //
+      //  .slick-slide {
+      //    flex-grow: 1;
+      //  }
+      //}
 
     }
 
