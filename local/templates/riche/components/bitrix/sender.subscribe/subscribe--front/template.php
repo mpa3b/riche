@@ -27,8 +27,7 @@ $frame = $this->createFrame();
     <div class="wrapper">
 
         <h2>Больше вкусного контента</h2>
-        <p>В наших рассылках.<br>
-            Получи <strong>скидку 10%</strong> на первый заказ на сайте, <strong>50&nbsp;баллов </strong>RICHE в
+        <p>Получи <strong>скидку 10%</strong> на первый заказ на сайте, <strong>50&nbsp;баллов </strong>RICHE в
             личном кабинете и всё это за подписку на наш вкусный и полезный контент.</p>
 
         <form role="form"

@@ -102,6 +102,16 @@
 
       }
 
+      address {
+
+        a[href^="tel"] {
+          display:       inline-block;
+          padding-right: var(--offset--half);
+          font-weight:   500;
+        }
+
+      }
+
     }
 
     h2 {
