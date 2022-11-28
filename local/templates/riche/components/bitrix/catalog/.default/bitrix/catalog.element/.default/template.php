@@ -219,26 +219,26 @@ $frame = $this->createFrame();
 
                 <div class="actions">
 
-                    <?php if ($arParams['USE_QUANTITY']) { ?>
-                        <input type="number"
-                               name="quantity"
-                               step="1"
-                               max="<?= $arResult['PRODUCT']['QUANTITY']; ?>">
-                    <?php } ?>
-
-                    <button class="button"
+                    <button class="share button"
                             data-id="<?= $arResult['ID']; ?>"
                             data-action="share">
                         <i class="icon-share"></i>
                         <span>Поделиться</span>
                     </button>
 
-                    <button class="transparent favorite button"
+                    <button class="favorite button"
                             data-id="<?= $arResult['ID']; ?>"
                             data-action="favorite">
                         <i class="icon-heart"></i>
                         <span>В избранное</span>
                     </button>
+
+                    <?php if ($arParams['USE_QUANTITY']) { ?>
+                        <input type="number"
+                               name="quantity"
+                               step="1"
+                               max="<?= $arResult['PRODUCT']['QUANTITY']; ?>">
+                    <?php } ?>
 
                     <button class="primary buy button"
                             data-quantity=""
