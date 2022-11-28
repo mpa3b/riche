@@ -37,7 +37,7 @@ $this->setFrameMode(true);
 
                 <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                    <div class="item"
+                    <div class="item section--<?= strtolower($arItem['IBLOCK_SECTION_CODE']); ?>"
                          data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
                          data-id="<?= $arItem['ID']; ?>">
 
@@ -148,14 +148,6 @@ $this->setFrameMode(true);
                                                step="1"
                                                max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
                                     <?php } ?>
-
-                                    <button class="add button"
-                                            <?php if (!$arItem['CAN_BUY']) { ?>disabled<?php } ?>
-                                            data-quantity=""
-                                            data-id="<?= $arItem['ID']; ?>"
-                                            data-action="add">
-                                        <i class="icon-plus"></i>
-                                    </button>
 
                                     <button class="primary buy button"
                                             data-quantity=""

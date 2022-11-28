@@ -37,7 +37,7 @@ $this->setFrameMode(true);
 
                 <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                    <div class="item"
+                    <div class="item section--<?= strtolower($arItem['IBLOCK_SECTION_CODE']); ?>"
                          data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
                          data-id="<?= $arItem['ID']; ?>">
 

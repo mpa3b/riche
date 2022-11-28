@@ -35,9 +35,7 @@
                     <img src="<?= $arQuestion["IMAGE"]["SRC"] ?>" width="30" height="30"/>
                 <? endif ?>
 
-                <b><?= $arQuestion["QUESTION"] ?><? if ($arQuestion["REQUIRED"] == "Y") {
-                        echo "<span class='starrequired'>*</span>";
-                    } ?></b><br/><br/>
+                <p><?= $arQuestion["QUESTION"] ?><? if ($arQuestion["REQUIRED"] == "Y") { echo "<span class='starrequired'>*</span>"; } ?></p>
 
                 <? foreach ($arQuestion["ANSWERS"] as $arAnswer): ?>
                     <?
