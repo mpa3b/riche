@@ -1,5 +1,6 @@
 <?
 
+use Bex\Tools\Iblock\IblockTools;
 use Bitrix\Main\Loader;
 
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
@@ -562,3 +563,58 @@ if (!empty($recommendedData)) {
     }
 
 }
+
+global $reviewsFilter;
+
+$reviewsFilter = [
+    'PROPERTY_SKU' => $elementId,
+    'ACTIVE'     => 'Y'
+];
+
+$APPLICATION->IncludeComponent(
+    'bitrix:news.list',
+    'catalog--element--reviews',
+    [
+        "IBLOCK_TYPE" => IblockTools::find('CUSTOMER', 'REVIEWS')->type(),
+        "IBLOCK_ID"   => IblockTools::find('CUSTOMER', 'REVIEWS')->id(),
+        "NEWS_COUNT"  => 0,
+        "SORT_ORDER2" => "ASC",
+
+        "SORT_BY1"    => "ACTIVE_FROM",
+        "SORT_ORDER1" => "DESC",
+        "SORT_BY2"    => "SORT",
+
+        "CHECK_DATES" => "Y",
+
+        "FILTER_NAME"   => "reviewsFilter",
+        "FIELD_CODE"    => ["ID", "NAME", "DETAIL_TEXT", "CREATED_AT"],
+        "PROPERTY_CODE" => ["RATING", "AUTHOR_NAME", "AUTHOR_PICTURE"],
+
+        "ACTIVE_DATE_FORMAT" => "j F",
+
+        "SET_TITLE"            => "N",
+        "SET_BROWSER_TITLE"    => "N",
+        "SET_META_KEYWORDS"    => "N",
+        "SET_META_DESCRIPTION" => "N",
+        "SET_LAST_MODIFIED"    => "N",
+
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+
+        "ADD_SECTIONS_CHAIN" => "N",
+
+        "CACHE_TYPE"   => "A",
+        "CACHE_TIME"   => CACHE_TTL,
+        "CACHE_FILTER" => "Y",
+        "CACHE_GROUPS" => "Y",
+
+        "AJAX_MODE"              => "N",
+        "AJAX_OPTION_JUMP"       => "N",
+        "AJAX_OPTION_STYLE"      => "N",
+        "AJAX_OPTION_HISTORY"    => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
+    ],
+    $component
+);

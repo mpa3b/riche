@@ -235,7 +235,10 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
 
         "USE_SALE_BESTSELLERS" => "Y",
 
-        "USE_STORE" => "N"
+        "USE_STORE" => "Y",
+
+        "REVIEWS_MAX_VOTE" => 5,
+        "REVIEWS_VOTE_NAMES" => [],
     ]
 ); ?>
 

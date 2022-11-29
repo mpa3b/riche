@@ -2,7 +2,9 @@
 
 $.extend(
     {
-        reportCatalogElementViewed: (siteId, productId, parentId) => {
+        reportCatalogElementViewed: (productId, parentId, siteId) => {
+
+            console.debug(productId, parentId, siteId);
 
             $.ajax(
                 {
@@ -20,6 +22,5 @@ $.extend(
         }
     }
 );
-
 
 // endregion

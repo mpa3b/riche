@@ -1,5 +1,76 @@
+@import "../../../../../../../base";
+
 .catalog--default--element--default {
 
+  .image {
+    border-radius: var(--border-radius--2x);
+    overflow:      hidden;
 
+    position:      relative;
+
+    .items {
+
+      &:not(.slick-initialized) {
+
+        & > *:not(:first-of-type) {
+          display: none;
+        }
+
+      }
+
+    }
+
+    video {
+      position: absolute;
+      left:     0;
+      top:      0;
+      width:    100%;
+      height:   100%;
+
+      &.loaded {
+        display: block;
+
+        & + picture {
+          opacity: 0;
+        }
+
+      }
+
+      .items {
+
+        &:not(.slick-initialized) {
+
+          & > *:not(:first-of-type) {
+            display: none;
+          }
+
+        }
+
+      }
+
+    }
+
+    picture {
+      opacity:    1;
+      transition: opacity var(--transition--common);
+
+      img {
+        display: block;
+        width:   100%;
+      }
+
+    }
+
+  }
+
+  .product {
+
+    @include Desktop {
+      .wrapper {
+        padding-left: var(--offset--2x);
+      }
+    }
+
+  }
 
 }
