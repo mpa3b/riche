@@ -31,7 +31,7 @@ $frame = $this->createFrame();
 
 <? if (!empty($arResult['ITEMS'])) { ?>
 
-    <section class="reviews--front">
+    <aside class="reviews--catalog--element--reviews">
 
         <? $frame->begin(); ?>
 
@@ -129,6 +129,6 @@ $frame = $this->createFrame();
 
         <? $frame->end(); ?>
 
-    </section>
+    </aside>
 
 <? } ?>
