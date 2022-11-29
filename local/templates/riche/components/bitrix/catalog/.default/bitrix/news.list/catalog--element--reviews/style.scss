@@ -5,7 +5,6 @@
   overflow: hidden;
 
   .items {
-    margin:     0 var(--offset--half--negative);
     margin-top: var(--offset);
 
     .item {
@@ -111,6 +110,16 @@
     }
 
     &-track {
+
+      @include Tablet {
+        width: 100% !important;
+
+        .slick-slide {
+          flex-grow: 1;
+        }
+
+      }
+
     }
 
     &-slide {

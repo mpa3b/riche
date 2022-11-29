@@ -219,5 +219,3 @@ if (!empty($arResult['ITEMS'])) {
     </section>
 
 <?php } ?>
-
-<?php d($arResult); ?>

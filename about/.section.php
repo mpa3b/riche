@@ -1,5 +1,5 @@
 <?
-$sSectionName    = "Новый раздел";
+$sSectionName    = "О нас";
 $arDirProperties = [
 
 ];
