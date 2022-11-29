@@ -43,19 +43,26 @@
         top:      var(--offset--half);
         z-index:  100;
 
-        @include Tablet {
-          transition: opacity var(--transition--common);
-          opacity:    0;
-        }
 
       }
 
       @include Tablet {
+
+        span.marker,
+        button.favorite {
+          transition: opacity var(--transition--common);
+          opacity:    0;
+        }
+
         &:hover {
+
+          span.marker,
           button.favorite {
             opacity: 1;
           }
+
         }
+
       }
 
       .image {
@@ -120,7 +127,7 @@
 
         i {
           color:        var(--color--green);
-          margin-right: var(--offset--half);
+          margin-right: 0.15em;
         }
 
         .value {

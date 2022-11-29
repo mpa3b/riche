@@ -164,6 +164,14 @@ $this->setFrameMode(true);
 
                         <?php } ?>
 
+                        <?php if(!empty($arItem['PREVIEW_TEXT']) && false) { ?>
+
+                            <div class="description">
+                                <?= $arItem['PREVIEW_TEXT']; ?>
+                            </div>
+
+                        <?php } ?>
+
                     </div>
 
                 <?php } ?>
