@@ -40,8 +40,12 @@
 
     transition: opacity var(--transition--common);
 
-    &[aria-hidden="true"] {
-      opacity: calc(var(--opacity) / 2);
+    @include Mobile {
+
+      &[aria-hidden="true"] {
+        opacity: calc(var(--opacity) / 2);
+      }
+
     }
 
   }

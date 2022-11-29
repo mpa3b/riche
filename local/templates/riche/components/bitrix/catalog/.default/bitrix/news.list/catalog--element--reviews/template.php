@@ -100,23 +100,6 @@ $frame = $this->createFrame();
                             <?= trim($arItem['DETAIL_TEXT']); ?>
                         </div>
 
-                        <? $APPLICATION->IncludeComponent(
-                            "bitrix:iblock.vote",
-                            "",
-                            [
-                                "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-                                "IBLOCK_ID"   => $arParams["IBLOCK_ID"],
-
-                                "ELEMENT_ID"  => $arItem['ID'],
-
-                                "MAX_VOTE"    => $arParams["MAX_VOTE"],
-                                "VOTE_NAMES"  => $arParams["VOTE_NAMES"],
-                                "CACHE_TYPE"  => $arParams["CACHE_TYPE"],
-                                "CACHE_TIME"  => $arParams["CACHE_TIME"],
-                            ],
-                            $component
-                        ); ?>
-
                     </div>
 
                 <?php } ?>

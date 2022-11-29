@@ -2,6 +2,7 @@
 
 use Bex\Tools\Iblock\IblockTools;
 use Bitrix\Main\Loader;
+use Bitrix\Main\ModuleManager;
 
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
@@ -260,8 +261,6 @@ elseif ($obCache->StartDataCache()) {
 
 ?>
 
-<?php d($arResult); ?>
-
 <div class="catalog--default element shop--element">
 
     <?php
@@ -273,34 +272,7 @@ elseif ($obCache->StartDataCache()) {
         $component
     );
 
-    ?>
-
-    <?php
-
-    //    if ($arParams['USE_STORE'] == 'Y' && ModuleManager::isModuleInstalled('catalog')) {
-    //        $APPLICATION->IncludeComponent(
-    //            'bitrix:catalog.store.amount',
-    //            '.default',
-    //            [
-    //                'ELEMENT_ID'                     => $elementId,
-    //                'STORE_PATH'                     => $arParams['STORE_PATH'],
-    //                'CACHE_TYPE'                     => 'A',
-    //                'CACHE_TIME'                     => '36000',
-    //                'MAIN_TITLE'                     => $arParams['MAIN_TITLE'],
-    //                'USE_MIN_AMOUNT'                 => $arParams['USE_MIN_AMOUNT'],
-    //                'MIN_AMOUNT'                     => $arParams['MIN_AMOUNT'],
-    //                'STORES'                         => $arParams['STORES'],
-    //                'SHOW_EMPTY_STORE'               => $arParams['SHOW_EMPTY_STORE'],
-    //                'SHOW_GENERAL_STORE_INFORMATION' => $arParams['SHOW_GENERAL_STORE_INFORMATION'],
-    //                'USER_FIELDS'                    => $arParams['USER_FIELDS'],
-    //                'FIELDS'                         => $arParams['FIELDS']
-    //            ],
-    //            $component,
-    //            ['HIDE_ICONS' => 'Y']
-    //        );
-    //    }
-
-    if (!empty($recommendedData)) {
+    if (!empty($recommendedData) && false) {
 
         if (!empty($recommendedData['IBLOCK_LINK']) || !empty($recommendedData['ALL_LINK'])) {
 
@@ -311,12 +283,13 @@ elseif ($obCache->StartDataCache()) {
                     "IBLOCK_TYPE" => $arParams['IBLOCK_TYPE'],
                     "IBLOCK_ID"   => $arParams['IBLOCK_ID'],
 
-                    "ID" => $arResult['ID'],
+                    "ID" => $elementId,
 
                     "CODE" => $_REQUEST["PRODUCT_CODE"], // ?
 
-                    "PROPERTY_LINK"        => $arParams['LINK'],
-                    "OFFERS_PROPERTY_LINK" => "RECOMMEND",
+                    "PROPERTY_LINK" => $arParams['LINK'],
+
+                    "OFFERS_PROPERTY_LINK" => "CML2_LINK",
 
                     "HIDE_NOT_AVAILABLE" => "N",
 
@@ -339,7 +312,7 @@ elseif ($obCache->StartDataCache()) {
                     "PAGE_ELEMENT_COUNT" => $arParams['TOP_ELEMENT_COUNT'],
                     "LINE_ELEMENT_COUNT" => $arParams['LINE_ELEMENT_COUNT'],
 
-                    "DETAIL_URL" => "", // ?
+                    "DETAIL_URL" => $arParams['DETAIL_URL'], // ?
                     "CACHE_TYPE" => $arParams['CACHE_TYPE'],
                     "CACHE_TIME" => $arParams['CACHE_TIME'],
 
@@ -360,14 +333,16 @@ elseif ($obCache->StartDataCache()) {
                 'bitrix:catalog.section',
                 '',
                 [
-                    'IBLOCK_TYPE'               => $arParams['IBLOCK_TYPE'],
-                    'IBLOCK_ID'                 => $arParams['IBLOCK_ID'],
-                    'SECTION_ID'                => $arResult['VARIABLES']['SECTION_ID'],
-                    'SECTION_CODE'              => $arResult['VARIABLES']['SECTION_CODE'],
-                    'ELEMENT_SORT_FIELD'        => 'shows',
-                    'ELEMENT_SORT_ORDER'        => 'desc',
-                    'ELEMENT_SORT_FIELD2'       => 'sort',
-                    'ELEMENT_SORT_ORDER2'       => 'asc',
+                    'IBLOCK_TYPE'  => $arParams['IBLOCK_TYPE'],
+                    'IBLOCK_ID'    => $arParams['IBLOCK_ID'],
+                    'SECTION_ID'   => $arResult['VARIABLES']['SECTION_ID'],
+                    'SECTION_CODE' => $arResult['VARIABLES']['SECTION_CODE'],
+
+                    'ELEMENT_SORT_FIELD'  => 'shows',
+                    'ELEMENT_SORT_ORDER'  => 'desc',
+                    'ELEMENT_SORT_FIELD2' => 'sort',
+                    'ELEMENT_SORT_ORDER2' => 'asc',
+
                     'PROPERTY_CODE'             => (isset($arParams['LIST_PROPERTY_CODE']) ? $arParams['LIST_PROPERTY_CODE'] : []),
                     'PROPERTY_CODE_MOBILE'      => $arParams['LIST_PROPERTY_CODE_MOBILE'],
                     'INCLUDE_SUBSECTIONS'       => $arParams['INCLUDE_SUBSECTIONS'],
@@ -630,6 +605,31 @@ elseif ($obCache->StartDataCache()) {
         ],
         $component
     );
+
+    if ($arParams['USE_STORE'] == 'Y' && ModuleManager::isModuleInstalled('catalog') && false) {
+
+        $APPLICATION->IncludeComponent(
+            'bitrix:catalog.store.amount',
+            '.default',
+            [
+                'ELEMENT_ID'                     => $elementId,
+                'STORE_PATH'                     => $arParams['STORE_PATH'],
+                'CACHE_TYPE'                     => $arParams['CACHE_TYPE'],
+                'CACHE_TIME'                     => $arParams['CACHE_TIME'],
+                'MAIN_TITLE'                     => $arParams['MAIN_TITLE'],
+                'USE_MIN_AMOUNT'                 => $arParams['USE_MIN_AMOUNT'],
+                'MIN_AMOUNT'                     => $arParams['MIN_AMOUNT'],
+                'STORES'                         => $arParams['STORES'],
+                'SHOW_EMPTY_STORE'               => $arParams['SHOW_EMPTY_STORE'],
+                'SHOW_GENERAL_STORE_INFORMATION' => $arParams['SHOW_GENERAL_STORE_INFORMATION'],
+                'USER_FIELDS'                    => $arParams['USER_FIELDS'],
+                'FIELDS'                         => $arParams['FIELDS']
+            ],
+            $component,
+            ['HIDE_ICONS' => 'Y']
+        );
+
+    }
 
     ?>
 

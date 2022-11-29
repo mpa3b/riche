@@ -21,7 +21,7 @@
           left:        var(--offset);
           top:         var(--offset);
           font-weight: 500;
-          font-size:   1.4rem;
+          font-size:   1.2rem;
           max-width:   60%;
           display:     block;
           line-height: 1.1;
@@ -70,12 +70,13 @@
 
     &-track {
 
-      @include Desktop {
+      @include Tablet {
         width: 100% !important;
 
         .slick-slide {
           flex-grow: 1;
         }
+
       }
 
     }

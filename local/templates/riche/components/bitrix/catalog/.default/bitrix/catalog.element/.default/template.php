@@ -218,10 +218,16 @@ $frame = $this->createFrame();
 
                     <?php } ?>
 
-                    <?php if (!empty($arResult['DESCRIPTION'])) { ?>
+                    <?php if (!empty($arResult['PREVIEW_TEXT'])) { ?>
+
                         <div class="description">
-                            <?php print $arResult['DESCRIPTION']; ?>
+
+                            <h2>Описание</h2>
+
+                            <p><?php print $arResult['PREVIEW_TEXT']; ?></p>
+
                         </div>
+
                     <?php } ?>
 
                     <div class="actions">
@@ -264,39 +270,80 @@ $frame = $this->createFrame();
 
         </div>
 
-        <?php if ($arResult['DISPLAY_PROPERTIES']['USAGE']) { ?>
+        <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']) { ?>
 
             <section class="usage">
-                <?php print $arResult['DISPLAY_PROPERTIES']['USAGE']; ?>
+
+                <div class="wrapper">
+
+                    <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']) { ?>
+
+                        <video muted>
+                            <source data-src="<?= $arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']['VALUE']['path']; ?>">
+                        </video>
+
+                    <?php } ?>
+
+                    <h2>Как использовать</h2>
+
+                    <div class="text">
+                        <?= html_entity_decode($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']['VALUE']['TEXT']); ?>
+                    </div>
+
+                </div>
+
+            </section>
+
+        <?php } ?>
+
+        <?php if ($arResult['DISPLAY_PROPERTIES']['KEY_INGREDIENTS']) { ?>
+
+            <section class="ingredients">
+
+                <h2>Ключевые ингредиенты</h2>
+
+                <ul>
+
+                    <? foreach ($arResult['DISPLAY_PROPERTIES']['KEY_INGREDIENTS']['VALUE'] as $arKeyIngredient) { ?>
+
+                        <li>
+
+                            <h3><?= $arKeyIngredient['NAME']; ?></h3>
+
+                            <p><?= $arKeyIngredient['PREVIEW_TEXT']; ?></p>
+
+                        </li>
+
+                    <? } ?>
+
+                </ul>
+
             </section>
 
         <?php } ?>
 
         <?php if ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']) { ?>
 
-            <section class="ingredients">
+            <section class="contents">
+
+                <h2>Cостав</h2>
+
+                <ul>
+
+                    <? foreach ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['DESCRIPTION'] as $i => $name) { ?>
+                        <li>
+                            <span class="name"><?= $name; ?></span>
+                            <? if ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['VALUE'][$i]) { ?>
+                                <span class="percent"><?= $arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['VALUE'][$i]; ?></span>
+                            <? } ?>
+                        </li>
+                    <? } ?>
+
+                </ul>
 
             </section>
 
         <?php } ?>
-
-        <?php if ($arResult['DISPLAY_PROPERTIES']['CONTENTS']) { ?>
-
-        <section class="contents">
-
-        </section>
-
-        <?php } ?>
-
-        <?php if ($arResult['DISPLAY_PROPERTIES']['REVIEWS']) { ?>
-
-        <div class="reviews">
-
-        </div>
-
-        <?php } ?>
-
-        <?php d($arResult); ?>
 
         <? $frame->beginStub(); ?>
 

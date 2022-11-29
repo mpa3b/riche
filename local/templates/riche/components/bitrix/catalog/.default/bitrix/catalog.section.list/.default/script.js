@@ -13,9 +13,8 @@ $(() => {
                 autoplay:       false,
                 arrows:         false,
                 dots:           false,
-                infinite:       true,
+                infinite:       false,
                 mobileFirst:    true,
-                lazyload:       'progressive',
                 responsive:     [
                     {
                         breakpoint: breakpoint.tablet,
