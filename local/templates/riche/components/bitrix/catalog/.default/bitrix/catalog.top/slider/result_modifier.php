@@ -82,4 +82,18 @@ $rSections = SectionTable::getList(
     ]
 );
 
-$arResult['SECTIONS'] = $rSections->fetchAll();
+
+while ($arSection = $rSections->fetch()) {
+
+    $arResult['SECTIONS'][$arSection['ID']] = [
+        'ID'   => $arSection['ID'],
+        'NAME' => $arSection['NAME'],
+    ];
+
+}
+
+foreach ($arResult['ITEMS'] as &$arItem) {
+
+    $arItem['SECTION_NAME'] = $arResult['SECTIONS'][$arItem['IBLOCK_SECTION_ID']]['NAME'];
+
+}

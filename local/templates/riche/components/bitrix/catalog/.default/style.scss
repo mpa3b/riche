@@ -24,10 +24,23 @@
       display:        flex;
       flex-direction: column;
 
+      .marker {
+        position:         absolute;
+        left:             var(--offset);
+        top:              var(--offset);
+
+        font-size:        0.65rem;
+        z-index:          100;
+
+        padding:          0.25em 0.5em;
+        background-color: var(--color--white);
+        border-radius:    1em;
+      }
+
       button.favorite {
         position: absolute;
-        right:    var(--offset);
-        top:      var(--offset);
+        right:    var(--offset--half);
+        top:      var(--offset--half);
         z-index:  100;
 
         @include Tablet {

@@ -46,6 +46,10 @@ if (!empty($arResult['ITEMS'])) {
                          data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
                          data-id="<?= $arItem['ID']; ?>">
 
+                        <?php if (!empty($arItem['SECTION_NAME'])) { ?>
+                            <span class="section marker"><?= $arItem['SECTION_NAME']; ?></span>
+                        <?php } ?>
+
                         <button class="transparent favorite button" data-id="<?= $arItem['ID']; ?>"
                                 data-action="favorite">
                             <i class="icon-heart"></i>
@@ -215,3 +219,5 @@ if (!empty($arResult['ITEMS'])) {
     </section>
 
 <?php } ?>
+
+<?php d($arResult); ?>
