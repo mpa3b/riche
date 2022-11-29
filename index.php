@@ -254,13 +254,13 @@ $APPLICATION->SetTitle('RICHE');
         "CONVERT_CURRENCY" => "Y",
         "CURRENCY_ID"      => "RUB",
 
-        "DETAIL_URL" => "",
-
-        "ELEMENT_COUNT"       => 32,
+        "ELEMENT_COUNT"       => 12,
         "ELEMENT_SORT_FIELD"  => "sort",
         "ELEMENT_SORT_FIELD2" => "id",
         "ELEMENT_SORT_ORDER"  => "asc",
         "ELEMENT_SORT_ORDER2" => "desc",
+
+        "LINE_ELEMENT_COUNT" => 3,
 
         "FILTER_NAME"               => "", // тут будет фильтр для главной
         "HIDE_NOT_AVAILABLE"        => "L",
@@ -292,8 +292,12 @@ $APPLICATION->SetTitle('RICHE');
         "PROPERTY_CODE_MOBILE" => [],
 
         "RELATIVE_QUANTITY_FACTOR" => 5, // что это?
+
         "SEF_MODE"                 => "Y",
-        "SEF_RULE"                 => "",
+        "SEF_RULE"                 => "/shop/",
+
+        "SECTION_URL" => "/shop/#SECTION_CODE_PATH#",
+        "DETAIL_URL" => "/shop/#SECTION_CODE_PATH#/#CODE#",
 
         "SHOW_DISCOUNT_PERCENT" => "N",
         "SHOW_MAX_QUANTITY"     => "M",
