@@ -130,6 +130,8 @@ else {
 }
 ?>
 
+<?php d($arResult); ?>
+
 <div class="catalog--default section shop--section">
 
     <?php

@@ -168,14 +168,13 @@ class CCustomTypeElementIngredientProportion
     static function GetSettingsHTML($arUserField = false, $arHtmlControl, $bVarsFromForm)
     {
 
+        $iblock_id = "";
+
         if ($bVarsFromForm) {
             $iblock_id = $GLOBALS[$arHtmlControl["NAME"]]["IBLOCK_ID"];
         }
         elseif (is_array($arUserField)) {
             $iblock_id = $arUserField["USER_TYPE_SETTINGS"]["IBLOCK_ID"];
-        }
-        else {
-            $iblock_id = "";
         }
 
         if (Loader::includeModule('iblock')) {
@@ -192,8 +191,7 @@ class CCustomTypeElementIngredientProportion
                     'class="adm-detail-iblock-list"'
                 ) . '
 				</td>
-			</tr>
-			';
+			</tr>';
         }
         else {
             $result = '
@@ -205,8 +203,7 @@ class CCustomTypeElementIngredientProportion
                           $iblock_id
                       ) . '">
 				</td>
-			</tr>
-			';
+			</tr>';
         }
 
         return $result;

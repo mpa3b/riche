@@ -8,6 +8,7 @@ use Bex\Tools\Iblock\IblockTools;
 
 $APPLICATION->SetTitle("Магазин");
 $APPLICATION->SetPageProperty("tags", "каталог, товары");
+$APPLICATION->SetPageProperty("PAGE_DESCRIPTION", "Тут наши вам товары");
 
 ?>
 
@@ -57,7 +58,7 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
         "DETAIL_ADD_TO_BASKET_ACTION"         => ["BUY"],
         "DETAIL_ADD_TO_BASKET_ACTION_PRIMARY" => ["BUY"],
 
-        "DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
+        "DETAIL_CHECK_SECTION_ID_VARIABLE" => "Y",
         "DETAIL_DISPLAY_NAME"              => "Y",
         "DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 
@@ -65,7 +66,7 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
         "DETAIL_META_DESCRIPTION" => "-",
         "DETAIL_META_KEYWORDS"    => "-",
 
-        "DETAIL_OFFERS_FIELD_CODE" => [""],
+        "DETAIL_OFFERS_FIELD_CODE" => ["ID", "NAME"],
 
         "DETAIL_SET_CANONICAL_URL"       => "Y",
         "DETAIL_SET_VIEWED_IN_COMPONENT" => "Y",
@@ -82,7 +83,7 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
 
         "GIFTS_DETAIL_BLOCK_TITLE"        => "Выберите один из подарков",
         "GIFTS_DETAIL_HIDE_BLOCK_TITLE"   => "N",
-        "GIFTS_DETAIL_PAGE_ELEMENT_COUNT" => 3,
+        "GIFTS_DETAIL_PAGE_ELEMENT_COUNT" => 6,
         "GIFTS_DETAIL_TEXT_LABEL_GIFT"    => "Подарок",
 
         "GIFTS_MAIN_PRODUCT_DETAIL_BLOCK_TITLE"        => "Выберите один из товаров, чтобы получить подарок",
@@ -109,10 +110,11 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
 
         "LINE_ELEMENT_COUNT" => 3,
 
+
+        "LINK_PROPERTY_SID" => "RECOMMEND",
         "LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
-        "LINK_IBLOCK_ID"    => "",
-        "LINK_IBLOCK_TYPE"  => "",
-        "LINK_PROPERTY_SID" => "",
+        "LINK_IBLOCK_TYPE"  => IblockTools::find('CATALOG', 'PRODUCTS')->type(),
+        "LINK_IBLOCK_ID"    => IblockTools::find('CATALOG', 'PRODUCTS')->id(),
 
         "LIST_BROWSER_TITLE" => "-",
 
@@ -158,10 +160,10 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
         "PRICE_VAT_SHOW_VALUE"       => "N",
 
         "PRODUCT_DISPLAY_MODE"      => "N",
-        "PRODUCT_ID_VARIABLE"       => "id",
+        "PRODUCT_ID_VARIABLE"       => "product",
         "PRODUCT_PROPS_VARIABLE"    => "prop",
         "PRODUCT_QUANTITY_VARIABLE" => "quantity",
-        "PRODUCT_SUBSCRIPTION"      => "N",
+        "PRODUCT_SUBSCRIPTION"      => "Y",
 
         "SEARCH_CHECK_DATES"             => "Y",
         "SEARCH_NO_WORD_LOGIC"           => "N",
@@ -174,17 +176,19 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
 
         "SECTION_ADD_TO_BASKET_ACTION" => "ADD",
         "SECTION_COUNT_ELEMENTS"       => "Y",
-        "SECTION_ID_VARIABLE"          => "SECTION_ID",
-        "SECTION_TOP_DEPTH"            => 1,
 
-        "SEF_FOLDER"        => "/shop/",
+        "SECTION_TOP_DEPTH" => 1,
+
+        "SECTION_ID_VARIABLE" => "SECTION_ID",
+
         "SEF_MODE"          => "Y",
+        "SEF_FOLDER"        => "/shop/",
         "SEF_URL_TEMPLATES" => [
-            "compare"      => "",
-            "sections"     => "/shop/",
-            "section"      => "#SECTION_CODE_PATH#",
-            "element"      => "#SECTION_CODE_PATH#/#ELEMENT_CODE#",
-            "smart_filter" => ""
+            "sections"     => "/",
+            "compare"      => "/compare/",
+            "smart_filter" => "/filter/",
+            "section"      => "#SECTION_CODE_PATH#/",
+            "element"      => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/"
         ],
 
         "SET_LAST_MODIFIED" => "Y",
@@ -237,7 +241,7 @@ $APPLICATION->SetPageProperty("tags", "каталог, товары");
 
         "USE_STORE" => "Y",
 
-        "REVIEWS_MAX_VOTE" => 5,
+        "REVIEWS_MAX_VOTE"   => 5,
         "REVIEWS_VOTE_NAMES" => [],
     ]
 ); ?>

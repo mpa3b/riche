@@ -25,17 +25,28 @@ ErrorDocument 404 /404.php
     RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
     RewriteRule ^(.*)$ %{REQUEST_SCHEME}://%1/$1 [R=301,L]
 
-    # убираем /index.php в конце алиаса
-    RewriteRule ^(.*)index\.php$ $1 [R=301,L]
-
     # убираем дубли /
-    RewriteCond %{REQUEST_URI} ^(.*)/{2,}(.*)$
-    RewriteRule . %1/%2 [R=301,L]
+    RewriteCond %{REQUEST_URI} ^(.*?)\/{2,}(.*?)$
+    RewriteRule . %1/%2 [L,R=301]
+    RewriteCond %{THE_REQUEST} //
+    RewriteRule .* /$0 [R=301,L]
 
-    # добавляем / в конце алиасов
-    # редирект с «index.php» на папку
+    # убираем /index.php в конце алиаса
+    RewriteCond %{REQUEST_FILENAME} ^(.*)/index\.php$
+    RewriteRule ^(.*)index\.php(.*)$ /$1$2 [R=301,L]
+
+    # добавляем слэш "/" в конце URL адресов
     RewriteCond %{REQUEST_URI} ^(.*)/$
     RewriteRule .* - [L]
+
+    RewriteCond %{ENV:REDIRECT_STATUS} 200
+    RewriteRule .* - [L]
+
+    RewriteCond %{REQUEST_METHOD} =GET
+    RewriteCond %{REQUEST_URI} ^(.*)/index.php$
+    RewriteRule ^(.*)$ %1/ [R=301,L]
+
+    #дальше
 
     RewriteCond %{ENV:REDIRECT_STATUS} 200
     RewriteRule .* - [L]

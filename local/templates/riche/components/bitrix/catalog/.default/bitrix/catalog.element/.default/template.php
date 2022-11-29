@@ -226,6 +226,22 @@ $frame = $this->createFrame();
 
                     <div class="actions">
 
+                        <?php if ($arParams['USE_QUANTITY']) { ?>
+                            <input type="number"
+                                   name="quantity"
+                                   step="1"
+                                   max="<?= $arResult['PRODUCT']['QUANTITY']; ?>">
+                        <?php } ?>
+
+                        <button class="big primary buy button"
+                                data-quantity=""
+                                <?php if (!$arResult['CAN_BUY']) { ?>disabled<?php } ?>
+                                data-id="<?= $arResult['ID']; ?>"
+                                data-action="buy">
+                            <i class="icon-shopping-cart"></i>
+                            <span>Добавить в корзину</span>
+                        </button>
+
                         <button class="share button"
                                 data-id="<?= $arResult['ID']; ?>"
                                 data-action="share">
@@ -238,22 +254,6 @@ $frame = $this->createFrame();
                                 data-action="favorite">
                             <i class="icon-heart"></i>
                             <span>В избранное</span>
-                        </button>
-
-                        <?php if ($arParams['USE_QUANTITY']) { ?>
-                            <input type="number"
-                                   name="quantity"
-                                   step="1"
-                                   max="<?= $arResult['PRODUCT']['QUANTITY']; ?>">
-                        <?php } ?>
-
-                        <button class="primary buy button"
-                                data-quantity=""
-                                <?php if (!$arResult['CAN_BUY']) { ?>disabled<?php } ?>
-                                data-id="<?= $arResult['ID']; ?>"
-                                data-action="buy">
-                            <i class="icon-shopping-cart"></i>
-                            <span>Добавить в корзину</span>
                         </button>
 
                     </div>

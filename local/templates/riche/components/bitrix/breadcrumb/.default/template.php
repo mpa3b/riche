@@ -32,7 +32,16 @@ if (!empty($arResult)) {
         }
         else {
 
-            $strReturn .= '<li>' . $title . '</li>';
+            if (!empty($arParams['PAGE_DESCRIPTION'])) {
+
+                $strReturn .= '<li>' . $title . '<span class="page-description">' . $arParams['PAGE_DESCRIPTION'] . '</span></li>';
+
+            }
+            else {
+
+                $strReturn .= '<li>' . $title . '</li>';
+
+            }
 
         }
 

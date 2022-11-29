@@ -296,7 +296,7 @@ $request = Application::getInstance()->getContext()->getRequest();
                             "START_FROM" => 0,
 
                             "COMPOSITE_FRAME_MODE" => "A",
-                            "COMPOSITE_FRAME_TYPE" => "AUTO",
+                            "COMPOSITE_FRAME_TYPE" => "AUTO"
                         ],
                         false,
                         ["HIDE_ICONS" => "Y"]
