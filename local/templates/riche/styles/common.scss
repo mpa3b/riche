@@ -76,7 +76,7 @@ body {
   font-weight:             normal;
   font-size:               1rem;
 
-  line-height:             1.5;
+  line-height:             1.25;
 
   -webkit-font-smoothing:  subpixel-antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -87,7 +87,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   font-size:   1.2rem;
-  line-height: 1.1;
+  line-height: 1;
 
   &:first-child {
     margin-top: 0;
@@ -228,8 +228,9 @@ button {
   padding-top:      0.8em;
 
   &.big {
-    padding:     0.85em 2em;
-    padding-top: 0.8em;
+    padding:     1.25em 2.2em;
+    padding-top: 1em;
+    font-size:   1.2em;
   }
 
   &.small {
@@ -242,10 +243,10 @@ button {
   border-radius:    var(--border-radius--2x);
 
   font-weight:      bold;
+  line-height:      1.25;
 
   text-align:       center;
   text-decoration:  none;
-  line-height:      1.1;
   white-space:      nowrap;
 
   color:            var(--color--base);
@@ -281,6 +282,10 @@ button {
   &[disabled] {
     cursor:  not-allowed;
     opacity: var(--opacity);
+  }
+
+  i[class^="icon"] {
+    margin-right: 0.35em;
   }
 
 }
@@ -389,7 +394,3 @@ img[loading=lazy] {
 }
 
 // endregion
-
-*:empty {
-  empty: true;
-}

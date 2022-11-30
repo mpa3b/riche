@@ -19,21 +19,3 @@ $(() => {
     );
 
 });
-
-$('button', '.video-wrapper').on(
-    'click',
-    (event) => {
-
-        let button  = $(event.currentTarget),
-            element = button.closest('.video-wrapper'),
-            video   = $('video', element),
-            action  = button.data('action');
-
-        if (action == 'play') {
-
-        } else {
-
-        }
-
-    }
-);

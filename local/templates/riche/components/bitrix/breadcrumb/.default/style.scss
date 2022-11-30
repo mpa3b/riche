@@ -46,10 +46,6 @@ nav.breadcrumb {
       &:last-of-type {
         opacity: var(--opacity);
 
-        @include Mobile {
-          display: none;
-        }
-
         //display:       inline-block;
         //overflow:      hidden;
         //text-overflow: ellipsis;

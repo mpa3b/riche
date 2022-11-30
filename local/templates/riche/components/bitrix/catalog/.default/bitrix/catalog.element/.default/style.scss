@@ -8,6 +8,10 @@
 
   .main {
 
+    @include Tablet {
+      align-items: center;
+    }
+
     .images {
 
       .images {
@@ -71,14 +75,36 @@
 
     }
 
-    .product {
-
+    .wrapper {
+      @include Tablet {
+        padding-left: var(--offset);
+      }
       @include Desktop {
-        .wrapper {
-          padding-left: var(--offset--2x);
-        }
+        padding-left: var(--offset--2x);
+      }
+    }
+
+    .description {
+      margin: var(--offset) 0;
+    }
+
+    .product {
+      display:        flex;
+      flex-direction: row;
+      flex-wrap:      nowrap;
+
+      align-items:    center;
+
+      .prices {
+        font-size:     1.4rem;
+        font-weight:   500;
+        padding-right: var(--offset--2x);
       }
 
+    }
+
+    .buttons {
+      margin: var(--offset) 0;
     }
 
   }
@@ -102,43 +128,6 @@
 
       .video-wrapper {
 
-        @include Tablet {
-
-          position: relative;
-
-          &:hover {
-
-            .controls {
-              opacity: 1;
-            }
-
-          }
-
-          .controls {
-            opacity:         0;
-            transition: opacity var(--transition--common);
-
-            position:        absolute;
-            top:             50%;
-
-            display:         flex;
-            flex-direction:  row;
-            flex-wrap:       nowrap;
-
-            height:          4rem;
-            margin-top:      -2rem;
-
-            width:           100%;
-            align-items:     center;
-            justify-content: center;
-
-            button {
-
-            }
-
-          }
-
-        }
 
       }
 

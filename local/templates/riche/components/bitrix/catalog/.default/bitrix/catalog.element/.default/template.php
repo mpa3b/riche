@@ -1,11 +1,12 @@
 <?php
 
-use Riche\Breakpoint;
-use Riche\Thumb;
-
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
+
+use Riche\Breakpoint;
+use Riche\Thumb;
+use Riche\Units;
 
 /**
  * @global CMain                 $APPLICATION
@@ -205,54 +206,85 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
             </div>
 
-            <div class="product two-fifths">
+            <div class="two-fifths">
 
-                <div class="wrapper">
+                <div class="wrapper column">
 
-                    <?php if (!empty($arResult['ITEM_PRICES'])) { ?>
+                    <?php if ($arResult['REVIEWS']) { ?>
 
-                        <div class="prices">
+                        <div class="reviews">
 
-                            <?php foreach ($arResult['ITEM_PRICES'] as $arPrice) { ?>
+                            <?php for ($i = 1; $i <= $arResult['REVIEWS']['MAX']; $i++) { ?>
+                                <i class="icon-star"></i>
+                            <? } ?>
 
-                                <div class="price <?= strtolower($arPrice['CODE']); ?>">
+                            <i class="icon-star"></i>
 
-                                    <?php if ($arPrice['DISCOUNT'] > 0) { ?>
-                                        <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
-                                        <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                    <?php } else { ?>
-                                        <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                    <?php } ?>
-
-                                </div>
-
-                            <?php } ?>
+                            <span class="value"><?= $arResult['REVIEWS']['MEDIAN']; ?></span>
+                            <span class="count"><?= Units::plural($arResult['REVIEWS']['COUNT'], 'отзыв') ?></span>
 
                         </div>
 
                     <?php } ?>
 
-                    <div class="actions">
+                    <?php if (!empty($arResult['PREVIEW_TEXT'])) { ?>
 
-                        <?php if ($arParams['USE_QUANTITY']) { ?>
+                        <div class="description">
 
-                            <input type="number"
-                                   name="quantity"
-                                   step="1"
-                                   max="<?= $arResult['PRODUCT']['QUANTITY']; ?>">
+                            <p><?php print $arResult['PREVIEW_TEXT']; ?></p>
+
+                        </div>
+
+                    <?php } ?>
+
+                    <div class="product">
+
+                        <?php if (!empty($arResult['ITEM_PRICES'])) { ?>
+
+                            <div class="prices">
+
+                                <?php foreach ($arResult['ITEM_PRICES'] as $arPrice) { ?>
+
+                                    <div class="price <?= strtolower($arPrice['CODE']); ?>">
+
+                                        <?php if ($arPrice['DISCOUNT'] > 0) { ?>
+                                            <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
+                                            <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                        <?php } else { ?>
+                                            <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                        <?php } ?>
+
+                                    </div>
+
+                                <?php } ?>
+
+                            </div>
 
                         <?php } ?>
 
-                        <button class="big primary buy button"
-                                data-quantity=""
-                                <?php if (!$arResult['CAN_BUY']) { ?>disabled<?php } ?>
-                                data-id="<?= $arResult['ID']; ?>"
-                                data-action="buy">
+                        <div class="actions">
 
-                            <i class="icon-shopping-cart"></i>
-                            Добавить в корзину
+                            <?php if ($arParams['USE_QUANTITY']) { ?>
 
-                        </button>
+                                <input type="number"
+                                       name="quantity"
+                                       step="1"
+                                       max="<?= $arResult['PRODUCT']['QUANTITY']; ?>">
+
+                            <?php } ?>
+
+                            <button class="big primary buy button"
+                                    data-quantity=""
+                                    <?php if (!$arResult['CAN_BUY']) { ?>disabled<?php } ?>
+                                    data-id="<?= $arResult['ID']; ?>"
+                                    data-action="buy">
+
+                                <i class="icon-shopping-cart"></i>
+                                Добавить в корзину
+
+                            </button>
+
+                        </div>
 
                     </div>
 
@@ -277,17 +309,6 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                     </div>
 
-                    <?php if (!empty($arResult['PREVIEW_TEXT'])) { ?>
-
-                        <div class="description">
-
-                            <h2>Описание</h2>
-
-                            <p><?php print $arResult['PREVIEW_TEXT']; ?></p>
-
-                        </div>
-
-                    <?php } ?>
 
                 </div>
 
@@ -299,9 +320,9 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
             <?php $howToUseFrame = $this->createFrame(); ?>
 
-            <?php $howToUseFrame->begin(); ?>
-
             <section class="section how-to-use row">
+
+                <?php $howToUseFrame->begin(); ?>
 
                 <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']) { ?>
 
@@ -309,24 +330,11 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                         <div class="video-wrapper">
 
-                            <video muted>
+                            <video id="how-to-use-video" muted>
                                 <source data-src="<?= $arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']['VALUE']['path']; ?>">
                             </video>
 
-                            <div class="controls">
-
-                                <button class="rounded button play" data-action="play">
-                                    <i class="icon-play"></i>
-                                </button>
-
-                                <button class="rounded button pause" data-action="pause" hidden="">
-                                    <i class="icon-pause"></i>
-                                </button>
-
-                            </div>
-
                         </div>
-
 
                     </div>
 
@@ -350,9 +358,9 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                 <?php } ?>
 
-            </section>
+                <?php $howToUseFrame->end(); ?>
 
-            <?php $howToUseFrame->end(); ?>
+            </section>
 
         <?php } ?>
 
@@ -360,9 +368,9 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
             <?php $keyIngredientsFrame = $this->createFrame(); ?>
 
-            <?php $keyIngredientsFrame->begin(); ?>
-
             <section class="section key-ingredients row">
+
+                <?php $keyIngredientsFrame->begin(); ?>
 
                 <div class="whole">
 
@@ -383,9 +391,9 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                 </div>
 
-            </section>
+                <?php $keyIngredientsFrame->end(); ?>
 
-            <?php $keyIngredientsFrame->end(); ?>
+            </section>
 
         <?php } ?>
 
@@ -393,9 +401,9 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
             <?php $ingredientsFrame = $this->createFrame(); ?>
 
-            <?php $ingredientsFrame->begin(); ?>
-
             <section class="section ingredients row">
+
+                <?php $ingredientsFrame->begin(); ?>
 
                 <div class="whole">
 
@@ -414,9 +422,9 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                 </div>
 
-            </section>
+                <?php $ingredientsFrame->end(); ?>
 
-            <?php $ingredientsFrame->end(); ?>
+            </section>
 
         <?php } ?>
 

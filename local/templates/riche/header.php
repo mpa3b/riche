@@ -283,8 +283,6 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             <div class="wrap">
 
-                <h1><?php $APPLICATION->ShowTitle(); ?></h1>
-
                 <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
 
                     <?php $APPLICATION->IncludeComponent(
@@ -303,6 +301,8 @@ $request = Application::getInstance()->getContext()->getRequest();
                     ); ?>
 
                 <?php } ?>
+
+                <h1><?php $APPLICATION->ShowTitle(); ?></h1>
 
             </div>
 
