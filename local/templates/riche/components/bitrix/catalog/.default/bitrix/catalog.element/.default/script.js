@@ -1,9 +1,10 @@
 $(() => {
 
-    let element   = $('.catalog--default--element--default'),
-        elementId = element.data('id'),
-        parentId  = element.data('section'),
-        siteId    = element.data('site');
+    const element = $('.catalog--default--element--default');
+
+    const elementId = element.data('id'),
+          parentId  = element.data('section'),
+          siteId    = element.data('site');
 
     $.ajax(
         {
@@ -17,5 +18,23 @@ $(() => {
             }
         }
     );
+
+    const elementImages = $('.images', element);
+    const elementImagesSlider = $('.slider', elementImages);
+
+    elementImagesSlider
+        .slick(
+            {
+                slidesToShow:   1,
+                slidesToScroll: 1,
+                fade:           true,
+                speed:          500,
+                autoplay:       false,
+                autoplaySpeed:  3000,
+                arrows:         false,
+                dots:           true,
+                infinite:       true
+            }
+        );
 
 });

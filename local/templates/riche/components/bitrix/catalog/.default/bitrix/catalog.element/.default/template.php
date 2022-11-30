@@ -34,13 +34,15 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
     <div class="wrap">
 
+        <?php d($arResult); ?>
+
         <section class="section  main row">
 
             <div class="images three-fifths">
 
                 <div class="slider items">
 
-                    <div class="item">
+                    <div class="detail-picture item">
 
                         <?php
 
@@ -48,43 +50,43 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                         $preload = CFile::ResizeImageGet(
                             $image,
-                            Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 1),
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
                             BX_RESIZE_IMAGE_EXACT
                         );
 
                         $small = CFile::ResizeImageGet(
                             $image,
-                            Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1, 1.25),
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1, 0.75),
                             BX_RESIZE_IMAGE_EXACT
                         );
 
                         $mobile = CFile::ResizeImageGet(
                             $image,
-                            Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1, 1.25),
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1, 0.75),
                             BX_RESIZE_IMAGE_EXACT
                         );
 
                         $tablet = CFile::ResizeImageGet(
                             $image,
-                            Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1, 1.5),
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1, 0.75),
                             BX_RESIZE_IMAGE_EXACT
                         );
 
                         $desktop = CFile::ResizeImageGet(
                             $image,
-                            Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2, 1.75),
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2, 0.75),
                             BX_RESIZE_IMAGE_EXACT
                         );
 
                         $wide = CFile::ResizeImageGet(
                             $image,
-                            Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2, 1.75),
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2, 0.75),
                             BX_RESIZE_IMAGE_EXACT
                         );
 
                         ?>
 
-                        <picture class="detail-picture image">
+                        <picture>
 
                             <source data-srcset="<?= $small['src']; ?>"
                                     media="<?= Breakpoint::getMedia('small'); ?>">
@@ -111,7 +113,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                     <?php if ($arResult['DISPLAY_PROPERTIES']['VIDEO']) { ?>
 
-                        <div class="item">
+                        <div class="video item">
 
                             <video muted loop>
                                 <source data-src="<?= $arResult['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
@@ -129,49 +131,49 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                         <?php foreach ($arResult['DISPLAY_PROPERTIES']['IMAGES']['VALUE'] as $image) { ?>
 
-                            <div class="item">
+                            <div class="images-property item">
 
                                 <?php
 
                                 $preload = CFile::ResizeImageGet(
                                     $image,
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 1),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 $small = CFile::ResizeImageGet(
                                     $image,
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1, 1.25),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1, 0.75),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 $mobile = CFile::ResizeImageGet(
                                     $image,
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1, 1.25),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1, 0.75),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 $tablet = CFile::ResizeImageGet(
                                     $image,
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1, 1.5),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1, 0.75),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 $desktop = CFile::ResizeImageGet(
                                     $image,
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2, 1.75),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2, 0.75),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 $wide = CFile::ResizeImageGet(
                                     $image,
-                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2, 1.75),
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2, 0.75),
                                     BX_RESIZE_IMAGE_EXACT
                                 );
 
                                 ?>
 
-                                <picture class="images-property image">
+                                <picture>
 
                                     <source data-srcset="<?= $small['src']; ?>"
                                             media="<?= Breakpoint::getMedia('small'); ?>">
@@ -204,21 +206,37 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                 </div>
 
+                <button class="prev button transparent">
+                    <i class="icon-chevron-left"></i>
+                </button>
+
+                <button class="next button transparent">
+                    <i class="icon-chevron-right"></i>
+                </button>
+
             </div>
 
             <div class="two-fifths">
 
-                <div class="wrapper column">
+                <div class="wrapper">
+
+                    <h2><?= $arResult['NAME']; ?></h2>
+
+                    <?php if (!empty($arResult['DISPLAY_PROPERTIES']['SHORT_DESCRIPTION']['VALUE'])) { ?>
+                        <div class="description">
+                            <p><?= $arResult['DISPLAY_PROPERTIES']['SHORT_DESCRIPTION']['VALUE']; ?></p>
+                        </div>
+                    <?php } ?>
 
                     <?php if ($arResult['REVIEWS']) { ?>
 
                         <div class="reviews">
 
-                            <?php for ($i = 1; $i <= $arResult['REVIEWS']['MAX']; $i++) { ?>
-                                <i class="icon-star"></i>
-                            <? } ?>
-
-                            <i class="icon-star"></i>
+                            <div class="stars">
+                                <?php for ($i = 1; $i <= $arResult['REVIEWS']['MAX']; $i++) { ?>
+                                    <i class="icon-star"></i>
+                                <? } ?>
+                            </div>
 
                             <span class="value"><?= $arResult['REVIEWS']['MEDIAN']; ?></span>
                             <span class="count"><?= Units::plural($arResult['REVIEWS']['COUNT'], 'отзыв') ?></span>
@@ -226,15 +244,18 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
                         </div>
 
                     <?php } ?>
+                    
+                    <?php if ($arResult['PRODUCT']['AVAILABLE']) { ?>
+                        <div class="available">
+                            <i class="icon-check-circle-1"></i>
+                            <span>в наличии</span>
+                        </div>
+                    <?php } ?>
 
                     <?php if (!empty($arResult['PREVIEW_TEXT'])) { ?>
-
                         <div class="description">
-
-                            <p><?php print $arResult['PREVIEW_TEXT']; ?></p>
-
+                            <p><?= $arResult['PREVIEW_TEXT']; ?></p>
                         </div>
-
                     <?php } ?>
 
                     <div class="product">

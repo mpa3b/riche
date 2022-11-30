@@ -259,7 +259,7 @@ if (isset($arParams['USER_CONSENT_IS_LOADED'])) {
         $component
     );
 
-    if ($arParams['USE_STORE'] == 'Y' && ModuleManager::isModuleInstalled('catalog') && false) {
+    if ($arParams['USE_STORE'] == 'Y' && ModuleManager::isModuleInstalled('catalog')) {
 
         $APPLICATION->IncludeComponent(
             'bitrix:catalog.store.amount',
