@@ -33,7 +33,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
     <div class="wrap">
 
-        <section class="main row">
+        <section class="section  main row">
 
             <div class="images three-fifths">
 
@@ -250,7 +250,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
                                 data-action="buy">
 
                             <i class="icon-shopping-cart"></i>
-                            <span>Добавить в корзину</span>
+                            Добавить в корзину
 
                         </button>
 
@@ -262,7 +262,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
                                 data-action="share">
 
                             <i class="icon-share"></i>
-                            <span>Поделиться</span>
+                            Поделиться
 
                         </button>
 
@@ -271,7 +271,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
                                 data-action="favorite">
 
                             <i class="icon-heart"></i>
-                            <span>В избранное</span>
+                            В избранное
 
                         </button>
 
@@ -301,27 +301,54 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
             <?php $howToUseFrame->begin(); ?>
 
-            <section class="row">
+            <section class="section how-to-use row">
 
                 <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']) { ?>
 
-                    <div class="three-fifths">
+                    <div class="half how-to-use-video">
 
-                        <video muted>
-                            <source data-src="<?= $arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']['VALUE']['path']; ?>">
-                        </video>
+                        <div class="video-wrapper">
+
+                            <video muted>
+                                <source data-src="<?= $arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']['VALUE']['path']; ?>">
+                            </video>
+
+                            <div class="controls">
+
+                                <button class="rounded button play" data-action="play">
+                                    <i class="icon-play"></i>
+                                </button>
+
+                                <button class="rounded button pause" data-action="pause" hidden="">
+                                    <i class="icon-pause"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="half details">
+
+                        <h2>Как использовать</h2>
+
+                        <?= html_entity_decode($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']['VALUE']['TEXT']); ?>
+
+                    </div>
+
+                <?php } else { ?>
+
+                    <div class="whole">
+
+                        <h2>Как использовать</h2>
+
+                        <?= html_entity_decode($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']['VALUE']['TEXT']); ?>
 
                     </div>
 
                 <?php } ?>
-
-                <div class="two-fifths">
-
-                    <h2>Как использовать</h2>
-
-                    <?= html_entity_decode($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']['VALUE']['TEXT']); ?>
-
-                </div>
 
             </section>
 
@@ -335,18 +362,26 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
             <?php $keyIngredientsFrame->begin(); ?>
 
-            <section class="key-ingredients">
+            <section class="section key-ingredients row">
 
-                <h2>Ключевые ингредиенты</h2>
+                <div class="whole">
 
-                <ul>
-                    <?php foreach ($arResult['DISPLAY_PROPERTIES']['KEY_INGREDIENTS']['VALUE'] as $arKeyIngredient) { ?>
-                        <li>
-                            <h3><?= $arKeyIngredient['NAME']; ?></h3>
-                            <p><?= $arKeyIngredient['PREVIEW_TEXT']; ?></p>
-                        </li>
-                    <?php } ?>
-                </ul>
+                    <div class="wrpaper">
+
+                        <h2>Ключевые ингредиенты</h2>
+
+                        <ul>
+                            <?php foreach ($arResult['DISPLAY_PROPERTIES']['KEY_INGREDIENTS']['VALUE'] as $arKeyIngredient) { ?>
+                                <li>
+                                    <h3><?= $arKeyIngredient['NAME']; ?></h3>
+                                    <p><?= $arKeyIngredient['PREVIEW_TEXT']; ?></p>
+                                </li>
+                            <?php } ?>
+                        </ul>
+
+                    </div>
+
+                </div>
 
             </section>
 
@@ -360,20 +395,24 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
             <?php $ingredientsFrame->begin(); ?>
 
-            <section class="ingredients">
+            <section class="section ingredients row">
 
-                <h2>Cостав</h2>
+                <div class="whole">
 
-                <ul>
-                    <?php foreach ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['DESCRIPTION'] as $i => $name) { ?>
-                        <li>
-                            <span class="name"><?= $name; ?></span>
-                            <?php if ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['VALUE'][$i]) { ?>
-                                <span class="percent"><?= $arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['VALUE'][$i]; ?>%</span>
-                            <?php } ?>
-                        </li>
-                    <?php } ?>
-                </ul>
+                    <h2>Cостав</h2>
+
+                    <ul>
+                        <?php foreach ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['DESCRIPTION'] as $i => $name) { ?>
+                            <li>
+                                <span class="name"><?= $name; ?></span>
+                                <?php if ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['VALUE'][$i]) { ?>
+                                    <span class="percent"><?= $arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['VALUE'][$i]; ?>%</span>
+                                <?php } ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+
+                </div>
 
             </section>
 

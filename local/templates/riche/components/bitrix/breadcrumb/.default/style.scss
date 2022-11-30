@@ -1,3 +1,5 @@
+@import "../../../../base";
+
 nav.breadcrumb {
   display:        flex;
   flex-direction: row;
@@ -38,11 +40,22 @@ nav.breadcrumb {
         font-size:    1em;
         margin-left:  0.25em;
         margin-right: 0.25em;
-        opacity: var(--opacity);
+        opacity:      var(--opacity);
       }
 
       &:last-of-type {
         opacity: var(--opacity);
+
+        @include Mobile {
+          display: none;
+        }
+
+        //display:       inline-block;
+        //overflow:      hidden;
+        //text-overflow: ellipsis;
+        //width:         10em;
+        //white-space:   nowrap;
+
       }
 
     }

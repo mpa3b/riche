@@ -140,6 +140,8 @@
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/zverushki.seofilter/install" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/site05.usertypeyesno/install" />
       <excludeFolder url="file://$MODULE_DIR$/local/logs" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/ylab.likes/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/ylab.comments/install" />
       <excludePattern pattern="install" />
       <excludePattern pattern="admin" />
     </content>

@@ -16,16 +16,12 @@ if (!empty($arResult)) {
 
         $title = htmlspecialcharsex($arResult[$index]["TITLE"]);
 
-        $nextRef = ($index < $itemSize - 2 and $arResult[$index + 1]["LINK"] <> "" ?
-                ' itemref="breadcrumbs-item-' . ($index + 1) . '"' : '');
-
         $child = ($index > 0 ? ' itemprop="child"' : '');
 
         if ($arResult[$index]["LINK"] <> "" and $index != $itemSize - 1) {
 
-            $strReturn .= '<li itemtype="//data-vocabulary.org/breadcrumbs/"' . $child . $nextRef . '><a href="' .
-                          $arResult[$index]["LINK"] . '" title="' . $title . '" itemprop="url">' . $title .
-                          '</a>';
+            $strReturn .= '<li itemtype="//data-vocabulary.org/breadcrumbs/"' . $child . '>';
+            $strReturn .= '<a href="' . $arResult[$index]["LINK"] . '" title="' . $title . '" itemprop="url">' . $title . '</a>';
             $strReturn .= '<i class="icon-chevron-right"></i>';
             $strReturn .= '</li>';
 

@@ -55,6 +55,7 @@
     "npm-asset/jquery-visible": "^1.2",
     "npm-asset/js-cookie": "^3.0",
     "npm-asset/normalize-css": "^2.3",
+    "npm-asset/plyr": "^3.7",
     "npm-asset/slick-carousel": "^1.8",
     "npm-asset/vanilla-lazyload": "^17.4",
     "oomphinc/composer-installers-extender": "^2.0",
