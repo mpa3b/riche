@@ -37,4 +37,43 @@ $(() => {
             }
         );
 
+    elementImagesSlider.on(
+        {
+            afterChange:  (event, slick, currentSlide) => {
+
+                let element = slick.$slides[currentSlide],
+                    video   = $('video', element);
+
+                video.trigger('play');
+
+            },
+            beforeChange: (event, slick, currentSlide) => {
+
+                let element = slick.$slides[currentSlide],
+                    video   = $('video', element);
+
+                video.trigger('pause');
+
+            }
+        }
+    );
+
+    $('button.prev', elementImages).on(
+        'click',
+        () => {
+
+            elementImagesSlider.slick('slickPrev');
+
+        }
+    );
+
+    $('button.next', elementImages).on(
+        'click',
+        () => {
+
+            elementImagesSlider.slick('slickNext');
+
+        }
+    );
+
 });

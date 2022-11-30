@@ -34,8 +34,6 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
     <div class="wrap">
 
-        <?php d($arResult); ?>
-
         <section class="section  main row">
 
             <div class="images three-fifths">
@@ -244,7 +242,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
                         </div>
 
                     <?php } ?>
-                    
+
                     <?php if ($arResult['PRODUCT']['AVAILABLE']) { ?>
                         <div class="available">
                             <i class="icon-check-circle-1"></i>
@@ -345,39 +343,128 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                 <?php $howToUseFrame->begin(); ?>
 
-                <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']) { ?>
+                <div class="wrapper">
 
-                    <div class="half how-to-use-video">
+                    <h2>Как использовать</h2>
 
-                        <div class="video-wrapper">
+                    <div class="row">
 
-                            <video id="how-to-use-video" muted>
-                                <source data-src="<?= $arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']['VALUE']['path']; ?>">
-                            </video>
+                        <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']) { ?>
 
-                        </div>
+                            <div class="how-to-use-video third">
+
+                                <div class="video-wrapper">
+
+                                    <video id="how-to-use-video" muted>
+                                        <source data-src="<?= $arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']['VALUE']['path']; ?>">
+                                    </video>
+
+                                </div>
+
+                            </div>
+
+                        <?php } ?>
+
+                        <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']) { ?>
+
+                            <div class="how-to-use third">
+
+                                <ul>
+                                    <?php foreach ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']['DISPLAY_VALUE'] as $howto) { ?>
+                                        <li><?= $howto; ?></li>
+                                    <?php } ?>
+                                </ul>
+
+                            </div>
+
+                        <?php } ?>
+
+                        <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_IMAGES']) { ?>
+
+                            <div class="how-to-use third">
+
+                                <div class="images slide">
+
+                                    <?php foreach ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_IMAGES']['VALUE'] as $image) { ?>
+
+                                        <div class="images-property item">
+
+                                            <?php
+
+                                            $preload = CFile::ResizeImageGet(
+                                                $image,
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
+                                                BX_RESIZE_IMAGE_EXACT
+                                            );
+
+                                            $small = CFile::ResizeImageGet(
+                                                $image,
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1, 0.75),
+                                                BX_RESIZE_IMAGE_EXACT
+                                            );
+
+                                            $mobile = CFile::ResizeImageGet(
+                                                $image,
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1, 0.75),
+                                                BX_RESIZE_IMAGE_EXACT
+                                            );
+
+                                            $tablet = CFile::ResizeImageGet(
+                                                $image,
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1, 0.75),
+                                                BX_RESIZE_IMAGE_EXACT
+                                            );
+
+                                            $desktop = CFile::ResizeImageGet(
+                                                $image,
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2, 0.75),
+                                                BX_RESIZE_IMAGE_EXACT
+                                            );
+
+                                            $wide = CFile::ResizeImageGet(
+                                                $image,
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2, 0.75),
+                                                BX_RESIZE_IMAGE_EXACT
+                                            );
+
+                                            ?>
+
+                                            <picture>
+
+                                                <source data-srcset="<?= $small['src']; ?>"
+                                                        media="<?= Breakpoint::getMedia('small'); ?>">
+
+                                                <source data-srcset="<?= $mobile['src']; ?>"
+                                                        media="<?= Breakpoint::getMedia('mobile'); ?>">
+
+                                                <source data-srcset="<?= $tablet['src']; ?>"
+                                                        media="<?= Breakpoint::getMedia('tablet'); ?>">
+
+                                                <source data-srcset="<?= $desktop['src']; ?>"
+                                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
+
+                                                <source data-srcset="<?= $wide['src']; ?>"
+                                                        media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                                                <img data-src="<?= $preload['src']; ?>"
+                                                     loading="lazy"
+                                                     alt="<?= $arResult['NAME']; ?>">
+
+                                            </picture>
+
+                                        </div>
+
+                                    <?php } ?>
+
+                                </div>
+
+                            </div>
+
+                        <?php } ?>
 
                     </div>
 
-                    <div class="half details">
-
-                        <h2>Как использовать</h2>
-
-                        <?= html_entity_decode($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']['VALUE']['TEXT']); ?>
-
-                    </div>
-
-                <?php } else { ?>
-
-                    <div class="whole">
-
-                        <h2>Как использовать</h2>
-
-                        <?= html_entity_decode($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']['VALUE']['TEXT']); ?>
-
-                    </div>
-
-                <?php } ?>
+                </div>
 
                 <?php $howToUseFrame->end(); ?>
 
