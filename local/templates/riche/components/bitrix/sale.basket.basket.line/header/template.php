@@ -35,13 +35,13 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
     <div class="basket-line--header">
 
-        <a href="<?= $arParams['PATH_TO_BASKET']; ?>?back_url=<?= $APPLICATION->GetCurUri(); ?>"
+        <a href="<?= $arParams['PATH_TO_BASKET']; ?>"
            title="<?= Units::plural($arResult['NUM_PRODUCTS'], 'товар'); ?>"
            class="button transparent">
 
             <? $frame->begin(); ?>
 
-            <i class="icon-shopping-cart"></i>
+            <i class="icon-bag-3"></i>
 
             <? if ($arParams['SHOW_NUM_PRODUCTS'] == "Y") { ?>
                 <span class="count"><? if ($arResult['NUM_PRODUCTS'] > 0) {
@@ -52,7 +52,6 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
             <? $frame->end(); ?>
 
         </a>
-
 
         <? if ($arParams['SHOW_PRODUCTS'] !== 'N') { ?>
 
@@ -74,7 +73,9 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
 
                     <div class="<?= strtolower($code); ?> items">
 
-                        <? foreach ($arCategory as $arItem) {
+                        <? foreach ($arCategory as $arItem) { ?>
+
+                            <?
 
                             $picture_preload = CFile::ResizeImageGet(
                                 $arItem['PREVIEW_PICTURE'],
@@ -181,12 +182,14 @@ if (!$arResult['DISABLE_USE_BASKET']) { ?>
                     </button>
                 </form>
 
-                <? if ($request->isAjaxRequest() && $cartUpdate) {
+                <?
+                if ($request->isAjaxRequest() && $cartUpdate) {
                     die;
                 }
                 else {
                     $dropdownFrame->end();
-                } ?>
+                }
+                ?>
 
             </div>
 

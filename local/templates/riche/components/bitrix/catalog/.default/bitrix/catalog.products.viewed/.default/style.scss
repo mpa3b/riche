@@ -1,0 +1,81 @@
+@import "../../../../../../../base";
+
+.catalog--default--viewed-products--default {
+  overflow: hidden;
+
+  .items {
+
+    .item {
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      .actions {
+        margin-top: auto;
+      }
+
+    }
+
+    &:not(.slick-initialized) {
+
+      .item:not(:first-of-type) {
+        display: none;
+      }
+
+    }
+
+  }
+
+  .slick {
+
+    &-slider {
+      position: relative;
+      margin:   0 var(--offset--negative);
+
+      @include Mobile {
+        margin-right: -75%;
+      }
+
+    }
+
+    &-track {
+
+      @include Tablet {
+        width: 100% !important;
+
+        .slick-slide {
+          flex-grow: 1;
+        }
+      }
+
+    }
+
+    &-list {
+      overflow: visible;
+    }
+
+    &-slide {
+
+      > div {
+        box-sizing: border-box;
+        padding:    0 var(--offset);
+      }
+
+    }
+
+    @include Mobile {
+
+      &-slide {
+        opacity:    calc(var(--opacity) / 2);
+        transition: opacity var(--transition--common);
+      }
+
+      &-current {
+        opacity: 1;
+      }
+
+    }
+
+  }
+
+}

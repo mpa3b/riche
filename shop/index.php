@@ -59,6 +59,7 @@ $APPLICATION->SetPageProperty("PAGE_DESCRIPTION", "Тут наши вам тов
         "DETAIL_ADD_TO_BASKET_ACTION_PRIMARY" => ["BUY"],
 
         "DETAIL_CHECK_SECTION_ID_VARIABLE" => "Y",
+
         "DETAIL_DISPLAY_NAME"              => "Y",
         "DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 
@@ -182,7 +183,7 @@ $APPLICATION->SetPageProperty("PAGE_DESCRIPTION", "Тут наши вам тов
         "SECTION_ID_VARIABLE" => "SECTION_ID",
 
         "SEF_MODE"          => "Y",
-        "SEF_FOLDER"        => "/shop/",
+        "SEF_FOLDER"        => SHOP_ROOT_URL,
         "SEF_URL_TEMPLATES" => [
             "sections"     => "/",
             "compare"      => "/compare/",
@@ -195,7 +196,8 @@ $APPLICATION->SetPageProperty("PAGE_DESCRIPTION", "Тут наши вам тов
         "SET_STATUS_404"    => "N",
         "SET_TITLE"         => "Y",
 
-        "SHOW_404"              => "N",
+        "SHOW_404"              => "Y",
+
         "SHOW_DEACTIVATED"      => "N",
         "SHOW_DISCOUNT_PERCENT" => "Y",
         "SHOW_MAX_QUANTITY"     => "N",
@@ -217,7 +219,7 @@ $APPLICATION->SetPageProperty("PAGE_DESCRIPTION", "Тут наши вам тов
         "TOP_SHOW_SLIDER"        => "Y",
 
         "USER_CONSENT"            => "N",
-        "USER_CONSENT_ID"         => "0",
+        "USER_CONSENT_ID"         => 0,
         "USER_CONSENT_IS_CHECKED" => "Y",
         "USER_CONSENT_IS_LOADED"  => "N",
         "USE_BIG_DATA"            => "Y",

@@ -1,11 +1,11 @@
 <?php
 
-use Riche\Breakpoint;
-use Riche\Thumb;
-
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
     die();
 }
+
+use Riche\Breakpoint;
+use Riche\Thumb;
 
 /**
  * @global CMain                 $APPLICATION
@@ -16,8 +16,6 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
  */
 
 $this->setFrameMode(true);
-
-d($arResult);
 
 if (!empty($arResult['ITEMS'])) {
 

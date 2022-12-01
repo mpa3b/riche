@@ -2,8 +2,8 @@ $(() => {
 
     const element = $('.catalog--default--element--default');
 
-    const elementId = element.data('id'),
-          parentId  = element.data('section'),
+    const elementId = element.data('id'), // вероятно это -- ТП, если есть, или товар.
+          parentId  = element.data('id'), // вероятно, это родитель комплексного товара.
           siteId    = element.data('site');
 
     // region сообщение о просмотре товара в API модуля каталога

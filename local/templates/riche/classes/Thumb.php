@@ -12,12 +12,13 @@ class Thumb
     /**
      * Строка встраиваемого замещающего изображения
      */
-    const PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+    public const PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
     /**
      * Глобальная константа качества сжатия JPEG от 0 до 100
      */
-    private static         $JPEG_QUALITY;
-    private static         $JPEG_QUALITY_PRELOAD;
+    public static int      $JPEG_QUALITY;
+    public static int      $JPEG_QUALITY_PRELOAD;
+
     private static ?string $root;
 
     private function __construct()

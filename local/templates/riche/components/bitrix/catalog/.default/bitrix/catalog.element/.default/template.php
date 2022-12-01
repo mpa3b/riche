@@ -568,5 +568,3 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
     </div>
 
 </article>
-
-<?php d($arResult); ?>
