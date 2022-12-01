@@ -35,7 +35,8 @@
     margin: var(--offset--half) auto;
   }
   @include Desktop {
-    width: 82%;
+    width:  82%;
+    margin: var(--offset) auto;
   }
   @include Wide {
     width:     68%;

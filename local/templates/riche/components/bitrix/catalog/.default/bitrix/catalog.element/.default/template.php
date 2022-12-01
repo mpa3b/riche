@@ -27,347 +27,347 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
 ?>
 
-    <article class="catalog--default--element--default"
-             data-id="<?= $arResult['ID']; ?>"
-             data-section="<?= $arResult['IBLOCK_SECTION_ID']; ?>"
-             data-site="<?= SITE_ID; ?>">
+<article class="catalog--default--element--default"
+         data-id="<?= $arResult['ID']; ?>"
+         data-section="<?= $arResult['IBLOCK_SECTION_ID']; ?>"
+         data-site="<?= SITE_ID; ?>">
 
-        <div class="wrap">
+    <div class="wrap">
 
-            <section class="section  main row">
+        <section class="section  main row">
 
-                <div class="images half">
+            <div class="images half">
 
-                    <div class="slider items">
+                <div class="slider items">
 
-                        <div class="detail-picture item">
+                    <div class="detail-picture item">
 
-                            <?php
+                        <?php
 
-                            $image = $arResult['DETAIL_PICTURE']['ID'];
+                        $image = $arResult['DETAIL_PICTURE']['ID'];
 
-                            $preload = CFile::ResizeImageGet(
-                                $image,
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                        $preload = CFile::ResizeImageGet(
+                            $image,
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
+                            BX_RESIZE_IMAGE_EXACT
+                        );
 
-                            $small = CFile::ResizeImageGet(
-                                $image,
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1, 0.75),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                        $small = CFile::ResizeImageGet(
+                            $image,
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1, 0.75),
+                            BX_RESIZE_IMAGE_EXACT
+                        );
 
-                            $mobile = CFile::ResizeImageGet(
-                                $image,
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1, 0.75),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                        $mobile = CFile::ResizeImageGet(
+                            $image,
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1, 0.75),
+                            BX_RESIZE_IMAGE_EXACT
+                        );
 
-                            $tablet = CFile::ResizeImageGet(
-                                $image,
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1, 0.75),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                        $tablet = CFile::ResizeImageGet(
+                            $image,
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1, 0.75),
+                            BX_RESIZE_IMAGE_EXACT
+                        );
 
-                            $desktop = CFile::ResizeImageGet(
-                                $image,
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2, 0.75),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                        $desktop = CFile::ResizeImageGet(
+                            $image,
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2, 0.75),
+                            BX_RESIZE_IMAGE_EXACT
+                        );
 
-                            $wide = CFile::ResizeImageGet(
-                                $image,
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2, 0.75),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                        $wide = CFile::ResizeImageGet(
+                            $image,
+                            Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2, 0.75),
+                            BX_RESIZE_IMAGE_EXACT
+                        );
 
-                            ?>
+                        ?>
 
-                            <picture>
+                        <picture>
 
-                                <source data-srcset="<?= $small['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('small'); ?>">
+                            <source data-srcset="<?= $small['src']; ?>"
+                                    media="<?= Breakpoint::getMedia('small'); ?>">
 
-                                <source data-srcset="<?= $mobile['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('mobile'); ?>">
+                            <source data-srcset="<?= $mobile['src']; ?>"
+                                    media="<?= Breakpoint::getMedia('mobile'); ?>">
 
-                                <source data-srcset="<?= $tablet['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('tablet'); ?>">
+                            <source data-srcset="<?= $tablet['src']; ?>"
+                                    media="<?= Breakpoint::getMedia('tablet'); ?>">
 
-                                <source data-srcset="<?= $desktop['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
+                            <source data-srcset="<?= $desktop['src']; ?>"
+                                    media="<?= Breakpoint::getMedia('desktop'); ?>">
 
-                                <source data-srcset="<?= $wide['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('wide'); ?>">
+                            <source data-srcset="<?= $wide['src']; ?>"
+                                    media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                                <img loading="lazy"
-                                     data-src="<?= $preload['src']; ?>"
-                                     alt="<?= $arResult['NAME']; ?>">
+                            <img loading="lazy"
+                                 data-src="<?= $preload['src']; ?>"
+                                 alt="<?= $arResult['NAME']; ?>">
 
-                            </picture>
+                        </picture>
+
+                    </div>
+
+                    <?php if ($arResult['DISPLAY_PROPERTIES']['VIDEO']) { ?>
+
+                        <div class="video item">
+
+                            <video muted loop>
+                                <source data-src="<?= $arResult['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                            </video>
 
                         </div>
 
-                        <?php if ($arResult['DISPLAY_PROPERTIES']['VIDEO']) { ?>
+                    <?php } ?>
 
-                            <div class="video item">
+                    <?php if (!empty($arResult['DISPLAY_PROPERTIES']['IMAGES']['VALUE'])) { ?>
 
-                                <video muted loop>
-                                    <source data-src="<?= $arResult['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-                                </video>
+                        <?php $imagesFrame = $this->createFrame(); ?>
+
+                        <?php $imagesFrame->begin(); ?>
+
+                        <?php foreach ($arResult['DISPLAY_PROPERTIES']['IMAGES']['VALUE'] as $image) { ?>
+
+                            <div class="images-property item">
+
+                                <?php
+
+                                $preload = CFile::ResizeImageGet(
+                                    $image,
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
+
+                                $small = CFile::ResizeImageGet(
+                                    $image,
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1, 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
+
+                                $mobile = CFile::ResizeImageGet(
+                                    $image,
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1, 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
+
+                                $tablet = CFile::ResizeImageGet(
+                                    $image,
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1, 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
+
+                                $desktop = CFile::ResizeImageGet(
+                                    $image,
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2, 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
+
+                                $wide = CFile::ResizeImageGet(
+                                    $image,
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2, 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
+
+                                ?>
+
+                                <picture>
+
+                                    <source data-srcset="<?= $small['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('small'); ?>">
+
+                                    <source data-srcset="<?= $mobile['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('mobile'); ?>">
+
+                                    <source data-srcset="<?= $tablet['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('tablet'); ?>">
+
+                                    <source data-srcset="<?= $desktop['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('desktop'); ?>">
+
+                                    <source data-srcset="<?= $wide['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                                    <img loading="lazy"
+                                         data-src="<?= $preload['src']; ?>"
+                                         alt="<?= $arResult['NAME']; ?>">
+
+                                </picture>
 
                             </div>
 
                         <?php } ?>
 
-                        <?php if (!empty($arResult['DISPLAY_PROPERTIES']['IMAGES']['VALUE'])) { ?>
+                        <?php $imagesFrame->end(); ?>
 
-                            <?php $imagesFrame = $this->createFrame(); ?>
+                    <?php } ?>
 
-                            <?php $imagesFrame->begin(); ?>
+                </div>
 
-                            <?php foreach ($arResult['DISPLAY_PROPERTIES']['IMAGES']['VALUE'] as $image) { ?>
+                <button class="prev button transparent">
+                    <i class="icon-chevron-left"></i>
+                </button>
 
-                                <div class="images-property item">
+                <button class="next button transparent">
+                    <i class="icon-chevron-right"></i>
+                </button>
 
-                                    <?php
+            </div>
 
-                                    $preload = CFile::ResizeImageGet(
-                                        $image,
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
-                                        BX_RESIZE_IMAGE_EXACT
-                                    );
+            <div class="half">
 
-                                    $small = CFile::ResizeImageGet(
-                                        $image,
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1, 0.75),
-                                        BX_RESIZE_IMAGE_EXACT
-                                    );
+                <div class="product-description">
 
-                                    $mobile = CFile::ResizeImageGet(
-                                        $image,
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1, 0.75),
-                                        BX_RESIZE_IMAGE_EXACT
-                                    );
+                    <h1><?= $arResult['NAME']; ?></h1>
 
-                                    $tablet = CFile::ResizeImageGet(
-                                        $image,
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1, 0.75),
-                                        BX_RESIZE_IMAGE_EXACT
-                                    );
+                    <?php if (!empty($arResult['DISPLAY_PROPERTIES']['SHORT_DESCRIPTION']['VALUE'])) { ?>
 
-                                    $desktop = CFile::ResizeImageGet(
-                                        $image,
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2, 0.75),
-                                        BX_RESIZE_IMAGE_EXACT
-                                    );
+                        <div class="short-description">
 
-                                    $wide = CFile::ResizeImageGet(
-                                        $image,
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2, 0.75),
-                                        BX_RESIZE_IMAGE_EXACT
-                                    );
+                            <p><?= $arResult['DISPLAY_PROPERTIES']['SHORT_DESCRIPTION']['VALUE']; ?></p>
 
-                                    ?>
+                        </div>
 
-                                    <picture>
+                    <?php } ?>
 
-                                        <source data-srcset="<?= $small['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('small'); ?>">
+                    <?php if ($arResult['REVIEWS']) { ?>
 
-                                        <source data-srcset="<?= $mobile['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('mobile'); ?>">
+                        <div class="reviews">
 
-                                        <source data-srcset="<?= $tablet['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('tablet'); ?>">
+                            <div class="stars">
+                                <?php for ($i = 1; $i <= $arResult['REVIEWS']['MAX']; $i++) { ?>
+                                    <i class="icon-star"></i>
+                                <? } ?>
+                            </div>
 
-                                        <source data-srcset="<?= $desktop['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('desktop'); ?>">
+                            <span class="value"><?= $arResult['REVIEWS']['MEDIAN']; ?></span>
+                            <span class="count"><?= Units::plural($arResult['REVIEWS']['COUNT'], 'отзыв') ?></span>
 
-                                        <source data-srcset="<?= $wide['src']; ?>"
-                                                media="<?= Breakpoint::getMedia('wide'); ?>">
+                        </div>
 
-                                        <img loading="lazy"
-                                             data-src="<?= $preload['src']; ?>"
-                                             alt="<?= $arResult['NAME']; ?>">
+                    <?php } ?>
 
-                                    </picture>
+                    <?php if ($arResult['PRODUCT']['AVAILABLE']) { ?>
+
+                        <div class="available">
+
+                            <i class="icon-check-circle-1"></i>
+                            <span>в наличии</span>
+
+                        </div>
+
+                    <?php } ?>
+
+                    <?php if (!empty($arResult['PREVIEW_TEXT'])) { ?>
+
+                        <div class="description">
+                            <p><?= $arResult['PREVIEW_TEXT']; ?></p>
+                        </div>
+
+                    <?php } ?>
+
+                    <?php if (!empty($arResult['CAN_BUY'])) { ?>
+
+                        <div class="product">
+
+                            <?php if ($arResult['ITEM_PRICES_CAN_BUY']) { ?>
+
+                                <div class="prices">
+
+                                    <?php foreach ($arResult['ITEM_PRICES'] as $arPrice) { ?>
+
+                                        <div class="price <?= strtolower($arPrice['CODE']); ?>">
+
+                                            <?php if ($arPrice['DISCOUNT'] > 0) { ?>
+                                                <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
+                                                <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                            <?php } else { ?>
+                                                <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                            <?php } ?>
+
+                                            <?php if ($arPrice['PERCENT'] !== 0) { ?>
+                                                <span class="percent"><?= $arPrice['PERCENT']; ?></span>
+                                            <?php } ?>
+
+                                        </div>
+
+                                    <?php } ?>
 
                                 </div>
 
                             <?php } ?>
 
-                            <?php $imagesFrame->end(); ?>
+                            <div class="actions">
 
-                        <?php } ?>
+                                <?php if ($arParams['USE_QUANTITY']) { ?>
 
-                    </div>
-
-                    <button class="prev button transparent">
-                        <i class="icon-chevron-left"></i>
-                    </button>
-
-                    <button class="next button transparent">
-                        <i class="icon-chevron-right"></i>
-                    </button>
-
-                </div>
-
-                <div class="half">
-
-                    <div class="product-description">
-
-                        <h1><?= $arResult['NAME']; ?></h1>
-
-                        <?php if (!empty($arResult['DISPLAY_PROPERTIES']['SHORT_DESCRIPTION']['VALUE'])) { ?>
-
-                            <div class="short-description">
-
-                                <p><?= $arResult['DISPLAY_PROPERTIES']['SHORT_DESCRIPTION']['VALUE']; ?></p>
-
-                            </div>
-
-                        <?php } ?>
-
-                        <?php if ($arResult['REVIEWS']) { ?>
-
-                            <div class="reviews">
-
-                                <div class="stars">
-                                    <?php for ($i = 1; $i <= $arResult['REVIEWS']['MAX']; $i++) { ?>
-                                        <i class="icon-star"></i>
-                                    <? } ?>
-                                </div>
-
-                                <span class="value"><?= $arResult['REVIEWS']['MEDIAN']; ?></span>
-                                <span class="count"><?= Units::plural($arResult['REVIEWS']['COUNT'], 'отзыв') ?></span>
-
-                            </div>
-
-                        <?php } ?>
-
-                        <?php if ($arResult['PRODUCT']['AVAILABLE']) { ?>
-
-                            <div class="available">
-
-                                <i class="icon-check-circle-1"></i>
-                                <span>в наличии</span>
-
-                            </div>
-
-                        <?php } ?>
-
-                        <?php if (!empty($arResult['PREVIEW_TEXT'])) { ?>
-
-                            <div class="description">
-                                <p><?= $arResult['PREVIEW_TEXT']; ?></p>
-                            </div>
-
-                        <?php } ?>
-
-                        <?php if (!empty($arResult['CAN_BUY'])) { ?>
-
-                            <div class="product">
-
-                                <?php if ($arResult['ITEM_PRICES_CAN_BUY']) { ?>
-
-                                    <div class="prices">
-
-                                        <?php foreach ($arResult['ITEM_PRICES'] as $arPrice) { ?>
-
-                                            <div class="price <?= strtolower($arPrice['CODE']); ?>">
-
-                                                <?php if ($arPrice['DISCOUNT'] > 0) { ?>
-                                                    <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
-                                                    <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                                <?php } else { ?>
-                                                    <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                                <?php } ?>
-
-                                                <?php if ($arPrice['PERCENT'] !== 0) { ?>
-                                                    <span class="percent"><?= $arPrice['PERCENT']; ?></span>
-                                                <?php } ?>
-
-                                            </div>
-
-                                        <?php } ?>
-
-                                    </div>
+                                    <input type="number"
+                                           name="quantity"
+                                           step="1"
+                                           max="<?= $arResult['PRODUCT']['QUANTITY']; ?>">
 
                                 <?php } ?>
 
-                                <div class="actions">
+                                <button class="big primary buy button"
+                                        data-quantity=""
+                                        <?php if (!$arResult['CAN_BUY']) { ?>disabled<?php } ?>
+                                        data-id="<?= $arResult['ID']; ?>"
+                                        data-action="buy">
 
-                                    <?php if ($arParams['USE_QUANTITY']) { ?>
+                                    <i class="icon-shopping-cart"></i>
+                                    Добавить в корзину
 
-                                        <input type="number"
-                                               name="quantity"
-                                               step="1"
-                                               max="<?= $arResult['PRODUCT']['QUANTITY']; ?>">
-
-                                    <?php } ?>
-
-                                    <button class="big primary buy button"
-                                            data-quantity=""
-                                            <?php if (!$arResult['CAN_BUY']) { ?>disabled<?php } ?>
-                                            data-id="<?= $arResult['ID']; ?>"
-                                            data-action="buy">
-
-                                        <i class="icon-shopping-cart"></i>
-                                        Добавить в корзину
-
-                                    </button>
-
-                                </div>
+                                </button>
 
                             </div>
 
-                        <?php } ?>
-
-                        <div class="buttons">
-
-                            <button class="share button"
-                                    data-action="share">
-
-                                <i class="icon-share"></i>
-                                Поделиться
-
-                            </button>
-
-                            <button class="favorite button"
-                                    data-id="<?= $arResult['ID']; ?>"
-                                    data-action="favorite">
-
-                                <i class="icon-heart"></i>
-                                В избранное
-
-                            </button>
-
                         </div>
 
+                    <?php } ?>
+
+                    <div class="buttons">
+
+                        <button class="share button"
+                                data-action="share">
+
+                            <i class="icon-share"></i>
+                            Поделиться
+
+                        </button>
+
+                        <button class="favorite button"
+                                data-id="<?= $arResult['ID']; ?>"
+                                data-action="favorite">
+
+                            <i class="icon-heart"></i>
+                            В избранное
+
+                        </button>
 
                     </div>
 
+
                 </div>
 
-            </section>
+            </div>
 
-            <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']) { ?>
+        </section>
 
-                <?php $howToUseFrame = $this->createFrame(); ?>
+        <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']) { ?>
 
-                <section class="section how-to-use row">
+            <?php $howToUseFrame = $this->createFrame(); ?>
 
-                    <?php $howToUseFrame->begin(); ?>
+            <section class="section how-to-use row">
 
-                    <div class="whole">
+                <?php $howToUseFrame->begin(); ?>
 
-                        <h2>Как использовать</h2>
+                <div class="whole">
 
-                        <div class="row">
+                    <h2>Как использовать</h2>
 
-                            <?php /*
+                    <div class="row">
+
+                        <?php /*
 
                             <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']) { ?>
 
@@ -387,186 +387,184 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                             */ ?>
 
-                            <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']) { ?>
+                        <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']) { ?>
 
-                                <div class="how-to-use--instruction half">
+                            <div class="how-to-use--instruction half">
 
-                                    <div class="slider items">
+                                <div class="slider items">
 
-                                        <?php foreach ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']['DISPLAY_VALUE'] as $howto) { ?>
-                                            <div class="item"><?= $howto; ?></div>
-                                        <?php } ?>
-
-                                    </div>
+                                    <?php foreach ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE']['DISPLAY_VALUE'] as $howto) { ?>
+                                        <div class="item"><?= $howto; ?></div>
+                                    <?php } ?>
 
                                 </div>
 
-                            <?php } ?>
+                            </div>
 
-                            <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_IMAGES']) { ?>
+                        <?php } ?>
 
-                                <div class="how-to-use--images half">
+                        <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_IMAGES']) { ?>
 
-                                    <div class="images slider items">
+                            <div class="how-to-use--images half">
 
-                                        <?php foreach ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_IMAGES']['VALUE'] as $image) { ?>
+                                <div class="images slider items">
 
-                                            <div class="item">
+                                    <?php foreach ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_IMAGES']['VALUE'] as $image) { ?>
 
-                                                <?php
+                                        <div class="item">
 
-                                                $preload = CFile::ResizeImageGet(
-                                                    $image,
-                                                    Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
-                                                    BX_RESIZE_IMAGE_EXACT
-                                                );
+                                            <?php
 
-                                                $small = CFile::ResizeImageGet(
-                                                    $image,
-                                                    Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1,
-                                                                              0.75),
-                                                    BX_RESIZE_IMAGE_EXACT
-                                                );
+                                            $preload = CFile::ResizeImageGet(
+                                                $image,
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
+                                                BX_RESIZE_IMAGE_EXACT
+                                            );
 
-                                                $mobile = CFile::ResizeImageGet(
-                                                    $image,
-                                                    Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1,
-                                                                              0.75),
-                                                    BX_RESIZE_IMAGE_EXACT
-                                                );
+                                            $small = CFile::ResizeImageGet(
+                                                $image,
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1,
+                                                                          0.75),
+                                                BX_RESIZE_IMAGE_EXACT
+                                            );
 
-                                                $tablet = CFile::ResizeImageGet(
-                                                    $image,
-                                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1,
-                                                                              0.75),
-                                                    BX_RESIZE_IMAGE_EXACT
-                                                );
+                                            $mobile = CFile::ResizeImageGet(
+                                                $image,
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1,
+                                                                          0.75),
+                                                BX_RESIZE_IMAGE_EXACT
+                                            );
 
-                                                $desktop = CFile::ResizeImageGet(
-                                                    $image,
-                                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2,
-                                                                              0.75),
-                                                    BX_RESIZE_IMAGE_EXACT
-                                                );
+                                            $tablet = CFile::ResizeImageGet(
+                                                $image,
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1,
+                                                                          0.75),
+                                                BX_RESIZE_IMAGE_EXACT
+                                            );
 
-                                                $wide = CFile::ResizeImageGet(
-                                                    $image,
-                                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2,
-                                                                              0.75),
-                                                    BX_RESIZE_IMAGE_EXACT
-                                                );
+                                            $desktop = CFile::ResizeImageGet(
+                                                $image,
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2,
+                                                                          0.75),
+                                                BX_RESIZE_IMAGE_EXACT
+                                            );
 
-                                                ?>
+                                            $wide = CFile::ResizeImageGet(
+                                                $image,
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2,
+                                                                          0.75),
+                                                BX_RESIZE_IMAGE_EXACT
+                                            );
 
-                                                <picture>
+                                            ?>
 
-                                                    <source data-srcset="<?= $small['src']; ?>"
-                                                            media="<?= Breakpoint::getMedia('small'); ?>">
+                                            <picture>
 
-                                                    <source data-srcset="<?= $mobile['src']; ?>"
-                                                            media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                                <source data-srcset="<?= $small['src']; ?>"
+                                                        media="<?= Breakpoint::getMedia('small'); ?>">
 
-                                                    <source data-srcset="<?= $tablet['src']; ?>"
-                                                            media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                                <source data-srcset="<?= $mobile['src']; ?>"
+                                                        media="<?= Breakpoint::getMedia('mobile'); ?>">
 
-                                                    <source data-srcset="<?= $desktop['src']; ?>"
-                                                            media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                                <source data-srcset="<?= $tablet['src']; ?>"
+                                                        media="<?= Breakpoint::getMedia('tablet'); ?>">
 
-                                                    <source data-srcset="<?= $wide['src']; ?>"
-                                                            media="<?= Breakpoint::getMedia('wide'); ?>">
+                                                <source data-srcset="<?= $desktop['src']; ?>"
+                                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
 
-                                                    <img data-src="<?= $preload['src']; ?>"
-                                                         loading="lazy"
-                                                         alt="<?= $arResult['NAME']; ?>">
+                                                <source data-srcset="<?= $wide['src']; ?>"
+                                                        media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                                                </picture>
+                                                <img data-src="<?= $preload['src']; ?>"
+                                                     loading="lazy"
+                                                     alt="<?= $arResult['NAME']; ?>">
 
-                                            </div>
+                                            </picture>
 
-                                        <?php } ?>
+                                        </div>
 
-                                    </div>
+                                    <?php } ?>
 
                                 </div>
 
-                            <?php } ?>
+                            </div>
 
-                        </div>
-
-                    </div>
-
-                    <?php $howToUseFrame->end(); ?>
-
-                </section>
-
-            <?php } ?>
-
-            <?php if ($arResult['DISPLAY_PROPERTIES']['KEY_INGREDIENTS']) { ?>
-
-                <?php $keyIngredientsFrame = $this->createFrame(); ?>
-
-                <section class="section key-ingredients row">
-
-                    <?php $keyIngredientsFrame->begin(); ?>
-
-                    <div class="whole">
-
-                        <div class="wrapper well">
-
-                            <h2>Ключевые ингредиенты</h2>
-
-                            <ul>
-                                <?php foreach ($arResult['DISPLAY_PROPERTIES']['KEY_INGREDIENTS']['VALUE'] as $arKeyIngredient) { ?>
-                                    <li>
-                                        <h3><?= $arKeyIngredient['NAME']; ?></h3>
-                                        <p><?= $arKeyIngredient['PREVIEW_TEXT']; ?></p>
-                                    </li>
-                                <?php } ?>
-                            </ul>
-
-                        </div>
+                        <?php } ?>
 
                     </div>
 
-                    <?php $keyIngredientsFrame->end(); ?>
+                </div>
 
-                </section>
+                <?php $howToUseFrame->end(); ?>
 
-            <?php } ?>
+            </section>
 
-            <?php if ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']) { ?>
+        <?php } ?>
 
-                <?php $ingredientsFrame = $this->createFrame(); ?>
+        <?php if ($arResult['DISPLAY_PROPERTIES']['KEY_INGREDIENTS']) { ?>
 
-                <section class="section ingredients row">
+            <?php $keyIngredientsFrame = $this->createFrame(); ?>
 
-                    <?php $ingredientsFrame->begin(); ?>
+            <section class="section key-ingredients row">
 
-                    <div class="whole">
+                <?php $keyIngredientsFrame->begin(); ?>
 
-                        <h2>Cостав</h2>
+                <div class="whole">
+
+                    <div class="wrapper well">
+
+                        <h2>Ключевые ингредиенты</h2>
 
                         <ul>
-                            <?php foreach ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['DESCRIPTION'] as $i => $name) { ?>
+                            <?php foreach ($arResult['DISPLAY_PROPERTIES']['KEY_INGREDIENTS']['VALUE'] as $arKeyIngredient) { ?>
                                 <li>
-                                    <span class="name"><?= $name; ?></span>
-                                    <?php if ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['VALUE'][$i]) { ?>
-                                        <span class="percent"><?= $arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['VALUE'][$i]; ?>%</span>
-                                    <?php } ?>
+                                    <h3><?= $arKeyIngredient['NAME']; ?></h3>
+                                    <p><?= $arKeyIngredient['PREVIEW_TEXT']; ?></p>
                                 </li>
                             <?php } ?>
                         </ul>
 
                     </div>
 
-                    <?php $ingredientsFrame->end(); ?>
+                </div>
 
-                </section>
+                <?php $keyIngredientsFrame->end(); ?>
 
-            <?php } ?>
+            </section>
 
-        </div>
+        <?php } ?>
 
-    </article>
+        <?php if ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']) { ?>
 
-<?php d($arResult);
+            <?php $ingredientsFrame = $this->createFrame(); ?>
+
+            <section class="section ingredients row">
+
+                <?php $ingredientsFrame->begin(); ?>
+
+                <div class="whole">
+
+                    <h2>Cостав</h2>
+
+                    <ul>
+                        <?php foreach ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['DESCRIPTION'] as $i => $name) { ?>
+                            <li>
+                                <span class="name"><?= $name; ?></span>
+                                <?php if ($arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['VALUE'][$i]) { ?>
+                                    <span class="percent"><?= $arResult['DISPLAY_PROPERTIES']['INGREDIENTS']['VALUE'][$i]; ?>%</span>
+                                <?php } ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+
+                </div>
+
+                <?php $ingredientsFrame->end(); ?>
+
+            </section>
+
+        <?php } ?>
+
+    </div>
+
+</article>

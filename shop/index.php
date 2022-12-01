@@ -110,7 +110,6 @@ $APPLICATION->SetPageProperty("PAGE_DESCRIPTION", "Тут наши вам тов
 
         "LINE_ELEMENT_COUNT" => 3,
 
-
         "LINK_PROPERTY_SID" => "RECOMMEND",
         "LINK_ELEMENTS_URL" => "link.php?PARENT_ELEMENT_ID=#ELEMENT_ID#",
         "LINK_IBLOCK_TYPE"  => IblockTools::find('CATALOG', 'PRODUCTS')->type(),
@@ -240,6 +239,8 @@ $APPLICATION->SetPageProperty("PAGE_DESCRIPTION", "Тут наши вам тов
         "USE_SALE_BESTSELLERS" => "Y",
 
         "USE_STORE" => "Y",
+
+        "RELATIVE_QUANTITY_FACTOR" => 10, // отсечка "мало товара"
 
         "REVIEWS_MAX_VOTE"   => 5,
         "REVIEWS_VOTE_NAMES" => [],

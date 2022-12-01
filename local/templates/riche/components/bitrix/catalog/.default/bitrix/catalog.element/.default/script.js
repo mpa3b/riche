@@ -17,6 +17,11 @@ $(() => {
                 SITE_ID:    siteId,
                 PRODUCT_ID: elementId,
                 PARENT_ID:  parentId
+            },
+            success: (response) => {
+
+                console.debug(response);
+
             }
         }
     );

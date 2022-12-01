@@ -261,7 +261,7 @@ if (isset($arParams['USER_CONSENT_IS_LOADED'])) {
 
     $APPLICATION->IncludeComponent(
         'bitrix:catalog.section',
-        '',
+        '.default',
         [
             'IBLOCK_TYPE'  => $arParams['IBLOCK_TYPE'],
             'IBLOCK_ID'    => $arParams['IBLOCK_ID'],
@@ -290,7 +290,7 @@ if (isset($arParams['USER_CONSENT_IS_LOADED'])) {
             'PRICE_CODE'                => $arParams['~PRICE_CODE'],
             'USE_PRICE_COUNT'           => $arParams['USE_PRICE_COUNT'],
             'SHOW_PRICE_COUNT'          => $arParams['SHOW_PRICE_COUNT'],
-            'PAGE_ELEMENT_COUNT'        => 4,
+            'PAGE_ELEMENT_COUNT'        => 3,
             'FILTER_IDS'                => [$elementId],
 
             "SET_TITLE"            => "N",
@@ -432,10 +432,6 @@ if (isset($arParams['USER_CONSENT_IS_LOADED'])) {
             'CURRENCY_ID'               => $arParams['CURRENCY_ID'],
             'HIDE_NOT_AVAILABLE'        => $arParams['HIDE_NOT_AVAILABLE'],
             'HIDE_NOT_AVAILABLE_OFFERS' => $arParams['HIDE_NOT_AVAILABLE_OFFERS'],
-
-            'LABEL_PROP_POSITION'  => $arParams['LABEL_PROP_POSITION'],
-            'PRODUCT_BLOCKS_ORDER' => $arParams['LIST_PRODUCT_BLOCKS_ORDER'],
-            'PRODUCT_ROW_VARIANTS' => "[{'VARIANT':'3','BIG_DATA':false}]",
 
             'PRODUCT_SUBSCRIPTION'      => $arParams['PRODUCT_SUBSCRIPTION'],
             'SHOW_DISCOUNT_PERCENT'     => $arParams['SHOW_DISCOUNT_PERCENT'],
