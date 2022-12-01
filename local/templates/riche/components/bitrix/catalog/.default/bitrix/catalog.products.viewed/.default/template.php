@@ -17,6 +17,8 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
 
 $this->setFrameMode(true);
 
+d($arResult);
+
 if (!empty($arResult['ITEMS'])) {
 
     $this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');

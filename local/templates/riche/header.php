@@ -297,6 +297,8 @@ $request = Application::getInstance()->getContext()->getRequest();
                     ["HIDE_ICONS" => "Y"]
                 ); ?>
 
+                <?php // $APPLICATION->ShowNavChain(); ?>
+
             <?php } ?>
 
             <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y') { ?>

@@ -73,6 +73,7 @@ $APPLICATION->SetPageProperty("PAGE_DESCRIPTION", "Тут наши вам тов
 
         "DETAIL_SHOW_POPULAR" => "Y",
         "DETAIL_SHOW_VIEWED"  => "Y",
+        "DETAIL_SHOW_VIEWED_FROM_SECTION" => "Y",
 
         "DETAIL_STRICT_SECTION_CHECK" => "Y",
 
