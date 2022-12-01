@@ -246,3 +246,9 @@
   }
 
 }
+
+.well {
+  border-radius:    var(--border-radius--2x);
+  padding:          var(--offset--2x);
+  background-color: var(--color--background);
+}

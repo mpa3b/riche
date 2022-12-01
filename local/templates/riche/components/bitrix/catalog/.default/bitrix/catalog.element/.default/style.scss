@@ -2,6 +2,22 @@
 
 .catalog--default--element--default {
 
+  .short-description {
+    font-size:   1.2rem;
+    font-weight: 500;
+  }
+
+  .available {
+    display:        flex;
+    flex-direction: row;
+    align-items:    center;
+
+    i {
+      margin-right: 0.25rem;
+      color:        var(--color--green);
+    }
+  }
+
   .section {
     padding: var(--offset) 0;
   }
@@ -23,7 +39,7 @@
         font-size:      0;
         margin-right:   var(--offset--half);
         display:        flex;
-        
+
         flex-direction: row;
         flex-wrap:      nowrap;
         align-items:    center;
@@ -56,14 +72,6 @@
         video {
           aspect-ratio: 0.75;
           width:        100%;
-        }
-
-        &:not(.slick-initialized) {
-
-          .item:not(:first-of-type) {
-            display: none;
-          }
-
         }
 
       }
@@ -176,8 +184,8 @@
     }
 
     .buttons {
-      margin:        var(--offset);
 
+      margin-top: var(--offset--2x);
       margin-left:   0;
       margin-right:  var(--offset--half--negative);
       margin-bottom: var(--offset--half--negative);
@@ -193,7 +201,7 @@
 
   .how-to-use {
 
-    .how-to-use-video {
+    &--video {
 
       video {
         display:       block;
@@ -208,17 +216,20 @@
         }
       }
 
-      .video-wrapper {
-
-
-      }
-
     }
 
-    @include Tablet {
+    &--images {
 
-      .details {
-        padding-left: var(--offset--2x);
+      .slider {
+
+        &:not(.slick-initialized) {
+
+          .item:not(:first-of-type) {
+            display: none;
+          }
+
+        }
+
       }
 
     }

@@ -277,13 +277,13 @@ $request = Application::getInstance()->getContext()->getRequest();
 
 <main id="page--main">
 
-    <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' and $currentDirectoryPath !== '/') { ?>
+    <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' || $currentDirectoryPath !== '/') { ?>
 
         <header id="page--main--header">
 
             <div class="wrap">
 
-                <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
+                <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' || $currentDirectoryPath !== "") { ?>
 
                     <?php $APPLICATION->IncludeComponent(
                         "bitrix:breadcrumb",

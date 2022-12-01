@@ -36,7 +36,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
         <section class="section  main row">
 
-            <div class="images three-fifths">
+            <div class="images half">
 
                 <div class="slider items">
 
@@ -214,14 +214,14 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
             </div>
 
-            <div class="two-fifths">
+            <div class="half">
 
                 <div class="wrapper">
 
                     <h2><?= $arResult['NAME']; ?></h2>
 
                     <?php if (!empty($arResult['DISPLAY_PROPERTIES']['SHORT_DESCRIPTION']['VALUE'])) { ?>
-                        <div class="description">
+                        <div class="short-description">
                             <p><?= $arResult['DISPLAY_PROPERTIES']['SHORT_DESCRIPTION']['VALUE']; ?></p>
                         </div>
                     <?php } ?>
@@ -351,7 +351,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                         <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_VIDEO']) { ?>
 
-                            <div class="how-to-use-video third">
+                            <div class="how-to-use--video third">
 
                                 <div class="video-wrapper">
 
@@ -381,13 +381,13 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                         <?php if ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_IMAGES']) { ?>
 
-                            <div class="how-to-use third">
+                            <div class="how-to-use--images third">
 
-                                <div class="images slide">
+                                <div class="images slider">
 
                                     <?php foreach ($arResult['DISPLAY_PROPERTIES']['HOW_TO_USE_IMAGES']['VALUE'] as $image) { ?>
 
-                                        <div class="images-property item">
+                                        <div class="item">
 
                                             <?php
 
@@ -482,7 +482,7 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                 <div class="whole">
 
-                    <div class="wrpaper">
+                    <div class="wrapper well">
 
                         <h2>Ключевые ингредиенты</h2>
 
