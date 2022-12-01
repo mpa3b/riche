@@ -2,11 +2,15 @@
 
 nav.breadcrumb {
   display:        flex;
+
+  @include Mobile {
+    display: none;
+  }
+
   flex-direction: row;
   flex-wrap:      nowrap;
 
   align-items:    center;
-  margin-bottom:  1rem;
 
   img {
     height:       1rem;
@@ -16,7 +20,6 @@ nav.breadcrumb {
 
   ul {
     margin:         0;
-
     padding:        0;
 
     display:        flex;
@@ -33,7 +36,11 @@ nav.breadcrumb {
       padding-right:  0;
 
       a {
+        text-decoration: none;
 
+        &:hover {
+          text-decoration: underline;
+        }
       }
 
       i {
@@ -44,14 +51,12 @@ nav.breadcrumb {
       }
 
       &:last-of-type {
-        opacity: var(--opacity);
+        opacity:       var(--opacity);
 
-        //display:       inline-block;
-        //overflow:      hidden;
-        //text-overflow: ellipsis;
-        //width:         10em;
-        //white-space:   nowrap;
-
+        display:       inline-block;
+        overflow:      hidden;
+        text-overflow: ellipsis;
+        white-space:   nowrap;
       }
 
     }

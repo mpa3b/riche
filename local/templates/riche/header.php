@@ -277,49 +277,48 @@ $request = Application::getInstance()->getContext()->getRequest();
 
 <main id="page--main">
 
-    <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y' || $currentDirectoryPath !== '/') { ?>
+    <header id="page--main--header">
 
-        <header id="page--main--header">
+        <div class="wrap">
 
-            <div class="wrap">
+            <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
 
-                <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' || $currentDirectoryPath !== "") { ?>
+                <?php $APPLICATION->IncludeComponent(
+                    "bitrix:breadcrumb",
+                    "",
+                    [
+                        "SITE_ID"    => SITE_ID,
+                        "START_FROM" => 0,
 
-                    <?php $APPLICATION->IncludeComponent(
-                        "bitrix:breadcrumb",
-                        "",
-                        [
-                            "PATH"       => "",
-                            "SITE_ID"    => SITE_ID,
-                            "START_FROM" => 0,
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO"
+                    ],
+                    false,
+                    ["HIDE_ICONS" => "Y"]
+                ); ?>
 
-                            "COMPOSITE_FRAME_MODE" => "A",
-                            "COMPOSITE_FRAME_TYPE" => "AUTO"
-                        ],
-                        false,
-                        ["HIDE_ICONS" => "Y"]
-                    ); ?>
+            <?php } ?>
 
-                <?php } ?>
+            <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y') { ?>
 
                 <h1><?php $APPLICATION->ShowTitle(); ?></h1>
 
-            </div>
+            <?php } ?>
 
-            <?php $APPLICATION->IncludeComponent(
-                'bitrix:main.include',
-                '.wrap',
-                [
-                    "AREA_FILE_SHOW"      => "sect",
-                    "AREA_FILE_SUFFIX"    => "above",
-                    "AREA_FILE_RECURSIVE" => "N",
+        </div>
 
-                    "COMPOSITE_FRAME_MODE" => "A",
-                    "COMPOSITE_FRAME_TYPE" => "AUTO",
-                ],
-                false
-            ); ?>
+        <?php $APPLICATION->IncludeComponent(
+            'bitrix:main.include',
+            '.wrap',
+            [
+                "AREA_FILE_SHOW"      => "sect",
+                "AREA_FILE_SUFFIX"    => "above",
+                "AREA_FILE_RECURSIVE" => "N",
 
-        </header>
+                "COMPOSITE_FRAME_MODE" => "A",
+                "COMPOSITE_FRAME_TYPE" => "AUTO",
+            ],
+            false
+        ); ?>
 
-    <?php } ?>
+    </header>

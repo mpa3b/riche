@@ -52,7 +52,7 @@ if (!empty($arResult['SECTIONS'])) {
 
                         <div class="wrapper" data-id="<?= $section['ID']; ?>">
 
-                            <h3 class="name"><?= $section['NAME']; ?></h3>
+                            <h2 class="name"><?= $section['NAME']; ?></h2>
 
                             <?
 

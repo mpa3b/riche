@@ -87,7 +87,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
   font-size:   1.2rem;
-  line-height: 1;
+  line-height: 1.1;
 
   &:first-child {
     margin-top: 0;
@@ -114,7 +114,7 @@ h3 {
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 h1 {
@@ -285,12 +285,7 @@ button {
   }
 
   i[class^="icon"] {
-    //margin: 0 0.35em;
-    margin-bottom: -0.33em;
-
-    &.only {
-      margin-right: 0;
-    }
+    margin-bottom: -0.1em;
   }
 
 }
@@ -380,7 +375,8 @@ ul, ol {
 
 .button,
 button {
-  display: inline-flex;
+  display:         inline-flex;
+  justify-content: center;
 
   [class^="icon-"] {
 
@@ -400,10 +396,7 @@ button {
 img[loading=lazy] {
   filter: blur(3px);
 
-  &.loaded {
-    filter: unset;
-  }
-
+  &.loaded,
   &[data-ll-status] {
     filter: unset;
   }

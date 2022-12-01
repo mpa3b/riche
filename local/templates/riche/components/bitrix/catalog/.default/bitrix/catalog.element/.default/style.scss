@@ -2,6 +2,18 @@
 
 .catalog--default--element--default {
 
+  h1 {
+    font-size: 2rem;
+    @include Mobile {
+      font-size: 1.6rem;
+    }
+  }
+
+  .section {
+    margin-top:    var(--offset);
+    margin-bottom: var(--offset);
+  }
+
   .short-description {
     font-size:   1.2rem;
     font-weight: 500;
@@ -19,7 +31,7 @@
   }
 
   .section {
-    padding: var(--offset) 0;
+
   }
 
   .main {
@@ -147,7 +159,11 @@
 
     }
 
-    .wrapper {
+    .description {
+      margin: var(--offset) 0;
+    }
+
+    .product-description {
       @include Tablet {
         padding-left: var(--offset);
       }
@@ -156,14 +172,10 @@
       }
     }
 
-    .description {
-      margin: var(--offset) 0;
-    }
-
     .product {
       display:        flex;
       flex-direction: column;
-      margin:         var(--offset) 0;
+      margin:         var(--offset--2x) 0;
 
       @include Tablet {
         flex-direction: row;
@@ -175,24 +187,41 @@
         font-size:   1.4rem;
         font-weight: 500;
 
+        @include Mobile {
+          margin-bottom: var(--offset);
+          text-align:    center;
+        }
+
         @include Tablet {
           padding-right: var(--offset--2x);
         }
 
       }
 
+      .actions {
+        button {
+          width: 100%;
+        }
+      }
+
     }
 
     .buttons {
+      display:        flex;
+      flex-direction: row;
+      flex-wrap:      nowrap;
 
-      margin-top: var(--offset--2x);
-      margin-left:   0;
-      margin-right:  var(--offset--half--negative);
-      margin-bottom: var(--offset--half--negative);
+      @include Mobile {
+        justify-content: center;
+      }
+
+      margin-top:     var(--offset);
+
+      margin-right:   var(--offset--half--negative);
+      margin-bottom:  var(--offset--half--negative);
 
       button {
-        margin-right:  var(--offset--half);
-        margin-bottom: var(--offset--half);
+        margin: var(--offset--half);
       }
 
     }
@@ -210,15 +239,52 @@
         overflow:      hidden;
         object-fit:    cover;
 
+        aspect-ratio:  0.75;
         @include Tablet {
-          aspect-ratio: 1.5;
+          aspect-ratio: 1.25;
           object-fit:   cover;
         }
       }
 
     }
 
+    .slider.items {
+
+      &:not(.slick-initialized) {
+
+        & > *:not(:first-of-type) {
+          display: none;
+        }
+
+      }
+
+    }
+
+    &--instruction {
+
+      @include Tablet {
+        padding-right: var(--offset);
+      }
+      @include Desktop {
+        padding-right: var(--offset--2x);
+      }
+
+      .slick-dots {
+        margin-bottom: 0;
+      }
+
+      .slider {
+        height: 100%;
+      }
+
+    }
+
     &--images {
+
+      .images {
+        border-radius: var(--border-radius--2x);
+        overflow:      hidden;
+      }
 
       .slider {
 

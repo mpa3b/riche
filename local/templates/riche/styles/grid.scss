@@ -28,11 +28,11 @@
   display:    block;
   box-sizing: border-box;
 
-  margin:     var(--offset);
+  margin:     var(--offset--half) var(--offset);
 
   @include Tablet {
     width:  92%;
-    margin: var(--offset) auto;
+    margin: var(--offset--half) auto;
   }
   @include Desktop {
     width: 82%;
@@ -44,68 +44,36 @@
 
   padding:    0;
 
-  .grid,
-  .column,
-  .row {
-    display:        flex;
-    flex-direction: column;
-    box-sizing:     border-box;
+}
 
-    > * {
-      display:    block;
-      box-sizing: border-box;
-      max-width:  100%;
-    }
+.grid,
+.column,
+.row {
+  display:        flex;
+  flex-direction: column;
+  box-sizing:     border-box;
 
-    &.no-gutters {
-      padding: 0;
-    }
-
+  > * {
+    display:    block;
+    box-sizing: border-box;
+    max-width:  100%;
   }
 
-  .row,
-  .grid {
-    flex-direction: row;
-    flex-wrap:      wrap;
-    box-sizing:     border-box;
-
-    margin:         0 var(--offset--half--negative);
-
-    @include Tablet {
-
-      @each $code, $width in $units {
-
-        > .#{$code} {
-          width: #{$width};
-        }
-
-        .shift--#{$code} {
-          margin-left: #{$width};
-        }
-
-      }
-
-    }
-
-    > * {
-      padding: var(--offset--half);
-    }
-
+  &.no-gutters {
+    padding: 0;
   }
 
-  .row {
-    display:        flex;
-    flex-direction: column;
+}
 
-    @include Tablet {
-      flex-direction: row;
-      flex-wrap:      nowrap;
-    }
+.row,
+.grid {
+  flex-direction: row;
+  flex-wrap:      wrap;
+  box-sizing:     border-box;
 
-  }
+  margin:         0 var(--offset--half--negative);
 
-  .grid {
-    flex-wrap: wrap;
+  @include Tablet {
 
     @each $code, $width in $units {
 
@@ -113,6 +81,38 @@
         width: #{$width};
       }
 
+      .shift--#{$code} {
+        margin-left: #{$width};
+      }
+
+    }
+
+  }
+
+  > * {
+    padding: var(--offset--half);
+  }
+
+}
+
+.row {
+  display:        flex;
+  flex-direction: column;
+
+  @include Tablet {
+    flex-direction: row;
+    flex-wrap:      nowrap;
+  }
+
+}
+
+.grid {
+  flex-wrap: wrap;
+
+  @each $code, $width in $units {
+
+    > .#{$code} {
+      width: #{$width};
     }
 
   }

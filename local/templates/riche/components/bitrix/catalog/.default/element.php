@@ -259,31 +259,6 @@ if (isset($arParams['USER_CONSENT_IS_LOADED'])) {
         $component
     );
 
-    if ($arParams['USE_STORE'] == 'Y' && ModuleManager::isModuleInstalled('catalog')) {
-
-        $APPLICATION->IncludeComponent(
-            'bitrix:catalog.store.amount',
-            '.default',
-            [
-                'ELEMENT_ID'                     => $elementId,
-                'STORE_PATH'                     => $arParams['STORE_PATH'],
-                'CACHE_TYPE'                     => $arParams['CACHE_TYPE'],
-                'CACHE_TIME'                     => $arParams['CACHE_TIME'],
-                'MAIN_TITLE'                     => $arParams['MAIN_TITLE'],
-                'USE_MIN_AMOUNT'                 => $arParams['USE_MIN_AMOUNT'],
-                'MIN_AMOUNT'                     => $arParams['MIN_AMOUNT'],
-                'STORES'                         => $arParams['STORES'],
-                'SHOW_EMPTY_STORE'               => $arParams['SHOW_EMPTY_STORE'],
-                'SHOW_GENERAL_STORE_INFORMATION' => $arParams['SHOW_GENERAL_STORE_INFORMATION'],
-                'USER_FIELDS'                    => $arParams['USER_FIELDS'],
-                'FIELDS'                         => $arParams['FIELDS']
-            ],
-            $component,
-            ['HIDE_ICONS' => 'Y']
-        );
-
-    }
-
     $APPLICATION->IncludeComponent(
         'bitrix:catalog.section',
         '',

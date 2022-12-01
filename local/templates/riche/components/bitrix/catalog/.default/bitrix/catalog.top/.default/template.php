@@ -31,6 +31,8 @@ $this->setFrameMode(true);
 
         <div class="wrap">
 
+            <h2 hidden>Самое популярное</h2>
+
             <div class="items grid">
 
                 <?php $frame->begin(); ?>

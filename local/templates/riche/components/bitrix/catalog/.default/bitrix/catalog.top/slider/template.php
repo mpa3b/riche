@@ -36,6 +36,8 @@ if (!empty($arResult['ITEMS'])) {
 
         <div class="wrap">
 
+            <h2 hidden>Мы рекомендуем</h2>
+
             <div class="items slider">
 
                 <?php $frame->begin(); ?>

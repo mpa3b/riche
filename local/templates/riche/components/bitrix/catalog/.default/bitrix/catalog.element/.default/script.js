@@ -6,6 +6,8 @@ $(() => {
           parentId  = element.data('section'),
           siteId    = element.data('site');
 
+    // region сообщение о просмотре товара в API модуля каталога
+
     $.ajax(
         {
             url:    '/bitrix/components/bitrix/catalog.element/ajax.php',
@@ -18,6 +20,10 @@ $(() => {
             }
         }
     );
+
+    // endregion
+
+    // region основной слайдер
 
     const elementImages = $('.images', element);
     const elementImagesSlider = $('.slider', elementImages);
@@ -35,28 +41,27 @@ $(() => {
                 dots:           true,
                 infinite:       true
             }
-        );
+        )
+        .on(
+            {
+                afterChange:  (event, slick, currentSlide) => {
 
-    elementImagesSlider.on(
-        {
-            afterChange:  (event, slick, currentSlide) => {
+                    let element = slick.$slides[currentSlide],
+                        video   = $('video', element);
 
-                let element = slick.$slides[currentSlide],
-                    video   = $('video', element);
+                    video.trigger('play');
 
-                video.trigger('play');
+                },
+                beforeChange: (event, slick, currentSlide) => {
 
-            },
-            beforeChange: (event, slick, currentSlide) => {
+                    let element = slick.$slides[currentSlide],
+                        video   = $('video', element);
 
-                let element = slick.$slides[currentSlide],
-                    video   = $('video', element);
+                    video.trigger('pause');
 
-                video.trigger('pause');
-
+                }
             }
-        }
-    );
+        );
 
     $('button.prev', elementImages).on(
         'click',
@@ -75,5 +80,42 @@ $(() => {
 
         }
     );
+
+    // endregion
+
+    // region слайдеры инструкции
+
+    const elementHowTo = $('.how-to-use', element);
+
+    const elementHowToInstructionSlider = $('.how-to-use--instruction .slider', elementHowTo),
+          elementHowToImagesSlider      = $('.how-to-use--images .slider', elementHowTo);
+
+    elementHowToInstructionSlider.slick(
+        {
+            slidesToShow:   1,
+            slidesToScroll: 1,
+            arrows:         false,
+            fade:           true,
+            dots:           true,
+            autoplay:       false,
+            infinite:       false,
+            asNavFor:       elementHowToImagesSlider,
+        }
+    );
+
+    elementHowToImagesSlider.slick(
+        {
+            slidesToShow:   1,
+            slidesToScroll: 1,
+            arrows:         false,
+            fade:           true,
+            autoplay:       false,
+            infinite:       false,
+            asNavFor:       elementHowToInstructionSlider,
+        }
+    );
+
+    // endregion
+
 
 });
