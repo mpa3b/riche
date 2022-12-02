@@ -15,7 +15,7 @@ use Bitrix\Iblock\SectionTable;
 /** @global \CDatabase $DB */
 /** @var CBitrixComponentTemplate $this */
 
-// @todo тут нужно суммировать и усреднять значение рейтинга
+// region рейтинг
 
 $products = array_column($arResult['ITEMS'], 'ID');
 
@@ -66,6 +66,10 @@ if (!empty($products)) {
 
 }
 
+// endregion
+
+// region рейтинг
+
 $rSections = SectionTable::getList(
     [
         'filter' => [
@@ -97,3 +101,5 @@ foreach ($arResult['ITEMS'] as &$arItem) {
     $arItem['SECTION_NAME'] = $arResult['SECTIONS'][$arItem['IBLOCK_SECTION_ID']]['NAME'];
 
 }
+
+// endregion

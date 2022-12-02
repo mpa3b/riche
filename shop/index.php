@@ -188,8 +188,8 @@ $APPLICATION->SetPageProperty("PAGE_DESCRIPTION", "Тут наши вам тов
             "sections"     => "/",
             "compare"      => "/compare/",
             "smart_filter" => "/filter/",
-            "section"      => "#SECTION_CODE_PATH#",
-            "element"      => "#SECTION_CODE_PATH#/#ELEMENT_CODE#"
+            "section"      => "#SECTION_CODE_PATH#/",
+            "element"      => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/"
         ],
 
         "SET_LAST_MODIFIED" => "Y",

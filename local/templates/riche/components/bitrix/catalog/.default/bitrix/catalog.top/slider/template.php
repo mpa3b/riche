@@ -55,6 +55,14 @@ if (!empty($arResult['ITEMS'])) {
                         <i class="icon-heart"></i>
                     </button>
 
+                    <?php if (!empty($arItem['DISPLAY_PROPERTIES']['PURPOSE']['DISPLAY_VALUE'])) { ?>
+                        <ul class="purpose marker">
+                            <?php foreach ($arItem['DISPLAY_PROPERTIES']['PURPOSE']['DISPLAY_VALUE'] as $element) { ?>
+                                <li><?= strip_tags($element); ?></li>
+                            <?php } ?>
+                        </ul>
+                    <?php } ?>
+
                     <div class="image">
 
                         <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
