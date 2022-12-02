@@ -277,6 +277,27 @@
         height: 100%;
       }
 
+      .slick-dots {
+        li {
+          border-radius:    unset;
+          width:            unset;
+          height:           unset;
+          background-color: unset;
+
+          button {
+            display: block;
+          }
+
+          &.slick-active {
+            button {
+              background-color: var(--color--green);
+              color:            var(--color--white)
+            }
+          }
+
+        }
+      }
+
     }
 
     &--images {

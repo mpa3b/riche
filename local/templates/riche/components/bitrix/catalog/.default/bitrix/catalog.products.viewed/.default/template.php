@@ -1,45 +1,51 @@
 <?php
 
-if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) {
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
     die();
 }
 
 use Riche\Breakpoint;
 use Riche\Thumb;
 
-/**
- * @global CMain                 $APPLICATION
- * @var array                    $arParams
- * @var array                    $arResult
- * @var CatalogSectionComponent  $component
- * @var CBitrixComponentTemplate $this
- */
+/** @var array $arParams */
+/** @var array $arResult */
+/** @global CMain $APPLICATION */
+/** @global CUser $USER */
+/** @global CDatabase $DB */
+/** @var \CBitrixComponentTemeplate $this */
+/** @var string $templateName */
+/** @var string $templateFile */
+/** @var string $templateFolder */
+/** @var string $componentPath */
+/** @var CBitrixComponent $component */
 
 $this->setFrameMode(true);
 
-if (!empty($arResult['ITEMS'])) {
+?>
 
-    $this->addExternalJs(LOCAL_ASSETS . '/slick-carousel/slick/slick.js');
-    $this->addExternalCss(LOCAL_ASSETS . '/slick-carousel/slick/slick.css');
-    $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
+<?php if (!empty($arResult['ITEMS'])) { ?>
 
-    $frame = $this->createFrame();
+    <?php $frame = $this->createFrame(); ?>
 
-    ?>
-
-    <section class="catalog--default--viewed-products--default">
-
-        <?php $frame->begin(); ?>
+    <section class="catalog-viewed--catalog--default">
 
         <div class="wrap">
 
             <h2>Вы смотрели</h2>
 
-            <div class="items slider">
+            <div class="items grid">
 
-                <?php foreach ($arResult['ITEMS'] as $arItem) { ?>
+                <?php $frame->begin(); ?>
 
-                    <div class="item section--<?= strtolower($arItem['IBLOCK_SECTION_CODE']); ?>">
+                <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
+
+                    <div class="item"
+                         data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
+                         data-id="<?= $arItem['ID']; ?>">
+
+                        <?php if (!empty($arItem['SECTION_NAME'])) { ?>
+                            <span class="section marker"><?= $arItem['SECTION_NAME']; ?></span>
+                        <?php } ?>
 
                         <button class="transparent favorite button"
                                 data-id="<?= $arItem['ID']; ?>"
@@ -164,17 +170,25 @@ if (!empty($arResult['ITEMS'])) {
 
                         <?php } ?>
 
+                        <?php if(!empty($arItem['PREVIEW_TEXT']) && false) { ?>
+
+                            <div class="description">
+                                <?= $arItem['PREVIEW_TEXT']; ?>
+                            </div>
+
+                        <?php } ?>
+
                     </div>
 
                 <?php } ?>
 
+                <?php $frame->beginStub(); ?>
+
+                <?php $frame->end(); ?>
+
             </div>
 
         </div>
-
-        <?php $frame->beginStub(); ?>
-
-        <?php $frame->end(); ?>
 
     </section>
 

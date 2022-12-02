@@ -417,42 +417,37 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/slick.css');
 
                                             $preload = CFile::ResizeImageGet(
                                                 $image,
-                                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 1),
                                                 BX_RESIZE_IMAGE_EXACT
                                             );
 
                                             $small = CFile::ResizeImageGet(
                                                 $image,
-                                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1,
-                                                                          0.75),
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'] / 1, 1),
                                                 BX_RESIZE_IMAGE_EXACT
                                             );
 
                                             $mobile = CFile::ResizeImageGet(
                                                 $image,
-                                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1,
-                                                                          0.75),
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'] / 1, 1),
                                                 BX_RESIZE_IMAGE_EXACT
                                             );
 
                                             $tablet = CFile::ResizeImageGet(
                                                 $image,
-                                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1,
-                                                                          0.75),
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 1, 1),
                                                 BX_RESIZE_IMAGE_EXACT
                                             );
 
                                             $desktop = CFile::ResizeImageGet(
                                                 $image,
-                                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2,
-                                                                          0.75),
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 2, 1),
                                                 BX_RESIZE_IMAGE_EXACT
                                             );
 
                                             $wide = CFile::ResizeImageGet(
                                                 $image,
-                                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2,
-                                                                          0.75),
+                                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 2, 1),
                                                 BX_RESIZE_IMAGE_EXACT
                                             );
 

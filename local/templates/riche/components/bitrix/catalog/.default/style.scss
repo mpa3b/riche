@@ -32,18 +32,19 @@
         font-size:        0.65rem;
         z-index:          100;
 
+        display:          block;
         padding:          0.25em 0.5em;
+        margin:           var(--offset--half);
+
         background-color: var(--color--white);
         border-radius:    1em;
       }
 
       button.favorite {
         position: absolute;
-        right:    var(--offset--half);
-        top:      var(--offset--half);
+        right:    var(--offset);
+        top:      var(--offset);
         z-index:  100;
-
-
       }
 
       @include Tablet {

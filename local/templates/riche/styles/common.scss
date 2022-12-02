@@ -225,11 +225,11 @@ button {
   box-sizing:       border-box;
 
   padding:          0.65em 1em;
-  padding-top:      0.4em;
+  padding-top:      0.6em;
 
   &.big {
     padding:     1.25em 1.8em;
-    padding-top: 1em;
+    padding-top: 1.15em;
     font-size:   1.2em;
   }
 
@@ -282,10 +282,6 @@ button {
   &[disabled] {
     cursor:  not-allowed;
     opacity: var(--opacity);
-  }
-
-  i[class^="icon"] {
-    margin-bottom: -0.1em;
   }
 
 }
