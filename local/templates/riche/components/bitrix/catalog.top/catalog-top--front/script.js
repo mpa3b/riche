@@ -82,4 +82,27 @@ $(() => {
 
     // endregion
 
+    // region element hover
+
+    const frontCatalogItems = $('.item', frontCatalogTop);
+
+    frontCatalogItems.on(
+        'hover',
+        (event) => {
+
+            console.debug(event);
+
+            let frontCatalogItemsVideo = $('video', frontCatalogItems);
+
+            frontCatalogItemsVideo.trigger('pause');
+
+            let currentItem = $(event.target);
+
+            $('video', currentItem).trigger('play');
+
+        }
+    );
+
+    // endregion
+
 });

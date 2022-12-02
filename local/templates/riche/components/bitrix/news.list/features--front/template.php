@@ -28,11 +28,9 @@ $frame = $this->createFrame();
 
 <?php if (!empty($arResult['ITEMS'])) { ?>
 
-    <section class="features--front">
+    <section class="features--front wrap">
 
         <? $frame->begin(); ?>
-
-        <div class="wrap">
 
             <h2 hidden>RICHE COSMETICS</h2>
 
@@ -136,8 +134,6 @@ $frame = $this->createFrame();
                 <? } ?>
 
             </div>
-
-        </div>
 
         <? $frame->end(); ?>
 

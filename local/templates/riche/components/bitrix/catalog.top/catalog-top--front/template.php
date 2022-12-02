@@ -41,143 +41,138 @@ $this->setFrameMode(true);
 
     ?>
 
-    <section class="catalog-top--front">
+    <section class="catalog-top--front wrap">
 
         <? $frame->begin(); ?>
 
-        <div class="wrap">
+        <div class="items slider">
 
-            <? if (!empty($arResult['SECTIONS']) && false) { ?>
+            <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
-                <div class="filter">
+                <div class="item"
+                     data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
+                     data-section-code="<?= $arResult['SECTIONS'][$arItem['IBLOCK_SECTION_ID']]['CODE']; ?>"
+                     data-id="<?= $arItem['ID']; ?>">
 
-                    <? foreach ($arResult['SECTIONS'] as $i => $arSection) { ?>
-                        <button class="filter-button small button"
-                                data-action="filter"
-                                data-id="<?= $arSection['ID']; ?>"><?= $arSection['NAME']; ?></button>
-                    <? } ?>
+                    <div class="image">
 
-                </div>
+                        <?php if (!empty($arItem['SECTION_NAME'])) { ?>
+                            <span class="section marker"><?= $arItem['SECTION_NAME']; ?></span>
+                        <?php } ?>
 
-            <? } ?>
+                        <button class="transparent favorite button" data-id="<?= $arItem['ID']; ?>"
+                                data-action="favorite">
+                            <i class="icon-heart"></i>
+                        </button>
 
-            <div class="items slider">
+                        <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
 
-                <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
+                            <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
 
-                    <div class="item"
-                         data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
-                         data-section-code="<?= $arResult['SECTIONS'][$arItem['IBLOCK_SECTION_ID']]['CODE']; ?>"
-                         data-id="<?= $arItem['ID']; ?>">
-
-                        <div class="image">
-
-                            <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
-
-                                <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
-
-                                    <video <? if ($i == 0) { ?>autoplay<? } ?> muted loop>
-                                        <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
-                                    </video>
-
-                                <? } ?>
-
-                                <picture>
-
-                                    <?
-
-                                    $preload = CFile::ResizeImageGet(
-                                        $arItem['DETAIL_PICTURE']['ID'],
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
-                                        BX_RESIZE_IMAGE_EXACT
-                                    );
-
-                                    $small = CFile::ResizeImageGet(
-                                        $arItem['DETAIL_PICTURE']['ID'],
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 0.75),
-                                        BX_RESIZE_IMAGE_EXACT
-                                    );
-
-                                    $mobile = CFile::ResizeImageGet(
-                                        $arItem['DETAIL_PICTURE']['ID'],
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 0.75),
-                                        BX_RESIZE_IMAGE_EXACT
-                                    );
-
-                                    $tablet = CFile::ResizeImageGet(
-                                        $arItem['DETAIL_PICTURE']['ID'],
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 0.75),
-                                        BX_RESIZE_IMAGE_EXACT
-                                    );
-
-                                    $desktop = CFile::ResizeImageGet(
-                                        $arItem['DETAIL_PICTURE']['ID'],
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 0.75),
-                                        BX_RESIZE_IMAGE_EXACT
-                                    );
-
-                                    $wide = CFile::ResizeImageGet(
-                                        $arItem['DETAIL_PICTURE']['ID'],
-                                        Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 0.75),
-                                        BX_RESIZE_IMAGE_EXACT
-                                    );
-
-                                    ?>
-
-                                    <source data-srcset="<?= $small['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('small'); ?>">
-                                    <source data-srcset="<?= $mobile['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('mobile'); ?>">
-                                    <source data-srcset="<?= $tablet['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('tablet'); ?>">
-                                    <source data-srcset="<?= $desktop['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('desktop'); ?>">
-                                    <source data-srcset="<?= $wide['src']; ?>"
-                                            media="<?= Breakpoint::getMedia('wide'); ?>">
-
-                                    <img data-src="<?= $preload['src']; ?>"
-                                        <? if ($i == 0) { ?>
-                                            loading="eager"
-                                        <? } else { ?>
-                                            loading="lazy"
-                                        <? } ?>
-                                         alt="<?= $arItem['NAME']; ?>">
-
-                                </picture>
-
-                            </a>
-
-                        </div>
-
-                        <? if (!empty($arItem['REVIEWS'])) { ?>
-
-                            <div class="reviews">
-
-                                <i class="icon-star"></i>
-
-                                <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
-                                <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
-                                                                      'отзыв') ?></span>
-
-                            </div>
-
-                        <? } ?>
-
-                        <div class="details">
-
-                            <h3>
-                                <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
-                            </h3>
-
-                            <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-
-                                <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+                                <video <? if ($i == 0) { ?>autoplay<? } ?> muted loop>
+                                    <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                                </video>
 
                             <? } ?>
 
+                            <picture>
+
+                                <?
+
+                                $preload = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
+
+                                $small = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
+
+                                $mobile = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
+
+                                $tablet = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
+
+                                $desktop = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
+
+                                $wide = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
+
+                                ?>
+
+                                <source data-srcset="<?= $small['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('small'); ?>">
+                                <source data-srcset="<?= $mobile['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                <source data-srcset="<?= $tablet['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                <source data-srcset="<?= $desktop['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                <source data-srcset="<?= $wide['src']; ?>"
+                                        media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                                <img data-src="<?= $preload['src']; ?>"
+                                    <? if ($i == 0) { ?>
+                                        loading="eager"
+                                    <? } else { ?>
+                                        loading="lazy"
+                                    <? } ?>
+                                     alt="<?= $arItem['NAME']; ?>">
+
+                            </picture>
+
+                        </a>
+
+                    </div>
+
+                    <? if (!empty($arItem['REVIEWS'])) { ?>
+
+                        <div class="reviews">
+
+                            <i class="icon-star"></i>
+
+                            <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
+                            <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
+                                                                  'отзыв') ?></span>
+
                         </div>
 
-                        <? if ($arParams['USE_BUY'] == "Y" && $arItem['ITEM_PRICES_CAN_BUY'] && false) { ?>
+                    <? } ?>
+
+                    <div class="details">
+
+                        <h3>
+                            <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
+                        </h3>
+
+                        <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+
+                            <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+
+                        <? } ?>
+
+                    </div>
+
+                    <? if ($arItem['ITEM_PRICES_CAN_BUY']) { ?>
+
+                        <div class="actions">
 
                             <? if (!empty($arItem['ITEM_PRICES'])) { ?>
 
@@ -202,13 +197,15 @@ $this->setFrameMode(true);
 
                             <? } ?>
 
-                            <div class="action">
+                            <div class="controls">
 
                                 <? if ($arParams['USE_QUANTITY']) { ?>
+
                                     <input type="number"
                                            name="quantity"
                                            step="1"
                                            max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
+
                                 <? } ?>
 
                                 <button class="primary buy button"
@@ -216,35 +213,33 @@ $this->setFrameMode(true);
                                         <? if (!$arItem['CAN_BUY']) { ?>disabled<? } ?>
                                         data-id="<?= $arItem['ID']; ?>"
                                         data-action="buy">
-                                    <i class="icon-buy"></i>
+                                    <i class="icon-shopping-cart"></i>
                                 </button>
 
                             </div>
 
-                        <? } ?>
+                        </div>
 
-                    </div>
-
-                <? } ?>
-
-            </div>
-
-            <?php if (!empty(SHOP_ROOT_URL)) { ?>
-
-                <div class="footer">
-
-                    <a href="<?= SHOP_ROOT_URL; ?>" class="primary big button">
-                        Перейти в каталог
-                        <i class="icon-chevron-right"></i>
-                    </a>
+                    <? } ?>
 
                 </div>
 
-            <?php } ?>
+            <? } ?>
 
         </div>
 
-        <? $frame->beginStub(); ?>
+        <?php if (!empty(SHOP_ROOT_URL)) { ?>
+
+            <div class="footer">
+
+                <a href="<?= SHOP_ROOT_URL; ?>" class="primary big button">
+                    Перейти в каталог
+                    <i class="icon-chevron-right"></i>
+                </a>
+
+            </div>
+
+        <?php } ?>
 
         <? $frame->end(); ?>
 

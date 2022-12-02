@@ -9,7 +9,6 @@ $(() => {
                 slidesToShow:   2,
                 slidesToScroll: 1,
                 fade:           false,
-                speed:          1000,
                 autoplay:       false,
                 arrows:         false,
                 dots:           false,

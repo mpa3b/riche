@@ -77,11 +77,29 @@
       flex-direction:  row;
       flex-wrap:       nowrap;
 
+      padding:         0;
+
       justify-content: flex-end;
       align-items:     center;
 
       margin-left:     auto;
-      padding:         var(--offset--half);
+    }
+
+    .nav {
+      margin: var(--offset--half) 0;
+
+      > * {
+        padding: 0;
+      }
+    }
+
+  }
+
+  &--main {
+
+    &--header {
+      margin-top:    var(--offset--half);
+      margin-bottom: var(--offset--half);
     }
 
   }

@@ -33,11 +33,9 @@ $frame->setAnimation(false);
 
 <? if (!empty($arResult['ITEMS'])) { ?>
 
-    <section class="reviews--front">
+    <section class="reviews--front wrap">
 
         <? $frame->begin(); ?>
-
-        <div class="wrap">
 
             <h2>Наши покупатели</h2>
 
@@ -109,8 +107,6 @@ $frame->setAnimation(false);
                 <?php } ?>
 
             </div>
-
-        </div>
 
         <? $frame->beginStub(); ?>
 

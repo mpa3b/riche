@@ -72,8 +72,8 @@ $APPLICATION->SetPageProperty("PAGE_DESCRIPTION", "Тут наши вам тов
         "DETAIL_SET_CANONICAL_URL"       => "Y",
         "DETAIL_SET_VIEWED_IN_COMPONENT" => "Y",
 
-        "DETAIL_SHOW_POPULAR" => "Y",
-        "DETAIL_SHOW_VIEWED"  => "Y",
+        "DETAIL_SHOW_POPULAR"             => "Y",
+        "DETAIL_SHOW_VIEWED"              => "Y",
         "DETAIL_SHOW_VIEWED_FROM_SECTION" => "Y",
 
         "DETAIL_STRICT_SECTION_CHECK" => "Y",
@@ -188,15 +188,15 @@ $APPLICATION->SetPageProperty("PAGE_DESCRIPTION", "Тут наши вам тов
             "sections"     => "/",
             "compare"      => "/compare/",
             "smart_filter" => "/filter/",
-            "section"      => "#SECTION_CODE_PATH#/",
-            "element"      => "#SECTION_CODE_PATH#/#ELEMENT_CODE#/"
+            "section"      => "#SECTION_CODE_PATH#",
+            "element"      => "#SECTION_CODE_PATH#/#ELEMENT_CODE#"
         ],
 
         "SET_LAST_MODIFIED" => "Y",
         "SET_STATUS_404"    => "N",
         "SET_TITLE"         => "Y",
 
-        "SHOW_404"              => "Y",
+        "SHOW_404" => "Y",
 
         "SHOW_DEACTIVATED"      => "N",
         "SHOW_DISCOUNT_PERCENT" => "Y",
@@ -246,7 +246,7 @@ $APPLICATION->SetPageProperty("PAGE_DESCRIPTION", "Тут наши вам тов
         "RELATIVE_QUANTITY_FACTOR" => 10, // отсечка "мало товара"
 
         "REVIEWS_MAX_VOTE"   => 5,
-        "REVIEWS_VOTE_NAMES" => [],
+        "REVIEWS_VOTE_NAMES" => []
     ]
 ); ?>
 

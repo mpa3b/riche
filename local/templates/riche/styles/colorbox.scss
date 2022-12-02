@@ -155,7 +155,7 @@
   &Content {
     background:    var(--color--white);
 
-    padding:       2rem;
+    padding:       0;
     border-radius: 1rem;
 
     overflow:      hidden;
@@ -227,6 +227,11 @@
     width:      auto;
     background: none;
 
+    color:      var(--color--white);
+
+    box-shadow: none;
+    bottom:     0.5rem;
+
     /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
 
     &:focus,
@@ -244,40 +249,29 @@
 
   &Previous {
     position:            absolute;
-    bottom:              0;
-    left:                0;
+    left:                0.5rem;
 
     background-position: center;
     background-repeat:   no-repeat;
-
-    width:               2rem;
-    height:              2rem;
   }
 
   &Next {
     position:            absolute;
-    bottom:              0;
-    left:                2rem;
+    left:                2.5rem;
 
     background-position: center;
     background-repeat:   no-repeat;
-
-    width:               2rem;
-    height:              2rem;
   }
 
   &Close {
     position:            absolute;
-    top:                 0.25rem;
-    right:               0.25rem;
+    top:                 1rem;
+    right:               1rem;
 
     background-position: center;
     background-repeat:   no-repeat;
 
     background-size:     1rem;
-
-    width:               2rem;
-    height:              2rem;
   }
 
 }

@@ -277,11 +277,11 @@ $request = Application::getInstance()->getContext()->getRequest();
 
 <main id="page--main">
 
-    <header id="page--main--header">
+    <?php if ($currentDirectoryPath !== "/") { ?>
 
-        <div class="wrap">
+        <header id="page--main--header" class="wrap">
 
-            <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y' && $currentDirectoryPath !== "") { ?>
+            <?php if ($APPLICATION->GetDirProperty('HIDE_BREADCRUMBS') !== 'Y') { ?>
 
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:breadcrumb",
@@ -297,8 +297,6 @@ $request = Application::getInstance()->getContext()->getRequest();
                     ["HIDE_ICONS" => "Y"]
                 ); ?>
 
-                <?php // $APPLICATION->ShowNavChain(); ?>
-
             <?php } ?>
 
             <?php if ($APPLICATION->GetDirProperty('HIDE_TITLE') !== 'Y') { ?>
@@ -307,20 +305,20 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             <?php } ?>
 
-        </div>
+            <?php $APPLICATION->IncludeComponent(
+                'bitrix:main.include',
+                '.wrap',
+                [
+                    "AREA_FILE_SHOW"      => "sect",
+                    "AREA_FILE_SUFFIX"    => "above",
+                    "AREA_FILE_RECURSIVE" => "N",
 
-        <?php $APPLICATION->IncludeComponent(
-            'bitrix:main.include',
-            '.wrap',
-            [
-                "AREA_FILE_SHOW"      => "sect",
-                "AREA_FILE_SUFFIX"    => "above",
-                "AREA_FILE_RECURSIVE" => "N",
+                    "COMPOSITE_FRAME_MODE" => "A",
+                    "COMPOSITE_FRAME_TYPE" => "AUTO",
+                ],
+                false
+            ); ?>
 
-                "COMPOSITE_FRAME_MODE" => "A",
-                "COMPOSITE_FRAME_TYPE" => "AUTO",
-            ],
-            false
-        ); ?>
+        </header>
 
-    </header>
+    <?php } ?>

@@ -67,39 +67,3 @@ if (!empty($products)) {
 }
 
 // endregion
-
-// region разделы
-
-$rSections = SectionTable::getList(
-    [
-        'filter' => [
-            'IBLOCK_ID' => $arParams['IBLOCK_ID'],
-            'ID'        => array_column($arResult['ITEMS'], 'IBLOCK_SECTION_ID')
-        ],
-        'select' => [
-            'ID',
-            'NAME'
-        ],
-        'cache'  => [
-            'ttl' => $arParams['CACHE_TIME']
-        ]
-    ]
-);
-
-
-while ($arSection = $rSections->fetch()) {
-
-    $arResult['SECTIONS'][$arSection['ID']] = [
-        'ID'   => $arSection['ID'],
-        'NAME' => $arSection['NAME'],
-    ];
-
-}
-
-foreach ($arResult['ITEMS'] as &$arItem) {
-
-    $arItem['SECTION_NAME'] = $arResult['SECTIONS'][$arItem['IBLOCK_SECTION_ID']]['NAME'];
-
-}
-
-// endregion

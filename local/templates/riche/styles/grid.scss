@@ -2,7 +2,7 @@
 
 :root {
 
-  --offset:                 0.75rem;
+  --offset:                 0.85rem;
   @include Mobile {
     --offset: 1rem;
   }
@@ -32,11 +32,11 @@
 
   @include Tablet {
     width:  92%;
-    margin: var(--offset--half) auto;
+    margin: var(--offset) auto;
   }
   @include Desktop {
     width:  82%;
-    margin: var(--offset) auto;
+    margin: var(--offset--2x) auto;
   }
   @include Wide {
     width:     68%;

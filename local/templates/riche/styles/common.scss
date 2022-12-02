@@ -224,12 +224,14 @@ button {
   display:          inline-block;
   box-sizing:       border-box;
 
+  line-height:      1;
+
   padding:          0.65em 1em;
   padding-top:      0.6em;
 
   &.big {
     padding:     1.25em 1.8em;
-    padding-top: 1.15em;
+    padding-top: 1.05em;
     font-size:   1.2em;
   }
 
@@ -243,7 +245,6 @@ button {
   border-radius:    var(--border-radius--2x);
 
   font-weight:      bold;
-  line-height:      1.25;
 
   text-align:       center;
   text-decoration:  none;
@@ -282,6 +283,10 @@ button {
   &[disabled] {
     cursor:  not-allowed;
     opacity: var(--opacity);
+  }
+
+  i[class^="icon"] {
+    position: relative;
   }
 
 }
@@ -367,6 +372,7 @@ ul, ol {
 [class^="icon-"] {
   font-size:   1.4rem;
   line-height: 1;
+  height:      inherit;
 }
 
 .button,

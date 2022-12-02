@@ -28,15 +28,11 @@ $this->setFrameMode(true);
 
     <?php $frame = $this->createFrame(); ?>
 
-    <section class="catalog-section--catalog--default" data-id="<?= $arResult['ID'] ?>">
+    <section class="catalog-recommended-products--catalog--default" data-id="<?= $arResult['ID'] ?>">
 
         <div class="wrap">
 
-            <?php if (!empty($arResult['NAME'])) { ?>
-
-                <h2><?= $arResult['NAME']; ?></h2>
-
-            <?php } ?>
+            <h2>Рекомендуем</h2>
 
             <div class="items grid">
 
@@ -47,6 +43,10 @@ $this->setFrameMode(true);
                     <div class="item"
                          data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
                          data-id="<?= $arItem['ID']; ?>">
+
+                        <?php if (!empty($arItem['SECTION_NAME'])) { ?>
+                            <span class="section marker"><?= $arItem['SECTION_NAME']; ?></span>
+                        <?php } ?>
 
                         <button class="transparent favorite button"
                                 data-id="<?= $arItem['ID']; ?>"
@@ -185,7 +185,7 @@ $this->setFrameMode(true);
 
                         <?php } ?>
 
-                        <?php if (!empty($arItem['PREVIEW_TEXT']) && false) { ?>
+                        <?php if(!empty($arItem['PREVIEW_TEXT']) && false) { ?>
 
                             <div class="description">
                                 <?= $arItem['PREVIEW_TEXT']; ?>

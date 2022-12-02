@@ -1,21 +1,23 @@
 @import "../../../../base";
 
 nav.breadcrumb {
-  display:        flex;
-
   @include Mobile {
     display: none;
   }
 
-  flex-direction: row;
-  flex-wrap:      nowrap;
+  position:     relative;
 
-  align-items:    center;
+  padding-left: 1.5rem;
 
   img {
     height:       1rem;
     width:        1em;
     margin-right: var(--offset--half);
+
+    position:     absolute;
+    left:         0;
+    top:          50%;
+    margin-top:   -0.5rem;
   }
 
   ul {

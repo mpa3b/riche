@@ -38,7 +38,7 @@
 
         button {
           position: absolute;
-          left:     var(--offset);
+          right:    var(--offset);
           bottom:   var(--offset);
         }
 
@@ -72,11 +72,6 @@
 
       @include Tablet {
         width: 100% !important;
-
-        .slick-slide {
-          flex-grow: 1;
-        }
-
       }
 
     }
