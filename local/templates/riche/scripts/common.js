@@ -127,10 +127,10 @@ $(() => {
                 imgError:       'Ошибка загрузки изображения',
                 slideshowStart: '<i class="icon-play">',
                 slideshowStop:  '<i class="icon-pause">',
-                // maxWidth :       '88%',
-                // maxHeight :      '72%',
-                fixed:     true,
-                scrolling: false
+                maxWidth:       '88%',
+                maxHeight:      '72%',
+                fixed:          true,
+                scrolling:      false
             }
         );
 

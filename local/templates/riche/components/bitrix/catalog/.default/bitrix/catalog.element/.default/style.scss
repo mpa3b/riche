@@ -48,19 +48,41 @@
       flex-wrap:      nowrap;
 
       .stars {
-        font-size:      0;
-        margin-right:   var(--offset--half);
-        display:        flex;
+        position:     relative;
+        box-sizing:   border-box;
+        margin-right: var(--offset--half);
 
-        flex-direction: row;
-        flex-wrap:      nowrap;
-        align-items:    center;
+        > * {
+          font-size:   0;
+          display:     block;
 
-        i {
-          font-size: 1rem;
-          color:     var(--color--green);
+          white-space: nowrap;
+
+          i {
+            font-size: 1rem;
+          }
         }
 
+        .overlay {
+          left:     0;
+          top:      0;
+          position: absolute;
+
+          overflow: hidden;
+
+          i {
+            color: var(--color--green);
+          }
+
+        }
+
+        .underlay {
+          opacity: var(--opacity);
+
+          i {
+            color: var(--color--gray);
+          }
+        }
       }
 
       .value {

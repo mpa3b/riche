@@ -237,9 +237,16 @@ $this->addExternalCss(SITE_TEMPLATE_PATH . '/styles/colorbox.css');
                     <div class="reviews">
 
                         <div class="stars">
-                            <?php for ($i = 1; $i <= $arResult['REVIEWS']['MAX']; $i++) { ?>
-                                <i class="icon-star"></i>
-                            <? } ?>
+                            <span class="overlay" style="width:<?= $arResult['REVIEWS']['MEDIAN'] * 20; ?>%">
+                                <?php for ($i = 1; $i <= $arResult['REVIEWS']['MAX']; $i++) { ?>
+                                    <i class="icon-star"></i>
+                                <? } ?>
+                            </span>
+                            <span class="underlay" style="width:<?= $arResult['REVIEWS']['MAX']; ?>rem">
+                                <?php for ($i = 1; $i <= $arResult['REVIEWS']['MAX']; $i++) { ?>
+                                    <i class="icon-star"></i>
+                                <? } ?>
+                            </span>
                         </div>
 
                         <span class="value"><?= $arResult['REVIEWS']['MEDIAN']; ?></span>
