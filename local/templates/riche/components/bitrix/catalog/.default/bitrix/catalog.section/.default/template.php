@@ -131,6 +131,10 @@ $this->setFrameMode(true);
 
                         <div class="details">
 
+                            <h3>
+                                <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
+                            </h3>
+
                             <?php if ($arItem['ITEM_PRICES_CAN_BUY'] == true) { ?>
 
                                 <div class="actions">
@@ -181,10 +185,6 @@ $this->setFrameMode(true);
 
                             <?php } ?>
 
-                            <h3>
-                                <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
-                            </h3>
-
                             <?php if (!empty($arItem['REVIEWS'])) { ?>
 
                                 <div class="reviews">
@@ -199,7 +199,7 @@ $this->setFrameMode(true);
 
                             <?php } ?>
 
-                            <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+                            <?php if (!empty($arItem['PREVIEW_TEXT']) && false) { ?>
 
                                 <div class="description">
                                     <?= $arItem['PREVIEW_TEXT']; ?>

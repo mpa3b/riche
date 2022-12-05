@@ -144,85 +144,73 @@ if (!empty($arResult['ITEMS'])) {
 
                     </div>
 
-                    <div class="details">
+                    <?php if (!empty($arItem['REVIEWS'])) { ?>
 
-                        <?php if (!empty($arItem['REVIEWS'])) { ?>
+                        <div class="reviews">
 
-                            <div class="reviews">
+                            <i class="icon-star"></i>
 
-                                <i class="icon-star"></i>
+                            <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
+                            <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
+                                                                  'отзыв') ?></span>
 
-                                <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
-                                <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
-                                                                      'отзыв') ?></span>
+                        </div>
 
-                            </div>
+                    <?php } ?>
 
-                        <?php } ?>
+                    <h3>
+                        <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
+                    </h3>
 
-                        <h3>
-                            <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
-                        </h3>
+                    <?php if ($arItem['ITEM_PRICES_CAN_BUY'] == true) { ?>
 
-                        <?php if ($arItem['ITEM_PRICES_CAN_BUY'] == true) { ?>
+                        <div class="actions">
 
-                            <div class="actions">
+                            <?php if (!empty($arItem['ITEM_PRICES'])) { ?>
 
-                                <?php if (!empty($arItem['ITEM_PRICES'])) { ?>
+                                <div class="prices">
 
-                                    <div class="prices">
+                                    <?php foreach ($arItem['ITEM_PRICES'] as $arPrice) { ?>
 
-                                        <?php foreach ($arItem['ITEM_PRICES'] as $arPrice) { ?>
+                                        <div class="price <?= strtolower($arPrice['CODE']); ?>">
 
-                                            <div class="price <?= strtolower($arPrice['CODE']); ?>">
+                                            <?php if ($arPrice['DISCOUNT'] > 0) { ?>
+                                                <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
+                                                <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                            <?php } else { ?>
+                                                <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                            <?php } ?>
 
-                                                <?php if ($arPrice['DISCOUNT'] > 0) { ?>
-                                                    <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
-                                                    <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                                <?php } else { ?>
-                                                    <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                                <?php } ?>
+                                        </div>
 
-                                            </div>
-
-                                        <?php } ?>
-
-                                    </div>
-
-                                <?php } ?>
-
-                                <div class="controls">
-
-                                    <?php if ($arParams['USE_QUANTITY']) { ?>
-                                        <input type="number"
-                                               name="quantity"
-                                               step="1"
-                                               max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
                                     <?php } ?>
-
-                                    <button class="primary buy button"
-                                            data-quantity=""
-                                            <?php if (!$arItem['CAN_BUY']) { ?>disabled<?php } ?>
-                                            data-id="<?= $arItem['ID']; ?>"
-                                            data-action="buy">
-                                        <i class="icon-shopping-cart"></i>
-                                    </button>
 
                                 </div>
 
+                            <?php } ?>
+
+                            <div class="controls">
+
+                                <?php if ($arParams['USE_QUANTITY']) { ?>
+                                    <input type="number"
+                                           name="quantity"
+                                           step="1"
+                                           max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
+                                <?php } ?>
+
+                                <button class="primary buy button"
+                                        data-quantity=""
+                                        <?php if (!$arItem['CAN_BUY']) { ?>disabled<?php } ?>
+                                        data-id="<?= $arItem['ID']; ?>"
+                                        data-action="buy">
+                                    <i class="icon-shopping-cart"></i>
+                                </button>
+
                             </div>
 
-                        <?php } ?>
+                        </div>
 
-                        <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
-
-                            <div class="description">
-                                <?= $arItem['PREVIEW_TEXT']; ?>
-                            </div>
-
-                        <?php } ?>
-
-                    </div>
+                    <?php } ?>
 
                 </div>
 

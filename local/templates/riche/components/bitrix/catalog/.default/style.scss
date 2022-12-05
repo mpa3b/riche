@@ -25,8 +25,8 @@
 
       span.section {
         position:         absolute;
-        left:             var(--offset);
-        top:              var(--offset);
+        left:             var(--offset--half);
+        top:              var(--offset--half);
 
         font-size:        0.65rem;
         z-index:          100;
@@ -41,8 +41,8 @@
 
       ul.purpose {
         position:       absolute;
-        left:           var(--offset);
-        bottom:         var(--offset);
+        left:           var(--offset--half);
+        bottom:         var(--offset--half);
 
         display:        flex;
         flex-direction: row;
@@ -56,8 +56,8 @@
 
         li {
           display:          block;
-          padding:          0.25em 0.5em;
-          padding-bottom:   0.3em;
+          padding:          0.2em 0.5em;
+          padding-bottom:   0.4em;
           background-color: var(--color--white);
           border-radius:    1em;
           margin-right:     0.25em;
@@ -67,8 +67,8 @@
 
       button.favorite {
         position: absolute;
-        right:    var(--offset);
-        top:      var(--offset);
+        right:    var(--offset--half);
+        top:      var(--offset--half);
         z-index:  100;
       }
 
@@ -141,13 +141,19 @@
 
       }
 
-      h3 {
-        margin: var(--offset--half) 0;
-      }
-
       .details {
         display:        flex;
         flex-direction: column;
+
+        * > {
+          box-sizing: border-box;
+        }
+
+      }
+
+      h3 {
+        margin:    var(--offset--half) 0;
+        font-size: 1.2rem;
       }
 
       .reviews {
@@ -171,10 +177,6 @@
           font-size: 0.8em;
         }
 
-      }
-
-      > h3 {
-        font-size: 1.2rem;
       }
 
       .actions {
