@@ -293,20 +293,20 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             <?php } ?>
 
-            <?php $APPLICATION->IncludeComponent(
-                'bitrix:main.include',
-                '.wrap',
-                [
-                    "AREA_FILE_SHOW"      => "sect",
-                    "AREA_FILE_SUFFIX"    => "above",
-                    "AREA_FILE_RECURSIVE" => "N",
-
-                    "COMPOSITE_FRAME_MODE" => "A",
-                    "COMPOSITE_FRAME_TYPE" => "AUTO",
-                ],
-                false
-            ); ?>
-
         </header>
+
+        <?php $APPLICATION->IncludeComponent(
+            'bitrix:main.include',
+            '.wrap',
+            [
+                "AREA_FILE_SHOW"      => "sect",
+                "AREA_FILE_SUFFIX"    => "above",
+                "AREA_FILE_RECURSIVE" => "N",
+
+                "COMPOSITE_FRAME_MODE" => "A",
+                "COMPOSITE_FRAME_TYPE" => "AUTO",
+            ],
+            false
+        ); ?>
 
     <?php } ?>
