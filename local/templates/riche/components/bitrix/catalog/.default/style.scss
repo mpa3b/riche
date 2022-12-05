@@ -20,7 +20,6 @@
     }
 
     .item {
-      position:       relative;
       display:        flex;
       flex-direction: column;
 
@@ -58,6 +57,7 @@
         li {
           display:          block;
           padding:          0.25em 0.5em;
+          padding-bottom:   0.3em;
           background-color: var(--color--white);
           border-radius:    1em;
           margin-right:     0.25em;
@@ -75,6 +75,7 @@
       @include Tablet {
 
         span.marker,
+        ul.purpose,
         button.favorite {
           transition: opacity var(--transition--common);
           opacity:    0;
@@ -83,6 +84,7 @@
         &:hover {
 
           span.marker,
+          ul.purpose,
           button.favorite {
             opacity: 1;
           }
@@ -92,10 +94,10 @@
       }
 
       .image {
+        position:      relative;
+
         border-radius: var(--border-radius--2x);
         overflow:      hidden;
-
-        position:      relative;
 
         video {
           position: absolute;
@@ -113,15 +115,15 @@
 
           }
 
-        }
+          picture {
+            opacity:    1;
+            transition: opacity var(--transition--common);
 
-        picture {
-          opacity:    1;
-          transition: opacity var(--transition--common);
+            img {
+              display: block;
+              width:   100%;
+            }
 
-          img {
-            display: block;
-            width:   100%;
           }
 
         }
@@ -137,6 +139,10 @@
           justify-content: center;
         }
 
+      }
+
+      h3 {
+        margin: var(--offset--half) 0;
       }
 
       .details {
@@ -178,9 +184,6 @@
 
         align-items:     center;
         justify-content: space-between;
-
-        margin-top:      auto;
-        margin-bottom:   0;
       }
 
       .price {

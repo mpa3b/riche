@@ -48,150 +48,166 @@ $this->setFrameMode(true);
                          data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
                          data-id="<?= $arItem['ID']; ?>">
 
-                        <button class="transparent favorite button"
-                                data-id="<?= $arItem['ID']; ?>"
-                                data-action="favorite">
-                            <i class="icon-heart"></i>
-                        </button>
+                        <div class="image">
 
-                        <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
+                            <button class="transparent favorite button"
+                                    data-id="<?= $arItem['ID']; ?>"
+                                    data-action="favorite">
+                                <i class="icon-heart"></i>
+                            </button>
 
-                            <?php
+                            <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>" class="image">
 
-                            $preload = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                <?php
 
-                            $small = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 0.75),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                $preload = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['preload'], 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
 
-                            $mobile = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 0.75),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                $small = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['small'], 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
 
-                            $tablet = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 0.75),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                $mobile = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['mobile'], 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
 
-                            $desktop = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 0.75),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                $tablet = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['tablet'] / 3, 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
 
-                            $wide = CFile::ResizeImageGet(
-                                $arItem['DETAIL_PICTURE']['ID'],
-                                Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 0.75),
-                                BX_RESIZE_IMAGE_EXACT
-                            );
+                                $desktop = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['desktop'] / 4, 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
 
-                            ?>
+                                $wide = CFile::ResizeImageGet(
+                                    $arItem['DETAIL_PICTURE']['ID'],
+                                    Thumb::calculateImageSize(Breakpoint::breakpoints['wide'] / 4, 0.75),
+                                    BX_RESIZE_IMAGE_EXACT
+                                );
 
-                            <picture class="image">
+                                ?>
 
-                                <source data-srcset="<?= $small['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('small'); ?>">
-                                <source data-srcset="<?= $mobile['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('mobile'); ?>">
-                                <source data-srcset="<?= $tablet['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('tablet'); ?>">
-                                <source data-srcset="<?= $desktop['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
-                                <source data-srcset="<?= $wide['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('wide'); ?>">
+                                <picture>
 
-                                <img data-src="<?= $preload['src']; ?>"
-                                     loading="lazy"
-                                     alt="<?= $arItem['NAME']; ?>">
+                                    <source data-srcset="<?= $small['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('small'); ?>">
+                                    <source data-srcset="<?= $mobile['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('mobile'); ?>">
+                                    <source data-srcset="<?= $tablet['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('tablet'); ?>">
+                                    <source data-srcset="<?= $desktop['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('desktop'); ?>">
+                                    <source data-srcset="<?= $wide['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('wide'); ?>">
 
-                            </picture>
+                                    <img data-src="<?= $preload['src']; ?>"
+                                         loading="lazy"
+                                         alt="<?= $arItem['NAME']; ?>">
 
-                        </a>
+                                </picture>
 
-                        <?php if (!empty($arItem['REVIEWS'])) { ?>
+                            </a>
 
-                            <div class="reviews">
+                            <?php if (!empty($arItem['DISPLAY_PROPERTIES']['PURPOSE']['DISPLAY_VALUE'])) { ?>
+                                <ul class="purpose marker">
+                                    <?php foreach ($arItem['DISPLAY_PROPERTIES']['PURPOSE']['DISPLAY_VALUE'] as $element) { ?>
+                                        <li><?= strip_tags($element); ?></li>
+                                    <?php } ?>
+                                </ul>
+                            <?php } ?>
 
-                                <i class="icon-star"></i>
+                        </div>
 
-                                <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
-                                <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
-                                                                      'отзыв') ?></span>
+                        <div class="details">
 
-                            </div>
+                            <?php if ($arItem['ITEM_PRICES_CAN_BUY'] == true) { ?>
 
-                        <?php } ?>
+                                <div class="actions">
 
-                        <h3>
-                            <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
-                        </h3>
+                                    <?php if (!empty($arItem['ITEM_PRICES'])) { ?>
 
-                        <?php if ($arItem['ITEM_PRICES_CAN_BUY'] == true) { ?>
+                                        <div class="prices">
 
-                            <div class="actions">
+                                            <?php foreach ($arItem['ITEM_PRICES'] as $arPrice) { ?>
 
-                                <?php if (!empty($arItem['ITEM_PRICES'])) { ?>
+                                                <div class="price <?= strtolower($arPrice['CODE']); ?>">
 
-                                    <div class="prices">
+                                                    <?php if ($arPrice['DISCOUNT'] > 0) { ?>
+                                                        <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
+                                                        <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                                    <?php } else { ?>
+                                                        <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                                    <?php } ?>
 
-                                        <?php foreach ($arItem['ITEM_PRICES'] as $arPrice) { ?>
+                                                </div>
 
-                                            <div class="price <?= strtolower($arPrice['CODE']); ?>">
+                                            <?php } ?>
 
-                                                <?php if ($arPrice['DISCOUNT'] > 0) { ?>
-                                                    <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
-                                                    <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                                <?php } else { ?>
-                                                    <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                                <?php } ?>
+                                        </div>
 
-                                            </div>
+                                    <?php } ?>
 
+                                    <div class="controls">
+
+                                        <?php if ($arParams['USE_QUANTITY']) { ?>
+                                            <input type="number"
+                                                   name="quantity"
+                                                   step="1"
+                                                   max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
                                         <?php } ?>
+
+                                        <button class="primary buy button"
+                                                data-quantity=""
+                                                <?php if (!$arItem['CAN_BUY']) { ?>disabled<?php } ?>
+                                                data-id="<?= $arItem['ID']; ?>"
+                                                data-action="buy">
+                                            <i class="icon-shopping-cart"></i>
+                                        </button>
 
                                     </div>
 
-                                <?php } ?>
+                                </div>
 
-                                <div class="controls">
+                            <?php } ?>
 
-                                    <?php if ($arParams['USE_QUANTITY']) { ?>
-                                        <input type="number"
-                                               name="quantity"
-                                               step="1"
-                                               max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
-                                    <?php } ?>
+                            <h3>
+                                <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
+                            </h3>
 
-                                    <button class="primary buy button"
-                                            data-quantity=""
-                                            <?php if (!$arItem['CAN_BUY']) { ?>disabled<?php } ?>
-                                            data-id="<?= $arItem['ID']; ?>"
-                                            data-action="buy">
-                                        <i class="icon-shopping-cart"></i>
-                                    </button>
+                            <?php if (!empty($arItem['REVIEWS'])) { ?>
+
+                                <div class="reviews">
+
+                                    <i class="icon-star"></i>
+
+                                    <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
+                                    <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
+                                                                          'отзыв') ?></span>
 
                                 </div>
 
-                            </div>
+                            <?php } ?>
 
-                        <?php } ?>
+                            <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
 
-                        <?php if (!empty($arItem['PREVIEW_TEXT']) && false) { ?>
+                                <div class="description">
+                                    <?= $arItem['PREVIEW_TEXT']; ?>
+                                </div>
 
-                            <div class="description">
-                                <?= $arItem['PREVIEW_TEXT']; ?>
-                            </div>
+                            <?php } ?>
 
-                        <?php } ?>
+                        </div>
 
                     </div>
 

@@ -46,24 +46,24 @@ if (!empty($arResult['ITEMS'])) {
                      data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
                      data-id="<?= $arItem['ID']; ?>">
 
-                    <?php if (!empty($arItem['SECTION_NAME'])) { ?>
-                        <span class="section marker"><?= $arItem['SECTION_NAME']; ?></span>
-                    <?php } ?>
-
-                    <button class="transparent favorite button" data-id="<?= $arItem['ID']; ?>"
-                            data-action="favorite">
-                        <i class="icon-heart"></i>
-                    </button>
-
-                    <?php if (!empty($arItem['DISPLAY_PROPERTIES']['PURPOSE']['DISPLAY_VALUE'])) { ?>
-                        <ul class="purpose marker">
-                            <?php foreach ($arItem['DISPLAY_PROPERTIES']['PURPOSE']['DISPLAY_VALUE'] as $element) { ?>
-                                <li><?= strip_tags($element); ?></li>
-                            <?php } ?>
-                        </ul>
-                    <?php } ?>
-
                     <div class="image">
+
+                        <?php if (!empty($arItem['SECTION_NAME'])) { ?>
+                            <span class="section marker"><?= $arItem['SECTION_NAME']; ?></span>
+                        <?php } ?>
+
+                        <button class="transparent favorite button" data-id="<?= $arItem['ID']; ?>"
+                                data-action="favorite">
+                            <i class="icon-heart"></i>
+                        </button>
+
+                        <?php if (!empty($arItem['DISPLAY_PROPERTIES']['PURPOSE']['DISPLAY_VALUE'])) { ?>
+                            <ul class="purpose marker">
+                                <?php foreach ($arItem['DISPLAY_PROPERTIES']['PURPOSE']['DISPLAY_VALUE'] as $element) { ?>
+                                    <li><?= strip_tags($element); ?></li>
+                                <?php } ?>
+                            </ul>
+                        <?php } ?>
 
                         <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
 
@@ -144,73 +144,85 @@ if (!empty($arResult['ITEMS'])) {
 
                     </div>
 
-                    <?php if (!empty($arItem['REVIEWS'])) { ?>
+                    <div class="details">
 
-                        <div class="reviews">
+                        <?php if (!empty($arItem['REVIEWS'])) { ?>
 
-                            <i class="icon-star"></i>
+                            <div class="reviews">
 
-                            <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
-                            <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
-                                                                  'отзыв') ?></span>
+                                <i class="icon-star"></i>
 
-                        </div>
-
-                    <?php } ?>
-
-                    <h3>
-                        <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
-                    </h3>
-
-                    <?php if ($arItem['ITEM_PRICES_CAN_BUY'] == true) { ?>
-
-                        <div class="actions">
-
-                            <?php if (!empty($arItem['ITEM_PRICES'])) { ?>
-
-                                <div class="prices">
-
-                                    <?php foreach ($arItem['ITEM_PRICES'] as $arPrice) { ?>
-
-                                        <div class="price <?= strtolower($arPrice['CODE']); ?>">
-
-                                            <?php if ($arPrice['DISCOUNT'] > 0) { ?>
-                                                <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
-                                                <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                            <?php } else { ?>
-                                                <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                            <?php } ?>
-
-                                        </div>
-
-                                    <?php } ?>
-
-                                </div>
-
-                            <?php } ?>
-
-                            <div class="controls">
-
-                                <?php if ($arParams['USE_QUANTITY']) { ?>
-                                    <input type="number"
-                                           name="quantity"
-                                           step="1"
-                                           max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
-                                <?php } ?>
-
-                                <button class="primary buy button"
-                                        data-quantity=""
-                                        <?php if (!$arItem['CAN_BUY']) { ?>disabled<?php } ?>
-                                        data-id="<?= $arItem['ID']; ?>"
-                                        data-action="buy">
-                                    <i class="icon-shopping-cart"></i>
-                                </button>
+                                <span class="value"><?= $arItem['REVIEWS']['MEDIAN']; ?></span>
+                                <span class="count"><?= Units::plural($arItem['REVIEWS']['COUNT'],
+                                                                      'отзыв') ?></span>
 
                             </div>
 
-                        </div>
+                        <?php } ?>
 
-                    <?php } ?>
+                        <h3>
+                            <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
+                        </h3>
+
+                        <?php if ($arItem['ITEM_PRICES_CAN_BUY'] == true) { ?>
+
+                            <div class="actions">
+
+                                <?php if (!empty($arItem['ITEM_PRICES'])) { ?>
+
+                                    <div class="prices">
+
+                                        <?php foreach ($arItem['ITEM_PRICES'] as $arPrice) { ?>
+
+                                            <div class="price <?= strtolower($arPrice['CODE']); ?>">
+
+                                                <?php if ($arPrice['DISCOUNT'] > 0) { ?>
+                                                    <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
+                                                    <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                                <?php } else { ?>
+                                                    <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                                <?php } ?>
+
+                                            </div>
+
+                                        <?php } ?>
+
+                                    </div>
+
+                                <?php } ?>
+
+                                <div class="controls">
+
+                                    <?php if ($arParams['USE_QUANTITY']) { ?>
+                                        <input type="number"
+                                               name="quantity"
+                                               step="1"
+                                               max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
+                                    <?php } ?>
+
+                                    <button class="primary buy button"
+                                            data-quantity=""
+                                            <?php if (!$arItem['CAN_BUY']) { ?>disabled<?php } ?>
+                                            data-id="<?= $arItem['ID']; ?>"
+                                            data-action="buy">
+                                        <i class="icon-shopping-cart"></i>
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        <?php } ?>
+
+                        <?php if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+
+                            <div class="description">
+                                <?= $arItem['PREVIEW_TEXT']; ?>
+                            </div>
+
+                        <?php } ?>
+
+                    </div>
 
                 </div>
 

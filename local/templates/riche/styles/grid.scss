@@ -7,10 +7,10 @@
     --offset: 1rem;
   }
   @include Tablet {
-    --offset: 1.175rem;
+    --offset: 1.25rem;
   }
   @include Desktop {
-    --offset: 1.25rem;
+    --offset: 1.5rem;
   }
 
   --offset--negative:       calc(var(--offset) * -1);

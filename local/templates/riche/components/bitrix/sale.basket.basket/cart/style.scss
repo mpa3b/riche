@@ -1,0 +1,292 @@
+@import "../../../../styles/vars";
+
+.sale-basket-basket--cart {
+
+  .cart {
+
+    &.is-empty .cart--items,
+    &.is-empty .cart--total {
+      display : none;
+    }
+
+    &:not(.is-empty) .cart--empty {
+      display : none;
+    }
+
+    &--items {
+      margin : 1.6rem 0;
+
+      .items {
+        display        : flex;
+        flex-direction : column;
+        padding        : 0;
+
+        .item {
+          display        : flex;
+          flex-wrap      : nowrap;
+          flex-direction : column;
+          align-items    : center;
+          padding        : 4.2rem 0;
+          position       : relative;
+
+          @media all and (min-width : $breakpoint_mobile) {
+            flex-direction  : row;
+            justify-content : space-between;
+          }
+
+          &:not(:last-of-type) {
+            border-bottom : var(--border--common);
+          }
+
+          .description {
+            display        : flex;
+            flex-direction : row;
+            flex-wrap      : nowrap;
+            align-items    : flex-start;
+            margin-bottom  : 1.6rem;
+            width          : 100%;
+
+            @media all and (min-width : $breakpoint_mobile) {
+              margin      : 0;
+              align-items : center;
+              width       : 40%;
+            }
+
+            .image {
+              border         : var(--border--common);
+              border-radius  : var(--border--radius);
+              overflow       : hidden;
+              margin-right   : 2.4rem;
+              flex-shrink    : 0;
+
+              flex-grow      : 0;
+              width          : 8rem;
+              height         : 8rem;
+              @media all and (min-width : $breakpoint_mobile) {
+                width  : 9rem;
+                height : 9rem;
+              }
+
+              display        : flex;
+              flex-direction : row;
+              align-items    : center;
+
+              img {
+                display : block;
+                width   : 100%;
+                margin  : auto 0;
+              }
+            }
+
+            .details {
+              display        : flex;
+              flex-direction : column;
+              flex-wrap      : nowrap;
+              padding-right  : 3rem;
+
+              h3 {
+                margin      : 0;
+                font-size   : 2rem;
+                font-family : var(--font--walsheim);
+                font-weight : 500;
+              }
+
+              ul.properties {
+                margin-top     : 0.8rem;
+                display        : flex;
+                flex-direction : column;
+                @media all and (min-width : $breakpoint_mobile) {
+                  flex-direction : row;
+                }
+                flex-wrap      : wrap;
+                color          : var(--color--gray);
+                padding        : 0;
+
+                li {
+                  display       : block;
+                  padding-right : 0.8rem;
+
+                  &:not(:last-of-type):after {
+                    content : ",";
+                  }
+                }
+
+              }
+
+            }
+
+          }
+
+          .numbers {
+            display         : flex;
+            flex-direction  : row;
+            flex-wrap       : nowrap;
+            justify-content : space-between;
+
+            width           : 100%;
+            margin-top      : 2rem;
+
+            @media all and (min-width : $breakpoint_mobile) {
+              margin-top : 0;
+              width      : auto;
+            }
+
+            .label {
+              color         : var(--color--gray);
+              display       : block;
+              margin-bottom : 0.5rem;
+              @media all and (min-width : $breakpoint_mobile) {
+                margin-bottom : 1rem;
+              }
+              font-size     : 1.4rem;
+            }
+
+            span.value {
+              display     : block;
+              margin-top  : 1rem;
+              @media all and (min-width : $breakpoint_mobile) {
+                margin-top : 1.75rem;
+              }
+              font-size   : 1.8rem;
+              font-weight : 500;
+              white-space : nowrap;
+            }
+
+            input.value {
+              width      : 8rem;
+              padding    : 0.8rem;
+              text-align : center;
+            }
+
+            .quantity {
+              @media all and (max-width : $breakpoint_mobile) {
+                order : -5;
+              }
+              @media all and (min-width : $breakpoint_mobile) {
+                margin : 0 4.2rem;
+              }
+            }
+
+            .total {
+              width : 6em;
+
+              .value {
+                white-space : nowrap;
+              }
+            }
+
+          }
+
+          .controls {
+            padding-left : 0.8rem;
+            flex-basis   : 4.2rem;
+            text-align   : right;
+            position     : absolute;
+
+            @media all and (min-width : $breakpoint_mobile) {
+              position : static;
+            }
+
+            right        : 0;
+            top          : 0.8rem;
+
+            button {
+
+              .icon {
+                filter : grayscale(1) brightness(1.5);
+
+                &:before {
+                  background-size : contain;
+                }
+              }
+
+            }
+
+          }
+
+          &:hover {
+
+            .controls {
+              .icon {
+                filter : unset;
+              }
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+    &--total {
+      margin     : 1.6rem 0;
+      text-align : right;
+
+      .total {
+        margin-bottom : 1.6rem;
+
+        @media all and (min-width : $breakpoint_mobile) {
+          text-align : right;
+        }
+
+        .count {
+          font-weight : normal;
+        }
+
+        .value {
+          color        : var(--color--purple);
+          font-family  : var(--font--comfortaa);
+          font-size    : 3.2rem;
+          font-weight  : bold;
+          padding-left : 0.8rem;
+        }
+
+      }
+
+      .actions {
+        margin-top     : 3.2rem;
+
+        display        : flex;
+        flex-direction : column-reverse;
+
+        @media all and (min-width : $breakpoint_mobile) {
+          flex-direction  : row;
+          justify-content : space-between;
+
+          .checkout {
+            text-align : right;
+          }
+        }
+
+        @media all and (max-width : $breakpoint_mobile) {
+          .button {
+            display : block;
+          }
+        }
+
+      }
+
+    }
+
+    &--empty {
+      padding-top    : 2.4rem;
+      padding-bottom : 2.4rem;
+      @media all and (min-width : $breakpoint_mobile) {
+        padding-top    : 4.8rem;
+        padding-bottom : 4.8rem;
+      }
+
+      text-align     : center;
+
+      img {
+        margin  : 2.4rem auto;
+        display : block;
+      }
+
+    }
+
+  }
+
+}

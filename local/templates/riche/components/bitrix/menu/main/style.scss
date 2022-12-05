@@ -10,6 +10,8 @@
     flex-direction: row;
     flex-wrap:      nowrap;
 
+    justify-content:    center;
+
     li {
       list-style:  none;
       font-weight: 500;
@@ -22,7 +24,7 @@
         position:        relative;
 
         &.active {
-          color: var(--color--green--dark);
+          color: var(--color--primary);
         }
 
       }

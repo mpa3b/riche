@@ -135,7 +135,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
         <div class="row header">
 
-            <div id="page--header--logo" class="third">
+            <div id="page--header--logo" class="quarter">
 
                 <?php if ($currentDirectoryPath == "/") { ?>
 
@@ -175,7 +175,7 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             </div>
 
-            <div id="page--header--menu" class="third mobiles-only">
+            <div id="page--header--menu" class="half">
 
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:menu",
@@ -197,36 +197,6 @@ $request = Application::getInstance()->getContext()->getRequest();
                         "COMPOSITE_FRAME_TYPE" => "AUTO"
                     ]
                 ); ?>
-
-            </div>
-
-            <div id="page--header--buttons" class="third">
-
-                <?php $APPLICATION->IncludeComponent(
-                    "bitrix:sale.basket.basket.line",
-                    "header",
-                    [
-                        "PATH_TO_BASKET" => ORDER_URL,
-                        "PATH_TO_ORDER"  => ORDER_URL,
-
-                        "SHOW_PRODUCTS"     => "N",
-                        "SHOW_NUM_PRODUCTS" => "Y",
-                        "SHOW_AUTHOR"       => "N",
-
-                        "HIDE_ON_BASKET_PAGES" => "Y",
-
-                        "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO",
-                    ]
-                ); ?>
-
-            </div>
-
-        </div>
-
-        <div class="row nav">
-
-            <div class="two-thirds">
 
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:menu",
@@ -251,20 +221,24 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             </div>
 
-            <div class="third hide--on-mobiles">
+            <div id="page--header--buttons" class="quarter">
 
                 <?php $APPLICATION->IncludeComponent(
-                    'bitrix:main.include',
-                    '',
+                    "bitrix:sale.basket.basket.line",
+                    "header",
                     [
-                        "AREA_FILE_SHOW"      => "sect",
-                        "AREA_FILE_SUFFIX"    => "header",
-                        "AREA_FILE_RECURSIVE" => "N",
+                        "PATH_TO_BASKET" => ORDER_URL,
+                        "PATH_TO_ORDER"  => ORDER_URL,
+
+                        "SHOW_PRODUCTS"     => "N",
+                        "SHOW_NUM_PRODUCTS" => "Y",
+                        "SHOW_AUTHOR"       => "N",
+
+                        "HIDE_ON_BASKET_PAGES" => "Y",
 
                         "COMPOSITE_FRAME_MODE" => "A",
                         "COMPOSITE_FRAME_TYPE" => "AUTO",
-                    ],
-                    false
+                    ]
                 ); ?>
 
             </div>
@@ -272,6 +246,20 @@ $request = Application::getInstance()->getContext()->getRequest();
         </div>
 
     </div>
+
+    <?php $APPLICATION->IncludeComponent(
+        'bitrix:main.include',
+        '.wrap',
+        [
+            "AREA_FILE_SHOW"      => "sect",
+            "AREA_FILE_SUFFIX"    => "header",
+            "AREA_FILE_RECURSIVE" => "N",
+
+            "COMPOSITE_FRAME_MODE" => "A",
+            "COMPOSITE_FRAME_TYPE" => "AUTO",
+        ],
+        false
+    ); ?>
 
 </nav>
 

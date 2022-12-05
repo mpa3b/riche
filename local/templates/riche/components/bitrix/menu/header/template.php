@@ -22,7 +22,7 @@ $frame = $this->createFrame();
 
 ?>
 
-<nav class="menu--header" role="navigation">
+<nav class="menu--header mobiles-only" role="navigation">
 
     <?php $frame->begin(); ?>
 

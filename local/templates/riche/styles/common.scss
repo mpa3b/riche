@@ -29,8 +29,8 @@
 
   --color--base:               var(--color--black);
 
-  --color--primary:            var(--color--green);
-  --color--secondary:          var(--color--violet);
+  --color--primary:            var(--color--black);
+  --color--secondary:          var(--color--black);
 
   --color--background:         var(--color--gray--light);
 
@@ -183,7 +183,7 @@ a {
   }
 
   &:hover {
-    color: var(--color--green);
+    color: var(--color--primary);
   }
 
   &[href^="tel"] {
@@ -260,16 +260,16 @@ button {
   box-shadow:       var(--box-shadow);
 
   &:hover {
-    color:            var(--color--green--dark);
+    color:            var(--color--primary);
     background-color: var(--color--white);
   }
 
   &.primary {
-    background-color: var(--color--green);
+    background-color: var(--color--primary);
     color:            var(--color--white);
 
     &:hover {
-      background-color: var(--color--green--dark);
+      background-color: var(--color--primary);
     }
   }
 
@@ -302,7 +302,7 @@ button {
     background-color: var(--color--white--transparent);
 
     &:hover {
-      background-color: var(--color--green--transparent);
+      background-color: var(--color--primary);
     }
 
   }

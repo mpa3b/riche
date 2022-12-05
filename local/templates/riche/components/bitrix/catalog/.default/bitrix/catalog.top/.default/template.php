@@ -28,9 +28,11 @@ $this->setFrameMode(true);
 
     <?php $frame = $this->createFrame(); ?>
 
-    <section class="catalog-top--catalog--list wrap">
+    <section class="catalog-top--catalog--default wrap">
 
-        <h2 hidden>Самое популярное</h2>
+        <?php if (!empty($arParams['TITLE'])) { ?>
+            <h2><?= $arParams['TITLE']; ?></h2>
+        <?php } ?>
 
         <div class="items grid">
 
