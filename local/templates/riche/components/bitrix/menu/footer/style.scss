@@ -19,12 +19,15 @@
     li {
       list-style:    none;
       box-sizing:    border-box;
+
       flex-basis:    49.5%;
       flex-shrink:   0;
-      margin-bottom: var(--offset--half);
+
+      padding-right: var(--offset--half);
 
       a {
         display: block;
+        white-space: break-spaces;
       }
 
     }

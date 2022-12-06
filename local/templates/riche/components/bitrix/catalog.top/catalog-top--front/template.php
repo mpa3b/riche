@@ -70,7 +70,12 @@ $this->setFrameMode(true);
                             <?php if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
 
                                 <video <?php if ($i == 0) { ?>autoplay<?php } ?> muted loop>
-                                    <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                                    <?php if ($i == 0) { ?>
+                                        <source src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                                    <?php } else { ?>
+                                        <source
+                                            data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                                    <?php } ?>
                                 </video>
 
                             <?php } ?>
@@ -116,25 +121,48 @@ $this->setFrameMode(true);
                                 );
 
                                 ?>
+                                <?php if ($i == 0) { ?>
 
-                                <source data-srcset="<?= $small['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('small'); ?>">
-                                <source data-srcset="<?= $mobile['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('mobile'); ?>">
-                                <source data-srcset="<?= $tablet['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('tablet'); ?>">
-                                <source data-srcset="<?= $desktop['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
-                                <source data-srcset="<?= $wide['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('wide'); ?>">
+                                    <source srcset="<?= $small['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('small'); ?>">
 
-                                <img data-src="<?= $preload['src']; ?>"
-                                    <?php if ($i == 0) { ?>
-                                        loading="eager"
-                                    <?php } else { ?>
-                                        loading="lazy"
-                                    <?php } ?>
-                                     alt="<?= $arItem['NAME']; ?>">
+                                    <source srcset="<?= $mobile['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('mobile'); ?>">
+
+                                    <source srcset="<?= $tablet['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('tablet'); ?>">
+
+                                    <source srcset="<?= $desktop['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('desktop'); ?>">
+
+                                    <source srcset="<?= $wide['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                                    <img src="<?= $preload['src']; ?>"
+                                         alt="<?= $arItem['NAME']; ?>">
+
+                                <?php } else { ?>
+
+                                    <source data-srcset="<?= $small['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('small'); ?>">
+
+                                    <source data-srcset="<?= $mobile['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('mobile'); ?>">
+
+                                    <source data-srcset="<?= $tablet['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('tablet'); ?>">
+
+                                    <source data-srcset="<?= $desktop['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('desktop'); ?>">
+
+                                    <source data-srcset="<?= $wide['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                                    <img data-src="<?= $preload['src']; ?>"
+                                         loading="lazy"
+                                         alt="<?= $arItem['NAME']; ?>">
+
+                                <?php } ?>
 
                             </picture>
 
@@ -170,59 +198,59 @@ $this->setFrameMode(true);
                             <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
                         </h3>
 
-                        <?php if ($arItem['ITEM_PRICES_CAN_BUY']) { ?>
+                    </div>
 
-                            <div class="actions">
+                    <?php if ($arItem['ITEM_PRICES_CAN_BUY']) { ?>
 
-                                <?php if (!empty($arItem['ITEM_PRICES'])) { ?>
+                        <div class="actions">
 
-                                    <div class="prices">
+                            <?php if (!empty($arItem['ITEM_PRICES'])) { ?>
 
-                                        <?php foreach ($arItem['ITEM_PRICES'] as $arPrice) { ?>
+                                <div class="prices">
 
-                                            <div class="price <?= strtolower($arPrice['CODE']); ?>">
+                                    <?php foreach ($arItem['ITEM_PRICES'] as $arPrice) { ?>
 
-                                                <?php if ($arPrice['DISCOUNT'] > 0) { ?>
-                                                    <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
-                                                    <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                                <?php } else { ?>
-                                                    <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                                <?php } ?>
+                                        <div class="price <?= strtolower($arPrice['CODE']); ?>">
 
-                                            </div>
+                                            <?php if ($arPrice['DISCOUNT'] > 0) { ?>
+                                                <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
+                                                <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                            <?php } else { ?>
+                                                <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                            <?php } ?>
 
-                                        <?php } ?>
-
-                                    </div>
-
-                                <?php } ?>
-
-                                <div class="controls">
-
-                                    <?php if ($arParams['USE_QUANTITY']) { ?>
-
-                                        <input type="number"
-                                               name="quantity"
-                                               step="1"
-                                               max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
+                                        </div>
 
                                     <?php } ?>
 
-                                    <button class="primary buy button"
-                                            data-quantity=""
-                                            <?php if (!$arItem['CAN_BUY']) { ?>disabled<?php } ?>
-                                            data-id="<?= $arItem['ID']; ?>"
-                                            data-action="buy">
-                                        <i class="icon-shopping-cart"></i>
-                                    </button>
-
                                 </div>
+
+                            <?php } ?>
+
+                            <div class="controls">
+
+                                <?php if ($arParams['USE_QUANTITY']) { ?>
+
+                                    <input type="number"
+                                           name="quantity"
+                                           step="1"
+                                           max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
+
+                                <?php } ?>
+
+                                <button class="primary buy button"
+                                        data-quantity=""
+                                        <?php if (!$arItem['CAN_BUY']) { ?>disabled<?php } ?>
+                                        data-id="<?= $arItem['ID']; ?>"
+                                        data-action="buy">
+                                    <i class="icon-shopping-cart"></i>
+                                </button>
 
                             </div>
 
-                        <?php } ?>
+                        </div>
 
-                    </div>
+                    <?php } ?>
 
                 </div>
 

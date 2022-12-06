@@ -15,14 +15,15 @@
 
       span.marker {
         position:         absolute;
-        left:             var(--offset);
-        top:              var(--offset);
+        left:             var(--offset--half);
+        top:              var(--offset--half);
 
         font-size:        0.8rem;
         z-index:          100;
 
         display:          block;
-        padding:          0.25em 0.5em;
+        padding:          0.33em 0.5em;
+        padding-bottom:   0.4em;
         margin:           var(--offset--half);
 
         background-color: var(--color--white);
@@ -46,7 +47,7 @@
 
         li {
           display:          block;
-          padding:          0.2em 0.5em;
+          padding:          0.33em 0.5em;
           padding-bottom:   0.4em;
           background-color: var(--color--white);
           border-radius:    1em;
@@ -57,8 +58,8 @@
 
       button.favorite {
         position: absolute;
-        right:    var(--offset);
-        top:      var(--offset);
+        right:    var(--offset--half);
+        top:      var(--offset--half);
         z-index:  100;
       }
 
@@ -129,6 +130,23 @@
           justify-content: center;
         }
 
+        transform:     scale(1);
+        transition:    all var(--transition--common);
+        z-index:    10;
+
+      }
+
+      @include Tablet {
+
+        &:hover {
+
+          .image {
+            transform:  scale(1.2);
+            box-shadow: var(--box-shadow--blurry);
+          }
+
+        }
+
       }
 
       .reviews {
@@ -176,9 +194,11 @@
         position:        absolute;
         bottom:          0;
         left:            0;
+
+        box-sizing:      border-box;
         width:           100%;
 
-        padding:         var(--offset);
+        padding:         var(--offset--half);
         padding-bottom:  0;
       }
 
