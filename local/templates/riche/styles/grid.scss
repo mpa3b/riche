@@ -2,15 +2,14 @@
 
 :root {
 
-  --offset:                 0.85rem;
   @include Mobile {
-    --offset: 1rem;
+    --offset: 1.1rem;
   }
   @include Tablet {
-    --offset: 1.25rem;
+    --offset: 1.125rem;
   }
   @include Desktop {
-    --offset: 1.5rem;
+    --offset: 1.25rem;
   }
 
   --offset--negative:       calc(var(--offset) * -1);
@@ -28,7 +27,7 @@
   display:    block;
   box-sizing: border-box;
 
-  margin:     var(--offset--half) var(--offset);
+  margin:     var(--offset);
 
   @include Tablet {
     width:  92%;

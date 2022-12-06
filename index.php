@@ -3,7 +3,6 @@
 require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 
 use Bex\Tools\Iblock\IblockTools;
-use Bitrix\Main\Page\Asset;
 
 /** @global CMain $APPLICATION */
 $APPLICATION->SetTitle('RICHE');
@@ -105,19 +104,19 @@ $APPLICATION->SetTitle('RICHE');
         "IBLOCK_TYPE" => IblockTools::find('COMPANY', 'SLIDES')->type(),
         "IBLOCK_ID"   => IblockTools::find('COMPANY', 'SLIDES')->id(),
 
-        "NEWS_COUNT"  => 5,
+        "NEWS_COUNT" => 5,
 
         "SORT_BY1"    => "ACTIVE_FROM",
         "SORT_ORDER1" => "DESC",
         "SORT_BY2"    => "SORT",
         "SORT_ORDER2" => "ASC",
 
-        "FILTER_NAME"   => "",
-        "FIELD_CODE"    => ["ID", "DETAIL_PICTURE", "PREVIEW_TEXT", "DETAIL_TEXT", "NAME", "DETAIL_PAGE_URL"],
+        "FILTER_NAME" => "",
+        "FIELD_CODE"  => ["ID", "DETAIL_PICTURE", "PREVIEW_TEXT", "DETAIL_TEXT", "NAME", "DETAIL_PAGE_URL"],
 
         "PROPERTY_CODE" => ["VIDEO", "BUTTON_TEXT", "BUTTON_LINK"],
 
-        "CHECK_DATES"   => "Y",
+        "CHECK_DATES" => "Y",
 
         "SET_TITLE"            => "N",
         "SET_BROWSER_TITLE"    => "N",
@@ -296,11 +295,11 @@ $APPLICATION->SetTitle('RICHE');
 
         "RELATIVE_QUANTITY_FACTOR" => 5, // что это?
 
-        "SEF_MODE"                 => "Y",
-        "SEF_RULE"                 => "/shop/",
+        "SEF_MODE" => "Y",
+        "SEF_RULE" => "/shop/",
 
         "SECTION_URL" => "/shop/#SECTION_CODE_PATH#",
-        "DETAIL_URL" => "/shop/#SECTION_CODE_PATH#/#CODE#",
+        "DETAIL_URL"  => "/shop/#SECTION_CODE_PATH#/#CODE#",
 
         "SHOW_DISCOUNT_PERCENT" => "N",
         "SHOW_MAX_QUANTITY"     => "M",
@@ -410,99 +409,95 @@ $APPLICATION->SetTitle('RICHE');
     ]
 ); ?>
 
-<aside class="front--bottom">
+<aside class="front--bottom wrap">
 
-    <div class="wrap">
+    <div class="row">
 
-        <div class="row">
+        <div class="half quiz">
 
-            <div class="half quiz">
+            <?php $APPLICATION->IncludeComponent(
+                'bitrix:form',
+                'quiz--front',
+                [
+                    "WEB_FORM_ID" => 1,
+                    "RESULT_ID"   => $_REQUEST["RESULT_ID"],
 
-                <?php $APPLICATION->IncludeComponent(
-                    'bitrix:form',
-                    'quiz--front',
-                    [
-                        "WEB_FORM_ID" => 1,
-                        "RESULT_ID"   => $_REQUEST["RESULT_ID"],
+                    "START_PAGE"  => "new",
+                    "SUCCESS_URL" => "?success",
 
-                        "START_PAGE"  => "new",
-                        "SUCCESS_URL" => "?success",
+                    "SHOW_LIST_PAGE"    => "N",
+                    "SHOW_EDIT_PAGE"    => "N",
+                    "SHOW_VIEW_PAGE"    => "N",
+                    "SHOW_ANSWER_VALUE" => "Y",
+                    "SHOW_ADDITIONAL"   => "Y",
+                    "SHOW_STATUS"       => "N",
 
-                        "SHOW_LIST_PAGE"    => "N",
-                        "SHOW_EDIT_PAGE"    => "N",
-                        "SHOW_VIEW_PAGE"    => "N",
-                        "SHOW_ANSWER_VALUE" => "Y",
-                        "SHOW_ADDITIONAL"   => "Y",
-                        "SHOW_STATUS"       => "N",
+                    "EDIT_ADDITIONAL" => "N",
+                    "EDIT_STATUS"     => "N",
 
-                        "EDIT_ADDITIONAL" => "N",
-                        "EDIT_STATUS"     => "N",
+                    "NOT_SHOW_FILTER" => [],
+                    "NOT_SHOW_TABLE"  => [],
 
-                        "NOT_SHOW_FILTER" => [],
-                        "NOT_SHOW_TABLE"  => [],
+                    "CHAIN_ITEM_TEXT" => "",
+                    "CHAIN_ITEM_LINK" => "",
 
-                        "CHAIN_ITEM_TEXT" => "",
-                        "CHAIN_ITEM_LINK" => "",
+                    "IGNORE_CUSTOM_TEMPLATE" => "Y",
+                    "USE_EXTENDED_ERRORS"    => "N",
 
-                        "IGNORE_CUSTOM_TEMPLATE" => "Y",
-                        "USE_EXTENDED_ERRORS"    => "N",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => CACHE_TTL,
 
-                        "CACHE_TYPE" => "A",
-                        "CACHE_TIME" => CACHE_TTL,
+                    "SEF_MODE"          => "Y",
+                    "SEF_FOLDER"        => "/",
+                    "SEF_URL_TEMPLATES" => [
+                        "new" => "/"
+                    ],
 
-                        "SEF_MODE"          => "Y",
-                        "SEF_FOLDER"        => "/",
-                        "SEF_URL_TEMPLATES" => [
-                            "new" => "/"
-                        ],
+                    "AJAX_MODE"           => "N",
+                    "AJAX_OPTION_JUMP"    => "N",
+                    "AJAX_OPTION_STYLE"   => "Y",
+                    "AJAX_OPTION_HISTORY" => "N",
 
-                        "AJAX_MODE"           => "N",
-                        "AJAX_OPTION_JUMP"    => "N",
-                        "AJAX_OPTION_STYLE"   => "Y",
-                        "AJAX_OPTION_HISTORY" => "N",
+                    "VARIABLE_ALIASES" => [
+                        "new"  => [],
+                        "list" => [],
+                        "edit" => [],
+                        "view" => [],
+                    ],
 
-                        "VARIABLE_ALIASES" => [
-                            "new"  => [],
-                            "list" => [],
-                            "edit" => [],
-                            "view" => [],
-                        ],
+                    "COMPOSITE_FRAME_MODE" => "A",
+                    "COMPOSITE_FRAME_TYPE" => "AUTO"
 
-                        "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO"
+                ]
+            ); ?>
 
-                    ]
-                ); ?>
+        </div>
 
-            </div>
+        <div class="half subscribe">
 
-            <div class="half subscribe">
+            <?php $APPLICATION->IncludeComponent(
+                "bitrix:sender.subscribe",
+                "subscribe--front",
+                [
+                    "USE_PERSONALIZATION" => "Y",
+                    "CONFIRMATION"        => "Y",
+                    "SHOW_HIDDEN"         => "N",
+                    "HIDE_MAILINGS"       => "N",
 
-                <?php $APPLICATION->IncludeComponent(
-                    "bitrix:sender.subscribe",
-                    "subscribe--front",
-                    [
-                        "USE_PERSONALIZATION" => "Y",
-                        "CONFIRMATION"        => "Y",
-                        "SHOW_HIDDEN"         => "N",
-                        "HIDE_MAILINGS"       => "N",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => CACHE_TTL,
 
-                        "CACHE_TYPE" => "A",
-                        "CACHE_TIME" => CACHE_TTL,
+                    "AJAX_MODE"           => "N",
+                    "AJAX_OPTION_JUMP"    => "N",
+                    "AJAX_OPTION_STYLE"   => "Y",
+                    "AJAX_OPTION_HISTORY" => "N",
 
-                        "AJAX_MODE"           => "N",
-                        "AJAX_OPTION_JUMP"    => "N",
-                        "AJAX_OPTION_STYLE"   => "Y",
-                        "AJAX_OPTION_HISTORY" => "N",
+                    "SET_TITLE" => "N",
 
-                        "SET_TITLE" => "N",
-
-                        "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO"
-                    ]
-                ); ?>
-
-            </div>
+                    "COMPOSITE_FRAME_MODE" => "A",
+                    "COMPOSITE_FRAME_TYPE" => "AUTO"
+                ]
+            ); ?>
 
         </div>
 

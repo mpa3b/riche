@@ -22,26 +22,29 @@ $frame = $this->createFrame();
 
 ?>
 
-<nav class="menu--header mobiles-only" role="navigation">
+<div class="menu--mobile mobiles-only" role="navigation">
 
     <?php $frame->begin(); ?>
 
-    <button class="transparent button trigger">
-        <i class="icon-menu"></i>
-    </button>
+    <div class="wrap">
 
-    <div class="dropdown wrapper">
+        <button class="transparent button trigger">
+            <i class="icon-x"></i>
+        </button>
 
-        <ul class="menu root">
+        <nav>
 
-            <?php foreach ($arResult as $arItem): ?>
-                <li>
-                    <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
-                </li>
-            <?php endforeach; ?>
+            <ul class="menu root">
 
+                <?php foreach ($arResult as $arItem): ?>
+                    <li>
+                        <a href="<?= $arItem['LINK']; ?>"><?= $arItem['TEXT']; ?></a>
+                    </li>
+                <?php endforeach; ?>
 
-        </ul>
+            </ul>
+
+        </nav>
 
         <?php $APPLICATION->IncludeComponent(
             'bitrix:main.include',
@@ -57,8 +60,22 @@ $frame = $this->createFrame();
             false
         ); ?>
 
+        <?php $APPLICATION->IncludeComponent(
+            "bitrix:main.include",
+            ".default",
+            [
+                "AREA_FILE_SHOW"      => "sect",
+                "AREA_FILE_SUFFIX"    => "links",
+                "EDIT_TEMPLATE"       => "",
+                "AREA_FILE_RECURSIVE" => "Y",
+
+                "COMPOSITE_FRAME_MODE" => "A",
+                "COMPOSITE_FRAME_TYPE" => "AUTO"
+            ]
+        ); ?>
+
     </div>
 
     <?php $frame->end(); ?>
 
-</nav>
+</div>

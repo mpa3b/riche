@@ -177,26 +177,9 @@ $request = Application::getInstance()->getContext()->getRequest();
 
             <div id="page--header--menu" class="half">
 
-                <?php $APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "header",
-                    [
-                        "ROOT_MENU_TYPE"        => "main",
-                        "ALLOW_MULTI_SELECT"    => "N",
-                        "CHILD_MENU_TYPE"       => "local",
-                        "DELAY"                 => "N",
-                        "MAX_LEVEL"             => 1,
-                        "MENU_CACHE_GET_VARS"   => [""],
-                        "MENU_CACHE_TIME"       => CACHE_TTL,
-                        "MENU_CACHE_TYPE"       => "A",
-                        "MENU_CACHE_USE_GROUPS" => "N",
-                        "USE_EXT"               => "N",
-                        "CACHE_SELECTED_ITEMS"  => "N",
-
-                        "COMPOSITE_FRAME_MODE" => "A",
-                        "COMPOSITE_FRAME_TYPE" => "AUTO"
-                    ]
-                ); ?>
+                <button class="transparent button trigger mobiles-only">
+                    <i class="icon-menu"></i>
+                </button>
 
                 <?php $APPLICATION->IncludeComponent(
                     "bitrix:menu",
@@ -262,6 +245,27 @@ $request = Application::getInstance()->getContext()->getRequest();
     ); ?>
 
 </nav>
+
+<?php $APPLICATION->IncludeComponent(
+    "bitrix:menu",
+    "mobile",
+    [
+        "ROOT_MENU_TYPE"        => "main",
+        "ALLOW_MULTI_SELECT"    => "N",
+        "CHILD_MENU_TYPE"       => "local",
+        "DELAY"                 => "N",
+        "MAX_LEVEL"             => 1,
+        "MENU_CACHE_GET_VARS"   => [""],
+        "MENU_CACHE_TIME"       => CACHE_TTL,
+        "MENU_CACHE_TYPE"       => "A",
+        "MENU_CACHE_USE_GROUPS" => "N",
+        "USE_EXT"               => "N",
+        "CACHE_SELECTED_ITEMS"  => "N",
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO"
+    ]
+); ?>
 
 <main id="page--main">
 

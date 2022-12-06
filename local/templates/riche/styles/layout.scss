@@ -19,13 +19,6 @@
       box-shadow: var(--box-shadow--blurry);
     }
 
-    transform:        scaleY(1);
-
-    > .wrap {
-      margin-top:    0;
-      margin-bottom: 0;
-    }
-
     .row {
       align-items:    center;
       position:       relative;
@@ -67,7 +60,7 @@
     }
 
     &--menu {
-      padding: var(--offset--half);
+      padding: 0;
     }
 
     &--buttons {

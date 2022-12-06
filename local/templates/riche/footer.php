@@ -11,17 +11,35 @@ global $USER, $APPLICATION;
 
 $currentDirectoryPath = Application::getInstance()->getContext()->getRequest()->getRequestedPageDirectory();
 
-$footerFrame = new StaticArea('page--footer');
-
-$footerFrame->setStub('');
-
 ?>
 
 </main>
 
+<?php $APPLICATION->IncludeComponent(
+    'bitrix:main.include',
+    '.wrap',
+    [
+        "AREA_FILE_SHOW"      => "sect",
+        "AREA_FILE_SUFFIX"    => "below",
+        "AREA_FILE_RECURSIVE" => "N",
+
+        "COMPOSITE_FRAME_MODE" => "A",
+        "COMPOSITE_FRAME_TYPE" => "AUTO",
+    ],
+    false
+); ?>
+
 <footer id="page--footer">
 
-    <? $footerFrame->startDynamicArea(); ?>
+    <?
+
+    $footerFrame = new StaticArea('page--footer');
+
+    $footerFrame->setStub('');
+
+    $footerFrame->startDynamicArea();
+
+    ?>
 
     <div id="page--footer--top" class="wrap">
 
