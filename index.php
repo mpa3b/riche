@@ -315,6 +315,19 @@ $APPLICATION->SetTitle('RICHE');
     ]
 ); ?>
 
+<?php
+
+global $filterReviews;
+
+$filterReviews = [
+    'ACTIVE'                   => 'Y',
+    '!PROPERTY_AUTHOR_NAME'    => null,
+    '!PROPERTY_AUTHOR_PICTURE' => null,
+    '!PROPERTY_RATING'         => null,
+];
+
+?>
+
 <?php $APPLICATION->IncludeComponent(
     'bitrix:news.list',
     'reviews--front',
@@ -330,7 +343,9 @@ $APPLICATION->SetTitle('RICHE');
 
         "CHECK_DATES" => "Y",
 
-        "FILTER_NAME"   => "",
+        "USE_FILTER"  => "Y",
+        "FILTER_NAME" => "filterReviews",
+
         "FIELD_CODE"    => ["ID", "DETAIL_TEXT"],
         "PROPERTY_CODE" => ["RATING", "AUTHOR_NAME", "AUTHOR_PICTURE", "SKU"],
 
