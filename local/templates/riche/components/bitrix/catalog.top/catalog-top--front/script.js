@@ -13,6 +13,7 @@ $(() => {
               dots:           false,
               infinite:       true,
               mobileFirst:    true,
+              rows:           1,
               responsive:     [
                   {
                       breakpoint: breakpoint.mobile,

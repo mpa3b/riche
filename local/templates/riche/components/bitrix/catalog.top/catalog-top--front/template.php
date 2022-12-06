@@ -43,11 +43,11 @@ $this->setFrameMode(true);
 
     <section class="catalog-top--front wrap">
 
-        <? $frame->begin(); ?>
+        <?php $frame->begin(); ?>
 
         <div class="items slider">
 
-            <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
+            <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
                 <div class="item"
                      data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
@@ -67,13 +67,13 @@ $this->setFrameMode(true);
 
                         <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>">
 
-                            <? if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
+                            <?php if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
 
-                                <video <? if ($i == 0) { ?>autoplay<? } ?> muted loop>
+                                <video <?php if ($i == 0) { ?>autoplay<?php } ?> muted loop>
                                     <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
                                 </video>
 
-                            <? } ?>
+                            <?php } ?>
 
                             <picture>
 
@@ -129,20 +129,28 @@ $this->setFrameMode(true);
                                         media="<?= Breakpoint::getMedia('wide'); ?>">
 
                                 <img data-src="<?= $preload['src']; ?>"
-                                    <? if ($i == 0) { ?>
+                                    <?php if ($i == 0) { ?>
                                         loading="eager"
-                                    <? } else { ?>
+                                    <?php } else { ?>
                                         loading="lazy"
-                                    <? } ?>
+                                    <?php } ?>
                                      alt="<?= $arItem['NAME']; ?>">
 
                             </picture>
 
                         </a>
 
+                        <?php if (!empty($arItem['DISPLAY_PROPERTIES']['PURPOSE']['DISPLAY_VALUE'])) { ?>
+                            <ul class="purpose marker">
+                                <?php foreach ($arItem['DISPLAY_PROPERTIES']['PURPOSE']['DISPLAY_VALUE'] as $element) { ?>
+                                    <li><?= strip_tags($element); ?></li>
+                                <?php } ?>
+                            </ul>
+                        <?php } ?>
+
                     </div>
 
-                    <? if (!empty($arItem['REVIEWS'])) { ?>
+                    <?php if (!empty($arItem['REVIEWS'])) { ?>
 
                         <div class="reviews">
 
@@ -154,7 +162,7 @@ $this->setFrameMode(true);
 
                         </div>
 
-                    <? } ?>
+                    <?php } ?>
 
                     <div class="details">
 
@@ -162,69 +170,63 @@ $this->setFrameMode(true);
                             <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
                         </h3>
 
-                        <? if (!empty($arItem['PREVIEW_TEXT'])) { ?>
+                        <?php if ($arItem['ITEM_PRICES_CAN_BUY']) { ?>
 
-                            <p><?= $arItem['PREVIEW_TEXT']; ?></p>
+                            <div class="actions">
 
-                        <? } ?>
+                                <?php if (!empty($arItem['ITEM_PRICES'])) { ?>
 
-                    </div>
+                                    <div class="prices">
 
-                    <? if ($arItem['ITEM_PRICES_CAN_BUY']) { ?>
+                                        <?php foreach ($arItem['ITEM_PRICES'] as $arPrice) { ?>
 
-                        <div class="actions">
+                                            <div class="price <?= strtolower($arPrice['CODE']); ?>">
 
-                            <? if (!empty($arItem['ITEM_PRICES'])) { ?>
+                                                <?php if ($arPrice['DISCOUNT'] > 0) { ?>
+                                                    <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
+                                                    <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                                <?php } else { ?>
+                                                    <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
+                                                <?php } ?>
 
-                                <div class="prices">
+                                            </div>
 
-                                    <? foreach ($arItem['ITEM_PRICES'] as $arPrice) { ?>
+                                        <?php } ?>
 
-                                        <div class="price <?= strtolower($arPrice['CODE']); ?>">
+                                    </div>
 
-                                            <? if ($arPrice['DISCOUNT'] > 0) { ?>
-                                                <del class="old price"><?= $arPrice['PRINT_BASE_PRICE']; ?></del>
-                                                <span class="discount price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                            <? } else { ?>
-                                                <span class="price"><?= $arPrice['PRINT_PRICE']; ?></span>
-                                            <? } ?>
+                                <?php } ?>
 
-                                        </div>
+                                <div class="controls">
 
-                                    <? } ?>
+                                    <?php if ($arParams['USE_QUANTITY']) { ?>
+
+                                        <input type="number"
+                                               name="quantity"
+                                               step="1"
+                                               max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
+
+                                    <?php } ?>
+
+                                    <button class="primary buy button"
+                                            data-quantity=""
+                                            <?php if (!$arItem['CAN_BUY']) { ?>disabled<?php } ?>
+                                            data-id="<?= $arItem['ID']; ?>"
+                                            data-action="buy">
+                                        <i class="icon-shopping-cart"></i>
+                                    </button>
 
                                 </div>
 
-                            <? } ?>
-
-                            <div class="controls">
-
-                                <? if ($arParams['USE_QUANTITY']) { ?>
-
-                                    <input type="number"
-                                           name="quantity"
-                                           step="1"
-                                           max="<?= $arItem['PRODUCT']['QUANTITY']; ?>">
-
-                                <? } ?>
-
-                                <button class="primary buy button"
-                                        data-quantity=""
-                                        <? if (!$arItem['CAN_BUY']) { ?>disabled<? } ?>
-                                        data-id="<?= $arItem['ID']; ?>"
-                                        data-action="buy">
-                                    <i class="icon-shopping-cart"></i>
-                                </button>
-
                             </div>
 
-                        </div>
+                        <?php } ?>
 
-                    <? } ?>
+                    </div>
 
                 </div>
 
-            <? } ?>
+            <?php } ?>
 
         </div>
 
@@ -241,7 +243,7 @@ $this->setFrameMode(true);
 
         <?php } ?>
 
-        <? $frame->end(); ?>
+        <?php $frame->end(); ?>
 
     </section>
 
