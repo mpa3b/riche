@@ -44,9 +44,9 @@ $this->setFrameMode(true);
 
         <h2>Полезные статьи</h2>
 
-        <div class="items slider">
+        <? $frame->begin(); ?>
 
-            <? $frame->begin(); ?>
+        <div class="items slider">
 
             <? foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
@@ -131,9 +131,9 @@ $this->setFrameMode(true);
 
             <?php } ?>
 
-            <? $frame->end(); ?>
-
         </div>
+
+        <? $frame->end(); ?>
 
     </section>
 
