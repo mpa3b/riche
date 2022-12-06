@@ -33,13 +33,15 @@
   }
 
   .contact {
-    margin: var(--offset) 0;
+    margin: var(--offset--2x) 0;
   }
 
   .links {
     display:        flex;
     flex-direction: row;
     flex-wrap:      nowrap;
+
+    margin:         var(--offset--2x) 0;
 
     a {
       margin-right: var(--offset);

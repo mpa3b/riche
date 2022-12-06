@@ -2,14 +2,15 @@
 
 :root {
 
+  --offset:                 1rem;
   @include Mobile {
-    --offset: 1.1rem;
-  }
-  @include Tablet {
     --offset: 1.125rem;
   }
-  @include Desktop {
+  @include Tablet {
     --offset: 1.25rem;
+  }
+  @include Desktop {
+    --offset: 1.5rem;
   }
 
   --offset--negative:       calc(var(--offset) * -1);
@@ -20,18 +21,17 @@
   --offset--2x:             calc(var(--offset) * 2);
   --offset--2x--negative:   calc(var(--offset) * -2);
 
-
 }
 
 .wrap {
   display:    block;
   box-sizing: border-box;
 
-  margin:     var(--offset);
+  margin: var(--offset--2x) var(--offset);
 
   @include Tablet {
     width:  92%;
-    margin: var(--offset) auto;
+    margin: var(--offset--2x) auto;
   }
   @include Desktop {
     width:  82%;

@@ -1,10 +1,7 @@
 @import "../../../../base";
 
 .banners--front {
-
-  > .wrap {
-    margin-top: var(--offset--half);
-  }
+  margin-top: 0 !important;
 
   .items {
     padding:       0;

@@ -19,6 +19,11 @@
       box-shadow: var(--box-shadow--blurry);
     }
 
+    .wrap {
+      margin-top:    var(--offset);
+      margin-bottom: var(--offset);
+    }
+
     .row {
       align-items:    center;
       position:       relative;

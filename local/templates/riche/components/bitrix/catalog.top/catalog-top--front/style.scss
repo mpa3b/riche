@@ -1,7 +1,6 @@
 @import "../../../../base";
 
 .catalog-top--front {
-  overflow: hidden;
 
   .filter {
     display:        flex;
@@ -153,7 +152,7 @@
         font-size:   1.2rem;
         font-weight: 500;
 
-        margin-top: var(--offset);
+        margin-top:  var(--offset);
         white-space: nowrap;
 
         &.old {
