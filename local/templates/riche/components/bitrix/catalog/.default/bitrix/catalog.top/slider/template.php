@@ -34,11 +34,13 @@ if (!empty($arResult['ITEMS'])) {
 
     <section class="catalog-top--catalog--slider wrap">
 
-        <h2 hidden>Мы рекомендуем</h2>
+        <?php if (!empty($arParams['BLOCK_TITLE'])) { ?>
+            <h2><?= $arParams['BLOCK_TITLE']; ?></h2>
+        <?php } ?>
+
+        <?php $frame->begin(); ?>
 
         <div class="items slider">
-
-            <?php $frame->begin(); ?>
 
             <?php foreach ($arResult['ITEMS'] as $i => $arItem) { ?>
 
@@ -70,7 +72,12 @@ if (!empty($arResult['ITEMS'])) {
                             <?php if ($arItem['DISPLAY_PROPERTIES']['VIDEO']) { ?>
 
                                 <video <?php if ($i == 0) { ?>autoplay<?php } ?> muted loop>
-                                    <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                                    <?php if ($i == 0) { ?>
+                                        <source src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                                    <?php } else { ?>
+                                        <source
+                                            data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                                    <?php } ?>
                                 </video>
 
                             <?php } ?>
@@ -117,26 +124,48 @@ if (!empty($arResult['ITEMS'])) {
 
                             <picture>
 
-                                <source data-srcset="<?= $small['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('small'); ?>">
-                                <source data-srcset="<?= $mobile['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('mobile'); ?>">
-                                <source data-srcset="<?= $tablet['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('tablet'); ?>">
-                                <source data-srcset="<?= $desktop['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('desktop'); ?>">
-                                <source data-srcset="<?= $wide['src']; ?>"
-                                        media="<?= Breakpoint::getMedia('wide'); ?>">
+                                <?php if ($i == 0) { ?>
 
-                                <img
-                                    <?php if ($i == 0) { ?>
-                                        loading="eager"
-                                        src="<?= $preload['src']; ?>"
-                                    <?php } else { ?>
-                                        loading="lazy"
-                                        data-src="<?= $preload['src']; ?>"
-                                    <?php } ?>
-                                        alt="<?= $arItem['NAME']; ?>">
+                                    <source srcset="<?= $small['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('small'); ?>">
+
+                                    <source srcset="<?= $mobile['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('mobile'); ?>">
+
+                                    <source srcset="<?= $tablet['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('tablet'); ?>">
+
+                                    <source srcset="<?= $desktop['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('desktop'); ?>">
+
+                                    <source srcset="<?= $wide['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                                    <img src="<?= $preload['src']; ?>"
+                                         alt="<?= $arItem['NAME']; ?>">
+
+                                <?php } else { ?>
+
+                                    <source data-srcset="<?= $small['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('small'); ?>">
+
+                                    <source data-srcset="<?= $mobile['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('mobile'); ?>">
+
+                                    <source data-srcset="<?= $tablet['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('tablet'); ?>">
+
+                                    <source data-srcset="<?= $desktop['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('desktop'); ?>">
+
+                                    <source data-srcset="<?= $wide['src']; ?>"
+                                            media="<?= Breakpoint::getMedia('wide'); ?>">
+
+                                    <img data-src="<?= $preload['src']; ?>"
+                                         loading="lazy"
+                                         alt="<?= $arItem['NAME']; ?>">
+
+                                <?php } ?>
 
                             </picture>
 
@@ -158,9 +187,13 @@ if (!empty($arResult['ITEMS'])) {
 
                     <?php } ?>
 
-                    <h3>
-                        <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
-                    </h3>
+                    <div class="details">
+
+                        <h3>
+                            <a href="<?= $arItem['DETAIL_PAGE_URL']; ?>"><?= $arItem['NAME']; ?></a>
+                        </h3>
+
+                    </div>
 
                     <?php if ($arItem['ITEM_PRICES_CAN_BUY'] == true) { ?>
 
@@ -216,11 +249,11 @@ if (!empty($arResult['ITEMS'])) {
 
             <?php } ?>
 
-            <?php $frame->beginStub(); ?>
-
-            <?php $frame->end(); ?>
-
         </div>
+
+        <?php $frame->beginStub(); ?>
+
+        <?php $frame->end(); ?>
 
     </section>
 

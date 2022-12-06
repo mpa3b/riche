@@ -73,8 +73,7 @@ $this->setFrameMode(true);
                                     <?php if ($i == 0) { ?>
                                         <source src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
                                     <?php } else { ?>
-                                        <source
-                                            data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
+                                        <source data-src="<?= $arItem['DISPLAY_PROPERTIES']['VIDEO']['VALUE']['path']; ?>">
                                     <?php } ?>
                                 </video>
 
@@ -121,6 +120,7 @@ $this->setFrameMode(true);
                                 );
 
                                 ?>
+
                                 <?php if ($i == 0) { ?>
 
                                     <source srcset="<?= $small['src']; ?>"
@@ -270,6 +270,8 @@ $this->setFrameMode(true);
             </div>
 
         <?php } ?>
+
+        <?php $frame->beginStub(); ?>
 
         <?php $frame->end(); ?>
 
