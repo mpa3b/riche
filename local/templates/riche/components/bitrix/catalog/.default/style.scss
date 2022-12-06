@@ -164,7 +164,6 @@
         align-items:    end;
 
         i {
-          color:        var(--color--green);
           margin-right: 0.15em;
         }
 
@@ -196,10 +195,6 @@
 
         &.old {
           color: var(--color--gray--dark);
-        }
-
-        &.discount {
-          color: var(--color--green--dark);
         }
 
       }

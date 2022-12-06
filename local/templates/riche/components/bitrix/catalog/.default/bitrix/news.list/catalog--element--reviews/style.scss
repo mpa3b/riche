@@ -72,7 +72,6 @@
             opacity:   calc(var(--opacity) / 3);
 
             &.active {
-              color:   var(--color--green--dark);
               opacity: 1;
             }
 

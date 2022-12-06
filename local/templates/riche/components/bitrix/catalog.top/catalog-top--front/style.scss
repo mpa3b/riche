@@ -113,7 +113,6 @@
         align-items:    end;
 
         i {
-          color:        var(--color--green);
           margin-right: var(--offset--half);
         }
 
@@ -159,10 +158,6 @@
 
         &.old {
           color: var(--color--gray--dark);
-        }
-
-        &.discount {
-          color: var(--color--green--dark);
         }
 
       }
