@@ -85,19 +85,17 @@ $(() => {
 
     // region element hover
 
-    const frontCatalogItems = $('.item', frontCatalogTop);
+    const frontCatalogItem = $('.item', frontCatalogTop);
 
-    frontCatalogItems.on(
-        'hover',
+    frontCatalogItem.on(
+        'mouseenter',
         (event) => {
 
-            console.debug(event);
+            let frontCatalogItemVideo = $('video', frontCatalogItem);
 
-            let frontCatalogItemsVideo = $('video', frontCatalogItems);
+            frontCatalogItemVideo.trigger('pause');
 
-            frontCatalogItemsVideo.trigger('pause');
-
-            let currentItem = $(event.target);
+            let currentItem = $(event.currentTarget);
 
             $('video', currentItem).trigger('play');
 

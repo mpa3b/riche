@@ -90,31 +90,53 @@
 
         position:      relative;
 
-        video {
-          position: absolute;
-          left:     0;
-          top:      0;
-          width:    100%;
-          height:   100%;
+        a {
+          display:         block;
+          text-decoration: none;
 
-          &.loaded {
-            display: block;
+          video {
+            position: absolute;
+            left:     0;
+            top:      0;
+            width:    100%;
+            height:   100%;
 
-            & + picture {
+            &.loaded {
+              display: block;
+
+              & + picture {
+                opacity: 0;
+              }
+
+            }
+
+            &.playing + i.icon-video {
               opacity: 0;
             }
 
           }
 
-        }
+          i.icon-video {
+            transition:      opacity var(--transition--common);
+            position:        absolute;
+            left:            50%;
+            top:             50%;
+            z-index:         10;
+            text-decoration: none;
+            opacity:         var(--opacity);
+            margin-left:     -0.5em;
+            margin-top:      -0.5em;
+          }
 
-        picture {
-          opacity:    1;
-          transition: opacity var(--transition--common);
+          picture {
+            opacity:    1;
+            transition: opacity var(--transition--common);
 
-          img {
-            display: block;
-            width:   100%;
+            img {
+              display: block;
+              width:   100%;
+            }
+
           }
 
         }
@@ -185,6 +207,9 @@
 
         box-sizing:      border-box;
         width:           100%;
+
+        padding:         var(--offset);
+        padding-bottom:  0;
       }
 
       .price {
@@ -260,7 +285,7 @@
 
       > div {
         box-sizing: border-box;
-        margin:     0 var(--offset);
+        padding:    0 var(--offset);
         position:   relative;
       }
 
