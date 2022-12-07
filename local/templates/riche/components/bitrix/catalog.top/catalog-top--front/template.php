@@ -56,8 +56,6 @@ $this->setFrameMode(true);
 
                     <div class="image">
 
-                        <span class="quantity-overlay"></span>
-
                         <?php if (!empty($arItem['SECTION_NAME'])) { ?>
                             <span class="section marker"><?= $arItem['SECTION_NAME']; ?></span>
                         <?php } ?>

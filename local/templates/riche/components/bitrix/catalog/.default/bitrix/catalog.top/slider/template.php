@@ -48,8 +48,6 @@ if (!empty($arResult['ITEMS'])) {
                      data-section-id="<?= $arItem['IBLOCK_SECTION_ID']; ?>"
                      data-id="<?= $arItem['ID']; ?>">
 
-                    <span class="quantity-overlay"></span>
-
                     <div class="image">
 
                         <?php if (!empty($arItem['SECTION_NAME'])) { ?>

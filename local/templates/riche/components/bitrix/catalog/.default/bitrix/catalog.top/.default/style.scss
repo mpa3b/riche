@@ -10,19 +10,6 @@
     .item {
       display:        flex;
       flex-direction: column;
-
-      .image {
-        border-radius: var(--border-radius);
-      }
-
-      h3 {
-        font-size: 1.2rem;
-      }
-
-      .actions {
-        margin-top: auto;
-      }
-
     }
 
   }
