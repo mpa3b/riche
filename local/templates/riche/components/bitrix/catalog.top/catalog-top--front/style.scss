@@ -22,7 +22,7 @@
         z-index:          100;
 
         display:          block;
-        padding:          0.33em 0.5em;
+        padding:          0.33em 0.65em;
         padding-bottom:   0.4em;
         margin:           var(--offset--half);
 
@@ -47,7 +47,7 @@
 
         li {
           display:          block;
-          padding:          0.33em 0.5em;
+          padding:          0.2em 0.65em;
           padding-bottom:   0.4em;
           background-color: var(--color--white);
           border-radius:    1em;
@@ -119,20 +119,8 @@
 
         }
 
-        .controls {
-          position:        absolute;
-          z-index:         100;
-          bottom:          var(--offset--half);
-          left:            0;
-          width:           100%;
-
-          display:         flex;
-          justify-content: center;
-        }
-
         transform:     scale(1);
         transition:    all var(--transition--common);
-        z-index:    10;
 
       }
 
@@ -141,7 +129,7 @@
         &:hover {
 
           .image {
-            transform:  scale(1.2);
+            transform:  scale(1.1);
             box-shadow: var(--box-shadow--blurry);
           }
 
@@ -197,9 +185,6 @@
 
         box-sizing:      border-box;
         width:           100%;
-
-        padding:         var(--offset--half);
-        padding-bottom:  0;
       }
 
       .price {
@@ -275,7 +260,8 @@
 
       > div {
         box-sizing: border-box;
-        padding:    0 var(--offset--half);
+        margin:     0 var(--offset);
+        position:   relative;
       }
 
     }

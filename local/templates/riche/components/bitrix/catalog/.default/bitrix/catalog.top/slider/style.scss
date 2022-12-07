@@ -15,6 +15,24 @@
         margin-top: auto;
       }
 
+      padding-bottom: 3rem;
+
+      .actions {
+        display:         flex;
+        flex-direction:  row;
+        flex-wrap:       nowrap;
+
+        align-items:     center;
+        justify-content: space-between;
+
+        position:        absolute;
+        bottom:          0;
+        left:            0;
+
+        box-sizing:      border-box;
+        width:           100%;
+      }
+
     }
 
     &:not(.slick-initialized) {
@@ -31,7 +49,7 @@
 
     &-slider {
       position: relative;
-      margin:   0 var(--offset--negative);
+      padding:  0 var(--offset--negative);
 
       @include Mobile {
         margin-right: -75%;
@@ -59,7 +77,8 @@
 
       > div {
         box-sizing: border-box;
-        padding:    0 var(--offset);
+        margin:     0 var(--offset);
+        position:   relative;
       }
 
     }
