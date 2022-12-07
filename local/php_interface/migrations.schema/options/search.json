@@ -27,8 +27,13 @@
         },
         {
             "MODULE_ID": "search",
+            "NAME": "full_reindex_required",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "search",
             "NAME": "full_text_engine",
-            "VALUE": "bitrix"
+            "VALUE": "mysql"
         },
         {
             "MODULE_ID": "search",

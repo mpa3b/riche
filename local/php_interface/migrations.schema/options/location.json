@@ -4,6 +4,16 @@
             "MODULE_ID": "location",
             "NAME": "address_format_code",
             "VALUE": "RU"
+        },
+        {
+            "MODULE_ID": "location",
+            "NAME": "GROUP_DEFAULT_RIGHT",
+            "VALUE": "D"
+        },
+        {
+            "MODULE_ID": "location",
+            "NAME": "log_level",
+            "VALUE": "400"
         }
     ]
 }

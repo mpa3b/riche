@@ -87,6 +87,88 @@
                 "en": null,
                 "ru": null
             }
+        },
+        {
+            "ENTITY_ID": "ASD_IBLOCK",
+            "FIELD_NAME": "UF_META_DESCRIPTION",
+            "USER_TYPE_ID": "string",
+            "XML_ID": "META_DESCRIPTION",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "Y",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": {
+                "SIZE": 20,
+                "ROWS": 1,
+                "REGEXP": "",
+                "MIN_LENGTH": 0,
+                "MAX_LENGTH": 0,
+                "DEFAULT_VALUE": ""
+            },
+            "EDIT_FORM_LABEL": {
+                "en": "Description for meta",
+                "ru": "Описание для meta"
+            },
+            "LIST_COLUMN_LABEL": {
+                "en": "",
+                "ru": ""
+            },
+            "LIST_FILTER_LABEL": {
+                "en": "",
+                "ru": ""
+            },
+            "ERROR_MESSAGE": {
+                "en": "",
+                "ru": ""
+            },
+            "HELP_MESSAGE": {
+                "en": "",
+                "ru": ""
+            }
+        },
+        {
+            "ENTITY_ID": "ASD_IBLOCK",
+            "FIELD_NAME": "UF_META_KEYWORDS",
+            "USER_TYPE_ID": "string",
+            "XML_ID": "META_KEYWORDS",
+            "SORT": "100",
+            "MULTIPLE": "N",
+            "MANDATORY": "N",
+            "SHOW_FILTER": "N",
+            "SHOW_IN_LIST": "Y",
+            "EDIT_IN_LIST": "Y",
+            "IS_SEARCHABLE": "N",
+            "SETTINGS": {
+                "SIZE": 20,
+                "ROWS": 1,
+                "REGEXP": "",
+                "MIN_LENGTH": 0,
+                "MAX_LENGTH": 0,
+                "DEFAULT_VALUE": ""
+            },
+            "EDIT_FORM_LABEL": {
+                "en": "Keywords for meta",
+                "ru": "Ключевые слова для meta"
+            },
+            "LIST_COLUMN_LABEL": {
+                "en": "",
+                "ru": ""
+            },
+            "LIST_FILTER_LABEL": {
+                "en": "",
+                "ru": ""
+            },
+            "ERROR_MESSAGE": {
+                "en": "",
+                "ru": ""
+            },
+            "HELP_MESSAGE": {
+                "en": "",
+                "ru": ""
+            }
         }
     ]
 }

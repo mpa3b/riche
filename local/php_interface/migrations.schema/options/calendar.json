@@ -4,6 +4,11 @@
             "MODULE_ID": "calendar",
             "NAME": "~ft_b_calendar_event",
             "VALUE": "1"
+        },
+        {
+            "MODULE_ID": "calendar",
+            "NAME": "path_to_type_company_calendar",
+            "VALUE": "\/calendar\/"
         }
     ]
 }

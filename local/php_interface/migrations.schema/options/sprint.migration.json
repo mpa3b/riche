@@ -3,7 +3,7 @@
         {
             "MODULE_ID": "sprint.migration",
             "NAME": "schema_agentschema",
-            "VALUE": "902ac0f09e1f91847a09aea305302030"
+            "VALUE": "018f148a76c88d87372e8e4b12a62e00"
         },
         {
             "MODULE_ID": "sprint.migration",
@@ -23,17 +23,17 @@
         {
             "MODULE_ID": "sprint.migration",
             "NAME": "schema_iblockschema",
-            "VALUE": "fb636f2676b0206fe831d355fe15760a"
+            "VALUE": "3f2171f664056eb957029cae4f0c0877"
         },
         {
             "MODULE_ID": "sprint.migration",
             "NAME": "schema_optionschema",
-            "VALUE": "30076e0fe912605a9f1851e9e2159bcd"
+            "VALUE": "77c3f8af19ef0eb7fe7302a7e664b1c9"
         },
         {
             "MODULE_ID": "sprint.migration",
             "NAME": "schema_usertypeentitiesschema",
-            "VALUE": "9672e5e38e9b1566feaee97f5d0a780c"
+            "VALUE": "9989a1042e69b79a7422c2a034aa8075"
         },
         {
             "MODULE_ID": "sprint.migration",

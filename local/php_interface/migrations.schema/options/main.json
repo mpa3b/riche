@@ -130,7 +130,7 @@
             "MODULE_ID": "main",
             "NAME": "~update_autocheck_result",
             "VALUE": {
-                "check_date": 1669016258,
+                "check_date": 1669729947,
                 "result": false,
                 "error": "",
                 "modules": []
@@ -164,7 +164,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "ALLOW_SPREAD_COOKIE",
-            "VALUE": "Y"
+            "VALUE": "N"
         },
         {
             "MODULE_ID": "main",
@@ -194,7 +194,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "backup_secret_key",
-            "VALUE": "FHMREHRGJFh9TR0GRATvqOAoNl3rqIUq"
+            "VALUE": "bARAQGnIjm6cLLnwA1T4JhBZQnZEFKUc"
         },
         {
             "MODULE_ID": "main",
@@ -215,6 +215,21 @@
             "MODULE_ID": "main",
             "NAME": "collect_geonames",
             "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "component_cache_on",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "component_managed_cache_on",
+            "VALUE": "Y"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "composite_debug_duration",
+            "VALUE": "300"
         },
         {
             "MODULE_ID": "main",
@@ -264,12 +279,17 @@
         {
             "MODULE_ID": "main",
             "NAME": "dump_archive_size_limit",
-            "VALUE": "1048576000"
+            "VALUE": "104857600"
         },
         {
             "MODULE_ID": "main",
             "NAME": "dump_archive_size_limit_auto",
-            "VALUE": "104857600"
+            "VALUE": "1048576000"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_auto_enable_auto",
+            "VALUE": "0"
         },
         {
             "MODULE_ID": "main",
@@ -279,7 +299,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "dump_auto_time_auto",
-            "VALUE": "10"
+            "VALUE": "210"
         },
         {
             "MODULE_ID": "main",
@@ -294,7 +314,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "dump_base_skip_log",
-            "VALUE": "1"
+            "VALUE": "0"
         },
         {
             "MODULE_ID": "main",
@@ -304,22 +324,22 @@
         {
             "MODULE_ID": "main",
             "NAME": "dump_base_skip_search",
-            "VALUE": "1"
+            "VALUE": "0"
         },
         {
             "MODULE_ID": "main",
             "NAME": "dump_base_skip_search_auto",
-            "VALUE": "0"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_base_skip_stat",
             "VALUE": "1"
         },
         {
             "MODULE_ID": "main",
-            "NAME": "dump_base_skip_stat_auto",
+            "NAME": "dump_base_skip_stat",
             "VALUE": "0"
+        },
+        {
+            "MODULE_ID": "main",
+            "NAME": "dump_base_skip_stat_auto",
+            "VALUE": "1"
         },
         {
             "MODULE_ID": "main",
@@ -329,12 +349,12 @@
         {
             "MODULE_ID": "main",
             "NAME": "dump_bucket_id_auto",
-            "VALUE": "-1"
+            "VALUE": "0"
         },
         {
             "MODULE_ID": "main",
             "NAME": "dump_delete_old_auto",
-            "VALUE": "1"
+            "VALUE": "4"
         },
         {
             "MODULE_ID": "main",
@@ -354,12 +374,12 @@
         {
             "MODULE_ID": "main",
             "NAME": "dump_file_kernel",
-            "VALUE": "0"
+            "VALUE": "1"
         },
         {
             "MODULE_ID": "main",
             "NAME": "dump_file_kernel_auto",
-            "VALUE": "1"
+            "VALUE": "0"
         },
         {
             "MODULE_ID": "main",
@@ -374,7 +394,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "dump_integrity_check",
-            "VALUE": "0"
+            "VALUE": "1"
         },
         {
             "MODULE_ID": "main",
@@ -384,17 +404,17 @@
         {
             "MODULE_ID": "main",
             "NAME": "dump_max_exec_time",
-            "VALUE": "30"
-        },
-        {
-            "MODULE_ID": "main",
-            "NAME": "dump_max_exec_time_auto",
             "VALUE": "20"
         },
         {
             "MODULE_ID": "main",
+            "NAME": "dump_max_exec_time_auto",
+            "VALUE": "30"
+        },
+        {
+            "MODULE_ID": "main",
             "NAME": "dump_max_exec_time_sleep",
-            "VALUE": "3"
+            "VALUE": "1"
         },
         {
             "MODULE_ID": "main",
@@ -433,13 +453,18 @@
         },
         {
             "MODULE_ID": "main",
+            "NAME": "dump_site_id_auto",
+            "VALUE": null
+        },
+        {
+            "MODULE_ID": "main",
             "NAME": "dump_temporary_cache",
-            "VALUE": "Bn0yNYf7w8NTSSqZheIfSRlGSDfRt2Eb"
+            "VALUE": "Bn0yNYf7w8PP6fMd578k4Q=="
         },
         {
             "MODULE_ID": "main",
             "NAME": "dump_use_compression",
-            "VALUE": "0"
+            "VALUE": "1"
         },
         {
             "MODULE_ID": "main",
@@ -608,6 +633,11 @@
         },
         {
             "MODULE_ID": "main",
+            "NAME": "LAST_DB_OPTIMIZATION_TIME",
+            "VALUE": "1669632477"
+        },
+        {
+            "MODULE_ID": "main",
             "NAME": "last_mp_modules_result",
             "VALUE": {
                 "check_date": 1667980804,
@@ -659,17 +689,12 @@
         {
             "MODULE_ID": "main",
             "NAME": "move_js_to_body",
-            "VALUE": "N"
+            "VALUE": "Y"
         },
         {
             "MODULE_ID": "main",
             "NAME": "mp_modules_date",
             "VALUE": {
-                "0": {
-                    "ID": "rodzeta.redirect",
-                    "NAME": "Редиректы для SEO",
-                    "TMS": 1669015834
-                },
                 "2": {
                     "ID": "ls.codegeneratorfree",
                     "NAME": "Массовая генерация символьного кода FREE",
@@ -910,7 +935,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "server_name",
-            "VALUE": "riche.skin"
+            "VALUE": ""
         },
         {
             "MODULE_ID": "main",
@@ -950,7 +975,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "site_checker_success",
-            "VALUE": "Y"
+            "VALUE": null
         },
         {
             "MODULE_ID": "main",
@@ -960,7 +985,7 @@
         {
             "MODULE_ID": "main",
             "NAME": "skip_mask",
-            "VALUE": "1"
+            "VALUE": "0"
         },
         {
             "MODULE_ID": "main",
@@ -971,8 +996,15 @@
         },
         {
             "MODULE_ID": "main",
+            "NAME": "skip_mask_array_auto",
+            "VALUE": [
+                "\/upload\/resize_cache"
+            ]
+        },
+        {
+            "MODULE_ID": "main",
             "NAME": "skip_mask_auto",
-            "VALUE": "0"
+            "VALUE": "1"
         },
         {
             "MODULE_ID": "main",
@@ -1082,12 +1114,12 @@
         {
             "MODULE_ID": "main",
             "NAME": "update_system_check",
-            "VALUE": "21.11.2022 10:37:42"
+            "VALUE": "29.11.2022 19:19:24"
         },
         {
             "MODULE_ID": "main",
             "NAME": "update_system_update",
-            "VALUE": "21.11.2022 10:37:39"
+            "VALUE": "29.11.2022 16:52:27"
         },
         {
             "MODULE_ID": "main",

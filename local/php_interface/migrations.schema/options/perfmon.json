@@ -1,3 +1,9 @@
 {
-    "items": []
+    "items": [
+        {
+            "MODULE_ID": "perfmon",
+            "NAME": "bitrix_optimal",
+            "VALUE": "N"
+        }
+    ]
 }
