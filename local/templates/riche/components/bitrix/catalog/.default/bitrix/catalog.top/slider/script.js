@@ -2,49 +2,43 @@ $(() => {
 
     const catalogTop = $('.catalog-top--catalog--slider');
 
-    const frontCatalogSlider = $('.slider', catalogTop);
-    const frontCatalogSliderVideo = $('video', frontCatalogSlider);
+    // region slider
 
-    frontCatalogSliderVideo.on(
-        'loaded',
-        (event) => {
+    const catalogTopSlider       = $('.slider', catalogTop),
+          catalogTopSliderParams = {
+              slidesToShow:   2,
+              slidesToScroll: 1,
+              fade:           false,
+              speed:          1000,
+              autoplay:       false,
+              arrows:         false,
+              dots:           false,
+              infinite:       true,
+              mobileFirst:    true,
+              lazyload:       'progressive',
+              responsive:     [
+                  {
+                      breakpoint: breakpoint.tablet,
+                      settings:   {
+                          slidesToShow: 3
+                      }
+                  },
+                  {
+                      breakpoint: breakpoint.desktop,
+                      settings:   {
+                          slidesToShow: 4
+                      }
+                  }
+              ]
+          };
 
-            let container = $(event.currentTarget).closest('.slide'),
-                picture   = $('picture', container);
+    // endregion
 
-            picture.fadeOut();
+    // region video
 
-        }
-    );
-
-    frontCatalogSlider
+    catalogTopSlider
         .slick(
-            {
-                slidesToShow:   2,
-                slidesToScroll: 1,
-                fade:           false,
-                speed:          1000,
-                autoplay:       false,
-                arrows:         false,
-                dots:           false,
-                infinite:       true,
-                mobileFirst:    true,
-                lazyload:       'progressive',
-                responsive:     [
-                    {
-                        breakpoint: breakpoint.tablet,
-                        settings:   {
-                            slidesToShow: 3
-                        }
-                    },
-                    {
-                        breakpoint: breakpoint.desktop,
-                        settings:   {
-                            slidesToShow: 4
-                        }
-                    }
-                ]
-            }
+            catalogTopSliderParams
         )
         .on(
             {
@@ -65,30 +59,55 @@ $(() => {
             }
         );
 
-    let catalogTopFiltered = false;
+    const catalogTopSliderVideo = $('video', catalogTopSlider),
+          parentSelector        = '.item',
+          videoPlayingClass     = 'playing';
 
-    $('button.filter-button').on(
-        'click',
-        catalogTop,
+    catalogTopSliderVideo.on(
+        {
+            loaded: (event) => {
+
+                let container = $(event.currentTarget).closest(parentSelector),
+                    picture   = $('picture', container);
+
+                picture.fadeOut();
+
+            },
+            play:   (event) => {
+
+                $(event.currentTarget).addClass(videoPlayingClass);
+
+            },
+            pause:  (event) => {
+
+                $(event.currentTarget).removeClass(videoPlayingClass);
+
+            }
+        }
+    );
+
+    // endregion
+
+
+    // region element hover
+
+    const catalogTopItem = $('.item', catalogTop);
+
+    catalogTopItem.on(
+        'mouseenter',
         (event) => {
 
-            let button = $(event.currentTarget),
-                id     = button.data('id');
+            let catalogTopItemVideo = $('video', catalogTopItem);
 
-            if (catalogTopFiltered === false) {
+            catalogTopItemVideo.trigger('pause');
 
-                frontCatalogSlider.slick('slickFilter', '.item[data-section-id="' + id + '"]');
+            let currentItem = $(event.currentTarget);
 
-                catalogTopFiltered = true;
-
-            } else {
-
-                frontCatalogSlider.slick('slickUnfilter');
-
-                catalogTopFiltered = false;
-            }
+            $('video', currentItem).trigger('play');
 
         }
     );
+
+    // endregion
 
 });

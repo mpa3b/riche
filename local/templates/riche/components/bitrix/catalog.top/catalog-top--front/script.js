@@ -2,6 +2,8 @@ $(() => {
 
     const frontCatalogTop = $('.catalog-top--front');
 
+    // region slider
+
     const frontCatalogSlider       = $('.slider', frontCatalogTop),
           frontCatalogSliderParams = {
               slidesToShow:   2,
@@ -53,16 +55,19 @@ $(() => {
             }
         );
 
+    // endregion
+
     // region video
 
     const frontCatalogSliderVideo = $('video', frontCatalogSlider),
+          parentSelector          = '.item',
           videoPlayingClass       = 'playing';
 
     frontCatalogSliderVideo.on(
         {
             loaded: (event) => {
 
-                let container = $(event.currentTarget).closest('.slide'),
+                let container = $(event.currentTarget).closest(parentSelector),
                     picture   = $('picture', container);
 
                 picture.fadeOut();
