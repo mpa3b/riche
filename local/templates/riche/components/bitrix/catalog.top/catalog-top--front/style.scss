@@ -280,19 +280,6 @@
 
     }
 
-    @include Mobile {
-
-      &-slide {
-        opacity:    calc(var(--opacity) / 2);
-        transition: opacity var(--transition--common);
-      }
-
-      &-current {
-        opacity: 1;
-      }
-
-    }
-
   }
 
   .footer {
