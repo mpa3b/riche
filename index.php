@@ -321,9 +321,9 @@ global $filterReviews;
 
 $filterReviews = [
     'ACTIVE'                   => 'Y',
-    '!PROPERTY_AUTHOR_NAME'    => null,
-    '!PROPERTY_AUTHOR_PICTURE' => null,
-    '!PROPERTY_RATING'         => null,
+    '!PROPERTY_AUTHOR_NAME'    => false,
+    '!PROPERTY_AUTHOR_PICTURE' => false,
+    '!PROPERTY_RATING'         => false,
 ];
 
 ?>
