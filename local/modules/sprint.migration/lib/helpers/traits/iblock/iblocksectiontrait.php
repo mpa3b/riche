@@ -342,10 +342,10 @@ trait IblockSectionTrait
      * @param $iblockId
      * @param $sectionId
      *
+     * @return array
      * @throws HelperException
-     * @return string
      */
-    public function getSectionUniqNameById($iblockId, $sectionId)
+    public function getSectionUniqFilterById($iblockId, $sectionId)
     {
         if (empty($sectionId)) {
             $this->throwException(
@@ -379,20 +379,20 @@ trait IblockSectionTrait
                 )
             );
         }
-
-        return $section['NAME'] . '|' . (int)$section['DEPTH_LEVEL'] . '|' . $section['CODE'];
+    
+        return [
+            'NAME'        => $section['NAME'],
+            'DEPTH_LEVEL' => (int)$section['DEPTH_LEVEL'],
+            'CODE'        => $section['CODE'],
+        ];
     }
-
+    
     /**
-     * @param $iblockId
-     * @param $uniqName
-     *
      * @throws HelperException
-     * @return int|mixed|string
      */
-    public function getSectionIdByUniqName($iblockId, $uniqName)
+    public function getSectionIdByUniqFilter($iblockId, $uniqFilter)
     {
-        if (empty($uniqName)) {
+        if (empty($uniqFilter)) {
             $this->throwException(
                 __METHOD__,
                 Locale::getMessage(
@@ -403,83 +403,26 @@ trait IblockSectionTrait
                 )
             );
         }
-
-        if (is_numeric($uniqName)) {
-            return $uniqName;
-        }
-
-        list($sectionName, $depthLevel, $code) = explode('|', $uniqName);
-
-        $filter = [
-            'NAME'        => $sectionName,
-            'DEPTH_LEVEL' => $depthLevel,
-            'IBLOCK_ID'   => $iblockId,
-        ];
-
-        if ($code) {
-            $filter['CODE'] = $code;
-        }
-
-        $section = CIBlockSection::GetList([], $filter)->Fetch();
-
+    
+        $uniqFilter['IBLOCK_ID'] = $iblockId;
+    
+        $section = CIBlockSection::GetList([], $uniqFilter)->Fetch();
+    
         if (empty($section['ID'])) {
             $this->throwException(
                 __METHOD__,
                 Locale::getMessage(
-                    'ERR_IB_SECTION_ON_LEVEL_NOT_FOUND',
+                    'ERR_IB_SECTION_BY_FILTER_NOT_FOUND',
                     [
-                        '#SECTION_NAME#' => $sectionName,
-                        '#DEPTH_LEVEL#'  => $depthLevel,
+                        '#IBLOCK_ID#'   => $uniqFilter['IBLOCK_ID'],
+                        '#NAME#'        => $uniqFilter['NAME'],
+                        '#DEPTH_LEVEL#' => $uniqFilter['DEPTH_LEVEL'],
                     ]
                 )
             );
         }
 
         return $section['ID'];
-    }
-
-    /**
-     * @param       $iblockId
-     * @param array $sectionIds
-     *
-     * @throws HelperException
-     * @return array
-     */
-    public function getSectionUniqNamesByIds($iblockId, $sectionIds = [])
-    {
-        $uniqNames = [];
-        $sectionIds = is_array($sectionIds) ? array_filter($sectionIds) : [];
-
-        if (empty($sectionIds)) {
-            return $uniqNames;
-        }
-        foreach ($sectionIds as $sectionId) {
-            $uniqNames[] = $this->getSectionUniqNameById($iblockId, $sectionId);
-        }
-
-        return $uniqNames;
-    }
-
-    /**
-     * @param       $iblockId
-     * @param array $uniqNames
-     *
-     * @throws HelperException
-     * @return array
-     */
-    public function getSectionIdsByUniqNames($iblockId, $uniqNames = [])
-    {
-        $ids = [];
-        $uniqNames = is_array($uniqNames) ? array_filter($uniqNames) : [];
-
-        if (empty($uniqNames)) {
-            return $ids;
-        }
-
-        foreach ($uniqNames as $uniqName) {
-            $ids[] = $this->getSectionIdByUniqName($iblockId, $uniqName);
-        }
-        return $ids;
     }
 
     /**

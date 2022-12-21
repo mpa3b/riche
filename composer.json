@@ -63,6 +63,7 @@
     "rosell-dk/webp-convert": "^2.7",
     "webarchitect609/bitrix-cache": "^1.11",
     "webarchitect609/bitrix-user-type": "^0.7.3",
+    "webonyx/graphql-php": "^14.11",
     "wikimedia/composer-merge-plugin": "^2.0"
   },
   "require-dev": {

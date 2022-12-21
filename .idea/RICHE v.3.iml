@@ -100,32 +100,6 @@
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/location/install" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/rodzeta.redirect/install" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/dev2fun.imagecompress/install" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/image-mime-type-guesser" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/locate-binaries" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/wikimedia/composer-merge-plugin" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/file-util" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/webarchitect609/bitrix-cache" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/simple-cache" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/cache" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/exec-with-fallback" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/event-dispatcher" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/container" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/image-mime-type-sniffer" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/psr/log" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/rosell-dk/webp-convert" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/kint-php/kint-helpers" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/kint-php/kint" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/composer" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/webarchitect609/bitrix-orm-tools" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/webarchitect609/bitrix-user-type" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/oomphinc/composer-installers-extender" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/polyfill-php80" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/contracts" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/hafsoft/php-minifier" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/bitrix-expert/tools" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/anahkiasen/html-object" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/polyfill-mbstring" />
-      <excludeFolder url="file://$MODULE_DIR$/local/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/vasoft.git/install" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/askaron.agents/install" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/rumaster.cleaner/install" />
@@ -142,11 +116,41 @@
       <excludeFolder url="file://$MODULE_DIR$/local/logs" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/ylab.likes/install" />
       <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/ylab.comments/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/image_uploader" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/rbx.ix/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/ipol.ozon/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/asd.robots/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/im0rg.rest/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/asd.mailtpl/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/compression/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/embx.iblock/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/rbx.graphql/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/uplab.tilda/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/asd.autologin/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/yandex.market/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/bitrix.liveapi/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/sberbank.ecom2/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/lastworld.props/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/mcart.extramail/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/intaro.retailcrm/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/w2a.fastermitage/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/dev2fun.opengraph/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/webavk.ibcomments/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/altasib.breadcrumb/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/artofbx.xmlsitemap/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/asd.subscribequick/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/imyie.loginbyemail/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/seoexpert.redirect/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/beono.mastercomponent/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/unisender.integration/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/modules/cloudpayments.cloudpayment/install" />
+      <excludeFolder url="file://$MODULE_DIR$/bitrix/abtest" />
       <excludePattern pattern="install" />
       <excludePattern pattern="admin" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="@types/jquery" level="application" />
     <orderEntry type="library" name="@types/jquery" level="application" />
   </component>
 </module>

@@ -474,16 +474,6 @@ class Console
     }
 
     /**
-     * @throws MigrationException
-     */
-    public function commandForce()
-    {
-        /** @compability */
-        $this->addArg('--force');
-        $this->commandExecute();
-    }
-
-    /**
      * @noinspection PhpUnused
      * @throws Exception
      * @return bool
@@ -568,14 +558,6 @@ class Console
      */
     protected function executeAll($filter)
     {
-        $stopOnErrors = $this->versionConfig->getVal('stop_on_errors');
-
-        if ($this->getArg('--skip-errors')) {
-            $stopOnErrors = false;
-        } elseif ($this->getArg('--stop-on-errors')) {
-            $stopOnErrors = true;
-        }
-
         $success = 0;
         $fails = 0;
 
@@ -593,7 +575,7 @@ class Console
                 $fails++;
             }
 
-            if ($fails && $stopOnErrors) {
+            if ($fails) {
                 break;
             }
 
@@ -628,7 +610,6 @@ class Console
     {
 
         $tag = $this->getArg('--add-tag=', '');
-        $force = $this->getArg('--force');
 
         $params = [];
 
@@ -641,15 +622,14 @@ class Console
                 $version,
                 $action,
                 $params,
-                $force,
                 $tag
             );
-
-            $restart = $this->versionManager->needRestart($version);
+    
+            $restart = $this->versionManager->needRestart();
 
             if ($restart) {
-                $params = $this->versionManager->getRestartParams($version);
-                $exec = 1;
+                $params = $this->versionManager->getRestartParams();
+                $exec   = 1;
             }
 
             if ($success && !$restart) {
@@ -722,7 +702,7 @@ class Console
 
     protected function addArg($arg)
     {
-        list($name, $val) = explode('=', $arg);
+        [$name, $val] = explode('=', $arg);
         $isoption = (0 === strpos($name, '--')) ? 1 : 0;
         if ($isoption) {
             if (!is_null($val)) {

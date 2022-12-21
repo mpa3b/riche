@@ -3,7 +3,7 @@
 namespace Sprint\Migration\Exchange;
 
 use Sprint\Migration\AbstractExchange;
-use Sprint\Migration\Exceptions\ExchangeException;
+use Sprint\Migration\Exceptions\MigrationException;
 use Sprint\Migration\Exceptions\HelperException;
 use Sprint\Migration\Exceptions\RestartException;
 use Sprint\Migration\Locale;
@@ -12,11 +12,11 @@ use XMLReader;
 class HlblockElementsImport extends AbstractExchange
 {
     protected $converter;
-
+    
     /**
      * @param callable $converter
      *
-     * @throws ExchangeException
+     * @throws MigrationException
      * @throws RestartException
      * @throws HelperException
      */
@@ -28,9 +28,9 @@ class HlblockElementsImport extends AbstractExchange
         $params = $this->exchangeEntity->getRestartParams();
 
         if (!isset($params['total'])) {
-            $this->exchangeEntity->exitIf(
+            $this->exitIf(
                 !is_file($this->file),
-                Locale::getMessage('ERR_EXCHANGE_FILE_NOT_FOUND')
+                Locale::getMessage('ERR_EXCHANGE_FILE_NOT_FOUND', ['#FILE#' => $this->file])
             );
 
             $reader = new XMLReader();
@@ -53,12 +53,12 @@ class HlblockElementsImport extends AbstractExchange
             $reader->close();
 
             if (!$exchangeVersion || $exchangeVersion < self::EXCHANGE_VERSION) {
-                $this->exchangeEntity->exitWithMessage(
+                $this->exitWithMessage(
                     Locale::getMessage('ERR_EXCHANGE_VERSION', ['#NAME#' => $this->getExchangeFile()])
                 );
             }
-
-            $this->exchangeEntity->exitIfEmpty(
+    
+            $this->exitIfEmpty(
                 $params['hlblock_id'],
                 Locale::getMessage('ERR_HLBLOCK_NOT_FOUND', ['#HLBLOCK#' => $params['hlblock_id']])
             );

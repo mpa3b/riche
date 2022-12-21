@@ -29,9 +29,9 @@ class HlblockSchema extends AbstractSchema
     {
         $schemas = $this->loadSchemas(
             'hlblocks/', [
-            'hlblock' => [],
-            'fields'  => [],
-        ]
+                           'hlblock' => [],
+                           'fields'  => [],
+                       ]
         );
 
         $cntFields = 0;
@@ -70,9 +70,9 @@ class HlblockSchema extends AbstractSchema
         foreach ($exportItems as $item) {
             $this->saveSchema(
                 'hlblocks/' . strtolower($item['NAME']), [
-                'hlblock' => $item,
-                'fields'  => $helper->Hlblock()->exportFields($item['NAME']),
-            ]
+                                                           'hlblock' => $item,
+                                                           'fields'  => $helper->Hlblock()->exportFields($item['NAME']),
+                                                       ]
             );
         }
     }
@@ -84,9 +84,9 @@ class HlblockSchema extends AbstractSchema
     {
         $schemas = $this->loadSchemas(
             'hlblocks/', [
-            'hlblock' => [],
-            'fields'  => [],
-        ]
+                           'hlblock' => [],
+                           'fields'  => [],
+                       ]
         );
 
         foreach ($schemas as $schema) {
@@ -188,12 +188,7 @@ class HlblockSchema extends AbstractSchema
             foreach ($olds as $old) {
                 $uniq = $this->getUniqField($old);
                 if (!in_array($uniq, $skip)) {
-                    $ok = ($this->testMode)
-                        ? true
-                        : $helper->Hlblock()->deleteField(
-                            $hlblockId,
-                            $old['FIELD_NAME']
-                        );
+                    $ok = ($this->testMode) ? true : $helper->Hlblock()->deleteField($hlblockId, $old['FIELD_NAME']);
 
                     $this->outWarningIf(
                         $ok,
@@ -234,14 +229,15 @@ class HlblockSchema extends AbstractSchema
     protected function getHlblockId($hlblockUid)
     {
         $helper = $this->getHelperManager();
-
+    
         if (isset($this->uniqs[$hlblockUid])) {
             return $this->uniqs[$hlblockUid];
         }
-
-        $this->uniqs[$hlblockUid] = $helper->Hlblock()
-                                           ->getHlblockIdByUid($hlblockUid);
-
+    
+        $this->uniqs[$hlblockUid] = $helper
+            ->Hlblock()
+            ->getHlblockIdByUid($hlblockUid);
+    
         return $this->uniqs[$hlblockUid];
     }
 }

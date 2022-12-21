@@ -2,11 +2,11 @@
 
 namespace Sprint\Migration\Builders;
 
-use Sprint\Migration\Exceptions\ExchangeException;
 use Sprint\Migration\Exceptions\HelperException;
 use Sprint\Migration\Exceptions\MigrationException;
 use Sprint\Migration\Exceptions\RebuildException;
 use Sprint\Migration\Exceptions\RestartException;
+use Sprint\Migration\Exchange\IblockElementsExport;
 use Sprint\Migration\Locale;
 use Sprint\Migration\Module;
 use Sprint\Migration\VersionBuilder;
@@ -29,10 +29,10 @@ class IblockElementsBuilder extends VersionBuilder
 
         $this->addVersionFields();
     }
-
+    
     /**
      * @throws RebuildException
-     * @throws ExchangeException
+     * @throws MigrationException
      * @throws RestartException
      * @throws HelperException
      * @throws MigrationException
@@ -45,9 +45,10 @@ class IblockElementsBuilder extends VersionBuilder
         $updateMode = $this->getFieldValueUpdateMode();
         $exportFields = $this->getFieldValueExportFields($iblockId, $updateMode);
         $exportProps = $this->getFieldValueExportProps($iblockId);
-
+    
         $this->getExchangeManager()
              ->IblockElementsExport()
+             ->setUpdateMode($updateMode)
              ->setExportFilter($exportFilter)
              ->setExportFields($exportFields)
              ->setExportProperties($exportProps)
@@ -227,12 +228,13 @@ class IblockElementsBuilder extends VersionBuilder
         } else {
             $exportFields = [];
         }
-
-        if ($updateMode == 'code') {
+    
+        if ($updateMode == IblockElementsExport::UPDATE_MODE_CODE) {
             if (!in_array('CODE', $exportFields)) {
                 $exportFields[] = 'CODE';
             }
-        } elseif ($updateMode == 'xml_id') {
+        }
+        elseif ($updateMode == IblockElementsExport::UPDATE_MODE_XML_ID) {
             if (!in_array('XML_ID', $exportFields)) {
                 $exportFields[] = 'XML_ID';
             }
@@ -273,42 +275,32 @@ class IblockElementsBuilder extends VersionBuilder
      */
     protected function getFieldValueUpdateMode()
     {
-        $updateMode = $this->addFieldAndReturn(
+        return $this->addFieldAndReturn(
             'update_mode', [
-                'title'       => Locale::getMessage('BUILDER_IblockElementsExport_UpdateMode'),
-                'placeholder' => '',
-                'width'       => 250,
-                'select'      => [
-                    [
-                        'title' => Locale::getMessage('BUILDER_IblockElementsExport_NotUpdate'),
-                        'value' => 'not',
-                    ],
-                    [
-                        'title' => Locale::getMessage('BUILDER_IblockElementsExport_UpdateByCode'),
-                        'value' => 'code',
-                    ],
-                    [
-                        'title' => Locale::getMessage('BUILDER_IblockElementsExport_UpdateByXmlId'),
-                        'value' => 'xml_id',
-                    ],
+                             'title'       => Locale::getMessage('BUILDER_IblockElementsExport_UpdateMode'),
+                             'placeholder' => '',
+                             'width'       => 250,
+                             'select'      => [
+                                 [
+                                     'title' => Locale::getMessage('BUILDER_IblockElementsExport_NotUpdate'),
+                                     'value' => IblockElementsExport::UPDATE_MODE_NOT,
+                                 ],
+                                 [
+                                     'title' => Locale::getMessage('BUILDER_IblockElementsExport_UpdateByCode'),
+                                     'value' => IblockElementsExport::UPDATE_MODE_CODE,
+                                 ],
+                                 [
+                                     'title' => Locale::getMessage('BUILDER_IblockElementsExport_UpdateByXmlId'),
+                                     'value' => IblockElementsExport::UPDATE_MODE_XML_ID,
+                                 ],
                 ],
             ]
         );
-
-        return $updateMode;
     }
-
-    protected function explodeString($string, $delimiter = ',')
+    
+    protected function explodeString($string, $delimiter = ' ')
     {
         $values = explode($delimiter, trim($string));
-
-        $cleaned = [];
-        foreach ($values as $value) {
-            $value = trim(strval($value));
-            if (!empty($value)) {
-                $cleaned[] = $value;
-            }
-        }
-        return $cleaned;
+        return array_filter($values);
     }
 }

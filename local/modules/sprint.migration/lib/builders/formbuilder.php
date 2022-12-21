@@ -3,7 +3,7 @@
 namespace Sprint\Migration\Builders;
 
 use Bitrix\Main\Db\SqlQueryException;
-use Sprint\Migration\Exceptions\ExchangeException;
+use Sprint\Migration\Exceptions\MigrationException;
 use Sprint\Migration\Exceptions\HelperException;
 use Sprint\Migration\Exceptions\RebuildException;
 use Sprint\Migration\Locale;
@@ -24,9 +24,9 @@ class FormBuilder extends VersionBuilder
 
         $this->addVersionFields();
     }
-
+    
     /**
-     * @throws ExchangeException
+     * @throws MigrationException
      * @throws RebuildException
      * @throws SqlQueryException
      * @throws HelperException

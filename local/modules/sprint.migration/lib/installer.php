@@ -82,11 +82,11 @@ class Installer
                 $params
             );
 
-            $restart = $this->versionManager->needRestart($version);
+            $restart = $this->versionManager->needRestart();
 
             if ($restart) {
-                $params = $this->versionManager->getRestartParams($version);
-                $exec = 1;
+                $params = $this->versionManager->getRestartParams();
+                $exec   = 1;
             }
 
             if (!$success && !$restart) {

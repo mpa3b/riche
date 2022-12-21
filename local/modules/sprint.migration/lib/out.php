@@ -65,21 +65,22 @@ class Out
     public static function prepareToHtml($msg, $options = [])
     {
         $msg = nl2br($msg);
-
+    
         $msg = str_replace('[t]', '&rarr;', $msg);
-
+    
         foreach (self::$colors as $key => $val) {
             $msg = str_replace('[' . $key . ']', $val[1], $msg);
         }
-
-        if (isset($options['tracker_task_url'])) {
+    
+        if (!empty($options['tracker_task_url'])) {
             $msg = self::makeTaskUrl($msg, $options['tracker_task_url']);
         }
-
-        $msg = self::makeLinksHtml($msg);
-
-        $msg = Locale::convertToWin1251IfNeed($msg);
-        return $msg;
+    
+        if (!empty($options['make_links'])) {
+            $msg = self::makeLinksHtml($msg);
+        }
+    
+        return Locale::convertToWin1251IfNeed($msg);
     }
 
     protected static function makeTaskUrl($msg, $taskUrl = '')
@@ -106,13 +107,12 @@ class Out
         foreach (self::$colors as $key => $val) {
             $msg = str_replace('[' . $key . ']', $val[0], $msg);
         }
-
-        if (isset($options['tracker_task_url'])) {
+    
+        if (!empty($options['tracker_task_url'])) {
             $msg = self::makeTaskUrl($msg, $options['tracker_task_url']);
         }
-
-        $msg = Locale::convertToUtf8IfNeed($msg);
-        return $msg;
+    
+        return Locale::convertToUtf8IfNeed($msg);
     }
 
     public static function outInfo($msg, ...$vars)
@@ -271,11 +271,11 @@ class Out
 
         foreach ($diff as $k => $v) {
             if (isset($diff1[$k]) && isset($diff2[$k])) {
-                self::out($k . ': [red]' . $diff2[$k] . '[/] -> [green]' . $diff1[$k] . '[/]');
+                self::out($k . ': [red]' . htmlspecialchars($diff2[$k]) . '[/] -> [green]' . htmlspecialchars($diff1[$k]) . '[/]');
             } elseif (isset($diff1[$k])) {
-                self::out($k . ': [green]' . $diff1[$k] . '[/]');
+                self::out($k . ': [green]' . htmlspecialchars($diff1[$k]) . '[/]');
             } else {
-                self::out($k . ': [red]' . $diff2[$k] . '[/]');
+                self::out($k . ': [red]' . htmlspecialchars($diff2[$k]) . '[/]');
             }
         }
     }

@@ -182,20 +182,9 @@ class UserOptionsHelper extends Helper
             );
             $this->outDiffIf($ok, $exists, $data);
             return $ok;
-        } else {
-            if ($this->getMode('out_equal')) {
-
-                $this->out(
-                    Locale::getMessage(
-                        'USER_OPTION_LIST_EQUAL',
-                        [
-                            '#NAME#' => $params['name'],
-                        ]
-                    )
-                );
-            }
-            return true;
         }
+    
+        return true;
     }
 
     public function exportGrid($gridId)
@@ -209,7 +198,8 @@ class UserOptionsHelper extends Helper
             $options = (new CGridOptions($gridId))->GetOptions();
 
             foreach ($options['views'] as $viewCode => $view) {
-                $view['columns'] = $this->revertCodesFromColumns($view['columns']);
+                $view['columns']             = $this->revertCodesFromColumns($view['columns']);
+                $view['custom_names']        = $this->revertCustomNames($view['custom_names']);
                 $options['views'][$viewCode] = $view;
             }
 
@@ -221,7 +211,8 @@ class UserOptionsHelper extends Helper
     public function buildGrid($gridId, $options = [])
     {
         foreach ($options['views'] as $viewCode => $view) {
-            $view['columns'] = $this->transformCodesToColumns($view['columns']);
+            $view['columns']             = $this->transformCodesToColumns($view['columns']);
+            $view['custom_names']        = $this->transformCustomNames($view['custom_names']);
             $options['views'][$viewCode] = $view;
         }
 
@@ -255,19 +246,9 @@ class UserOptionsHelper extends Helper
             );
             $this->outDiffIf($ok, $exists, $params);
             return $ok;
-        } else {
-            if ($this->getMode('out_equal')) {
-                $this->out(
-                    Locale::getMessage(
-                        'USER_OPTION_GRID_EQUAL',
-                        [
-                            '#NAME#' => $gridId,
-                        ]
-                    )
-                );
-            }
-            return true;
         }
+    
+        return true;
     }
 
     /**
@@ -317,7 +298,7 @@ class UserOptionsHelper extends Helper
                     continue;
                 }
 
-                list($fieldCode, $fieldTitle) = explode('#', $fieldString);
+                [$fieldCode, $fieldTitle] = explode('#', $fieldString);
 
                 $fieldCode = str_replace('--', '', strval($fieldCode));
                 $fieldTitle = str_replace('--', '', strval($fieldTitle));
@@ -375,7 +356,7 @@ class UserOptionsHelper extends Helper
         $tabVals = [];
 
         foreach ($formData as $tabTitle => $fields) {
-            list($tabTitle, $tabId) = explode('|', $tabTitle);
+            [$tabTitle, $tabId] = explode('|', $tabTitle);
 
             if (!$tabId) {
                 $tabId = 'edit' . ($tabIndex + 1);
@@ -388,7 +369,7 @@ class UserOptionsHelper extends Helper
             foreach ($fields as $fieldKey => $fieldValue) {
                 if (is_numeric($fieldKey)) {
                     /** @compability */
-                    list($fcode, $ftitle) = explode('|', $fieldValue);
+                    [$fcode, $ftitle] = explode('|', $fieldValue);
                 } else {
                     $fcode = $fieldKey;
                     $ftitle = $fieldValue;
@@ -450,18 +431,7 @@ class UserOptionsHelper extends Helper
             );
             $this->outDiffIf($ok, $exists, $formData);
             return $ok;
-        } else {
-            if ($this->getMode('out_equal')) {
-                $this->out(
-                    Locale::getMessage(
-                        'USER_OPTION_FORM_EQUAL',
-                        [
-                            '#NAME#' => $params['name'],
-                        ]
-                    )
-                );
-            }
-            return true;
         }
+        return true;
     }
 }

@@ -2,41 +2,40 @@
 
 namespace Sprint\Migration;
 
-
 class Version20170213000008 extends Version
 {
-
     protected $description = "Пример работы миграции с сохранением промежуточных данных в бд";
 
     /**
-     * @throws Exceptions\ExchangeException
      * @return bool|void
+     * @throws Exceptions\MigrationException
      */
     public function up()
     {
         //сохраняем данные этой миграции
-        $this->saveData('var1', '1234567');
-        $this->saveData('var2', [
-            'bbb' => 'axcx',
+        $storage1 = $this->getStorageManager();
+    
+        $storage1->saveData('var1', '1234567');
+        $storage1->saveData('var2', [
+            'bbb'  => 'axcx',
             'bbbb' => 'axcx',
         ]);
-
+    
         //получаем данные этой миграции
-        $var1 = $this->getSavedData('var1');
-        $var2 = $this->getSavedData('var2');
-
+        $var1 = $storage1->getSavedData('var1');
+        $var2 = $storage1->getSavedData('var2');
+    
         //удаляем выбранные данные этой миграции
-        $this->deleteSavedData('var1');
-
+        $storage1->deleteSavedData('var1');
+    
         //удаляем все данные этой миграции
-        $this->deleteSavedData();
-
+        $storage1->deleteSavedData();
+    
         //получаем сохраненные данные какой-либо другой миграции
-        $storage = $this->getStorageManager();
-        $var1 = $storage->getSavedData('Version20170213000007', 'var1');
-
+        $storage2 = $this->getStorageManager('Version20170213000007');
+        $var1     = $storage2->getSavedData('var1');
     }
-
+    
     /**
      * @return bool|void
      */
@@ -44,5 +43,4 @@ class Version20170213000008 extends Version
     {
         //your code ...
     }
-
 }

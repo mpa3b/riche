@@ -101,15 +101,56 @@ class EventHelper extends Helper
         if (isset($filter['SUBJECT'])) {
             $filter['SUBJECT_EXACT_MATCH'] = 'Y';
         }
-
+    
         $result = [];
-        $dbres = CEventMessage::GetList($by, $order, $filter);
+        $dbres  = CEventMessage::GetList($by, $order, $filter);
         while ($item = $dbres->Fetch()) {
             $result[] = $this->prepareEventMessage($item);
         }
         return $result;
     }
-
+    
+    public function getEventMessageById($messageId)
+    {
+        $item = CEventMessage::GetByID($messageId)->Fetch();
+        if ($item) {
+            return $this->prepareEventMessage($item);
+        }
+        return false;
+    }
+    
+    public function getEventMessageUidFilterById($messageId)
+    {
+        $item = CEventMessage::GetByID($messageId)->Fetch();
+        if ($item) {
+            return [
+                'EVENT_NAME' => $item['EVENT_NAME'],
+                'SUBJECT'    => $item['SUBJECT'],
+            ];
+        }
+        return $messageId;
+    }
+    
+    public function getEventMessageIdByUidFilter($templateId)
+    {
+        if (empty($templateId)) {
+            return false;
+        }
+        
+        if (is_numeric($templateId)) {
+            return $templateId;
+        }
+        
+        if (is_array($templateId) && isset($templateId['EVENT_NAME'])) {
+            $item = $this->getEventMessage($templateId);
+            if ($item) {
+                return $item['ID'];
+            }
+        }
+        
+        return false;
+    }
+    
     /**
      * Получает список сайтов для почтового шаблона
      *
@@ -196,16 +237,18 @@ class EventHelper extends Helper
     public function addEventMessageIfNotExists($eventName, $fields)
     {
         $this->checkRequiredKeys(__METHOD__, $fields, ['SUBJECT', 'LID']);
-
-        $item = $this->getEventMessage([
-            'EVENT_NAME' => $eventName,
-            'SUBJECT'    => $fields['SUBJECT'],
-        ]);
-
+    
+        $item = $this->getEventMessage(
+            [
+                'EVENT_NAME' => $eventName,
+                'SUBJECT'    => $fields['SUBJECT'],
+            ]
+        );
+    
         if ($item) {
             return $item['ID'];
         }
-
+    
         return $this->addEventMessage($eventName, $fields);
     }
 
@@ -307,15 +350,17 @@ class EventHelper extends Helper
     public function saveEventMessage($eventName, $fields)
     {
         $this->checkRequiredKeys(__METHOD__, $fields, ['SUBJECT', 'LID']);
-
-        $exists = $this->getEventMessage([
-            'EVENT_NAME' => $eventName,
-            'SUBJECT'    => $fields['SUBJECT'],
-        ]);
-
+    
+        $exists = $this->getEventMessage(
+            [
+                'EVENT_NAME' => $eventName,
+                'SUBJECT'    => $fields['SUBJECT'],
+            ]
+        );
+    
         $exportExists = $this->prepareExportEventMessage($exists);
-        $fields = $this->prepareExportEventMessage($fields);
-
+        $fields       = $this->prepareExportEventMessage($fields);
+    
         if (empty($exists)) {
             $ok = $this->getMode('test') ? true : $this->addEventMessage($eventName, $fields);
             $this->outNoticeIf(
@@ -346,20 +391,8 @@ class EventHelper extends Helper
             $this->outDiffIf($ok, $exportExists, $fields);
             return $ok;
         }
-
-        $ok = $this->getMode('test') ? true : $eventName;
-        if ($this->getMode('out_equal')) {
-            $this->outNoticeIf(
-                $ok,
-                Locale::getMessage(
-                    'EVENT_MESSAGE_EQUAL',
-                    [
-                        '#NAME#' => $eventName . ':' . $fields['SUBJECT'],
-                    ]
-                )
-            );
-        }
-        return $ok;
+    
+        return $this->getMode('test') ? true : $eventName;
     }
 
     /**
@@ -416,20 +449,8 @@ class EventHelper extends Helper
             $this->outDiffIf($ok, $exportExists, $fields);
             return $ok;
         }
-
-        $ok = $this->getMode('test') ? true : $eventName;
-        if ($this->getMode('out_equal')) {
-            $this->outNoticeIf(
-                $ok,
-                Locale::getMessage(
-                    'EVENT_TYPE_EQUAL',
-                    [
-                        '#NAME#' => $eventName . ':' . $fields['LID'],
-                    ]
-                )
-            );
-        }
-        return $ok;
+    
+        return $this->getMode('test') ? true : $eventName;
     }
 
     /**
@@ -480,20 +501,22 @@ class EventHelper extends Helper
     public function deleteEventMessage($fields)
     {
         $this->checkRequiredKeys(__METHOD__, $fields, ['SUBJECT', 'EVENT_NAME']);
-
-        $exists = $this->getEventMessage([
-            'EVENT_NAME' => $fields['EVENT_NAME'],
-            'SUBJECT'    => $fields['SUBJECT'],
-        ]);
-
+    
+        $exists = $this->getEventMessage(
+            [
+                'EVENT_NAME' => $fields['EVENT_NAME'],
+                'SUBJECT'    => $fields['SUBJECT'],
+            ]
+        );
+    
         if (empty($exists)) {
             return false;
         }
-
+    
         if (CEventMessage::Delete($exists['ID'])) {
             return true;
         };
-
+    
         $this->throwException(
             __METHOD__,
             Locale::getMessage(

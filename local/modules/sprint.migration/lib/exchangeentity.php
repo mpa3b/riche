@@ -3,19 +3,42 @@
 namespace Sprint\Migration;
 
 use ReflectionClass;
-use ReflectionException;
-use Sprint\Migration\Exceptions\ExchangeException;
+use Sprint\Migration\Exceptions\MigrationException;
 use Sprint\Migration\Exceptions\RestartException;
 
 abstract class ExchangeEntity
 {
-    use OutTrait;
-
     /**
      * @var array
      */
     protected $params = [];
-
+    private   $versionConfig;
+    
+    /**
+     * @return VersionConfig
+     */
+    public function getVersionConfig()
+    {
+        return $this->versionConfig;
+    }
+    
+    /**
+     * Не использовать
+     *
+     * @param VersionConfig $versionConfig
+     *
+     * @return void
+     */
+    public function setVersionConfig(VersionConfig $versionConfig)
+    {
+        $this->versionConfig = $versionConfig;
+    }
+    
+    public function getClassName()
+    {
+        return (new ReflectionClass($this))->getShortName();
+    }
+    
     /**
      * @throws RestartException
      */
@@ -23,7 +46,7 @@ abstract class ExchangeEntity
     {
         throw new RestartException();
     }
-
+    
     /**
      * @return array
      */
@@ -38,74 +61,5 @@ abstract class ExchangeEntity
     public function setRestartParams($params = [])
     {
         $this->params = $params;
-    }
-
-    /**
-     * @param $name
-     *
-     * @throws ExchangeException
-     * @return string
-     */
-    public function getResourceFile($name)
-    {
-        $classInfo = new ReflectionClass($this);
-        return dirname($classInfo->getFileName()) . '/' . $classInfo->getShortName() . '_files/' . $name;
-    }
-
-    /**
-     * @throws ExchangeException
-     * @return string
-     */
-    public function getClassName()
-    {
-        $classInfo = new ReflectionClass($this);
-        $name = $classInfo->getShortName();
-
-        $this->exitIfEmpty(
-            $name,
-            Locale::getMessage(
-                'ERR_CLASS_NOT_FOUND',
-                [
-                    '#NAME#' => $name,
-                ]
-            )
-        );
-        return $name;
-    }
-
-    /**
-     * @param $msg
-     *
-     * @throws ExchangeException
-     */
-    public function exitWithMessage($msg)
-    {
-        throw new ExchangeException($msg);
-    }
-
-    /**
-     * @param $cond
-     * @param $msg
-     *
-     * @throws ExchangeException
-     */
-    public function exitIf($cond, $msg)
-    {
-        if ($cond) {
-            throw new ExchangeException($msg);
-        }
-    }
-
-    /**
-     * @param $var
-     * @param $msg
-     *
-     * @throws ExchangeException
-     */
-    public function exitIfEmpty($var, $msg)
-    {
-        if (empty($var)) {
-            throw new ExchangeException($msg);
-        }
     }
 }

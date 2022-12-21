@@ -10,10 +10,20 @@ use XMLWriter;
 class IblockElementsExport extends AbstractExchange
 {
     protected $iblockId;
+    protected $updateMode;
     protected $exportFilter     = [];
     protected $exportFields     = [];
     protected $exportProperties = [];
-
+    const UPDATE_MODE_NOT    = 'not';
+    const UPDATE_MODE_CODE   = 'code';
+    const UPDATE_MODE_XML_ID = 'xml_id';
+    
+    public function setUpdateMode(string $updateMode)
+    {
+        $this->updateMode = $updateMode;
+        return $this;
+    }
+    
     /**
      * @return array
      */
@@ -21,7 +31,7 @@ class IblockElementsExport extends AbstractExchange
     {
         return $this->exportFilter;
     }
-
+    
     /**
      * @param array $exportFilter
      *
@@ -187,17 +197,6 @@ class IblockElementsExport extends AbstractExchange
         $this->writeFile($writer, $val);
     }
 
-    protected function writeFieldSection(XMLWriter $writer, $val)
-    {
-        $iblockExchange = $this->getHelperManager()->IblockExchange();
-
-        $val = $iblockExchange->getSectionUniqNamesByIds(
-            $this->getIblockId(),
-            $val
-        );
-        $this->writeValue($writer, $val);
-    }
-
     protected function writeFieldS(XMLWriter $writer, $val)
     {
         $this->writeValue($writer, $val);
@@ -206,10 +205,11 @@ class IblockElementsExport extends AbstractExchange
     protected function getWritePropertyMethod($prop)
     {
         $type = $prop['PROPERTY_TYPE'];
-
-        if (in_array($type, ['L', 'F', 'G'])) {
+    
+        if (in_array($type, ['L', 'F', 'G', 'E'])) {
             return 'writeProperty' . ucfirst($type);
-        } else {
+        }
+        else {
             return 'writePropertyS';
         }
     }
@@ -224,7 +224,8 @@ class IblockElementsExport extends AbstractExchange
                 }
                 $this->writeSingleValue($writer, $val1, $attributes);
             }
-        } else {
+        }
+        else {
             $attributes = [];
             if (!empty($prop['DESCRIPTION'])) {
                 $attributes = ['description' => $prop['DESCRIPTION']];
@@ -232,24 +233,62 @@ class IblockElementsExport extends AbstractExchange
             $this->writeSingleValue($writer, $prop['VALUE'], $attributes);
         }
     }
-
+    
+    protected function writeFieldSection(XMLWriter $writer, $val)
+    {
+        $iblockExchange = $this->getHelperManager()->IblockExchange();
+        
+        $val = array_filter(is_array($val) ? $val : [$val]);
+        
+        foreach ($val as $sectionId) {
+            $uniqName = $iblockExchange->getSectionUniqNameById(
+                $this->getIblockId(),
+                $sectionId
+            );
+            if (!empty($uniqName)) {
+                $this->writeValue($writer, $uniqName);
+            }
+        }
+    }
+    
     protected function writePropertyG(XMLWriter $writer, $prop)
     {
         $iblockExchange = $this->getHelperManager()->IblockExchange();
-
-        $prop['VALUE'] = is_array($prop['VALUE']) ? $prop['VALUE'] : [$prop['VALUE']];
-        $prop['VALUE'] = $iblockExchange->getSectionUniqNamesByIds(
-            $prop['LINK_IBLOCK_ID'],
-            $prop['VALUE']
-        );
-        $this->writeValue($writer, $prop['VALUE']);
+        $prop['VALUE']  = array_filter(is_array($prop['VALUE']) ? $prop['VALUE'] : [$prop['VALUE']]);
+        
+        foreach ($prop['VALUE'] as $sectionId) {
+            $uniqName = $iblockExchange->getSectionUniqNameById(
+                $prop['LINK_IBLOCK_ID'],
+                $sectionId
+            );
+            if (!empty($uniqName)) {
+                $this->writeValue($writer, $uniqName);
+            }
+        }
     }
-
+    
+    protected function writePropertyE(XMLWriter $writer, $prop)
+    {
+        $iblockExchange = $this->getHelperManager()->IblockExchange();
+        
+        $prop['VALUE'] = array_filter(is_array($prop['VALUE']) ? $prop['VALUE'] : [$prop['VALUE']]);
+        
+        foreach ($prop['VALUE'] as $elementId) {
+            $uniqName = $iblockExchange->getElementUniqNameById(
+                $prop['LINK_IBLOCK_ID'],
+                $elementId
+            );
+            if (!empty($uniqName)) {
+                $this->writeValue($writer, $uniqName);
+            }
+        }
+    }
+    
     protected function writePropertyL(XMLWriter $writer, $prop)
     {
         $this->writeValue($writer, $prop['VALUE_XML_ID']);
     }
-
+    
     /**
      * @param XMLWriter $writer
      * @param           $prop

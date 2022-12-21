@@ -2,11 +2,11 @@
 
 namespace Sprint\Migration\Builders;
 
-use Sprint\Migration\Exceptions\ExchangeException;
 use Sprint\Migration\Exceptions\HelperException;
 use Sprint\Migration\Exceptions\MigrationException;
 use Sprint\Migration\Exceptions\RebuildException;
 use Sprint\Migration\Exceptions\RestartException;
+use Sprint\Migration\Exchange\HlblockElementsExport;
 use Sprint\Migration\Locale;
 use Sprint\Migration\Module;
 use Sprint\Migration\VersionBuilder;
@@ -29,9 +29,9 @@ class HlblockElementsBuilder extends VersionBuilder
 
         $this->addVersionFields();
     }
-
+    
     /**
-     * @throws ExchangeException
+     * @throws MigrationException
      * @throws HelperException
      * @throws RebuildException
      * @throws RestartException
@@ -48,13 +48,19 @@ class HlblockElementsBuilder extends VersionBuilder
                 'select'      => $this->getHelperManager()->HlblockExchange()->getHlblocksStructure(),
             ]
         );
-
+    
+        $fields     = $this->getHelperManager()->HlblockExchange()->getHlblockFieldsCodes($hlblockId);
+        $updateMode = $this->getFieldValueUpdateMode();
+    
+        if ($updateMode == HlblockElementsExport::UPDATE_MODE_XML_ID) {
+            $this->exitIf(!in_array('UF_XML_ID', $fields), 'Field UF_XML_ID not found');
+        }
+    
         $this->getExchangeManager()
              ->HlblockElementsExport()
              ->setLimit(20)
-             ->setExportFields(
-                 $this->getHelperManager()->HlblockExchange()->getHlblockFieldsCodes($hlblockId)
-             )
+             ->setUpdateMode($updateMode)
+             ->setExportFields($fields)
              ->setHlblockId($hlblockId)
              ->setExchangeFile(
                  $this->getVersionResourceFile(
@@ -62,9 +68,37 @@ class HlblockElementsBuilder extends VersionBuilder
                      'hlblock_elements.xml'
                  )
              )->execute();
-
+    
         $this->createVersionFile(
-            Module::getModuleDir() . '/templates/HlblockElementsExport.php'
+            Module::getModuleDir() . '/templates/HlblockElementsExport.php',
+            [
+                'updateMode' => $updateMode,
+            ]
+        );
+    }
+    
+    /**
+     * @return string
+     * @throws RebuildException
+     */
+    protected function getFieldValueUpdateMode()
+    {
+        return $this->addFieldAndReturn(
+            'update_mode', [
+                             'title'       => Locale::getMessage('BUILDER_IblockElementsExport_UpdateMode'),
+                             'placeholder' => '',
+                             'width'       => 250,
+                             'select'      => [
+                                 [
+                                     'title' => Locale::getMessage('BUILDER_IblockElementsExport_NotUpdate'),
+                                     'value' => HlblockElementsExport::UPDATE_MODE_NOT,
+                                 ],
+                                 [
+                                     'title' => Locale::getMessage('BUILDER_IblockElementsExport_UpdateByXmlId'),
+                                     'value' => HlblockElementsExport::UPDATE_MODE_XML_ID,
+                                 ],
+                             ],
+                         ]
         );
     }
 }

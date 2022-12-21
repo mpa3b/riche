@@ -10,6 +10,7 @@ use Sprint\Migration\Traits\HelperManagerTrait;
 abstract class AbstractSchema extends ExchangeEntity
 {
     use HelperManagerTrait;
+    use OutTrait;
 
     private $name;
     /** @var VersionConfig */
@@ -33,9 +34,11 @@ abstract class AbstractSchema extends ExchangeEntity
 
     public function __construct(VersionConfig $versionConfig, $name, $params = [])
     {
-        $this->versionConfig = $versionConfig;
         $this->name = $name;
-        $this->params = $params;
+    
+        $this->setVersionConfig($versionConfig);
+        $this->setRestartParams($params);
+    
         $this->initialize();
     }
 
@@ -278,16 +281,4 @@ abstract class AbstractSchema extends ExchangeEntity
         }
     }
 
-    protected function getVersionConfig()
-    {
-        return $this->versionConfig;
-    }
-
-    /**
-     * @return ExchangeManager
-     */
-    protected function getExchangeManager()
-    {
-        return new ExchangeManager($this);
-    }
 }
