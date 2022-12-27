@@ -47,7 +47,8 @@
     "andreyryabin/sprint.migration": "^4.1.2",
     "bitrix-expert/tools": "^1.5",
     "composer/installers": "^1.7",
-    "hafsoft/php-minifier": "^0.9.1",
+    "enshrined/svg-sanitize": "^0.15.4",
+    "jalle19/php-yui-compressor": "^1.0",
     "npm-asset/inputmask": "^5.0",
     "npm-asset/jquery": "^3.6",
     "npm-asset/jquery-colorbox": "^1.6",
@@ -60,10 +61,10 @@
     "npm-asset/slick-carousel": "^1.8",
     "npm-asset/vanilla-lazyload": "^17.4",
     "oomphinc/composer-installers-extender": "^2.0",
+    "ps/image-optimizer": "^2.0",
     "rosell-dk/webp-convert": "^2.7",
     "webarchitect609/bitrix-cache": "^1.11",
     "webarchitect609/bitrix-user-type": "^0.7.3",
-    "webonyx/graphql-php": "^14.11",
     "wikimedia/composer-merge-plugin": "^2.0"
   },
   "require-dev": {
@@ -105,5 +106,10 @@
         "vendor:bower-asset"
       ]
     }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "Local\\PostInstallStaticProcessor::processStaticFiles"
+    ]
   }
 }
