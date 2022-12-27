@@ -1,0 +1,69 @@
+.problems--front h2 {
+  font-size: 1.8rem;
+}
+@media (min-width: 560px) {
+  .problems--front h2 {
+    font-size: 2.4rem;
+  }
+}
+.problems--front p {
+  font-size: 1.2rem;
+}
+.problems--front .items {
+  padding-top: var(--offset);
+}
+.problems--front .items .item {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.problems--front .items .item picture {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: var(--offset--half);
+}
+.problems--front .items .item picture img {
+  display: block;
+  width: 100%;
+}
+.problems--front .items .item h3 {
+  font-size: 1.2rem;
+}
+.problems--front .items:not(.slick-initialized) .item:not(:first-of-type) {
+  display: none;
+}
+.problems--front .slick-slider {
+  position: relative;
+  margin: 0 var(--offset--half--negative);
+}
+.problems--front .slick-slider:hover .arrow {
+  opacity: 1;
+}
+@media (max-width: 560px) {
+  .problems--front .slick-slider {
+    padding-right: 20%;
+  }
+}
+.problems--front .slick-list {
+  overflow: visible;
+}
+.problems--front .slick-slide > div {
+  box-sizing: border-box;
+  padding: 0 var(--offset--half);
+}
+.problems--front .slick-arrow {
+  height: var(--offset--2x);
+  margin-top: var(--offset--2x--negative);
+  position: absolute;
+  left: var(--offset--negative);
+  top: 50%;
+  z-index: 100;
+  opacity: 0;
+  color: var(--color--white);
+}
+.problems--front .slick-arrow.next {
+  left: unset;
+  right: var(--offset--negative);
+}
+
+/*# sourceMappingURL=style.css.map */

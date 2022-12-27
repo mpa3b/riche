@@ -35,10 +35,10 @@ abstract class AbstractSchema extends ExchangeEntity
     public function __construct(VersionConfig $versionConfig, $name, $params = [])
     {
         $this->name = $name;
-    
+
         $this->setVersionConfig($versionConfig);
         $this->setRestartParams($params);
-    
+
         $this->initialize();
     }
 

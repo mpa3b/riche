@@ -14,13 +14,11 @@ class SchemaManager extends ExchangeEntity
     private $progress = [];
 
     protected $testMode = 0;
-    
+
     /**
      * SchemaManager constructor.
-     *
      * @param VersionConfig $configName
-     * @param array         $params
-     *
+     * @param array $params
      * @throws Exception
      */
     public function __construct(VersionConfig $versionConfig, $params = [])

@@ -13,7 +13,7 @@ abstract class AbstractBuilder extends ExchangeEntity
     use HelperManagerTrait;
     use ExitMessageTrait;
     use OutTrait;
-    
+
     private $name;
     private $info       = [
         'title'       => '',
@@ -22,14 +22,14 @@ abstract class AbstractBuilder extends ExchangeEntity
     ];
     private $fields     = [];
     private $execStatus = '';
-    
+
     public function __construct(VersionConfig $versionConfig, $name, $params = [])
     {
         $this->name = $name;
-        
+
         $this->setVersionConfig($versionConfig);
         $this->setRestartParams($params);
-        
+
         $this->addFieldHidden('builder_name', $this->getName());
     }
 
@@ -50,17 +50,16 @@ abstract class AbstractBuilder extends ExchangeEntity
     {
         $this->initialize();
     }
-    
+
     public function isEnabled()
     {
         try {
             return $this->isBuilderEnabled();
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             return false;
         }
     }
-    
+
     /**
      * @return ExchangeManager
      */
@@ -68,16 +67,15 @@ abstract class AbstractBuilder extends ExchangeEntity
     {
         return new ExchangeManager($this);
     }
-    
+
     protected function addField($code, $param = [])
     {
         if (isset($param['multiple']) && $param['multiple']) {
             $value = [];
-        }
-        else {
+        } else {
             $value = '';
         }
-        
+
         $param = array_merge(
             [
                 'title' => '',

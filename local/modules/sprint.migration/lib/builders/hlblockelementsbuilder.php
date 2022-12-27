@@ -29,7 +29,7 @@ class HlblockElementsBuilder extends VersionBuilder
 
         $this->addVersionFields();
     }
-    
+
     /**
      * @throws MigrationException
      * @throws HelperException
@@ -48,14 +48,14 @@ class HlblockElementsBuilder extends VersionBuilder
                 'select'      => $this->getHelperManager()->HlblockExchange()->getHlblocksStructure(),
             ]
         );
-    
-        $fields     = $this->getHelperManager()->HlblockExchange()->getHlblockFieldsCodes($hlblockId);
+
+        $fields = $this->getHelperManager()->HlblockExchange()->getHlblockFieldsCodes($hlblockId);
         $updateMode = $this->getFieldValueUpdateMode();
-    
+
         if ($updateMode == HlblockElementsExport::UPDATE_MODE_XML_ID) {
             $this->exitIf(!in_array('UF_XML_ID', $fields), 'Field UF_XML_ID not found');
         }
-    
+
         $this->getExchangeManager()
              ->HlblockElementsExport()
              ->setLimit(20)
@@ -68,7 +68,7 @@ class HlblockElementsBuilder extends VersionBuilder
                      'hlblock_elements.xml'
                  )
              )->execute();
-    
+
         $this->createVersionFile(
             Module::getModuleDir() . '/templates/HlblockElementsExport.php',
             [
@@ -76,29 +76,29 @@ class HlblockElementsBuilder extends VersionBuilder
             ]
         );
     }
-    
+
     /**
-     * @return string
      * @throws RebuildException
+     * @return string
      */
     protected function getFieldValueUpdateMode()
     {
         return $this->addFieldAndReturn(
             'update_mode', [
-                             'title'       => Locale::getMessage('BUILDER_IblockElementsExport_UpdateMode'),
-                             'placeholder' => '',
-                             'width'       => 250,
-                             'select'      => [
-                                 [
-                                     'title' => Locale::getMessage('BUILDER_IblockElementsExport_NotUpdate'),
-                                     'value' => HlblockElementsExport::UPDATE_MODE_NOT,
-                                 ],
-                                 [
-                                     'title' => Locale::getMessage('BUILDER_IblockElementsExport_UpdateByXmlId'),
-                                     'value' => HlblockElementsExport::UPDATE_MODE_XML_ID,
-                                 ],
-                             ],
-                         ]
+                'title'       => Locale::getMessage('BUILDER_IblockElementsExport_UpdateMode'),
+                'placeholder' => '',
+                'width'       => 250,
+                'select'      => [
+                    [
+                        'title' => Locale::getMessage('BUILDER_IblockElementsExport_NotUpdate'),
+                        'value' => HlblockElementsExport::UPDATE_MODE_NOT,
+                    ],
+                    [
+                        'title' => Locale::getMessage('BUILDER_IblockElementsExport_UpdateByXmlId'),
+                        'value' => HlblockElementsExport::UPDATE_MODE_XML_ID,
+                    ],
+                ],
+            ]
         );
     }
 }

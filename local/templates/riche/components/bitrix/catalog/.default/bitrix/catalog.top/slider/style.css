@@ -1,0 +1,56 @@
+.catalog-top--catalog--slider {
+  overflow: hidden;
+}
+.catalog-top--catalog--slider .items .item {
+  padding-bottom: 3rem;
+}
+.catalog-top--catalog--slider .items .item h3 {
+  font-size: 1.4rem;
+}
+.catalog-top--catalog--slider .items .item .actions {
+  margin-top: auto;
+}
+.catalog-top--catalog--slider .items .item .actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--offset);
+  padding-bottom: 0;
+}
+.catalog-top--catalog--slider .items:not(.slick-initialized) .item:not(:first-of-type) {
+  display: none;
+}
+.catalog-top--catalog--slider .slick-slider {
+  position: relative;
+  padding: 0 var(--offset--negative);
+}
+@media (max-width: 560px) {
+  .catalog-top--catalog--slider .slick-slider {
+    margin-right: -75%;
+  }
+}
+@media (min-width: 560px) {
+  .catalog-top--catalog--slider .slick-track {
+    width: 100% !important;
+  }
+  .catalog-top--catalog--slider .slick-track .slick-slide {
+    flex-grow: 1;
+  }
+}
+.catalog-top--catalog--slider .slick-list {
+  overflow: visible;
+}
+.catalog-top--catalog--slider .slick-slide > div {
+  box-sizing: border-box;
+  padding: 0 var(--offset);
+  position: relative;
+}
+
+/*# sourceMappingURL=style.css.map */

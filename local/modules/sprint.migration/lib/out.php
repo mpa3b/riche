@@ -65,21 +65,21 @@ class Out
     public static function prepareToHtml($msg, $options = [])
     {
         $msg = nl2br($msg);
-    
+
         $msg = str_replace('[t]', '&rarr;', $msg);
-    
+
         foreach (self::$colors as $key => $val) {
             $msg = str_replace('[' . $key . ']', $val[1], $msg);
         }
-    
+
         if (!empty($options['tracker_task_url'])) {
             $msg = self::makeTaskUrl($msg, $options['tracker_task_url']);
         }
-    
+
         if (!empty($options['make_links'])) {
             $msg = self::makeLinksHtml($msg);
         }
-    
+
         return Locale::convertToWin1251IfNeed($msg);
     }
 
@@ -107,11 +107,11 @@ class Out
         foreach (self::$colors as $key => $val) {
             $msg = str_replace('[' . $key . ']', $val[0], $msg);
         }
-    
+
         if (!empty($options['tracker_task_url'])) {
             $msg = self::makeTaskUrl($msg, $options['tracker_task_url']);
         }
-    
+
         return Locale::convertToUtf8IfNeed($msg);
     }
 

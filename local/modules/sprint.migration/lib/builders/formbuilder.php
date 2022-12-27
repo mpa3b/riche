@@ -24,7 +24,7 @@ class FormBuilder extends VersionBuilder
 
         $this->addVersionFields();
     }
-    
+
     /**
      * @throws MigrationException
      * @throws RebuildException

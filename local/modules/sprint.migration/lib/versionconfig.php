@@ -252,33 +252,30 @@ class VersionConfig
         } elseif (empty($values['migration_dir_absolute'])) {
             $values['migration_dir'] = Module::getDocRoot() . $values['migration_dir'];
         }
-    
+
         if (!is_dir($values['migration_dir'])) {
             Module::createDir($values['migration_dir']);
             $values['migration_dir'] = realpath($values['migration_dir']);
-        }
-        else {
+        } else {
             $values['migration_dir'] = realpath($values['migration_dir']);
         }
-    
+
         if (empty($values['exchange_dir'])) {
             $values['exchange_dir'] = $values['migration_dir'];
-        }
-        else {
+        } else {
             $values['exchange_dir'] = rtrim($values['exchange_dir'], DIRECTORY_SEPARATOR);
             if (empty($values['exchange_dir_absolute'])) {
                 $values['exchange_dir'] = Module::getDocRoot() . $values['exchange_dir'];
             }
         }
-    
+
         if (empty($values['version_prefix'])) {
             $values['version_prefix'] = 'Version';
         }
-    
+
         if (isset($values['show_admin_interface'])) {
             $values['show_admin_interface'] = (bool)$values['show_admin_interface'];
-        }
-        else {
+        } else {
             $values['show_admin_interface'] = true;
         }
 
@@ -426,22 +423,22 @@ class VersionConfig
         if (!$this->getConfigName($fileName)) {
             return false;
         }
-    
+
         if (!isset($this->configList[$configName])) {
             return false;
         }
-    
+
         $configFile = $this->configList[$configName]['file'];
-    
+
         $vmFrom = new VersionManager(
             new VersionConfig($configName)
         );
         $vmFrom->clean();
-    
+
         if (!empty($configFile) && is_file($configFile)) {
             unlink($configFile);
         }
-    
+
         return true;
     }
 
@@ -523,3 +520,6 @@ class VersionConfig
         ];
     }
 }
+
+
+

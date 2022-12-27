@@ -10,17 +10,17 @@ use Sprint\Migration\Traits\HelperManagerTrait;
 trait IblockTrait
 {
     use HelperManagerTrait;
-    
+
     private $titles       = [];
     private $props        = [];
     private $iblock       = [];
     private $lastIblockId = 0;
-    
+
     /**
      * @param $iblockId
      *
-     * @return mixed
      * @throws HelperException
+     * @return mixed
      */
     public function exportElementForm($iblockId)
     {
@@ -114,8 +114,8 @@ trait IblockTrait
     /**
      * @param $iblockId
      *
+     * @throws HelperException
      * @return string
-     *@throws HelperException
      */
     public function getElementGridId($iblockId)
     {
@@ -133,8 +133,8 @@ trait IblockTrait
     /**
      * @param $iblockId
      *
+     * @throws HelperException
      * @return string
-     *@throws HelperException
      */
     public function getSectionGridId($iblockId)
     {
@@ -145,8 +145,8 @@ trait IblockTrait
     /**
      * @param $iblockId
      *
+     * @throws HelperException
      * @return mixed
-     *@throws HelperException
      */
     public function exportElementList($iblockId)
     {
@@ -158,8 +158,8 @@ trait IblockTrait
     /**
      * @param $iblockId
      *
+     * @throws HelperException
      * @return mixed
-     *@throws HelperException
      */
     public function exportElementGrid($iblockId)
     {
@@ -195,8 +195,8 @@ trait IblockTrait
     /**
      * @param $iblockId
      *
+     * @throws HelperException
      * @return mixed
-     *@throws HelperException
      */
     public function exportSectionForm($iblockId)
     {
@@ -242,8 +242,8 @@ trait IblockTrait
     /**
      * @param $iblockId
      *
+     * @throws HelperException
      * @return mixed
-     *@throws HelperException
      */
     public function exportSectionList($iblockId)
     {
@@ -289,8 +289,8 @@ trait IblockTrait
     /**
      * @param $iblockId
      *
-     * @return array|void
      * @throws HelperException
+     * @return array|void
      * @deprecated
      */
     public function extractElementForm($iblockId)
@@ -312,8 +312,8 @@ trait IblockTrait
     /**
      * @param $iblockId
      *
+     * @throws HelperException
      * @return bool
-     *@throws HelperException
      */
     protected function initializeIblockVars($iblockId)
     {
@@ -423,7 +423,7 @@ trait IblockTrait
         }
         return $columns;
     }
-    
+
     protected function transformCustomNames($customNames)
     {
         $result = [];
@@ -434,7 +434,7 @@ trait IblockTrait
         }
         return $result;
     }
-    
+
     protected function revertCustomNames($customNames)
     {
         $result = [];

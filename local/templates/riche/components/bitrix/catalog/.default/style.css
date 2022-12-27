@@ -1,0 +1,163 @@
+@media (max-width: 560px) {
+  .catalog--default .items:not(.slider) .item {
+    flex-basis: 49.5%;
+  }
+}
+@media (min-width: 560px) {
+  .catalog--default .items:not(.slider) .item {
+    flex-basis: 33.33%;
+  }
+}
+@media (min-width: 780px) {
+  .catalog--default .items:not(.slider) .item {
+    flex-basis: 24.95%;
+  }
+}
+.catalog--default .items .item {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.catalog--default .items .item span.section {
+  position: absolute;
+  left: var(--offset--half);
+  top: var(--offset--half);
+  font-size: 0.8rem;
+  z-index: 100;
+  display: block;
+  padding: 0.2em 0.65em;
+  padding-bottom: 0.4em;
+  margin: var(--offset--half);
+  background-color: var(--color--white);
+  border-radius: 1em;
+}
+.catalog--default .items .item ul.purpose {
+  position: absolute;
+  left: var(--offset--half);
+  bottom: var(--offset--half);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  font-size: 0.8rem;
+  z-index: 100;
+  padding: 0;
+  margin: var(--offset--half);
+}
+.catalog--default .items .item ul.purpose li {
+  display: block;
+  padding: 0.2em 0.65em;
+  padding-bottom: 0.4em;
+  background-color: var(--color--white);
+  border-radius: 1em;
+  margin-right: 0.25em;
+}
+.catalog--default .items .item button.favorite {
+  position: absolute;
+  right: var(--offset--half);
+  top: var(--offset--half);
+  z-index: 100;
+}
+@media (min-width: 560px) {
+  .catalog--default .items .item span.marker,
+.catalog--default .items .item ul.purpose,
+.catalog--default .items .item button.favorite {
+    transition: opacity var(--transition--common);
+    opacity: 0;
+  }
+  .catalog--default .items .item:hover span.marker,
+.catalog--default .items .item:hover ul.purpose,
+.catalog--default .items .item:hover button.favorite {
+    opacity: 1;
+  }
+}
+.catalog--default .items .item .image {
+  position: relative;
+  border-radius: var(--border-radius--2x);
+  overflow: hidden;
+}
+.catalog--default .items .item .image video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.catalog--default .items .item .image video.loaded {
+  display: block;
+}
+.catalog--default .items .item .image video.loaded + picture {
+  opacity: 0;
+}
+.catalog--default .items .item .image video picture {
+  opacity: 1;
+  transition: opacity var(--transition--common);
+}
+.catalog--default .items .item .image video picture img {
+  display: block;
+  width: 100%;
+}
+.catalog--default .items .item .image .controls {
+  position: absolute;
+  z-index: 100;
+  bottom: var(--offset--half);
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.catalog--default .items .item .details {
+  display: flex;
+  flex-direction: column;
+}
+.catalog--default .items .item .details * > {
+  box-sizing: border-box;
+}
+.catalog--default .items .item h3 {
+  margin: var(--offset--half) 0;
+  font-size: 1.2rem;
+}
+.catalog--default .items .item .reviews {
+  margin: var(--offset--half) 0;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+}
+.catalog--default .items .item .reviews i {
+  margin-right: 0.15em;
+}
+.catalog--default .items .item .reviews .value {
+  padding-right: var(--offset--half);
+}
+.catalog--default .items .item .reviews .count {
+  color: var(--color--gray--dark);
+  font-size: 0.8em;
+}
+.catalog--default .items .item .actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.catalog--default .items .item .price {
+  font-size: 1.2rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.catalog--default .items .item .price.old {
+  color: var(--color--gray--dark);
+}
+.catalog--default .items .item .description {
+  margin-top: var(--offset--half);
+}
+.catalog--default .items .item .controls {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}
+.catalog--default .items .item .controls > * {
+  margin-left: var(--offset--half);
+}
+
+/*# sourceMappingURL=style.css.map */

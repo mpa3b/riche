@@ -15,19 +15,19 @@ class HlblockElementsExport extends AbstractExchange
     protected $exportFields = [];
     const UPDATE_MODE_NOT    = 'not';
     const UPDATE_MODE_XML_ID = 'xml_id';
-    
+
     public function setHlblockId($hlblockId)
     {
         $this->hlblockId = $hlblockId;
         return $this;
     }
-    
+
     public function setUpdateMode(string $updateMode)
     {
         $this->updateMode = $updateMode;
         return $this;
     }
-    
+
     /**
      * @throws RestartException
      * @throws HelperException

@@ -12,7 +12,7 @@ use XMLReader;
 class IblockElementsImport extends AbstractExchange
 {
     protected $converter;
-    
+
     /**
      * @param callable $converter
      *
@@ -58,7 +58,7 @@ class IblockElementsImport extends AbstractExchange
                     Locale::getMessage('ERR_EXCHANGE_VERSION', ['#NAME#' => $this->getExchangeFile()])
                 );
             }
-    
+
             $this->exitIfEmpty(
                 $params['iblock_id'],
                 Locale::getMessage('ERR_IB_NOT_FOUND', ['#IBLOCK#' => $params['iblock_id']])
@@ -213,7 +213,7 @@ class IblockElementsImport extends AbstractExchange
         $value = [];
         foreach ($field['value'] as $val) {
             $val['value'] = $iblockExchange->getSectionIdByUniqName($iblockId, $val['value']);
-            $value[]      = $this->makeFieldValue($val);
+            $value[] = $this->makeFieldValue($val);
         }
 
         return $value;
@@ -234,11 +234,10 @@ class IblockElementsImport extends AbstractExchange
     {
         $iblockExchange = $this->getHelperManager()->IblockExchange();
         $type = $iblockExchange->getPropertyType($iblockId, $code);
-    
+
         if (in_array($type, ['L', 'F', 'G', 'E'])) {
             return 'convertProperty' . ucfirst($type);
-        }
-        else {
+        } else {
             return 'convertPropertyS';
         }
     }
@@ -254,45 +253,44 @@ class IblockElementsImport extends AbstractExchange
 
         return ($isMultiple) ? $res : $res[0];
     }
-    
+
     protected function convertPropertyG($iblockId, $prop)
     {
         $iblockExchange = $this->getHelperManager()->IblockExchange();
-        $isMultiple     = $iblockExchange->isPropertyMultiple($iblockId, $prop['name']);
-        $linkIblockId   = $iblockExchange->getPropertyLinkIblockId($iblockId, $prop['name']);
-        
+        $isMultiple = $iblockExchange->isPropertyMultiple($iblockId, $prop['name']);
+        $linkIblockId = $iblockExchange->getPropertyLinkIblockId($iblockId, $prop['name']);
+
         $res = [];
         if ($linkIblockId) {
             foreach ($prop['value'] as $val) {
                 $val['value'] = $iblockExchange->getSectionIdByUniqName($linkIblockId, $val['value']);
-                $res[]        = $this->makePropertyValue($val);
+                $res[] = $this->makePropertyValue($val);
             }
         }
-        
+
         return ($isMultiple) ? $res : $res[0];
     }
-    
+
     protected function convertPropertyE($iblockId, $prop)
     {
         $iblockExchange = $this->getHelperManager()->IblockExchange();
-        $isMultiple     = $iblockExchange->isPropertyMultiple($iblockId, $prop['name']);
-        $linkIblockId   = $iblockExchange->getPropertyLinkIblockId($iblockId, $prop['name']);
-        
+        $isMultiple = $iblockExchange->isPropertyMultiple($iblockId, $prop['name']);
+        $linkIblockId = $iblockExchange->getPropertyLinkIblockId($iblockId, $prop['name']);
+
         $res = [];
         if ($linkIblockId) {
             foreach ($prop['value'] as $val) {
                 $val['value'] = $iblockExchange->getElementIdByUniqName($linkIblockId, $val['value']);
-                $res[]        = $this->makePropertyValue($val);
+                $res[] = $this->makePropertyValue($val);
             }
         }
-        
+
         return ($isMultiple) ? $res : $res[0];
     }
-    
     protected function convertPropertyF($iblockId, $prop)
     {
         $iblockExchange = $this->getHelperManager()->IblockExchange();
-        $isMultiple     = $iblockExchange->isPropertyMultiple($iblockId, $prop['name']);
+        $isMultiple = $iblockExchange->isPropertyMultiple($iblockId, $prop['name']);
         $res = [];
         foreach ($prop['value'] as $val) {
             $res[] = $this->makeFileValue($val);

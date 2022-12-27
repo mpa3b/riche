@@ -109,7 +109,7 @@ abstract class VersionBuilder extends AbstractBuilder
             $templateVars['version'] = $this->getVersionName();
         }
 
-        [$extendUse, $extendClass] = explode(' as ', $this->getVersionConfig()->getVal('migration_extend_class'));
+        list($extendUse, $extendClass) = explode(' as ', $this->getVersionConfig()->getVal('migration_extend_class'));
         $extendUse = trim($extendUse);
         $extendClass = trim($extendClass);
 

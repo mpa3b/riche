@@ -18,10 +18,10 @@ class Version extends ExchangeEntity
     use HelperManagerTrait;
     use ExitMessageTrait;
     use OutTrait;
-    
+
     protected $description   = "";
     protected $moduleVersion = "";
-    
+
     /**
      * Миграции, которые должны быть установлены перед установкой текущей
      * $this->requiredVersions = ['Version1','Version1']
@@ -33,9 +33,9 @@ class Version extends ExchangeEntity
     /**
      * your code for up
      *
-     * @return bool
-     *@throws HelperException
      * @throws RestartException
+     * @throws HelperException
+     * @return bool
      */
     public function up()
     {
@@ -45,9 +45,9 @@ class Version extends ExchangeEntity
     /**
      * your code for down
      *
-     * @return bool
-     *@throws HelperException
      * @throws RestartException
+     * @throws HelperException
+     * @return bool
      */
     public function down()
     {
@@ -77,7 +77,7 @@ class Version extends ExchangeEntity
     {
         return $this->requiredVersions;
     }
-    
+
     /**
      * @throws MigrationException
      */
@@ -85,7 +85,7 @@ class Version extends ExchangeEntity
     {
         (new VersionManager($this->getVersionConfig()))->checkRequiredVersions($versionNames);
     }
-    
+
     /**
      * @throws MigrationException
      * @return StorageManager
@@ -95,10 +95,10 @@ class Version extends ExchangeEntity
         if (empty($versionName)) {
             $versionName = $this->getClassName();
         }
-        
+
         return new StorageManager('default', $versionName);
     }
-    
+
     /**
      * @return ExchangeManager
      */
@@ -107,3 +107,6 @@ class Version extends ExchangeEntity
         return new ExchangeManager($this);
     }
 }
+
+
+

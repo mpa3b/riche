@@ -1,0 +1,21 @@
+.dropdown--container {
+  position: relative;
+}
+.dropdown--container .dropdown {
+  position: absolute;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+.buttons button,
+.buttons > * {
+  margin-right: 0.5rem;
+}
+.buttons button:last-child,
+.buttons > *:last-child {
+  margin-right: 0;
+}
+
+/*# sourceMappingURL=components.css.map */

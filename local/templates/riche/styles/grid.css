@@ -1,0 +1,245 @@
+:root {
+  --offset: 1rem;
+  --offset--negative: calc(var(--offset) * -1);
+  --offset--half: calc(var(--offset) / 2);
+  --offset--half--negative: calc(var(--offset) * -0.5);
+  --offset--2x: calc(var(--offset) * 2);
+  --offset--2x--negative: calc(var(--offset) * -2);
+}
+@media (max-width: 560px) {
+  :root {
+    --offset: 1.125rem;
+  }
+}
+@media (min-width: 560px) {
+  :root {
+    --offset: 1.25rem;
+  }
+}
+@media (min-width: 780px) {
+  :root {
+    --offset: 1.5rem;
+  }
+}
+
+.wrap {
+  display: block;
+  box-sizing: border-box;
+  margin: var(--offset--2x) var(--offset);
+  padding: 0;
+}
+@media (min-width: 560px) {
+  .wrap {
+    width: 92%;
+    margin: var(--offset--2x) auto;
+  }
+}
+@media (min-width: 780px) {
+  .wrap {
+    width: 82%;
+    margin: var(--offset--2x) auto;
+  }
+}
+@media (min-width: 1360px) {
+  .wrap {
+    width: 68%;
+    max-width: 1380px;
+  }
+}
+
+.grid,
+.column,
+.row {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+.grid > *,
+.column > *,
+.row > * {
+  display: block;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.grid.no-gutters,
+.column.no-gutters,
+.row.no-gutters {
+  padding: 0;
+}
+
+.row,
+.grid {
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  margin: 0 var(--offset--half--negative);
+}
+@media (min-width: 560px) {
+  .row > .whole,
+.grid > .whole {
+    width: 100%;
+  }
+  .row .shift--whole,
+.grid .shift--whole {
+    margin-left: 100%;
+  }
+  .row > .four-fifths,
+.grid > .four-fifths {
+    width: 80%;
+  }
+  .row .shift--four-fifths,
+.grid .shift--four-fifths {
+    margin-left: 80%;
+  }
+  .row > .three-quarters,
+.grid > .three-quarters {
+    width: 75%;
+  }
+  .row .shift--three-quarters,
+.grid .shift--three-quarters {
+    margin-left: 75%;
+  }
+  .row > .two-thirds,
+.grid > .two-thirds {
+    width: 66.6666%;
+  }
+  .row .shift--two-thirds,
+.grid .shift--two-thirds {
+    margin-left: 66.6666%;
+  }
+  .row > .three-fifths,
+.grid > .three-fifths {
+    width: 60%;
+  }
+  .row .shift--three-fifths,
+.grid .shift--three-fifths {
+    margin-left: 60%;
+  }
+  .row > .half,
+.grid > .half {
+    width: 50%;
+  }
+  .row .shift--half,
+.grid .shift--half {
+    margin-left: 50%;
+  }
+  .row > .two-fifths,
+.grid > .two-fifths {
+    width: 40%;
+  }
+  .row .shift--two-fifths,
+.grid .shift--two-fifths {
+    margin-left: 40%;
+  }
+  .row > .third,
+.grid > .third {
+    width: 33.3333%;
+  }
+  .row .shift--third,
+.grid .shift--third {
+    margin-left: 33.3333%;
+  }
+  .row > .quarter,
+.grid > .quarter {
+    width: 25%;
+  }
+  .row .shift--quarter,
+.grid .shift--quarter {
+    margin-left: 25%;
+  }
+  .row > .fifth,
+.grid > .fifth {
+    width: 20%;
+  }
+  .row .shift--fifth,
+.grid .shift--fifth {
+    margin-left: 20%;
+  }
+  .row > .sixth,
+.grid > .sixth {
+    width: 16.6666%;
+  }
+  .row .shift--sixth,
+.grid .shift--sixth {
+    margin-left: 16.6666%;
+  }
+}
+.row > *,
+.grid > * {
+  padding: var(--offset--half);
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 560px) {
+  .row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.grid {
+  flex-wrap: wrap;
+}
+.grid > .whole {
+  width: 100%;
+}
+.grid > .four-fifths {
+  width: 80%;
+}
+.grid > .three-quarters {
+  width: 75%;
+}
+.grid > .two-thirds {
+  width: 66.6666%;
+}
+.grid > .three-fifths {
+  width: 60%;
+}
+.grid > .half {
+  width: 50%;
+}
+.grid > .two-fifths {
+  width: 40%;
+}
+.grid > .third {
+  width: 33.3333%;
+}
+.grid > .quarter {
+  width: 25%;
+}
+.grid > .fifth {
+  width: 20%;
+}
+.grid > .sixth {
+  width: 16.6666%;
+}
+
+.hide {
+  display: none;
+}
+@media (max-width: 560px) {
+  .hide--on-mobiles {
+    display: none !important;
+  }
+}
+@media (min-width: 780px) {
+  .hide--on-desktop {
+    display: none !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .desktop-only {
+    display: none !important;
+  }
+}
+@media (min-width: 560px) {
+  .mobiles-only {
+    display: none !important;
+  }
+}
+
+/*# sourceMappingURL=grid.css.map */

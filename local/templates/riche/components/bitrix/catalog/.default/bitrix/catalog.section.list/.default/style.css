@@ -1,0 +1,69 @@
+.section-list--catalog--default .items .item {
+  position: relative;
+  flex-grow: 1;
+}
+.section-list--catalog--default .items .item .wrapper {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+.section-list--catalog--default .items .item .wrapper picture img {
+  aspect-ratio: 1.5;
+}
+.section-list--catalog--default .items .item .wrapper .name {
+  position: absolute;
+  left: var(--offset);
+  top: var(--offset);
+  font-weight: 500;
+  font-size: 1.2rem;
+  max-width: 60%;
+  display: block;
+  line-height: 1.1;
+}
+.section-list--catalog--default .items .item .wrapper a.link {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.section-list--catalog--default .items .item .wrapper button {
+  position: absolute;
+  right: var(--offset);
+  bottom: var(--offset);
+}
+.section-list--catalog--default .items:not(.slick-initialized) .item:not(:first-of-type) {
+  display: none;
+}
+.section-list--catalog--default .slick-slider {
+  position: relative;
+  margin: 0 var(--offset--half--negative);
+}
+@media (max-width: 560px) {
+  .section-list--catalog--default .slick-slider {
+    margin-right: -75%;
+  }
+}
+@media (min-width: 560px) {
+  .section-list--catalog--default .slick-track {
+    width: 100% !important;
+  }
+}
+.section-list--catalog--default .slick-list {
+  overflow: visible;
+}
+.section-list--catalog--default .slick-slide > div {
+  box-sizing: border-box;
+  padding: 0 var(--offset--half);
+}
+@media (max-width: 560px) {
+  .section-list--catalog--default .slick-slide {
+    opacity: calc(var(--opacity) / 2);
+    transition: opacity var(--transition--common);
+  }
+  .section-list--catalog--default .slick-current {
+    opacity: 1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

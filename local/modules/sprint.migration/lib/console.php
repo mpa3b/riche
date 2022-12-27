@@ -624,12 +624,12 @@ class Console
                 $params,
                 $tag
             );
-    
+
             $restart = $this->versionManager->needRestart();
 
             if ($restart) {
                 $params = $this->versionManager->getRestartParams();
-                $exec   = 1;
+                $exec = 1;
             }
 
             if ($success && !$restart) {
@@ -702,7 +702,7 @@ class Console
 
     protected function addArg($arg)
     {
-        [$name, $val] = explode('=', $arg);
+        list($name, $val) = explode('=', $arg);
         $isoption = (0 === strpos($name, '--')) ? 1 : 0;
         if ($isoption) {
             if (!is_null($val)) {

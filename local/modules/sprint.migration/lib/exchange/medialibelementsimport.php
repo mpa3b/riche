@@ -11,7 +11,7 @@ use XMLReader;
 class MedialibElementsImport extends AbstractExchange
 {
     protected $converter;
-    
+
     /**
      * @param callable $converter
      *

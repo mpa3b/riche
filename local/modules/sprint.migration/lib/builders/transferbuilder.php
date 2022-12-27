@@ -66,7 +66,7 @@ class TransferBuilder extends AbstractBuilder
             'select' => $structure,
         ]);
     }
-    
+
     /**
      * @throws MigrationException
      * @throws Exception

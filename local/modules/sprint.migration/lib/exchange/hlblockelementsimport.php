@@ -12,7 +12,7 @@ use XMLReader;
 class HlblockElementsImport extends AbstractExchange
 {
     protected $converter;
-    
+
     /**
      * @param callable $converter
      *
@@ -57,7 +57,7 @@ class HlblockElementsImport extends AbstractExchange
                     Locale::getMessage('ERR_EXCHANGE_VERSION', ['#NAME#' => $this->getExchangeFile()])
                 );
             }
-    
+
             $this->exitIfEmpty(
                 $params['hlblock_id'],
                 Locale::getMessage('ERR_HLBLOCK_NOT_FOUND', ['#HLBLOCK#' => $params['hlblock_id']])

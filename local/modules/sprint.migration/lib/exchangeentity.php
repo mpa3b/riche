@@ -13,7 +13,7 @@ abstract class ExchangeEntity
      */
     protected $params = [];
     private   $versionConfig;
-    
+
     /**
      * @return VersionConfig
      */
@@ -21,10 +21,9 @@ abstract class ExchangeEntity
     {
         return $this->versionConfig;
     }
-    
+
     /**
      * Не использовать
-     *
      * @param VersionConfig $versionConfig
      *
      * @return void
@@ -33,12 +32,12 @@ abstract class ExchangeEntity
     {
         $this->versionConfig = $versionConfig;
     }
-    
+
     public function getClassName()
     {
         return (new ReflectionClass($this))->getShortName();
     }
-    
+
     /**
      * @throws RestartException
      */
@@ -46,7 +45,7 @@ abstract class ExchangeEntity
     {
         throw new RestartException();
     }
-    
+
     /**
      * @return array
      */

@@ -1,0 +1,105 @@
+.cta--front .items {
+  padding: 0;
+  margin: 0 var(--offset--half--negative);
+}
+.cta--front .items .item {
+  position: relative;
+  height: 100%;
+  background-color: var(--color--background);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.cta--front .items .item picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.cta--front .items .item picture img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 1;
+}
+@media (min-width: 560px) {
+  .cta--front .items .item picture img {
+    aspect-ratio: 1.33;
+  }
+}
+.cta--front .items .item picture img.illustration {
+  margin-top: 0;
+}
+.cta--front .items .item .details {
+  position: absolute;
+  z-index: 100;
+  box-sizing: border-box;
+  padding: var(--offset);
+  padding-bottom: 25%;
+  left: 0;
+  top: 0;
+}
+.cta--front .items .item .details h3 {
+  font-size: 1.6rem;
+}
+.cta--front .items .item button {
+  position: absolute;
+  right: var(--offset);
+  bottom: var(--offset);
+  box-sizing: border-box;
+}
+.cta--front .items:not(.slick-initialized) .item:not(:first-of-type) {
+  display: none;
+}
+@media (max-width: 560px) {
+  .cta--front .slick-slide {
+    opacity: calc(var(--opacity) / 2);
+    transition: opacity var(--transition--common);
+  }
+  .cta--front .slick-current {
+    opacity: 1;
+  }
+}
+.cta--front .slick-slider {
+  position: relative;
+  margin: 0 var(--offset--half--negative);
+}
+.cta--front .slick-slider:hover .arrow {
+  opacity: 1;
+}
+@media (max-width: 560px) {
+  .cta--front .slick-slider {
+    padding-right: 20%;
+    padding-bottom: 2rem;
+  }
+}
+.cta--front .slick-list {
+  overflow: visible;
+}
+@media (min-width: 780px) {
+  .cta--front .slick-track {
+    width: 100% !important;
+  }
+  .cta--front .slick-track .slick-slide {
+    flex-grow: 1;
+  }
+}
+.cta--front .slick-slide > div {
+  box-sizing: border-box;
+  padding: 0 var(--offset--half);
+  width: 100%;
+  height: 100%;
+}
+.cta--front .slick-dots {
+  bottom: 0;
+  margin-bottom: 0;
+}
+.cta--front .slick-dots li {
+  background-color: var(--color--gray--transparent);
+}
+.cta--front .slick-dots li.slick-active {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=style.css.map */

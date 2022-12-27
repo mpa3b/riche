@@ -7,17 +7,17 @@ use Sprint\Migration\Exceptions\HelperException;
 class IblockExchangeHelper extends IblockHelper
 {
     protected $cachedProps = [];
-    
+
     public function getProperty($iblockId, $code)
     {
         $key = $iblockId . $code;
-        
+
         if (!isset($this->cachedProps[$key])) {
             $this->cachedProps[$key] = parent::getProperty($iblockId, $code);
         }
         return $this->cachedProps[$key];
     }
-    
+
     /**
      * Структура инфоблоков для построения выпадающего списка
      *
@@ -25,7 +25,7 @@ class IblockExchangeHelper extends IblockHelper
      */
     public function getIblocksStructure()
     {
-        $res         = [];
+        $res = [];
         $iblockTypes = $this->getIblockTypes();
         foreach ($iblockTypes as $iblockType) {
             $res[$iblockType['ID']] = [
@@ -33,7 +33,7 @@ class IblockExchangeHelper extends IblockHelper
                 'items' => [],
             ];
         }
-        
+
         $iblocks = $this->getIblocks();
         foreach ($iblocks as $iblock) {
             if (!empty($iblock['CODE'])) {
@@ -43,10 +43,10 @@ class IblockExchangeHelper extends IblockHelper
                 ];
             }
         }
-        
+
         return $res;
     }
-    
+
     /**
      * @param $iblockId
      *
@@ -55,7 +55,7 @@ class IblockExchangeHelper extends IblockHelper
     public function getIblockPropertiesStructure($iblockId)
     {
         $props = $this->exportProperties($iblockId);
-        
+
         $res = [];
         foreach ($props as $prop) {
             $res[] = [
@@ -65,7 +65,7 @@ class IblockExchangeHelper extends IblockHelper
         }
         return $res;
     }
-    
+
     /**
      * @param $iblockId
      *
@@ -74,7 +74,7 @@ class IblockExchangeHelper extends IblockHelper
     public function getIblockElementFieldsStructure($iblockId)
     {
         $fields = $this->exportIblockElementFields($iblockId);
-        
+
         $res = [];
         foreach ($fields as $fieldName => $field) {
             $res[] = [
@@ -84,7 +84,7 @@ class IblockExchangeHelper extends IblockHelper
         }
         return $res;
     }
-    
+
     /**
      * @throws HelperException
      */
@@ -93,9 +93,9 @@ class IblockExchangeHelper extends IblockHelper
         if (is_numeric($uniqName)) {
             return $uniqName;
         }
-        
+
         if (is_string($uniqName)) {
-            [$sectionName, $depthLevel, $code] = explode('|', $uniqName);
+            list($sectionName, $depthLevel, $code) = explode('|', $uniqName);
             $uniqName = [];
             if ($sectionName) {
                 $uniqName['NAME'] = $sectionName;
@@ -107,10 +107,10 @@ class IblockExchangeHelper extends IblockHelper
                 $uniqName['CODE'] = $code;
             }
         }
-        
+
         return $this->getSectionIdByUniqFilter($iblockId, $uniqName);
     }
-    
+
     /**
      * @throws HelperException
      */
@@ -119,9 +119,9 @@ class IblockExchangeHelper extends IblockHelper
         if (is_numeric($uniqName)) {
             return $uniqName;
         }
-        
+
         if (is_string($uniqName)) {
-            [$elementName, $xmlId, $code] = explode('|', $uniqName);
+            list($elementName, $xmlId, $code) = explode('|', $uniqName);
             $uniqName = [];
             if ($elementName) {
                 $uniqName['NAME'] = $elementName;
@@ -133,10 +133,10 @@ class IblockExchangeHelper extends IblockHelper
                 $uniqName['CODE'] = $code;
             }
         }
-        
+
         return $this->getElementIdByUniqFilter($iblockId, $uniqName);
     }
-    
+
     /**
      * @throws HelperException
      */
@@ -145,7 +145,7 @@ class IblockExchangeHelper extends IblockHelper
         $filter = $this->getSectionUniqFilterById($iblockId, $sectionId);
         return $filter['NAME'] . '|' . $filter['DEPTH_LEVEL'] . '|' . $filter['CODE'];
     }
-    
+
     /**
      * @throws HelperException
      */

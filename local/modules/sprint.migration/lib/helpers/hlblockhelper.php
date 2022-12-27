@@ -630,74 +630,71 @@ class HlblockHelper extends Helper
 
         try {
             $result = $dataManager::add($fields);
-    
+
             if ($result->isSuccess()) {
                 return $result->getId();
             }
-    
+
             throw new HelperException(implode(PHP_EOL, $result->getErrorMessages()));
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             $this->throwException(__METHOD__, $e);
         }
     }
-    
+
     /**
      * @param $hlblockName
      * @param $elementId
      * @param $fields
      *
-     * @return int|void
      * @throws HelperException
+     * @return int|void
      */
     public function updateElement($hlblockName, $elementId, $fields)
     {
         $dataManager = $this->getDataManager($hlblockName);
-        
+
         try {
             $result = $dataManager::update($elementId, $fields);
-            
+
             if ($result->isSuccess()) {
                 return $result->getId();
             }
-            
+
             throw new HelperException(implode(PHP_EOL, $result->getErrorMessages()));
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             $this->throwException(__METHOD__, $e);
         }
     }
-    
+
     public function deleteElement($hlblockName, $elementId)
     {
         $dataManager = $this->getDataManager($hlblockName);
         try {
             $result = $dataManager::delete($elementId);
-            
+
             if ($result->isSuccess()) {
                 return true;
             }
-            
+
             throw new HelperException(implode(PHP_EOL, $result->getErrorMessages()));
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             $this->throwException(__METHOD__, $e);
         }
     }
-    
+
     public function saveElementByXmlId($hlblockName, $fields)
     {
         $this->checkRequiredKeys(__METHOD__, $fields, ['UF_XML_ID']);
-        
+
         $item = $this->getElementByXmlId($hlblockName, $fields['UF_XML_ID']);
-        
+
         if (!empty($item['ID'])) {
             return $this->updateElement($hlblockName, $item['ID'], $fields);
         }
-        
+
         return $this->addElement($hlblockName, $fields);
     }
-    
+
     public function deleteElementByXmlId($hlblockName, $xmlId)
     {
         if (!empty($xmlId)) {
@@ -708,7 +705,7 @@ class HlblockHelper extends Helper
         }
         return false;
     }
-    
+
     /**
      * Получает права доступа к highload-блоку для групп
      * возвращает массив вида [$groupId => $letter]
@@ -833,40 +830,38 @@ class HlblockHelper extends Helper
         $dataManager = $this->getDataManager($hlblockName);
         try {
             return $dataManager::getList($params)->fetchAll();
-        }
-        catch (Exception $e) {
+        } catch (Exception $e) {
             $this->throwException(__METHOD__, $e);
         }
     }
-    
+
     /**
      * @param string $hlblockName
      * @param string $xmlId
      *
-     * @return array|void
      * @throws HelperException
+     * @return array|void
      */
     public function getElementByXmlId($hlblockName, $xmlId)
     {
         $dataManager = $this->getDataManager($hlblockName);
         try {
             return $dataManager::getList([
-                                             'filter' => ['UF_XML_ID' => $xmlId],
-                                             'offset' => 0,
-                                             'limit'  => 1,
-                                         ])->fetch();
-        }
-        catch (Exception $e) {
+                'filter' => ['UF_XML_ID' => $xmlId],
+                'offset' => 0,
+                'limit'  => 1,
+            ])->fetch();
+        } catch (Exception $e) {
             $this->throwException(__METHOD__, $e);
         }
     }
-    
+
     /**
      * @param       $hlblockName
      * @param array $filter
      *
-     * @return int|void
      * @throws HelperException
+     * @return int|void
      */
     public function getElementsCount($hlblockName, $filter = [])
     {

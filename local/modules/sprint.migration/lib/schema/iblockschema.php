@@ -398,15 +398,15 @@ class IblockSchema extends AbstractSchema
     protected function getIblockId($iblockUid)
     {
         $helper = $this->getHelperManager();
-    
+
         if (isset($this->iblockIds[$iblockUid])) {
             return $this->iblockIds[$iblockUid];
         }
-    
+
         $this->iblockIds[$iblockUid] = $helper
             ->Iblock()
             ->getIblockIdByUid($iblockUid);
-    
+
         return $this->iblockIds[$iblockUid];
     }
 }

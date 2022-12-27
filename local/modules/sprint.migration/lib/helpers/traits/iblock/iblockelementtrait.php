@@ -355,14 +355,14 @@ trait IblockElementTrait
                 $this->throwException(__METHOD__, $ib->LAST_ERROR);
             }
         }
-    
+
         if (!empty($props)) {
             CIBlockElement::SetPropertyValuesEx($elementId, $iblockId, $props);
         }
-    
+
         return $elementId;
     }
-    
+
     /**
      * @throws HelperException
      */
@@ -376,7 +376,7 @@ trait IblockElementTrait
         }
         return false;
     }
-    
+
     /**
      * @throws HelperException
      */
@@ -390,15 +390,15 @@ trait IblockElementTrait
         }
         return false;
     }
-    
+
     /**
      * Удаляет элемент инфоблока если он существует
      *
      * @param $iblockId
      * @param $code
      *
-     * @return bool|void
      * @throws HelperException
+     * @return bool|void
      */
     public function deleteElementIfExists($iblockId, $code)
     {
@@ -419,16 +419,16 @@ trait IblockElementTrait
         if ($ib->Delete($elementId)) {
             return true;
         }
-        
+
         $this->throwException(__METHOD__, $ib->LAST_ERROR);
     }
-    
+
     /**
      * @param $iblockId
      * @param $elementId
      *
-     * @return array
      * @throws HelperException
+     * @return array
      */
     public function getElementUniqFilterById($iblockId, $elementId)
     {
@@ -443,9 +443,9 @@ trait IblockElementTrait
                 )
             );
         }
-        
+
         $element = $this->getElement($iblockId, ['ID' => $elementId]);
-        
+
         if (empty($element['ID'])) {
             $this->throwException(
                 __METHOD__,
@@ -458,14 +458,14 @@ trait IblockElementTrait
                 )
             );
         }
-        
+
         return [
             'NAME'   => $element['NAME'],
             'XML_ID' => $element['XML_ID'],
             'CODE'   => $element['CODE'],
         ];
     }
-    
+
     /**
      * @throws HelperException
      */
@@ -482,11 +482,11 @@ trait IblockElementTrait
                 )
             );
         }
-        
+
         $uniqFilter['IBLOCK_ID'] = $iblockId;
-        
+
         $element = $this->getElement($iblockId, $uniqFilter);
-        
+
         if (empty($element['ID'])) {
             $this->throwException(
                 __METHOD__,
@@ -499,10 +499,10 @@ trait IblockElementTrait
                 )
             );
         }
-        
+
         return $element['ID'];
     }
-    
+
     /**
      * @param $item
      *

@@ -1,0 +1,28 @@
+.menu--footer {
+  margin-bottom: var(--offset);
+}
+.menu--footer h2 {
+  font-weight: normal;
+  font-size: 1rem;
+  color: var(--color--gray);
+}
+.menu--footer ul.menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+.menu--footer ul.menu li {
+  list-style: none;
+  box-sizing: border-box;
+  flex-basis: 49.5%;
+  flex-shrink: 0;
+  padding-right: var(--offset--half);
+}
+.menu--footer ul.menu li a {
+  display: block;
+  white-space: break-spaces;
+}
+
+/*# sourceMappingURL=style.css.map */

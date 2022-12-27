@@ -118,27 +118,27 @@ class FormHelper extends Helper
             }
             $form['arGROUP'] = $arGroup;
         }
-    
+
         $eventHelper = new EventHelper();
         if (isset($form['arMAIL_TEMPLATE']) && is_array($form['arMAIL_TEMPLATE'])) {
             $arTemplates = [];
             foreach ($form['arMAIL_TEMPLATE'] as $templateId) {
                 $templateId = $eventHelper->getEventMessageIdByUidFilter($templateId);
-                if ($templateId) {
+                if ($templateId){
                     $arTemplates[] = $templateId;
                 }
             }
             $form['arMAIL_TEMPLATE'] = $arTemplates;
         }
-    
+
         $formId = $this->getFormId($form['SID']);
-    
+
         $formId = CForm::Set($form, $formId, 'N');
-    
+
         if ($formId) {
             return $formId;
         }
-    
+
         $this->throwException(__METHOD__, $GLOBALS['strError']);
     }
 
@@ -386,11 +386,11 @@ class FormHelper extends Helper
     protected function exportMailTemplates($formId)
     {
         $templateIds = CForm::GetMailTemplateArray($formId);
-        $templates   = [];
+        $templates = [];
         foreach ($templateIds as $templateId) {
             $templates[] = (new EventHelper())->getEventMessageUidFilterById($templateId);
         }
-    
+
         return $templates;
     }
 

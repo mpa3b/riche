@@ -28,7 +28,7 @@ class MedialibElementsBuilder extends VersionBuilder
 
         $this->addVersionFields();
     }
-    
+
     /**
      * @throws RebuildException
      * @throws MigrationException

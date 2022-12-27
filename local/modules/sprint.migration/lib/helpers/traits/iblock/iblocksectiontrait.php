@@ -342,8 +342,8 @@ trait IblockSectionTrait
      * @param $iblockId
      * @param $sectionId
      *
-     * @return array
      * @throws HelperException
+     * @return array
      */
     public function getSectionUniqFilterById($iblockId, $sectionId)
     {
@@ -379,14 +379,14 @@ trait IblockSectionTrait
                 )
             );
         }
-    
+
         return [
             'NAME'        => $section['NAME'],
             'DEPTH_LEVEL' => (int)$section['DEPTH_LEVEL'],
             'CODE'        => $section['CODE'],
         ];
     }
-    
+
     /**
      * @throws HelperException
      */
@@ -403,11 +403,11 @@ trait IblockSectionTrait
                 )
             );
         }
-    
+
         $uniqFilter['IBLOCK_ID'] = $iblockId;
-    
+
         $section = CIBlockSection::GetList([], $uniqFilter)->Fetch();
-    
+
         if (empty($section['ID'])) {
             $this->throwException(
                 __METHOD__,

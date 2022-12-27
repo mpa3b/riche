@@ -19,8 +19,8 @@ class ExchangeManager
     }
 
     /**
-     * @return IblockElementsExport
      * @throws Exceptions\MigrationException
+     * @return IblockElementsExport
      */
     public function IblockElementsExport()
     {

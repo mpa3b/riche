@@ -183,7 +183,7 @@ class UserOptionsHelper extends Helper
             $this->outDiffIf($ok, $exists, $data);
             return $ok;
         }
-    
+
         return true;
     }
 
@@ -198,8 +198,8 @@ class UserOptionsHelper extends Helper
             $options = (new CGridOptions($gridId))->GetOptions();
 
             foreach ($options['views'] as $viewCode => $view) {
-                $view['columns']             = $this->revertCodesFromColumns($view['columns']);
-                $view['custom_names']        = $this->revertCustomNames($view['custom_names']);
+                $view['columns'] = $this->revertCodesFromColumns($view['columns']);
+                $view['custom_names'] = $this->revertCustomNames($view['custom_names']);
                 $options['views'][$viewCode] = $view;
             }
 
@@ -211,8 +211,8 @@ class UserOptionsHelper extends Helper
     public function buildGrid($gridId, $options = [])
     {
         foreach ($options['views'] as $viewCode => $view) {
-            $view['columns']             = $this->transformCodesToColumns($view['columns']);
-            $view['custom_names']        = $this->transformCustomNames($view['custom_names']);
+            $view['columns'] = $this->transformCodesToColumns($view['columns']);
+            $view['custom_names'] = $this->transformCustomNames($view['custom_names']);
             $options['views'][$viewCode] = $view;
         }
 
@@ -247,7 +247,7 @@ class UserOptionsHelper extends Helper
             $this->outDiffIf($ok, $exists, $params);
             return $ok;
         }
-    
+
         return true;
     }
 
@@ -298,7 +298,7 @@ class UserOptionsHelper extends Helper
                     continue;
                 }
 
-                [$fieldCode, $fieldTitle] = explode('#', $fieldString);
+                list($fieldCode, $fieldTitle) = explode('#', $fieldString);
 
                 $fieldCode = str_replace('--', '', strval($fieldCode));
                 $fieldTitle = str_replace('--', '', strval($fieldTitle));
@@ -356,7 +356,7 @@ class UserOptionsHelper extends Helper
         $tabVals = [];
 
         foreach ($formData as $tabTitle => $fields) {
-            [$tabTitle, $tabId] = explode('|', $tabTitle);
+            list($tabTitle, $tabId) = explode('|', $tabTitle);
 
             if (!$tabId) {
                 $tabId = 'edit' . ($tabIndex + 1);
@@ -369,7 +369,7 @@ class UserOptionsHelper extends Helper
             foreach ($fields as $fieldKey => $fieldValue) {
                 if (is_numeric($fieldKey)) {
                     /** @compability */
-                    [$fcode, $ftitle] = explode('|', $fieldValue);
+                    list($fcode, $ftitle) = explode('|', $fieldValue);
                 } else {
                     $fcode = $fieldKey;
                     $ftitle = $fieldValue;

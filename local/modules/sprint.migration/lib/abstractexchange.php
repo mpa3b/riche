@@ -21,7 +21,7 @@ abstract class AbstractExchange
     protected $exchangeEntity;
     protected $file;
     protected $limit = 10;
-    
+
     /**
      * abstractexchange constructor.
      *
