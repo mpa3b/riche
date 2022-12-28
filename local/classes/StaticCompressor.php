@@ -3,6 +3,9 @@
     namespace Local;
 
     use Bitrix\Main\Application;
+    use enshrined\svgSanitize\Sanitizer;
+    use ImageOptimizer\OptimizerFactory;
+    use YUI\Compressor;
 
     /**
      * @todo  нужно учесть, что не все файлы будут при обновлении будут перезаписываться неоптимизированными версиями
@@ -47,6 +50,13 @@
             './bitrix/cache/js/',
             './bitrix/cache/css/'
         ];
+
+        /**
+         * Текущий обрабатываемый файл
+         *
+         * @var
+         */
+        private static $currentFile;
 
         /**
          * обработка папки кеша ресурсов БУС
@@ -133,6 +143,17 @@
          */
         private static function processCSS()
         {
+
+            $yui = new Compressor();
+
+            $css = file_get_contents('styles.css');
+
+            $yui->setType(Compressor::TYPE_CSS);
+
+            $optimizedCss = $yui->compress($css);
+
+            file_put_contents(self::$currentFile, $optimizedCss);
+
         }
 
         /**
@@ -153,25 +174,11 @@
         private static function processJPG()
         {
 
-        }
+            $factory   = new OptimizerFactory();
+            $optimizer = $factory->get();
 
-        /**
-         * обработка SVG
-         *
-         * @return void
-         */
-        private static function processSVG()
-        {
+            $optimizer->optimize(self::$currentFile);
 
-        }
-
-        /**
-         * обработка WebP
-         *
-         * @return void
-         */
-        private static function processWebP()
-        {
 
         }
 
@@ -183,10 +190,42 @@
         private static function processPNG()
         {
 
+            $factory   = new OptimizerFactory();
+            $optimizer = $factory->get();
+
+            $optimizer->optimize(self::$currentFile);
+
+        }
+
+        /**
+         * обработка SVG
+         *
+         * @return void
+         */
+        private static function processSVG()
+        {
+
+            $sanitizer = new Sanitizer();
+            $svg       = file_get_contents(self::$currentFile);
+
+            file_put_contents(self::$currentFile, $sanitizer->sanitize($svg));
+
+        }
+
+        /**
+         * обработка WebP
+         *
+         * @return void
+         */
+        private static function processWebP()
+        {
+
+
         }
 
         /**
          * Общий запуск
+         *
          * @return void
          */
         private function __init()
@@ -196,6 +235,11 @@
 
             self::$root = Application::getDocumentRoot();
 
+
+        }
+
+        private static function saveFile()
+        {
 
         }
 
