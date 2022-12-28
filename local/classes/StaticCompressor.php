@@ -21,7 +21,10 @@
     class StaticCompressor
     {
 
-        private const excludedDirectories = [
+        /**
+         * список папок, которые исключаются из проверки
+         */
+        private const excludedDirectory = [
             './bitrix',
             './local/classes',
             './local/components',
@@ -30,22 +33,38 @@
             './upload'
         ];
 
-        private const includedDirectories = [
-            './upload/resize_image_cache/',
-            './bitrix/cache/css/',
-            './bitrix/cache/js/'
+        /**
+         * папка обработанных изображений
+         */
+        private const resizeCacheDirectory = [
+            './upload/resize_image_cache/'
         ];
 
+        /**
+         * папка собранного кеша ресурсов БУС
+         */
+        const bitrixCachedAssetsDirectory = [
+            './bitrix/cache/js/',
+            './bitrix/cache/css/'
+        ];
+
+        /**
+         * обработка папки кеша ресурсов БУС
+         *
+         * @return void
+         */
         public static function compressBitrixCachedAssets()
         {
-
-            const bitrixCachedJsFolder  = './bitrix/cache/js/';
-            const bitrixCachedCssFolder = './bitrix/cache/css/'
 
             // тут мы запустим сжатие только папки кеша статики БУС
 
         }
 
+        /**
+         * обработка всей статики всего сайта за исключением исключённых
+         *
+         * @return void
+         */
         public static function processStaticAssets()
         {
 
@@ -53,6 +72,11 @@
 
         }
 
+        /**
+         * обработчик файлов, определяет тип, вызывает соответствующий метод
+         *
+         * @return void
+         */
         private static function fileProcessor()
         {
 
@@ -102,6 +126,69 @@
             }
         }
 
+        /**
+         * обработка CSS
+         *
+         * @return void
+         */
+        private static function processCSS()
+        {
+        }
+
+        /**
+         * обработка JS
+         *
+         * @return void
+         */
+        private static function processJS()
+        {
+
+        }
+
+        /**
+         * обработка JPG
+         *
+         * @return void
+         */
+        private static function processJPG()
+        {
+
+        }
+
+        /**
+         * обработка SVG
+         *
+         * @return void
+         */
+        private static function processSVG()
+        {
+
+        }
+
+        /**
+         * обработка WebP
+         *
+         * @return void
+         */
+        private static function processWebP()
+        {
+
+        }
+
+        /**
+         * обработка PNG
+         *
+         * @return void
+         */
+        private static function processPNG()
+        {
+
+        }
+
+        /**
+         * Общий запуск
+         * @return void
+         */
         private function __init()
         {
 

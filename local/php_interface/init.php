@@ -37,7 +37,10 @@
 
     //region агент сжатия статических ресурсов
 
-    /** @see https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=2290 */
+    /**
+     * агенты сжатия для всех ресурсов и для папки кеша
+     * @link https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=43&LESSON_ID=2290
+     */
     function compressStaticAsset()
     {
 
