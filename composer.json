@@ -109,7 +109,7 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "Local\\PostInstallStaticProcessor::processStaticFiles"
+      "Local\\StaticProcessor::processStaticAssets"
     ]
   }
 }
