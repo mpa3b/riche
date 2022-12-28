@@ -1,30 +1,30 @@
 {
-  "_readme": [
-    "This file locks the dependencies of your project to a known state",
-    "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
-    "This file is @generated automatically"
-  ],
-  "content-hash": "e6798dbdea8b6b0c288cd2f65ac7af38",
-  "packages": [
-    {
-      "name": "anahkiasen/html-object",
-      "version": "1.4.4",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/Anahkiasen/html-object.git",
-        "reference": "45bb54b91112c064d3906c207259d5c8dcba798f"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/Anahkiasen/html-object/zipball/45bb54b91112c064d3906c207259d5c8dcba798f",
-        "reference": "45bb54b91112c064d3906c207259d5c8dcba798f",
-        "shasum": ""
-      },
-      "require": {
-        "php": ">=5.3.0"
-      },
-      "require-dev": {
-        "madewithlove/php-cs-fixer-config": "^1.3",
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "e6798dbdea8b6b0c288cd2f65ac7af38",
+    "packages": [
+        {
+            "name": "anahkiasen/html-object",
+            "version": "1.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Anahkiasen/html-object.git",
+                "reference": "45bb54b91112c064d3906c207259d5c8dcba798f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Anahkiasen/html-object/zipball/45bb54b91112c064d3906c207259d5c8dcba798f",
+                "reference": "45bb54b91112c064d3906c207259d5c8dcba798f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "madewithlove/php-cs-fixer-config": "^1.3",
                 "phpunit/phpunit": "^4.8",
                 "phpunit/phpunit-dom-assertions": "^0.1.0",
                 "symfony/css-selector": "^2.6"
@@ -96,40 +96,40 @@
             ],
             "support": {
                 "issues": "https://github.com/andreyryabin/sprint.editor/issues",
-              "source": "https://github.com/andreyryabin/sprint.editor/tree/3.24.2"
+                "source": "https://github.com/andreyryabin/sprint.editor/tree/3.24.2"
             },
-          "funding": [
-            {
-              "url": "https://yoomoney.ru/to/410012104240288",
-              "type": "custom"
-            }
-          ],
-          "time": "2022-09-06T11:08:23+00:00"
+            "funding": [
+                {
+                    "url": "https://yoomoney.ru/to/410012104240288",
+                    "type": "custom"
+                }
+            ],
+            "time": "2022-09-06T11:08:23+00:00"
         },
-    {
-      "name": "andreyryabin/sprint.migration",
-      "version": "4.2.2",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/andreyryabin/sprint.migration.git",
-        "reference": "d927b2db203fc585294a5daccc7566cec2658dfb"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/andreyryabin/sprint.migration/zipball/d927b2db203fc585294a5daccc7566cec2658dfb",
-        "reference": "d927b2db203fc585294a5daccc7566cec2658dfb",
-        "shasum": ""
-      },
-      "require": {
-        "composer/installers": "~1",
-        "ext-iconv": "*",
-        "ext-json": "*",
-        "php": ">=7.0"
-      },
-      "type": "bitrix-module",
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
+        {
+            "name": "andreyryabin/sprint.migration",
+            "version": "4.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/andreyryabin/sprint.migration.git",
+                "reference": "d927b2db203fc585294a5daccc7566cec2658dfb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/andreyryabin/sprint.migration/zipball/d927b2db203fc585294a5daccc7566cec2658dfb",
+                "reference": "d927b2db203fc585294a5daccc7566cec2658dfb",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1",
+                "ext-iconv": "*",
+                "ext-json": "*",
+                "php": ">=7.0"
+            },
+            "type": "bitrix-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
             ],
             "authors": [
                 {
@@ -149,7 +149,7 @@
             ],
             "support": {
                 "issues": "https://github.com/andreyryabin/sprint.migration/issues",
-              "source": "https://github.com/andreyryabin/sprint.migration/tree/4.2.2"
+                "source": "https://github.com/andreyryabin/sprint.migration/tree/4.2.2"
             },
             "funding": [
                 {
@@ -157,7 +157,7 @@
                     "type": "custom"
                 }
             ],
-      "time": "2022-12-21T08:52:05+00:00"
+            "time": "2022-12-21T08:52:05+00:00"
         },
         {
             "name": "bitrix-expert/tools",
@@ -359,127 +359,127 @@
             ],
             "time": "2021-09-13T08:19:44+00:00"
         },
-    {
-      "name": "enshrined/svg-sanitize",
-      "version": "0.15.4",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/darylldoyle/svg-sanitizer.git",
-        "reference": "e50b83a2f1f296ca61394fe88fbfe3e896a84cf4"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/e50b83a2f1f296ca61394fe88fbfe3e896a84cf4",
-        "reference": "e50b83a2f1f296ca61394fe88fbfe3e896a84cf4",
-        "shasum": ""
-      },
-      "require": {
-        "ext-dom": "*",
-        "ext-libxml": "*",
-        "php": "^7.0 || ^8.0"
-      },
-      "require-dev": {
-        "phpunit/phpunit": "^6.5 || ^8.5"
-      },
-      "type": "library",
-      "autoload": {
-        "psr-4": {
-          "enshrined\\svgSanitize\\": "src"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "GPL-2.0-or-later"
-      ],
-      "authors": [
         {
-          "name": "Daryll Doyle",
-          "email": "daryll@enshrined.co.uk"
-        }
-      ],
-      "description": "An SVG sanitizer for PHP",
-      "support": {
-        "issues": "https://github.com/darylldoyle/svg-sanitizer/issues",
-        "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.15.4"
-      },
-      "time": "2022-02-21T09:13:59+00:00"
-    },
-    {
-      "name": "jalle19/php-yui-compressor",
-      "version": "1.0.1",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/Jalle19/php-yui-compressor.git",
-        "reference": "eb88c4f7fd8d7c8bd15a1970611d67cca11f71a0"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/Jalle19/php-yui-compressor/zipball/eb88c4f7fd8d7c8bd15a1970611d67cca11f71a0",
-        "reference": "eb88c4f7fd8d7c8bd15a1970611d67cca11f71a0",
-        "shasum": ""
-      },
-      "require": {
-        "nervo/yuicompressor": "2.4.*",
-        "php": ">=5.3.0"
-      },
-      "type": "library",
-      "autoload": {
-        "psr-0": {
-          "YUI": "lib/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "BSD-2-Clause"
-      ],
-      "description": "A modern PHP wrapper for the YUI compressor",
-      "homepage": "https://github.com/Jalle19/php-yui-compressor",
-      "keywords": [
-        "JS",
-        "css",
-        "minify",
-        "yui"
-      ],
-      "support": {
-        "issues": "https://github.com/Jalle19/php-yui-compressor/issues",
-        "source": "https://github.com/Jalle19/php-yui-compressor/tree/1.0.1"
-      },
-      "time": "2014-06-03T12:02:11+00:00"
-    },
-    {
-      "name": "nervo/yuicompressor",
-      "version": "2.4.8",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/nervo/yuicompressor.git",
-        "reference": "e6e3b215c3998cf6092613c002ae533ae75d7ada"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/nervo/yuicompressor/zipball/e6e3b215c3998cf6092613c002ae533ae75d7ada",
-        "reference": "e6e3b215c3998cf6092613c002ae533ae75d7ada",
-        "shasum": ""
-      },
-      "type": "library",
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "BSD"
-      ],
-      "description": "YUI Compressor is an open source tool that supports the compression of both JavaScript and CSS files. The JavaScript compression removes comments and white-spaces as well as obfuscates local variables using the smallest possible variable name. CSS compression is done using a regular-expression-based CSS minifier.",
-      "homepage": "https://github.com/yui/yuicompressor",
-      "keywords": [
-        "java",
-        "yui"
-      ],
-      "support": {
-        "issues": "https://github.com/nervo/yuicompressor/issues",
-        "source": "https://github.com/nervo/yuicompressor/tree/master"
-      },
-      "time": "2013-09-13T10:26:14+00:00"
-    },
-    {
-      "name": "npm-asset/core-js",
-      "version": "3.26.1",
+            "name": "enshrined/svg-sanitize",
+            "version": "0.15.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/darylldoyle/svg-sanitizer.git",
+                "reference": "e50b83a2f1f296ca61394fe88fbfe3e896a84cf4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/darylldoyle/svg-sanitizer/zipball/e50b83a2f1f296ca61394fe88fbfe3e896a84cf4",
+                "reference": "e50b83a2f1f296ca61394fe88fbfe3e896a84cf4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-dom": "*",
+                "ext-libxml": "*",
+                "php": "^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.5 || ^8.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "enshrined\\svgSanitize\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Daryll Doyle",
+                    "email": "daryll@enshrined.co.uk"
+                }
+            ],
+            "description": "An SVG sanitizer for PHP",
+            "support": {
+                "issues": "https://github.com/darylldoyle/svg-sanitizer/issues",
+                "source": "https://github.com/darylldoyle/svg-sanitizer/tree/0.15.4"
+            },
+            "time": "2022-02-21T09:13:59+00:00"
+        },
+        {
+            "name": "jalle19/php-yui-compressor",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jalle19/php-yui-compressor.git",
+                "reference": "eb88c4f7fd8d7c8bd15a1970611d67cca11f71a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jalle19/php-yui-compressor/zipball/eb88c4f7fd8d7c8bd15a1970611d67cca11f71a0",
+                "reference": "eb88c4f7fd8d7c8bd15a1970611d67cca11f71a0",
+                "shasum": ""
+            },
+            "require": {
+                "nervo/yuicompressor": "2.4.*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "YUI": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "description": "A modern PHP wrapper for the YUI compressor",
+            "homepage": "https://github.com/Jalle19/php-yui-compressor",
+            "keywords": [
+                "JS",
+                "css",
+                "minify",
+                "yui"
+            ],
+            "support": {
+                "issues": "https://github.com/Jalle19/php-yui-compressor/issues",
+                "source": "https://github.com/Jalle19/php-yui-compressor/tree/1.0.1"
+            },
+            "time": "2014-06-03T12:02:11+00:00"
+        },
+        {
+            "name": "nervo/yuicompressor",
+            "version": "2.4.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nervo/yuicompressor.git",
+                "reference": "e6e3b215c3998cf6092613c002ae533ae75d7ada"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nervo/yuicompressor/zipball/e6e3b215c3998cf6092613c002ae533ae75d7ada",
+                "reference": "e6e3b215c3998cf6092613c002ae533ae75d7ada",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "description": "YUI Compressor is an open source tool that supports the compression of both JavaScript and CSS files. The JavaScript compression removes comments and white-spaces as well as obfuscates local variables using the smallest possible variable name. CSS compression is done using a regular-expression-based CSS minifier.",
+            "homepage": "https://github.com/yui/yuicompressor",
+            "keywords": [
+                "java",
+                "yui"
+            ],
+            "support": {
+                "issues": "https://github.com/nervo/yuicompressor/issues",
+                "source": "https://github.com/nervo/yuicompressor/tree/master"
+            },
+            "time": "2013-09-13T10:26:14+00:00"
+        },
+        {
+            "name": "npm-asset/core-js",
+            "version": "3.26.1",
             "dist": {
                 "type": "tar",
                 "url": "https://registry.npmjs.org/core-js/-/core-js-3.26.1.tgz"
@@ -540,38 +540,38 @@
         },
         {
             "name": "npm-asset/insert-css",
-          "version": "0.0.0",
-          "dist": {
-            "type": "tar",
-            "url": "https://registry.npmjs.org/insert-css/-/insert-css-0.0.0.tgz"
-          },
-          "type": "npm-asset",
-          "license": [
-            "MIT"
-          ]
+            "version": "0.0.0",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/insert-css/-/insert-css-0.0.0.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
         },
-    {
-      "name": "npm-asset/jquery",
-      "version": "3.6.2",
-      "dist": {
-        "type": "tar",
-        "url": "https://registry.npmjs.org/jquery/-/jquery-3.6.2.tgz"
-      },
-      "type": "npm-asset",
-      "license": [
-        "MIT"
-      ]
-    },
-    {
-      "name": "npm-asset/jquery-colorbox",
-      "version": "1.6.4",
-      "dist": {
-        "type": "tar",
-        "url": "https://registry.npmjs.org/jquery-colorbox/-/jquery-colorbox-1.6.4.tgz"
-      },
-      "require": {
-        "npm-asset/jquery": ">=1.3.2"
-      },
+        {
+            "name": "npm-asset/jquery",
+            "version": "3.6.3",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/jquery/-/jquery-3.6.3.tgz"
+            },
+            "type": "npm-asset",
+            "license": [
+                "MIT"
+            ]
+        },
+        {
+            "name": "npm-asset/jquery-colorbox",
+            "version": "1.6.4",
+            "dist": {
+                "type": "tar",
+                "url": "https://registry.npmjs.org/jquery-colorbox/-/jquery-colorbox-1.6.4.tgz"
+            },
+            "require": {
+                "npm-asset/jquery": ">=1.3.2"
+            },
             "type": "npm-asset",
             "license": [
                 "MIT"
@@ -811,90 +811,90 @@
                     "homepage": "http://oomph.is/ndentzau"
                 }
             ],
-          "description": "Extend the composer/installers plugin to accept any arbitrary package type.",
-          "homepage": "http://www.oomphinc.com/",
-          "support": {
-            "issues": "https://github.com/oomphinc/composer-installers-extender/issues",
-            "source": "https://github.com/oomphinc/composer-installers-extender/tree/2.0.1"
-          },
-          "time": "2021-12-15T12:32:42+00:00"
-        },
-    {
-      "name": "ps/image-optimizer",
-      "version": "2.0.5",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/psliwa/image-optimizer.git",
-        "reference": "591d0a147599fa9c5e39d7a9b56df0e4b033849d"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/psliwa/image-optimizer/zipball/591d0a147599fa9c5e39d7a9b56df0e4b033849d",
-        "reference": "591d0a147599fa9c5e39d7a9b56df0e4b033849d",
-        "shasum": ""
-      },
-      "require": {
-        "php": "^7.3 | ^8.0",
-        "psr/log": "^1.0",
-        "symfony/options-resolver": "~3.3 | ~4.0 | ~5.0",
-        "symfony/process": "~3.3 | ~4.0 | ~5.0"
-      },
-      "require-dev": {
-        "ext-gd": "*",
-        "phpunit/phpunit": "^9.0"
-      },
-      "type": "library",
-      "autoload": {
-        "psr-0": {
-          "ImageOptimizer": "src/"
-        }
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
-        {
-          "name": "Piotr Sliwa",
-          "email": "peter.pl7@gmail.com"
-        }
-      ],
-      "description": "Image optimization / compression library. This library is able to optimize png, jpg and gif files in very easy and handy way. It uses optipng, pngquant, pngcrush, pngout, gifsicle, jpegoptim and jpegtran tools.",
-      "keywords": [
-        "compression",
-        "image",
-        "image optimizer",
-        "jpegoptim",
-        "optimization",
-        "optipng"
-      ],
-      "support": {
-        "issues": "https://github.com/psliwa/image-optimizer/issues",
-        "source": "https://github.com/psliwa/image-optimizer/tree/2.0.5"
-      },
-      "funding": [
-        {
-          "url": "https://www.paypal.me/psliwa",
-          "type": "custom"
+            "description": "Extend the composer/installers plugin to accept any arbitrary package type.",
+            "homepage": "http://www.oomphinc.com/",
+            "support": {
+                "issues": "https://github.com/oomphinc/composer-installers-extender/issues",
+                "source": "https://github.com/oomphinc/composer-installers-extender/tree/2.0.1"
+            },
+            "time": "2021-12-15T12:32:42+00:00"
         },
         {
-          "url": "https://github.com/psliwa",
-          "type": "github"
-        }
-      ],
-      "time": "2021-09-30T20:43:05+00:00"
-    },
-    {
-      "name": "psr/cache",
-      "version": "1.0.1",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/php-fig/cache.git",
-        "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
+            "name": "ps/image-optimizer",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/psliwa/image-optimizer.git",
+                "reference": "591d0a147599fa9c5e39d7a9b56df0e4b033849d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/psliwa/image-optimizer/zipball/591d0a147599fa9c5e39d7a9b56df0e4b033849d",
+                "reference": "591d0a147599fa9c5e39d7a9b56df0e4b033849d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3 | ^8.0",
+                "psr/log": "^1.0",
+                "symfony/options-resolver": "~3.3 | ~4.0 | ~5.0",
+                "symfony/process": "~3.3 | ~4.0 | ~5.0"
+            },
+            "require-dev": {
+                "ext-gd": "*",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ImageOptimizer": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Piotr Sliwa",
+                    "email": "peter.pl7@gmail.com"
+                }
+            ],
+            "description": "Image optimization / compression library. This library is able to optimize png, jpg and gif files in very easy and handy way. It uses optipng, pngquant, pngcrush, pngout, gifsicle, jpegoptim and jpegtran tools.",
+            "keywords": [
+                "compression",
+                "image",
+                "image optimizer",
+                "jpegoptim",
+                "optimization",
+                "optipng"
+            ],
+            "support": {
+                "issues": "https://github.com/psliwa/image-optimizer/issues",
+                "source": "https://github.com/psliwa/image-optimizer/tree/2.0.5"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/psliwa",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/psliwa",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-09-30T20:43:05+00:00"
+        },
+        {
+            "name": "psr/cache",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-fig/cache.git",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/d11b50ad223250cf17b86e38383413f5a6764bf8",
                 "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
                 "shasum": ""
             },
@@ -1600,25 +1600,25 @@
             ],
             "time": "2022-05-19T13:56:36+00:00"
         },
-    {
-      "name": "symfony/contracts",
-      "version": "v2.0.1",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/symfony/contracts.git",
-        "reference": "b3b9b70bfacfd204d352e7e7350e02c02c0fff78"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/symfony/contracts/zipball/b3b9b70bfacfd204d352e7e7350e02c02c0fff78",
-        "reference": "b3b9b70bfacfd204d352e7e7350e02c02c0fff78",
-        "shasum": ""
-      },
+        {
+            "name": "symfony/contracts",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/contracts.git",
+                "reference": "b3b9b70bfacfd204d352e7e7350e02c02c0fff78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/contracts/zipball/b3b9b70bfacfd204d352e7e7350e02c02c0fff78",
+                "reference": "b3b9b70bfacfd204d352e7e7350e02c02c0fff78",
+                "shasum": ""
+            },
             "require": {
-              "php": "^7.2.5",
-              "psr/cache": "^1.0",
-              "psr/container": "^1.0",
-              "psr/event-dispatcher": "^1.0"
+                "php": "^7.2.5",
+                "psr/cache": "^1.0",
+                "psr/container": "^1.0",
+                "psr/event-dispatcher": "^1.0"
             },
             "replace": {
                 "symfony/cache-contracts": "self.version",
@@ -1640,7 +1640,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                  "dev-master": "2.0-dev"
+                    "dev-master": "2.0-dev"
                 }
             },
             "autoload": {
@@ -1666,244 +1666,244 @@
                 }
             ],
             "description": "A set of abstractions extracted out of the Symfony components",
-      "homepage": "https://symfony.com",
-      "keywords": [
-        "abstractions",
-        "contracts",
-        "decoupling",
-        "interfaces",
-        "interoperability",
-        "standards"
-      ],
-      "support": {
-        "source": "https://github.com/symfony/contracts/tree/master"
-      },
-      "time": "2019-11-26T23:25:11+00:00"
-    },
-    {
-      "name": "symfony/deprecation-contracts",
-      "version": "v2.5.2",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/symfony/deprecation-contracts.git",
-        "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
-        "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
-        "shasum": ""
-      },
-      "require": {
-        "php": ">=7.1"
-      },
-      "type": "library",
-      "extra": {
-        "branch-alias": {
-          "dev-main": "2.5-dev"
-        },
-        "thanks": {
-          "name": "symfony/contracts",
-          "url": "https://github.com/symfony/contracts"
-        }
-      },
-      "autoload": {
-        "files": [
-          "function.php"
-        ]
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
-        {
-          "name": "Nicolas Grekas",
-          "email": "p@tchwork.com"
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "abstractions",
+                "contracts",
+                "decoupling",
+                "interfaces",
+                "interoperability",
+                "standards"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/contracts/tree/master"
+            },
+            "time": "2019-11-26T23:25:11+00:00"
         },
         {
-          "name": "Symfony Community",
-          "homepage": "https://symfony.com/contributors"
-        }
-      ],
-      "description": "A generic function and convention to trigger deprecation notices",
-      "homepage": "https://symfony.com",
-      "support": {
-        "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.2"
-      },
-      "funding": [
-        {
-          "url": "https://symfony.com/sponsor",
-          "type": "custom"
+            "name": "symfony/deprecation-contracts",
+            "version": "v2.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/deprecation-contracts.git",
+                "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/deprecation-contracts/zipball/e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
+                "reference": "e8b495ea28c1d97b5e0c121748d6f9b53d075c66",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "2.5-dev"
+                },
+                "thanks": {
+                    "name": "symfony/contracts",
+                    "url": "https://github.com/symfony/contracts"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "function.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "A generic function and convention to trigger deprecation notices",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/deprecation-contracts/tree/v2.5.2"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-01-02T09:53:40+00:00"
         },
         {
-          "url": "https://github.com/fabpot",
-          "type": "github"
+            "name": "symfony/options-resolver",
+            "version": "v5.4.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/options-resolver.git",
+                "reference": "54f14e36aa73cb8f7261d7686691fd4d75ea2690"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/options-resolver/zipball/54f14e36aa73cb8f7261d7686691fd4d75ea2690",
+                "reference": "54f14e36aa73cb8f7261d7686691fd4d75ea2690",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/deprecation-contracts": "^2.1|^3",
+                "symfony/polyfill-php73": "~1.0",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\OptionsResolver\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Provides an improved replacement for the array_replace PHP function",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "config",
+                "configuration",
+                "options"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/options-resolver/tree/v5.4.11"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-07-20T13:00:38+00:00"
         },
         {
-          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-          "type": "tidelift"
-        }
-      ],
-      "time": "2022-01-02T09:53:40+00:00"
-    },
-    {
-      "name": "symfony/options-resolver",
-      "version": "v5.4.11",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/symfony/options-resolver.git",
-        "reference": "54f14e36aa73cb8f7261d7686691fd4d75ea2690"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/symfony/options-resolver/zipball/54f14e36aa73cb8f7261d7686691fd4d75ea2690",
-        "reference": "54f14e36aa73cb8f7261d7686691fd4d75ea2690",
-        "shasum": ""
-      },
-      "require": {
-        "php": ">=7.2.5",
-        "symfony/deprecation-contracts": "^2.1|^3",
-        "symfony/polyfill-php73": "~1.0",
-        "symfony/polyfill-php80": "^1.16"
-      },
-      "type": "library",
-      "autoload": {
-        "psr-4": {
-          "Symfony\\Component\\OptionsResolver\\": ""
-        },
-        "exclude-from-classmap": [
-          "/Tests/"
-        ]
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
-        {
-          "name": "Fabien Potencier",
-          "email": "fabien@symfony.com"
-        },
-        {
-          "name": "Symfony Community",
-          "homepage": "https://symfony.com/contributors"
-        }
-      ],
-      "description": "Provides an improved replacement for the array_replace PHP function",
-      "homepage": "https://symfony.com",
-      "keywords": [
-        "config",
-        "configuration",
-        "options"
-      ],
-      "support": {
-        "source": "https://github.com/symfony/options-resolver/tree/v5.4.11"
-      },
-      "funding": [
-        {
-          "url": "https://symfony.com/sponsor",
-          "type": "custom"
-        },
-        {
-          "url": "https://github.com/fabpot",
-          "type": "github"
-        },
-        {
-          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-          "type": "tidelift"
-        }
-      ],
-      "time": "2022-07-20T13:00:38+00:00"
-    },
-    {
-      "name": "symfony/polyfill-php73",
-      "version": "v1.27.0",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/symfony/polyfill-php73.git",
-        "reference": "9e8ecb5f92152187c4799efd3c96b78ccab18ff9"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/9e8ecb5f92152187c4799efd3c96b78ccab18ff9",
-        "reference": "9e8ecb5f92152187c4799efd3c96b78ccab18ff9",
-        "shasum": ""
-      },
-      "require": {
-        "php": ">=7.1"
-      },
-      "type": "library",
-      "extra": {
-        "branch-alias": {
-          "dev-main": "1.27-dev"
-        },
-        "thanks": {
-          "name": "symfony/polyfill",
-          "url": "https://github.com/symfony/polyfill"
-        }
-      },
-      "autoload": {
-        "files": [
-          "bootstrap.php"
-        ],
-        "psr-4": {
-          "Symfony\\Polyfill\\Php73\\": ""
-        },
-        "classmap": [
-          "Resources/stubs"
-        ]
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
-        {
-          "name": "Nicolas Grekas",
-          "email": "p@tchwork.com"
+            "name": "symfony/polyfill-php73",
+            "version": "v1.27.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php73.git",
+                "reference": "9e8ecb5f92152187c4799efd3c96b78ccab18ff9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-php73/zipball/9e8ecb5f92152187c4799efd3c96b78ccab18ff9",
+                "reference": "9e8ecb5f92152187c4799efd3c96b78ccab18ff9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.27-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php73\\": ""
+                },
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php73/tree/v1.27.0"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
-          "name": "Symfony Community",
-          "homepage": "https://symfony.com/contributors"
-        }
-      ],
-      "description": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
-      "homepage": "https://symfony.com",
-      "keywords": [
-        "compatibility",
-        "polyfill",
-        "portable",
-        "shim"
-      ],
-      "support": {
-        "source": "https://github.com/symfony/polyfill-php73/tree/v1.27.0"
-      },
-      "funding": [
-        {
-          "url": "https://symfony.com/sponsor",
-          "type": "custom"
-        },
-        {
-          "url": "https://github.com/fabpot",
-          "type": "github"
-        },
-        {
-          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-          "type": "tidelift"
-        }
-      ],
-      "time": "2022-11-03T14:55:06+00:00"
-    },
-    {
-      "name": "symfony/polyfill-php80",
-      "version": "v1.27.0",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/symfony/polyfill-php80.git",
-        "reference": "7a6ff3f1959bb01aefccb463a0f2cd3d3d2fd936"
-      },
-      "dist": {
+            "name": "symfony/polyfill-php80",
+            "version": "v1.27.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-php80.git",
+                "reference": "7a6ff3f1959bb01aefccb463a0f2cd3d3d2fd936"
+            },
+            "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/7a6ff3f1959bb01aefccb463a0f2cd3d3d2fd936",
                 "reference": "7a6ff3f1959bb01aefccb463a0f2cd3d3d2fd936",
@@ -1969,88 +1969,88 @@
                 },
                 {
                     "url": "https://github.com/fabpot",
-                  "type": "github"
+                    "type": "github"
                 },
-              {
-                "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                "type": "tidelift"
-              }
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
             ],
-      "time": "2022-11-03T14:55:06+00:00"
-    },
-    {
-      "name": "symfony/process",
-      "version": "v5.4.11",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/symfony/process.git",
-        "reference": "6e75fe6874cbc7e4773d049616ab450eff537bf1"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/symfony/process/zipball/6e75fe6874cbc7e4773d049616ab450eff537bf1",
-        "reference": "6e75fe6874cbc7e4773d049616ab450eff537bf1",
-        "shasum": ""
-      },
-      "require": {
-        "php": ">=7.2.5",
-        "symfony/polyfill-php80": "^1.16"
-      },
-      "type": "library",
-      "autoload": {
-        "psr-4": {
-          "Symfony\\Component\\Process\\": ""
-        },
-        "exclude-from-classmap": [
-          "/Tests/"
-        ]
-      },
-      "notification-url": "https://packagist.org/downloads/",
-      "license": [
-        "MIT"
-      ],
-      "authors": [
-        {
-          "name": "Fabien Potencier",
-          "email": "fabien@symfony.com"
+            "time": "2022-11-03T14:55:06+00:00"
         },
         {
-          "name": "Symfony Community",
-          "homepage": "https://symfony.com/contributors"
-        }
-      ],
-      "description": "Executes commands in sub-processes",
-      "homepage": "https://symfony.com",
-      "support": {
-        "source": "https://github.com/symfony/process/tree/v5.4.11"
-      },
-      "funding": [
-        {
-          "url": "https://symfony.com/sponsor",
-          "type": "custom"
+            "name": "symfony/process",
+            "version": "v5.4.11",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "6e75fe6874cbc7e4773d049616ab450eff537bf1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/6e75fe6874cbc7e4773d049616ab450eff537bf1",
+                "reference": "6e75fe6874cbc7e4773d049616ab450eff537bf1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/polyfill-php80": "^1.16"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Executes commands in sub-processes",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/process/tree/v5.4.11"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-06-27T16:58:25+00:00"
         },
         {
-          "url": "https://github.com/fabpot",
-          "type": "github"
-        },
-        {
-          "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-          "type": "tidelift"
-        }
-      ],
-      "time": "2022-06-27T16:58:25+00:00"
-    },
-    {
-      "name": "webarchitect609/bitrix-cache",
-      "version": "v1.11.1",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/webarchitect609/bitrix-cache.git",
-        "reference": "cf2be2db41b20fcd67b52bf9a1f2982fec99eb63"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/webarchitect609/bitrix-cache/zipball/cf2be2db41b20fcd67b52bf9a1f2982fec99eb63",
+            "name": "webarchitect609/bitrix-cache",
+            "version": "v1.11.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webarchitect609/bitrix-cache.git",
+                "reference": "cf2be2db41b20fcd67b52bf9a1f2982fec99eb63"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webarchitect609/bitrix-cache/zipball/cf2be2db41b20fcd67b52bf9a1f2982fec99eb63",
                 "reference": "cf2be2db41b20fcd67b52bf9a1f2982fec99eb63",
                 "shasum": ""
             },
@@ -2203,43 +2203,43 @@
                     "email": "web-architect@mail.ru"
                 },
                 {
-                  "name": "Dmitry Panychev",
-                  "email": "thor_work@yahoo.com"
+                    "name": "Dmitry Panychev",
+                    "email": "thor_work@yahoo.com"
                 }
             ],
-          "description": "Set of custom Bitrix user property types and basic auxiliary functionality to help develop new types as easy and fast as it possible.",
-          "keywords": [
-            "bitrix",
-            "userfield",
-            "usertype"
-          ],
-          "support": {
-            "issues": "https://github.com/webarchitect609/bitrix-user-type/issues",
-            "source": "https://github.com/webarchitect609/bitrix-user-type/tree/v0.7.3"
-          },
-          "time": "2021-01-19T14:26:02+00:00"
+            "description": "Set of custom Bitrix user property types and basic auxiliary functionality to help develop new types as easy and fast as it possible.",
+            "keywords": [
+                "bitrix",
+                "userfield",
+                "usertype"
+            ],
+            "support": {
+                "issues": "https://github.com/webarchitect609/bitrix-user-type/issues",
+                "source": "https://github.com/webarchitect609/bitrix-user-type/tree/v0.7.3"
+            },
+            "time": "2021-01-19T14:26:02+00:00"
         },
-    {
-      "name": "wikimedia/composer-merge-plugin",
-      "version": "v2.0.1",
-      "source": {
-        "type": "git",
-        "url": "https://github.com/wikimedia/composer-merge-plugin.git",
-        "reference": "8ca2ed8ab97c8ebce6b39d9943e9909bb4f18912"
-      },
-      "dist": {
-        "type": "zip",
-        "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/8ca2ed8ab97c8ebce6b39d9943e9909bb4f18912",
-        "reference": "8ca2ed8ab97c8ebce6b39d9943e9909bb4f18912",
-        "shasum": ""
-      },
-      "require": {
-        "composer-plugin-api": "^1.1||^2.0",
-        "php": ">=7.2.0"
-      },
-      "require-dev": {
-        "composer/composer": "^1.1||^2.0",
-        "php-parallel-lint/php-parallel-lint": "~1.1.0",
+        {
+            "name": "wikimedia/composer-merge-plugin",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wikimedia/composer-merge-plugin.git",
+                "reference": "8ca2ed8ab97c8ebce6b39d9943e9909bb4f18912"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wikimedia/composer-merge-plugin/zipball/8ca2ed8ab97c8ebce6b39d9943e9909bb4f18912",
+                "reference": "8ca2ed8ab97c8ebce6b39d9943e9909bb4f18912",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1||^2.0",
+                "php": ">=7.2.0"
+            },
+            "require-dev": {
+                "composer/composer": "^1.1||^2.0",
+                "php-parallel-lint/php-parallel-lint": "~1.1.0",
                 "phpunit/phpunit": "^8.5||^9.0",
                 "squizlabs/php_codesniffer": "~3.5.4"
             },

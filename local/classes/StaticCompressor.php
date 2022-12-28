@@ -1,7 +1,7 @@
 <?php
-    
+
     namespace Local;
-    
+
     use Bitrix\Main\Application;
 
     /**
@@ -18,9 +18,9 @@
      *
      * @link  https://www.php.net/manual/ru/class.directoryiterator.php
      */
-    class PostInstallStaticProcessor
+    class StaticCompressor
     {
-        
+
         private const excludedDirectories = [
             './bitrix',
             './local/classes',
@@ -29,77 +29,87 @@
             './local/vendor',
             './upload'
         ];
-        
+
         private const includedDirectories = [
             './upload/resize_image_cache/',
             './bitrix/cache/css/',
-            './bitrix/cache/js`/'
+            './bitrix/cache/js/'
         ];
-        
-        public static function processStaticFiles()
+
+        public static function compressBitrixCachedAssets()
         {
-            
-            // тут мы запустим рекурсивную обработку файлов и папок согласно установленных правил обработки
-            
+
+            const bitrixCachedJsFolder  = './bitrix/cache/js/';
+            const bitrixCachedCssFolder = './bitrix/cache/css/'
+
+            // тут мы запустим сжатие только папки кеша статики БУС
+
         }
-        
+
+        public static function processStaticAssets()
+        {
+
+            // тут мы запустим рекурсивную обработку файлов и папок согласно установленных правил обработки
+
+        }
+
         private static function fileProcessor()
         {
-            
+
             switch (pathinfo(self::$currentFile, PATHINFO_EXTENSION)) {
-                
+
                 case 'css':
-                    
+
                     self::processCSS();
-                    
+
                     break;
-                
+
                 case 'js':
-                    
+
                     self::processJS();
-                    
+
                     break;
-                
+
                 case 'png':
-                    
+
                     self::processPNG();
-                    
+
                     break;
-                
+
                 case 'jpg':
-                    
+
                     self::processJPG();
-                    
+
                     break;
-                
+
                 case 'webp':
-                    
+
                     self::processWebP();
-                    
+
                     break;
-                
+
                 case 'svg':
-                    
+
                     self::processSVG();
-                    
+
                     break;
-                
+
                 default:
-                    
+
                     // just skip
-                    
+
                     break;
             }
         }
-        
+
         private function __init()
         {
-            
+
             // тут мы объявим обработчик файловой системы
-            
+
             self::$root = Application::getDocumentRoot();
-            
-            
+
+
         }
-        
+
     }

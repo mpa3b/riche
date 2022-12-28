@@ -14,7 +14,7 @@ use Bitrix\Main\Loader;
  *
  * @todo можно дополнить проверкой суммы значений, чтобы все "ингридиенты" не давали в сумме более 100%.
  */
-class CCustomTypeElementIngredientProportion
+class IngredientProportionProperty
 {
 
     /**
